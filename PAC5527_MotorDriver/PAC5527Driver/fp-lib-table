@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name PAC5527Driver)(type KiCad)(uri ${KIPRJMOD}/PAC5527Driver.pretty)(options "")(descr ""))
-)
