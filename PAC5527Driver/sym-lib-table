@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name PAC5527_MD)(type Legacy)(uri ${KIPRJMOD}/PAC5527_MD.lib)(options "")(descr ""))
+  (lib (name "PAC5527_MD")(type "Legacy")(uri "${KIPRJMOD}/PAC5527_MD.lib")(options "")(descr ""))
+  (lib (name "PAC5527Driver-rescue")(type "Legacy")(uri "${KIPRJMOD}/PAC5527Driver-rescue.lib")(options "")(descr ""))
 )
