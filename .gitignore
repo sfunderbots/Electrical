@@ -25,6 +25,6 @@ fp-info-cache
 *.xml
 *.csv
 
-MainBoard/Debug/.*
-MainBoard/Release/.*
-MainBoard/.metadata/.*
+/MainBoard/Debug/
+/MainBoard/Release/
+/.metadata/
