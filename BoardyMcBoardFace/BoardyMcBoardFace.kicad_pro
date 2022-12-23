@@ -55,9 +55,9 @@
           "width": 0.0
         },
         {
-          "gap": 0.3,
-          "via_gap": 0.5,
-          "width": 0.3
+          "gap": 0.2032,
+          "via_gap": 0.2032,
+          "width": 0.261112
         }
       ],
       "drc_exclusions": [],
@@ -130,7 +130,8 @@
       "track_widths": [
         0.0,
         0.154,
-        0.254
+        0.254,
+        0.29337
       ],
       "via_dimensions": [
         {
