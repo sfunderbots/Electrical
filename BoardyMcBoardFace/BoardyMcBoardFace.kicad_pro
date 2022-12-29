@@ -397,7 +397,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "../../../BoardyMcBoardFace.dsn",
-      "step": "",
+      "step": "BoardyMcBoardFace.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
