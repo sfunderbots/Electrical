@@ -1,3 +1,5 @@
 (sym_lib_table
+  (version 7)
   (lib (name "PAC5527_MD")(type "KiCad")(uri "${KIPRJMOD}/PAC5527_MD.kicad_sym")(options "")(descr ""))
+  (lib (name "PAC5527Driver-rescue")(type "KiCad")(uri "${KIPRJMOD}/PAC5527Driver-rescue.kicad_sym")(options "")(descr ""))
 )
