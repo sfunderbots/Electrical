@@ -194,6 +194,23 @@
     )
   )
 
+  (sheet (at 203.2 38.1) (size 25.4 25.4) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 2f59e60a-c040-428f-85de-f426839730b7)
+    (property "Sheetname" "OrangePi Zero2 Interface" (at 203.2 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "opizero2_interface.kicad_sch" (at 203.2 64.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "5"))
+      )
+    )
+  )
+
   (sheet (at 76.2 38.1) (size 25.4 38.1) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))

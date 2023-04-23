@@ -244,7 +244,9 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_symbol_libs": [
+      "thebots_midplate"
+    ]
   },
   "meta": {
     "filename": "midplate.kicad_pro",
@@ -338,6 +340,10 @@
     [
       "ee29c8c0-427f-4977-aab8-03cf64edc230",
       "Motor Driver Connectors"
+    ],
+    [
+      "2f59e60a-c040-428f-85de-f426839730b7",
+      "OrangePi Zero2 Interface"
     ]
   ],
   "text_variables": {}

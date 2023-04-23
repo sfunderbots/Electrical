@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "thebots_midplate")(type "KiCad")(uri "${KIPRJMOD}/proj_library/thebots_midplate.kicad_sym")(options "")(descr ""))
+)
