@@ -1,0 +1,34 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 30047588-8c40-4ef6-bedb-cb4a90042e6d)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 50.8 38.1) (size 27.94 38.1) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 132 0 0.5000))
+    (uuid c525228d-eb31-42f1-9595-4086acb8bd0b)
+    (property "Sheetname" "MCU" (at 50.8 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "MCU.kicad_sch" (at 50.8 76.7846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (property "Field2" "" (at 50.8 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "BasePlate"
+        (path "/30047588-8c40-4ef6-bedb-cb4a90042e6d" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
