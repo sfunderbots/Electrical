@@ -485,6 +485,10 @@
     [
       "13b16574-f046-4bb6-b573-f06681d59f31",
       "Power"
+    ],
+    [
+      "44109b35-87db-4b37-b749-86ba1243ffef",
+      "RPI2040 Flashing"
     ]
   ],
   "text_variables": {}
