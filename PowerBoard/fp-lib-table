@@ -10,4 +10,5 @@
   (lib (name "ABLS-12.000MHZ-B4-T")(type "KiCad")(uri "C:/Users/henry/Downloads/ABLS-12.000MHZ-B4-T")(options "")(descr ""))
   (lib (name "W25Q128JVSIQ")(type "KiCad")(uri "C:/Users/henry/Downloads/W25Q128JVSIQ")(options "")(descr ""))
   (lib (name "LTC4151IMS_PBF")(type "KiCad")(uri "C:/Users/henry/Downloads/LTC4151IMS_PBF")(options "")(descr ""))
+  (lib (name "B3B-XH-A_LF__SN_")(type "KiCad")(uri "C:/Users/henry/Downloads/B3B-XH-A_LF__SN_")(options "")(descr ""))
 )
