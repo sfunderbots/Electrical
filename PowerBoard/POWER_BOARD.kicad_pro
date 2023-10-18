@@ -430,7 +430,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "POWER_BOARD.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -488,7 +488,11 @@
     ],
     [
       "44109b35-87db-4b37-b749-86ba1243ffef",
-      "RPI2040 Flashing"
+      "RP2040_CAN_FLASH"
+    ],
+    [
+      "aa68550e-c35d-4fef-b4e5-f1eb6225215f",
+      "Flyback_HV"
     ]
   ],
   "text_variables": {}
