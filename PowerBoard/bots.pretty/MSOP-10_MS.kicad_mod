@@ -1,7 +1,7 @@
 (footprint "MSOP-10_MS" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
   (attr smd)
-  (fp_text reference "REF**" (at 0 0) (layer "F.SilkS")
+  (fp_text reference "REF**" (at -1.332554 -2.407749) (layer "F.SilkS")
       (effects (font (size 0.787402 0.787402) (thickness 0.15)))
     (tstamp 44242925-2589-4345-88fa-6cf6076672a7)
   )
