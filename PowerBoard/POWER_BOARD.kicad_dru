@@ -1,0 +1,33 @@
+(version 6.0)
+(rule front_mechanical_board_edge_clearance
+    (layer "F.Courtyard")
+    (constraint physical_clearance (min 0.3mm))
+    (condition "B.Layer == 'Edge.Cuts'"))
+(rule signal_clearance
+   (constraint clearance (min 10mil))
+   (condition "A.NetClass == 'SIGNALS'"))
+(rule signal_width
+	(constraint track_width (min 7mil))
+	(condition "A.NetClass == 'SIGNALS'"))
+(rule power_clearance
+   (constraint clearance (min 15mil))
+   (condition "A.NetClass == 'Power'"))
+(rule power_width
+	(constraint track_width (min 15mil))
+	(condition "A.NetClass == 'Power'"))
+(rule RPI2040_clearance
+	(constraint clearance (min "8.2mil"))
+	(condition "A.intersectsArea('RPI')"))
+(rule RPI2040_width
+	(constraint track_width (min "6mil"))
+	(condition "A.intersectsArea('RPI')"))
+(rule GND_plane_HV
+   (constraint physical_clearance (min 30mil))
+   (condition "A.NetClass == 'HV' && B.intersectsArea('GND_POUR')"))
+(rule samenet
+	(condition "A.Type == 'Zone' && A.NetName == B.NetName")
+	(constraint physical_clearance (min 0mm)))
+(rule HV_res
+	(condition "A.intersectsArea('HV_RES')")
+	(constraint clearance (min 6mil)))
+

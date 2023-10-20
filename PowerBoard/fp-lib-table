@@ -12,4 +12,5 @@
   (lib (name "LTC4151IMS_PBF")(type "KiCad")(uri "C:/Users/henry/Downloads/LTC4151IMS_PBF")(options "")(descr ""))
   (lib (name "B3B-XH-A_LF__SN_")(type "KiCad")(uri "C:/Users/henry/Downloads/B3B-XH-A_LF__SN_")(options "")(descr ""))
   (lib (name "bots")(type "KiCad")(uri "${KIPRJMOD}/bots.pretty")(options "")(descr ""))
+  (lib (name "USB4145-03-0170-C_REVA2")(type "KiCad")(uri "C:/Users/henry/Downloads/USB4145-03-0170-C_REVA2")(options "")(descr ""))
 )

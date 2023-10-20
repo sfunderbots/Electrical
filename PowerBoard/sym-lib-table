@@ -10,4 +10,5 @@
   (lib (name "W25Q128JVSIQ")(type "KiCad")(uri "C:/Users/henry/Downloads/W25Q128JVSIQ/W25Q128JVSIQ.kicad_sym")(options "")(descr ""))
   (lib (name "LTC4151IMS_PBF")(type "KiCad")(uri "C:/Users/henry/Downloads/LTC4151IMS_PBF/LTC4151IMS_PBF.kicad_sym")(options "")(descr ""))
   (lib (name "B3B-XH-A_LF__SN_")(type "KiCad")(uri "C:/Users/henry/Downloads/B3B-XH-A_LF__SN_/B3B-XH-A_LF__SN_.kicad_sym")(options "")(descr ""))
+  (lib (name "USB4145-03-0170-C_REVA2")(type "KiCad")(uri "C:/Users/henry/Downloads/USB4145-03-0170-C_REVA2/USB4145-03-0170-C_REVA2.kicad_sym")(options "")(descr ""))
 )
