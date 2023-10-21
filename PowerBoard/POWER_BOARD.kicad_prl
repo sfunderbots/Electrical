@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "a04f1ff_7ffffffc",
+    "visible_layers": "a04f1cf_fffffffd",
     "zone_display_mode": 0
   },
   "meta": {
@@ -77,12 +77,12 @@
         "name": "POWER_BOARD.kicad_pcb",
         "open": false,
         "window": {
-          "display": 0,
+          "display": 1,
           "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
+          "pos_x": -9,
+          "pos_y": -9,
+          "size_x": 2578,
+          "size_y": 1408
         }
       },
       {
