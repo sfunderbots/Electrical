@@ -1,16 +1,20 @@
 (version 6.0)
-(rule signal_clearance_width
-	(condition "A.NetClass == 'SIGNALS'")
-	(constraint track_width (min 6mil))
-	(constraint clearance (min 10mil)))
-(rule power_clearance_width
-	(condition "A.NetClass == 'Power'")
-	(constraint clearance (min 15mil))
-	(constraint track_width (min 10mil)))
 (rule HV_clearance_width
 	(condition "A.NetClass == 'HV'")
 	(constraint clearance (min 60mil))
 	(constraint track_width (min 50mil)))
+(rule BATTERY_clearance_width
+	(condition "A.NetClass == 'BAT'")
+	(constraint clearance (min 30mil))
+	(constraint track_width (min 15mil)))
+(rule power_clearance_width
+	(condition "A.NetClass == 'Power'")
+	(constraint clearance (min 15mil))
+	(constraint track_width (min 10mil)))
+(rule signal_clearance_width
+	(condition "A.NetClass == 'SIGNALS'")
+	(constraint track_width (min 6mil))
+	(constraint clearance (min 10mil)))
 (rule HV_CONN
 	(condition "A.intersectsArea('HV_CONN') && A.NetClass == 'HV'")
 	(constraint clearance (min 50mil)))
@@ -19,11 +23,11 @@
 	(constraint clearance (min 30mil)))
 (rule HV_SNUB1
 	(condition "A.intersectsArea('HV_SNUB1')")
-	(constraint clearance (min 20mil))
+	(constraint clearance (min 35mil))
 	(constraint track_width (min 20mil)))
 (rule HV_SNUB2
 	(condition "A.intersectsArea('HV_SNUB2')")
-	(constraint clearance (min 20mil))
+	(constraint clearance (min 35mil))
 	(constraint track_width (min 20mil)))
 (rule SPI0_clearance_width
 	(condition "A.intersectsArea('SPI')")
@@ -56,4 +60,6 @@
 	(condition "A.intersectsArea('USB')")
 	(constraint clearance (min "7.6mil"))
 	(constraint track_width (min "6mil")))
-
+(rule LTC3750_GNDVCC_zone
+	(condition "A.intersectsArea('GNDPWR_POUR1') && B.enclosedByArea('LT3750VCC_POUR')")
+	(constraint clearance (min 10mil)))
