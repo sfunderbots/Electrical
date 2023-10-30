@@ -13,4 +13,6 @@
   (lib (name "B3B-XH-A_LF__SN_")(type "KiCad")(uri "C:/Users/henry/Downloads/B3B-XH-A_LF__SN_")(options "")(descr ""))
   (lib (name "bots")(type "KiCad")(uri "${KIPRJMOD}/bots.pretty")(options "")(descr ""))
   (lib (name "USB4145-03-0170-C_REVA2")(type "KiCad")(uri "C:/Users/henry/Downloads/USB4145-03-0170-C_REVA2")(options "")(descr ""))
+  (lib (name "PTS647SM38SMTR2LFS")(type "KiCad")(uri "C:/Users/henry/Downloads/ul_PTS647SM38SMTR2LFS/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "LM2598SX-12-NOPB")(type "KiCad")(uri "C:/Users/henry/Downloads/ul_LM2598SX-12-NOPB/KiCADv6/footprints.pretty")(options "")(descr ""))
 )

@@ -3,63 +3,65 @@
 	(condition "A.NetClass == 'HV'")
 	(constraint clearance (min 60mil))
 	(constraint track_width (min 50mil)))
-(rule BATTERY_clearance_width
-	(condition "A.NetClass == 'BAT'")
-	(constraint clearance (min 30mil))
-	(constraint track_width (min 15mil)))
 (rule power_clearance_width
 	(condition "A.NetClass == 'Power'")
-	(constraint clearance (min 15mil))
+	(constraint clearance (min 16mil))
 	(constraint track_width (min 10mil)))
 (rule signal_clearance_width
 	(condition "A.NetClass == 'SIGNALS'")
 	(constraint track_width (min 6mil))
-	(constraint clearance (min 10mil)))
+	(constraint clearance (min 9mil)))
 (rule HV_CONN
-	(condition "A.intersectsArea('HV_CONN') && A.NetClass == 'HV'")
+	(condition "A.enclosedByArea('HV_CONN') && A.NetClass == 'HV'")
 	(constraint clearance (min 50mil)))
 (rule HV_RQ2D
-	(condition "A.intersectsArea('HV_RQ2D')")
-	(constraint clearance (min 30mil)))
+	(condition "A.enclosedByArea('HV_RQ2D')")
+	(constraint clearance (min 20mil)))
 (rule HV_SNUB1
-	(condition "A.intersectsArea('HV_SNUB1')")
-	(constraint clearance (min 35mil))
+	(condition "A.enclosedByArea('HV_SNUB1')")
+	(constraint clearance (min 31mil))
 	(constraint track_width (min 20mil)))
 (rule HV_SNUB2
-	(condition "A.intersectsArea('HV_SNUB2')")
-	(constraint clearance (min 35mil))
+	(condition "A.enclosedByArea('HV_SNUB2')")
+	(constraint clearance (min 31mil))
 	(constraint track_width (min 20mil)))
 (rule SPI0_clearance_width
-	(condition "A.intersectsArea('SPI')")
+	(condition "A.enclosedByArea('SPI')")
 	(constraint clearance (min "9.7mil"))
 	(constraint track_width (min "6mil")))
 (rule RPI2040_clearance_width
-	(condition "A.intersectsArea('RPI')")
+	(condition "A.enclosedByArea('RPI')")
 	(constraint clearance (min 8mil))
 	(constraint track_width (min 6mil)))
 (rule HV_PMS
-	(condition "A.intersectsArea('HV_PMS')")
+	(condition "A.enclosedByArea('HV_PMS')")
 	(constraint clearance (min 7.8mil)))
 (rule LT3750_clearance_width
-	(condition "A.intersectsArea('LT3750')")
+	(condition "A.enclosedByArea('LT3750')")
 	(constraint clearance (min 7.7mil))
 	(constraint track_width (min 7mil)))
+(rule LM2598_clearance_width
+	(condition "A.enclosedByArea('LM2598')")
+	(constraint clearance (min 16mil))
+	(constraint track_width (min 6mil)))
 #(rule samenet
 #	(condition "A.Type == 'Zone' && A.NetName == B.NetName && B.Type != 'Via'")
 #	(constraint physical_clearance (min 10mil)))
 (rule HV_res
-	(condition "A.intersectsArea('HV_RES')")
+	(condition "A.enclosedByArea('HV_RES')")
 	(constraint clearance (min 6mil))
 	(constraint track_width (min 6mil)))
+(rule HV_res_AD
+	(condition "A.enclosedByArea('HV_AD')")
+	(constraint clearance (min 20mil))
+	(constraint track_width (min 10mil)))
 # Specify an optimal gap for a particular diff-pair
 (rule "dp gap"
     (condition "A.NetClass == 'DIFF_USB'")
 	(constraint diff_pair_uncoupled (max 360mil))
 	(constraint diff_pair_gap (max 200mil) (opt 8mil) (min 7mil)))
 (rule USB_clearance_width
-	(condition "A.intersectsArea('USB')")
+	(condition "A.enclosedByArea('USB')")
 	(constraint clearance (min "7.6mil"))
 	(constraint track_width (min "6mil")))
-(rule LTC3750_GNDVCC_zone
-	(condition "A.intersectsArea('GNDPWR_POUR1') && B.enclosedByArea('LT3750VCC_POUR')")
-	(constraint clearance (min 10mil)))
+

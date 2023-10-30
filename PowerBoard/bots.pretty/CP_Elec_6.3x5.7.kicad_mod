@@ -2,6 +2,7 @@
   (layer "F.Cu")
   (descr "SMD capacitor, aluminum electrolytic, United Chemi-Con, 6.3x5.7mm")
   (tags "capacitor electrolytic")
+  (solder_mask_margin 0.1016)
   (attr smd)
   (fp_text reference "REF**" (at 0 -4.35) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))

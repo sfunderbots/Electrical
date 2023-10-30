@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 37,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "a04f1ef_ffffffff",
+    "visible_layers": "a04f1ff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -78,16 +78,16 @@
         "open": false,
         "window": {
           "display": 1,
-          "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
+          "maximized": false,
+          "pos_x": -13,
+          "pos_y": 0,
+          "size_x": 2574,
+          "size_y": 1396
         }
       },
       {
         "name": "POWER_BOARD.kicad_sch",
-        "open": true,
+        "open": false,
         "window": {
           "display": 0,
           "maximized": true,
