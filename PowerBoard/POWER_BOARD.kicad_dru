@@ -72,3 +72,6 @@
 (rule board_edge_clearance_caps_GND
     (constraint edge_clearance (min 0.2mm))
 	(condition "A.Type == 'Zone' && A.Name =='CAPS_GND'"))
+(rule board_edge_clearance_GND
+    (constraint edge_clearance (min 14mil))
+	(condition "A.intersectsArea('GND_POUR')"))
