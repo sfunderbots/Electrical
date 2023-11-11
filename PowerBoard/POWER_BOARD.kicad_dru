@@ -64,4 +64,11 @@
 	(condition "A.enclosedByArea('USB')")
 	(constraint clearance (min "7.6mil"))
 	(constraint track_width (min "6mil")))
-
+(rule board_edge_clearance
+    (constraint edge_clearance (min 30mil)))
+(rule board_edge_clearance_caps_HV
+    (constraint edge_clearance (min 0.2mm))
+	(condition "A.Type == 'Zone' && A.Name =='CAPS_HV'"))
+(rule board_edge_clearance_caps_GND
+    (constraint edge_clearance (min 0.2mm))
+	(condition "A.Type == 'Zone' && A.Name =='CAPS_GND'"))
