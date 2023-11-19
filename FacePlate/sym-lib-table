@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "sx1280-bluekitchen")(type "KiCad")(uri "${KIPRJMOD}/sx1280-bluekitchen.kicad_sym")(options "")(descr ""))
+  (lib (name "gc9a01")(type "KiCad")(uri "${KIPRJMOD}/gc9a01.kicad_sym")(options "")(descr ""))
+)
