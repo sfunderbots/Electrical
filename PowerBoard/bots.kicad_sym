@@ -336,7 +336,7 @@
     (property "Value" "ABM3-8.000MHZ-D2Y-T" (at -5.0944 -5.0944 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Footprint" "bots:445C25D12M00000" (at 0 0 0)
+    (property "Footprint" "bots:ABM3" (at 0 0 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
     )
     (property "Datasheet" "" (at 0 0 0)

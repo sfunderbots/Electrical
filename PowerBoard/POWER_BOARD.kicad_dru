@@ -1,4 +1,7 @@
 (version 6.0)
+#(rule bat_clearance_width
+#	(condition "A.NetClass == 'BAT'")
+#	(constraint clearance (min 25mil))
 (rule HV_clearance_width
 	(condition "A.NetClass == 'HV'")
 	(constraint clearance (min 60mil))
@@ -75,3 +78,6 @@
 (rule board_edge_clearance_GND
     (constraint edge_clearance (min 14mil))
 	(condition "A.intersectsArea('GND_POUR')"))
+(rule vcc_rpp_clearance_GND
+	(constraint clearance (min 7mil))
+	(condition "A.Type == 'Zone' && A.Name =='HV_PMS_CHIP'"))
