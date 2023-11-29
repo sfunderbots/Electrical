@@ -5,6 +5,120 @@
   (paper "A4")
 
   (lib_symbols
+    (symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x02" (at 0 -5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x02_1_1"
+        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 1.27) (end 1.27 -3.81)
+          (stroke (width 0.254) (type default))
+          (fill (type background))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "Connector_Generic:Conn_01x05" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x05" (at 0 -7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x05_1_1"
+        (rectangle (start -1.27 -4.953) (end 0 -5.207)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 2.667) (end 0 2.413)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 5.207) (end 0 4.953)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start -1.27 6.35) (end 1.27 -6.35)
+          (stroke (width 0.254) (type default))
+          (fill (type background))
+        )
+        (pin passive line (at -5.08 5.08 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_3" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_4" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -5.08 0) (length 3.81)
+          (name "Pin_5" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Device:C" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "C" (at 0.635 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left))
@@ -1340,7 +1454,39 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR06") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_01x05") (at 148.59 74.93 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 1c26dcd0-1c17-4a55-b727-dff81bc2fc01)
+    (property "Reference" "J1" (at 148.59 65.5701 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x05" (at 148.59 67.4911 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 148.59 74.93 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 148.59 74.93 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 114a5e07-8759-4a39-a8fc-b9d42e3bfb33))
+    (pin "2" (uuid b77efd1a-166f-4684-9789-39a4c94cb08a))
+    (pin "3" (uuid aa08bb98-19c9-4226-86dc-3a8f937ac360))
+    (pin "4" (uuid 3ecf310c-274e-4f55-9c63-3cbc54c3e541))
+    (pin "5" (uuid 965af5de-235e-40c6-97cc-aa492b0f9740))
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+          (reference "J1") (unit 1)
+        )
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
+          (reference "J3") (unit 1)
         )
       )
     )
@@ -1375,7 +1521,7 @@
   (symbol (lib_id "Device:C") (at 26.67 69.85 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 25966e70-9312-4501-bc06-af645ea4764a)
-    (property "Reference" "C3" (at 24.13 69.215 0)
+    (property "Reference" "C2" (at 24.13 69.215 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "12p" (at 29.21 69.215 0)
@@ -1392,7 +1538,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C3") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -1401,7 +1547,7 @@
   (symbol (lib_id "power:VDDA") (at 85.09 30.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 26350d79-01fa-4028-a676-9dc18eac3a4a)
-    (property "Reference" "#PWR025" (at 85.09 34.29 0)
+    (property "Reference" "#PWR010" (at 85.09 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDDA" (at 85.09 26.9781 0)
@@ -1417,7 +1563,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -1426,7 +1572,7 @@
   (symbol (lib_id "power:+3V3") (at 39.37 30.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2d059cc5-3847-4b1e-9104-6fe14e7ff2eb)
-    (property "Reference" "#PWR024" (at 39.37 34.29 0)
+    (property "Reference" "#PWR02" (at 39.37 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 39.37 26.9781 0)
@@ -1442,7 +1588,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -1472,7 +1618,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -1481,7 +1627,7 @@
   (symbol (lib_id "Device:C") (at 26.67 62.23 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3c05a5ee-441c-4575-b1c6-0443bf6df435)
-    (property "Reference" "C2" (at 24.13 61.595 0)
+    (property "Reference" "C1" (at 24.13 61.595 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "12p" (at 29.21 61.595 0)
@@ -1498,7 +1644,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C2") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -1528,7 +1674,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -1558,7 +1704,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -1588,7 +1734,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -1597,7 +1743,7 @@
   (symbol (lib_id "Device:C") (at 26.67 85.09 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4d5bc5e2-aa69-46d8-b2d8-f2d5f9e0cc43)
-    (property "Reference" "C5" (at 24.13 84.455 0)
+    (property "Reference" "C4" (at 24.13 84.455 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 29.21 84.455 0)
@@ -1614,7 +1760,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C5") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -1623,7 +1769,7 @@
   (symbol (lib_id "Device:C") (at 26.67 77.47 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 508f8b04-a1aa-4486-8e65-07406ba68803)
-    (property "Reference" "C4" (at 24.13 76.835 0)
+    (property "Reference" "C3" (at 24.13 76.835 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100n" (at 29.21 76.835 0)
@@ -1640,7 +1786,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C4") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -1670,7 +1816,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR014") (unit 1)
         )
       )
     )
@@ -1679,7 +1825,7 @@
   (symbol (lib_id "Device:C") (at 39.37 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 56eaae25-56c1-4250-8b59-af31a0ceb1ca)
-    (property "Reference" "C11" (at 42.291 38.7263 0)
+    (property "Reference" "C5" (at 42.291 38.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 42.291 40.6473 0)
@@ -1696,7 +1842,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C11") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -1705,7 +1851,7 @@
   (symbol (lib_id "Device:C") (at 59.69 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ab1b98a-0ff8-4455-abc2-752e89b4abe2)
-    (property "Reference" "C9" (at 62.611 38.7263 0)
+    (property "Reference" "C7" (at 62.611 38.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 62.611 40.6473 0)
@@ -1722,7 +1868,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C9") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -1762,7 +1908,7 @@
   (symbol (lib_id "Device:C") (at 100.33 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 72947568-50f3-4079-b7da-6a5dc85bc72e)
-    (property "Reference" "C6" (at 103.251 38.7263 0)
+    (property "Reference" "C10" (at 103.251 38.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 103.251 40.6473 0)
@@ -1779,7 +1925,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C6") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
     )
@@ -1809,7 +1955,36 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR011") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic:Conn_01x02") (at 148.59 92.71 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 7cb87d01-5a77-40c7-94f4-e58a9c5496b4)
+    (property "Reference" "J2" (at 148.59 85.8901 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x02" (at 148.59 87.8111 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 148.59 92.71 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 148.59 92.71 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 0836b4d8-d062-4c86-bb91-3c029e52e9a5))
+    (pin "2" (uuid 36ba7de8-fea2-4287-ac4b-59ee0ed0cda4))
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+          (reference "J2") (unit 1)
+        )
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -1844,7 +2019,7 @@
   (symbol (lib_id "power:+3V3") (at 116.84 30.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 823a8e47-afa3-4145-b8dc-ae3aa4ef336a)
-    (property "Reference" "#PWR028" (at 116.84 34.29 0)
+    (property "Reference" "#PWR013" (at 116.84 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 116.84 26.9781 0)
@@ -1860,7 +2035,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -1921,7 +2096,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -1961,7 +2136,7 @@
   (symbol (lib_id "Device:C") (at 49.53 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a2b3cba1-f909-41a7-946f-76a24f2db45a)
-    (property "Reference" "C10" (at 52.451 38.7263 0)
+    (property "Reference" "C6" (at 52.451 38.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 52.451 40.6473 0)
@@ -1978,7 +2153,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C10") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -2060,7 +2235,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -2090,7 +2265,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -2121,7 +2296,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C1") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -2151,7 +2326,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -2160,7 +2335,7 @@
   (symbol (lib_id "Device:C") (at 116.84 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e890f7ae-13eb-4943-b32b-33e8a309343c)
-    (property "Reference" "C7" (at 119.761 38.7263 0)
+    (property "Reference" "C11" (at 119.761 38.7263 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 119.761 40.6473 0)
@@ -2177,7 +2352,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/208a125f-e9af-4c81-8e0c-7231ec487289"
-          (reference "C7") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
     )

@@ -171,7 +171,12 @@
     (pin "4" (uuid a71c5c80-6ad7-48e7-8061-5091ef9d4d20))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/8067caf3-9104-42be-8473-3488b2624abe"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
+          (reference "U3") (unit 2)
+        )
+      )
+      (project "midplate_power_monitor"
+        (path "/d0bf5fee-7f5b-4a83-8740-013ffd36b0eb"
           (reference "U3") (unit 2)
         )
       )
@@ -209,7 +214,12 @@
     (pin "4" (uuid c7fd6adb-769b-4348-8b13-be15e0705351))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/8067caf3-9104-42be-8473-3488b2624abe"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
+          (reference "U3") (unit 1)
+        )
+      )
+      (project "midplate_power_monitor"
+        (path "/d0bf5fee-7f5b-4a83-8740-013ffd36b0eb"
           (reference "U3") (unit 1)
         )
       )
@@ -247,7 +257,12 @@
     (pin "4" (uuid 22587052-3de3-4d8d-89e9-39b0d008f825))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/8067caf3-9104-42be-8473-3488b2624abe"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
+          (reference "U3") (unit 4)
+        )
+      )
+      (project "midplate_power_monitor"
+        (path "/d0bf5fee-7f5b-4a83-8740-013ffd36b0eb"
           (reference "U3") (unit 4)
         )
       )
@@ -285,7 +300,12 @@
     (pin "4" (uuid b4369a47-5fb5-4286-9953-f74d924c4a08))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/8067caf3-9104-42be-8473-3488b2624abe"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
+          (reference "U3") (unit 3)
+        )
+      )
+      (project "midplate_power_monitor"
+        (path "/d0bf5fee-7f5b-4a83-8740-013ffd36b0eb"
           (reference "U3") (unit 3)
         )
       )
@@ -323,7 +343,12 @@
     (pin "4" (uuid 972c4a0c-1596-4ce0-ad30-f61e03ed22f3))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/8067caf3-9104-42be-8473-3488b2624abe"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
+          (reference "U3") (unit 5)
+        )
+      )
+      (project "midplate_power_monitor"
+        (path "/d0bf5fee-7f5b-4a83-8740-013ffd36b0eb"
           (reference "U3") (unit 5)
         )
       )

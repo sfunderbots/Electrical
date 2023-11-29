@@ -42,23 +42,6 @@
     )
   )
 
-  (sheet (at 86.36 43.18) (size 34.29 35.56) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 74030a08-2176-4dd5-aa31-e2ccc5e356bb)
-    (property "Sheetname" "power monitoring" (at 86.36 42.4684 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "midplate_power_monitor.kicad_sch" (at 86.36 79.3246 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "6"))
-      )
-    )
-  )
-
   (sheet (at 38.1 39.37) (size 26.67 29.21) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))

@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 37,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "800ffff_ffffffff",
+    "visible_layers": "800fffc_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -77,24 +77,24 @@
         "name": "POWER_BOARD.kicad_pcb",
         "open": false,
         "window": {
-          "display": 1,
+          "display": 0,
           "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
+          "pos_x": 426,
+          "pos_y": 1431,
+          "size_x": 1938,
+          "size_y": 1048
         }
       },
       {
         "name": "POWER_BOARD.kicad_sch",
         "open": false,
         "window": {
-          "display": 1,
+          "display": 0,
           "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
+          "pos_x": 426,
+          "pos_y": 1431,
+          "size_x": 1938,
+          "size_y": 1048
         }
       }
     ]
