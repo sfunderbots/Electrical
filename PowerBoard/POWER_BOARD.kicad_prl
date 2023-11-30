@@ -74,7 +74,7 @@
   "project": {
     "files": [
       {
-        "name": "POWER_BOARD.kicad_pcb",
+        "name": "POWER_BOARD.kicad_sch",
         "open": false,
         "window": {
           "display": 0,
@@ -86,7 +86,7 @@
         }
       },
       {
-        "name": "POWER_BOARD.kicad_sch",
+        "name": "POWER_BOARD.kicad_pcb",
         "open": false,
         "window": {
           "display": 0,

@@ -1,7 +1,7 @@
 {
   "board": {
     "active_layer": 0,
-    "active_layer_preset": "All Layers",
+    "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
@@ -65,7 +65,7 @@
       39,
       40
     ],
-    "visible_layers": "fffffff_ffffffff",
+    "visible_layers": "8009fff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -88,14 +88,14 @@
       },
       {
         "name": "midplate.kicad_sch",
-        "open": false,
+        "open": true,
         "window": {
-          "display": 0,
+          "display": 1,
           "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
+          "pos_x": -9,
+          "pos_y": -9,
+          "size_x": 2578,
+          "size_y": 1408
         }
       }
     ]

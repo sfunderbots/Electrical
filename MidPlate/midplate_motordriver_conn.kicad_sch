@@ -483,7 +483,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_keywords" "power-flag" (at 0 0 0)
+      (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0)
@@ -523,7 +523,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_keywords" "power-flag" (at 0 0 0)
+      (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Power symbol creates a global label with name \"VDC\"" (at 0 0 0)
@@ -1411,7 +1411,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J10") (unit 1)
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -1441,7 +1441,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -1450,7 +1450,7 @@
   (symbol (lib_id "Device:R") (at 193.04 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 07b3a3fa-c2f3-415a-94c1-5edd654cba0f)
-    (property "Reference" "R14" (at 195.072 68.58 90)
+    (property "Reference" "R16" (at 195.072 68.58 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 193.04 68.58 90)
@@ -1467,7 +1467,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R14") (unit 1)
+          (reference "R16") (unit 1)
         )
       )
     )
@@ -1497,7 +1497,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -1527,7 +1527,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -1536,7 +1536,7 @@
   (symbol (lib_id "Device:R") (at 110.49 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 11b39974-d749-4440-b463-b076c518f7eb)
-    (property "Reference" "R7" (at 112.522 53.34 90)
+    (property "Reference" "R9" (at 112.522 53.34 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 110.49 53.34 90)
@@ -1553,7 +1553,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R7") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -1583,7 +1583,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -1613,7 +1613,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
     )
@@ -1648,7 +1648,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J9") (unit 1)
+          (reference "J10") (unit 1)
         )
       )
     )
@@ -1657,7 +1657,7 @@
   (symbol (lib_id "Device:R") (at 46.99 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 277d679b-eac5-4a78-892f-6be9ac75d9d5)
-    (property "Reference" "R6" (at 49.022 69.85 90)
+    (property "Reference" "R8" (at 49.022 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 46.99 69.85 90)
@@ -1674,7 +1674,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R6") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -1704,7 +1704,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -1739,7 +1739,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J5") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -1748,7 +1748,7 @@
   (symbol (lib_id "Device:R") (at 118.11 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 43de6158-f979-425b-acb4-5be4bd7a22f2)
-    (property "Reference" "R10" (at 120.142 69.85 90)
+    (property "Reference" "R12" (at 120.142 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 118.11 69.85 90)
@@ -1765,7 +1765,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R10") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -1795,7 +1795,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -1864,7 +1864,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J6") (unit 1)
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -1894,7 +1894,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -1924,7 +1924,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -1933,7 +1933,7 @@
   (symbol (lib_id "Device:R") (at 193.04 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 63848b01-d42a-464b-9dc4-fdf3e0f9e952)
-    (property "Reference" "R13" (at 195.072 52.07 90)
+    (property "Reference" "R15" (at 195.072 52.07 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 193.04 52.07 90)
@@ -1950,7 +1950,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R13") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -2019,7 +2019,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J8") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -2028,7 +2028,7 @@
   (symbol (lib_id "Device:R") (at 39.37 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 70e6be6b-6fb3-4ae7-80da-aeb2f5d096b4)
-    (property "Reference" "R3" (at 41.402 53.34 90)
+    (property "Reference" "R5" (at 41.402 53.34 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 39.37 53.34 90)
@@ -2045,7 +2045,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R3") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -2075,7 +2075,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -2084,7 +2084,7 @@
   (symbol (lib_id "power:VDD") (at 43.18 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7b8a9d50-f609-4d3a-91f4-b2d3c9d1c212)
-    (property "Reference" "#PWR015" (at 43.18 50.8 0)
+    (property "Reference" "#PWR018" (at 43.18 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 43.18 43.4881 0)
@@ -2100,7 +2100,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -2109,7 +2109,7 @@
   (symbol (lib_id "Device:R") (at 110.49 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 824c89ee-304f-45bb-a6d2-bad8dbcb7621)
-    (property "Reference" "R8" (at 112.522 69.85 90)
+    (property "Reference" "R10" (at 112.522 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 110.49 69.85 90)
@@ -2126,7 +2126,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R8") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -2156,7 +2156,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -2165,7 +2165,7 @@
   (symbol (lib_id "power:VDD") (at 114.3 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9a28d458-80c6-4cfa-93ff-f2d62266c128)
-    (property "Reference" "#PWR021" (at 114.3 50.8 0)
+    (property "Reference" "#PWR024" (at 114.3 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 114.3 43.4881 0)
@@ -2181,7 +2181,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -2211,7 +2211,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -2246,7 +2246,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "J7") (unit 1)
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -2276,7 +2276,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -2285,7 +2285,7 @@
   (symbol (lib_id "Device:R") (at 185.42 68.58 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b50e63f7-f41a-42d2-9b2e-7bc143c6ba9e)
-    (property "Reference" "R12" (at 187.452 68.58 90)
+    (property "Reference" "R14" (at 187.452 68.58 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 185.42 68.58 90)
@@ -2302,7 +2302,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R12") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -2332,7 +2332,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -2341,7 +2341,7 @@
   (symbol (lib_id "Device:R") (at 46.99 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bd202e90-33ae-4b6e-985d-15950d888555)
-    (property "Reference" "R5" (at 49.022 53.34 90)
+    (property "Reference" "R7" (at 49.022 53.34 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 46.99 53.34 90)
@@ -2358,7 +2358,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R5") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -2367,7 +2367,7 @@
   (symbol (lib_id "Device:R") (at 118.11 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c5baea72-22d4-45e9-9bd4-ffc7051094e4)
-    (property "Reference" "R9" (at 120.142 53.34 90)
+    (property "Reference" "R11" (at 120.142 53.34 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 118.11 53.34 90)
@@ -2384,7 +2384,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R9") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -2393,7 +2393,7 @@
   (symbol (lib_id "Device:R") (at 39.37 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cbc577b2-ddce-4b6e-a29e-0c59ff623785)
-    (property "Reference" "R4" (at 41.402 69.85 90)
+    (property "Reference" "R6" (at 41.402 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 39.37 69.85 90)
@@ -2410,7 +2410,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R4") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -2440,7 +2440,7 @@
       )
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -2449,7 +2449,7 @@
   (symbol (lib_id "Device:R") (at 185.42 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e181f42d-0409-48df-a404-db73bfeb54b8)
-    (property "Reference" "R11" (at 187.452 52.07 90)
+    (property "Reference" "R13" (at 187.452 52.07 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 185.42 52.07 90)
@@ -2466,7 +2466,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "R11") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -2475,7 +2475,7 @@
   (symbol (lib_id "power:VDD") (at 189.23 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fad557da-78e4-45df-9152-4ae77fcb5fdb)
-    (property "Reference" "#PWR027" (at 189.23 49.53 0)
+    (property "Reference" "#PWR030" (at 189.23 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 189.23 42.2181 0)
@@ -2491,7 +2491,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ee29c8c0-427f-4977-aab8-03cf64edc230"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
