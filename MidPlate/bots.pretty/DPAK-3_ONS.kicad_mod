@@ -90,9 +90,9 @@
   (pad "1" smd rect (at -2.290001 6.4135) (size 0.9398 2.4892) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 21d98d91-ef36-44ec-95ff-2fc1611f2413))
   (pad "2" smd rect (at 0 0) (size 6.7818 6.9342) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 391b4dc2-50d8-41df-a276-6a21cb69ea2b))
   (pad "3" smd rect (at 2.290001 6.4135) (size 0.9398 2.4892) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8ffdea16-7eb7-4c1c-a422-e076c093a4d5))
-  (model "${KIPRJMOD}/DPAK-3_ONS.step"
-    (offset (xyz 0 0 0))
+  (model ":KICAD7_3DMODEL_DIR:Package_TO_SOT_SMD.3dshapes/TO-252-2.step"
+    (offset (xyz 0 -1 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz 0 0 -90))
   )
 )

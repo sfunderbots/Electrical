@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 31,
+    "active_layer": 39,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -65,7 +65,7 @@
       39,
       40
     ],
-    "visible_layers": "8009fff_ffffffff",
+    "visible_layers": "8089fff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -78,12 +78,12 @@
         "name": "midplate.kicad_pcb",
         "open": false,
         "window": {
-          "display": 1,
+          "display": 0,
           "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
+          "pos_x": 426,
+          "pos_y": 1431,
+          "size_x": 1938,
+          "size_y": 1048
         }
       },
       {

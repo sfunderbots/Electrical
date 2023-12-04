@@ -1,0 +1,16 @@
+(version 6.0)
+#(rule bat_clearance_width
+#	(condition "A.NetClass == 'BAT'")
+#	(constraint clearance (min 25mil))
+(rule HV_clearance_width
+	(condition "A.NetClass == 'HV'")
+	(constraint clearance (min 60mil))
+	(constraint track_width (min 50mil)))
+(rule power_clearance_width
+	(condition "A.NetClass == 'Power'")
+	(constraint clearance (min 16mil))
+	(constraint track_width (min 10mil)))
+(rule signal_clearance_width
+	(condition "A.NetClass == 'SIGNALS'")
+	(constraint track_width (min 6mil))
+	(constraint clearance (min 9mil)))

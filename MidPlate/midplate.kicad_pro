@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 2.7,
+          "height": 4.7,
+          "width": 4.7
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -46,7 +46,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 1.27
+          "min_clearance": 0.508
         }
       },
       "diff_pair_dimensions": [
@@ -116,7 +116,7 @@
         "max_error": 0.005,
         "min_clearance": 0.17779999999999999,
         "min_connection": 0.15239999999999998,
-        "min_copper_edge_clearance": 0.3,
+        "min_copper_edge_clearance": 6.04774,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.19999999999999998,
@@ -417,7 +417,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "bots"
+    ],
     "pinned_symbol_libs": [
       "thebots_midplate"
     ]
@@ -934,7 +936,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "midplate.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

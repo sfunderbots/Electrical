@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "bots")(type "KiCad")(uri "${KIPRJMOD}/bots.pretty")(options "")(descr ""))
   (lib (name "R1966ABLKBLKGR")(type "KiCad")(uri "C:/Users/henry/Downloads/R1966ABLKBLKGR")(options "")(descr ""))
+  (lib (name "JS202011JAQN")(type "KiCad")(uri "C:/Users/henry/Downloads/JS202011JAQN")(options "")(descr ""))
 )
