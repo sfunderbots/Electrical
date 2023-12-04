@@ -8,53 +8,19 @@
   )
 
 
-  (sheet (at 139.7 38.1) (size 25.4 33.02) (fields_autoplaced)
+  (sheet (at 38.1 82.55) (size 26.67 25.4) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
-    (uuid 208a125f-e9af-4c81-8e0c-7231ec487289)
-    (property "Sheetname" "MCU" (at 139.7 37.3884 0)
+    (uuid 5699b499-0901-4542-927f-3a0270375bb5)
+    (property "Sheetname" "Power Board Connections" (at 38.1 81.8384 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "midplate_MCU.kicad_sch" (at 139.7 71.7046 0)
+    (property "Sheetfile" "powerboard-conn.kicad_sch" (at 38.1 108.5346 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 203.2 38.1) (size 25.4 25.4) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 2f59e60a-c040-428f-85de-f426839730b7)
-    (property "Sheetname" "OrangePi Zero2 Interface" (at 203.2 37.3884 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "opizero2_interface.kicad_sch" (at 203.2 64.0846 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "5"))
-      )
-    )
-  )
-
-  (sheet (at 86.36 43.18) (size 34.29 35.56) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 74030a08-2176-4dd5-aa31-e2ccc5e356bb)
-    (property "Sheetname" "power monitoring" (at 86.36 42.4684 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "midplate_power_monitor.kicad_sch" (at 86.36 79.3246 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "6"))
       )
     )
   )
@@ -94,6 +60,6 @@
   )
 
   (sheet_instances
-    (path "/" (page "1"))
+    (path "/" (page "7"))
   )
 )

@@ -889,6 +889,10 @@
       {
         "netclass": "BAT",
         "pattern": "/Flyback_HV/RCD"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/SNUB2"
       }
     ]
   },

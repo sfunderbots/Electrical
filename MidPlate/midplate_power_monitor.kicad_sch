@@ -143,7 +143,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2902") (at 68.58 68.58 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8a48e39f-2be8-4fc4-b51e-35761fdc9acc)
-    (property "Reference" "U4" (at 68.58 60.4901 0)
+    (property "Reference" "U2" (at 68.58 60.4901 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2902" (at 68.58 62.4111 0)
@@ -172,7 +172,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
-          (reference "U4") (unit 2)
+          (reference "U2") (unit 2)
         )
       )
       (project "midplate_power_monitor"
@@ -186,7 +186,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2902") (at 68.58 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9b68a203-07f4-4d51-8bd7-b5401e91c830)
-    (property "Reference" "U4" (at 68.58 47.7901 0)
+    (property "Reference" "U2" (at 68.58 47.7901 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2902" (at 68.58 49.7111 0)
@@ -215,7 +215,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
-          (reference "U4") (unit 1)
+          (reference "U2") (unit 1)
         )
       )
       (project "midplate_power_monitor"
@@ -229,7 +229,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2902") (at 68.58 93.98 0) (unit 4)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b7e52aaf-95db-4afd-bc24-961e2ab46602)
-    (property "Reference" "U4" (at 68.58 85.8901 0)
+    (property "Reference" "U2" (at 68.58 85.8901 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2902" (at 68.58 87.8111 0)
@@ -258,7 +258,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
-          (reference "U4") (unit 4)
+          (reference "U2") (unit 4)
         )
       )
       (project "midplate_power_monitor"
@@ -272,7 +272,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2902") (at 68.58 81.28 0) (unit 3)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b953e749-eff1-4c96-afb2-2b6b7e1802ed)
-    (property "Reference" "U4" (at 68.58 73.1901 0)
+    (property "Reference" "U2" (at 68.58 73.1901 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LM2902" (at 68.58 75.1111 0)
@@ -301,7 +301,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
-          (reference "U4") (unit 3)
+          (reference "U2") (unit 3)
         )
       )
       (project "midplate_power_monitor"
@@ -315,7 +315,7 @@
   (symbol (lib_id "Amplifier_Operational:LM2902") (at 68.58 109.22 0) (unit 5)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d39a23c4-40eb-4235-a2b5-6c82e99e0a97)
-    (property "Reference" "U4" (at 66.675 108.5763 0)
+    (property "Reference" "U2" (at 66.675 108.5763 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "LM2902" (at 66.675 110.4973 0)
@@ -344,7 +344,7 @@
     (instances
       (project "midplate"
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/74030a08-2176-4dd5-aa31-e2ccc5e356bb"
-          (reference "U4") (unit 5)
+          (reference "U2") (unit 5)
         )
       )
       (project "midplate_power_monitor"
