@@ -6672,7 +6672,7 @@
     (property "Value" "D_Zener" (at 62.992 210.8273 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Diode_SMD:D_SMA" (at 60.96 209.55 0)
+    (property "Footprint" "Diode_SMD:D_SOD-123" (at 60.96 209.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 60.96 209.55 0)
