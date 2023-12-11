@@ -3,4 +3,5 @@
   (lib (name "thebots_midplate")(type "KiCad")(uri "${KIPRJMOD}/proj_library/thebots_midplate.kicad_sym")(options "")(descr ""))
   (lib (name "bots")(type "KiCad")(uri "C:/Users/henry/Documents/Documents/University/GitHub/The Bots/Electrical/PowerBoard/bots.kicad_sym")(options "")(descr ""))
   (lib (name "JS202011JAQN")(type "KiCad")(uri "C:/Users/henry/Downloads/JS202011JAQN/JS202011JAQN.kicad_sym")(options "")(descr ""))
+  (lib (name "0430450818")(type "KiCad")(uri "C:/Users/henry/Downloads/430450818/430450818.kicad_sym")(options "")(descr ""))
 )

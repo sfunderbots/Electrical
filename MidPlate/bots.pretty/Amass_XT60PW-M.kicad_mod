@@ -70,9 +70,9 @@
     (stroke (width 0.159) (type solid)) (layer "F.CrtYd") (tstamp 04741206-1989-4fc7-bd7d-810e881f6097))
   (pad "" thru_hole oval (at -6.75 -6) (size 1.6 2.8) (drill oval 0.8 1.8) (layers "*.Cu" "*.Mask") (tstamp b1aa26d0-6fea-46f8-9d34-8d66e3092ca7))
   (pad "" thru_hole oval (at 6.75 -6) (size 1.6 2.8) (drill oval 0.8 1.8) (layers "*.Cu" "*.Mask") (tstamp 0d3f58d8-2a1f-4964-b480-881a91eb6bde))
-  (pad "1" thru_hole circle (at -3.6 0) (size 4 4) (drill 2.7) (layers "*.Cu" "*.Mask")
+  (pad "1" thru_hole circle (at -3.6 0) (size 4.5 4.5) (drill 3) (layers "*.Cu" "*.Mask")
     (zone_connect 2) (tstamp 6eedb482-5071-43a4-9e6e-e2ae3c4b3636))
-  (pad "2" thru_hole circle (at 3.6 0) (size 4 4) (drill 2.7) (layers "*.Cu" "*.Mask")
+  (pad "2" thru_hole circle (at 3.6 0) (size 4.5 4.5) (drill 3) (layers "*.Cu" "*.Mask")
     (zone_connect 2) (tstamp 6dd36f7c-22f6-42e4-9f3a-5a4dd8900559))
   (model "${KIPRJMOD}/XT60PW-M.STEP"
     (offset (xyz 7.75 -1.7 0))

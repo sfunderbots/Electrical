@@ -78,9 +78,10 @@
 (rule board_edge_clearance_GND
     (constraint edge_clearance (min 14mil))
 	(condition "A.intersectsArea('GND_POUR')"))
-(rule vcc_rpp_clearance_GND
-	(constraint clearance (min 7mil))
-	(condition "A.Type == 'Zone' && A.Name =='HV_PMS_CHIP'"))
-(rule vcc_clearance_gnd
-	(constraint clearance (min 7mil))
-	(condition "A.Type == 'Zone' && A.Name =='HV_PMS_CHIP_VCC'"))
+(rule vcc_clearance_3750
+	(constraint clearance (min 7.6mil))
+	(condition "A.Type == 'Zone' && A.Name =='LT375012V_POUR'"))
+(rule dp_gap_CAN
+    (condition "A.NetClass == 'CAN_DIFF'")
+	(constraint diff_pair_uncoupled (max 610mil))
+	(constraint diff_pair_gap (max 500mil) (opt 11mil) (min 10mil)))
