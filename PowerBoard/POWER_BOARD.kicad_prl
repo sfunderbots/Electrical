@@ -75,14 +75,14 @@
     "files": [
       {
         "name": "POWER_BOARD.kicad_pcb",
-        "open": false,
+        "open": true,
         "window": {
-          "display": 1,
+          "display": 0,
           "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
+          "pos_x": 426,
+          "pos_y": 1431,
+          "size_x": 1938,
+          "size_y": 1048
         }
       },
       {
