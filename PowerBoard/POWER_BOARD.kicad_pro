@@ -461,7 +461,7 @@
       {
         "bus_width": 12,
         "clearance": 0.254,
-        "diff_pair_gap": 3.81,
+        "diff_pair_gap": 0.2794,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.1778,
         "line_style": 0,
@@ -918,6 +918,14 @@
       {
         "netclass": "CAN_DIFF",
         "pattern": "CAN+"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/Power/CANR-"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/Power/CANR+"
       }
     ]
   },

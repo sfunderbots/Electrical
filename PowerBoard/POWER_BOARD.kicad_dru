@@ -83,5 +83,6 @@
 	(condition "A.Type == 'Zone' && A.Name =='LT375012V_POUR'"))
 (rule dp_gap_CAN
     (condition "A.NetClass == 'CAN_DIFF'")
-	(constraint diff_pair_uncoupled (max 610mil))
-	(constraint diff_pair_gap (max 500mil) (opt 11mil) (min 10mil)))
+	(constraint diff_pair_uncoupled (max 810mil))
+	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil))
+	(constraint track_width (min 7mil) (opt 7mil)))
