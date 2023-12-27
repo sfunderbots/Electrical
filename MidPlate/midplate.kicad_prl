@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 37,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -75,7 +75,7 @@
   "project": {
     "files": [
       {
-        "name": "midplate.kicad_sch",
+        "name": "midplate.kicad_pcb",
         "open": false,
         "window": {
           "display": 0,
@@ -87,7 +87,7 @@
         }
       },
       {
-        "name": "midplate.kicad_pcb",
+        "name": "midplate.kicad_sch",
         "open": false,
         "window": {
           "display": 0,
