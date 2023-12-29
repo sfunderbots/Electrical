@@ -797,7 +797,7 @@
   (symbol (lib_id "power:+3.3V") (at 158.496 56.134 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0011c333-1bb2-4a60-9858-723d75a8a279)
-    (property "Reference" "#PWR011" (at 158.496 59.944 0)
+    (property "Reference" "#PWR?" (at 158.496 59.944 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 158.496 52.324 0)
@@ -813,21 +813,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -836,7 +836,7 @@
   (symbol (lib_id "power:+3.3V") (at 207.8736 53.4924 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0d624862-f3df-44af-96d2-43c5602e414a)
-    (property "Reference" "#PWR011" (at 207.8736 57.3024 0)
+    (property "Reference" "#PWR?" (at 207.8736 57.3024 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 207.8736 49.6824 0)
@@ -852,21 +852,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR059") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -881,7 +881,7 @@
     (property "Value" "0.1u" (at 209.1436 61.1124 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:C_0603_1608Metric" (at 208.8388 62.3824 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 208.8388 62.3824 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 207.8736 58.5724 0)
@@ -895,18 +895,18 @@
           (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "C33") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "C32") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "C5") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "C5") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -921,7 +921,7 @@
     (property "Value" "10k" (at 140.6652 99.06 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:R_0603_1608Metric" (at 136.3472 99.06 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 136.3472 99.06 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 138.1252 99.06 0)
@@ -935,18 +935,18 @@
           (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "R30") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "R49") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "R4") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "R4") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -961,7 +961,7 @@
     (property "Value" "22p" (at 199.4408 90.17 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:C_0603_1608Metric" (at 200.152 90.4748 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 200.152 90.4748 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 196.342 91.44 0)
@@ -975,18 +975,18 @@
           (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "C31") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "C38") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "C4") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "C4") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
@@ -995,13 +995,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 81.026 85.344 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2bb86677-cee2-4f70-91f9-4eca1bfdbf0e)
-    (property "Reference" "TP1" (at 83.4136 93.4212 0)
+    (property "Reference" "TP?" (at 83.4136 93.4212 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CANL" (at 83.4136 91.2876 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_THTPad_D1.0mm_Drill0.5mm" (at 75.946 85.344 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 75.946 85.344 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 75.946 85.344 0)
@@ -1011,21 +1011,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP7") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP11") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP11") (unit 1)
+          (reference "TP12") (unit 1)
         )
       )
     )
@@ -1034,13 +1034,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 135.6868 66.3956 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4f465f64-2be5-463e-9670-bf387c54e994)
-    (property "Reference" "TP1" (at 140.3604 68.0212 0)
+    (property "Reference" "TP?" (at 140.3604 68.0212 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TXCAN" (at 142.748 70.0024 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 130.6068 66.3956 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 130.6068 66.3956 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 130.6068 66.3956 0)
@@ -1050,21 +1050,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP9") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP6") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP6") (unit 1)
+          (reference "TP10") (unit 1)
         )
       )
     )
@@ -1073,7 +1073,7 @@
   (symbol (lib_id "power:+3.3V") (at 97.536 70.104 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 526b75c2-62e3-4518-b3d2-e8c830a4cc7a)
-    (property "Reference" "#PWR011" (at 97.536 73.914 0)
+    (property "Reference" "#PWR?" (at 97.536 73.914 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 97.536 66.294 0)
@@ -1089,21 +1089,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
     )
@@ -1131,18 +1131,18 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR060") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR077") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -1151,13 +1151,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 135.636 63.754 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5970684c-c315-4441-8608-cfe1a89bf1d3)
-    (property "Reference" "TP1" (at 140.462 60.2488 0)
+    (property "Reference" "TP?" (at 140.462 60.2488 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "RXCAN" (at 143.002 58.3692 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 130.556 63.754 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 130.556 63.754 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 130.556 63.754 0)
@@ -1167,21 +1167,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP8") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP4") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP4") (unit 1)
+          (reference "TP9") (unit 1)
         )
       )
     )
@@ -1190,7 +1190,7 @@
   (symbol (lib_id "power:GND") (at 110.998 59.436 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 61c16c07-c46e-4f59-b572-768a6bfb3eb1)
-    (property "Reference" "#PWR019" (at 110.998 65.786 0)
+    (property "Reference" "#PWR?" (at 110.998 65.786 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 111.1123 63.7604 0)
@@ -1206,10 +1206,10 @@
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -1218,7 +1218,7 @@
   (symbol (lib_id "power:+3.3V") (at 124.206 77.724 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6b24d1f1-4e51-4eda-812e-2f660edf58a1)
-    (property "Reference" "#PWR011" (at 124.206 81.534 0)
+    (property "Reference" "#PWR?" (at 124.206 81.534 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 124.206 73.914 0)
@@ -1234,21 +1234,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -1257,13 +1257,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 184.2008 60.4012 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 79a6483e-4ce5-4857-93c2-3c465ff03274)
-    (property "Reference" "TP1" (at 186.8424 54.9656 0)
+    (property "Reference" "TP?" (at 186.8424 54.9656 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CS" (at 185.674 52.9336 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 179.1208 60.4012 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 179.1208 60.4012 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 179.1208 60.4012 0)
@@ -1273,18 +1273,18 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP12") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP8") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
           (reference "TP8") (unit 1)
@@ -1296,7 +1296,7 @@
   (symbol (lib_id "power:+3.3V") (at 138.1252 103.251 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7f6744d4-8d5f-4103-a8d4-eacea446dff3)
-    (property "Reference" "#PWR011" (at 138.1252 99.441 0)
+    (property "Reference" "#PWR?" (at 138.1252 99.441 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 138.1252 107.061 0)
@@ -1312,21 +1312,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR073") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR038") (unit 1)
         )
       )
     )
@@ -1341,7 +1341,7 @@
     (property "Value" "22p" (at 199.517 77.343 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:C_0603_1608Metric" (at 200.152 77.7748 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 200.152 77.7748 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 196.342 78.74 0)
@@ -1355,18 +1355,18 @@
           (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "C30") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "C37") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "C3") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "C3") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -1375,13 +1375,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 81.026 80.264 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a2dedb6b-0583-4e92-86ef-696f046c2a9e)
-    (property "Reference" "TP1" (at 78.74 72.39 0)
+    (property "Reference" "TP?" (at 78.74 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CANH" (at 78.74 74.676 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_THTPad_D1.0mm_Drill0.5mm" (at 86.106 80.264 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 86.106 80.264 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 86.106 80.264 0)
@@ -1391,21 +1391,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP6") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP10") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP10") (unit 1)
+          (reference "TP11") (unit 1)
         )
       )
     )
@@ -1420,7 +1420,7 @@
     (property "Value" "5.1k" (at 121.666 90.424 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:R_0603_1608Metric" (at 125.984 90.424 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 125.984 90.424 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 124.206 90.424 0)
@@ -1434,18 +1434,18 @@
           (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "R35") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "R40") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "R5") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "R5") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -1460,7 +1460,7 @@
     (property "Value" "Crystal" (at 195.58 86.995 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 191.262 85.09 0)
+    (property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" (at 191.262 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 191.262 85.09 0)
@@ -1480,7 +1480,7 @@
   (symbol (lib_id "power:+3.3V") (at 110.998 50.546 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b5f6ebce-9e44-4188-b8bf-d5cb3b95ced7)
-    (property "Reference" "#PWR018" (at 110.998 54.356 0)
+    (property "Reference" "#PWR?" (at 110.998 54.356 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 111.3663 46.2216 0)
@@ -1496,10 +1496,10 @@
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -1508,13 +1508,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 176.9872 60.2488 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b86db654-d03d-4e5a-bfad-6758ad4fae74)
-    (property "Reference" "TP1" (at 179.1716 54.9148 0)
+    (property "Reference" "TP?" (at 179.1716 54.9148 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SI" (at 177.5968 52.9336 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 171.9072 60.2488 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 171.9072 60.2488 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 171.9072 60.2488 0)
@@ -1524,18 +1524,18 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP10") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
           (reference "TP5") (unit 1)
@@ -1547,13 +1547,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 180.34 60.3504 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bb60aa23-393b-4b52-a98e-3084603f33fa)
-    (property "Reference" "TP1" (at 183.0832 54.9148 0)
+    (property "Reference" "TP?" (at 183.0832 54.9148 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SO" (at 182.118 52.9844 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 175.26 60.3504 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 175.26 60.3504 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 175.26 60.3504 0)
@@ -1563,21 +1563,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP11") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP7") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP7") (unit 1)
+          (reference "TP6") (unit 1)
         )
       )
     )
@@ -1586,7 +1586,7 @@
   (symbol (lib_id "power:GND") (at 124.206 95.504 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bffe0eef-a850-49f8-b619-49a578639bea)
-    (property "Reference" "#PWR030" (at 124.206 101.854 0)
+    (property "Reference" "#PWR037" (at 124.206 101.854 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 124.206 100.838 0)
@@ -1602,7 +1602,7 @@
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
@@ -1611,13 +1611,13 @@
   (symbol (lib_id "Connector:TestPoint") (at 187.96 60.3504 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c364318d-3b78-4616-b96b-fcf2a0d4f3de)
-    (property "Reference" "TP1" (at 190.6524 55.0164 0)
+    (property "Reference" "TP?" (at 190.6524 55.0164 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SCK" (at 190.8556 52.8828 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:TestPoint_Pad_1.0x1.0mm" (at 182.88 60.3504 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 182.88 60.3504 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 182.88 60.3504 0)
@@ -1627,21 +1627,21 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "TP1") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "TP5") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "TP13") (unit 1)
+          (reference "TP?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "TP9") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "TP9") (unit 1)
+          (reference "TP7") (unit 1)
         )
       )
     )
@@ -1656,7 +1656,7 @@
     (property "Value" "5.1k" (at 121.666 81.534 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:R_0603_1608Metric" (at 125.984 81.534 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 125.984 81.534 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 124.206 81.534 0)
@@ -1670,18 +1670,18 @@
           (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "R36") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "R39") (unit 1)
+          (reference "R?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "R3") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "R3") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
     )
@@ -1690,7 +1690,7 @@
   (symbol (lib_id "Interface_CAN_LIN:MCP2515-xST") (at 158.496 78.994 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c72f6264-cc4e-43a9-8cc7-61e0e605c5ec)
-    (property "Reference" "U7" (at 156.3019 56.134 0)
+    (property "Reference" "U?" (at 156.3019 56.134 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MCP2515-xST" (at 173.736 58.928 0)
@@ -1725,15 +1725,15 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "U7") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "U12") (unit 1)
+          (reference "U?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "U5") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
           (reference "U5") (unit 1)
@@ -1764,18 +1764,18 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR084") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -1803,18 +1803,18 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR077") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -1823,7 +1823,7 @@
   (symbol (lib_id "power:GND") (at 97.536 95.504 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc267031-5c75-421e-9102-ff7b8a191d2f)
-    (property "Reference" "#PWR08" (at 97.536 101.854 0)
+    (property "Reference" "#PWR036" (at 97.536 101.854 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 97.536 100.838 0)
@@ -1839,7 +1839,7 @@
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -1848,7 +1848,7 @@
   (symbol (lib_id "Interface_CAN_LIN:MCP2551-I-SN") (at 97.536 82.804 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eefdd8af-1148-4ed6-88e9-9e0a49416bc0)
-    (property "Reference" "U8" (at 95.3419 70.104 0)
+    (property "Reference" "U?" (at 95.3419 70.104 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MCP2551-I-SN" (at 114.046 72.644 0)
@@ -1871,15 +1871,15 @@
     (instances
       (project "POWER_BOARD"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "U8") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "U10") (unit 1)
+          (reference "U?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "U6") (unit 1)
+          (reference "U?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
           (reference "U6") (unit 1)
@@ -1897,7 +1897,7 @@
     (property "Value" "0.1u" (at 112.268 58.166 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "bots:C_0603_1608Metric" (at 111.9632 59.436 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 111.9632 59.436 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 110.998 55.626 0)
@@ -1911,18 +1911,18 @@
           (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "C32") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "C32") (unit 1)
+          (reference "C?") (unit 1)
         )
       )
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-          (reference "C2") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-          (reference "C2") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
