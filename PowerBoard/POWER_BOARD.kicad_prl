@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 1,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -74,7 +74,7 @@
   "project": {
     "files": [
       {
-        "name": "POWER_BOARD.kicad_sch",
+        "name": "POWER_BOARD.kicad_pcb",
         "open": false,
         "window": {
           "display": 0,
@@ -86,7 +86,7 @@
         }
       },
       {
-        "name": "POWER_BOARD.kicad_pcb",
+        "name": "POWER_BOARD.kicad_sch",
         "open": false,
         "window": {
           "display": 0,

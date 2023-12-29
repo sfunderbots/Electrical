@@ -17,7 +17,7 @@
 	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil)))
 (rule board_edge_clearance
 	(condition "A.Type=='Zone'")
-    (constraint edge_clearance (min 210mil)))
+    (constraint edge_clearance (min 85mil)))
 (rule JST_clearance
 	(condition "A.enclosedByArea('JST') && A.NetClass == 'BAT'")
 	(constraint clearance (min 20mil)))
