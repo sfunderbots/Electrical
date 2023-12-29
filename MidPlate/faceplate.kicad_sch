@@ -198,11 +198,11 @@
         )
       )
     )
-    (symbol "power:VCOM" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+    (symbol "power:VCC" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.81 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "VCOM" (at 0 3.81 0)
+      (property "Value" "VCC" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -214,10 +214,18 @@
       (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Power symbol creates a global label with name \"VCOM\"" (at 0 0 0)
+      (property "ki_description" "Power symbol creates a global label with name \"VCC\"" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "VCOM_0_1"
+      (symbol "VCC_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
         (polyline
           (pts
             (xy 0 0)
@@ -228,18 +236,16 @@
         )
         (polyline
           (pts
-            (xy 0.762 1.27)
-            (xy -0.762 1.27)
             (xy 0 2.54)
             (xy 0.762 1.27)
           )
           (stroke (width 0) (type default))
-          (fill (type outline))
+          (fill (type none))
         )
       )
-      (symbol "VCOM_1_1"
+      (symbol "VCC_1_1"
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "VCOM" (effects (font (size 1.27 1.27))))
+          (name "VCC" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
@@ -303,34 +309,6 @@
     )
   )
 
-  (symbol (lib_id "power:VCOM") (at 86.36 83.82 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 217ed724-7a08-4deb-af53-446db519d5cf)
-    (property "Reference" "#PWR028" (at 86.36 80.01 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VCOM" (at 86.36 88.9 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 86.36 83.82 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 86.36 83.82 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6f9af58f-591d-4670-ab5d-6e0b052bf3d4))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR028") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/e962e4a0-6822-4b24-92cd-4a40d2d1132c"
-          (reference "#PWR024") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:GND") (at 97.79 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 253ff6ff-8b45-4147-adaf-77b39764c985)
@@ -357,6 +335,34 @@
         )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/e962e4a0-6822-4b24-92cd-4a40d2d1132c"
           (reference "#PWR025") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:VCC") (at 86.36 83.82 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid af2b9841-8c39-4f0c-86a5-d1ba1d5247fa)
+    (property "Reference" "#PWR04" (at 86.36 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VCC" (at 86.36 88.9 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 86.36 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 86.36 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4123c13a-8e6e-4aed-ac64-8a5efd84130d))
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
+          (reference "#PWR04") (unit 1)
+        )
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/e962e4a0-6822-4b24-92cd-4a40d2d1132c"
+          (reference "#PWR011") (unit 1)
         )
       )
     )
