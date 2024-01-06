@@ -6802,7 +6802,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 36.83 226.06 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4f316436-20a8-41f8-83e6-4e912d9b615d)
-    (property "Reference" "H1" (at 35.56 223.0905 90)
+    (property "Reference" "H2" (at 35.56 223.1931 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MountingHole_Pad" (at 35.56 223.0906 90)
@@ -6818,7 +6818,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H1") (unit 1)
+          (reference "H2") (unit 1)
         )
       )
     )
@@ -8323,7 +8323,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 36.83 238.76 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid daf0dedc-476f-43e3-aaf4-cfc323867fb3)
-    (property "Reference" "H2" (at 35.56 235.7905 90)
+    (property "Reference" "H1" (at 35.56 235.8931 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MountingHole_Pad" (at 35.56 235.7906 90)
@@ -8339,7 +8339,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H2") (unit 1)
+          (reference "H1") (unit 1)
         )
       )
     )
