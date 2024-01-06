@@ -50,59 +50,6 @@
         )
       )
     )
-    (symbol "Connector_Generic:Conn_01x03" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Conn_01x03" (at 0 -5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "connector" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Conn_01x03_1_1"
-        (rectangle (start -1.27 -2.413) (end 0 -2.667)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 0.127) (end 0 -0.127)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 2.667) (end 0 2.413)
-          (stroke (width 0.1524) (type default))
-          (fill (type none))
-        )
-        (rectangle (start -1.27 3.81) (end 1.27 -3.81)
-          (stroke (width 0.254) (type default))
-          (fill (type background))
-        )
-        (pin passive line (at -5.08 2.54 0) (length 3.81)
-          (name "Pin_1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at -5.08 0 0) (length 3.81)
-          (name "Pin_2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at -5.08 -2.54 0) (length 3.81)
-          (name "Pin_3" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
     (symbol "Connector_Generic:Conn_01x08" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 10.16 0)
         (effects (font (size 1.27 1.27)))
@@ -554,68 +501,6 @@
         )
       )
       (symbol "D_Schottky_1_1"
-        (pin passive line (at -3.81 0 0) (length 2.54)
-          (name "K" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 3.81 0 180) (length 2.54)
-          (name "A" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Device:D_Zener" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "D_Zener" (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "diode" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Zener diode" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "D_Zener_0_1"
-        (polyline
-          (pts
-            (xy 1.27 0)
-            (xy -1.27 0)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.27 -1.27)
-            (xy -1.27 1.27)
-            (xy -0.762 1.27)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 -1.27)
-            (xy 1.27 1.27)
-            (xy -1.27 0)
-            (xy 1.27 -1.27)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "D_Zener_1_1"
         (pin passive line (at -3.81 0 0) (length 2.54)
           (name "K" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -2526,9 +2411,6 @@
   (junction (at 207.01 256.54) (diameter 0) (color 0 0 0 0)
     (uuid 40ad1dfa-f5b4-419c-979c-40b1f9a6f2a9)
   )
-  (junction (at 44.45 238.76) (diameter 0) (color 0 0 0 0)
-    (uuid 44cff981-011f-45f9-97c7-d4743b34b16a)
-  )
   (junction (at 151.13 271.78) (diameter 0) (color 0 0 0 0)
     (uuid 464db9a8-2c92-4b18-8ee8-55ac4e220c4a)
   )
@@ -2652,9 +2534,6 @@
   (junction (at 368.3 116.84) (diameter 0) (color 0 0 0 0)
     (uuid bc8f88bd-577d-4b44-9e63-8278439a15e8)
   )
-  (junction (at 44.45 226.06) (diameter 0) (color 0 0 0 0)
-    (uuid c56f4944-7d02-44b7-957d-c8cfef80b8d2)
-  )
   (junction (at 52.07 166.37) (diameter 0) (color 0 0 0 0)
     (uuid c6af1a64-719e-4992-bd0a-77fab63299db)
   )
@@ -2699,9 +2578,11 @@
   (no_connect (at 171.45 220.98) (uuid 1e9b163a-e585-4cd8-b76b-054a43a65b7e))
   (no_connect (at 171.45 218.44) (uuid 1e9b163a-e585-4cd8-b76b-054a43a65b7f))
   (no_connect (at 360.68 240.03) (uuid 2de2c9d2-0261-4608-abb7-163731402ce4))
+  (no_connect (at 80.01 208.28) (uuid 3d555bf6-ff52-4b70-aef3-1d25a7672f98))
   (no_connect (at 360.68 233.68) (uuid 4ee67d3e-cfcc-4cae-abf0-1c05471ac550))
   (no_connect (at 289.56 45.72) (uuid 65577ad0-e7af-44f3-a1b5-da653767af9e))
   (no_connect (at 53.34 186.69) (uuid 84512f21-657f-4db1-b33b-3a12e9afd6c6))
+  (no_connect (at 80.01 186.69) (uuid aadd6934-101c-4b40-835c-9df0bfe70802))
   (no_connect (at 53.34 208.28) (uuid b5508249-2346-4d63-89b4-ac0edf7acbd4))
   (no_connect (at 353.06 240.03) (uuid bf3fa306-b6b0-4708-9eec-727770358d46))
   (no_connect (at 353.06 233.68) (uuid c953bcd2-95db-4766-895e-07c79dee9011))
@@ -2857,10 +2738,6 @@
     (stroke (width 0) (type default))
     (uuid 1716a83a-a753-4410-8962-271453c7895b)
   )
-  (wire (pts (xy 44.45 226.06) (xy 54.61 226.06))
-    (stroke (width 0) (type default))
-    (uuid 19304233-e562-43b7-a86a-8f4ba95171b3)
-  )
   (wire (pts (xy 307.34 242.57) (xy 307.34 245.11))
     (stroke (width 0) (type default))
     (uuid 19480c24-6e94-4b99-a218-b5625bc25fc4)
@@ -2880,6 +2757,10 @@
   (wire (pts (xy 146.05 123.19) (xy 153.67 123.19))
     (stroke (width 0) (type default))
     (uuid 1b10afad-9cdc-4b43-a1ae-93a9785de32d)
+  )
+  (wire (pts (xy 93.98 179.07) (xy 80.01 179.07))
+    (stroke (width 0) (type default))
+    (uuid 1b5d8164-2363-4d2e-8c33-3e7dc360f7c6)
   )
   (wire (pts (xy 213.36 53.34) (xy 213.36 55.88))
     (stroke (width 0) (type default))
@@ -3125,6 +3006,10 @@
     (stroke (width 0) (type default))
     (uuid 4cd51b61-4c8f-4227-bb02-ffeb7cc582a9)
   )
+  (wire (pts (xy 87.63 184.15) (xy 80.01 184.15))
+    (stroke (width 0) (type default))
+    (uuid 4d2b23f0-dba0-4f78-8a8b-50b5972c1a65)
+  )
   (wire (pts (xy 208.28 127) (xy 208.28 137.16))
     (stroke (width 0) (type default))
     (uuid 4d4e535f-11d1-44b9-8459-2a4bded25f80)
@@ -3184,10 +3069,6 @@
   (wire (pts (xy 81.28 256.54) (xy 81.28 259.08))
     (stroke (width 0) (type default))
     (uuid 55bf94d2-20b9-4db9-b14f-6b9c5338f341)
-  )
-  (wire (pts (xy 97.79 224.79) (xy 100.33 224.79))
-    (stroke (width 0) (type default))
-    (uuid 56ae087f-6071-405c-a985-c2e247dcf1c4)
   )
   (wire (pts (xy 119.38 256.54) (xy 119.38 259.08))
     (stroke (width 0) (type default))
@@ -3329,6 +3210,10 @@
     (stroke (width 0) (type default))
     (uuid 71e957af-3fa2-44d8-a745-ce590d8ff6d0)
   )
+  (wire (pts (xy 87.63 203.2) (xy 80.01 203.2))
+    (stroke (width 0) (type default))
+    (uuid 72a7558b-dba8-47cc-94f5-4adc2c18a2c6)
+  )
   (wire (pts (xy 158.75 205.74) (xy 171.45 205.74))
     (stroke (width 0) (type default))
     (uuid 730d5e27-d24e-4dea-813c-0c7b4c072133)
@@ -3340,10 +3225,6 @@
   (wire (pts (xy 289.56 147.32) (xy 294.64 147.32))
     (stroke (width 0) (type default))
     (uuid 75993bbf-e524-4ae5-be82-e3086f3e3564)
-  )
-  (wire (pts (xy 54.61 228.6) (xy 54.61 226.06))
-    (stroke (width 0) (type default))
-    (uuid 761dd783-1024-4f3d-9804-6147964723e7)
   )
   (wire (pts (xy 109.22 55.88) (xy 116.84 55.88))
     (stroke (width 0) (type default))
@@ -3380,6 +3261,10 @@
   (wire (pts (xy 355.6 66.04) (xy 359.41 66.04))
     (stroke (width 0) (type default))
     (uuid 7bf78bd7-6766-4350-8b95-a21cbcadb071)
+  )
+  (wire (pts (xy 87.63 205.74) (xy 80.01 205.74))
+    (stroke (width 0) (type default))
+    (uuid 7c0a9fcd-8643-4b94-bdef-c5cd2d629914)
   )
   (wire (pts (xy 355.6 198.12) (xy 355.6 196.85))
     (stroke (width 0) (type default))
@@ -3540,10 +3425,6 @@
   (wire (pts (xy 289.56 127) (xy 294.64 127))
     (stroke (width 0) (type default))
     (uuid 92da78cd-02f2-4986-bb03-e1a05660560a)
-  )
-  (wire (pts (xy 44.45 238.76) (xy 54.61 238.76))
-    (stroke (width 0) (type default))
-    (uuid 93740606-e729-4d8b-9f78-8efb143179ce)
   )
   (wire (pts (xy 39.37 179.07) (xy 53.34 179.07))
     (stroke (width 0) (type default))
@@ -3733,6 +3614,10 @@
     (stroke (width 0) (type default))
     (uuid b421508e-4490-4da0-855b-b38605ef76a9)
   )
+  (wire (pts (xy 93.98 200.66) (xy 80.01 200.66))
+    (stroke (width 0) (type default))
+    (uuid b42c198d-1d97-4414-b634-48a597bfddab)
+  )
   (wire (pts (xy 109.22 50.8) (xy 116.84 50.8))
     (stroke (width 0) (type default))
     (uuid b47eca84-b08d-4268-b325-c77a9649bc04)
@@ -3885,6 +3770,10 @@
     (stroke (width 0) (type default))
     (uuid d4cbd164-62a4-439e-8ca9-d85f173e8702)
   )
+  (wire (pts (xy 87.63 181.61) (xy 80.01 181.61))
+    (stroke (width 0) (type default))
+    (uuid d59a60d7-e184-40bd-9a0d-b435f29145ea)
+  )
   (wire (pts (xy 368.3 31.75) (xy 368.3 39.37))
     (stroke (width 0) (type default))
     (uuid d5b750fe-5026-4140-91aa-3f647587bc54)
@@ -4009,10 +3898,6 @@
     (stroke (width 0) (type default))
     (uuid e98bc6f0-5718-48d5-a3c4-6c0f857d429b)
   )
-  (wire (pts (xy 97.79 227.33) (xy 100.33 227.33))
-    (stroke (width 0) (type default))
-    (uuid e9aaf092-21a3-4c4f-8d48-f7f85bb78dc4)
-  )
   (wire (pts (xy 351.79 144.78) (xy 355.6 144.78))
     (stroke (width 0) (type default))
     (uuid ebe933c6-b64a-4652-8c7c-78ea0d6c2cdb)
@@ -4060,10 +3945,6 @@
   (wire (pts (xy 44.45 106.68) (xy 53.34 106.68))
     (stroke (width 0) (type default))
     (uuid f4b454f9-c997-4e64-8774-ee042d2b501e)
-  )
-  (wire (pts (xy 54.61 236.22) (xy 54.61 238.76))
-    (stroke (width 0) (type default))
-    (uuid f59a8c99-4d62-4bc4-9b11-ec33ed8a10e9)
   )
   (wire (pts (xy 207.01 266.7) (xy 207.01 271.78))
     (stroke (width 0) (type default))
@@ -4117,10 +3998,6 @@
     (stroke (width 0) (type default))
     (uuid fb14296b-7d86-440f-aa22-34d044a77261)
   )
-  (wire (pts (xy 85.09 222.25) (xy 100.33 222.25))
-    (stroke (width 0) (type default))
-    (uuid fbdcaa8f-ee24-41b0-807b-a5d95d47a0c2)
-  )
   (wire (pts (xy 289.56 35.56) (xy 292.1 35.56))
     (stroke (width 0) (type default))
     (uuid fccb1288-d724-46c7-a704-c7e09046e4a7)
@@ -4154,6 +4031,10 @@
   (label "WH" (at 347.98 44.45 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 003c16cb-b402-4222-b26b-17ed7ad6dde9)
+  )
+  (label "CAN_L" (at 87.63 184.15 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0053330c-74d6-4032-90e4-7ce91e76b52a)
   )
   (label "ENC_MOSI" (at 52.07 137.16 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -4295,10 +4176,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 7007087c-29da-4929-b105-54302c7a4b9e)
   )
-  (label "EXT_UART_RX" (at 97.79 224.79 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 70427bcc-201c-4180-bd24-29813412cf4e)
-  )
   (label "VOUT" (at 44.45 265.43 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 71806754-cc73-49a4-9ae3-1901783245dd)
@@ -4314,6 +4191,10 @@
   (label "EXT_UART_RX" (at 52.07 134.62 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 7ca15ff7-2512-4dec-afb2-85c56568bba0)
+  )
+  (label "CAN_H" (at 87.63 203.2 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7ec5f0e4-f1f3-4caf-92ae-eb8499e90333)
   )
   (label "ENC_MISO" (at 292.1 78.74 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -4483,13 +4364,13 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e7803e40-a73e-48cf-ab2a-5a5cff40499b)
   )
+  (label "CAN_H" (at 87.63 181.61 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ebb607f6-8531-4b3f-8796-138b1b97f6af)
+  )
   (label "VH" (at 294.64 124.46 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ed4b6b65-bc5b-4387-898e-f4ec3d320c60)
-  )
-  (label "EXT_UART_TX" (at 97.79 227.33 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid f5e103a7-cb14-4eb0-9b09-0419e71863ef)
   )
   (label "CAN_H" (at 45.72 203.2 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -4503,6 +4384,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fba02017-cc1b-43f0-b84d-23e7895a4262)
   )
+  (label "CAN_L" (at 87.63 205.74 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid fc014b79-462d-42de-b33c-c2e885fee7ea)
+  )
   (label "CAN_L" (at 45.72 184.15 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid fc68c005-e15f-43a1-a118-a748f87cf5a6)
@@ -4511,7 +4396,7 @@
   (symbol (lib_id "PAC5527_MD:PAC5527") (at 198.12 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e48101)
-    (property "Reference" "U4" (at 198.12 32.639 0)
+    (property "Reference" "U2" (at 198.12 32.639 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "PAC5527" (at 198.12 34.9504 0)
@@ -4575,7 +4460,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U4") (unit 1)
+          (reference "U2") (unit 1)
         )
       )
     )
@@ -4584,7 +4469,7 @@
   (symbol (lib_id "PAC5527_MD:PAC5527") (at 279.4 198.12 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e4d3f1)
-    (property "Reference" "U4" (at 282.7782 173.609 0)
+    (property "Reference" "U2" (at 282.7782 173.609 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "PAC5527" (at 282.7782 175.9204 0)
@@ -4648,7 +4533,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U4") (unit 2)
+          (reference "U2") (unit 2)
         )
       )
     )
@@ -4657,7 +4542,7 @@
   (symbol (lib_id "PAC5527_MD:PAC5527") (at 279.4 137.16 0) (unit 3)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e4f779)
-    (property "Reference" "U4" (at 282.7782 110.109 0)
+    (property "Reference" "U2" (at 282.7782 110.109 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "PAC5527" (at 282.7782 112.4204 0)
@@ -4721,7 +4606,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U4") (unit 3)
+          (reference "U2") (unit 3)
         )
       )
     )
@@ -4730,7 +4615,7 @@
   (symbol (lib_id "PAC5527_MD:PAC5527") (at 279.4 57.15 0) (unit 4)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e506b1)
-    (property "Reference" "U4" (at 284.0482 27.559 0)
+    (property "Reference" "U2" (at 284.0482 27.559 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "PAC5527" (at 284.0482 29.8704 0)
@@ -4794,7 +4679,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U4") (unit 4)
+          (reference "U2") (unit 4)
         )
       )
     )
@@ -4829,7 +4714,7 @@
   (symbol (lib_id "Device:C") (at 243.84 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e91fc1)
-    (property "Reference" "C26" (at 246.761 45.8216 0)
+    (property "Reference" "C1" (at 246.761 45.8216 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 246.761 48.133 0)
@@ -4846,7 +4731,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C26") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -4855,7 +4740,7 @@
   (symbol (lib_id "Device:C") (at 171.45 53.34 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e967a2)
-    (property "Reference" "C10" (at 171.45 46.9392 90)
+    (property "Reference" "C4" (at 171.45 46.9392 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "22uF" (at 171.45 49.2506 90)
@@ -4872,7 +4757,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C10") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -4881,7 +4766,7 @@
   (symbol (lib_id "Device:C") (at 173.99 73.66 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062e97eb5)
-    (property "Reference" "C11" (at 173.99 67.2592 90)
+    (property "Reference" "C10" (at 173.99 67.2592 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1uF" (at 173.99 69.5706 90)
@@ -4898,7 +4783,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C11") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
     )
@@ -4907,7 +4792,7 @@
   (symbol (lib_id "Device:C") (at 228.6 48.26 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062ea6544)
-    (property "Reference" "C22" (at 228.6 41.8592 90)
+    (property "Reference" "C3" (at 228.6 41.8592 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 228.6 44.1706 90)
@@ -4924,7 +4809,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C22") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -4933,7 +4818,7 @@
   (symbol (lib_id "Device:C") (at 220.98 55.88 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062ea9f78)
-    (property "Reference" "C20" (at 220.98 62.2808 90)
+    (property "Reference" "C5" (at 220.98 62.2808 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "2.2uF" (at 220.98 59.9694 90)
@@ -4950,7 +4835,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C20") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -4959,7 +4844,7 @@
   (symbol (lib_id "Device:C") (at 228.6 78.74 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062eaafa8)
-    (property "Reference" "C24" (at 228.6 72.3392 90)
+    (property "Reference" "C11" (at 228.6 72.3392 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "2.2uF" (at 228.6 74.6506 90)
@@ -4976,7 +4861,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C24") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
     )
@@ -4985,7 +4870,7 @@
   (symbol (lib_id "Device:C") (at 220.98 71.12 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062eafc7f)
-    (property "Reference" "C21" (at 220.98 64.7192 90)
+    (property "Reference" "C8" (at 220.98 64.7192 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "2.2uF" (at 220.98 67.0306 90)
@@ -5002,7 +4887,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C21") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -5011,7 +4896,7 @@
   (symbol (lib_id "Device:C") (at 228.6 63.5 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062eb0701)
-    (property "Reference" "C23" (at 228.6 57.0992 90)
+    (property "Reference" "C7" (at 228.6 57.0992 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 228.6 59.4106 90)
@@ -5028,7 +4913,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C23") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -5037,7 +4922,7 @@
   (symbol (lib_id "Device:C") (at 179.07 60.96 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062ece2f7)
-    (property "Reference" "C13" (at 176.53 57.15 90)
+    (property "Reference" "C6" (at 176.53 57.15 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100nF" (at 181.61 57.15 90)
@@ -5054,7 +4939,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C13") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -5063,7 +4948,7 @@
   (symbol (lib_id "Sensor_Magnetic:MA730") (at 184.15 213.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062ee7d8d)
-    (property "Reference" "U3" (at 179.07 196.85 0)
+    (property "Reference" "U5" (at 179.07 196.85 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MA730" (at 179.07 199.1614 0)
@@ -5095,7 +4980,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U3") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -5104,7 +4989,7 @@
   (symbol (lib_id "power:VDC") (at 256.54 33.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f22db8)
-    (property "Reference" "#PWR040" (at 256.54 35.56 0)
+    (property "Reference" "#PWR02" (at 256.54 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 256.921 28.6258 0)
@@ -5120,7 +5005,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -5129,7 +5014,7 @@
   (symbol (lib_id "power:VDC") (at 368.3 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f248ad)
-    (property "Reference" "#PWR053" (at 368.3 166.37 0)
+    (property "Reference" "#PWR031" (at 368.3 166.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 368.681 159.4358 0)
@@ -5145,7 +5030,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -5154,7 +5039,7 @@
   (symbol (lib_id "Device:R") (at 356.87 181.61 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f2dead)
-    (property "Reference" "R12" (at 353.06 179.07 90)
+    (property "Reference" "R11" (at 353.06 179.07 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 358.14 179.07 90)
@@ -5171,7 +5056,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R12") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -5180,7 +5065,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 341.63 181.61 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f3167c)
-    (property "Reference" "D8" (at 341.63 176.0982 0)
+    (property "Reference" "D5" (at 341.63 176.0982 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "D_Schottky" (at 341.63 178.4096 0)
@@ -5197,7 +5082,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D8") (unit 1)
+          (reference "D5") (unit 1)
         )
       )
     )
@@ -5206,7 +5091,7 @@
   (symbol (lib_id "power:GND") (at 368.3 214.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f35dcf)
-    (property "Reference" "#PWR054" (at 368.3 220.98 0)
+    (property "Reference" "#PWR045" (at 368.3 220.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 368.427 219.0242 0)
@@ -5222,7 +5107,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -5231,7 +5116,7 @@
   (symbol (lib_id "Device:C") (at 334.01 203.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f38d25)
-    (property "Reference" "C32" (at 336.931 202.0316 0)
+    (property "Reference" "C18" (at 336.931 202.0316 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "3.3nF" (at 336.931 204.343 0)
@@ -5248,7 +5133,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C32") (unit 1)
+          (reference "C18") (unit 1)
         )
       )
     )
@@ -5257,7 +5142,7 @@
   (symbol (lib_id "power:GND") (at 335.28 181.61 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f489df)
-    (property "Reference" "#PWR048" (at 328.93 181.61 0)
+    (property "Reference" "#PWR037" (at 328.93 181.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 330.8858 181.737 0)
@@ -5273,7 +5158,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
@@ -5282,7 +5167,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 341.63 116.84 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc14)
-    (property "Reference" "D7" (at 341.63 111.3282 0)
+    (property "Reference" "D2" (at 341.63 111.3282 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "D_Schottky" (at 341.63 113.6396 0)
@@ -5299,7 +5184,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D7") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -5308,7 +5193,7 @@
   (symbol (lib_id "power:GND") (at 335.28 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc29)
-    (property "Reference" "#PWR047" (at 328.93 116.84 0)
+    (property "Reference" "#PWR020" (at 328.93 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 330.8858 116.967 0)
@@ -5324,7 +5209,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -5333,7 +5218,7 @@
   (symbol (lib_id "Device:C") (at 334.01 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc45)
-    (property "Reference" "C31" (at 336.931 137.2616 0)
+    (property "Reference" "C14" (at 336.931 137.2616 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "3.3nF" (at 336.931 139.573 0)
@@ -5350,7 +5235,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C31") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -5359,7 +5244,7 @@
   (symbol (lib_id "power:GND") (at 368.3 149.86 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc57)
-    (property "Reference" "#PWR052" (at 368.3 156.21 0)
+    (property "Reference" "#PWR028" (at 368.3 156.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 368.427 154.2542 0)
@@ -5375,7 +5260,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -5384,7 +5269,7 @@
   (symbol (lib_id "Device:R") (at 356.87 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc5d)
-    (property "Reference" "R11" (at 354.965 114.3 90)
+    (property "Reference" "R3" (at 354.965 114.3 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 358.775 114.3 90)
@@ -5401,7 +5286,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R11") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -5410,7 +5295,7 @@
   (symbol (lib_id "power:VDC") (at 368.3 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f8cc63)
-    (property "Reference" "#PWR051" (at 368.3 101.6 0)
+    (property "Reference" "#PWR017" (at 368.3 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 368.681 94.6658 0)
@@ -5426,7 +5311,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
     )
@@ -5435,7 +5320,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 341.63 49.53 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f948f2)
-    (property "Reference" "D6" (at 341.63 44.0182 0)
+    (property "Reference" "D1" (at 341.63 44.0182 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "D_Schottky" (at 341.63 46.3296 0)
@@ -5452,7 +5337,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D6") (unit 1)
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -5461,7 +5346,7 @@
   (symbol (lib_id "power:GND") (at 335.28 49.53 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f94907)
-    (property "Reference" "#PWR046" (at 328.93 49.53 0)
+    (property "Reference" "#PWR05" (at 328.93 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 330.8858 49.657 0)
@@ -5477,7 +5362,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -5486,7 +5371,7 @@
   (symbol (lib_id "Device:C") (at 334.01 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f94923)
-    (property "Reference" "C30" (at 336.931 69.9516 0)
+    (property "Reference" "C9" (at 336.931 69.9516 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "3.3nF" (at 336.931 72.263 0)
@@ -5503,7 +5388,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C30") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -5512,7 +5397,7 @@
   (symbol (lib_id "power:GND") (at 368.3 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f94935)
-    (property "Reference" "#PWR050" (at 368.3 88.9 0)
+    (property "Reference" "#PWR012" (at 368.3 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 368.427 86.9442 0)
@@ -5528,7 +5413,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -5537,7 +5422,7 @@
   (symbol (lib_id "Device:R") (at 356.87 49.53 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f9493b)
-    (property "Reference" "R10" (at 354.33 46.99 90)
+    (property "Reference" "R1" (at 354.33 46.99 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1" (at 359.41 46.99 90)
@@ -5554,7 +5439,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R10") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
     )
@@ -5563,7 +5448,7 @@
   (symbol (lib_id "power:VDC") (at 368.3 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062f94941)
-    (property "Reference" "#PWR049" (at 368.3 34.29 0)
+    (property "Reference" "#PWR01" (at 368.3 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 368.681 27.3558 0)
@@ -5579,7 +5464,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -5588,7 +5473,7 @@
   (symbol (lib_id "power:GND") (at 256.54 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062fa7f6d)
-    (property "Reference" "#PWR041" (at 256.54 100.33 0)
+    (property "Reference" "#PWR016" (at 256.54 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 256.667 98.3742 0)
@@ -5604,7 +5489,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR041") (unit 1)
+          (reference "#PWR016") (unit 1)
         )
       )
     )
@@ -5613,7 +5498,7 @@
   (symbol (lib_id "power:GND") (at 200.66 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062fa9932)
-    (property "Reference" "#PWR032" (at 200.66 100.33 0)
+    (property "Reference" "#PWR014" (at 200.66 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 200.787 98.3742 0)
@@ -5629,7 +5514,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR014") (unit 1)
         )
       )
     )
@@ -5638,7 +5523,7 @@
   (symbol (lib_id "power:GND") (at 195.58 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062faad7d)
-    (property "Reference" "#PWR031" (at 195.58 100.33 0)
+    (property "Reference" "#PWR013" (at 195.58 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 195.707 98.3742 0)
@@ -5654,7 +5539,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -5663,7 +5548,7 @@
   (symbol (lib_id "power:GND") (at 233.68 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062facc23)
-    (property "Reference" "#PWR038" (at 233.68 100.33 0)
+    (property "Reference" "#PWR015" (at 233.68 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 233.807 98.3742 0)
@@ -5679,7 +5564,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -5688,7 +5573,7 @@
   (symbol (lib_id "power:VDC") (at 167.64 73.66 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-000062fffddb)
-    (property "Reference" "#PWR026" (at 170.18 73.66 0)
+    (property "Reference" "#PWR011" (at 170.18 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 163.2458 73.279 0)
@@ -5704,7 +5589,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR011") (unit 1)
         )
       )
     )
@@ -5713,7 +5598,7 @@
   (symbol (lib_id "power:GND") (at 165.1 53.34 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 00000000-0000-0000-0000-0000630133ae)
-    (property "Reference" "#PWR025" (at 158.75 53.34 0)
+    (property "Reference" "#PWR07" (at 158.75 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 160.7058 53.467 0)
@@ -5729,7 +5614,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -5738,7 +5623,7 @@
   (symbol (lib_id "power:GND") (at 71.12 269.24 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 02b6517b-ef32-4fe0-8884-137730ccddd5)
-    (property "Reference" "#PWR016" (at 71.12 275.59 0)
+    (property "Reference" "#PWR056" (at 71.12 275.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 71.247 273.6342 0)
@@ -5754,7 +5639,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
     )
@@ -5763,11 +5648,11 @@
   (symbol (lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin") (at 58.42 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 038a6047-d110-4949-abc5-62ab259c4889)
-    (property "Reference" "J5" (at 60.452 182.5919 0)
+    (property "Reference" "J5" (at 60.452 183.5524 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x04_MountingPin" (at 60.452 184.5129 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Footprint" "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal" (at 58.42 181.61 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -5821,7 +5706,7 @@
   (symbol (lib_id "Device:C") (at 107.95 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 04cff28b-cf34-43a1-aba6-95a506f2d96c)
-    (property "Reference" "C1" (at 114.3508 262.89 90)
+    (property "Reference" "C21" (at 114.3508 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 112.0394 262.89 90)
@@ -5838,7 +5723,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C1") (unit 1)
+          (reference "C21") (unit 1)
         )
       )
     )
@@ -5898,7 +5783,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 330.2 240.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 087bf236-ea37-4912-8fd1-75fc97a896d8)
-    (property "Reference" "H9" (at 332.74 239.0768 0)
+    (property "Reference" "H6" (at 332.74 239.0768 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole_Pad" (at 333.1694 238.76 90)
@@ -5914,7 +5799,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H9") (unit 1)
+          (reference "H6") (unit 1)
         )
       )
     )
@@ -5949,7 +5834,7 @@
   (symbol (lib_id "power:VDC") (at 71.12 243.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0a6a5322-87fe-4bd3-b633-a0a89bb8a3c4)
-    (property "Reference" "#PWR015" (at 71.12 246.38 0)
+    (property "Reference" "#PWR051" (at 71.12 246.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 71.12 240.03 0)
@@ -5965,7 +5850,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -5974,7 +5859,7 @@
   (symbol (lib_id "power:GND") (at 58.42 213.36 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0ce027a1-78ee-4c0c-b141-5daab4c3d884)
-    (property "Reference" "#PWR014" (at 58.42 219.71 0)
+    (property "Reference" "#PWR043" (at 58.42 219.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 58.293 217.7542 0)
@@ -5990,7 +5875,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -5999,7 +5884,7 @@
   (symbol (lib_id "Device:R") (at 265.43 238.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 11c81fc1-a1cd-4116-a1c1-5b075098fd48)
-    (property "Reference" "R9" (at 262.89 238.76 90)
+    (property "Reference" "R13" (at 262.89 238.76 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 262.4836 238.76 90)
@@ -6016,7 +5901,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R9") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -6025,7 +5910,7 @@
   (symbol (lib_id "power:VDD") (at 45.72 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 13b0b993-6173-4578-8962-011665077370)
-    (property "Reference" "#PWR08" (at 45.72 106.68 0)
+    (property "Reference" "#PWR018" (at 45.72 106.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 45.72 97.79 0)
@@ -6041,7 +5926,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -6076,7 +5961,7 @@
   (symbol (lib_id "Device:R") (at 81.28 252.73 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 18e01069-feee-44d4-a0d8-c9b8ec8df0a5)
-    (property "Reference" "R2" (at 86.5378 252.73 90)
+    (property "Reference" "R15" (at 86.5378 252.73 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 84.2264 252.73 90)
@@ -6093,7 +5978,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R2") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -6168,10 +6053,35 @@
     )
   )
 
+  (symbol (lib_id "power:GND") (at 93.98 200.66 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 1fe1a959-dd06-430d-a7db-9558584d6ee2)
+    (property "Reference" "#PWR042" (at 100.33 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 98.3742 200.533 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 93.98 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 93.98 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4ec53f2c-ad53-4eb7-b048-b0efd6fc101c))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "#PWR042") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 129.54 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 232be72a-b9c6-4784-abc9-ce41ecdc3345)
-    (property "Reference" "C4" (at 135.9408 262.89 90)
+    (property "Reference" "C23" (at 135.9408 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 133.6294 262.89 90)
@@ -6188,7 +6098,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C4") (unit 1)
+          (reference "C23") (unit 1)
         )
       )
     )
@@ -6197,7 +6107,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 322.58 240.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 239af6e2-21bc-4f90-8fa3-d14369edbd9c)
-    (property "Reference" "H8" (at 325.12 239.0768 0)
+    (property "Reference" "H5" (at 325.12 239.0768 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole_Pad" (at 325.5494 238.76 90)
@@ -6213,7 +6123,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H8") (unit 1)
+          (reference "H5") (unit 1)
         )
       )
     )
@@ -6222,7 +6132,7 @@
   (symbol (lib_id "Device:C") (at 157.48 123.19 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 23ae3daa-50e8-4c0f-8b1d-46fc21f30291)
-    (property "Reference" "C7" (at 157.48 116.7892 90)
+    (property "Reference" "C12" (at 157.48 116.7892 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 157.48 119.1006 90)
@@ -6239,7 +6149,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C7") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -6248,7 +6158,7 @@
   (symbol (lib_id "Device:C") (at 162.56 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 23e64710-a36a-4ac4-9b5a-e63b9d0ec80e)
-    (property "Reference" "C9" (at 168.9608 262.89 90)
+    (property "Reference" "C26" (at 168.9608 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 166.6494 262.89 90)
@@ -6265,7 +6175,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C9") (unit 1)
+          (reference "C26") (unit 1)
         )
       )
     )
@@ -6274,11 +6184,11 @@
   (symbol (lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin") (at 58.42 203.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 24073c82-1d5f-409e-819a-5e4faf4af3a2)
-    (property "Reference" "J6" (at 58.42 198.12 0)
+    (property "Reference" "J7" (at 58.42 198.12 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x04_MountingPin" (at 59.69 210.82 0)
-      (effects (font (size 1.27 1.27)) (justify left))
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Footprint" "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal" (at 58.42 203.2 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -6294,33 +6204,6 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "J6") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Connector_Generic:Conn_01x03") (at 105.41 224.79 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp yes) (fields_autoplaced)
-    (uuid 2490e9aa-2ebf-47d9-8606-be846c6e06e9)
-    (property "Reference" "J7" (at 107.442 224.1463 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Conn_01x03" (at 107.442 226.0673 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 105.41 224.79 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 105.41 224.79 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6bb24333-05a3-4cf8-9add-65034a9219ea))
-    (pin "2" (uuid 5bdfd512-db74-492a-9d77-28b7751f83fe))
-    (pin "3" (uuid 3e89c5e6-731c-426f-a111-b39c65a52439))
-    (instances
-      (project "PAC5527Driver"
-        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
           (reference "J7") (unit 1)
         )
       )
@@ -6330,7 +6213,7 @@
   (symbol (lib_id "Interface_CAN_LIN:SN65HVD233") (at 146.05 148.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 253e3fd7-9ccd-4c86-998f-8ea09d7d166f)
-    (property "Reference" "U2" (at 148.0059 140.5001 0)
+    (property "Reference" "U4" (at 148.0059 140.5001 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SN65HVD233" (at 148.0059 142.4211 0)
@@ -6353,7 +6236,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U2") (unit 1)
+          (reference "U4") (unit 1)
         )
       )
     )
@@ -6362,7 +6245,7 @@
   (symbol (lib_id "power:GND") (at 58.42 191.77 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 282367fc-b59e-4cbd-80b2-5f0a82283ac8)
-    (property "Reference" "#PWR013" (at 58.42 198.12 0)
+    (property "Reference" "#PWR039" (at 58.42 198.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 58.293 196.1642 0)
@@ -6378,7 +6261,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -6387,7 +6270,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 36.83 265.43 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2a3047e0-9dce-487a-9c17-60a969a785c4)
-    (property "Reference" "H4" (at 35.56 262.4605 90)
+    (property "Reference" "H8" (at 35.56 262.4605 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MountingHole_Pad" (at 35.56 262.4606 90)
@@ -6403,7 +6286,32 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H4") (unit 1)
+          (reference "H8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 93.98 179.07 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 2d3203a9-ca6b-4204-a097-b71da547831c)
+    (property "Reference" "#PWR036" (at 100.33 179.07 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 98.3742 178.943 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 93.98 179.07 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 93.98 179.07 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7e0c041d-3e0b-4965-b194-8e2c553d88db))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "#PWR036") (unit 1)
         )
       )
     )
@@ -6412,7 +6320,7 @@
   (symbol (lib_id "Device:R") (at 128.27 163.83 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2d8b14fa-43d2-41e3-ad03-3b6be8b1be1e)
-    (property "Reference" "R6" (at 130.81 166.37 90)
+    (property "Reference" "R9" (at 130.81 166.37 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 130.81 161.29 90)
@@ -6429,7 +6337,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R6") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -6438,7 +6346,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 36.83 273.05 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 35e0e7b6-5949-40c3-9aff-3c8122fb4f73)
-    (property "Reference" "H5" (at 35.56 270.0805 90)
+    (property "Reference" "H9" (at 35.56 270.0805 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MountingHole_Pad" (at 35.56 270.0806 90)
@@ -6454,7 +6362,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H5") (unit 1)
+          (reference "H9") (unit 1)
         )
       )
     )
@@ -6493,7 +6401,7 @@
   (symbol (lib_id "power:GND") (at 55.88 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3b183318-69fa-478c-bbf5-eeed78bce568)
-    (property "Reference" "#PWR011" (at 55.88 72.39 0)
+    (property "Reference" "#PWR09" (at 55.88 72.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 56.007 70.4342 0)
@@ -6509,7 +6417,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -6518,7 +6426,7 @@
   (symbol (lib_id "Device:C") (at 256.54 143.51 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3bf1871d-d033-4a27-9bc7-0aab84237c26)
-    (property "Reference" "C28" (at 250.1392 143.51 90)
+    (property "Reference" "C16" (at 250.1392 143.51 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 252.4506 143.51 90)
@@ -6535,7 +6443,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C28") (unit 1)
+          (reference "C16") (unit 1)
         )
       )
     )
@@ -6544,7 +6452,7 @@
   (symbol (lib_id "Device:LED") (at 71.12 262.89 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3c153f8d-daaf-4873-9dad-8d6e719a47f0)
-    (property "Reference" "D2" (at 74.93 263.8425 90)
+    (property "Reference" "D6" (at 74.93 263.8425 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LED" (at 74.93 266.3825 90)
@@ -6561,7 +6469,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D2") (unit 1)
+          (reference "D6") (unit 1)
         )
       )
     )
@@ -6570,7 +6478,7 @@
   (symbol (lib_id "power:+5VD") (at 55.88 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3c2a6b57-8853-4715-beb4-28e305c811c1)
-    (property "Reference" "#PWR010" (at 55.88 44.45 0)
+    (property "Reference" "#PWR04" (at 55.88 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5VD" (at 55.88 35.56 0)
@@ -6586,7 +6494,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -6624,7 +6532,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 247.65 255.27 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 41347649-3e7c-4b6b-b3fd-3ee106686c46)
-    (property "Reference" "J8" (at 247.65 248.4501 0)
+    (property "Reference" "J9" (at 247.65 248.4501 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02" (at 247.65 250.3711 0)
@@ -6641,7 +6549,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "J8") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -6650,7 +6558,7 @@
   (symbol (lib_id "power:GND") (at 58.42 152.4 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 44312489-3eb8-41dd-b525-50f07f66e6d4)
-    (property "Reference" "#PWR012" (at 58.42 158.75 0)
+    (property "Reference" "#PWR029" (at 58.42 158.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 58.293 156.7942 0)
@@ -6666,7 +6574,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -6675,7 +6583,7 @@
   (symbol (lib_id "Device:R") (at 170.18 151.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 44d0775f-673c-4184-9c28-1f005c464496)
-    (property "Reference" "R8" (at 172.9486 151.13 90)
+    (property "Reference" "R7" (at 172.9486 151.13 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 175.26 151.13 90)
@@ -6692,7 +6600,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R8") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -6701,7 +6609,7 @@
   (symbol (lib_id "Device:C") (at 157.48 128.27 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 45d26811-05fe-4afd-8be5-e546f1bf6f51)
-    (property "Reference" "C8" (at 158.6484 131.191 0)
+    (property "Reference" "C13" (at 158.6484 131.191 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 156.337 131.191 0)
@@ -6718,7 +6626,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C8") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -6727,7 +6635,7 @@
   (symbol (lib_id "power:VDD") (at 207.01 190.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b510dd5-fb02-4e2a-b4cb-b9887e57bc66)
-    (property "Reference" "#PWR033" (at 207.01 194.31 0)
+    (property "Reference" "#PWR038" (at 207.01 194.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 207.01 185.42 0)
@@ -6743,7 +6651,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR038") (unit 1)
         )
       )
     )
@@ -6792,7 +6700,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 314.96 240.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4c6aceb4-74b6-4880-b384-a9a8ce8f9fef)
-    (property "Reference" "H7" (at 317.5 239.0768 0)
+    (property "Reference" "H4" (at 317.5 239.0768 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole_Pad" (at 317.9294 238.76 90)
@@ -6808,7 +6716,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H7") (unit 1)
+          (reference "H4") (unit 1)
         )
       )
     )
@@ -6817,7 +6725,7 @@
   (symbol (lib_id "power:GND") (at 265.43 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4d99356a-51e5-4e24-b986-e3736f0282ec)
-    (property "Reference" "#PWR044" (at 265.43 269.24 0)
+    (property "Reference" "#PWR055" (at 265.43 269.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 265.557 267.2842 0)
@@ -6833,7 +6741,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
     )
@@ -6842,7 +6750,7 @@
   (symbol (lib_id "Device:C") (at 207.01 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4d9a6ea1-ed12-4f1c-baa9-24c63106d86d)
-    (property "Reference" "C17" (at 213.4108 262.89 90)
+    (property "Reference" "C30" (at 213.4108 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 211.0994 262.89 90)
@@ -6859,7 +6767,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C17") (unit 1)
+          (reference "C30") (unit 1)
         )
       )
     )
@@ -6868,7 +6776,7 @@
   (symbol (lib_id "Device:R") (at 368.3 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4e729429-a7a5-4351-a7ab-9d9affcdeab9)
-    (property "Reference" "R13" (at 370.078 70.4763 0)
+    (property "Reference" "R2" (at 370.078 70.4763 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R" (at 370.078 72.3973 0)
@@ -6885,7 +6793,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R13") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -6948,7 +6856,7 @@
   (symbol (lib_id "power:VDD") (at 39.37 129.54 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 560a8ff5-918f-481f-b3c5-aa3662c4b34c)
-    (property "Reference" "#PWR02" (at 43.18 129.54 0)
+    (property "Reference" "#PWR026" (at 43.18 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 36.195 129.8568 90)
@@ -6964,7 +6872,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -6973,7 +6881,7 @@
   (symbol (lib_id "Device:R") (at 71.12 252.73 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 564ce338-e776-4c9c-894e-126232c2753f)
-    (property "Reference" "R1" (at 78.9178 252.73 90)
+    (property "Reference" "R14" (at 78.9178 252.73 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "10k" (at 74.0664 252.73 90)
@@ -6990,7 +6898,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R1") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -6999,7 +6907,7 @@
   (symbol (lib_id "power:GND") (at 184.15 231.14 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5add2f86-6a49-42db-b983-f5f0530927d4)
-    (property "Reference" "#PWR030" (at 184.15 237.49 0)
+    (property "Reference" "#PWR047" (at 184.15 237.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 184.277 235.5342 0)
@@ -7015,7 +6923,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -7076,7 +6984,7 @@
   (symbol (lib_id "power:GND") (at 44.45 168.91 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6320efad-dea2-4e71-98a4-c715af345f03)
-    (property "Reference" "#PWR05" (at 44.45 175.26 0)
+    (property "Reference" "#PWR032" (at 44.45 175.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 44.323 173.3042 0)
@@ -7092,7 +7000,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -7141,7 +7049,7 @@
   (symbol (lib_id "Device:C") (at 173.99 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 65f41d86-aabe-45d3-957c-b64dd6607682)
-    (property "Reference" "C12" (at 180.3908 262.89 90)
+    (property "Reference" "C27" (at 180.3908 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 178.0794 262.89 90)
@@ -7158,7 +7066,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C12") (unit 1)
+          (reference "C27") (unit 1)
         )
       )
     )
@@ -7167,7 +7075,7 @@
   (symbol (lib_id "Device:C") (at 256.54 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6672c681-d072-4357-91c2-90f5a7d651d6)
-    (property "Reference" "C27" (at 262.9408 46.99 90)
+    (property "Reference" "C2" (at 262.9408 46.99 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 260.6294 46.99 90)
@@ -7184,7 +7092,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C27") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -7193,7 +7101,7 @@
   (symbol (lib_id "power:+12V") (at 180.34 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 677d7da7-ca3b-4260-8330-33c95931a27d)
-    (property "Reference" "#PWR028" (at 180.34 54.61 0)
+    (property "Reference" "#PWR06" (at 180.34 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 177.8 48.26 0)
@@ -7209,7 +7117,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR06") (unit 1)
         )
       )
     )
@@ -7218,7 +7126,7 @@
   (symbol (lib_id "Device:C") (at 228.6 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 694c13cf-ccdd-441e-895c-3f17ed96c9c9)
-    (property "Reference" "C25" (at 235.0008 262.89 90)
+    (property "Reference" "C32" (at 235.0008 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 232.6894 262.89 90)
@@ -7235,7 +7143,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C25") (unit 1)
+          (reference "C32") (unit 1)
         )
       )
     )
@@ -7244,7 +7152,7 @@
   (symbol (lib_id "power:VDC") (at 107.95 248.92 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 696c7309-a179-4559-8183-fe1d69744ec7)
-    (property "Reference" "#PWR021" (at 107.95 251.46 0)
+    (property "Reference" "#PWR054" (at 107.95 251.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 108.331 244.5258 0)
@@ -7260,7 +7168,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR054") (unit 1)
         )
       )
     )
@@ -7269,7 +7177,7 @@
   (symbol (lib_id "power:VDD") (at 146.05 120.65 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6f144d71-1432-4c43-b0e5-f92d8d928c7a)
-    (property "Reference" "#PWR023" (at 146.05 124.46 0)
+    (property "Reference" "#PWR021" (at 146.05 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 146.05 115.57 0)
@@ -7285,7 +7193,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -7327,7 +7235,7 @@
   (symbol (lib_id "Device:C") (at 123.19 163.83 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 76498755-e99b-46c1-b702-bd137a7e9f25)
-    (property "Reference" "C3" (at 117.475 162.56 0)
+    (property "Reference" "C17" (at 117.475 162.56 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100nF" (at 116.205 165.735 0)
@@ -7344,33 +7252,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C3") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Device:D_Zener") (at 54.61 232.41 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 76d5d2f6-805c-4c0a-9f7b-cea881a12222)
-    (property "Reference" "D1" (at 56.642 231.7663 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "D_Zener" (at 56.642 233.6873 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Diode_SMD:D_SOD-123" (at 54.61 232.41 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 54.61 232.41 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ea0f6e56-e412-4b0d-b2a7-6f1d814c81ba))
-    (pin "2" (uuid 81c9a4ed-070d-463f-82fc-a15fb8e7ba6a))
-    (instances
-      (project "PAC5527Driver"
-        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D1") (unit 1)
+          (reference "C17") (unit 1)
         )
       )
     )
@@ -7379,7 +7261,7 @@
   (symbol (lib_id "power:VDC") (at 44.45 220.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7b8797cf-8817-4860-bb00-a83554d27655)
-    (property "Reference" "#PWR06" (at 44.45 223.52 0)
+    (property "Reference" "#PWR046" (at 44.45 223.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDC" (at 44.831 216.5858 0)
@@ -7395,7 +7277,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -7473,7 +7355,7 @@
   (symbol (lib_id "power:GND") (at 39.37 179.07 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7fa44438-61e5-40a3-90a7-f9b73e92a8fb)
-    (property "Reference" "#PWR03" (at 33.02 179.07 0)
+    (property "Reference" "#PWR035" (at 33.02 179.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 34.9758 178.943 0)
@@ -7489,7 +7371,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR035") (unit 1)
         )
       )
     )
@@ -7498,7 +7380,7 @@
   (symbol (lib_id "Device:C") (at 184.15 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 80bac9a9-2209-464a-b3e3-76c03fa8cbf8)
-    (property "Reference" "C14" (at 190.5508 262.89 90)
+    (property "Reference" "C28" (at 190.5508 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 188.2394 262.89 90)
@@ -7515,7 +7397,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C14") (unit 1)
+          (reference "C28") (unit 1)
         )
       )
     )
@@ -7580,7 +7462,7 @@
   (symbol (lib_id "Device:D_Schottky") (at 214.63 137.16 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 836ceedc-bed0-494d-b5de-f8a72be8d4cd)
-    (property "Reference" "D5" (at 214.9475 132.8801 0)
+    (property "Reference" "D3" (at 214.9475 132.8801 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "D_Schottky" (at 214.9475 134.8011 0)
@@ -7597,7 +7479,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D5") (unit 1)
+          (reference "D3") (unit 1)
         )
       )
     )
@@ -7606,7 +7488,7 @@
   (symbol (lib_id "power:GND") (at 318.77 246.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8ca7123f-b098-4b2e-a38b-02dd90eff9d1)
-    (property "Reference" "#PWR045" (at 318.77 252.73 0)
+    (property "Reference" "#PWR053" (at 318.77 252.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 318.897 250.7742 0)
@@ -7622,7 +7504,57 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR053") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 74.93 213.36 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 915adb84-5a36-468a-8b09-f3beb4075b49)
+    (property "Reference" "#PWR044" (at 74.93 219.71 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 75.057 217.7542 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 74.93 213.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 74.93 213.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ebfd9ecf-4704-41fc-bff0-e374107fa1a4))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "#PWR044") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 74.93 191.77 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 935db485-fa53-4ac5-8cde-320073cd479d)
+    (property "Reference" "#PWR040" (at 74.93 198.12 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 75.057 196.1642 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 74.93 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 74.93 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid fa735d48-0530-4290-bc3d-703b4597c353))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -7631,7 +7563,7 @@
   (symbol (lib_id "Device:R") (at 118.11 153.67 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 95501ecc-c341-4e31-8ab7-7fae358bba33)
-    (property "Reference" "R5" (at 115.57 156.21 90)
+    (property "Reference" "R8" (at 115.57 156.21 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100" (at 120.65 156.21 90)
@@ -7648,7 +7580,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R5") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -7657,7 +7589,7 @@
   (symbol (lib_id "Device:R") (at 133.35 163.83 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9ae57ec4-ef83-4f3c-bfdc-a8514deb6ac2)
-    (property "Reference" "R7" (at 135.89 166.37 90)
+    (property "Reference" "R10" (at 135.89 166.37 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 135.89 161.29 90)
@@ -7674,7 +7606,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R7") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -7683,7 +7615,7 @@
   (symbol (lib_id "power:GND") (at 182.88 171.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9d34254d-b1e0-4724-918d-cc568436b734)
-    (property "Reference" "#PWR029" (at 182.88 177.8 0)
+    (property "Reference" "#PWR034" (at 182.88 177.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 183.007 175.8442 0)
@@ -7699,7 +7631,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -7708,7 +7640,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 36.83 257.81 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9d7e284c-9f94-44cf-9b21-d6afd471a2e8)
-    (property "Reference" "H3" (at 35.56 254.8405 90)
+    (property "Reference" "H7" (at 35.56 254.8405 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "MountingHole_Pad" (at 35.56 254.8406 90)
@@ -7724,7 +7656,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H3") (unit 1)
+          (reference "H7") (unit 1)
         )
       )
     )
@@ -7733,7 +7665,7 @@
   (symbol (lib_id "power:VDD") (at 99.06 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9e3fa7b3-882d-461b-b2a4-b965fd65cfe3)
-    (property "Reference" "#PWR019" (at 99.06 41.91 0)
+    (property "Reference" "#PWR03" (at 99.06 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 99.06 33.02 0)
@@ -7749,7 +7681,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -7758,7 +7690,7 @@
   (symbol (lib_id "Device:LED") (at 81.28 262.89 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9fa6494b-69d3-44b4-8e8e-d2df6ee722dc)
-    (property "Reference" "D3" (at 85.09 263.8425 90)
+    (property "Reference" "D7" (at 85.09 263.8425 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LED" (at 85.09 266.3825 90)
@@ -7775,7 +7707,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "D3") (unit 1)
+          (reference "D7") (unit 1)
         )
       )
     )
@@ -7784,7 +7716,7 @@
   (symbol (lib_id "Mechanical:MountingHole_Pad") (at 307.34 240.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a0e27da3-110e-44af-b753-c6e8145bdb13)
-    (property "Reference" "H6" (at 309.88 239.0768 0)
+    (property "Reference" "H3" (at 309.88 239.0768 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole_Pad" (at 310.3094 238.76 90)
@@ -7800,7 +7732,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "H6") (unit 1)
+          (reference "H3") (unit 1)
         )
       )
     )
@@ -7809,7 +7741,7 @@
   (symbol (lib_id "power:+3.3V") (at 265.43 232.41 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a3bdab20-a414-42cd-b09a-8c5724d0bdab)
-    (property "Reference" "#PWR043" (at 265.43 236.22 0)
+    (property "Reference" "#PWR049" (at 265.43 236.22 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 265.43 228.9081 0)
@@ -7825,7 +7757,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -7834,7 +7766,7 @@
   (symbol (lib_id "Device:C") (at 119.38 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a808f0b7-c3a3-4310-a882-95759119e1ca)
-    (property "Reference" "C2" (at 125.7808 262.89 90)
+    (property "Reference" "C22" (at 125.7808 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 123.4694 262.89 90)
@@ -7851,7 +7783,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C2") (unit 1)
+          (reference "C22") (unit 1)
         )
       )
     )
@@ -7860,7 +7792,7 @@
   (symbol (lib_id "Device:C") (at 151.13 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a8ba466f-a89b-48b2-a260-e40dbafa4900)
-    (property "Reference" "C6" (at 157.5308 262.89 90)
+    (property "Reference" "C25" (at 157.5308 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 155.2194 262.89 90)
@@ -7877,7 +7809,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C6") (unit 1)
+          (reference "C25") (unit 1)
         )
       )
     )
@@ -7886,7 +7818,7 @@
   (symbol (lib_id "Device:C") (at 219.71 143.51 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a9d67723-073e-4284-ba59-79bf1c471fa4)
-    (property "Reference" "C19" (at 213.3092 143.51 90)
+    (property "Reference" "C15" (at 213.3092 143.51 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7uF" (at 215.6206 143.51 90)
@@ -7903,7 +7835,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C19") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
@@ -7912,7 +7844,7 @@
   (symbol (lib_id "power:+12V") (at 219.71 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid abfb38b8-ba20-44e6-b9d0-ebadaadb8fc8)
-    (property "Reference" "#PWR037" (at 219.71 130.81 0)
+    (property "Reference" "#PWR024" (at 219.71 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+12V" (at 219.71 121.92 0)
@@ -7928,7 +7860,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -7937,7 +7869,7 @@
   (symbol (lib_id "power:+5VD") (at 208.28 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ac6c39af-a104-4ebe-b4ef-13052da215ae)
-    (property "Reference" "#PWR035" (at 208.28 130.81 0)
+    (property "Reference" "#PWR023" (at 208.28 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5VD" (at 208.28 121.92 0)
@@ -7953,7 +7885,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR035") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -8028,7 +7960,7 @@
   (symbol (lib_id "Device:R") (at 368.3 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b7d80428-3c21-4510-9b82-f554bc081831)
-    (property "Reference" "R14" (at 370.078 137.7863 0)
+    (property "Reference" "R4" (at 370.078 137.7863 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R" (at 370.078 139.7073 0)
@@ -8045,7 +7977,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R14") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -8054,7 +7986,7 @@
   (symbol (lib_id "power:GND") (at 146.05 171.45 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bcadf44a-4924-4a70-808e-f1a7a445bd34)
-    (property "Reference" "#PWR024" (at 146.05 177.8 0)
+    (property "Reference" "#PWR033" (at 146.05 177.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 145.923 175.8442 0)
@@ -8070,7 +8002,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
     )
@@ -8079,7 +8011,7 @@
   (symbol (lib_id "power:+3.3V") (at 213.36 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c41901e7-e6f1-46d2-979d-96823348d905)
-    (property "Reference" "#PWR036" (at 213.36 57.15 0)
+    (property "Reference" "#PWR08" (at 213.36 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 213.36 49.8381 0)
@@ -8095,7 +8027,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -8104,7 +8036,7 @@
   (symbol (lib_id "Device:C") (at 207.01 207.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c48ef611-1a5a-4941-a9c1-c139b2584158)
-    (property "Reference" "C16" (at 213.4108 207.01 90)
+    (property "Reference" "C19" (at 213.4108 207.01 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1uF" (at 211.0994 207.01 90)
@@ -8121,7 +8053,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C16") (unit 1)
+          (reference "C19") (unit 1)
         )
       )
     )
@@ -8130,7 +8062,7 @@
   (symbol (lib_id "Device:C") (at 140.97 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c4a5d3a5-6088-4c3b-aff4-c5ab325ad0d0)
-    (property "Reference" "C5" (at 147.3708 262.89 90)
+    (property "Reference" "C24" (at 147.3708 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 145.0594 262.89 90)
@@ -8147,7 +8079,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C5") (unit 1)
+          (reference "C24") (unit 1)
         )
       )
     )
@@ -8233,35 +8165,10 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 85.09 222.25 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid c92c93f9-43b3-4bd8-9ae2-6e52140c5c03)
-    (property "Reference" "#PWR018" (at 78.74 222.25 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 80.6958 222.377 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 85.09 222.25 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 85.09 222.25 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ad7699b7-f23b-4fa0-be1c-86fe447baf5b))
-    (instances
-      (project "PAC5527Driver"
-        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR018") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:GND") (at 44.45 243.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d05f03f5-d370-4d94-ae20-732b500642f1)
-    (property "Reference" "#PWR07" (at 44.45 250.19 0)
+    (property "Reference" "#PWR050" (at 44.45 250.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 44.577 248.2342 0)
@@ -8277,7 +8184,36 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR050") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin") (at 74.93 203.2 0) (mirror y) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid d067ebd6-715d-4bbc-8ba2-9c17057ae18c)
+    (property "Reference" "J8" (at 74.93 198.3011 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x04_MountingPin" (at 72.898 206.1029 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "Connector_JST:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical" (at 74.93 203.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 74.93 203.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid f46f292c-4843-4995-af5c-7054f8bcc978))
+    (pin "2" (uuid 546b51cc-d07b-4e05-b5c2-3e152d564cdb))
+    (pin "3" (uuid 96125e44-3bae-4f23-9683-278b27a5fbe0))
+    (pin "4" (uuid 633fa313-f72e-4f99-a5ea-a86a5c518a82))
+    (pin "MP" (uuid 54393a82-cbc5-4ed2-962e-c7e1bc18af34))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -8286,7 +8222,7 @@
   (symbol (lib_id "Device:R") (at 118.11 148.59 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d23d3cd3-343b-4683-b22d-e40548918b4e)
-    (property "Reference" "R4" (at 115.57 151.13 90)
+    (property "Reference" "R6" (at 115.57 151.13 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "22" (at 120.65 151.13 90)
@@ -8303,7 +8239,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R4") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -8312,7 +8248,7 @@
   (symbol (lib_id "power:GND") (at 241.3 160.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d3a6f6a5-1ab9-4bd4-b1dc-1b5263afd15c)
-    (property "Reference" "#PWR039" (at 241.3 166.37 0)
+    (property "Reference" "#PWR030" (at 241.3 166.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 241.427 164.4142 0)
@@ -8328,7 +8264,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -8337,7 +8273,7 @@
   (symbol (lib_id "power:GND") (at 99.06 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d730aaae-28a0-45d1-98e9-9e20a2edc133)
-    (property "Reference" "#PWR020" (at 99.06 72.39 0)
+    (property "Reference" "#PWR010" (at 99.06 72.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.187 70.4342 0)
@@ -8353,7 +8289,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -8362,7 +8298,7 @@
   (symbol (lib_id "power:VDD") (at 256.54 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid da82239e-bd2c-4292-af89-bc8fd7915f4f)
-    (property "Reference" "#PWR042" (at 256.54 130.81 0)
+    (property "Reference" "#PWR025" (at 256.54 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 256.54 121.92 0)
@@ -8378,7 +8314,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -8412,7 +8348,7 @@
   (symbol (lib_id "power:VDD") (at 81.28 243.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dbc3ddaa-796e-4582-90cf-0e1ff531d08d)
-    (property "Reference" "#PWR017" (at 81.28 247.65 0)
+    (property "Reference" "#PWR052" (at 81.28 247.65 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VDD" (at 81.28 240.03 0)
@@ -8428,7 +8364,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -8437,7 +8373,7 @@
   (symbol (lib_id "power:GND") (at 39.37 127 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ddc96a67-1df8-4eb8-a1bb-5ec5e2170961)
-    (property "Reference" "#PWR01" (at 33.02 127 0)
+    (property "Reference" "#PWR022" (at 33.02 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 34.9758 126.873 0)
@@ -8453,7 +8389,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -8462,7 +8398,7 @@
   (symbol (lib_id "Device:C") (at 275.59 252.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dea4f036-1707-4628-aec2-d0a1b0dfc794)
-    (property "Reference" "C29" (at 278.511 251.5616 0)
+    (property "Reference" "C20" (at 278.511 251.5616 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 278.511 253.873 0)
@@ -8479,7 +8415,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C29") (unit 1)
+          (reference "C20") (unit 1)
         )
       )
     )
@@ -8488,7 +8424,7 @@
   (symbol (lib_id "power:GND") (at 107.95 276.86 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dfd4f3e7-e0cd-498d-81de-a7f37c491346)
-    (property "Reference" "#PWR022" (at 107.95 283.21 0)
+    (property "Reference" "#PWR057" (at 107.95 283.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 108.077 281.2542 0)
@@ -8504,7 +8440,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
       )
     )
@@ -8513,7 +8449,7 @@
   (symbol (lib_id "Regulator_Linear:HT75xx-1-SOT89") (at 241.3 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e0cce859-bb26-496a-9fa5-f1b81b8f7d82)
-    (property "Reference" "U5" (at 241.3 131.6101 0)
+    (property "Reference" "U3" (at 241.3 131.6101 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "HT7533-1-SOT89" (at 241.3 133.5311 0)
@@ -8531,7 +8467,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "U5") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -8569,7 +8505,7 @@
   (symbol (lib_id "power:GND") (at 39.37 200.66 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e8276eef-0359-42d4-82ff-2edcae273e14)
-    (property "Reference" "#PWR04" (at 33.02 200.66 0)
+    (property "Reference" "#PWR041" (at 33.02 200.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 34.9758 200.533 0)
@@ -8585,7 +8521,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -8594,7 +8530,7 @@
   (symbol (lib_id "power:GND") (at 207.01 231.14 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e9d99cce-1bf8-400f-b3d6-22781eb5a914)
-    (property "Reference" "#PWR034" (at 207.01 237.49 0)
+    (property "Reference" "#PWR048" (at 207.01 237.49 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 207.137 235.5342 0)
@@ -8610,7 +8546,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -8619,7 +8555,7 @@
   (symbol (lib_id "Device:R") (at 368.3 203.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eb81d5da-0a48-4af1-ad5f-bcc87be32552)
-    (property "Reference" "R15" (at 370.078 202.5563 0)
+    (property "Reference" "R12" (at 370.078 202.5563 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R" (at 370.078 204.4773 0)
@@ -8636,7 +8572,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R15") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -8645,7 +8581,7 @@
   (symbol (lib_id "Device:R") (at 118.11 146.05 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ec807f13-2f14-4c53-8271-f3d919f40776)
-    (property "Reference" "R3" (at 115.57 143.51 90)
+    (property "Reference" "R5" (at 115.57 143.51 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "22" (at 120.65 143.51 90)
@@ -8662,7 +8598,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "R3") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -8699,7 +8635,7 @@
   (symbol (lib_id "Device:C") (at 217.17 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eec9c96b-c7d2-4f38-a82d-45f130a16583)
-    (property "Reference" "C18" (at 223.5708 262.89 90)
+    (property "Reference" "C31" (at 223.5708 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 221.2594 262.89 90)
@@ -8716,7 +8652,36 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C18") (unit 1)
+          (reference "C31") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin") (at 74.93 181.61 0) (mirror y) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid f0080672-2739-4b58-8df8-68a178673093)
+    (property "Reference" "J6" (at 74.93 176.7111 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x04_MountingPin" (at 72.898 184.5129 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "Connector_JST:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical" (at 74.93 181.61 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 74.93 181.61 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 04f80663-ed1a-4dad-a512-d31459381fd3))
+    (pin "2" (uuid faa9c60e-1e01-4dc2-8336-a68ae761cc02))
+    (pin "3" (uuid c8b0d920-5f0e-477c-8268-43b46244bd60))
+    (pin "4" (uuid a541ad25-b567-47a4-a921-4b1a4b3ef6fc))
+    (pin "MP" (uuid e0b7befc-05d0-4723-a2e3-ddc2d5927a38))
+    (instances
+      (project "PAC5527Driver"
+        (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -8757,7 +8722,7 @@
   (symbol (lib_id "Device:C") (at 195.58 262.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f2ba3990-3731-4553-ad85-b4e39b547092)
-    (property "Reference" "C15" (at 201.9808 262.89 90)
+    (property "Reference" "C29" (at 201.9808 262.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10uF" (at 199.6694 262.89 90)
@@ -8774,7 +8739,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "C15") (unit 1)
+          (reference "C29") (unit 1)
         )
       )
     )
@@ -8849,7 +8814,7 @@
   (symbol (lib_id "power:GND") (at 45.72 116.84 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fe33c521-83a0-466a-8122-ed34de5fc853)
-    (property "Reference" "#PWR09" (at 45.72 123.19 0)
+    (property "Reference" "#PWR019" (at 45.72 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 45.593 121.2342 0)
@@ -8865,7 +8830,7 @@
     (instances
       (project "PAC5527Driver"
         (path "/1ba3242e-22cf-4787-a878-8cbef96c3394"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
