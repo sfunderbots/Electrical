@@ -319,6 +319,58 @@
         )
       )
     )
+    (symbol "power:+5V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "+5V" (at 0 3.556 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global power" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"+5V\"" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "+5V_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.54)
+            (xy 0.762 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "+5V_1_1"
+        (pin power_in line (at 0 0 90) (length 0) hide
+          (name "+5V" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "#PWR" (at 0 -6.35 0)
         (effects (font (size 1.27 1.27)) hide)
@@ -419,8 +471,6 @@
   (junction (at 49.53 99.06) (diameter 0) (color 0 0 0 0)
     (uuid 8642d1a4-1a03-4676-8daf-b255e9f8bec5)
   )
-
-  (no_connect (at 46.99 63.5) (uuid 98a587ba-a420-41f1-8192-4d82792f0a94))
 
   (wire (pts (xy 72.39 63.5) (xy 72.39 67.31))
     (stroke (width 0) (type default))
@@ -620,6 +670,39 @@
     )
   )
 
+  (symbol (lib_id "power:+5V") (at 46.99 63.5 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 353ad6c6-29c3-4cad-b70f-8f4b798d7c73)
+    (property "Reference" "#PWR013" (at 46.99 59.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 46.99 67.31 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 46.99 63.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 46.99 63.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7b840185-113b-4319-8e33-724692689e3e))
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
+          (reference "#PWR013") (unit 1)
+        )
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
+          (reference "#PWR020") (unit 1)
+        )
+      )
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR043") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:VCC") (at 46.99 48.26 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4215b471-ba67-4d49-97af-55ebd9c63c38)
@@ -725,7 +808,7 @@
   )
 
   (symbol (lib_id "bots:JST_BM04B-GHS-TBT") (at 49.53 91.44 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp yes)
     (uuid 511bfc7a-cecd-42c4-a7c0-1b730f403c04)
     (property "Reference" "J13" (at 48.26 82.55 90)
       (effects (font (size 1.27 1.27)) (justify right))
