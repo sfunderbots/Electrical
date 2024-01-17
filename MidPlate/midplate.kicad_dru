@@ -21,6 +21,9 @@
 (rule JST_clearance
 	(condition "A.enclosedByArea('JST') && A.NetClass == 'BAT'")
 	(constraint clearance (min 20mil)))
+(rule MH_clearance
+	(condition "A.enclosedByArea('MOUNTING')")
+	(constraint clearance (min 40mil)))
 (rule vcc_clearance_JST
 	(constraint clearance (min 20mil))
 	(condition "A.Type == 'Zone' && A.Name =='VCC_JST'"))

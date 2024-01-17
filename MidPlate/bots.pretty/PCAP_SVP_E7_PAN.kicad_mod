@@ -80,6 +80,6 @@
   (model "${KIPRJMOD}/EEE-1CA471UP.stp"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz -90 0 0))
+    (rotate (xyz -90 0 180))
   )
 )

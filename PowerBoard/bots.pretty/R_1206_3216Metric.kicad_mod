@@ -39,6 +39,20 @@
     (solder_mask_margin 0.1016) (tstamp dbad0287-b397-45bd-8a16-43e87bdf7c5c))
   (pad "2" smd roundrect (at 1.4625 0) (size 1.125 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.222222)
     (solder_mask_margin 0.1016) (tstamp 0f7c8c85-86aa-4632-9ea9-d90a66b5867e))
+  (zone (net 0) (net_name "") (layer "F.Cu") (tstamp 67f1ee8a-b46c-4617-b585-66c916c511b3) (hatch edge 0.5)
+    (connect_pads (clearance 0))
+    (min_thickness 0.25) (filled_areas_thickness no)
+    (keepout (tracks not_allowed) (vias not_allowed) (pads allowed) (copperpour not_allowed) (footprints allowed))
+    (fill (thermal_gap 0.5) (thermal_bridge_width 0.5))
+    (polygon
+      (pts
+        (xy 0.65 0.965)
+        (xy 0.65 -0.975)
+        (xy -0.65 -0.975)
+        (xy -0.65 0.965)
+      )
+    )
+  )
   (model "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))

@@ -1,7 +1,7 @@
 (footprint "XT60_12-14AWG_POWER" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
   (solder_mask_margin 0.1016)
-  (attr through_hole)
+  (attr through_hole exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
   (fp_text reference "REF**" (at -7 -0.5 90) (layer "F.SilkS")
       (effects (font (size 0.8 0.8) (thickness 0.1)))
     (tstamp 8f3cdd5a-1f61-44a1-9628-4411169e9bc4)

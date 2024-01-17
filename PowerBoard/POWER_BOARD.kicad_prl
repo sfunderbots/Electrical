@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 1,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -72,6 +72,31 @@
     "version": 3
   },
   "project": {
-    "files": []
+    "files": [
+      {
+        "name": "POWER_BOARD.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 1,
+          "maximized": true,
+          "pos_x": -9,
+          "pos_y": -9,
+          "size_x": 2578,
+          "size_y": 1408
+        }
+      },
+      {
+        "name": "POWER_BOARD.kicad_sch",
+        "open": false,
+        "window": {
+          "display": 1,
+          "maximized": false,
+          "pos_x": -18,
+          "pos_y": 0,
+          "size_x": 2578,
+          "size_y": 1408
+        }
+      }
+    ]
   }
 }
