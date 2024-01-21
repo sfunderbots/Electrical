@@ -6327,31 +6327,6 @@
     )
   )
 
-  (symbol (lib_id "power:GNDPWR") (at 49.53 135.89 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 8b9df945-13ba-48d9-9b5a-6c5cc1c4de32)
-    (property "Reference" "#PWR04" (at 49.53 140.97 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GNDPWR" (at 49.403 139.7 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 49.53 137.16 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 49.53 137.16 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ac4ae4a3-2608-43c6-b0c0-13e8677e1bd0))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR04") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "bots:C_22u_1206") (at 67.31 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8f3e5943-ff5a-434d-a76a-5e9624981fa3)
@@ -7314,6 +7289,40 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R27") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 49.53 135.89 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ddaa4852-968b-44bf-89e6-da272d4d0944)
+    (property "Reference" "#PWR?" (at 49.53 142.24 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 49.53 140.97 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 49.53 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 49.53 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 871b1216-7905-46c7-9ec9-056e5ac75e94))
+    (instances
+      (project "POWER_BOARD"
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
+          (reference "#PWR?") (unit 1)
+        )
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
+          (reference "#PWR08") (unit 1)
+        )
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+          (reference "#PWR025") (unit 1)
+        )
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+          (reference "#PWR04") (unit 1)
         )
       )
     )
