@@ -45,7 +45,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.254
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -56,7 +56,6 @@
         }
       ],
       "drc_exclusions": [
-        "lib_footprint_issues|100805293|60536418|8cec1398-ff60-4c5d-92db-0ce84120b6f3|00000000-0000-0000-0000-000000000000",
         "lib_footprint_issues|119800701|103628063|3ca96d84-d90a-457d-8b2c-8f00d6c94ae2|00000000-0000-0000-0000-000000000000",
         "lib_footprint_issues|159650123|83581370|5bf370f4-d2c3-4412-8ce1-86d671d86d17|00000000-0000-0000-0000-000000000000"
       ],
@@ -892,7 +891,7 @@
         "pattern": "/Power/U6SDA"
       },
       {
-        "netclass": "BAT",
+        "netclass": "HV",
         "pattern": "/Flyback_HV/AD_G"
       },
       {
@@ -930,6 +929,42 @@
       {
         "netclass": "CAN_DIFF",
         "pattern": "/Power/CANR+"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/EXTRA_GATE"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/CHICKER_GATE"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/V_GATE_Q2"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/RDCM"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/RVOUT"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/AD_35W"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/BOOT"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/RUN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "BKBM"
       }
     ]
   },

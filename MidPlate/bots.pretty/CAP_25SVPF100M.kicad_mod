@@ -73,7 +73,7 @@
     (solder_mask_margin 0.102) (tstamp a7e6f283-65a2-4264-a895-979e921cfc09))
   (pad "2" smd rect (at 3.475 0) (size 4.15 1.9) (layers "F.Cu" "F.Paste" "F.Mask")
     (solder_mask_margin 0.102) (tstamp db3012c5-6c23-4c22-a56d-3fb07eb0bdff))
-  (model "${KIPRJMOD}/25svpf100m.step"
+  (model "C:/Users/henry/Documents/Documents/University/GitHub/The Bots/Electrical/PowerBoard/25svpf100m.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 90))
