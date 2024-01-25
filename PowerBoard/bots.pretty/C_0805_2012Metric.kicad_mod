@@ -39,20 +39,6 @@
     (solder_mask_margin 0.1016) (tstamp 8fcab996-2ba6-4e37-8313-be9ac1a3cf10))
   (pad "2" smd roundrect (at 0.95 0) (size 1 1.45) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
     (solder_mask_margin 0.1016) (tstamp 1e36b295-7e96-456f-a51a-a71b62e7b4c1))
-  (zone (net 0) (net_name "") (layer "F.Cu") (tstamp ae15a98b-367c-4dcd-a228-782be454be74) (hatch edge 0.5)
-    (connect_pads (clearance 0))
-    (min_thickness 0.25) (filled_areas_thickness no)
-    (keepout (tracks not_allowed) (vias not_allowed) (pads allowed) (copperpour not_allowed) (footprints allowed))
-    (fill (thermal_gap 0.5) (thermal_bridge_width 0.5))
-    (polygon
-      (pts
-        (xy 0.2 0.795)
-        (xy 0.2 -0.795)
-        (xy -0.2 -0.795)
-        (xy -0.2 0.795)
-      )
-    )
-  )
   (model "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.wrl"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))

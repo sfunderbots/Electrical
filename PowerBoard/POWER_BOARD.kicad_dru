@@ -1,7 +1,4 @@
 (version 6.0)
-#(rule bat_clearance_width
-#	(condition "A.NetClass == 'BAT'")
-#	(constraint clearance (min 25mil))
 (rule HV_clearance_width
 	(condition "A.NetClass == 'HV'")
 	(constraint clearance (min 60mil))
@@ -22,11 +19,11 @@
 	(constraint clearance (min 20mil)))
 (rule HV_SNUB1
 	(condition "A.enclosedByArea('HV_SNUB1')")
-	(constraint clearance (min 31mil))
+	(constraint clearance (min 20mil))
 	(constraint track_width (min 20mil)))
 (rule HV_SNUB2
 	(condition "A.enclosedByArea('HV_SNUB2')")
-	(constraint clearance (min 31mil))
+	(constraint clearance (min 20mil))
 	(constraint track_width (min 20mil)))
 (rule SPI0_clearance_width
 	(condition "A.enclosedByArea('SPI')")
