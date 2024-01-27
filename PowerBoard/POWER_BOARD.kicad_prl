@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "800fffc_ffffffff",
+    "visible_layers": "00290aa_00000001",
     "zone_display_mode": 0
   },
   "meta": {
@@ -72,31 +72,6 @@
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "POWER_BOARD.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
-        }
-      },
-      {
-        "name": "POWER_BOARD.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
-        }
-      }
-    ]
+    "files": []
   }
 }
