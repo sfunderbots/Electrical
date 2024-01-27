@@ -45,7 +45,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.254
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -969,6 +969,14 @@
       {
         "netclass": "BAT",
         "pattern": "/Power/VCC_FUSE"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "EXTRA_HV"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "CHICKER_HV"
       }
     ]
   },

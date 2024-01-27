@@ -83,6 +83,10 @@
 	(constraint diff_pair_uncoupled (max 810mil))
 	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil))
 	(constraint track_width (min 7mil) (opt 7mil)))
+
+
+
+
 #make sure of NPTH clearance, all layers
 (rule NPTH_Clearance
 (constraint hole_clearance (min 0.3mm))
