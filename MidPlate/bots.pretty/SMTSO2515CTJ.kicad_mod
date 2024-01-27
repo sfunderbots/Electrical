@@ -7,7 +7,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 3e94d29c-7f21-45dd-b26e-fb6c204f14f9)
   )
-  (fp_text value "SMTSO2515CTJ" (at 0 3.35) (layer "F.SilkS") hide
+  (fp_text value "SMTSO2515CTJ" (at 0 3.35) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 43b9889b-de9b-4d57-9f8b-d64e56edb999)
   )
