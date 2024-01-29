@@ -1,0 +1,65 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 1a9ce3e8-a091-496c-9c5f-e7b2eb60e275)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 31.75 30.48) (size 80.01 36.83) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 13b16574-f046-4bb6-b573-f06681d59f31)
+    (property "Sheetname" "Power" (at 31.75 29.7684 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "power.kicad_sch" (at 31.75 67.8946 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "POWER_BOARD"
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 129.54 31.75) (size 73.66 34.29) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 44109b35-87db-4b37-b749-86ba1243ffef)
+    (property "Sheetname" "RP2040_CAN_FLASH" (at 129.54 31.0384 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "RP2040_CAN_FLASH.kicad_sch" (at 129.54 66.6246 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "POWER_BOARD"
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 31.75 82.55) (size 78.74 40.64) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid aa68550e-c35d-4fef-b4e5-f1eb6225215f)
+    (property "Sheetname" "Flyback_HV" (at 31.75 81.8384 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Flyback_HV.kicad_sch" (at 31.75 123.7746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "POWER_BOARD"
+        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275" (page "4"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

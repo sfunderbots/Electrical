@@ -1,0 +1,178 @@
+(version 6.0)
+(rule HV_clearance_width
+	(condition "A.NetClass == 'HV'")
+	(constraint clearance (min 60mil))
+	(constraint track_width (min 50mil)))
+(rule power_clearance_width
+	(condition "A.NetClass == 'Power'")
+	(constraint clearance (min 16mil))
+	(constraint track_width (min 10mil)))
+(rule signal_clearance_width
+	(condition "A.NetClass == 'SIGNALS'")
+	(constraint track_width (min 6mil))
+	(constraint clearance (min 9mil)))
+(rule HV_CONN
+	(condition "A.enclosedByArea('HV_CONN') && A.NetClass == 'HV'")
+	(constraint clearance (min 50mil)))
+(rule HV_RQ2D
+	(condition "A.enclosedByArea('HV_RQ2D')")
+	(constraint clearance (min 20mil)))
+(rule HV_SNUB1
+	(condition "A.enclosedByArea('HV_SNUB1')")
+	(constraint clearance (min 20mil))
+	(constraint track_width (min 20mil)))
+(rule HV_SNUB2
+	(condition "A.enclosedByArea('HV_SNUB2')")
+	(constraint clearance (min 20mil))
+	(constraint track_width (min 20mil)))
+(rule SPI0_clearance_width
+	(condition "A.enclosedByArea('SPI')")
+	(constraint clearance (min "9.7mil"))
+	(constraint track_width (min "6mil")))
+(rule RPI2040_clearance_width
+	(condition "A.enclosedByArea('RPI')")
+	(constraint clearance (min 8mil))
+	(constraint track_width (min 6mil)))
+(rule LT3750_clearance_width
+	(condition "A.enclosedByArea('LT3750') && A.Type != 'Via'")
+	(constraint clearance (min 7.7mil))
+	(constraint track_width (min 7mil)))
+(rule LM2598_clearance_width
+	(condition "A.enclosedByArea('LM2598')")
+	(constraint clearance (min 16mil))
+	(constraint track_width (min 6mil)))
+#(rule samenet
+#	(condition "A.Type == 'Zone' && A.NetName == B.NetName && B.Type != 'Via'")
+#	(constraint physical_clearance (min 10mil)))
+(rule HV_res
+	(condition "A.enclosedByArea('HV_RES')")
+	(constraint clearance (min 6mil))
+	(constraint track_width (min 6mil)))
+(rule HV_res_AD
+	(condition "A.enclosedByArea('HV_AD')")
+	(constraint clearance (min 30mil))
+	(constraint track_width (min 10mil)))
+# Specify an optimal gap for a particular diff-pair
+(rule "dp gap"
+    (condition "A.NetClass == 'DIFF_USB'")
+	(constraint diff_pair_uncoupled (max 360mil))
+	(constraint diff_pair_gap (max 200mil) (opt 8mil) (min 7mil)))
+(rule USB_clearance_width
+	(condition "A.enclosedByArea('USB')")
+	(constraint clearance (min "7.6mil"))
+	(constraint track_width (min "6mil")))
+(rule board_edge_clearance
+    (constraint edge_clearance (min 30mil)))
+(rule board_edge_clearance_caps_HV
+    (constraint edge_clearance (min 0.2mm))
+	(condition "A.Type == 'Zone' && A.Name =='CAPS_HV'"))
+(rule board_edge_clearance_caps_GND
+    (constraint edge_clearance (min 0.2mm))
+	(condition "A.Type == 'Zone' && A.Name =='CAPS_GND'"))
+(rule board_edge_clearance_GND
+    (constraint edge_clearance (min 14mil))
+	(condition "A.intersectsArea('GND_POUR')"))
+(rule vcc_clearance_3750
+	(constraint clearance (min 7.6mil))
+	(condition "A.Type == 'Zone' && A.Name =='LT375012V_POUR'"))
+(rule dp_gap_CAN
+    (condition "A.NetClass == 'CAN_DIFF'")
+	(constraint diff_pair_uncoupled (max 810mil))
+	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil))
+	(constraint track_width (min 7mil) (opt 7mil)))
+
+
+
+
+#make sure of NPTH clearance, all layers
+(rule NPTH_Clearance
+(constraint hole_clearance (min 0.3mm))
+(condition "A.Pad_Type=='NPTH, mechanical'"))
+# 4-layer
+(rule "Minimum Trace Width and Spacing (inner layer)"
+	(constraint track_width (min 3.5mil))
+	(layer inner)
+	(condition "A.Type == 'track'"))
+
+(rule "Minimum Trace Spacing (inner layer)"
+	(constraint clearance (min 3.5mil))
+	(layer inner)
+	(condition "A.Type == 'track' && B.Type == A.Type"))
+
+# silkscreen (Kicad 7 only)
+(rule "Minimum Text"
+	(constraint text_thickness (min 0.15mm))
+	(constraint text_height (min 1mm))
+	(layer "?.Silkscreen"))
+
+(rule "Pad to Silkscreen"
+	(constraint silk_clearance (min 0.15mm))
+	(layer outer)
+	(condition "A.Type == 'pad' && (B.Type == 'text' || B.Type == 'graphic')"))
+
+# edge clearance
+(rule "Trace to Outline"
+	(constraint edge_clearance (min 0.3mm))
+	(condition "A.Type == 'track'"))
+
+# This would override board outline and milled areas
+#(rule "Trace to V-Cut"
+#	(constraint clearance (min 0.4mm))
+#	(condition "A.Type == 'track' && B.Layer == 'Edge.Cuts'"))
+
+# drill/hole size
+(rule "drill hole size (mechanical)"
+	(constraint hole_size (min 0.2mm) (max 6.3mm)))
+
+(rule "Minimum Via Hole Size"
+	(constraint hole_size (min 0.2mm))
+	(condition "A.Type == 'via'"))
+
+(rule "Minimum Via Diameter"
+	(constraint via_diameter (min 0.45mm))
+	(condition "A.Type == 'via'"))
+
+(rule "PTH Hole Size"
+	(constraint hole_size (min 0.2mm) (max 6.35mm))
+	(condition "A.isPlated()"))
+
+(rule "Minimum Non-plated Hole Size"
+	(constraint hole_size (min 0.5mm))
+	(condition "A.Type == 'pad' && !A.isPlated()"))
+	
+(rule "Minimum Castellated Hole Size"
+	(constraint hole_size (min 0.6mm))
+	(condition "A.Type == 'pad' && A.Fabrication_Property == 'Castellated pad'"))
+
+# clearance
+(rule "hole to hole clearance (different nets)"
+	(constraint hole_to_hole (min 0.5mm))
+	(condition "A.Net != B.Net"))
+
+(rule "via to track clearance"
+	(constraint hole_clearance (min 0.254mm))
+	(condition "A.Type == 'via' && B.Type == 'track'"))
+
+(rule "via to via clearance (same nets)"
+	(constraint hole_to_hole (min 0.254mm))
+	(condition "A.Type == 'via' && B.Type == A.Type && A.Net == B.Net"))
+
+(rule "pad to pad clearance (with hole, different nets)"
+	(constraint hole_to_hole (min 0.5mm))
+	(condition "A.Type == 'pad' && B.Type == A.Type && A.Net != B.Net"))
+
+(rule "pad to pad clearance (without hole, different nets)"
+	(constraint clearance (min 0.127mm))
+	(condition "A.Type == 'pad' && B.Type == A.Type && A.Net != B.Net"))
+
+(rule "NPTH to Track clearance)"
+	(constraint hole_clearance (min 0.254mm))
+	(condition "A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track'"))
+
+(rule "PTH to Track clearance)"
+	(constraint hole_clearance (min 0.33mm))
+	(condition "A.isPlated() && B.Type == 'track'"))
+
+(rule "Pad to Track clearance)"
+	(constraint clearance (min 0.2mm))
+	(condition "A.isPlated() && B.Type == 'track'"))
