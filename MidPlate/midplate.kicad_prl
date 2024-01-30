@@ -65,7 +65,7 @@
       39,
       40
     ],
-    "visible_layers": "8089fff_ffffffff",
+    "visible_layers": "80833ff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -73,6 +73,19 @@
     "version": 3
   },
   "project": {
-    "files": []
+    "files": [
+      {
+        "name": "midplate.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": 426,
+          "pos_y": 1431,
+          "size_x": 1938,
+          "size_y": 1048
+        }
+      }
+    ]
   }
 }
