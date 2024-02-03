@@ -5018,63 +5018,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f0edb952-856b-48c5-bc11-f86942130833)
   )
+  (label "HV" (at 215.9 31.75 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ff6ee7f7-72b2-46b3-8132-033a8cbdfe85)
+  )
 
-  (global_label "EXTRA_HV" (shape input) (at 148.59 161.29 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 052b5e15-78a6-4c86-ab01-6d0548b80014)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 160.6466 161.29 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "DONE" (shape input) (at 49.53 58.42 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 15cf0b90-7e75-4813-a74d-6287c3249e5b)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 41.4648 58.42 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "CHIP_EXTRA" (shape input) (at 27.94 125.73 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 2705a227-3aac-4fac-868d-e9c79536827e)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 13.8272 125.73 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "CHICKER" (shape input) (at 27.94 123.19 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 2b84b7fb-3b8b-4623-ab99-c9035fd83a61)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 16.7905 123.19 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "CHICKER_HV" (shape input) (at 151.13 111.76 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 2d334cfa-f68f-4a34-8240-243de3e43d8d)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 165.6662 111.76 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "HV" (shape input) (at 151.13 104.14 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 9edab63a-9cfd-46f8-893b-1df2efe13293)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 156.5343 104.14 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "CHARGE" (shape input) (at 49.53 63.5 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid a47f0d13-ed06-4aad-be3b-2dd954936792)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 39.1667 63.5 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "HV" (shape input) (at 148.59 153.67 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid af29631e-9f95-401c-ba77-43b3f382ac44)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 153.9943 153.67 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "HV" (shape input) (at 246.38 101.6 270) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid d2c97415-64ec-48ee-a576-78d4211947e2)
@@ -5082,12 +5030,38 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "HV" (shape input) (at 208.28 31.75 90) (fields_autoplaced)
+
+  (hierarchical_label "CHICKER" (shape input) (at 27.94 123.19 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 14019e9d-d918-4258-b053-0a9ae14251eb)
+  )
+  (hierarchical_label "EXTRA_HV" (shape input) (at 148.59 161.29 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
-    (uuid dad684e8-f74a-4480-97f1-db8eae3f0e0f)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 208.28 26.3457 90)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
+    (uuid 16eb4a15-0b60-4e79-b815-1d00efd5b5db)
+  )
+  (hierarchical_label "HV" (shape input) (at 151.13 104.14 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 27f45355-97be-4343-8f1e-3839bfae09e4)
+  )
+  (hierarchical_label "HV" (shape input) (at 148.59 153.67 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 3addacb9-51fb-43df-9e72-fc07486aa8da)
+  )
+  (hierarchical_label "CHARGE" (shape input) (at 49.53 63.5 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 3d6a22ee-fb0d-48cd-a079-544592bf8e97)
+  )
+  (hierarchical_label "DONE" (shape input) (at 49.53 58.42 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 8738969d-973f-452c-bcf2-5584c448f13a)
+  )
+  (hierarchical_label "CHIP_EXTRA" (shape input) (at 27.94 125.73 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 8e2caeb6-2ad3-4235-812f-a3654b320216)
+  )
+  (hierarchical_label "CHICKER_HV" (shape input) (at 151.13 111.76 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid b723b00f-7f04-4516-b722-88e87f4e26ee)
   )
 
   (symbol (lib_id "bots:C_100p") (at 91.44 78.74 0) (unit 1)
@@ -5126,7 +5100,7 @@
     (pin "1" (uuid 7112b298-f418-471e-bafb-d1a95ea9d763))
     (pin "2" (uuid ad0bae3e-ef13-46fb-ab23-692d2ebf79b3))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C3") (unit 1)
         )
@@ -5154,7 +5128,7 @@
     )
     (pin "1" (uuid 3b9ab442-6f42-47bb-8f7d-78316ce73a55))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR020") (unit 1)
         )
@@ -5198,7 +5172,7 @@
     (pin "1" (uuid a1ddf297-dce0-4448-a5c5-786a1a8b0ea7))
     (pin "2" (uuid 72741d74-1f23-4d89-b48a-d1376c68da4c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R9") (unit 1)
         )
@@ -5226,7 +5200,7 @@
     )
     (pin "1" (uuid b47df54c-77e7-420c-93f7-1e5e96103054))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR054") (unit 1)
         )
@@ -5251,7 +5225,7 @@
     )
     (pin "1" (uuid 9934bae7-3716-4340-ae0a-23fefd48e5f6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR072") (unit 1)
         )
@@ -5276,7 +5250,7 @@
     )
     (pin "1" (uuid 38b73ea6-9522-4617-879f-8595c5e0299b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR02") (unit 1)
         )
@@ -5301,7 +5275,7 @@
     )
     (pin "1" (uuid c25bc2bd-6998-4887-a1ee-570e50581600))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP25") (unit 1)
         )
@@ -5348,7 +5322,7 @@
     (pin "1" (uuid 95f954fb-7489-496a-86b1-e2f6b893c41a))
     (pin "2" (uuid a3599f93-4459-4f32-a68c-570af4596690))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R9") (unit 1)
         )
@@ -5376,7 +5350,7 @@
     )
     (pin "1" (uuid ca26bf42-1543-40de-9922-1f10d38efde1))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR073") (unit 1)
         )
@@ -5417,7 +5391,7 @@
     (pin "1" (uuid b94a693d-8340-43b5-a682-b7a578adddb4))
     (pin "2" (uuid bca081e0-5a40-42a3-a25f-c3f53008336c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C6") (unit 1)
         )
@@ -5445,7 +5419,7 @@
     )
     (pin "1" (uuid ef52e17f-a717-468e-8739-8255036e8a81))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR021") (unit 1)
         )
@@ -5470,7 +5444,7 @@
     )
     (pin "1" (uuid 635fac64-7e3a-45f5-b221-136b712f4ce8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP22") (unit 1)
         )
@@ -5517,7 +5491,7 @@
     (pin "1" (uuid 532e19ef-30a4-4ac8-be9f-b2cbf7796942))
     (pin "2" (uuid e7472ec7-9c92-43cf-a229-13108786abd9))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "D2") (unit 1)
         )
@@ -5561,7 +5535,7 @@
     (pin "1" (uuid c3b8f932-e8d6-410d-b611-49f353e6fcb7))
     (pin "2" (uuid 7f4edb63-cfe0-46c8-87cb-3cf22b4f8a29))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R2") (unit 1)
         )
@@ -5609,7 +5583,7 @@
     (pin "2" (uuid 78c204fc-3bc8-436c-8056-d05e8460713d))
     (pin "3" (uuid ac4ca0e0-c92b-488c-b4c4-58e77b6128fd))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "Q6") (unit 1)
         )
@@ -5634,7 +5608,7 @@
     )
     (pin "1" (uuid 4dc1fa3e-7d21-451d-a523-f8fa72e7cd6e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP23") (unit 1)
         )
@@ -5681,7 +5655,7 @@
     (pin "1" (uuid c87ab1ee-40e0-4776-aa11-2db24ab9dba0))
     (pin "2" (uuid a6cd5152-349c-434f-802a-91323f522065))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R7") (unit 1)
         )
@@ -5725,7 +5699,7 @@
     (pin "1" (uuid 6df4c769-7ecb-47d4-a970-48bcdc087c5b))
     (pin "2" (uuid 01b305bd-87e8-4c3b-9d42-70934d39eb98))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C27") (unit 1)
         )
@@ -5772,7 +5746,7 @@
     (pin "1" (uuid 1fd41d0f-3712-41ce-b7b8-83c2314129e5))
     (pin "2" (uuid ea9de378-4000-47f6-be1a-0194992d80d6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D14") (unit 1)
         )
@@ -5797,7 +5771,7 @@
     )
     (pin "1" (uuid d7dedd76-7976-4545-b2b9-fb0385cb24fb))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR046") (unit 1)
         )
@@ -5841,7 +5815,7 @@
     (pin "1" (uuid c8814e7c-1778-477b-9948-80a7fe06c304))
     (pin "2" (uuid d586adc2-c15a-4432-b4b3-5c9ef52f665e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R1") (unit 1)
         )
@@ -5888,7 +5862,7 @@
     (pin "1" (uuid f74b8c93-9e32-4fc6-9135-84391511ea89))
     (pin "2" (uuid 76f5f216-b9aa-4ed8-8bfa-e5105bfd873f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R4") (unit 1)
         )
@@ -5913,7 +5887,7 @@
     )
     (pin "1" (uuid d3d5d895-89c8-409b-a766-0c69a164a3f3))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR062") (unit 1)
         )
@@ -5938,7 +5912,7 @@
     )
     (pin "1" (uuid 2310f09a-f979-416c-8303-4c5427be74e0))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR018") (unit 1)
         )
@@ -5963,7 +5937,7 @@
     )
     (pin "1" (uuid 20e1f22c-c19b-4a92-ad77-b44944be7913))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR09") (unit 1)
         )
@@ -6007,7 +5981,7 @@
     (pin "1" (uuid 50f8ac60-2eeb-4802-bc6b-51e7536b1fde))
     (pin "2" (uuid b7b8f8f9-a081-42fc-9dab-613c68cec202))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C5") (unit 1)
         )
@@ -6061,7 +6035,7 @@
     (pin "8" (uuid 936243f5-38f2-43bb-a013-1367368484e4))
     (pin "9" (uuid 62d0855e-81d9-42d7-8aff-8837eaff33bd))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "T1") (unit 1)
         )
@@ -6093,7 +6067,7 @@
     (pin "1" (uuid 956a0e9c-2dc5-4048-8dbf-3d0a92b34829))
     (pin "2" (uuid 04bd0c59-2aa1-42cc-9c7b-743105e289d1))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C1") (unit 1)
         )
@@ -6137,7 +6111,7 @@
     (pin "1" (uuid 61bb2d89-a114-4d85-8a19-17f2b51424cf))
     (pin "2" (uuid a019a8ff-c1f6-4b4d-9d4d-8df6d7b5a461))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C37") (unit 1)
         )
@@ -6181,7 +6155,7 @@
     (pin "1" (uuid 9e152747-bff6-47b5-9a0c-241a1aee44ef))
     (pin "2" (uuid 5ee33182-3fcf-44ba-96f3-bd9a853a1b1c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R42") (unit 1)
         )
@@ -6206,7 +6180,7 @@
     )
     (pin "1" (uuid 696d5ddf-b242-4121-8598-fa020b474d6a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP24") (unit 1)
         )
@@ -6234,7 +6208,7 @@
     )
     (pin "1" (uuid 5ecab32b-5188-40e7-ad7c-8eb256cce874))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR012") (unit 1)
         )
@@ -6262,7 +6236,7 @@
     )
     (pin "1" (uuid 25cb5a8b-52e0-4834-8644-e00c9d3629df))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR09") (unit 1)
         )
@@ -6309,7 +6283,7 @@
     (pin "1" (uuid 18dbbcd9-471d-4077-8702-4950d23afc45))
     (pin "2" (uuid 1c97b36b-ae72-48d7-8367-ef99d0b74230))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C10") (unit 1)
         )
@@ -6337,7 +6311,7 @@
     )
     (pin "1" (uuid 5b3d05dc-6130-4555-af5b-4ed5812f21aa))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR012") (unit 1)
         )
@@ -6381,7 +6355,7 @@
     (pin "1" (uuid f2d228ee-0622-4e06-97fb-a6fb0d8f3987))
     (pin "2" (uuid 7d5a5bfc-9616-471e-ba5f-8e042982eb99))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C40") (unit 1)
         )
@@ -6406,7 +6380,7 @@
     )
     (pin "1" (uuid 06a3a693-9803-460b-9fdf-940b8cd02c4b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR04") (unit 1)
         )
@@ -6450,7 +6424,7 @@
     (pin "1" (uuid 353b5b2b-c803-466a-9f68-36cfc711dfea))
     (pin "2" (uuid 8679b6a6-f2ce-4abc-a4b8-566f769bb8c0))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R49") (unit 1)
         )
@@ -6494,7 +6468,7 @@
     (pin "1" (uuid 5d6f353b-8280-412c-963b-fd1393ab7e24))
     (pin "2" (uuid 74a2cf98-4540-4395-96e5-40650f5de3db))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C8") (unit 1)
         )
@@ -6522,7 +6496,7 @@
     )
     (pin "1" (uuid 16512890-45df-46e9-bdef-3aa246d14d2d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6572,7 +6546,7 @@
     (pin "1" (uuid 40e49274-1b2e-4fa0-8f9d-dd66c9d0bd60))
     (pin "2" (uuid d5437ee7-acef-4453-98df-d2c0faaf39be))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R29") (unit 1)
         )
@@ -6600,7 +6574,7 @@
     )
     (pin "1" (uuid 684235ae-c066-4748-b406-bb930b5f4d0b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR09") (unit 1)
         )
@@ -6650,7 +6624,7 @@
     (pin "7" (uuid 40ee8b38-ad70-44d1-b1e0-78d7822a971d))
     (pin "8" (uuid 92ccaad3-ec3c-44e6-963a-9fc32da2433f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "U4") (unit 1)
         )
@@ -6697,7 +6671,7 @@
     (pin "1" (uuid 4486c359-b1e8-428f-a3e7-4591f6e1f4ae))
     (pin "2" (uuid 96876aa2-e814-4291-bb44-529cfc012082))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R9") (unit 1)
         )
@@ -6744,7 +6718,7 @@
     (pin "1" (uuid 79e5ba06-b22a-4655-bb3d-f30e49c382a9))
     (pin "2" (uuid f06e113c-53fc-49cd-bc1e-1534a8c091d8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C8") (unit 1)
         )
@@ -6769,7 +6743,7 @@
     )
     (pin "1" (uuid 3900dc67-5d03-42ad-aaa1-076753adea38))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR075") (unit 1)
         )
@@ -6813,7 +6787,7 @@
     (pin "1" (uuid 20870098-5be4-4214-9d2f-54bae86dfddf))
     (pin "2" (uuid b900719f-7de1-4133-9194-617e96d4b944))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R10") (unit 1)
         )
@@ -6870,7 +6844,7 @@
     (pin "2" (uuid 9f923477-e7ca-44c5-a999-2725865d4672))
     (pin "3" (uuid 6f632857-112c-46f6-a7c2-8df54e2b0a54))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "Q5") (unit 1)
         )
@@ -6911,7 +6885,7 @@
     (pin "1" (uuid 821eae2d-afd6-4fbf-a369-a021a4a4f5bb))
     (pin "2" (uuid 16bf5581-1861-4fa8-a7bf-59431e9748b9))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D11") (unit 1)
         )
@@ -6955,7 +6929,7 @@
     (pin "1" (uuid 3ff4b755-c8af-4ef8-9d61-792d57f44a32))
     (pin "2" (uuid 243dbeb0-4c00-4c8e-9f19-845fb87ba580))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R10") (unit 1)
         )
@@ -7002,7 +6976,7 @@
     (pin "1" (uuid baee414f-693a-4dc9-8665-c762341baa68))
     (pin "2" (uuid c2132d1c-074c-4c9f-9d18-f7960cfb51d9))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C3") (unit 1)
         )
@@ -7046,7 +7020,7 @@
     (pin "1" (uuid 297d19b5-9531-4ca2-886a-71fce06666f9))
     (pin "2" (uuid d4005830-5115-411b-9318-117a3655d98b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C4") (unit 1)
         )
@@ -7071,7 +7045,7 @@
     )
     (pin "1" (uuid 3fe05f11-0938-494f-8ad1-bd18d32137fa))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP19") (unit 1)
         )
@@ -7099,7 +7073,7 @@
     )
     (pin "1" (uuid f874ee95-3570-4bbf-924d-fbe7c460cc1a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR07") (unit 1)
         )
@@ -7141,7 +7115,7 @@
     (pin "2" (uuid 6a568561-8851-4dc0-bfc0-7528d2c43e9d))
     (pin "3" (uuid 9221ba61-ffb6-416e-ac13-bb7b9154fa4c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "Q7") (unit 1)
         )
@@ -7166,7 +7140,7 @@
     )
     (pin "1" (uuid 62cc3d48-a316-4ef2-bd52-2cdb9a97379c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR06") (unit 1)
         )
@@ -7210,7 +7184,7 @@
     (pin "1" (uuid f2fd9b6f-6789-4a2a-923f-9d2101e5881c))
     (pin "2" (uuid f6d9919c-e905-4458-b61a-a516da68db5a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C27") (unit 1)
         )
@@ -7251,7 +7225,7 @@
     (pin "1" (uuid 87cc9a68-69c0-4be2-ad36-9604c03b6cd6))
     (pin "2" (uuid 6ba25b8b-26f9-4734-ad2a-b0188fe7a957))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R4") (unit 1)
         )
@@ -7295,7 +7269,7 @@
     (pin "1" (uuid f7e2c647-3485-46d0-9ac5-2cb71dc6fee2))
     (pin "2" (uuid 1f2f4a56-b3e0-4080-b090-daaefe083a19))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D12") (unit 1)
         )
@@ -7342,7 +7316,7 @@
     (pin "1" (uuid 59e04c80-12d4-4463-8dd6-5c712e4fde46))
     (pin "2" (uuid 68d1b2d8-cc86-4041-90c0-c3886995d6a2))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D10") (unit 1)
         )
@@ -7367,7 +7341,7 @@
     )
     (pin "1" (uuid 954703a3-2dbc-4bc8-9066-bc52f6522e51))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR055") (unit 1)
         )
@@ -7411,7 +7385,7 @@
     (pin "1" (uuid 5f3e2a25-f253-4531-9a24-365093eeb920))
     (pin "2" (uuid 9b128db9-0051-4039-ba0e-73dde43d733b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C8") (unit 1)
         )
@@ -7455,7 +7429,7 @@
     (pin "1" (uuid 83978fbc-7b0c-4ece-afa5-5bc4f353ccf5))
     (pin "2" (uuid 98034b3f-4395-4108-b478-db6181f1154e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D3") (unit 1)
         )
@@ -7496,7 +7470,7 @@
     (pin "1" (uuid 0ce4832f-bbf0-4383-b4be-d3390249cb7d))
     (pin "2" (uuid 09e6e456-b327-4627-b8ab-81aa7b914808))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D2") (unit 1)
         )
@@ -7521,7 +7495,7 @@
     )
     (pin "1" (uuid 3daaa2d4-3a80-4ec7-98ca-6c005e2bfc27))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR09") (unit 1)
         )
@@ -7568,7 +7542,7 @@
     (pin "1" (uuid 6ed68f47-3231-4e16-8cf6-30923eacc29d))
     (pin "2" (uuid a9109154-5c69-4ec3-987c-4fdcfa99b89d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R8") (unit 1)
         )
@@ -7619,7 +7593,7 @@
     (pin "2" (uuid 2c5081a5-a11f-416d-ae34-82573f22d854))
     (pin "3" (uuid 7496a5d5-c910-4014-80bd-1595a248e42e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "Q2") (unit 1)
         )
@@ -7663,7 +7637,7 @@
     (pin "1" (uuid f629a6c7-358a-4d46-8ced-d2fe01d143be))
     (pin "2" (uuid 98a1b3d9-fb04-4099-a86b-b33367e003fe))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R1") (unit 1)
         )
@@ -7710,7 +7684,7 @@
     (pin "1" (uuid dd901606-515b-4525-b984-0d790938e4f1))
     (pin "2" (uuid 9013b016-defd-4f57-9512-e2750d263bf7))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C10") (unit 1)
         )
@@ -7762,7 +7736,7 @@
     (pin "8" (uuid b7025848-2d04-4032-a670-c72648aa46aa))
     (pin "9" (uuid 9fbc862b-b168-42b7-bc21-832e276b2dff))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "U2") (unit 1)
         )
@@ -7806,7 +7780,7 @@
     (pin "1" (uuid d7285ffd-5218-4a6c-9408-a24094895794))
     (pin "2" (uuid bbf583a2-faaf-4efe-8cba-fc7ccada0ed5))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R29") (unit 1)
         )
@@ -7851,7 +7825,7 @@
     (pin "2" (uuid 79d4a936-c8b7-47ac-a445-9ecc5d653753))
     (pin "3" (uuid 4578e6ab-c7d1-4ccf-9be8-e3849f1dec6d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R44") (unit 1)
         )
@@ -7892,7 +7866,7 @@
     (pin "1" (uuid 5087f6a0-3235-4dba-908c-29419e83f4b6))
     (pin "2" (uuid b4d579b5-6d2c-4125-bf75-c5f6cf762ae8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R3") (unit 1)
         )
@@ -7936,7 +7910,7 @@
     (pin "1" (uuid 9b19a631-15d5-46a6-9bb7-b574cb6c3df2))
     (pin "2" (uuid 94315d9b-a1c8-4b35-bf2f-b8acd04618a8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R5") (unit 1)
         )
@@ -7971,7 +7945,7 @@
     (pin "1" (uuid 20f1c24f-59a9-47cb-920d-2fcf54648c26))
     (pin "2" (uuid 885d6393-8fdf-4f3a-b727-4fc739658cdf))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "C2") (unit 1)
         )
@@ -8012,7 +7986,7 @@
     (pin "1" (uuid efe1fbe2-17a9-4533-bc8e-bd8ffa9c5d3d))
     (pin "2" (uuid 685d5ca7-4119-41f3-a91f-2e124ba2efba))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C27") (unit 1)
         )
@@ -8059,7 +8033,7 @@
     (pin "1" (uuid 2e7e658c-fc01-4825-bd23-a19cd66a3dd7))
     (pin "2" (uuid 0d930089-cecc-40c3-8808-076554655458))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R6") (unit 1)
         )
@@ -8106,7 +8080,7 @@
     (pin "1" (uuid 6f3a9771-1e2b-4be0-9b61-a65d873ef377))
     (pin "2" (uuid 19324f78-7ea0-42a6-a06f-0e93157687fd))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C1") (unit 1)
         )
@@ -8156,7 +8130,7 @@
     (pin "1" (uuid 11b63e71-c206-4b64-bcca-0e5edd10dbf9))
     (pin "2" (uuid 70b793d8-b962-4731-9384-cdf752bcdabf))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "D1") (unit 1)
         )
@@ -8198,7 +8172,7 @@
     (pin "2" (uuid b6d32dcd-29ac-4b30-a769-8604c2847555))
     (pin "3" (uuid 1eccb864-baf9-42ce-af2f-7dcaabde7874))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "Q3") (unit 1)
         )
@@ -8242,7 +8216,7 @@
     (pin "1" (uuid 563e6d3f-aa97-4909-8dc6-096965a2fa7f))
     (pin "2" (uuid 056a7433-f3ff-47aa-a7b5-2c329e3ee61f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R9") (unit 1)
         )
@@ -8270,7 +8244,7 @@
     )
     (pin "1" (uuid 0242700d-efff-4d50-a5e2-382fb0950652))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP20") (unit 1)
         )
@@ -8315,7 +8289,7 @@
     (pin "2" (uuid 3d5e7148-478b-4b90-be93-cef5b804edc2))
     (pin "3" (uuid 0fa93075-8acf-401b-9263-2f208432b699))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R48") (unit 1)
         )
@@ -8356,7 +8330,7 @@
     (pin "1" (uuid f3752320-ca80-4451-8573-41d0de6ee460))
     (pin "2" (uuid ad0eec0f-39ec-435c-8b72-f92b43018d91))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R46") (unit 1)
         )

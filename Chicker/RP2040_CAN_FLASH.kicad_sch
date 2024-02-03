@@ -374,86 +374,6 @@
         )
       )
     )
-    (symbol "bots:B220" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "B220" (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "bots:D_SMB" (at 0 -4.445 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "http://www.jameco.com/Jameco/Products/ProdDS/1538777.pdf" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "MPN" "B220-13-F" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Manufacturer" "Diodes Incorporated" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Price" "0.0833" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "JLC" "SMB(DO-214AA)" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "LCSC" "C110480" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "diode Schottky" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "20V 2A Schottky Barrier Rectifier Diode, SMB" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "D*SMB*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "B220_0_1"
-        (polyline
-          (pts
-            (xy 1.27 0)
-            (xy -1.27 0)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 1.27)
-            (xy 1.27 -1.27)
-            (xy -1.27 0)
-            (xy 1.27 1.27)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.905 0.635)
-            (xy -1.905 1.27)
-            (xy -1.27 1.27)
-            (xy -1.27 -1.27)
-            (xy -0.635 -1.27)
-            (xy -0.635 -0.635)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "B220_1_1"
-        (pin passive line (at -3.81 0 0) (length 2.54)
-          (name "K" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 3.81 0 180) (length 2.54)
-          (name "A" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
     (symbol "bots:BSS138" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "Q" (at 5.08 1.27 0)
         (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -947,89 +867,6 @@
         )
         (pin passive line (at 0 -3.81 90) (length 2.794)
           (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "bots:D_CUS08F30,H3F" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "220mV Schottky" (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "bots:D_SOD-323_HandSoldering" (at 0 -4.445 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "MPN" "CUS08F30,H3F" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Manufacturer" "Vishay Intertech" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Price" "0.0612" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "JLC" "SC-76(SOD-232)" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "LCSC" "C150183" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "JLC Extended" "yes" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "diode Schottky" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Diode 30 V 800mA Surface Mount USC" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "D*SMB*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "D_CUS08F30,H3F_0_1"
-        (polyline
-          (pts
-            (xy 1.27 0)
-            (xy -1.27 0)
-          )
-          (stroke (width 0) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 1.27)
-            (xy 1.27 -1.27)
-            (xy -1.27 0)
-            (xy 1.27 1.27)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.905 0.635)
-            (xy -1.905 1.27)
-            (xy -1.27 1.27)
-            (xy -1.27 -1.27)
-            (xy -0.635 -1.27)
-            (xy -0.635 -0.635)
-          )
-          (stroke (width 0.254) (type default))
-          (fill (type none))
-        )
-      )
-      (symbol "D_CUS08F30,H3F_1_1"
-        (pin passive line (at -3.81 0 0) (length 2.54)
-          (name "K" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 3.81 0 180) (length 2.54)
-          (name "A" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
       )
@@ -2822,9 +2659,6 @@
   (junction (at 133.35 25.4) (diameter 0) (color 0 0 0 0)
     (uuid 08b374ee-1b61-47db-9c46-2b772a01a0dd)
   )
-  (junction (at 97.79 24.13) (diameter 0) (color 0 0 0 0)
-    (uuid 08c9fda2-b4a1-4f9a-a7ed-3ae5c0e49de3)
-  )
   (junction (at 69.85 166.37) (diameter 0) (color 0 0 0 0)
     (uuid 15cf799b-d1af-41b4-9f2f-68c9b4708e72)
   )
@@ -2917,9 +2751,6 @@
   )
   (junction (at 17.78 52.07) (diameter 0) (color 0 0 0 0)
     (uuid 93480221-57ed-490b-9a9c-bfc395c998cf)
-  )
-  (junction (at 76.2 24.13) (diameter 0) (color 0 0 0 0)
-    (uuid 946135d8-6ef7-4296-9c25-79d1847e14bc)
   )
   (junction (at 58.42 24.13) (diameter 0) (color 0 0 0 0)
     (uuid 99c48cda-6030-4e0b-a965-2d96bd8f8df6)
@@ -3209,10 +3040,6 @@
     (stroke (width 0) (type default))
     (uuid 3202fcc4-824a-4ed7-86b4-4c5680398e14)
   )
-  (wire (pts (xy 87.63 24.13) (xy 88.9 24.13))
-    (stroke (width 0) (type default))
-    (uuid 342f98cd-d4dd-4d99-8a6d-d6a7d63a5b22)
-  )
   (wire (pts (xy 30.48 64.77) (xy 30.48 67.31))
     (stroke (width 0) (type default))
     (uuid 3512e40f-70ad-4b55-a485-120a045c789e)
@@ -3248,18 +3075,6 @@
   (wire (pts (xy 241.3 35.56) (xy 241.3 36.83))
     (stroke (width 0) (type default))
     (uuid 3c6d28ca-3ae5-4742-81a9-a510ce5ab930)
-  )
-  (wire (pts (xy 97.79 41.91) (xy 97.79 24.13))
-    (stroke (width 0) (type default))
-    (uuid 3c715a71-ab4a-4f25-bcf9-a16ce9977e5b)
-  )
-  (wire (pts (xy 76.2 24.13) (xy 76.2 25.4))
-    (stroke (width 0) (type default))
-    (uuid 3d7ec8c2-50e2-4d13-bf94-540255479cfb)
-  )
-  (wire (pts (xy 76.2 33.02) (xy 76.2 34.29))
-    (stroke (width 0) (type default))
-    (uuid 3da18f74-4d67-4e51-9a9b-2a42f7cdc906)
   )
   (wire (pts (xy 218.44 156.21) (xy 218.44 158.75))
     (stroke (width 0) (type default))
@@ -3500,10 +3315,6 @@
   (wire (pts (xy 33.02 110.49) (xy 34.29 110.49))
     (stroke (width 0) (type default))
     (uuid 7465905a-bd98-4cad-b9a1-c0d136f71c48)
-  )
-  (wire (pts (xy 88.9 41.91) (xy 97.79 41.91))
-    (stroke (width 0) (type default))
-    (uuid 7779a7c2-a440-49a2-b9f6-18af65bcf8af)
   )
   (wire (pts (xy 175.26 35.56) (xy 170.18 35.56))
     (stroke (width 0) (type default))
@@ -3853,10 +3664,6 @@
     (stroke (width 0) (type default))
     (uuid c3cd0481-97ab-44df-b75d-2710fe0e00a3)
   )
-  (wire (pts (xy 76.2 24.13) (xy 80.01 24.13))
-    (stroke (width 0) (type default))
-    (uuid c3dcb595-2ba5-450d-b793-9fc1a181c7b3)
-  )
   (wire (pts (xy 105.41 118.11) (xy 106.68 118.11))
     (stroke (width 0) (type default))
     (uuid c4105131-c62c-4ee9-88bf-2e01b6b2a3e4)
@@ -3884,10 +3691,6 @@
   (wire (pts (xy 166.37 115.57) (xy 166.37 118.11))
     (stroke (width 0) (type default))
     (uuid c64ac4bb-288e-4185-a5e4-a6d5b6083984)
-  )
-  (wire (pts (xy 96.52 24.13) (xy 97.79 24.13))
-    (stroke (width 0) (type default))
-    (uuid c6f2506c-dcf0-4cd6-8fee-bb392d152dcc)
   )
   (wire (pts (xy 58.42 44.45) (xy 58.42 41.91))
     (stroke (width 0) (type default))
@@ -3972,10 +3775,6 @@
   (wire (pts (xy 26.67 161.29) (xy 30.48 161.29))
     (stroke (width 0) (type default))
     (uuid dbd48a43-83dd-43aa-864b-4f77cc85f753)
-  )
-  (wire (pts (xy 78.74 41.91) (xy 81.28 41.91))
-    (stroke (width 0) (type default))
-    (uuid dc1084d4-b422-4840-8a91-411db459b929)
   )
   (wire (pts (xy 114.3 105.41) (xy 120.65 105.41))
     (stroke (width 0) (type default))
@@ -4241,10 +4040,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0119f30b-89e5-47a6-8c46-9f8cbbbe1e47)
   )
-  (label "5V_USB" (at 72.39 24.13 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 01f79bd2-0cd5-4240-9d76-9a636f3efbf7)
-  )
   (label "TESTEN" (at 173.99 100.33 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 02e9b94a-7890-44ce-a7b6-33e2b9bfeee1)
@@ -4316,10 +4111,6 @@
   (label "RXCAN" (at 57.15 161.29 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 382dbd44-d9ec-4dc7-bf04-720d5ded9858)
-  )
-  (label "4.8V_USB" (at 87.63 24.13 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 3b0d3f12-ada2-41cc-93ce-f0d8a41f2777)
   )
   (label "BOOT" (at 35.56 102.87 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -4662,75 +4453,41 @@
     (uuid fa8c6244-9ba9-4e9f-8a6f-f8e526767f7f)
   )
 
-  (global_label "5V_IN" (shape input) (at 78.74 41.91 180) (fields_autoplaced)
+  (hierarchical_label "CHICKER" (shape input) (at 165.1 62.23 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 23d87ceb-6d69-4c92-83b7-e2e96311d2b7)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 70.5538 41.91 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
+    (uuid 3a233d2f-8faf-49f6-83c3-b1e17b6eee16)
   )
-  (global_label "CAN+" (shape input) (at 22.86 161.29 180) (fields_autoplaced)
+  (hierarchical_label "CANH" (shape input) (at 22.86 161.29 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 2743b313-edcf-4294-8127-19b28b80c7bf)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 14.6133 161.29 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
+    (uuid 5241ae78-186d-459c-b203-900c3591fcc0)
   )
-  (global_label "CAN-" (shape input) (at 22.86 166.37 180) (fields_autoplaced)
+  (hierarchical_label "CHARGE" (shape input) (at 165.1 69.85 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 313b9188-2cf7-4bbe-a7bd-0d40d0615e8f)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 14.6133 166.37 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
+    (uuid 5449885a-9a4d-480c-ae83-6fb5d9495072)
   )
-  (global_label "BKBM" (shape input) (at 248.92 110.49 0) (fields_autoplaced)
+  (hierarchical_label "CANL" (shape input) (at 22.86 166.37 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 7c523f9b-e0d7-402b-a394-8749e91de322)
+  )
+  (hierarchical_label "5V_USB" (shape input) (at 76.2 24.13 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 325f60fc-2ab4-4199-b0c4-acca96de690f)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 257.1666 110.49 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
+    (uuid 94287c70-1583-4b83-bdfb-22ab5a02fd5a)
   )
-  (global_label "CHARGE" (shape input) (at 165.1 69.85 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 327806cb-c443-46eb-9a32-315e1d31e997)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 154.7367 69.85 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "CHICKER" (shape input) (at 165.1 62.23 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid ab61f77d-aa90-4691-9063-1b47fd978316)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 153.9505 62.23 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "5V_USB" (shape input) (at 68.58 24.13 270) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid aca9cb1b-d843-4b85-829e-dd26c9e46612)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 68.58 34.1909 90)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "CHIP_EXTRA" (shape input) (at 167.64 64.77 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid adcb0094-5118-45b6-b25f-d52ffa1ebeb2)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 153.5272 64.77 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "BATT_LEVEL" (shape input) (at 248.92 102.87 0) (fields_autoplaced)
+  (hierarchical_label "BKBM" (shape input) (at 248.92 110.49 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c4b621c2-6fb5-4aea-a03b-f855aa2bda74)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 262.6094 102.87 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
+    (uuid afa6f9f1-0902-4127-8130-47284808d099)
   )
-  (global_label "DONE" (shape input) (at 165.1 67.31 180) (fields_autoplaced)
+  (hierarchical_label "DONE" (shape input) (at 165.1 67.31 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
-    (uuid d56bb425-9599-46bd-afff-02a8e5181aa9)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 157.0348 67.31 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
+    (uuid c1011771-361f-4d75-ad6e-6f258a8ae3f3)
+  )
+  (hierarchical_label "BATT_LEVEL" (shape input) (at 248.92 102.87 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid ca98102d-f379-4beb-a4ba-3be39006b90c)
+  )
+  (hierarchical_label "CHIP_EXTRA" (shape input) (at 167.64 64.77 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid ebfc511b-866c-4fb5-ab6b-b3d584c7f81c)
   )
 
   (symbol (lib_id "power:GND") (at 35.56 111.76 90) (unit 1)
@@ -4750,7 +4507,7 @@
     )
     (pin "1" (uuid 1adc2757-f5c3-4594-807e-c5cc941ee22b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -4781,7 +4538,7 @@
     )
     (pin "1" (uuid f481ec8e-f8a9-46c3-8101-52784357402c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -4812,7 +4569,7 @@
     )
     (pin "1" (uuid 19c84bed-022d-48a9-9dd9-ef2fd76c3bdf))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR053") (unit 1)
         )
@@ -4859,7 +4616,7 @@
     (pin "8" (uuid db4cca4f-b4d9-4b9a-882e-7b2adc56ee6c))
     (pin "9" (uuid 9d8cb21a-82bf-470d-9dd9-93c0d801d40e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "J5") (unit 1)
         )
@@ -4887,7 +4644,7 @@
     )
     (pin "1" (uuid 30bfe8e2-4df8-4d75-b0d6-10574f04e354))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -4937,7 +4694,7 @@
     (pin "1" (uuid 42eb7b9e-8080-4de3-894e-2c08668c29e8))
     (pin "2" (uuid c43322ab-090b-4b10-9e3b-06985772eb3e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -4968,7 +4725,7 @@
     )
     (pin "1" (uuid b679d88c-44ca-4261-9f11-38b7a8507a59))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -4999,7 +4756,7 @@
     )
     (pin "1" (uuid 0723e65a-5ed6-422b-8537-e9c54d25420e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR07") (unit 1)
         )
@@ -5049,7 +4806,7 @@
     (pin "1" (uuid a65796ce-9aaa-4029-bdb1-2c4e18e7dc50))
     (pin "2" (uuid bb337a96-08bc-4f9c-a80b-66a0785b7f19))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "R39") (unit 1)
         )
@@ -5077,7 +4834,7 @@
     )
     (pin "1" (uuid ae1c3edf-1d5d-4f80-b6b5-991abae9296b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR070") (unit 1)
         )
@@ -5125,7 +4882,7 @@
     (pin "S1" (uuid 31048787-4622-495d-999c-e00cafcec5de))
     (pin "S2" (uuid 3e579004-dba6-4a83-af0e-777006a52d23))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "J3") (unit 1)
         )
@@ -5172,7 +4929,7 @@
     (pin "7" (uuid 0d99dbb0-f2d1-41d7-9b2e-b80873dea0c0))
     (pin "8" (uuid a6738d7f-089b-49dd-9c5b-e2af378ce79d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U6") (unit 1)
         )
@@ -5197,7 +4954,7 @@
     )
     (pin "1" (uuid 5f409698-86fb-4880-b44c-bc29dbfd40f6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -5206,34 +4963,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR076") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+5V") (at 97.79 24.13 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 1890e3dd-dacc-429f-941f-31915eeaa506)
-    (property "Reference" "#PWR053" (at 97.79 27.94 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5V" (at 97.79 19.05 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 97.79 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 97.79 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6829dc99-5690-4fc4-8a75-4e57246b85a0))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR053") (unit 1)
-        )
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR081") (unit 1)
         )
       )
     )
@@ -5277,7 +5006,7 @@
     (pin "3" (uuid c4dae656-c8c9-4e8e-aa43-34c53e7eb157))
     (pin "4" (uuid e930ed56-071d-4a7c-97f8-4f136d8213e0))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U10") (unit 1)
         )
@@ -5302,7 +5031,7 @@
     )
     (pin "1" (uuid 3ee7925e-b648-489a-85ea-4b1c6d97d747))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -5314,50 +5043,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR058") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:D_CUS08F30,H3F") (at 85.09 41.91 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 21e65b1f-13c8-49b0-9a26-25bd0b704f66)
-    (property "Reference" "D18" (at 85.09 38.1 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "220mV Schottky" (at 81.28 44.45 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "bots:D_SOD-323_HandSoldering" (at 85.09 37.465 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MPN" "CUS08F30,H3F" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer" "Vishay Intertech" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Price" "0.0612" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC" "SC-76(SOD-232)" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "LCSC" "C150183" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC Extended" "yes" (at 85.09 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ed6a9fb5-c769-4087-b91e-c6f5f72f2af4))
-    (pin "2" (uuid 1c93bd78-9c7c-456d-a39c-d50370e416ab))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "D18") (unit 1)
         )
       )
     )
@@ -5380,7 +5065,7 @@
     )
     (pin "1" (uuid e3bae3de-7da4-4fd0-9420-fef02d1d334f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -5411,7 +5096,7 @@
     )
     (pin "1" (uuid 30a140fa-4e6a-4b98-aa37-a0cbc9c72db6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -5461,7 +5146,7 @@
     (pin "1" (uuid 8e459444-e7e0-48e2-b606-22c4c0f07c78))
     (pin "2" (uuid e6d73022-b922-47a2-b5a0-1b0e21317a8d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -5511,7 +5196,7 @@
     (pin "1" (uuid 2f3a7de9-885b-4de9-b936-fddbb61415d6))
     (pin "2" (uuid 0839a13a-453b-4f8f-8126-a1103a4837a3))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "Y1") (unit 1)
         )
@@ -5536,7 +5221,7 @@
     )
     (pin "1" (uuid 7f485b63-1924-40d7-851f-1cf6eff57737))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -5586,7 +5271,7 @@
     (pin "1" (uuid f8cecb91-dd19-4add-8c93-53f1e3b46606))
     (pin "2" (uuid c0985071-ab22-4afb-824f-0495346e4f67))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -5617,7 +5302,7 @@
     )
     (pin "1" (uuid adcf920c-95e8-4db2-94c5-cb225c1b1b5b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -5667,7 +5352,7 @@
     (pin "1" (uuid 342c148b-c20d-426d-b978-f253cdac3b00))
     (pin "2" (uuid 758ff240-8ac9-4384-93e4-8d351b28defe))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -5717,7 +5402,7 @@
     (pin "1" (uuid 265114c9-d133-4491-9d7b-b3564034faf2))
     (pin "2" (uuid b6117144-28f4-43a5-9899-1ac3a36e145d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -5771,7 +5456,7 @@
     (pin "2" (uuid 37600854-7a22-4026-bdef-a40cae7f07e9))
     (pin "3" (uuid 94571516-d565-4897-b4dd-28621b064aab))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "Q4") (unit 1)
         )
@@ -5799,7 +5484,7 @@
     )
     (pin "1" (uuid f3d0ea01-294a-4ff0-9b79-0ef794f211e7))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -5904,7 +5589,7 @@
     (pin "8" (uuid d1039cac-9d3b-41fa-8de3-d25b20713606))
     (pin "9" (uuid 797daccb-5562-40a9-afb8-383b52c8472e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U1") (unit 1)
         )
@@ -5951,7 +5636,7 @@
     (pin "1" (uuid 3f833e21-5889-4585-b0ea-5565fc0ce7c8))
     (pin "2" (uuid 98c6a1a7-32f7-4f1a-aa4d-4899a486f834))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -6001,7 +5686,7 @@
     (pin "1" (uuid 80e8a777-3996-4137-9852-9d97dd882e3f))
     (pin "2" (uuid 3bc839b1-2096-4503-8935-61070d9e5a89))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6051,7 +5736,7 @@
     (pin "1" (uuid 69658e37-57e3-4526-b5d2-89e0ac497b7f))
     (pin "2" (uuid d18997e6-64f2-49df-b06f-c61d6c89c05a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6101,7 +5786,7 @@
     (pin "1" (uuid 4151c4cd-e040-4655-82b1-3b04dd856903))
     (pin "2" (uuid 2546eab3-9df5-46c1-b69f-f56191d7dfea))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6132,7 +5817,7 @@
     )
     (pin "1" (uuid 896d1fca-154b-44e0-9123-9cadf7508666))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6182,7 +5867,7 @@
     (pin "1" (uuid 4ffc0418-5610-4069-81d4-3b523953609b))
     (pin "2" (uuid 19b31869-680f-42df-a7c2-41d6d56630e1))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6232,7 +5917,7 @@
     (pin "1" (uuid 652ef676-ce73-4e99-8a7a-f0b7021cb4fa))
     (pin "2" (uuid 0c88cf67-3951-490a-8631-241764748ab8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "R39") (unit 1)
         )
@@ -6260,7 +5945,7 @@
     )
     (pin "1" (uuid 76cc859e-873f-4474-82f7-55e62d0cf96d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -6310,7 +5995,7 @@
     (pin "1" (uuid 50d831ae-b2e3-4ba2-b5db-bac5b041246b))
     (pin "2" (uuid 67647463-4009-4d28-be3e-10d4b37eac05))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6360,7 +6045,7 @@
     (pin "1" (uuid 73051281-d338-4ade-a3b3-37861a484fd8))
     (pin "2" (uuid 528c37f7-4098-4e53-bbec-ca13d10fc09f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -6391,7 +6076,7 @@
     )
     (pin "1" (uuid 22678def-879b-4371-beb7-46ceea24fa5f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6441,7 +6126,7 @@
     (pin "1" (uuid 93e2abd4-5f77-443f-8484-885fcfa075b6))
     (pin "2" (uuid 3690a3be-f6fc-4b6a-8ba1-2b6b75b34deb))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -6472,7 +6157,7 @@
     )
     (pin "1" (uuid 064baa06-1eb5-4868-8b77-39bd4e0b0fa4))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -6503,7 +6188,7 @@
     )
     (pin "1" (uuid ad9015a8-8d8c-491a-8544-acf9d2c6aba2))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6534,7 +6219,7 @@
     )
     (pin "1" (uuid 94255b8f-ced2-4a9e-a38e-f4015b8953ca))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -6565,7 +6250,7 @@
     )
     (pin "1" (uuid 6fd9f3da-eab1-41a0-973b-c2fb5ee82b3b))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -6596,7 +6281,7 @@
     )
     (pin "1" (uuid 2a445ec7-2368-4905-a6d5-5d0a17a6cd9a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6646,7 +6331,7 @@
     (pin "1" (uuid ae285627-38ef-45a6-849c-7454e6118cbb))
     (pin "2" (uuid bbaf6295-cea1-4aec-acd9-792f22bef901))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -6693,7 +6378,7 @@
     (pin "1" (uuid 92a17c03-fc39-4b25-a669-42537a157912))
     (pin "2" (uuid d93c2c96-ed70-4dc9-af6a-ba183beb551c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -6724,7 +6409,7 @@
     )
     (pin "1" (uuid 045f01a7-e110-4d28-9d12-fc19ed56e9ce))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6733,47 +6418,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR090") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:B220") (at 76.2 29.21 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 79e58090-f405-4cf6-a69b-af711d6219fe)
-    (property "Reference" "D5" (at 78.74 27.6225 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "B220" (at 78.74 30.1625 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "bots:D_SMB" (at 71.755 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "http://www.jameco.com/Jameco/Products/ProdDS/1538777.pdf" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MPN" "B220-13-F" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer" "Diodes Incorporated" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Price" "0.0833" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC" "SMB(DO-214AA)" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "LCSC" "C110480" (at 76.2 29.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 0b2878d8-4281-4f9c-8083-1dfb1798c619))
-    (pin "2" (uuid a1050207-bbb4-4e2f-a325-daac50afc8f4))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "D5") (unit 1)
         )
       )
     )
@@ -6796,7 +6440,7 @@
     )
     (pin "1" (uuid 2a8f7cac-5fb6-4dc8-af65-ef6e96e51aef))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -6846,7 +6490,7 @@
     (pin "1" (uuid 007b4bf1-2912-4074-b4ba-4a63c3d904a0))
     (pin "2" (uuid debe72c5-96b9-4afd-873f-c6fa208acecf))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -6877,7 +6521,7 @@
     )
     (pin "1" (uuid de88ced2-18a5-460f-96e6-dd33f79b6eca))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -6908,7 +6552,7 @@
     )
     (pin "1" (uuid be057605-bcf9-45f1-86aa-4f87b48f4fdf))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -6956,7 +6600,7 @@
     (pin "2" (uuid ac8cfc69-952d-4434-8a19-3e5094456f5b))
     (pin "3" (uuid fec33e94-f68c-463c-9945-0afe8096109a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "J1") (unit 1)
         )
@@ -6981,7 +6625,7 @@
     )
     (pin "1" (uuid 7c904a8f-c59c-4597-b576-14f18a7fd4e7))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7012,7 +6656,7 @@
     )
     (pin "1" (uuid 6c7799d2-4761-40f8-8459-4aad93e8c8b7))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7046,7 +6690,7 @@
     )
     (pin "1" (uuid a6677cf5-962f-41d7-9548-03ca142f3e07))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -7077,7 +6721,7 @@
     )
     (pin "1" (uuid f0b549f1-93c2-414f-ac69-0b3418d9ed6f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -7108,7 +6752,7 @@
     )
     (pin "1" (uuid f5758933-e5c6-4183-ac71-f138855c9496))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7117,50 +6761,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR090") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:D_CUS08F30,H3F") (at 83.82 24.13 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 8db6b071-2b6d-422b-b70c-7bad0b8a6da9)
-    (property "Reference" "D16" (at 84.1375 17.78 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "220mV Schottky" (at 77.47 20.32 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "bots:D_SOD-323_HandSoldering" (at 83.82 19.685 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MPN" "CUS08F30,H3F" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer" "Vishay Intertech" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Price" "0.0612" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC" "SC-76(SOD-232)" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "LCSC" "C150183" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC Extended" "yes" (at 83.82 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 1e279bb8-109f-4d03-9df2-b3032cb417ef))
-    (pin "2" (uuid b1435b80-2160-4bb1-b362-eb9ab178f691))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "D16") (unit 1)
         )
       )
     )
@@ -7183,7 +6783,7 @@
     )
     (pin "1" (uuid b0cdc205-76c8-48d7-97cf-b835db96187e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7245,7 +6845,7 @@
     (pin "S3" (uuid df98067b-4b57-4a54-b88a-532e18ce1cc2))
     (pin "S4" (uuid 3f292c8f-98ac-4a6d-97e6-c67e246cde24))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "J2") (unit 1)
         )
@@ -7304,7 +6904,7 @@
     (pin "8" (uuid 0cb3e16b-aff3-41d0-ba72-07ef4d34f946))
     (pin "9" (uuid e6eb5b54-2bd4-48e2-a17c-6460a4aa4729))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U7") (unit 1)
         )
@@ -7351,7 +6951,7 @@
     (pin "1" (uuid 21957d3a-a7f0-4c39-a60f-93725d6bbf5e))
     (pin "2" (uuid caedc4d5-570a-4878-b77c-0bb7059d5eac))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -7401,7 +7001,7 @@
     (pin "1" (uuid 396b6dde-d55b-4c7c-ae4a-77a7dce2e156))
     (pin "2" (uuid d8e93bd0-9414-4ce5-9eb1-20ee04beb6f1))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -7432,7 +7032,7 @@
     )
     (pin "1" (uuid 50e73cbe-c5c2-42d7-990a-fbaf8b23d443))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7482,7 +7082,7 @@
     (pin "1" (uuid 53d880c7-798e-4f28-b41a-d7f431ad9c01))
     (pin "2" (uuid dd881562-2ad7-4b51-860c-5c019859c98e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "D2") (unit 1)
         )
@@ -7532,7 +7132,7 @@
     (pin "1" (uuid fe31bcce-2e9d-4ce1-a2a4-0cf6ee74bf9f))
     (pin "2" (uuid 0f55a03b-938f-4d44-bada-c420fca8ec6d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "R21") (unit 1)
         )
@@ -7557,7 +7157,7 @@
     )
     (pin "1" (uuid 688b1bf8-7945-489c-8ef4-15cc927c793f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR07") (unit 1)
         )
@@ -7607,7 +7207,7 @@
     (pin "1" (uuid 4a408f30-9ace-47a9-b924-18580c2808df))
     (pin "2" (uuid 304f13df-ce0d-4c50-8924-396863f4b53d))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -7638,7 +7238,7 @@
     )
     (pin "1" (uuid 85376350-eb55-4a24-8b1b-d65d9c73afaa))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7672,7 +7272,7 @@
     )
     (pin "1" (uuid 4efaab86-7e95-45bc-a1e9-a398bdf0dccd))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7703,7 +7303,7 @@
     )
     (pin "1" (uuid d7f56998-c87e-4b3a-a97a-2c4ee210251c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -7753,7 +7353,7 @@
     (pin "1" (uuid 855b401a-06c7-4ff3-9b9f-59764da70ffd))
     (pin "2" (uuid c1e8adc6-d5fa-4f9a-b9c2-87c8867c2faa))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -7784,7 +7384,7 @@
     )
     (pin "1" (uuid e07d8978-2574-4a46-b4d4-2235a74eb875))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -7793,40 +7393,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "#PWR076") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 76.2 34.29 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid b073cfe7-6eab-41db-8044-31807af8786a)
-    (property "Reference" "#PWR?" (at 76.2 40.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 76.2 39.37 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 76.2 34.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 76.2 34.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 41d7f8f9-0ddf-4d92-a33d-6ac95b2edb7c))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
-          (reference "#PWR?") (unit 1)
-        )
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
-          (reference "#PWR08") (unit 1)
-        )
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "#PWR024") (unit 1)
-        )
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-          (reference "#PWR068") (unit 1)
         )
       )
     )
@@ -7868,7 +7434,7 @@
     (pin "1" (uuid 491e20b5-1e06-4d85-a684-40b8a9601183))
     (pin "2" (uuid 36a5867a-f7eb-46be-8a79-9ed9f0f2e5b8))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -7899,7 +7465,7 @@
     )
     (pin "1" (uuid 54cdf1d0-dd9f-4cdb-821a-4930b7ec84f6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -7949,7 +7515,7 @@
     (pin "1" (uuid 13718768-406a-410d-9d81-589c3e2732ef))
     (pin "2" (uuid 14bdd8d8-e76a-4505-946a-85261045a4e6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "D2") (unit 1)
         )
@@ -7980,7 +7546,7 @@
     )
     (pin "1" (uuid fd4f74e0-51b2-4641-9b6c-2b39c9eafd30))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -8011,7 +7577,7 @@
     )
     (pin "1" (uuid ec1f8ff7-aef6-4a64-b4b2-9ab022f65a92))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8042,7 +7608,7 @@
     )
     (pin "1" (uuid a600ee69-e3ec-4cb1-8e9a-42742c7e4f98))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -8092,7 +7658,7 @@
     (pin "1" (uuid bb9a4a91-8aef-4c76-8ec1-5e931cd96ebd))
     (pin "2" (uuid e62c9c44-94ea-49d1-8fa9-5ae4ea6867ff))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -8123,7 +7689,7 @@
     )
     (pin "1" (uuid 5f050776-fadf-46c8-b525-0ff6e1226a2a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8170,7 +7736,7 @@
     (pin "1" (uuid 033a387a-633f-4a06-84c9-7e0b41e4bcd5))
     (pin "2" (uuid 1e0db7ad-0cc7-4e25-8a51-910028894c93))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -8220,7 +7786,7 @@
     (pin "1" (uuid 4c0019a0-c223-4ba4-8c6d-3c96e4daae74))
     (pin "2" (uuid ace7d1e9-3fcf-42aa-b812-9a666b8833f6))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -8229,50 +7795,6 @@
         )
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "R41") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:D_CUS08F30,H3F") (at 92.71 24.13 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid c0b15bbe-6cda-4e7f-b72a-2088ae516583)
-    (property "Reference" "D17" (at 92.71 20.32 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "220mV Schottky" (at 88.9 26.67 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "bots:D_SOD-323_HandSoldering" (at 92.71 19.685 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MPN" "CUS08F30,H3F" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Manufacturer" "Vishay Intertech" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Price" "0.0612" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC" "SC-76(SOD-232)" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "LCSC" "C150183" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLC Extended" "yes" (at 92.71 24.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6a446194-0734-480a-b6ab-4e4b5b596aeb))
-    (pin "2" (uuid a32cb9c1-671c-4d94-9d55-ed2dc25f80e8))
-    (instances
-      (project "POWER_BOARD"
-        (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-          (reference "D17") (unit 1)
         )
       )
     )
@@ -8314,7 +7836,7 @@
     (pin "1" (uuid bc6e46df-68d9-4c4c-8818-14411e118f32))
     (pin "2" (uuid 1d6a73ea-0a6d-411f-9479-4ef346e870ea))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "R20") (unit 1)
         )
@@ -8339,7 +7861,7 @@
     )
     (pin "1" (uuid daa0825b-eeac-4640-b17e-f130d6f55cac))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8398,7 +7920,7 @@
     (pin "7" (uuid 7f1e97c9-c093-450e-91bd-beb3175cb2d4))
     (pin "8" (uuid 640f8569-a7b9-4a6d-82c6-561c267cfa80))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U5") (unit 1)
         )
@@ -8423,7 +7945,7 @@
     )
     (pin "1" (uuid cecb7a73-87f7-44d5-b69b-41567c4c4c00))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -8476,7 +7998,7 @@
     (pin "1" (uuid 2d5fb486-7223-4fab-89ae-43d5c88897ea))
     (pin "2" (uuid e22bde1e-3ffb-46e0-b6bc-d9c4c89d5b81))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -8526,7 +8048,7 @@
     (pin "1" (uuid b5c70c8c-d8b0-45f6-8b10-7c44322f8ac5))
     (pin "2" (uuid 0371c7f3-a4c6-46f7-80c6-f26d20532036))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -8557,7 +8079,7 @@
     )
     (pin "1" (uuid e6558494-38ac-4e48-a387-1f05346754b0))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8607,7 +8129,7 @@
     (pin "1" (uuid 3ce70f30-0ede-4b2a-a5b7-53d6c727b642))
     (pin "2" (uuid 568b84f0-122c-4090-a028-4b987e57131c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -8638,7 +8160,7 @@
     )
     (pin "1" (uuid dcf032f5-a84f-4784-8442-e562555d371a))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8669,7 +8191,7 @@
     )
     (pin "1" (uuid 55abc267-e8cb-4650-921c-0f454ee9bda5))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR053") (unit 1)
         )
@@ -8697,7 +8219,7 @@
     )
     (pin "1" (uuid 01b6fe62-5052-415a-973d-53a95d36ce52))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8728,7 +8250,7 @@
     )
     (pin "1" (uuid 5e5a1900-8267-4601-88d5-8999735f7afa))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -8780,7 +8302,7 @@
     (pin "3" (uuid ca747a21-2cab-4fda-9091-268d66203126))
     (pin "4" (uuid 84e4079f-d073-47de-9dd0-4d0c4641a715))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "U9") (unit 1)
         )
@@ -8828,7 +8350,7 @@
     (pin "2" (uuid fbaae6e8-c934-4a46-9479-1fb246bae5b1))
     (pin "3" (uuid 7b03a2ee-0499-4700-bfd3-38ac58439e22))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "Q1") (unit 1)
         )
@@ -8875,7 +8397,7 @@
     (pin "1" (uuid c7d96ead-703f-41e2-b5f0-57e00c315fea))
     (pin "2" (uuid 4e4bf29f-00e4-4b33-93cc-a62388b0d3fc))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -8925,7 +8447,7 @@
     (pin "1" (uuid 1ea92a33-55b5-4aa8-8643-fdf7e70b06dd))
     (pin "2" (uuid 8986aa47-4ede-41d6-afe9-ae81034810f2))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
@@ -8956,7 +8478,7 @@
     )
     (pin "1" (uuid 79e17180-bef5-4921-ad92-0dc2e6ed2f38))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -9006,7 +8528,7 @@
     (pin "1" (uuid 084730d4-5f89-47d3-a2e9-c5611c94235f))
     (pin "2" (uuid 690545d6-b20a-4a7d-b7d8-77a4a3157d3c))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "R?") (unit 1)
         )
@@ -9037,7 +8559,7 @@
     )
     (pin "1" (uuid 5a444a93-cdc7-4060-bc70-1d70fafee1c5))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/13b16574-f046-4bb6-b573-f06681d59f31"
           (reference "#PWR011") (unit 1)
         )
@@ -9068,7 +8590,7 @@
     )
     (pin "1" (uuid 6a2ea5b5-c947-469f-9dab-dac70039cd8f))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -9099,7 +8621,7 @@
     )
     (pin "1" (uuid 7a0f222b-0cb4-46cb-8371-f15d15924de7))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "#PWR?") (unit 1)
         )
@@ -9130,7 +8652,7 @@
     )
     (pin "1" (uuid f7006597-900a-4499-91dd-e51e3accb22e))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
           (reference "TP1") (unit 1)
         )
@@ -9183,7 +8705,7 @@
     (pin "1" (uuid dd6be9f3-5111-4a61-bafa-ac5e3e058116))
     (pin "2" (uuid cc7594e6-72ca-4043-9fcd-df44ee128f11))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
           (reference "Y2") (unit 1)
         )
@@ -9227,7 +8749,7 @@
     (pin "1" (uuid f471ef02-c0bd-4f8d-b8f7-016cac993d62))
     (pin "2" (uuid 9b7e1229-07e8-4486-a889-e8d13ae5ff85))
     (instances
-      (project "POWER_BOARD"
+      (project "chicker"
         (path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275"
           (reference "C?") (unit 1)
         )
