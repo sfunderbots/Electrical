@@ -8282,7 +8282,7 @@
   )
 
   (symbol (lib_id "bots:2k_35W") (at 275.59 104.14 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid ff3a865c-3617-4c33-b475-1304329240b4)
     (property "Reference" "R48" (at 273.05 102.87 0)
       (effects (font (size 1.27 1.27)) (justify right))
