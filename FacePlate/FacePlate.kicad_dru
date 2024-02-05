@@ -1,4 +1,11 @@
 (version 6.0)
 (rule SPI_CAN_converter
 	(condition "A.enclosedByArea('SPI_C')")
+	(constraint clearance (min 9.8mil)))
+(rule IMU_rules
+	(condition "A.enclosedByArea('IMU')")
+	(constraint clearance (min 9.4mil))
+	(constraint track_width (min 6mil)))
+(rule SPI_CAN_converter_zone
+	(condition "A.Type == 'Zone' && A.Name== 'SPI_C' && B.Type == 'Pad'")
 	(constraint clearance (min 9.5mil)))

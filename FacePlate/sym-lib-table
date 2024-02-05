@@ -6,4 +6,5 @@
   (lib (name "EEE-1CA471UP")(type "KiCad")(uri "${KIPRJMOD}/EEE-1CA471UP.kicad_sym")(options "")(descr ""))
   (lib (name "B540C-13-F")(type "KiCad")(uri "${KIPRJMOD}/B540C-13-F.kicad_sym")(options "")(descr ""))
   (lib (name "CLF10040T-6R8N-D")(type "KiCad")(uri "${KIPRJMOD}/CLF10040T-6R8N-D.kicad_sym")(options "")(descr ""))
+  (lib (name "bots")(type "KiCad")(uri "${KIPRJMOD}/bots.kicad_sym")(options "")(descr ""))
 )

@@ -1,5 +1,6 @@
 (footprint "E28-2G4M12S-SX1280" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
+  (solder_mask_margin 0.1016)
   (attr through_hole)
   (fp_text reference "U1" (at 0 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -33,4 +34,9 @@
   (pad "12" smd rect (at -6.77 -7.6) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 2bf6471e-f402-4abd-846b-d826ce562399))
   (pad "13" smd rect (at -8.04 -7.6) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 5a554773-9ca7-4a3c-95d6-95a27199162a))
   (pad "14" smd rect (at -9.31 -7.6) (size 0.8 2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 00772448-5635-40d1-9375-9ea9958241a3))
+  (model "${KIPRJMOD}/3d_models/E28-2G4M27S.STEP"
+    (offset (xyz 1 26.5 2.5))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0))
+  )
 )
