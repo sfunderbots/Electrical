@@ -75,7 +75,7 @@
   "project": {
     "files": [
       {
-        "name": "midplate.kicad_pcb",
+        "name": "midplate.kicad_sch",
         "open": false,
         "window": {
           "display": 1,
@@ -84,18 +84,6 @@
           "pos_y": -9,
           "size_x": 2578,
           "size_y": 1408
-        }
-      },
-      {
-        "name": "midplate.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
         }
       }
     ]
