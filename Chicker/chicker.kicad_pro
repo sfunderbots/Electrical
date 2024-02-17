@@ -457,8 +457,8 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.381,
-        "via_diameter": 1.4,
-        "via_drill": 0.7,
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
         "wire_width": 6
       },
       {
@@ -981,6 +981,22 @@
       {
         "netclass": "Power",
         "pattern": "/Power/5V_IN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Flyback_HV/~DISCHARGE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SHELL_OFF"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/RP2040_CAN_FLASH/CAN-"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/RP2040_CAN_FLASH/CAN+"
       }
     ]
   },
