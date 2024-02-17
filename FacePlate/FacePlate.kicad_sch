@@ -9,6 +9,66 @@
   )
 
   (lib_symbols
+    (symbol "Connector:Conn_01x02_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x02_Pin" (at 0 -5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x02, script generated" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x02_Pin_1_1"
+        (polyline
+          (pts
+            (xy 1.27 -2.54)
+            (xy 0.8636 -2.54)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy 0.8636 0)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0.8636 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (rectangle (start 0.8636 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (pin passive line (at 5.08 0 180) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 5.08 -2.54 180) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Connector:Conn_01x04_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 5.08 0)
         (effects (font (size 1.27 1.27)))
@@ -1936,12 +1996,37 @@
     (property "Datasheet" "~" (at 53.34 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7cd5658c-21a4-4f04-bb07-5b68772d0fbc))
-    (pin "2" (uuid 4cf03b10-7606-4bc3-bceb-074f732b607e))
+    (pin "1" (uuid 9eeace0b-47aa-4f40-8779-af7f536de601))
+    (pin "2" (uuid c903f3b7-bbca-4dbe-b975-3af86d158793))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
           (reference "R27") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 198.501 117.602 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 11861cef-85b9-449b-a322-0b92e1920ffd)
+    (property "Reference" "#PWR018" (at 194.691 117.602 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 203.962 117.602 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 198.501 117.602 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 198.501 117.602 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 459b4e58-498e-4d84-8aec-74e569aa25b0))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR018") (unit 1)
         )
       )
     )
@@ -2036,8 +2121,8 @@
     (property "Datasheet" "~" (at 46.99 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b1883d12-05c9-47a3-af17-28ff020a57a8))
-    (pin "2" (uuid c773b0d2-6ce9-4498-ad0d-5b6f6dfd5a5f))
+    (pin "1" (uuid 66ed7f7c-0b4d-49e6-a70b-f3db4fb8da49))
+    (pin "2" (uuid 62dc8010-b343-418d-9f49-9e6d1fb969c3))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
@@ -2065,8 +2150,8 @@
     (property "Datasheet" "~" (at 54.61 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 245d50b9-ebca-419c-a4ea-27fce749fda3))
-    (pin "2" (uuid 6e6d1d68-38fb-46b2-bb6a-11910d892c5a))
+    (pin "1" (uuid d23e16df-77dd-4310-991f-5b218a0d0f17))
+    (pin "2" (uuid 658d8485-a53c-4338-a904-2fdbcbd62d4f))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2169,8 +2254,8 @@
     (property "Datasheet" "~" (at 45.72 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 06b4c2f6-22d9-4995-ac50-21333630bc59))
-    (pin "2" (uuid f0278483-5ab1-49a9-8b66-c66228b0a8ef))
+    (pin "1" (uuid eefcd893-13ec-439f-854c-a7a6d23da4d6))
+    (pin "2" (uuid 0baa9ddd-1a18-41e2-8aaf-ca0095d4681e))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2189,7 +2274,7 @@
     (property "Value" "~" (at 12.7 83.82 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:GC9A_Display" (at 12.7 83.82 0)
+    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical" (at 12.7 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 12.7 83.82 0)
@@ -2198,13 +2283,13 @@
     (property "LCSC" "C718238" (at 12.7 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 66cbecb1-4895-4bdc-81d7-3e0e5b40abbd))
-    (pin "2" (uuid c148d2dc-5bc7-4a80-8634-a76d7a3a65ce))
-    (pin "3" (uuid 5bf0ce04-5d27-4125-9a49-6da69b047b52))
-    (pin "4" (uuid 41c0d009-cd7c-4b8e-9e17-98a010be779f))
-    (pin "5" (uuid 76c61d0d-e256-4038-9eb9-a39bd077280a))
-    (pin "6" (uuid a5401c54-c8fd-4dc2-a83d-31f83a34e62a))
-    (pin "7" (uuid f56ea883-dfd1-47c8-a85f-79234c62252b))
+    (pin "1" (uuid 723c413d-4204-4f18-9870-e5d515176b4b))
+    (pin "2" (uuid c9c96ce9-0546-4276-8827-c10f04ad0f12))
+    (pin "3" (uuid 1891e2a7-1a17-43f7-950a-dfe56b2f5af2))
+    (pin "4" (uuid eeaf672b-26f0-451b-9974-224ee10a784d))
+    (pin "5" (uuid d2051ee9-a4d4-4ef7-a1f3-ad99f1046036))
+    (pin "6" (uuid abcf9863-1be5-4476-b5b4-cdc448d9e13d))
+    (pin "7" (uuid 1725d439-4608-410b-b70d-42caf95d29d3))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2229,8 +2314,8 @@
     (property "Datasheet" "~" (at 40.64 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid c16fd7a3-2972-4b32-8a7b-1ff7747df1d6))
-    (pin "2" (uuid d98523ce-c2ad-43c9-b9a9-2662c7478d53))
+    (pin "1" (uuid ecd5113d-ef29-4a9f-b34b-82521e7ee396))
+    (pin "2" (uuid c9f23d73-8c84-4983-98bb-95f9b39b1b25))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
@@ -2258,8 +2343,8 @@
     (property "Datasheet" "~" (at 231.14 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 833fed36-1e16-461c-b943-e62cc95a8caa))
-    (pin "2" (uuid 5a85b513-3e6b-49cf-b6e9-43bea7ccc3b5))
+    (pin "1" (uuid 3395ff22-8740-42d4-a57d-612f0a27f5e7))
+    (pin "2" (uuid 7584da55-8337-46f5-b241-be69716c42ce))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2284,12 +2369,37 @@
     (property "Datasheet" "~" (at 231.14 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f0524609-a082-4d60-b9fd-83e823cf7450))
-    (pin "2" (uuid fa3fa948-1e5a-4762-ab74-e2f98c4d964d))
+    (pin "1" (uuid d0d5cd52-60c1-4f6b-8c10-49d39e2a2edc))
+    (pin "2" (uuid 98369b97-7974-4118-9f89-eef3189ee7c9))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
           (reference "R34") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 175.26 120.015 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 53c8ad8f-f303-4d8d-8230-c3938d85a33d)
+    (property "Reference" "#PWR013" (at 181.61 120.015 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 178.562 120.015 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 175.26 120.015 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 175.26 120.015 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid cb4fc28f-83f7-449b-84da-0c742429b2b8))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR013") (unit 1)
         )
       )
     )
@@ -2310,8 +2420,8 @@
     (property "Datasheet" "~" (at 48.26 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 26d8c31b-c235-4a6f-aec8-f197aa78ea7f))
-    (pin "2" (uuid 7d13c9da-783e-4c7d-a495-3b562f01958b))
+    (pin "1" (uuid 66f3176a-9ba0-4cd0-bf36-3ce0899c8c53))
+    (pin "2" (uuid e6689298-a338-4772-b78f-8b3059090e50))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2361,8 +2471,8 @@
     (property "Datasheet" "~" (at 55.88 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6557b1be-7558-4709-bb94-e2f1b7878aa5))
-    (pin "2" (uuid 77598d6d-f818-41e4-99da-c8a283214199))
+    (pin "1" (uuid f72d20f8-9686-4da2-b25e-277b66b642f0))
+    (pin "2" (uuid d384e8fa-9077-4803-a239-4ab58d9b6efc))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2387,8 +2497,8 @@
     (property "Datasheet" "~" (at 231.14 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid b20a2818-4b79-49da-abe5-d8d53f60f1e9))
-    (pin "2" (uuid cc00e4fb-2ab1-42c0-b9d5-278aa087367d))
+    (pin "1" (uuid 5478774c-649e-47b8-93a2-18938aee26c9))
+    (pin "2" (uuid 7ac7f2f5-24dc-488a-abb0-720de55a2d6d))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2413,8 +2523,8 @@
     (property "Datasheet" "~" (at 55.88 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6f5eed39-5340-402b-82cd-4ded7f3d6cdb))
-    (pin "2" (uuid a671b308-7554-4c53-b1cc-d767a8872873))
+    (pin "1" (uuid 6924df8e-2d48-4b1b-a119-9aa5ff917e4b))
+    (pin "2" (uuid 91dfed0e-66f6-486a-8981-f879103f336e))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2512,8 +2622,8 @@
     (property "Datasheet" "~" (at 231.14 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 995d9c17-8d57-4941-9cf4-6108d1f6a202))
-    (pin "2" (uuid cdedb45d-9b85-4b28-b2d1-44d542b5ddd7))
+    (pin "1" (uuid ad53f986-6584-4953-ad48-308f3238d788))
+    (pin "2" (uuid 0a5c2600-865f-4224-9868-36b46816b2ec))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2548,6 +2658,31 @@
     )
   )
 
+  (symbol (lib_id "power:GND") (at 198.501 120.142 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 776a157c-2164-4607-97eb-033360a5744d)
+    (property "Reference" "#PWR017" (at 204.851 120.142 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 201.803 120.142 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 198.501 120.142 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 198.501 120.142 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b5b9e5dc-0849-4fe7-8202-52cc10ef4843))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR017") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "bots:C_0.1u") (at 45.72 34.29 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 79f3c552-e9c9-43c2-b896-51ff95e83ffa)
@@ -2563,8 +2698,8 @@
     (property "Datasheet" "~" (at 45.72 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 54847e93-b5c1-4969-87e0-f0b31e653463))
-    (pin "2" (uuid 0fa92210-94a7-4efc-818e-ee74846617bc))
+    (pin "1" (uuid 587887d8-377c-4ea6-86e6-e02edffc9734))
+    (pin "2" (uuid b6112244-6e72-4415-a966-0409b06eaad7))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
@@ -2627,6 +2762,32 @@
     )
   )
 
+  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 170.18 117.475 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 8bb82d2c-1d2f-45d1-8240-12a477fe3c9f)
+    (property "Reference" "J1" (at 170.815 113.03 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x02_Pin" (at 160.528 115.824 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 170.18 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 170.18 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 9ab9ad64-3452-4c9f-92c1-67a84c208779))
+    (pin "2" (uuid b5430f18-d4e1-4441-89ba-4dc12ad917cd))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 177.8 142.24 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8bf85d57-d837-40a8-9d15-a9ac398148c7)
@@ -2642,8 +2803,8 @@
     (property "Datasheet" "~" (at 177.8 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid de568ec0-c14f-401b-b6b8-d87d3107e1fe))
-    (pin "2" (uuid 3501450e-9851-46ec-9db0-1f35287623e1))
+    (pin "1" (uuid fbd7907c-aa0e-4595-8e12-0785509b961b))
+    (pin "2" (uuid a1b457d0-d38d-49c3-8c1b-cc9f35053c75))
     (instances
       (project "BoardyMcBoardFace"
         (path "/ce9c697a-7c8e-40f4-9393-5cd88edd7734"
@@ -2676,8 +2837,8 @@
     (property "Datasheet" "~" (at 46.99 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid eab7940f-34d5-458e-a38a-6d712ab57af7))
-    (pin "2" (uuid 4cbd233e-be51-4182-84e2-91398d37df26))
+    (pin "1" (uuid 4228f8c9-df9b-42de-b359-5a4759462b41))
+    (pin "2" (uuid ca607b49-2caa-4ad4-860a-ec6d73e29e9a))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2757,8 +2918,8 @@
     (property "Datasheet" "~" (at 231.14 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 492d2d30-3a45-436e-a417-7c814797b85e))
-    (pin "2" (uuid 7f4878b7-228f-4fcd-bc97-d145d5415bfe))
+    (pin "1" (uuid 6a0f7d07-b8e7-4cee-bb8b-6841f38585bc))
+    (pin "2" (uuid e6ca11f5-bc0c-46a2-b51d-a49ba140d461))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2833,8 +2994,8 @@
     (property "Datasheet" "~" (at 198.12 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5f7b86a1-8105-44a8-bba9-91ea1b5513c1))
-    (pin "2" (uuid d6b235ec-36a4-408d-8a98-c4acb4ce63a7))
+    (pin "1" (uuid 9166dbd8-1374-4ee4-8c63-4ce6c41d4db8))
+    (pin "2" (uuid 2cbc7163-75b2-402e-831b-1f3e6cb180f5))
     (instances
       (project "BoardyMcBoardFace"
         (path "/ce9c697a-7c8e-40f4-9393-5cd88edd7734"
@@ -2946,8 +3107,8 @@
     (property "Datasheet" "~" (at 46.99 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 76dc4898-8f4c-405e-ad5e-bcc06e2c680f))
-    (pin "2" (uuid 510fea00-6d03-4d7c-b7d6-f9c365f481cb))
+    (pin "1" (uuid 5fbce9b5-f4be-45b4-8c49-a580ee6fc4a2))
+    (pin "2" (uuid 153d5220-b28f-4d89-bfe9-186a2eaf921a))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -2972,8 +3133,8 @@
     (property "Datasheet" "~" (at 48.26 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a093ff62-c47a-4c91-a130-b53aaa2a82a4))
-    (pin "2" (uuid 1128651f-38ae-4311-86ed-665091afefd7))
+    (pin "1" (uuid d16b08eb-2972-407b-9ec6-919cadd995fc))
+    (pin "2" (uuid 421543b5-50b2-4e0a-913b-0032eaeb42ad))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -3038,6 +3199,31 @@
     )
   )
 
+  (symbol (lib_id "power:+5V") (at 175.26 117.475 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid e3f32903-b161-4a2c-8fe0-71be02d2e52d)
+    (property "Reference" "#PWR015" (at 171.45 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 180.086 117.094 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 175.26 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 175.26 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ef5c5bed-263b-4eca-b416-5f5574f30db2))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR015") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "power:PWR_FLAG") (at 106.045 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ecad3b15-43f7-4629-9b80-ebd6cbf9e8e1)
@@ -3078,8 +3264,8 @@
     (property "Datasheet" "~" (at 46.99 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 253202fb-9c90-4f16-a41c-da979e414001))
-    (pin "2" (uuid 84e921c8-46b8-4149-848f-6bc3dfc906b6))
+    (pin "1" (uuid 2d68f84e-0c80-4098-bbf8-12b038449cc1))
+    (pin "2" (uuid 2a1ec695-6a87-464f-8813-e0421b463dc1))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -3104,8 +3290,8 @@
     (property "Datasheet" "~" (at 38.1 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 02f3737b-74af-450c-9cda-7d7c7102543c))
-    (pin "2" (uuid d669d515-fb5f-42d3-82c0-91f7c3ffc944))
+    (pin "1" (uuid 87267a8c-c2a1-44d9-8dac-ec132472eb99))
+    (pin "2" (uuid 0598c7a9-b4de-4e5e-a701-6114d6b7d53c))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
@@ -3113,6 +3299,32 @@
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
           (reference "C2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x02_Pin") (at 193.421 117.602 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid f3ca69f7-d43f-4821-a998-de98310ee1bf)
+    (property "Reference" "J4" (at 194.056 113.157 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x02_Pin" (at 183.769 115.951 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 193.421 117.602 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 193.421 117.602 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 460b035c-3782-46e7-b918-794cfb487a7d))
+    (pin "2" (uuid 2d2360af-9de6-4840-94f1-1671b485a646))
+    (instances
+      (project "FacePlate"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -3175,7 +3387,7 @@
     (property "Value" "~" (at 11.43 55.88 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "bots:GC9A_Display" (at 11.43 55.88 0)
+    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical" (at 11.43 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 11.43 55.88 0)
@@ -3184,13 +3396,13 @@
     (property "LCSC" "C718238" (at 11.43 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 715a1c27-5100-4194-a133-ac22e066ee75))
-    (pin "2" (uuid 332c095a-e658-4df5-81a9-9692f59c28fe))
-    (pin "3" (uuid 5820e5be-cdac-4f24-a0d6-3763330d3652))
-    (pin "4" (uuid c3fe3208-edad-4ceb-8547-c4a528a337a3))
-    (pin "5" (uuid 2e9e54c8-c7a7-4935-86f1-bffe4d0b0adc))
-    (pin "6" (uuid 1be63c38-642b-4a68-82eb-d5deb83438a8))
-    (pin "7" (uuid 053dc9d3-00af-4700-92c0-e3b9e67c4a54))
+    (pin "1" (uuid b617ce89-fdd7-4821-8622-27424a2ea706))
+    (pin "2" (uuid bbffdf9d-8565-4f16-a312-fabe0f7409f7))
+    (pin "3" (uuid 87e57133-6343-45fb-848a-ced42e9ccf78))
+    (pin "4" (uuid d36849b1-8239-4216-93dd-defeafc4fdc3))
+    (pin "5" (uuid 123f96d2-9453-4d57-93d4-f8a69d875b9b))
+    (pin "6" (uuid 29ff628f-404a-4f8b-ab3b-8eee56f54d34))
+    (pin "7" (uuid ab771dee-0109-4f36-ab73-b1708368201a))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
