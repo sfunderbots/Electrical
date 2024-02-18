@@ -1551,6 +1551,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 5f02f00e-2c90-43b9-bd69-23d359011044)
   )
+  (text "3v3 LED too bright, use larger resistor, maybe 2x say "
+    (at 190.5 116.84 0)
+    (effects (font (size 1.27 1.27) (color 255 0 0 1)) (justify left bottom))
+    (uuid 7eac5d71-fb43-405a-9865-8dd25f75e352)
+  )
   (text "(16.8-1.918)/20mA" (at 149.86 143.51 0)
     (effects (font (size 1.27 1.27) (color 0 4 0 1)) (justify left bottom))
     (uuid 93bb8776-f5d6-4c4d-9d89-27c15bf54d2b)
