@@ -673,8 +673,8 @@
     (property "LCSC" "C307331" (at 135.89 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f4b8cf92-140d-4424-bb4c-4edcc6ed213c))
-    (pin "2" (uuid ac9eb9cb-97f6-42b5-8468-8dda87ac5faf))
+    (pin "1" (uuid d4a6713f-efe2-4fa0-a337-de15e6ac0a86))
+    (pin "2" (uuid edbffff1-4397-4ea2-ae98-f9cec1bd6d3b))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/00ba6ade-e3b7-40bc-b777-09b9b1f61469"
@@ -699,8 +699,11 @@
     (property "Datasheet" "~" (at 143.51 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3214f612-2c6c-4d6e-9f2d-e18097181cc5))
-    (pin "2" (uuid 7fff6b11-bdd8-4f34-b993-56c89a8ea662))
+    (property "LCSC" "C96446" (at 143.51 69.85 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid f77f3a99-5c8b-4ccc-96a6-6646414b077a))
+    (pin "2" (uuid 605cce88-da6d-4c1a-b199-41040cad7b83))
     (instances
       (project "BoardyMcBoardFace"
         (path "/ce9c697a-7c8e-40f4-9393-5cd88edd7734"
@@ -724,7 +727,7 @@
     (property "Reference" "R30" (at 60.96 73.66 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10k" (at 60.96 76.2 0)
+    (property "Value" "13k" (at 60.96 76.2 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "bots:R_0603_1608Metric" (at 56.642 74.93 90)
@@ -733,11 +736,11 @@
     (property "Datasheet" "~" (at 58.42 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C25744" (at 58.42 74.93 0)
+    (property "LCSC" "C22797" (at 58.42 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid f867f222-844f-4fb2-a552-ca1c796e6710))
-    (pin "2" (uuid 4a11f12a-871f-422d-a757-ceed0fa4666c))
+    (pin "1" (uuid 9e423e4e-686b-48a6-ae3e-96b73a4c4673))
+    (pin "2" (uuid 1525124a-e5ab-4630-b3de-7dd04ebae5fe))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/00ba6ade-e3b7-40bc-b777-09b9b1f61469"
@@ -809,7 +812,7 @@
     (property "Reference" "R29" (at 41.91 63.5 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10k" (at 41.91 66.04 0)
+    (property "Value" "13k" (at 41.91 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "bots:R_0603_1608Metric" (at 37.592 64.77 90)
@@ -818,11 +821,11 @@
     (property "Datasheet" "~" (at 39.37 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C25744" (at 39.37 64.77 0)
+    (property "LCSC" "C22797" (at 39.37 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid e9d7fa23-c664-434b-8ba8-685f34c0a7ac))
-    (pin "2" (uuid bc836a33-0037-4a72-b9c4-890893937bb6))
+    (pin "1" (uuid 50fb46e9-ae70-4b47-b0fa-fc09bb78e497))
+    (pin "2" (uuid 9cba0f88-facd-4eb6-85af-ffd334a83308))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/00ba6ade-e3b7-40bc-b777-09b9b1f61469"
@@ -905,8 +908,8 @@
     (property "LCSC" "C307331" (at 127 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7edbcbfd-6686-46c3-9c4d-6f9660f9a322))
-    (pin "2" (uuid 3ab03bb2-1167-43b8-b14b-9d13ef078be8))
+    (pin "1" (uuid 1f69bffc-3047-4705-9481-ff1d5c5962ce))
+    (pin "2" (uuid 5c533b81-2750-49b6-bbff-b03cd1bcc837))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/00ba6ade-e3b7-40bc-b777-09b9b1f61469"
@@ -934,8 +937,8 @@
     (property "LCSC" "C12391" (at 143.51 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 66bb8d62-d9ae-4682-ab32-d60af151b263))
-    (pin "2" (uuid c8fd866c-7d05-4c1b-9a2f-8857d14c8188))
+    (pin "1" (uuid b232d135-680b-42c9-9fc3-177a0e2cd131))
+    (pin "2" (uuid 91981279-3426-4ce4-af76-d674d9cbd6f4))
     (instances
       (project "FacePlate"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
@@ -991,8 +994,11 @@
     (property "Datasheet" "~" (at 119.38 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5348a76f-54c9-4f78-992e-6325bc9e459f))
-    (pin "2" (uuid b5ea7a40-fa4d-4434-9b63-3777e4340e9b))
+    (property "LCSC" "C96446" (at 119.38 69.85 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 9b0a94f3-5f69-4142-af14-1d19eded481e))
+    (pin "2" (uuid 0d948702-3f0f-4d28-84d8-26d830702065))
     (instances
       (project "BoardyMcBoardFace"
         (path "/ce9c697a-7c8e-40f4-9393-5cd88edd7734"
