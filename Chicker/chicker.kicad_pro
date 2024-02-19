@@ -998,6 +998,10 @@
       {
         "netclass": "CAN_DIFF",
         "pattern": "/RP2040_CAN_FLASH/CAN+"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/RP2040_CAN_FLASH/ADC_3v3"
       }
     ]
   },
