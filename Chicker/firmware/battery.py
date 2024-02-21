@@ -22,7 +22,7 @@ def Voltages(charge_ok):
     #else :
         #print("uh, guys, somethings really broken!!!! Seriously!")
         
-    if (battery_voltage >  1.0) and (battery_voltage <= 12.8):
+    if (battery_voltage >  5.0) and (battery_voltage <= 12.8):
         #print("Batteries are Exceptionally low, damage is likely!!")
         charge_ok = 0
     elif (battery_voltage >  12.8) and (battery_voltage <= 13.3):

@@ -74,20 +74,8 @@
   "project": {
     "files": [
       {
-        "name": "chicker.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 1,
-          "maximized": true,
-          "pos_x": -9,
-          "pos_y": -9,
-          "size_x": 2578,
-          "size_y": 1408
-        }
-      },
-      {
         "name": "chicker.kicad_sch",
-        "open": true,
+        "open": false,
         "window": {
           "display": 1,
           "maximized": true,
