@@ -57,7 +57,6 @@ while True:
             #print("done signal set to 0")
         
     prev_charge = charge
-    '''
     if (current_time - prev_sim_charge_time >= 12000):
         charge_ok_sim = random.randint(0,1)
         print("Random number:",charge_ok_sim)
@@ -85,6 +84,7 @@ while True:
     # toggle LEDs at different intervals
     CAN_LED.value(charge)
     INT_LED.value(done_state)
+    
     '''
     if(current_time - prev_time_can >= 400):
         CAN_LED.toggle()

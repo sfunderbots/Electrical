@@ -51,7 +51,7 @@ def Voltages(charge_ok, startup):
         charge_ok = 1
     else :
         #print("Batteries are unplugged")
-        charge_ok = 1
+        charge_ok = 0
     #print("3.3V Reference: ", logic_voltage, "V")
     #print("5V Reference: ", net_5V, "V")
     
