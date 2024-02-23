@@ -4,29 +4,34 @@ from machine import Pin, ADC
 BATT_LEVEL = ADC(Pin(26)) #channel 0
 ref_5v = ADC(Pin(27)) # channel 1
 ref_3v3 = ADC(Pin(28)) # channel 2
+prev_time_volt = 0
 
-prev_time_voltages_startup = 0
-def Voltages(charge_ok, startup):
-    BATT_LEVEL_val = BATT_LEVEL.read_u16() # read value, 0-65535 across voltage range 0.0v - 3.3v
-    logic_3v3_ref_val = ref_3v3.read_u16()
-    ref_5V_val = ref_5v.read_u16()
-    battery_voltage_raw = BATT_LEVEL_val *3.3 / 65535.0 * 1.00614 * (20 + 94)/20
-    battery_voltage = round(max(battery_voltage_raw * 1.0342 - 0.5339, 0), 2)
-    # note this scale is relative to high level, low voltage is 2V is 2.45V (reading is higher) and 16.8V is 16.76V (reading is lower)
+
+#if (net_5V > 4.45) and (net_5V <= 4.70 ):
+    #print("4.6V USB Voltage")
+#elif (net_5V > 4.70) and (net_5V <= 4.90):
+    #print("4.8V Battery Voltage (USB could still be plugged in, check LED)")
+#elif (net_5V > 4.90) and (net_5V <= 5.20):
+    #print("WARNING!!!!: Series diodes for voltage switch has failed, check circuit!")
+#else :
+    #print("uh, guys, somethings really broken!!!! Seriously!")
+while True:
+    current_time = utime.ticks_ms()
+
+    if(current_time - prev_time_volt >= 2000):
+        BATT_LEVEL_val = BATT_LEVEL.read_u16() # read value, 0-65535 across voltage range 0.0v - 3.3v
+        logic_3v3_ref_val = ref_3v3.read_u16()
+        ref_5V_val = ref_5v.read_u16()
+        battery_voltage_raw = BATT_LEVEL_val *3.3 / 65535.0 * 1.00614 * (20 + 94)/20
+        battery_voltage = round(battery_voltage_raw * 1.0342 - 0.5339, 2)
+        # note this scale is relative to high level, low voltage is 2V is 2.45V (reading is higher) and 16.8V is 16.76V (reading is lower)
         
-    # 200ohm offset is equivalent to 150uA* 200 ohms = 0.3V -> 3.3V is 65535 / 65135 = 1.00614 (need to fix the board for next rev)
-    logic_voltage = round(logic_3v3_ref_val *3.3 / 65535.0 * 1.00614, 2)
-    net_5V = round(ref_5V_val *3.3 / 65535.0 * 1.00614 * (5.1+3.0)/3.0, 2) # this is incorrect need to fix later, put the resistor divider in backwards
-
-    if ( startup == 0):
-        if (net_5V > 4.45) and (net_5V <= 4.70 ):
-            print("4.6V USB Voltage")
-        elif (net_5V > 4.70) and (net_5V <= 4.90):
-            print("4.8V Battery Voltage (USB could still be plugged in, check LED)")
-        elif (net_5V > 4.90) and (net_5V <= 5.20):
-            print("WARNING!!!!: Series diodes for voltage switch has failed, check circuit!")
-        else :
-            print("uh, guys, somethings really broken!!!! Seriously!")
+        # 200ohm offset is equivalent to 150uA* 200 ohms = 0.3V -> 3.3V is 65535 / 65135 = 1.00614 (need to fix the board for next rev) 
+        logic_voltage = round(logic_3v3_ref_val *3.3 / 65535.0 * 1.00614, 2)
+        net_5V = round(ref_5V_val *3.3 / 65535.0 * 1.00614 * (5.1+3.0)/3.0, 2) # this is incorrect need to fix later, put the resistor divider in backwards
+        prev_time_volt = current_time
+        print(battery_voltage)
+        
         
     if (battery_voltage >  5.0) and (battery_voltage <= 12.8):
         #print("Batteries are Exceptionally low, damage is likely!!")
@@ -55,5 +60,5 @@ def Voltages(charge_ok, startup):
     #print("3.3V Reference: ", logic_voltage, "V")
     #print("5V Reference: ", net_5V, "V")
     
-    return charge_ok
+
     

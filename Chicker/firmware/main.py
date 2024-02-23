@@ -40,7 +40,7 @@ while True:
     #Read Inputs:
     
     current_time = utime.ticks_ms()
-    '''
+    
     ###############################################
     #simulation values (correct ones)
     # rising edge of charge pin
@@ -56,18 +56,19 @@ while True:
             #print("done signal set to 0")
         
     prev_charge = charge
-    
+    '''
     if (current_time - prev_sim_charge_time >= 12000):
         charge_ok_sim = random.randint(0,1)
         print("Random number:",charge_ok_sim)
         prev_sim_charge_time = current_time
+        '''
     ###############################################
-    '''     
-    done_state = DONE.value()#done_sim
+         
+    done_state = DONE.value()#
     CHARGE.value(charge)
     # do this only on startup
     if (startup == 0):
-        charge_ok = Voltages(charge_ok) #charge_ok_sim 
+        charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
         
         if (charge_ok == 1 and charge_disable == 0 and done_state == 0):
             charge = 0
@@ -82,6 +83,9 @@ while True:
         startup = 1
         
     # toggle LEDs at different intervals
+    CAN_LED.value(charge)
+    INT_LED.value(done_state)
+    '''
     if(current_time - prev_time_can >= 400):
         CAN_LED.toggle()
         prev_time_can = current_time
@@ -89,11 +93,12 @@ while True:
     if(current_time - prev_time_int >= 800):
         INT_LED.toggle()
         prev_time_int = current_time
-        
+    '''
     # check voltages every 2 seconds
     if(current_time - prev_time_volt >= 2000):
-        charge_ok = Voltages(charge) #charge_ok_sim
+        charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = current_time
+        
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")
@@ -106,7 +111,7 @@ while True:
     '''Note,
 
     . Any fault conditions such as thermal shutdown or undervoltage lockout will also turn on the NPN.
-        for the DONE pin, which means it will
+        for the DONE pin, which means it will be high if there is a problem
     '''
     if (charge_ok == 1 and charge_disable == 0):
         
@@ -124,7 +129,7 @@ while True:
             else :
                 charge_disable = 1
                 prev_time_charge_disabled = current_time
-                print("DONE is still high, chip not functioning")
+                print("DONE is still high - Potential reasons: Undervoltage Lockout, or Thermal Shutdown")
                 print("Retrying in 30 seconds")
         # wait for charge cycle to do the charge toggle every 15 seconds
         elif (charge_started == 1):
