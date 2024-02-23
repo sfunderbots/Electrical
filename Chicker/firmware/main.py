@@ -36,11 +36,12 @@ charge_disable = 0
 charge_started = 0
 check_5s_done = 0
 charge_ok_sim = 0
+safe_charge = 0
 while True:
     #Read Inputs:
     
     current_time = utime.ticks_ms()
-    
+    '''
     ###############################################
     #simulation values (correct ones)
     # rising edge of charge pin
@@ -49,8 +50,8 @@ while True:
         prev_sim_time = current_time
         #print(current_time/1000)
         #print("done signal set to 1")        
-    elif (charge == 1) :
-        if (current_time - prev_sim_time >= 1700):
+    #elif (charge == 1) :
+    elif (current_time - prev_sim_time >= 1700):
             done_sim = 0
             #print(current_time/1000)
             #print("done signal set to 0")
@@ -61,15 +62,14 @@ while True:
         charge_ok_sim = random.randint(0,1)
         print("Random number:",charge_ok_sim)
         prev_sim_charge_time = current_time
-        '''
     ###############################################
-         
-    done_state = DONE.value()#
+    '''
+    done_state = DONE.value() #done_sim
     CHARGE.value(charge)
     # do this only on startup
     if (startup == 0):
         charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
-        
+        safe_charge = 1
         if (charge_ok == 1 and charge_disable == 0 and done_state == 0):
             charge = 0
             # set wait to toggle charge pin
@@ -129,34 +129,47 @@ while True:
             else :
                 charge_disable = 1
                 prev_time_charge_disabled = current_time
-                print("DONE is still high - Potential reasons: Undervoltage Lockout, or Thermal Shutdown")
-                print("Retrying in 30 seconds")
+                if (safe_charge == 1):
+                    print("Safe Charge mode active, resetting, charging again in 15s")
+                else :   
+                    print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
+                    print("Retrying in 30 seconds")
         # wait for charge cycle to do the charge toggle every 15 seconds
         elif (charge_started == 1):
-            if (current_time - prev_time_chg_wait >= 14950):
-                charge_started = 0 # reset charge_started to zero for the next charge cycle
-                charge = 0
-                charge_toggle_wait = 0
-                check_5s_done = 0
-                #print(current_time/1000, done_state)
-                print("charge toggle (15s waited)")
-                # set charge pin
-            # charge toggle wait is 1, charge_started should be 1 unless its an error    
-            # check after 5 seconds if the done signal actually goes low after being high for charging
-            elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 5000):
-                check_5s_done = 1
-                if(done_state == 0):
-                    #good
-                    charge_disable = 0
-                    print("DONE is low after 5s, assuming normal operation")
-                else :
-                    # not good, done does not go low, implying not charging properly
-                    charge_disable = 1
-                    prev_time_charge_disabled = current_time
+            if (safe_charge == 1):
+                if (current_time - prev_time_chg_wait >= 236):
+                    charge_started = 0 # reset charge_started to zero for the next charge cycle
+                    charge = 0
+                    charge_toggle_wait = 0
+                    check_5s_done = 0
                     #print(current_time/1000, done_state)
-                    print("charging disabled, done does not go low: TIMEOUT 5s, not charging properly")
-                    print("Retrying in 30 seconds")
-                
+                    print("Safe Charge mode, Charge pin reset at 50V")
+                    # set charge pin
+            else :
+                if (current_time - prev_time_chg_wait >= 14950):
+                    charge_started = 0 # reset charge_started to zero for the next charge cycle
+                    charge = 0
+                    charge_toggle_wait = 0
+                    check_5s_done = 0
+                    #print(current_time/1000, done_state)
+                    print("charge toggle (15s waited)")
+                    # set charge pin
+                # charge toggle wait is 1, charge_started should be 1 unless its an error    
+                # check after 5 seconds if the done signal actually goes low after being high for charging
+                elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 5000):
+                    check_5s_done = 1
+                    if(done_state == 0):
+                        #good
+                        charge_disable = 0
+                        print("DONE is low after 5s, assuming normal operation")
+                    else :
+                        # not good, done does not go low, implying not charging properly
+                        charge_disable = 1
+                        prev_time_charge_disabled = current_time
+                        #print(current_time/1000, done_state)
+                        print("charging disabled, done does not go low: TIMEOUT 5s, not charging properly")
+                        print("Retrying in 30 seconds")
+                    
         # charge_toggle wait is 1 and charge_started is 0, implying a "started" charge cycle, need to check
         # check after 50ms if done actually toggles high, implying good flyback chip
         elif (current_time - prev_time_chg_wait >= 50):
@@ -180,13 +193,17 @@ while True:
         charge_started = 0 # reset charge_started to zero for the next charge cycle
         charge_toggle_wait = 0
         check_5s_done = 0
-        # check flyback again in 30 seconds by reasserting the charge_disable variable
-        if (charge_disable == 1):
-            if (current_time - prev_time_countdown >= 1000):
-                print("...",int((30000 - (current_time - prev_time_charge_disabled))/1000), "...")
-                prev_time_countdown = current_time
-            if (current_time - prev_time_charge_disabled >= 30000):
+        # check flyback again in 30 seconds by reasserting the charge_disable variable'
+        if (safe_charge == 1):
+            if (current_time - prev_time_charge_disabled >= 14950):
                 charge_disable = 0
+        else :
+            if (charge_disable == 1):
+                if (current_time - prev_time_countdown >= 1000):
+                    print("...",int((30000 - (current_time - prev_time_charge_disabled))/1000), "...")
+                    prev_time_countdown = current_time
+                if (current_time - prev_time_charge_disabled >= 30000):
+                    charge_disable = 0
             
         # maybe add checks on how to enable it after this point??   
     
