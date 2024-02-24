@@ -57,13 +57,13 @@ while True:
             #print("done signal set to 0")
         
     prev_charge = charge
-    if (current_time - prev_sim_charge_time >= 12000):
-        charge_ok_sim = random.randint(0,1)
-        print("Random number:",charge_ok_sim)
-        prev_sim_charge_time = current_time
+    #if (current_time - prev_sim_charge_time >= 12000):
+    #    charge_ok_sim = random.randint(0,1)
+     #   print("Random number:",charge_ok_sim)
+     #   prev_sim_charge_time = current_time
     ###############################################
     '''
-    done_state = DONE.value() #done_sim
+    done_state = DONE.value()# #done_sim
     CHARGE.value(charge)
     # do this only on startup
     if (startup == 0):
