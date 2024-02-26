@@ -28,6 +28,7 @@ prev_time_countdown = 0
 prev_sim_charge_time = 0
 charge_ok = 0
 startup = 0
+startup_cycle = 0
 charge_toggle_wait = 0
 done_sim = 0
 prev_charge = 0
@@ -51,7 +52,7 @@ while True:
         #print(current_time/1000)
         #print("done signal set to 1")        
     #elif (charge == 1) :
-    elif (current_time - prev_sim_time >= 1700):
+    elif (current_time - prev_sim_time >= 1702):
             done_sim = 0
             #print(current_time/1000)
             #print("done signal set to 0")
@@ -63,14 +64,17 @@ while True:
      #   prev_sim_charge_time = current_time
     ###############################################
     '''
-    done_state = DONE.value()# #done_sim
+    
+    # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
+    done_state = DONE.value()# done_sim #
     CHARGE.value(charge)
     # do this only on startup
     if (startup == 0):
         charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
-        safe_charge = 1
-        if (charge_ok == 1 and charge_disable == 0 and done_state == 0):
+        safe_charge = 0
+        if (charge_ok == 1 and charge_disable == 0):
             charge = 0
+            startup_cycle = 1
             # set wait to toggle charge pin
             charge_toggle_wait = 0
             #print(current_time/1000, done_state)
@@ -98,7 +102,6 @@ while True:
     if(current_time - prev_time_volt >= 2000):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = current_time
-        
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")
@@ -118,7 +121,15 @@ while True:
         # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
         if (charge_toggle_wait == 0):
            # done will be 0 if either hasnt started charging, or has finished charging
-            if (done_state == 0):
+            if (startup_cycle == 1):
+                if (current_time - prev_time_start_chg >= 50): 
+                    charge = 1
+                    startup_cycle = 0
+                    charge_toggle_wait = 1
+                    prev_time_chg_wait = current_time
+                    #print(current_time/1000, done_state)
+                    print("charge toggle complete, waiting for 15s")
+            elif (done_state == 0):
                 # setup charge toggle wait time to set charge pin high
                 if (current_time - prev_time_start_chg >= 50): 
                     charge = 1
@@ -130,14 +141,14 @@ while True:
                 charge_disable = 1
                 prev_time_charge_disabled = current_time
                 if (safe_charge == 1):
-                    print("Safe Charge mode active, resetting, charging again in 15s")
+                    print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
                 else :   
                     print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
                     print("Retrying in 30 seconds")
         # wait for charge cycle to do the charge toggle every 15 seconds
         elif (charge_started == 1):
             if (safe_charge == 1):
-                if (current_time - prev_time_chg_wait >= 236):
+                if (current_time - prev_time_chg_wait >= 2100):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
                     charge_started = 0 # reset charge_started to zero for the next charge cycle
                     charge = 0
                     charge_toggle_wait = 0
@@ -195,8 +206,7 @@ while True:
         check_5s_done = 0
         # check flyback again in 30 seconds by reasserting the charge_disable variable'
         if (safe_charge == 1):
-            if (current_time - prev_time_charge_disabled >= 14950):
-                charge_disable = 0
+            charge_disable = 1
         else :
             if (charge_disable == 1):
                 if (current_time - prev_time_countdown >= 1000):

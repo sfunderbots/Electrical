@@ -44,10 +44,10 @@ def Voltages(charge_ok, startup):
         #print("14.7V to 14.9V Nominal Battery Voltage")
         charge_ok = 1
     elif (battery_voltage > 14.9) and (battery_voltage <= 16.4):
-        #print("Working Battery Voltage")
+        print("Working Battery Voltage")
         charge_ok = 1
     elif (battery_voltage > 16.4) and (battery_voltage <= 16.9):
-        #print("Fully charged  Batteries (or close to it)")
+        print("Fully charged  Batteries (or close to it)")
         charge_ok = 1
     else :
         #print("Batteries are unplugged")

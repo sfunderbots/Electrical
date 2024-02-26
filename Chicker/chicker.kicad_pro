@@ -1002,6 +1002,14 @@
       {
         "netclass": "Power",
         "pattern": "/RP2040_CAN_FLASH/ADC_3v3"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/High Voltage Feedback/HV_FDBK2"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/High Voltage Feedback/HV_FDBK1"
       }
     ]
   },
@@ -1074,6 +1082,10 @@
     [
       "aa68550e-c35d-4fef-b4e5-f1eb6225215f",
       "Flyback_HV"
+    ],
+    [
+      "ec2690de-9d43-42f0-9a1d-89d3edcde356",
+      "High Voltage Feedback"
     ]
   ],
   "text_variables": {}
