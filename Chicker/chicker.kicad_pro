@@ -481,7 +481,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1778,
+        "clearance": 0.2032,
         "diff_pair_gap": 3.81,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.1524,
