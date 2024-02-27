@@ -52,6 +52,14 @@
 	(condition "A.enclosedByArea('HV_AD')")
 	(constraint clearance (min 30mil))
 	(constraint track_width (min 10mil)))
+(rule HV_res_FBK
+	(condition "A.enclosedByArea('HV_FBK')")
+	(constraint clearance (min 30mil))
+	(constraint track_width (min 10mil)))
+(rule HV_FBK_OPAMP
+	(condition "A.enclosedByArea('GND_HVFBK')")
+	(constraint clearance (min 10mil))
+	(constraint track_width (min 10mil)))
 # Specify an optimal gap for a particular diff-pair
 (rule "dp gap"
     (condition "A.NetClass == 'DIFF_USB'")

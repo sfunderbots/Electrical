@@ -45,7 +45,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.254
         }
       },
       "diff_pair_dimensions": [
@@ -1010,6 +1010,34 @@
       {
         "netclass": "HV",
         "pattern": "/High Voltage Feedback/HV_FDBK1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Power/BKBM"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/BATT_LEVEL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/5V_LEVEL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/3v3_ref"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/High Voltage Feedback/HV_SENSE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CAN_LED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/High Voltage Feedback/HV_RAW"
       }
     ]
   },
