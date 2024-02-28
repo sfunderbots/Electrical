@@ -195,7 +195,7 @@
           "drill": 2.0
         }
       ],
-      "zones_allow_external_fillets": false,
+      "zones_allow_external_fillets": true,
       "zones_use_no_outline": true
     },
     "layer_presets": [],
@@ -1045,7 +1045,7 @@
     ],
     [
       "5956ea5b-5c98-49b4-b8ae-cf424631ffad",
-      "Motor Driver Connections"
+      "Baseplate Connections"
     ],
     [
       "e962e4a0-6822-4b24-92cd-4a40d2d1132c",

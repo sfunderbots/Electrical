@@ -29,10 +29,10 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 5956ea5b-5c98-49b4-b8ae-cf424631ffad)
-    (property "Sheetname" "Motor Driver Connections" (at 118.11 39.9284 0)
+    (property "Sheetname" "Baseplate Connections" (at 118.11 39.9284 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "motor.kicad_sch" (at 118.11 69.1646 0)
+    (property "Sheetfile" "baseplate-conn.kicad_sch" (at 118.11 69.1646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
