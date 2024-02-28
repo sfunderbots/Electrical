@@ -101,7 +101,6 @@
   (pad "2" thru_hole circle (at -5.75 3.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp df3b5853-e55c-42e7-ae04-151de8d1bbf2))
   (pad "2" thru_hole circle (at -5.75 4.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp 236862c1-28cb-49e5-a45f-bf0a33e893e5))
   (pad "2" thru_hole circle (at -5.75 5.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp ee41576a-7ad8-403a-8b6a-5d3af563ac27))
-  (pad "2" connect rect (at -5.25 2.95) (size 4 5.5) (layers "F.Cu" "F.Mask") (tstamp 78370739-5103-4f5a-a8f8-0850fbe261bb))
   (pad "2" connect rect (at -5.25 2.95) (size 4 5.5) (layers "B.Cu" "B.Mask") (tstamp d0604483-c583-49b8-bca7-19b9da5a5fcb))
   (pad "2" thru_hole circle (at -4.75 1.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp f9404384-6a6d-4bef-a246-9e632666a5e9))
   (pad "2" thru_hole circle (at -4.75 2.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp 9e930e62-8852-4d50-a254-79b735660027))

@@ -63,7 +63,7 @@
 # Specify an optimal gap for a particular diff-pair
 (rule "dp gap"
     (condition "A.NetClass == 'DIFF_USB'")
-	(constraint diff_pair_uncoupled (max 360mil))
+	(constraint diff_pair_uncoupled (max 395mil))
 	(constraint diff_pair_gap (max 200mil) (opt 8mil) (min 7mil)))
 (rule USB_clearance_width
 	(condition "A.enclosedByArea('USB')")

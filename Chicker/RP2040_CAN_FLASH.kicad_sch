@@ -3932,6 +3932,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b4497e76-91ed-47c8-bd74-8c3c1aa87bd8)
   )
+  (text "PWM pins on RP2040 work on all GPIOs\n\nGPIO2 and GPIO3 = PWM Channel 1A and 1B\n"
+    (at 121.92 57.15 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid bc39f770-32a8-414c-95b4-b024ad216293)
+  )
   (text "Shell Disconnect HV" (at 181.61 132.08 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid cc567133-1dc5-498a-b8bc-51cb9cc1a4be)
@@ -6970,7 +6975,7 @@
   )
 
   (symbol (lib_id "thebots_symlib:Conn_02x09_Counter_Clockwise") (at 231.14 151.13 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 9e7a747f-d976-4587-95c4-47c851cd845c)
     (property "Reference" "J5" (at 218.44 148.59 90)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -8132,7 +8137,7 @@
   )
 
   (symbol (lib_id "bots:R_10k") (at 55.88 87.63 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp yes)
     (uuid ecb4a86e-ceff-4e7c-99ab-576cdabebb02)
     (property "Reference" "R?" (at 54.61 83.82 90)
       (effects (font (size 1.27 1.27)))

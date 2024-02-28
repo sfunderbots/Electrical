@@ -78,8 +78,6 @@
   (pad "1" thru_hole circle (at -5.75 3.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp 41930221-dbfb-4156-9c60-a61583a6a11a))
   (pad "1" thru_hole circle (at -5.75 4.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp f6a7651e-aed3-44e0-b6fe-843e5788f40e))
   (pad "1" thru_hole circle (at -5.75 5.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp 1891b3dd-6c06-4bd4-9287-496761ac7093))
-  (pad "1" connect rect (at -5.25 2.95) (size 4 5.5) (layers "F.Cu" "F.Mask")
-    (solder_mask_margin 0.1016) (tstamp ecd61195-5eab-4e5d-b319-d8da373d92ee))
   (pad "1" connect rect (at -5.25 2.95) (size 4 5.5) (layers "B.Cu" "B.Mask")
     (solder_mask_margin 0.1016) (tstamp f3fb98f2-20ca-4f01-a203-e797166ad11e))
   (pad "1" thru_hole circle (at -4.75 1.15) (size 0.7 0.7) (drill 0.35) (property pad_prop_heatsink) (layers "*.Cu") (tstamp b9a9cb94-7931-4594-8ab1-53803f4baed7))

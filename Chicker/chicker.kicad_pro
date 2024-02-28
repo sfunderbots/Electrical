@@ -56,8 +56,15 @@
         }
       ],
       "drc_exclusions": [
+        "lib_footprint_issues|100169640|107858131|8464f55c-1824-4ab4-b919-88e5de539c80|00000000-0000-0000-0000-000000000000",
         "lib_footprint_issues|119800701|103628063|3ca96d84-d90a-457d-8b2c-8f00d6c94ae2|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_issues|159650123|83581370|5bf370f4-d2c3-4412-8ce1-86d671d86d17|00000000-0000-0000-0000-000000000000"
+        "lib_footprint_issues|159650123|83581370|5bf370f4-d2c3-4412-8ce1-86d671d86d17|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_issues|44831000|77724000|0bc67bbd-3a5f-4b8d-a5b9-a656fc03ce1e|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|143247552|46491925|4266287d-b4d7-45bd-9d91-1a2681c89304|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|66662263|73174500|0c4bac72-58ee-4772-9ea4-713030cf8447|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|94236861|74063054|d40e5306-6065-4257-bbd6-cdc8346b345a|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|97893500|74125666|0bbd6fb6-fe30-40ba-aa4d-57613bdf70cf|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|98701500|86537000|49b5cf24-313d-4e2d-b9b1-69f96b1ea912|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "version": 2
@@ -131,7 +138,7 @@
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -195,7 +202,7 @@
           "drill": 2.0
         }
       ],
-      "zones_allow_external_fillets": false
+      "zones_allow_external_fillets": true
     },
     "layer_presets": [],
     "viewports": []
@@ -1114,6 +1121,10 @@
     [
       "ec2690de-9d43-42f0-9a1d-89d3edcde356",
       "High Voltage Feedback"
+    ],
+    [
+      "1531c264-7376-4c89-a68c-bc487f80831c",
+      "Autodischarge"
     ]
   ],
   "text_variables": {}
