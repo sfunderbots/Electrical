@@ -91,7 +91,6 @@
 
 
 
-
 #make sure of NPTH clearance, all layers
 (rule NPTH_Clearance
 (constraint hole_clearance (min 0.3mm))
