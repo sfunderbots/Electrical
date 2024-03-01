@@ -312,7 +312,7 @@
   (symbol (lib_id "power:GND") (at 97.79 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 253ff6ff-8b45-4147-adaf-77b39764c985)
-    (property "Reference" "#PWR037" (at 97.79 91.44 0)
+    (property "Reference" "#PWR025" (at 97.79 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 97.79 90.17 0)
@@ -327,12 +327,6 @@
     (pin "1" (uuid 41057dd6-856f-4ac5-ae51-624da3024e23))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR037") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/e962e4a0-6822-4b24-92cd-4a40d2d1132c"
           (reference "#PWR025") (unit 1)
         )
@@ -343,7 +337,7 @@
   (symbol (lib_id "power:+5V") (at 86.36 83.82 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 98303a00-e6f4-4060-9a6f-cdead3d2171c)
-    (property "Reference" "#PWR013" (at 86.36 80.01 0)
+    (property "Reference" "#PWR011" (at 86.36 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 86.36 87.63 0)
@@ -358,9 +352,6 @@
     (pin "1" (uuid e13ed8bf-c490-43d9-8c12-4f8e289aa2e7))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR013") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/e962e4a0-6822-4b24-92cd-4a40d2d1132c"
           (reference "#PWR011") (unit 1)
         )
