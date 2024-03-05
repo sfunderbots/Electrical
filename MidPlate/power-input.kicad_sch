@@ -1826,7 +1826,7 @@
   (symbol (lib_id "power:VCC") (at 185.42 27.94 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0c4b7c98-2be8-409f-a976-4ff840690c52)
-    (property "Reference" "#PWR024" (at 185.42 31.75 0)
+    (property "Reference" "#PWR01" (at 185.42 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VCC" (at 185.42 22.86 0)
@@ -1841,9 +1841,6 @@
     (pin "1" (uuid 819e1ef2-5bb7-47b7-a260-63c424e5226a))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR024") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
           (reference "#PWR01") (unit 1)
         )
@@ -2431,7 +2428,7 @@
   (symbol (lib_id "power:VCC") (at 20.32 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6fc5fd96-9156-476d-ab33-f8bcbecb3491)
-    (property "Reference" "#PWR024" (at 20.32 67.31 0)
+    (property "Reference" "#PWR03" (at 20.32 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VCC" (at 20.32 58.42 0)
@@ -2446,9 +2443,6 @@
     (pin "1" (uuid ddcc95bc-1a73-4471-8bc2-6e937442d190))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR024") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
           (reference "#PWR03") (unit 1)
         )

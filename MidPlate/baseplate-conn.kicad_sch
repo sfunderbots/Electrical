@@ -866,7 +866,7 @@
   (symbol (lib_id "power:+5V") (at 176.53 116.84 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3dc5b2e0-03d7-45ee-8756-b8be5f9a2c35)
-    (property "Reference" "#PWR013" (at 180.34 116.84 0)
+    (property "Reference" "#PWR019" (at 180.34 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 172.72 116.84 0)
@@ -881,12 +881,6 @@
     (pin "1" (uuid 48356fe4-0a91-4406-ab84-47207945cbc3))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR013") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR020") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR019") (unit 1)
         )
@@ -950,9 +944,6 @@
     (pin "2" (uuid 1633c0e7-ae77-41d7-b85b-5264344d5ea4))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "JP1") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "JP1") (unit 1)
         )
@@ -1008,7 +999,7 @@
   (symbol (lib_id "power:GND") (at 107.95 87.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 80526fcc-dff8-4604-be34-4767eacb55a1)
-    (property "Reference" "#PWR037" (at 107.95 93.98 0)
+    (property "Reference" "#PWR027" (at 107.95 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 107.95 92.71 0)
@@ -1023,12 +1014,6 @@
     (pin "1" (uuid 2947c294-db62-4d94-a7a9-433356e3beae))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR037") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR027") (unit 1)
         )
@@ -1080,7 +1065,7 @@
   (symbol (lib_id "power:GND") (at 170.18 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid aa976082-8cac-4807-afb0-6737b8d604cb)
-    (property "Reference" "#PWR037" (at 170.18 80.01 0)
+    (property "Reference" "#PWR07" (at 170.18 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 170.18 78.74 0)
@@ -1095,12 +1080,6 @@
     (pin "1" (uuid cd68a237-e842-4b43-9839-2553fb382115))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR037") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR07") (unit 1)
         )
@@ -1153,7 +1132,7 @@
   (symbol (lib_id "power:VCC") (at 195.58 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d33b6277-6d90-4af1-b963-fd9b19c8be2c)
-    (property "Reference" "#PWR024" (at 195.58 64.77 0)
+    (property "Reference" "#PWR08" (at 195.58 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VCC" (at 195.58 55.88 0)
@@ -1168,12 +1147,6 @@
     (pin "1" (uuid 1cc01cd0-054f-4c17-af48-d3f4dad2b4d5))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR024") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR01") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR08") (unit 1)
         )
@@ -1184,7 +1157,7 @@
   (symbol (lib_id "power:GND") (at 120.65 88.9 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid db1be39f-38cd-4fe9-9b1c-e6e6c3c0aecf)
-    (property "Reference" "#PWR037" (at 120.65 95.25 0)
+    (property "Reference" "#PWR06" (at 120.65 95.25 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 120.65 93.98 0)
@@ -1199,12 +1172,6 @@
     (pin "1" (uuid adfd1cac-2bc7-4471-9c9a-6ca69e04a186))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR037") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR06") (unit 1)
         )
@@ -1215,7 +1182,7 @@
   (symbol (lib_id "power:GND") (at 182.88 120.65 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ee4d46ab-c17f-4409-bdf7-aeb82e2cc134)
-    (property "Reference" "#PWR037" (at 182.88 127 0)
+    (property "Reference" "#PWR021" (at 182.88 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 182.88 125.73 0)
@@ -1230,12 +1197,6 @@
     (pin "1" (uuid ecad899a-513e-47b1-b7a8-f73042aec504))
     (instances
       (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/ab54f000-c596-4ae0-81be-92723dd47fdf"
-          (reference "#PWR037") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5956ea5b-5c98-49b4-b8ae-cf424631ffad"
           (reference "#PWR021") (unit 1)
         )
