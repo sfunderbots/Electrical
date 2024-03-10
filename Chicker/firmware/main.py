@@ -1,9 +1,12 @@
 from machine import Pin, ADC
 from time import sleep
+from array import array
+import math
 import utime
-import outputs
 import random
 from battery import Voltages
+import sys, select
+import pulses
 
 
 DONE = Pin(4, Pin.IN)
@@ -38,10 +41,46 @@ charge_started = 0
 check_5s_done = 0
 charge_ok_sim = 0
 safe_charge = 0
+delay_time_us = 0
+kick_cooldown = 1
+prev_pulse_time = 0
+offset = 1000_000
+
+pulses = pulses.Pulses(None, KICK, 1_000_000)
+'''
+def put(pattern=(delay_time_us,), start=1):
+    global pulses
+    ar = array("H", pattern)
+    pulses.put_pulses(ar, start)
+    print(pulses.put_done)
+'''    
+    
 while True:
     #Read Inputs:
     
     current_time = utime.ticks_ms()
+    current_ustime = utime.ticks_us()
+    res = select.select([sys.stdin], [], [], 0)
+    data = ""
+    while res[0]:
+      data = data + sys.stdin.read(1)
+      res = select.select([sys.stdin], [], [], 0)
+    #delay_time_us = int(delay_time_us)
+    #print(delay_time_us)
+    #utime.sleep(1)
+    if (data == "") :
+        delay_time_us = 0
+    #elif (math.isnan(data) == 1): # if not a number set to 0 (default)
+    #    delay_time_us = 0
+    else :
+        delay_time_us = int(data)
+
+        if (delay_time_us > 5000) :
+            delay_time_us = 5000 # set a limit to the delay time
+            print("Pulse duration too long")
+        elif (delay_time_us < 0):
+            delay_time_us = 0
+        print(delay_time_us)
     '''
     ###############################################
     #simulation values (correct ones)
@@ -64,7 +103,21 @@ while True:
      #   prev_sim_charge_time = current_time
     ###############################################
     '''
+    if(kick_cooldown == 0 and delay_time_us != 0):
+        kick_cooldown = 1
+        pattern=(offset, delay_time_us, offset,)
+        start=0
+        ar = array("I", pattern)
+        pulses.put_pulses(ar, start)
+        print(pulses.put_done)
+        
+        print("Kicking in 1 second at ", delay_time_us, "us. Stand back")
+        prev_pulse_time = current_time # start pulse timer
+    elif (kick_cooldown == 1 and current_time - prev_pulse_time >= 1000):
+        kick_cooldown = 0
+        delay_time_us = 0
     
+    CAN_LED.value(KICK.value())
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
     done_state = DONE.value()# done_sim #
     CHARGE.value(charge)
@@ -72,6 +125,7 @@ while True:
     if (startup == 0):
         charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
         safe_charge = 0
+        CAN_LED.value(0)
         if (charge_ok == 1 and charge_disable == 0):
             charge = 0
             startup_cycle = 1
@@ -86,7 +140,7 @@ while True:
         startup = 1
         
     # toggle LEDs at different intervals
-    CAN_LED.value(charge)
+    #CAN_LED.value(charge)
     INT_LED.value(done_state)
     
     '''
@@ -105,6 +159,7 @@ while True:
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")
+        #print(current_ustime)
         
         #print("CHARGE OK:", charge_ok)
         #print("Charge toggle wait", charge_toggle_wait)
