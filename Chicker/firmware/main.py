@@ -20,6 +20,8 @@ KICK = Pin(2, Pin.OUT)
 
 CAN_LED = Pin(6, Pin.OUT)
 INT_LED = Pin(20, Pin.OUT)
+
+
 prev_time_int = 0
 prev_time_can = 0
 prev_time_volt = 0
@@ -30,6 +32,7 @@ prev_time_charge_disabled = 0
 prev_time_countdown = 0
 prev_sim_charge_time = 0
 charge_ok = 0
+prev_charge_ok = 0
 startup = 0
 startup_cycle = 0
 charge_toggle_wait = 0
@@ -42,11 +45,15 @@ check_5s_done = 0
 charge_ok_sim = 0
 safe_charge = 0
 delay_time_us = 0
+delay_time_us_temp = 0
 kick_cooldown = 1
 prev_pulse_time = 0
 offset = 1000_000
+data_rec = 0
+prev_input_time = 0
 
-pulses = pulses.Pulses(None, KICK, 1_000_000)
+#kickpulse = pulses.Pulses(None, KICK, 1_000_000)
+pulses = pulses.Pulses(None, KICK, CAN_LED, 1_000_000)
 '''
 def put(pattern=(delay_time_us,), start=1):
     global pulses
@@ -54,33 +61,46 @@ def put(pattern=(delay_time_us,), start=1):
     pulses.put_pulses(ar, start)
     print(pulses.put_done)
 '''    
-    
+
 while True:
     #Read Inputs:
     
     current_time = utime.ticks_ms()
     current_ustime = utime.ticks_us()
+    '''
     res = select.select([sys.stdin], [], [], 0)
     data = ""
     while res[0]:
       data = data + sys.stdin.read(1)
       res = select.select([sys.stdin], [], [], 0)
-    #delay_time_us = int(delay_time_us)
-    #print(delay_time_us)
-    #utime.sleep(1)
-    if (data == "") :
-        delay_time_us = 0
-    #elif (math.isnan(data) == 1): # if not a number set to 0 (default)
-    #    delay_time_us = 0
-    else :
-        delay_time_us = int(data)
+      
+    if (data_rec == 0 and kick_cooldown == 0):
+        if (data == "") :
+            data_rec = 0
+            delay_time_us_temp = 0
+        #elif (math.isnan(data) == 1): # if not a number set to 0 (default)
+        #    delay_time_us = 0
+        else :
+            #print("stuff")
+            data_rec = 1
+            delay_time_us_temp = int(data)
 
-        if (delay_time_us > 5000) :
-            delay_time_us = 5000 # set a limit to the delay time
-            print("Pulse duration too long")
-        elif (delay_time_us < 0):
-            delay_time_us = 0
-        print(delay_time_us)
+            if (delay_time_us_temp > 5000) :
+                delay_time_us_temp = 5000 # set a limit to the delay time
+                print("Pulse duration too long, setting to 5000us")
+            elif (delay_time_us_temp < 0):
+                delay_time_us_temp = 0
+            prev_input_time = current_time
+            print("Kicking in 3 seconds, at ", delay_time_us_temp, "us. Stand back!")
+    elif (data_rec == 1) :
+        if (current_time - prev_input_time >= 3000):
+            delay_time_us = delay_time_us_temp
+            data = ""
+            data_rec = 0
+    '''
+    CAN_LED.value(KICK.value())
+    
+
     '''
     ###############################################
     #simulation values (correct ones)
@@ -105,19 +125,21 @@ while True:
     '''
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
-        pattern=(offset, delay_time_us, offset,)
+        pattern=(8, delay_time_us, 8 )
         start=0
-        ar = array("I", pattern)
-        pulses.put_pulses(ar, start)
-        print(pulses.put_done)
+        ar = array("L", pattern)
+        #kickpulse.put_pulses(ar, start)
+        pulses.put_pulses(ar,start)
+        #print(ledpulse.put_done)
+        #print(kickpulse.put_done)
+        prev_pulse_time = current_ustime # start pulse timer
         
-        print("Kicking in 1 second at ", delay_time_us, "us. Stand back")
-        prev_pulse_time = current_time # start pulse timer
-    elif (kick_cooldown == 1 and current_time - prev_pulse_time >= 1000):
+        #print("stufffffffffffffff")
+    elif (kick_cooldown == 1 and current_ustime - prev_pulse_time >= 100000):
         kick_cooldown = 0
         delay_time_us = 0
+        #print("cooldown")
     
-    CAN_LED.value(KICK.value())
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
     done_state = DONE.value()# done_sim #
     CHARGE.value(charge)
@@ -125,33 +147,46 @@ while True:
     if (startup == 0):
         charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
         safe_charge = 0
-        CAN_LED.value(0)
-        if (charge_ok == 1 and charge_disable == 0):
-            charge = 0
-            startup_cycle = 1
-            # set wait to toggle charge pin
-            charge_toggle_wait = 0
-            #print(current_time/1000, done_state)
-            print("charge toggle on startup")
-            prev_time_start_chg = current_time
-            
-            
+        #CAN_LED.value(0)
+        #INT_LED.value(0)
+        prev_charge_ok = charge_ok
+        
+        pattern=(8, 8, 8)
+        start=0
+        ar = array("L", pattern)
+        #kickpulse.put_pulses(ar, start)
+        pulses.put_pulses(ar,start)
+        #print(ledpulse.put_done)
+        #print(kickpulse.put_done)
+        #prev_pulse_time = current_ustime # start pulse timer
+        
         # finished startup routine, this will only happen again on reset or boot
         startup = 1
-        
+    elif (prev_charge_ok == 0 and charge_ok == 1):
+        charge = 0
+        startup_cycle = 1
+        # set wait to toggle charge pin
+        charge_toggle_wait = 0
+        #print(current_time/1000, done_state)
+        print("charge toggle on startup")
+        prev_time_start_chg = current_time
+               
     # toggle LEDs at different intervals
     #CAN_LED.value(charge)
-    INT_LED.value(done_state)
+    INT_LED.value(data_rec)
+
     
-    '''
-    if(current_time - prev_time_can >= 400):
-        CAN_LED.toggle()
+    if(current_time - prev_time_can >=3000):
+        if (delay_time_us == 0):
+            delay_time_us = 5000
+            #print("delay set to 5000 us")
+        else:
+            delay_time_us = 0
+            #print("delay reset")
         prev_time_can = current_time
         #print(done_state)
-    if(current_time - prev_time_int >= 800):
-        INT_LED.toggle()
-        prev_time_int = current_time
-    '''
+    
+    
     # check voltages every 2 seconds
     if(current_time - prev_time_volt >= 2000):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
