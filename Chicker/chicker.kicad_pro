@@ -1054,7 +1054,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "POWER_BOARD.step",
+      "step": "Chicker.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
