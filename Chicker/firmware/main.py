@@ -14,8 +14,8 @@ DONE = Pin(4, Pin.IN)
 #BREAKBEAM = Pin(23, Pin.IN)
 
 CHARGE = Pin(5, Pin.OUT)
-#CHIP = Pin(3, Pin.OUT)
-KICK = Pin(2, Pin.OUT)
+#CHIP = Pin(2, Pin.OUT)
+KICK = Pin(3, Pin.OUT)
 #NOT_DISCHARGE = Pin(8, Pin.OUT)
 
 CAN_LED = Pin(6, Pin.OUT)
@@ -31,6 +31,8 @@ prev_time_chg_wait = 0
 prev_time_charge_disabled = 0
 prev_time_countdown = 0
 prev_sim_charge_time = 0
+prev_pulse_time = 0
+prev_input_time = 0
 charge_ok = 0
 prev_charge_ok = 0
 startup = 0
@@ -47,10 +49,11 @@ safe_charge = 0
 delay_time_us = 0
 delay_time_us_temp = 0
 kick_cooldown = 1
-prev_pulse_time = 0
+
 offset = 1000_000
 data_rec = 0
-prev_input_time = 0
+
+startup_novcc = 0
 
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
 pulses = pulses.Pulses(None, KICK, CAN_LED, 1_000_000)
@@ -67,6 +70,7 @@ while True:
     
     current_time = utime.ticks_ms()
     current_ustime = utime.ticks_us()
+    
     '''
     res = select.select([sys.stdin], [], [], 0)
     data = ""
@@ -98,10 +102,16 @@ while True:
             data = ""
             data_rec = 0
     '''
-    CAN_LED.value(KICK.value())
     
+    
+     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
+    done_state =  done_sim #DONE.value()#
+    CHARGE.value(charge)
+    #CAN_LED.value(KICK.value())
+    #CAN_LED.value(done_state)
+    INT_LED.value(charge_ok)
 
-    '''
+    
     ###############################################
     #simulation values (correct ones)
     # rising edge of charge pin
@@ -122,7 +132,7 @@ while True:
      #   print("Random number:",charge_ok_sim)
      #   prev_sim_charge_time = current_time
     ###############################################
-    '''
+    
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
         pattern=(8, delay_time_us, 8 )
@@ -140,17 +150,22 @@ while True:
         delay_time_us = 0
         #print("cooldown")
     
-    # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state = DONE.value()# done_sim #
-    CHARGE.value(charge)
+   
     # do this only on startup
     if (startup == 0):
-        charge_ok = Voltages(charge_ok, startup) #charge_ok_sim 
-        safe_charge = 0
-        #CAN_LED.value(0)
-        #INT_LED.value(0)
-        prev_charge_ok = charge_ok
-        
+        done_sim = current_time
+        prev_time_int = current_time
+        prev_time_can = current_time
+        prev_time_volt = current_time
+        prev_time_start_chg = current_time
+        prev_sim_time = current_time
+        prev_time_chg_wait = current_time
+        prev_time_charge_disabled = current_time
+        prev_time_countdown = current_time
+        prev_sim_charge_time = current_time
+        prev_pulse_time = current_time
+        prev_input_time = current_time
+        #charge_ok = Voltages(charge_ok, startup) #charge_ok_sim
         pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
@@ -158,25 +173,46 @@ while True:
         pulses.put_pulses(ar,start)
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
-        #prev_pulse_time = current_ustime # start pulse timer
-        
-        # finished startup routine, this will only happen again on reset or boot
-        startup = 1
-    elif (prev_charge_ok == 0 and charge_ok == 1):
-        charge = 0
-        startup_cycle = 1
-        # set wait to toggle charge pin
-        charge_toggle_wait = 0
-        #print(current_time/1000, done_state)
-        print("charge toggle on startup")
-        prev_time_start_chg = current_time
+        if (charge_ok == 0):
+            startup_novcc = 1
+            startup = 1
+            print("no VCC supplied")
+        else :
+            safe_charge = 0
+            #CAN_LED.value(0)
+            #INT_LED.value(0)            
+            
+            
+            #prev_pulse_time = current_ustime # start pulse timer
+            charge = 0
+            startup_cycle = 1
+            # set wait to toggle charge pin
+            charge_toggle_wait = 0
+            #print(current_time/1000, done_state)
+            print("charge toggle on startup")
+            prev_time_start_chg = current_time
+            # finished startup routine, this will only happen again on reset or boot
+            startup = 1
+    else :
+        if (startup_novcc == 1 and charge_ok == 1):
+            startup_novcc = 0
+            charge = 0
+            # set wait to toggle charge pin
+            charge_toggle_wait = 0
+            #print(current_time/1000, done_state)
+            print("charge toggle on VBAT received")
+            #startup_cycle = 1
+            prev_time_start_chg = current_time
                
     # toggle LEDs at different intervals
     #CAN_LED.value(charge)
-    INT_LED.value(data_rec)
-
+    #INT_LED.value(data_rec)
     
-    if(current_time - prev_time_can >=3000):
+    if (current_time - prev_time_can >= 50):
+        print(startup_cycle)
+        prev_time_can = current_time
+    '''
+     if (current_time - prev_time_can >= 50):
         if (delay_time_us == 0):
             delay_time_us = 5000
             #print("delay set to 5000 us")
@@ -185,8 +221,7 @@ while True:
             #print("delay reset")
         prev_time_can = current_time
         #print(done_state)
-    
-    
+    '''        
     # check voltages every 2 seconds
     if(current_time - prev_time_volt >= 2000):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
