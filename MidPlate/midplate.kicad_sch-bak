@@ -1,0 +1,82 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 69058343-dac8-421b-a3f6-e069eb1ba8ae)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 139.7 38.1) (size 25.4 33.02) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 208a125f-e9af-4c81-8e0c-7231ec487289)
+    (property "Sheetname" "MCU" (at 139.7 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "midplate_MCU.kicad_sch" (at 139.7 71.7046 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 203.2 38.1) (size 25.4 25.4) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 2f59e60a-c040-428f-85de-f426839730b7)
+    (property "Sheetname" "OrangePi Zero2 Interface" (at 203.2 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "opizero2_interface.kicad_sch" (at 203.2 64.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 38.1 39.37) (size 26.67 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid ab54f000-c596-4ae0-81be-92723dd47fdf)
+    (property "Sheetname" "Power Input" (at 38.1 38.6584 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "power-input.kicad_sch" (at 38.1 69.1646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 76.2 114.3) (size 25.4 38.1) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid ee29c8c0-427f-4977-aab8-03cf64edc230)
+    (property "Sheetname" "Motor Driver Connectors" (at 76.2 113.5884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "midplate_motordriver_conn.kicad_sch" (at 76.2 152.9846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "midplate"
+        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "4"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

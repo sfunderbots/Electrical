@@ -1,0 +1,35 @@
+(version 6.0)
+(rule HV_clearance_width
+	(condition "A.NetClass == 'HV'")
+	(constraint clearance (min 60mil))
+	(constraint track_width (min 50mil)))
+(rule power_clearance_width
+	(condition "A.NetClass == 'Power'")
+	(constraint clearance (min 15mil))
+	(constraint track_width (min 10mil)))
+(rule signal_clearance_width
+	(condition "A.NetClass == 'SIGNALS'")
+	(constraint track_width (min 6mil))
+	(constraint clearance (min 9mil)))
+(rule dp_gap_CAN
+    (condition "A.NetClass == 'CAN_DIFF'")
+	(constraint diff_pair_uncoupled (max 800mil))
+	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil)))
+(rule board_edge_clearance
+	(condition "A.Type=='Zone'")
+    (constraint edge_clearance (min 85mil)))
+(rule JST_clearance
+	(condition "A.enclosedByArea('JST') && A.NetClass == 'BAT'")
+	(constraint clearance (min 20mil)))
+(rule HV_clearance
+	(condition "A.enclosedByArea('HV')")
+	(constraint clearance (min 40mil)))
+(rule MH_clearance
+	(condition "A.enclosedByArea('MOUNTING')")
+	(constraint clearance (min 40mil)))
+(rule vcc_clearance_JST
+	(constraint clearance (min 20mil))
+	(condition "A.Type == 'Zone' && A.Name =='VCC_JST'"))
+(rule GND_clearance_JST
+	(constraint clearance (min 20mil))
+	(condition "A.Type == 'Zone' && A.Name =='JST_GND'"))

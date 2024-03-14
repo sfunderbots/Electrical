@@ -131,8 +131,13 @@
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.127,
         "min_via_annular_width": 0.049999999999999996,
+<<<<<<< HEAD
         "min_via_diameter": 0.44999999999999996,
         "solder_mask_to_copper_clearance": 0.005,
+=======
+        "min_via_diameter": 0.39999999999999997,
+        "solder_mask_to_copper_clearance": 0.0,
+>>>>>>> main
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -175,6 +180,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
+<<<<<<< HEAD
       "track_widths": [
         0.0,
         0.127,
@@ -194,6 +200,10 @@
           "drill": 0.2
         }
       ],
+=======
+      "track_widths": [],
+      "via_dimensions": [],
+>>>>>>> main
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
