@@ -7,3 +7,6 @@
 	(condition "A.NetClass == 'Power'")
 	(constraint clearance (min 15mil))
 	(constraint track_width (min 10mil)))
+(rule JST_CAN
+	(condition "A.enclosedByArea('JST_CAN') && A.NetClass == 'BAT'")
+	(constraint clearance (min 25mil)))
