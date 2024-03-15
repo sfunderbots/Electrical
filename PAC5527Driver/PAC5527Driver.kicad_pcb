@@ -676,7 +676,6 @@
     (fp_line (start 3 3) (end -3 3)
       (stroke (width 0.1) (type solid)) (layer "F.Fab") (tstamp 35ed3465-98fa-446a-b1a3-4e014faf7c85))
     (pad "" smd custom (at -1.266667 -1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -693,7 +692,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp fc1d383c-4af6-4329-b8f6-f3ea708ddeac))
     (pad "" smd custom (at -1.266667 0 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -710,7 +708,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp 688accf2-99cf-464e-a878-deb6a3c02e9e))
     (pad "" smd custom (at -1.266667 1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -727,7 +724,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp cdde80bc-dd6f-410a-82f3-65071247ceb5))
     (pad "" smd custom (at 0 -1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -744,7 +740,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp 381c32f4-def7-40fb-b7f1-829e93e55699))
     (pad "" smd custom (at 0 0 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -761,7 +756,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp 349083e3-5a94-40e4-a780-dc8e8bc137a1))
     (pad "" smd custom (at 0 1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -778,7 +772,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp 96cfd40d-7a9e-4dc0-aa79-be98aa0d0a9a))
     (pad "" smd custom (at 1.266667 -1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -795,7 +788,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp 3675bb8f-7f86-45f5-bd92-8d7cd76a4d39))
     (pad "" smd custom (at 1.266667 0 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
@@ -812,7 +804,6 @@
           (width 0.242914) (fill yes))
       ) (tstamp ca187f47-f3f5-4a1a-92d2-ee9aea7f9ebc))
     (pad "" smd custom (at 1.266667 1.266667 270) (size 1.034133 1.034133) (layers "F.Paste")
-      (thermal_bridge_angle 45)
       (options (clearance outline) (anchor circle))
       (primitives
         (gr_poly
