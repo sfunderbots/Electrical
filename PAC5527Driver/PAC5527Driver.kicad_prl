@@ -74,31 +74,6 @@
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "PAC5527Driver.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
-        }
-      },
-      {
-        "name": "PAC5527Driver.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 426,
-          "pos_y": 1431,
-          "size_x": 1938,
-          "size_y": 1048
-        }
-      }
-    ]
+    "files": []
   }
 }
