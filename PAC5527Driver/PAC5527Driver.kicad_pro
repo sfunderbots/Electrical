@@ -34,22 +34,28 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 2.7,
+          "height": 3.1,
+          "width": 3.1
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.15,
+        "silk_text_size_h": 0.7999999999999999,
+        "silk_text_size_v": 0.7999999999999999,
+        "silk_text_thickness": 0.155,
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.19999999999999998
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
@@ -123,10 +129,15 @@
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.19999999999999998,
+        "min_track_width": 0.127,
         "min_via_annular_width": 0.049999999999999996,
+<<<<<<< HEAD
+        "min_via_diameter": 0.44999999999999996,
+        "solder_mask_to_copper_clearance": 0.005,
+=======
         "min_via_diameter": 0.39999999999999997,
         "solder_mask_to_copper_clearance": 0.0,
+>>>>>>> main
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -169,8 +180,30 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
+<<<<<<< HEAD
+      "track_widths": [
+        0.0,
+        0.127,
+        0.1524,
+        0.2,
+        0.254,
+        0.3048,
+        0.381
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+=======
       "track_widths": [],
       "via_dimensions": [],
+>>>>>>> main
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
@@ -433,7 +466,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "PAC5527Driver_M2-5mount.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
