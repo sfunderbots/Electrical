@@ -371,108 +371,6 @@
 				)
 			)
 		)
-		(symbol "Mechanical:MountingHole_Pad"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Mounting Hole with connection"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "mounting hole"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
-					(stroke
-						(width 1.27)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:+5V"
 			(power)
 			(pin_names
@@ -1546,7 +1444,7 @@
 				)
 			)
 		)
-		(symbol "thebots_symlib:Jumper_2_Bridged"
+		(symbol "thebots_symlib:Jumper_2_Bridged_smd"
 			(pin_names
 				(offset 0) hide)
 			(exclude_from_sim no)
@@ -1560,7 +1458,7 @@
 					)
 				)
 			)
-			(property "Value" "Jumper_2_Bridged"
+			(property "Value" "Jumper_2_Bridged_smd"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -1568,7 +1466,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(property "Footprint" "thebots_baseplate:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1613,7 +1511,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Jumper_2_Bridged_0_0"
+			(symbol "Jumper_2_Bridged_smd_0_0"
 				(circle
 					(center -2.032 0)
 					(radius 0.508)
@@ -1637,7 +1535,7 @@
 					)
 				)
 			)
-			(symbol "Jumper_2_Bridged_0_1"
+			(symbol "Jumper_2_Bridged_smd_0_1"
 				(arc
 					(start 1.524 0.254)
 					(mid 0 0.762)
@@ -1651,7 +1549,7 @@
 					)
 				)
 			)
-			(symbol "Jumper_2_Bridged_1_1"
+			(symbol "Jumper_2_Bridged_smd_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -1856,6 +1754,107 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "thebots_symlib:SMD_Pad_VBAT"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMD_Pad_VBAT"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SMD pad"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMD_Pad_VBAT_1_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type color)
+						(color 132 0 0 1)
+					)
+				)
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3191,72 +3190,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 74.93 91.44 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1434e3b3-5f99-40a3-8e36-d92a0f9d73e2")
-		(property "Reference" "H5"
-			(at 73.66 88.4705 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 73.66 88.4706 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 74.93 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 74.93 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 74.93 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7798a22e-c781-46f4-a895-c60c6e1146b0")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 171.45 83.82 0)
 		(unit 1)
@@ -3518,34 +3451,32 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 76.2 123.19 90)
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 76.2 115.57 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "309d6048-978f-4249-92e5-32e961cc69d1")
-		(property "Reference" "H8"
-			(at 74.93 120.2205 90)
+		(uuid "341abacd-b256-4ef8-b26f-98215bd69970")
+		(property "Reference" "H7"
+			(at 71.12 114.808 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 74.93 120.2206 90)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 74.93 111.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 76.2 123.19 0)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 76.2 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3554,7 +3485,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 76.2 123.19 0)
+			(at 76.2 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3562,8 +3493,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 76.2 123.19 0)
+		(property "Description" "SMD pad"
+			(at 76.2 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3572,12 +3503,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "703fb9ea-a50b-41bb-9a0b-2c95d224f888")
+			(uuid "d4651b6c-b8fb-4cff-ae1f-b210662c6971")
 		)
 		(instances
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H8")
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -3712,6 +3643,70 @@
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 43.18 123.19 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b77861f-a34e-403d-82ad-e49ee6a5713a")
+		(property "Reference" "H4"
+			(at 38.1 122.428 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 41.91 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 43.18 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a743765b-1fd1-43c6-a290-9e4ed0d640cd")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -4027,138 +4022,6 @@
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 76.2 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "751f8fab-1312-455a-bff4-fe6a96e2366e")
-		(property "Reference" "H7"
-			(at 74.93 112.6005 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 74.93 112.6006 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 76.2 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 76.2 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "768eb636-3000-47bd-b125-6ad49481c418")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 43.18 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "76484622-db45-4c06-bd5f-f5bca2834b3f")
-		(property "Reference" "H3"
-			(at 41.91 112.6005 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 41.91 112.6006 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 43.18 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 43.18 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 43.18 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "414dcbb6-d35f-44f3-a0a3-a61316ca4364")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -4487,6 +4350,70 @@
 		)
 	)
 	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 43.18 100.33 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8abd87c2-20f2-434d-87b3-cbe9e08476c7")
+		(property "Reference" "H2"
+			(at 38.1 99.568 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 41.91 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 43.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 43.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7be45c36-e02e-47b3-b685-8eb1ccdf27eb")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 73.66 168.91 0)
 		(mirror y)
@@ -4621,6 +4548,70 @@
 		)
 	)
 	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 76.2 123.19 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95a0603c-d85c-45ce-8617-0c1db71d2056")
+		(property "Reference" "H8"
+			(at 71.12 122.428 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 74.93 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 76.2 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 76.2 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 76.2 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1c2b1ab-ecd3-45a3-a7e1-1c2d608801e8")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 237.49 80.01 90)
 		(unit 1)
@@ -4686,34 +4677,32 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 74.93 99.06 90)
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 74.93 91.44 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9ed8d7e9-87b4-4f1a-8c62-a96fb7ba191b")
-		(property "Reference" "H6"
-			(at 73.66 96.0905 90)
+		(uuid "9cf9ce4e-100c-4612-b3a5-26c43d63cbad")
+		(property "Reference" "H5"
+			(at 69.85 90.678 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 73.66 96.0906 90)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 73.66 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 74.93 99.06 0)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 74.93 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4722,7 +4711,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 74.93 99.06 0)
+			(at 74.93 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4730,8 +4719,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 74.93 99.06 0)
+		(property "Description" "SMD pad"
+			(at 74.93 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4740,12 +4729,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f63b2aea-83a1-47d8-b35b-09e58f5122e4")
+			(uuid "e8a01514-901f-4b9a-9209-d4639cc65574")
 		)
 		(instances
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H6")
+					(reference "H5")
 					(unit 1)
 				)
 			)
@@ -4819,6 +4808,70 @@
 		)
 	)
 	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 43.18 92.71 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a42e5a86-830d-433e-a169-3e2fab21b4a0")
+		(property "Reference" "H1"
+			(at 38.1 91.948 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 41.91 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 43.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 43.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "66a3c10e-a86c-477e-87f6-07b461b00839")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 93.98 168.91 0)
 		(mirror y)
@@ -4880,6 +4933,134 @@
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 74.93 99.06 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a671ff1f-a191-48b2-bfc6-94f56a2f3902")
+		(property "Reference" "H6"
+			(at 69.85 98.298 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 73.66 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 74.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 74.93 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "918bf99c-b58a-446d-9267-d31e1be63725")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "thebots_symlib:SMD_Pad_VBAT")
+		(at 43.18 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aba12b4a-73a5-473e-832e-828b7fffc588")
+		(property "Reference" "H3"
+			(at 38.1 114.808 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD_Pad_VBAT"
+			(at 41.91 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "thebots_baseplate:TestPoint_Pad_D4.0mm"
+			(at 43.18 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMD pad"
+			(at 43.18 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7fad347f-7436-491d-bc41-e1c22e306c8e")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -5280,72 +5461,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 43.18 92.71 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c34185f1-1a54-4a4b-ad28-7386b351499a")
-		(property "Reference" "H1"
-			(at 41.91 89.7405 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 41.91 89.7406 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 43.18 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 43.18 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 43.18 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c259a9a9-7e6f-48c7-b655-10ad6c067796")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x03_Socket")
 		(at 242.57 80.01 0)
 		(unit 1)
@@ -5486,72 +5601,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 43.18 100.33 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d56e210a-d6d9-41bb-b321-82a6fea7317e")
-		(property "Reference" "H2"
-			(at 41.91 97.3605 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 41.91 97.3606 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 43.18 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 43.18 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 43.18 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8d65fe22-8907-4570-82ba-0f62e75e5ebd")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VCC")
 		(at 196.85 71.12 0)
 		(unit 1)
@@ -5618,34 +5667,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 43.18 123.19 90)
+		(lib_id "thebots_symlib:Jumper_2_Bridged_smd")
+		(at 118.11 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "e2f430c2-76ad-4584-bc83-bca36f4f5066")
-		(property "Reference" "H4"
-			(at 41.91 120.2205 90)
+		(uuid "deffad32-6b88-44d2-a608-b24fd8b34714")
+		(property "Reference" "JP1"
+			(at 118.11 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 41.91 120.2206 90)
+		(property "Value" "Jumper_2_Bridged_smd"
+			(at 118.11 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
-			(at 43.18 123.19 0)
+		(property "Footprint" "thebots_baseplate:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+			(at 118.11 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5654,7 +5702,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 43.18 123.19 0)
+			(at 118.11 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5662,8 +5710,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 43.18 123.19 0)
+		(property "Description" "Jumper, 2-pole, closed/bridged"
+			(at 118.11 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5672,12 +5720,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8e7d651d-8395-4b00-bcd4-8160819a8f99")
+			(uuid "647b50d0-7957-4caa-a626-69406938792c")
+		)
+		(pin "2"
+			(uuid "6a7cc25e-01ff-44c4-8dd4-85b9288c7358")
 		)
 		(instances
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "H4")
+					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -5873,74 +5924,6 @@
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
 					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "thebots_symlib:Jumper_2_Bridged")
-		(at 118.11 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ed493b68-3e2c-4b9c-9f72-894267323aa5")
-		(property "Reference" "JP1"
-			(at 118.11 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_2_Bridged"
-			(at 118.11 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 118.11 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 118.11 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 118.11 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "edd8383b-40d7-495c-b6a5-74acb04aef8d")
-		)
-		(pin "2"
-			(uuid "be64497e-36c4-48a5-9a33-c2b5be72f413")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
