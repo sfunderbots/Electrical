@@ -56,7 +56,7 @@ data_rec = 0
 startup_novcc = 0
 
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, CAN_LED, 1_000_000)
+pulses = pulses.Pulses(None, KICK, CAN_LED, 1_000_000_0)
 '''
 def put(pattern=(delay_time_us,), start=1):
     global pulses
@@ -71,7 +71,7 @@ while True:
     current_time = utime.ticks_ms()
     current_ustime = utime.ticks_us()
     
-    '''
+    
     res = select.select([sys.stdin], [], [], 0)
     data = ""
     while res[0]:
@@ -89,9 +89,9 @@ while True:
             data_rec = 1
             delay_time_us_temp = int(data)
 
-            if (delay_time_us_temp > 5000) :
-                delay_time_us_temp = 5000 # set a limit to the delay time
-                print("Pulse duration too long, setting to 5000us")
+            if (delay_time_us_temp > 100) :# 1000 is 100us, 100 is 10us, very accurate
+                delay_time_us_temp = 100 # set a limit to the delay time
+                print("Pulse duration too long, setting to 100us")
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
             prev_input_time = current_time
@@ -101,17 +101,17 @@ while True:
             delay_time_us = delay_time_us_temp
             data = ""
             data_rec = 0
-    '''
+    
     
     
      # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state =  done_sim #DONE.value()#
+    done_state =  DONE.value() #done_sim #DONE.value()#
     CHARGE.value(charge)
     #CAN_LED.value(KICK.value())
-    #CAN_LED.value(done_state)
-    INT_LED.value(charge_ok)
+    CAN_LED.value(done_state)
+    INT_LED.value(charge)
 
-    
+    '''
     ###############################################
     #simulation values (correct ones)
     # rising edge of charge pin
@@ -121,7 +121,7 @@ while True:
         #print(current_time/1000)
         #print("done signal set to 1")        
     #elif (charge == 1) :
-    elif (current_time - prev_sim_time >= 1702):
+    elif (current_time - prev_sim_time >= 5000 + 1702):
             done_sim = 0
             #print(current_time/1000)
             #print("done signal set to 0")
@@ -132,7 +132,7 @@ while True:
      #   print("Random number:",charge_ok_sim)
      #   prev_sim_charge_time = current_time
     ###############################################
-    
+    '''
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
         pattern=(8, delay_time_us, 8 )
@@ -149,8 +149,8 @@ while True:
         kick_cooldown = 0
         delay_time_us = 0
         #print("cooldown")
-    
-   
+        
+        
     # do this only on startup
     if (startup == 0):
         done_sim = current_time
@@ -166,16 +166,19 @@ while True:
         prev_pulse_time = current_time
         prev_input_time = current_time
         #charge_ok = Voltages(charge_ok, startup) #charge_ok_sim
-        pattern=(8, 8, 8)
+        pattern=(1, 1, 1)
         start=0
         ar = array("L", pattern)
         #kickpulse.put_pulses(ar, start)
         pulses.put_pulses(ar,start)
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
+        
+        
         if (charge_ok == 0):
             startup_novcc = 1
             startup = 1
+            #startup_cycle = 0
             print("no VCC supplied")
         else :
             safe_charge = 0
@@ -185,7 +188,6 @@ while True:
             
             #prev_pulse_time = current_ustime # start pulse timer
             charge = 0
-            startup_cycle = 1
             # set wait to toggle charge pin
             charge_toggle_wait = 0
             #print(current_time/1000, done_state)
@@ -197,42 +199,35 @@ while True:
         if (startup_novcc == 1 and charge_ok == 1):
             startup_novcc = 0
             charge = 0
+            startup_cycle = 1
             # set wait to toggle charge pin
             charge_toggle_wait = 0
             #print(current_time/1000, done_state)
-            print("charge toggle on VBAT received")
+            print("charge toggle started on VBAT received")
             #startup_cycle = 1
             prev_time_start_chg = current_time
-               
+            
+        
+        
     # toggle LEDs at different intervals
     #CAN_LED.value(charge)
     #INT_LED.value(data_rec)
     
-    if (current_time - prev_time_can >= 50):
-        print(startup_cycle)
-        prev_time_can = current_time
+    #if (current_time - prev_time_can >= 50):
+     #   print(startup_cycle)
+     #   prev_time_can = current_time
     '''
-     if (current_time - prev_time_can >= 50):
+    if (current_time - prev_time_can >= 50):
         if (delay_time_us == 0):
-            delay_time_us = 5000
+            delay_time_us = 100 # 1000 is 100us, 100 is 10us, very accurate
             #print("delay set to 5000 us")
         else:
             delay_time_us = 0
             #print("delay reset")
         prev_time_can = current_time
         #print(done_state)
-    '''        
-    # check voltages every 2 seconds
-    if(current_time - prev_time_volt >= 2000):
-        charge_ok = Voltages(charge, startup) #charge_ok_sim
-        prev_time_volt = current_time
-        # enable disable timer
-        if (charge_ok == 0):
-            print("Charging Disabled, Battery Unplugged")
-        #print(current_ustime)
-        
-        #print("CHARGE OK:", charge_ok)
-        #print("Charge toggle wait", charge_toggle_wait)
+    '''  
+    
         
     
     
@@ -253,7 +248,7 @@ while True:
                     charge_toggle_wait = 1
                     prev_time_chg_wait = current_time
                     #print(current_time/1000, done_state)
-                    print("charge toggle complete, waiting for 15s")
+                    print("charge toggle complete on startup, waiting for 15s")
             elif (done_state == 0):
                 # setup charge toggle wait time to set charge pin high
                 if (current_time - prev_time_start_chg >= 50): 
@@ -340,5 +335,18 @@ while True:
                 if (current_time - prev_time_charge_disabled >= 30000):
                     charge_disable = 0
             
-        # maybe add checks on how to enable it after this point??   
-    
+        # maybe add checks on how to enable it after this point??
+        
+        
+    # check voltages every 2 seconds
+    if(current_time - prev_time_volt >= 2000):
+        charge_ok = Voltages(charge, startup) #charge_ok_sim
+        prev_time_volt = current_time
+        # enable disable timer
+        if (charge_ok == 0):
+            print("Charging Disabled, Battery Unplugged")
+        else:
+            print("VCC OK")
+        
+        #print("CHARGE OK:", charge_ok)
+        #print("Charge toggle wait", charge_toggle_wait)
