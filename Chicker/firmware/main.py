@@ -56,7 +56,7 @@ data_rec = 0
 startup_novcc = 0
 
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, CAN_LED, 1_000_000_0)
+pulses = pulses.Pulses(None, KICK, CAN_LED, 8_000_000)
 '''
 def put(pattern=(delay_time_us,), start=1):
     global pulses
@@ -71,7 +71,7 @@ while True:
     current_time = utime.ticks_ms()
     current_ustime = utime.ticks_us()
     
-    
+    '''
     res = select.select([sys.stdin], [], [], 0)
     data = ""
     while res[0]:
@@ -101,7 +101,7 @@ while True:
             delay_time_us = delay_time_us_temp
             data = ""
             data_rec = 0
-    
+    '''
     
     
      # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
@@ -148,8 +148,7 @@ while True:
     elif (kick_cooldown == 1 and current_ustime - prev_pulse_time >= 100000):
         kick_cooldown = 0
         delay_time_us = 0
-        #print("cooldown")
-        
+        #print("cooldown")    
         
     # do this only on startup
     if (startup == 0):
@@ -165,8 +164,8 @@ while True:
         prev_sim_charge_time = current_time
         prev_pulse_time = current_time
         prev_input_time = current_time
-        #charge_ok = Voltages(charge_ok, startup) #charge_ok_sim
-        pattern=(1, 1, 1)
+        charge_ok = Voltages(charge_ok, startup) #charge_ok_sim
+        pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
         #kickpulse.put_pulses(ar, start)
@@ -175,16 +174,12 @@ while True:
         #print(kickpulse.put_done)
         
         
-        if (charge_ok == 0):
-            startup_novcc = 1
-            startup = 1
-            #startup_cycle = 0
-            print("no VCC supplied")
-        else :
+        
+        if (charge_ok == 1) :
             safe_charge = 0
             #CAN_LED.value(0)
             #INT_LED.value(0)            
-            
+            startup_cycle = 1
             
             #prev_pulse_time = current_ustime # start pulse timer
             charge = 0
@@ -207,7 +202,10 @@ while True:
             #startup_cycle = 1
             prev_time_start_chg = current_time
             
-        
+    if (charge_ok == 0):
+        startup_novcc = 1
+        startup = 1
+        #startup_cycle = 0
         
     # toggle LEDs at different intervals
     #CAN_LED.value(charge)
@@ -216,17 +214,18 @@ while True:
     #if (current_time - prev_time_can >= 50):
      #   print(startup_cycle)
      #   prev_time_can = current_time
-    '''
-    if (current_time - prev_time_can >= 50):
+    
+    if (current_time - prev_time_can >= 200):
         if (delay_time_us == 0):
-            delay_time_us = 100 # 1000 is 100us, 100 is 10us, very accurate
+            delay_time_us_temp = 5 # 1000 is 100us, 100 is 10us, very accurate, 10 is 1us, also pretty accurate
+            delay_time_us = int(delay_time_us_temp*8.0)
             #print("delay set to 5000 us")
         else:
             delay_time_us = 0
             #print("delay reset")
         prev_time_can = current_time
-        #print(done_state)
-    '''  
+        
+    
     
         
     
@@ -345,8 +344,8 @@ while True:
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")
-        else:
-            print("VCC OK")
+        #else:
+            #print("VCC OK")
         
         #print("CHARGE OK:", charge_ok)
         #print("Charge toggle wait", charge_toggle_wait)

@@ -23,7 +23,7 @@ PUT_WORD_SIZE = const(32)
 
 
 class Pulses:
-    def __init__(self, get_pin=None, put_pin=None, put_copy_pin=None, sm_freq=1_000_000_0):
+    def __init__(self, get_pin=None, put_pin=None, put_copy_pin=None, sm_freq=8_000_000):
         self.get_done = False
         self.sm_get_nr = 0
         if get_pin is not None:
