@@ -23,7 +23,7 @@ PUT_WORD_SIZE = const(32)
 
 
 class Pulses:
-    def __init__(self, get_pin=None, put_pin=None, put_copy_pin=None, sm_freq=8_000_000):
+    def __init__(self, get_pin=None, put_pin=None, put_copy_pin=None, sm_freq=4_000_000):
         self.get_done = False
         self.sm_get_nr = 0
         if get_pin is not None:
@@ -192,7 +192,7 @@ class Pulses:
         # self.sm_put.put(buffer)        # send the pulse train
         rp2_util.sm_dma_put(0, 4, buffer, len(buffer))
         while self.put_done is False:  # and wait for getting is done
-            time.sleep_ms(1)
+            time.sleep_us(1)
 
         self.sm_put.active(0)
 

@@ -49,6 +49,7 @@ safe_charge = 0
 delay_time_us = 0
 delay_time_us_temp = 0
 kick_cooldown = 1
+kick_delayed = 0
 
 offset = 1000_000
 data_rec = 0
@@ -56,7 +57,7 @@ data_rec = 0
 startup_novcc = 0
 
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, CAN_LED, 8_000_000)
+pulses = pulses.Pulses(None, KICK, CAN_LED, 4_000_000)
 '''
 def put(pattern=(delay_time_us,), start=1):
     global pulses
@@ -71,7 +72,14 @@ while True:
     current_time = utime.ticks_ms()
     current_ustime = utime.ticks_us()
     
-    '''
+    # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
+    done_state = DONE.value() #done_sim #DONE.value()#
+    CHARGE.value(charge)
+    #CAN_LED.value(KICK.value())
+    CAN_LED.value(done_state)
+    INT_LED.value(charge)
+
+    
     res = select.select([sys.stdin], [], [], 0)
     data = ""
     while res[0]:
@@ -89,28 +97,25 @@ while True:
             data_rec = 1
             delay_time_us_temp = int(data)
 
-            if (delay_time_us_temp > 100) :# 1000 is 100us, 100 is 10us, very accurate
-                delay_time_us_temp = 100 # set a limit to the delay time
-                print("Pulse duration too long, setting to 100us")
+            if (delay_time_us_temp > 50) :# 1000 is 100us, 100 is 10us, very accurate
+                delay_time_us_temp = 50 # set a limit to the delay time
+                print("Pulse duration too long, setting to 50us")
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
             prev_input_time = current_time
             print("Kicking in 3 seconds, at ", delay_time_us_temp, "us. Stand back!")
     elif (data_rec == 1) :
         if (current_time - prev_input_time >= 3000):
-            delay_time_us = delay_time_us_temp
-            data = ""
-            data_rec = 0
-    '''
-    
-    
-     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state =  DONE.value() #done_sim #DONE.value()#
-    CHARGE.value(charge)
-    #CAN_LED.value(KICK.value())
-    CAN_LED.value(done_state)
-    INT_LED.value(charge)
-
+            if (done_state == 0):
+                delay_time_us = int(delay_time_us_temp*4.0)
+                data_rec = 0
+                data = ""
+                kick_delayed = 1
+            else :
+                delay_time_us = 0
+                if (kick_delayed == 0) :
+                    print("DONE is HIGH (Charging), kicking delayed")
+                    kick_delayed = 1
     '''
     ###############################################
     #simulation values (correct ones)
@@ -121,7 +126,7 @@ while True:
         #print(current_time/1000)
         #print("done signal set to 1")        
     #elif (charge == 1) :
-    elif (current_time - prev_sim_time >= 5000 + 1702):
+    elif (current_time - prev_sim_time >= 15000 + 1702):
             done_sim = 0
             #print(current_time/1000)
             #print("done signal set to 0")
@@ -145,7 +150,7 @@ while True:
         prev_pulse_time = current_ustime # start pulse timer
         
         #print("stufffffffffffffff")
-    elif (kick_cooldown == 1 and current_ustime - prev_pulse_time >= 100000):
+    elif (kick_cooldown == 1 and current_ustime - prev_pulse_time >= 1000_000):
         kick_cooldown = 0
         delay_time_us = 0
         #print("cooldown")    
@@ -176,7 +181,7 @@ while True:
         
         
         if (charge_ok == 1) :
-            safe_charge = 0
+            #safe_charge = 0
             #CAN_LED.value(0)
             #INT_LED.value(0)            
             startup_cycle = 1
@@ -214,17 +219,17 @@ while True:
     #if (current_time - prev_time_can >= 50):
      #   print(startup_cycle)
      #   prev_time_can = current_time
-    
+    ''' STOP USING THIS IT IS BREAKING STUFF
     if (current_time - prev_time_can >= 200):
         if (delay_time_us == 0):
-            delay_time_us_temp = 5 # 1000 is 100us, 100 is 10us, very accurate, 10 is 1us, also pretty accurate
+            delay_time_us_temp = 2 # 1000 is 100us, 100 is 10us, very accurate, 10 is 1us, also pretty accurate
             delay_time_us = int(delay_time_us_temp*8.0)
             #print("delay set to 5000 us")
         else:
             delay_time_us = 0
             #print("delay reset")
         prev_time_can = current_time
-        
+     ''' 
     
     
         
@@ -267,11 +272,12 @@ while True:
         # wait for charge cycle to do the charge toggle every 15 seconds
         elif (charge_started == 1):
             if (safe_charge == 1):
-                if (current_time - prev_time_chg_wait >= 2100):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
+                if (current_time - prev_time_chg_wait >= 236):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
                     charge_started = 0 # reset charge_started to zero for the next charge cycle
                     charge = 0
                     charge_toggle_wait = 0
                     check_5s_done = 0
+                    charge_disable = 1
                     #print(current_time/1000, done_state)
                     print("Safe Charge mode, Charge pin reset at 50V")
                     # set charge pin
