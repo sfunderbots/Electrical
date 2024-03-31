@@ -11,8 +11,10 @@ def Voltages(charge_ok, startup):
     logic_3v3_ref_val = ref_3v3.read_u16()
     ref_5V_val = ref_5v.read_u16()
     battery_voltage_raw = BATT_LEVEL_val *3.3 / 65535.0 * 1.00614 * (20 + 94)/20
-    battery_voltage = battery_voltage_raw#round(max(battery_voltage_raw * 1.0342 - 0.5339, 0), 2)
+    battery_voltage = round(battery_voltage_raw*1.05893540282*max(battery_voltage_raw * 1.0342 - 0.5339, 0), 2)
     # note this scale is relative to high level, low voltage is 2V is 2.45V (reading is higher) and 16.8V is 16.76V (reading is lower)
+    #if (battery_voltage_raw < 1):
+    #    battery_voltage = BATT_LEVEL_val *3.3 / 65535.0 * (20 + 94)/20
     '''    
     # 200ohm offset is equivalent to 150uA* 200 ohms = 0.3V -> 3.3V is 65535 / 65135 = 1.00614 (need to fix the board for next rev)
     logic_voltage = round(logic_3v3_ref_val *3.3 / 65535.0 * 1.00614, 2)
@@ -53,7 +55,7 @@ def Voltages(charge_ok, startup):
         #print("Batteries are unplugged")
         charge_ok = 0
     #print("3.3V Reference: ", logic_voltage, "V")
-    #print("5V Reference: ", net_5V, "V")
+    print("Battery: ", battery_voltage, "V")
     
     return charge_ok
     
