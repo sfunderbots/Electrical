@@ -34,7 +34,7 @@ prev_time_charge_disabled = 0
 prev_time_countdown = 0
 prev_sim_charge_time = 0
 prev_pulse_time = 0
-prev_input_time = 0
+prev_kick_time = 0
 charge_ok = 0
 prev_charge_ok = 0
 startup = 0
@@ -93,25 +93,25 @@ while True:
             data_rec = 1
             delay_time_us_temp = int(data)
 
-            if (delay_time_us_temp > 5000) :# 1000 is 100us, 100 is 10us, very accurate
+            if (delay_time_us_temp > 5000) :
                 delay_time_us_temp = 5000 # set a limit to the delay time
                 print("Pulse duration too long, setting to 5000us")
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
-            prev_input_time = current_time
-            print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
+            prev_kick_time = current_time
+            #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     elif (data_rec == 1) :
-        if (current_time - prev_input_time >= 2000):
-            if (done_state == 0):
-                delay_time_us = delay_time_us_temp
-                data_rec = 0
-                data = ""
+        #if (current_time - prev_kick_time >= 2000):
+        if (done_state == 0):
+            delay_time_us = delay_time_us_temp
+            data_rec = 0
+            data = ""
+            kick_delayed = 1
+        else :
+            delay_time_us = 0
+            if (kick_delayed == 0) :
+                print("DONE is HIGH (Charging), kicking delayed")
                 kick_delayed = 1
-            else :
-                delay_time_us = 0
-                if (kick_delayed == 0) :
-                    print("DONE is HIGH (Charging), kicking delayed")
-                    kick_delayed = 1
     '''
     ###############################################
     #simulation values (correct ones)
@@ -175,7 +175,7 @@ while True:
         prev_time_countdown = current_time
         prev_sim_charge_time = current_time
         prev_pulse_time = current_time
-        prev_input_time = current_time
+        prev_kick_time = current_time
         startup_time = current_time
         charge_ok = Voltages(charge_ok, startup) #
         pattern=(8, 8, 8)
@@ -273,7 +273,7 @@ while True:
         if (charge_toggle_wait == 0):
            # done will be 0 if either hasnt started charging, or has finished charging
             if (startup_cycle == 1):
-                if (current_time - prev_time_start_chg >= 50): 
+                if (current_time - prev_time_start_chg >= 50 and current_time - prev_kick_time >= 50): 
                     charge = 1
                     startup_cycle = 0
                     charge_toggle_wait = 1
@@ -284,7 +284,7 @@ while True:
                 #print("waiting for 2 seconds to charge")
                 if (done_state == 0):
                     # setup charge toggle wait time to set charge pin high
-                    if (current_time - prev_time_start_chg >= 50): 
+                    if (current_time - prev_time_start_chg >= 50 and current_time - prev_kick_time >= 50): 
                         charge = 1
                         charge_toggle_wait = 1
                         prev_time_chg_wait = current_time
