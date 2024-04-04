@@ -98,15 +98,16 @@ while True:
                 print("Pulse duration too long, setting to 5000us")
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
-            prev_kick_time = current_time
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     elif (data_rec == 1) :
         #if (current_time - prev_kick_time >= 2000):
         if (done_state == 0):
+            prev_kick_time = current_time
             delay_time_us = delay_time_us_temp
             data_rec = 0
             data = ""
             kick_delayed = 1
+            
         else :
             delay_time_us = 0
             if (kick_delayed == 0) :
