@@ -616,7 +616,7 @@
 					)
 				)
 			)
-			(property "Value" "3SMBJ5929B-TP\n"
+			(property "Value" "SM3.3H-TP"
 				(at 7.62 6.35 0)
 				(effects
 					(font
@@ -651,7 +651,7 @@
 					(hide yes)
 				)
 			)
-			(property "MPN" "3SMBJ5929B-TP"
+			(property "MPN" "SM3.3H-TP"
 				(at 3.81 -6.35 0)
 				(effects
 					(font
@@ -2828,6 +2828,124 @@
 		)
 	)
 	(symbol
+		(lib_id "thebots_symlib:D_TVS_FSM3.3H-TP")
+		(at 91.44 82.55 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84eac799-a2f7-42e9-8c9c-0c146aa91382")
+		(property "Reference" "D19"
+			(at 97.79 81.8514 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SM3.3H-TP"
+			(at 97.79 84.3914 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 85.09 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener diode"
+			(at 91.44 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SM3.3H-TP"
+			(at 85.09 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Micro Commercial Co"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.63"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" ""
+			(at 88.9 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "N/A"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8a3d3fe5-bdd2-4f4a-8759-5585ab2eb849")
+		)
+		(pin "1"
+			(uuid "c94bfee3-c269-4ab0-b8f3-87fd44fdf8b1")
+		)
+		(pin "3"
+			(uuid "43daac3b-bcca-4d05-9055-074ee7fa8675")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/ec2690de-9d43-42f0-9a1d-89d3edcde356"
+					(reference "D19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "thebots_symlib:C_0.01u")
 		(at 96.52 44.45 90)
 		(unit 1)
@@ -3442,124 +3560,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/ec2690de-9d43-42f0-9a1d-89d3edcde356"
 					(reference "C36")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "thebots_symlib:D_TVS_FSM3.3H-TP")
-		(at 91.44 82.55 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c800d15f-227b-418b-af67-e8077f1dd06d")
-		(property "Reference" "D19"
-			(at 97.79 81.8515 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "3SMBJ5929B-TP\n"
-			(at 97.79 84.3915 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:SOT-23"
-			(at 85.09 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "3SMBJ5929B-TP"
-			(at 85.09 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Micro Commercial Co"
-			(at 86.36 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.63"
-			(at 86.36 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" ""
-			(at 88.9 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "N/A"
-			(at 86.36 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b0ff424d-21ba-418a-b3f6-5a30149db7b4")
-		)
-		(pin "2"
-			(uuid "5191d100-7c27-4bf7-9917-9c1a5a73216c")
-		)
-		(pin "3"
-			(uuid "69045882-05b3-434e-a206-c78f927c310d")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/ec2690de-9d43-42f0-9a1d-89d3edcde356"
-					(reference "D19")
 					(unit 1)
 				)
 			)
