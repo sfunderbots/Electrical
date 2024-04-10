@@ -15817,6 +15817,56 @@
     (stroke (width 0.2) (type solid)) (layer "User.1") (tstamp e28dfdf5-fd99-4b56-abad-098aa1457e07))
   (gr_line (start 194.51338 95.398912) (end 156.329616 133.58268)
     (stroke (width 0.2) (type solid)) (layer "User.1") (tstamp eb009626-0e68-41d7-975a-b0174c8bb7e0))
+  (gr_line (start 210.273465 85.088206) (end 206.800501 104.784359)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 0e891776-0134-478c-9350-9143a4c62522))
+  (gr_line (start 222.063656 93.259693) (end 224.162316 81.357593)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 127a6db2-9221-4654-8ca7-6a7c6833709f))
+  (gr_line (start 59.165996 92.044155) (end 52.272345 93.259692)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 2f69f003-0ca6-424e-992c-8c6b1569c5ae))
+  (gr_line (start 220.674469 101.138154) (end 213.780815 99.922616)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 3c52011e-a47e-4fa3-9203-91dd17b690f9))
+  (gr_line (start 213.780815 99.922616) (end 215.17 92.044154)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 3e792bfe-1e4a-4a02-9f1c-29d8a3d66b8b))
+  (gr_arc (start 218.575808 113.040251) (mid 186.661042 153.902258) (end 137.168 169.352002)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 4329a65b-dfdf-4014-b2cf-529e7996282f))
+  (gr_arc (start 137.168 169.352002) (mid 87.67496 153.902256) (end 55.760191 113.040253)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 4f271b1b-f927-4138-aa1e-551f1cc00651))
+  (gr_line (start 206.800501 104.784359) (end 204.830885 104.437063)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 50cdcfb2-aecf-4cfe-a0f1-e56f3bed197d))
+  (gr_circle (center 203.496174 113.588108) (end 200.996172 113.588106)
+    (stroke (width 0.2) (type solid)) (fill none) (layer "User.8") (tstamp 6624d39e-7ff6-4f21-b3df-1ebb0a9e908d))
+  (gr_line (start 55.760191 113.040253) (end 53.661528 101.138154)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 67ae7625-8872-48d9-b0de-5fd367f363ff))
+  (gr_arc (start 200.168 22.352005) (mid 217.759491 49.579892) (end 224.162316 81.357593)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 6953bc3f-39a0-4f8d-8952-06e49b2c4bb4))
+  (gr_line (start 137.167998 22.352005) (end 200.168 22.352005)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 6cc92dcf-bf25-482c-b81b-1a4348407aa7))
+  (gr_line (start 208.30385 84.74091) (end 210.273465 85.088206)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 78a4f306-eeaf-4323-8713-91a91fd9aeef))
+  (gr_line (start 218.575808 113.040251) (end 220.674469 101.138154)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 7e935c24-da3c-42ce-afa2-32db0a4cc20f))
+  (gr_line (start 53.661528 101.138154) (end 60.555184 99.922618)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 860bac0a-82fd-4fa7-9404-c57f7aa531f4))
+  (gr_line (start 137.167998 22.352005) (end 74.167998 22.352002)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 88755f47-64f1-4323-ae34-797f6ef8fb00))
+  (gr_line (start 52.272345 93.259692) (end 50.173683 81.357593)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp 9e0a31ec-c3bf-40fb-9888-b013f2e1ec55))
+  (gr_line (start 64.062534 85.088203) (end 67.535498 104.784359)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp a28bcd98-c7ea-4572-9607-941ea935c6c8))
+  (gr_line (start 69.505113 104.437064) (end 66.03215 84.740908)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp c482d1ba-a901-496d-abc0-85ad1a026f83))
+  (gr_line (start 215.17 92.044154) (end 222.063656 93.259693)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp de7c0400-c710-4fe6-b81f-f0aeeebae98a))
+  (gr_line (start 60.555184 99.922618) (end 59.165996 92.044155)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp f0e86f24-a497-4c17-aec1-788b96598b27))
+  (gr_line (start 67.535498 104.784359) (end 69.505113 104.437064)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp fa7eafab-f231-461c-b870-bb2ebeba273d))
+  (gr_line (start 66.03215 84.740908) (end 64.062534 85.088203)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp fbfee26c-e65c-45e8-995f-cb509d91827d))
+  (gr_line (start 204.830885 104.437063) (end 208.30385 84.74091)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp fd0db5d3-db48-4176-b33d-5db9d3a5f099))
+  (gr_arc (start 50.173683 81.357593) (mid 56.576509 49.579892) (end 74.167998 22.352002)
+    (stroke (width 0.2) (type solid)) (layer "User.8") (tstamp ffd9c073-7149-4a63-b64c-1982c230965b))
   (gr_circle (center 214.546569 60.152992) (end 212.746569 60.152993)
     (stroke (width 0.2) (type solid)) (fill none) (layer "User.9") (tstamp 0ea4d497-aaec-4bcc-ba45-af992d106da8))
   (gr_arc (start 213.829576 117.921321) (mid 137.755659 166.262187) (end 61.681742 117.921321)
@@ -23380,6 +23430,35 @@
       e10c7385-3375-4a71-b3c5-5b7ca9f4028a
       e28dfdf5-fd99-4b56-abad-098aa1457e07
       eb009626-0e68-41d7-975a-b0174c8bb7e0
+    )
+  )
+  (group "" (id 0e638aa4-e4fe-481c-9778-243d2e6e8be5)
+    (members
+      0e891776-0134-478c-9350-9143a4c62522
+      127a6db2-9221-4654-8ca7-6a7c6833709f
+      2f69f003-0ca6-424e-992c-8c6b1569c5ae
+      3c52011e-a47e-4fa3-9203-91dd17b690f9
+      3e792bfe-1e4a-4a02-9f1c-29d8a3d66b8b
+      4329a65b-dfdf-4014-b2cf-529e7996282f
+      4f271b1b-f927-4138-aa1e-551f1cc00651
+      50cdcfb2-aecf-4cfe-a0f1-e56f3bed197d
+      6624d39e-7ff6-4f21-b3df-1ebb0a9e908d
+      67ae7625-8872-48d9-b0de-5fd367f363ff
+      6953bc3f-39a0-4f8d-8952-06e49b2c4bb4
+      6cc92dcf-bf25-482c-b81b-1a4348407aa7
+      78a4f306-eeaf-4323-8713-91a91fd9aeef
+      7e935c24-da3c-42ce-afa2-32db0a4cc20f
+      860bac0a-82fd-4fa7-9404-c57f7aa531f4
+      88755f47-64f1-4323-ae34-797f6ef8fb00
+      9e0a31ec-c3bf-40fb-9888-b013f2e1ec55
+      a28bcd98-c7ea-4572-9607-941ea935c6c8
+      c482d1ba-a901-496d-abc0-85ad1a026f83
+      de7c0400-c710-4fe6-b81f-f0aeeebae98a
+      f0e86f24-a497-4c17-aec1-788b96598b27
+      fa7eafab-f231-461c-b870-bb2ebeba273d
+      fbfee26c-e65c-45e8-995f-cb509d91827d
+      fd0db5d3-db48-4176-b33d-5db9d3a5f099
+      ffd9c073-7149-4a63-b64c-1982c230965b
     )
   )
   (group "" (id f8627f0b-0627-46b7-b4c1-7e1acf7730a8)
