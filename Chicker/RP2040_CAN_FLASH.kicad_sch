@@ -4934,7 +4934,7 @@
 				(pin power_out line
 					(at -12.7 -2.54 0)
 					(length 2.54)
-					(name "Vref"
+					(name "LBK"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7899,12 +7899,6 @@
 		(uuid "07d375a2-939d-4717-8dcc-c01c0f2c1507")
 	)
 	(junction
-		(at 69.85 166.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "15cf799b-d1af-41b4-9f2f-68c9b4708e72")
-	)
-	(junction
 		(at 69.85 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7945,12 +7939,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "24772037-e148-41c6-8364-3a975e6a6ea4")
-	)
-	(junction
-		(at 43.18 152.4)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "26daf288-2f3c-4e0b-ba4b-52e3ad637257")
 	)
 	(junction
 		(at 254 25.4)
@@ -8260,7 +8248,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 152.4) (xy 43.18 153.67)
+			(xy 43.18 151.13) (xy 43.18 153.67)
 		)
 		(stroke
 			(width 0)
@@ -8527,16 +8515,6 @@
 			(type default)
 		)
 		(uuid "2298956e-e7a6-4bb0-acd3-2a9c9aea94b4")
-	)
-	(wire
-		(pts
-			(xy 43.18 152.4) (xy 43.18 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23b48aa2-4fdc-4e31-ae7a-6464bf496221")
 	)
 	(wire
 		(pts
@@ -8950,6 +8928,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 176.53) (xy 59.69 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ac10d42-cf0d-49ca-aabf-0712229e6793")
+	)
+	(wire
+		(pts
 			(xy 55.88 48.26) (xy 80.01 48.26)
 		)
 		(stroke
@@ -9170,6 +9158,16 @@
 	)
 	(wire
 		(pts
+			(xy 55.88 168.91) (xy 59.69 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61008d1f-6162-4aef-9b75-1cee056704aa")
+	)
+	(wire
+		(pts
 			(xy 271.78 123.19) (xy 273.05 123.19)
 		)
 		(stroke
@@ -9307,16 +9305,6 @@
 			(type default)
 		)
 		(uuid "6a518b0a-2f5e-4baa-9d87-7aa863c16b0b")
-	)
-	(wire
-		(pts
-			(xy 69.85 152.4) (xy 43.18 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ab7234c-34a8-4f94-98ac-2b706e090738")
 	)
 	(wire
 		(pts
@@ -9687,16 +9675,6 @@
 			(type default)
 		)
 		(uuid "9014bd8d-a232-473a-a8e2-f4f0a4d6493e")
-	)
-	(wire
-		(pts
-			(xy 69.85 158.75) (xy 69.85 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91287b21-9a13-4cae-8529-9569bc6755b0")
 	)
 	(wire
 		(pts
@@ -11490,7 +11468,7 @@
 		)
 		(uuid "4f2cf053-a967-40fb-90b8-ab74a8274c5c")
 	)
-	(label "Vref1.65V"
+	(label "LBK"
 		(at 58.42 166.37 0)
 		(fields_autoplaced yes)
 		(effects
@@ -11555,6 +11533,17 @@
 			(justify right bottom)
 		)
 		(uuid "5dba79d5-d6bc-410e-bc52-eae1c9daabbd")
+	)
+	(label "Rs"
+		(at 58.42 168.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5f472ea2-0c49-428f-85e0-ce903603e13b")
 	)
 	(label "GPIO14"
 		(at 173.99 95.25 0)
@@ -12538,6 +12527,128 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:R_10k")
+		(at 69.85 171.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "07c801af-880d-46b8-8d84-7b1067106dff")
+		(property "Reference" "R15"
+			(at 71.12 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 67.31 171.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "bots:R_0603_1608Metric"
+			(at 71.628 171.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0008"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 69.85 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 69.85 171.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d6135ef-40ec-4799-bc30-63ae6ca75951")
+		)
+		(pin "2"
+			(uuid "df426bba-c96c-4a9f-8027-165033753ecd")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
 		(at 109.22 85.09 270)
 		(unit 1)
@@ -12844,128 +12955,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:R_5.1k")
-		(at 69.85 162.56 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0a9f1cd8-d392-4eb7-b55e-d28344fd1599")
-		(property "Reference" "R36"
-			(at 72.39 162.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5.1k"
-			(at 67.31 162.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 71.628 162.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "0603WAF5101T5E"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.0009"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "0603"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23186"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "no"
-			(at 69.85 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "42eb7b9e-8080-4de3-894e-2c08668c29e8")
-		)
-		(pin "2"
-			(uuid "c43322ab-090b-4b10-9e3b-06985772eb3e")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "R36")
 					(unit 1)
 				)
 			)
@@ -13281,7 +13270,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "High-Speed CAN Transceiver, 1Mbps, 3.3V supply, SOIC-8"
 			(at 43.18 163.83 0)
 			(effects
 				(font
@@ -13308,7 +13297,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0"
+		(property "Price" "2.12"
 			(at 43.18 163.83 0)
 			(effects
 				(font
@@ -13326,7 +13315,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7376"
 			(at 43.18 163.83 0)
 			(effects
 				(font
@@ -14566,6 +14555,128 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:R_10k")
+		(at 59.69 172.72 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34d0990a-5d41-4bc8-a547-48e71789f10f")
+		(property "Reference" "R16"
+			(at 60.96 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 57.15 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "bots:R_0603_1608Metric"
+			(at 61.468 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0008"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 59.69 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 59.69 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "58932db3-d320-4fc5-85c9-91f9334a04f9")
+		)
+		(pin "2"
+			(uuid "ac96294a-e6d8-4544-81ea-90a9ba540d09")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "bots:C_22p")
 		(at 166.37 142.24 90)
 		(unit 1)
@@ -15467,6 +15578,72 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 179.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "40b71069-ca04-42fa-bb6d-4ee683e83984")
+		(property "Reference" "#PWR0100"
+			(at 59.69 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d34708a-daff-4c84-ab72-0d14c98d9bcc")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "#PWR0100")
 					(unit 1)
 				)
 			)
@@ -17659,128 +17836,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "C23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:R_5.1k")
-		(at 69.85 171.45 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7c8e6f59-5e88-4342-9342-d201217403a6")
-		(property "Reference" "R35"
-			(at 72.39 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5.1k"
-			(at 67.31 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 71.628 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "0603WAF5101T5E"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.0009"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "0603"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23186"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "no"
-			(at 69.85 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "007b4bf1-2912-4074-b4ba-4a63c3d904a0")
-		)
-		(pin "2"
-			(uuid "debe72c5-96b9-4afd-873f-c6fa208acecf")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "R35")
 					(unit 1)
 				)
 			)

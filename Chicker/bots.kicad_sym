@@ -27454,7 +27454,7 @@
 			(pin power_out line
 				(at -12.7 -2.54 0)
 				(length 2.54)
-				(name "Vref"
+				(name "LBK"
 					(effects
 						(font
 							(size 1.27 1.27)
