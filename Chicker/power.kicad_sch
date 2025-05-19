@@ -1,12 +1,14 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "69d15389-effd-449b-964a-15e7cc37d620")
 	(paper "A4")
 	(lib_symbols
 		(symbol "bots:C_10u"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -133,7 +135,7 @@
 			(symbol "C_10u_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -145,7 +147,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -194,11 +196,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:D_CUS08F30,H3F"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -320,10 +327,10 @@
 			(symbol "D_CUS08F30,H3F_0_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -344,10 +351,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+						(xy 1.27 0) (xy -1.27 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -393,11 +400,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:LED_green"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -533,19 +545,6 @@
 			(symbol "LED_green_1_1"
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type color)
-						(color 0 255 11 1)
-					)
-				)
-				(polyline
-					(pts
 						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
 					)
 					(stroke
@@ -568,6 +567,19 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type color)
+						(color 0 255 11 1)
 					)
 				)
 				(pin passive line
@@ -607,11 +619,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:LED_white"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -747,19 +764,6 @@
 			(symbol "LED_white_1_1"
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type color)
-						(color 255 252 254 1)
-					)
-				)
-				(polyline
-					(pts
 						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
 					)
 					(stroke
@@ -782,6 +786,19 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type color)
+						(color 255 252 254 1)
 					)
 				)
 				(text "WHITE"
@@ -830,11 +847,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:MountingHoleM2.5NoThread_wConn"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -932,11 +954,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:NetTie_2"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
@@ -1066,9 +1093,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:R_0OHM_JUMPER"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1241,9 +1271,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:R_200k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1416,9 +1449,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:R_470k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1591,11 +1627,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "bots:TestPoint_2x2"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.762) hide)
+				(offset 0.762)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
@@ -1693,6 +1734,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power)
@@ -1770,7 +1812,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1782,7 +1824,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1796,7 +1838,8 @@
 			(symbol "+3.3V_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "+3.3V"
 						(effects
 							(font
@@ -1813,6 +1856,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+5V"
 			(power)
@@ -1890,7 +1934,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1902,7 +1946,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1916,7 +1960,8 @@
 			(symbol "+5V_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "+5V"
 						(effects
 							(font
@@ -1933,6 +1978,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
@@ -2012,7 +2058,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GND"
 						(effects
 							(font
@@ -2029,6 +2076,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GNDPWR"
 			(power)
@@ -2094,18 +2142,6 @@
 			(symbol "GNDPWR_0_1"
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
 					)
 					(stroke
@@ -2122,6 +2158,18 @@
 					)
 					(stroke
 						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -2180,7 +2228,8 @@
 			(symbol "GNDPWR_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GNDPWR"
 						(effects
 							(font
@@ -2197,6 +2246,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:VCC"
 			(power)
@@ -2274,7 +2324,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2286,7 +2336,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2300,7 +2350,8 @@
 			(symbol "VCC_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "VCC"
 						(effects
 							(font
@@ -2317,6 +2368,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:AMS1117-3.3"
 			(pin_names
@@ -2436,18 +2488,6 @@
 			(symbol "AMS1117-3.3_0_1"
 				(polyline
 					(pts
-						(xy -10.16 -6.35) (xy 11.43 -6.35)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -10.16 2.54) (xy -10.16 -6.35)
 					)
 					(stroke
@@ -2460,7 +2500,7 @@
 				)
 				(polyline
 					(pts
-						(xy 11.43 -6.35) (xy 11.43 2.54)
+						(xy -10.16 -6.35) (xy 11.43 -6.35)
 					)
 					(stroke
 						(width 0.127)
@@ -2482,22 +2522,16 @@
 						(type none)
 					)
 				)
-				(pin output line
-					(at 19.05 0 180)
-					(length 7.62)
-					(name "OUTPUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+				(polyline
+					(pts
+						(xy 11.43 -6.35) (xy 11.43 2.54)
 					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin input line
@@ -2511,6 +2545,24 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 19.05 0 180)
+					(length 7.62)
+					(name "OUTPUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2539,9 +2591,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:C_0.01u"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -2668,7 +2723,7 @@
 			(symbol "C_0.01u_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -2680,7 +2735,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -2729,9 +2784,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:C_1u"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -2858,7 +2916,7 @@
 			(symbol "C_1u_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -2870,7 +2928,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -2919,9 +2977,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:Fuse_0501010.WR1"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -3044,18 +3105,6 @@
 				)
 			)
 			(symbol "Fuse_0501010.WR1_0_1"
-				(arc
-					(start 0 0)
-					(mid -1.27 1.2645)
-					(end -2.54 0)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy -3.81 0) (xy -2.54 0)
@@ -3068,10 +3117,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 3.81 0)
-					)
+				(arc
+					(start -2.54 0)
+					(mid -1.27 1.2645)
+					(end 0 0)
 					(stroke
 						(width 0.127)
 						(type default)
@@ -3081,9 +3130,21 @@
 					)
 				)
 				(arc
-					(start 0 0)
+					(start 2.54 0)
 					(mid 1.27 -1.2645)
-					(end 2.54 0)
+					(end 0 0)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.81 0)
+					)
 					(stroke
 						(width 0.127)
 						(type default)
@@ -3131,6 +3192,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:MCP6231UT-E/OT"
 			(pin_names
@@ -3289,24 +3351,6 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 0 -7.62 90)
-					(length 3.75)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
 					(at -8.89 -2.54 0)
 					(length 4.95)
@@ -3318,24 +3362,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 0 180)
-					(length 4.99)
-					(name "Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3361,10 +3387,49 @@
 						)
 					)
 				)
+				(pin power_out line
+					(at 0 -7.62 90)
+					(length 3.75)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 11.43 0 180)
+					(length 4.99)
+					(name "Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_1k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -3528,9 +3593,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_2k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -3703,9 +3771,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_30k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -3878,9 +3949,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_47k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -4053,9 +4127,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_51k"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -4228,9 +4305,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:R_820R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -4394,11 +4474,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "thebots_symlib:ToolingHoleJLC"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4480,7 +4565,254 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 146.05 26.67)
+		(end 252.73 72.39)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0c590bf1-f92d-4bb9-bb23-e3b98ecc65af)
+	)
+	(rectangle
+		(start 146.05 95.25)
+		(end 228.6 147.32)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9532d040-e487-44a2-9d73-a34fe263ae81)
+	)
+	(rectangle
+		(start 24.13 25.4)
+		(end 82.55 62.23)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c9acec7f-44dd-4172-99c8-4ede29026ee8)
+	)
+	(text "4.56V"
+		(exclude_from_sim no)
+		(at 176.53 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "07c755af-5811-4b1b-8a54-5cdac4b298d5")
+	)
+	(text "2.5mA to 3mA"
+		(exclude_from_sim no)
+		(at 143.51 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "11085e4f-6c78-4ab6-abff-2d8cba485803")
+	)
+	(text "Mounting Holes"
+		(exclude_from_sim no)
+		(at 149.86 31.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1576f210-45c5-475f-85a8-0a055c586b69")
+	)
+	(text "5V Original:\n(4.62-2.75)/330 = 5.66mA\nbright, but not crazy\nbut also this LED was damaged by heat\nNew:\n(4.62-2.75)/820 = 2.28mA"
+		(exclude_from_sim no)
+		(at 149.86 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "4bbfed97-1b4f-4586-97f5-723dd0012464")
+	)
+	(text "To USB 5V diode dual input"
+		(exclude_from_sim no)
+		(at 195.58 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5f02f00e-2c90-43b9-bd69-23d359011044")
+	)
+	(text "5.1V max, 4.6 Vusb, 4.8Vbat\n5.1*5.1k/(3.0k+5.1k) = 3.21"
+		(exclude_from_sim no)
+		(at 104.14 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "78cabaac-afe3-438e-9d87-803f5744be60")
+	)
+	(text "seeing 2.75V\n"
+		(exclude_from_sim no)
+		(at 176.53 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "848e7642-2e68-42e6-8496-c2337ddd5bb2")
+	)
+	(text "seeing 2.73V\n"
+		(exclude_from_sim no)
+		(at 214.63 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8afa0ddd-8eb9-449e-af7e-26fee2349628")
+	)
+	(text "3.3V Regulator"
+		(exclude_from_sim no)
+		(at 27.94 29.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e7598d2-10fe-4f15-9a2c-36ecd94fcff4")
+	)
+	(text "Power LEDs"
+		(exclude_from_sim no)
+		(at 147.32 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "af9c260e-fd22-4344-a3dd-91a2a7ce26cc")
+	)
+	(text "3V3 Original:\n(3.3-2.63)/150 = 4.46mA\nexcessively too bright\nNew:\n(3.3-2.63)/330 = 2.03mA"
+		(exclude_from_sim no)
+		(at 189.23 158.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c82c8a7f-d235-4ee7-9075-2412f0daa554")
+	)
+	(text "5V USB Original:\n(5.06-2.73)/330 = 7.06mA\nexcessively too bright\nNew:\n(5.06-2.73)/680 = 3.42mA"
+		(exclude_from_sim no)
+		(at 217.17 158.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca372f25-6f9a-4770-a3ed-ea425dbde4fb")
+	)
+	(text "seeing 2.63V\n"
+		(exclude_from_sim no)
+		(at 194.31 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cf6afbf7-ca7b-4815-969d-fe577d84e6cc")
+	)
+	(text "Tooling Holes\nfor assembly orders"
+		(exclude_from_sim no)
+		(at 149.86 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e4d06274-f06f-458d-bae9-9dfa2a6fe049")
+	)
+	(text "Range from 14.8V to 16.8V\nV_ADC = V_BATT * 200k / (200k + 940k) = (in 3.3V range, 2.596V to 2.947V)\nADC = V_ADC * 4096 bits / 3.3V = (ADC bit resolution)"
+		(exclude_from_sim no)
+		(at 25.4 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 161 56 32 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e99a6041-1e21-4eaf-b519-b64a23659365")
+	)
+	(text_box "Battery Level"
+		(exclude_from_sim no)
+		(at 24.13 81.28 0)
+		(size 105.41 66.04)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "983915bf-5fd1-4ab8-8a64-f55e89c13041")
+	)
+	(text_box "USB Power vs Battery Power"
+		(exclude_from_sim no)
+		(at 88.9 25.4 0)
+		(size 52.07 41.91)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d88c2603-7855-4187-a1fc-bbe70d3c84cb")
 	)
 	(junction
 		(at 34.29 53.34)
@@ -5338,253 +5670,8 @@
 		)
 		(uuid "f07e4963-bc49-4920-bf67-e9cf7d89a7bd")
 	)
-	(rectangle
-		(start 146.05 26.67)
-		(end 252.73 72.39)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 0c590bf1-f92d-4bb9-bb23-e3b98ecc65af)
-	)
-	(rectangle
-		(start 146.05 95.25)
-		(end 228.6 147.32)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9532d040-e487-44a2-9d73-a34fe263ae81)
-	)
-	(rectangle
-		(start 24.13 25.4)
-		(end 82.55 62.23)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid c9acec7f-44dd-4172-99c8-4ede29026ee8)
-	)
-	(text_box "Battery Level"
-		(exclude_from_sim no)
-		(at 24.13 81.28 0)
-		(size 105.41 66.04)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "983915bf-5fd1-4ab8-8a64-f55e89c13041")
-	)
-	(text_box "USB Power vs Battery Power"
-		(exclude_from_sim no)
-		(at 88.9 25.4 0)
-		(size 52.07 41.91)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "d88c2603-7855-4187-a1fc-bbe70d3c84cb")
-	)
-	(text "4.56V"
-		(exclude_from_sim no)
-		(at 176.53 114.3 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "07c755af-5811-4b1b-8a54-5cdac4b298d5")
-	)
-	(text "2.5mA to 3mA"
-		(exclude_from_sim no)
-		(at 143.51 127 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "11085e4f-6c78-4ab6-abff-2d8cba485803")
-	)
-	(text "Mounting Holes"
-		(exclude_from_sim no)
-		(at 149.86 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1576f210-45c5-475f-85a8-0a055c586b69")
-	)
-	(text "5V Original:\n(4.62-2.75)/330 = 5.66mA\nbright, but not crazy\nbut also this LED was damaged by heat\nNew:\n(4.62-2.75)/820 = 2.28mA"
-		(exclude_from_sim no)
-		(at 149.86 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "4bbfed97-1b4f-4586-97f5-723dd0012464")
-	)
-	(text "To USB 5V diode dual input"
-		(exclude_from_sim no)
-		(at 195.58 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5f02f00e-2c90-43b9-bd69-23d359011044")
-	)
-	(text "5.1V max, 4.6 Vusb, 4.8Vbat\n5.1*5.1k/(3.0k+5.1k) = 3.21"
-		(exclude_from_sim no)
-		(at 104.14 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "78cabaac-afe3-438e-9d87-803f5744be60")
-	)
-	(text "seeing 2.75V\n"
-		(exclude_from_sim no)
-		(at 176.53 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "848e7642-2e68-42e6-8496-c2337ddd5bb2")
-	)
-	(text "seeing 2.73V\n"
-		(exclude_from_sim no)
-		(at 214.63 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8afa0ddd-8eb9-449e-af7e-26fee2349628")
-	)
-	(text "3.3V Regulator"
-		(exclude_from_sim no)
-		(at 27.94 29.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9e7598d2-10fe-4f15-9a2c-36ecd94fcff4")
-	)
-	(text "Power LEDs"
-		(exclude_from_sim no)
-		(at 147.32 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "af9c260e-fd22-4344-a3dd-91a2a7ce26cc")
-	)
-	(text "3V3 Original:\n(3.3-2.63)/150 = 4.46mA\nexcessively too bright\nNew:\n(3.3-2.63)/330 = 2.03mA"
-		(exclude_from_sim no)
-		(at 189.23 158.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "c82c8a7f-d235-4ee7-9075-2412f0daa554")
-	)
-	(text "5V USB Original:\n(5.06-2.73)/330 = 7.06mA\nexcessively too bright\nNew:\n(5.06-2.73)/680 = 3.42mA"
-		(exclude_from_sim no)
-		(at 217.17 158.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "ca372f25-6f9a-4770-a3ed-ea425dbde4fb")
-	)
-	(text "seeing 2.63V\n"
-		(exclude_from_sim no)
-		(at 194.31 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cf6afbf7-ca7b-4815-969d-fe577d84e6cc")
-	)
-	(text "Tooling Holes\nfor assembly orders"
-		(exclude_from_sim no)
-		(at 149.86 78.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e4d06274-f06f-458d-bae9-9dfa2a6fe049")
-	)
-	(text "Range from 14.8V to 16.8V\nV_ADC = V_BATT * 200k / (200k + 940k) = (in 3.3V range, 2.596V to 2.947V)\nADC = V_ADC * 4096 bits / 3.3V = (ADC bit resolution)"
-		(exclude_from_sim no)
-		(at 25.4 143.51 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 161 56 32 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "e99a6041-1e21-4eaf-b519-b64a23659365")
-	)
 	(label "CANR-"
 		(at 173.99 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5595,7 +5682,6 @@
 	)
 	(label "VCC_FUSE"
 		(at 151.13 43.18 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5606,7 +5692,6 @@
 	)
 	(label "4.8V_USB"
 		(at 123.19 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5617,7 +5702,6 @@
 	)
 	(label "5V_DIO"
 		(at 175.26 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5628,7 +5712,6 @@
 	)
 	(label "CANR+"
 		(at 186.69 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5639,7 +5722,6 @@
 	)
 	(label "USB_DIO"
 		(at 212.09 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5650,7 +5732,6 @@
 	)
 	(label "5V_IN"
 		(at 199.39 53.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5661,7 +5742,6 @@
 	)
 	(label "5V_IN"
 		(at 109.22 58.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5672,7 +5752,6 @@
 	)
 	(label "3V3_DIO"
 		(at 193.04 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5683,7 +5762,6 @@
 	)
 	(label "BATT_RAW"
 		(at 41.91 116.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5694,7 +5772,6 @@
 	)
 	(label "VCC_DIO"
 		(at 158.75 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5705,7 +5782,6 @@
 	)
 	(label "5V_USB"
 		(at 107.95 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5739,7 +5815,6 @@
 	(hierarchical_label "CANH"
 		(shape input)
 		(at 186.69 62.23 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5749,9 +5824,8 @@
 		(uuid "476f5363-5c4f-45e0-b350-9d5897df72b1")
 	)
 	(hierarchical_label "5V_LEVEL"
-		(shape input)
+		(shape output)
 		(at 102.87 115.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5763,7 +5837,6 @@
 	(hierarchical_label "BKBM"
 		(shape input)
 		(at 241.3 54.61 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5775,7 +5848,6 @@
 	(hierarchical_label "5V_USB"
 		(shape input)
 		(at 105.41 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5787,7 +5859,6 @@
 	(hierarchical_label "HV"
 		(shape input)
 		(at 219.71 52.07 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5797,9 +5868,8 @@
 		(uuid "b7b11fae-39c2-4a51-be08-49080b7e2dc2")
 	)
 	(hierarchical_label "BATT_LEVEL"
-		(shape input)
+		(shape output)
 		(at 80.01 119.38 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5811,7 +5881,6 @@
 	(hierarchical_label "CHIP_HV"
 		(shape input)
 		(at 210.82 50.8 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5823,7 +5892,6 @@
 	(hierarchical_label "CANL"
 		(shape input)
 		(at 173.99 62.23 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5835,7 +5903,6 @@
 	(hierarchical_label "KICK_HV"
 		(shape input)
 		(at 228.6 50.8 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
