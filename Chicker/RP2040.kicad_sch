@@ -183,227 +183,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:ABM3-12.000MHZ-D2Y-T"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Y"
-				(at -5.0878 3.8159 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "ABM3-12.000MHZ-D2Y-T"
-				(at -5.0944 -5.0944 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "bots:ABM3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "ABM3-12.000MHZ-D2Y-T"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Abracon"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "0.7616"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC" "SMD5032-2P"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C148313"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC Extended" "yes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "ABM3-12.000MHZ-D2Y-T_0_0"
-				(polyline
-					(pts
-						(xy -2.3368 2.54) (xy -2.3368 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.397 2.54) (xy -1.397 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.397 2.54) (xy 1.397 2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.397 2.54) (xy 1.397 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.397 -2.54) (xy -1.397 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.3368 2.54) (xy 2.3368 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "bots:C_0.1u"
 			(pin_numbers
 				(hide yes)
@@ -790,7 +569,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:D_ZENER_SMBJ5338B-TP"
+		(symbol "bots:D_TVS_ESD"
 			(pin_numbers
 				(hide yes)
 			)
@@ -801,24 +580,26 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
+			(property "Reference" "D19"
+				(at -0.6986 6.35 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "SMBJ5338B-TP"
-				(at 0 -2.54 0)
+			(property "Value" "ESD7C3.3DT5G-MS"
+				(at 1.8414 6.35 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "bots:D_SMB"
-				(at 0 0 0)
+			(property "Footprint" "bots:SOT-723"
+				(at 3.81 -6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -827,6 +608,15 @@
 				)
 			)
 			(property "Datasheet" "~"
+				(at 2.54 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Zener diode ESD"
 				(at 0 0 0)
 				(effects
 					(font
@@ -835,17 +625,8 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Zener diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "SMBJ5338B-TP"
-				(at 0 0 0)
+			(property "MPN" "ESD7C3.3DT5G-MS "
+				(at 3.81 -6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -854,7 +635,7 @@
 				)
 			)
 			(property "Manufacturer" "Micro Commercial Co"
-				(at 0 0 0)
+				(at 2.54 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -862,8 +643,8 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "0.25"
-				(at 0 0 0)
+			(property "Price" "0.63"
+				(at 2.54 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -871,8 +652,8 @@
 					(hide yes)
 				)
 			)
-			(property "JLC" "DO-214AA(SMB)"
-				(at 0 0 0)
+			(property "JLC" "SOT-723"
+				(at 0 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -880,8 +661,8 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" "C457823"
-				(at 0 0 0)
+			(property "LCSC" "C5331072"
+				(at 2.54 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -889,7 +670,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC Extended" "yes"
+			(property "extended" "no"
 				(at 0 0 0)
 				(effects
 					(font
@@ -916,10 +697,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "D_ZENER_SMBJ5338B-TP_0_1"
+			(symbol "D_TVS_ESD_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+						(xy -1.27 3.81) (xy -1.27 1.27) (xy -2.54 0)
 					)
 					(stroke
 						(width 0.254)
@@ -931,7 +712,43 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -1.27 1.27) (xy -1.27 3.81) (xy 0 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 -3.81) (xy -2.54 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy -1.27 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 3.81 2.54) (xy 3.81 -2.54) (xy 1.27 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -941,6 +758,216 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 3.81) (xy -1.27 2.54) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -3.81) (xy 1.27 -1.27) (xy -1.27 -2.54) (xy 1.27 -3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_TVS_ESD_1_1"
+				(pin passive line
+					(at -3.81 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:D_ZENER_SMBJ5338B_alternate"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMBJ5338B-TP_alternate"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:D_SMB"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "SMBJ5338B"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "hongjiacheng"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.149"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "SMB"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C19077493"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_ZENER_SMBJ5338B_alternate_0_1"
 				(polyline
 					(pts
 						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
@@ -954,7 +981,19 @@
 					)
 				)
 			)
-			(symbol "D_ZENER_SMBJ5338B-TP_1_1"
+			(symbol "D_ZENER_SMBJ5338B_alternate_1_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 1.27) (xy -1.27 0) (xy -1.27 -1.27) (xy -2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1332,410 +1371,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "bots:PTS647SM38SMTR2LFS"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 20.32 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "PTS647SM38SMTR2LFS"
-				(at 20.32 5.08 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "bots:SW_PTS647SM38SMTR2LFS_CNK"
-				(at -1.27 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "PTS647SM38SMTR2LFS"
-				(at -3.81 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "C&K"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Price" "0.1118"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC" "SMD,4.5x4.5mm"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C2689502"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC Extended" "yes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "PTS647SM38SMTR2LFS"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SW_PTS647SM38SMTR2LFS_CNK"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PTS647SM38SMTR2LFS_0_1"
-				(polyline
-					(pts
-						(xy -3.81 6.35) (xy -3.81 -6.35)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -6.35) (xy 3.81 -6.35)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 3.81) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 3.81) (xy 1.27 3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.27 1.27)
-					(radius 0.127)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.27 -1.27)
-					(radius 0.127)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 -3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -3.81) (xy 1.27 -3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 5.08) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 5.08) (xy 3.81 5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 3.81 -2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 1.27 -2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 3.81 -5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 6.35) (xy -3.81 6.35)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 -6.35) (xy 3.81 6.35)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 11.43 5.08 180)
-					(length 7.62)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 11.43 2.54 180)
-					(length 7.62)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 11.43 -2.54 180)
-					(length 7.62)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "PTS647SM38SMTR2LFS_1_1"
-				(pin unspecified line
-					(at 11.43 -5.08 180)
-					(length 7.62)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3473,6 +3108,401 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "bots:SW_TS-1187A-B-A-B"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 20.32 7.62 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "SW_TS-1187A-B-A-B"
+				(at 20.32 5.08 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "bots:SW_TS-1187A-B-A-B"
+				(at -1.27 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "TS-1187A-B-A-B"
+				(at -3.81 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "XKB Connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.0189"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "SMD"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C318884"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW_PTS647SM38SMTR2LFS_CNK"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_TS-1187A-B-A-B_0_1"
+				(polyline
+					(pts
+						(xy -3.81 6.35) (xy -3.81 -6.35)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -6.35) (xy 3.81 -6.35)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.81) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.81) (xy 1.27 3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.27 1.27)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.27 -1.27)
+					(radius 0.127)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 -3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy 1.27 -3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 5.08) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 5.08) (xy 3.81 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 3.81 2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 3.81 -2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 3.81 -5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 6.35) (xy -3.81 6.35)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -6.35) (xy 3.81 6.35)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 11.43 5.08 180)
+					(length 7.62)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 11.43 2.54 180)
+					(length 7.62)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 11.43 -2.54 180)
+					(length 7.62)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SW_TS-1187A-B-A-B_1_1"
+				(pin unspecified line
+					(at 11.43 -5.08 180)
+					(length 7.62)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:TestPoint_1x1"
 			(pin_numbers
 				(hide yes)
@@ -4059,7 +4089,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:W25Q16JVSNIQ"
+		(symbol "bots:W25Q128JVSIQ"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4072,7 +4102,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "W25Q16JVSNIQ"
+			(property "Value" "W25Q128JVSIQ"
 				(at 1.27 11.43 0)
 				(effects
 					(font
@@ -4081,7 +4111,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "bots:SOIC-8_3.9x4.9mm_P1.27mm"
+			(property "Footprint" "bots:SOIC-8_208mil"
 				(at 0 0 0)
 				(effects
 					(font
@@ -4126,7 +4156,7 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "0.5635"
+			(property "Price" "0.65"
 				(at 0 0 0)
 				(effects
 					(font
@@ -4135,7 +4165,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC" "SOIC-8"
+			(property "JLC" "SOIC-8-208mil "
 				(at 0 0 0)
 				(effects
 					(font
@@ -4144,7 +4174,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" "C115407"
+			(property "LCSC" "C97521"
 				(at 0 0 0)
 				(effects
 					(font
@@ -4153,7 +4183,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC Extended" "yes"
+			(property "JLC Extended" "no"
 				(at 0 0 0)
 				(effects
 					(font
@@ -4180,7 +4210,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "W25Q16JVSNIQ_0_1"
+			(symbol "W25Q128JVSIQ_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 7.62 -10.16)
@@ -4193,7 +4223,7 @@
 					)
 				)
 			)
-			(symbol "W25Q16JVSNIQ_1_1"
+			(symbol "W25Q128JVSIQ_1_1"
 				(pin input line
 					(at -10.16 5.08 0)
 					(length 2.54)
@@ -4334,6 +4364,279 @@
 						(effects
 							(font
 								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:XTAL-12MHZ-YXC"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at -6.096 -2.794 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "XTAL-12MHZ-YXC"
+				(at -3.302 3.302 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "bots:SMD3225-4P"
+				(at 5.842 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "X322512MSB4SI"
+				(at 10.16 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "YXC Crystal Oscillators"
+				(at 7.62 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.0657"
+				(at 7.62 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "SMD3225-4P"
+				(at 6.858 6.096 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C9002"
+				(at 5.842 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 6.096 6.096 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "XTAL-12MHZ-YXC_0_0"
+				(polyline
+					(pts
+						(xy -2.3368 2.54) (xy -2.3368 -2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.397 2.54) (xy -1.397 -2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.397 2.54) (xy 1.397 2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.397 2.54) (xy 1.397 -2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.397 -2.54) (xy -1.397 -2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.3368 2.54) (xy 2.3368 -2.54)
+					)
+					(stroke
+						(width 0.4064)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "XTAL-12MHZ-YXC_0_1"
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "XTAL-12MHZ-YXC_1_0"
+				(pin passive line
+					(at 2.54 -5.08 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -5526,222 +5829,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "thebots_symlib:D_ZENER_BZT52C3V3T-7"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "BZT52C3V3T-7"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "bots:D_SOD-523"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Zener diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "BZT52C3V3T-7"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Diodes Inc."
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Price" "0.25"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC" "SOD-523"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C151563"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC Extended" "yes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_ZENER_BZT52C3V3T-7_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_ZENER_BZT52C3V3T-7_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "thebots_symlib:R_200R"
 			(pin_numbers
 				(hide yes)
@@ -6605,12 +6692,6 @@
 		(uuid "160f7ec6-7edb-45d3-a26e-fd55fb1fa5cf")
 	)
 	(junction
-		(at 120.65 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1ba10316-d45d-4d90-93e5-f56d9034efb1")
-	)
-	(junction
 		(at 35.56 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6645,6 +6726,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3e9246bd-f000-43d6-875a-133356ac6d27")
+	)
+	(junction
+		(at 120.65 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46b13636-2dfa-4116-8a51-37d7eca64eee")
 	)
 	(junction
 		(at 247.65 120.65)
@@ -6725,7 +6812,7 @@
 		(uuid "8ee27bd9-3ac4-426b-8e97-14945185fdf3")
 	)
 	(junction
-		(at 120.65 118.11)
+		(at 120.65 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8fce2659-7870-48c2-b374-cfd24a75cfd0")
@@ -6783,6 +6870,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ddabd4f6-7bba-4c47-be00-e94b03cc0db6")
+	)
+	(junction
+		(at 127 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e63f3042-c3e4-4a34-b977-bfe54055dee6")
 	)
 	(junction
 		(at 220.98 35.56)
@@ -6845,6 +6938,16 @@
 			(type default)
 		)
 		(uuid "00ff09d2-0c3e-4ec4-ae3f-264c1d075500")
+	)
+	(wire
+		(pts
+			(xy 114.3 91.44) (xy 120.65 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "011e7580-09f1-4da3-8609-b7e3d884201b")
 	)
 	(wire
 		(pts
@@ -6948,16 +7051,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 48.26) (xy 129.54 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0dc3c8f5-31c0-4e7f-a004-b3ea71308c38")
-	)
-	(wire
-		(pts
 			(xy 71.12 33.02) (xy 71.12 34.29)
 		)
 		(stroke
@@ -6998,7 +7091,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 118.11) (xy 120.65 116.84)
+			(xy 120.65 119.38) (xy 120.65 123.19)
 		)
 		(stroke
 			(width 0)
@@ -7098,6 +7191,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 48.26) (xy 118.11 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "211e73f9-342b-4c19-a7f6-604b9d634a8f")
+	)
+	(wire
+		(pts
 			(xy 172.72 57.15) (xy 177.8 57.15)
 		)
 		(stroke
@@ -7115,6 +7218,26 @@
 			(type default)
 		)
 		(uuid "2154668e-ff64-4cba-8664-33a29541ac2d")
+	)
+	(wire
+		(pts
+			(xy 114.3 123.19) (xy 114.3 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22886152-0520-4067-94ed-1060bc47bf23")
+	)
+	(wire
+		(pts
+			(xy 123.19 81.28) (xy 128.27 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22942746-dc2d-428c-917c-73b1bd5aebcf")
 	)
 	(wire
 		(pts
@@ -7158,6 +7281,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 109.22) (xy 132.08 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29d988c3-7a7d-4e80-a4da-e6b1170c2013")
+	)
+	(wire
+		(pts
 			(xy 232.41 26.67) (xy 232.41 25.4)
 		)
 		(stroke
@@ -7198,6 +7331,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 111.76) (xy 127 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30dbb09f-7567-498a-9b0a-d3bc87fda428")
+	)
+	(wire
+		(pts
 			(xy 177.8 69.85) (xy 165.1 69.85)
 		)
 		(stroke
@@ -7218,23 +7361,13 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 48.26) (xy 129.54 49.53)
+			(xy 109.22 81.28) (xy 118.11 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "320b965e-a8ca-42e1-b9f2-338cd9279919")
-	)
-	(wire
-		(pts
-			(xy 129.54 64.77) (xy 129.54 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32ef4e04-3bb0-4797-ae63-690571b656ce")
+		(uuid "34a68704-8a79-4d81-8bdc-65e711a19c07")
 	)
 	(wire
 		(pts
@@ -7255,16 +7388,6 @@
 			(type default)
 		)
 		(uuid "3512e40f-70ad-4b55-a485-120a045c789e")
-	)
-	(wire
-		(pts
-			(xy 109.22 81.28) (xy 109.22 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "351ba559-f62c-4d2f-923f-32eff01b9be3")
 	)
 	(wire
 		(pts
@@ -7295,6 +7418,16 @@
 			(type default)
 		)
 		(uuid "36cb83d0-ea01-4e32-a3c6-632507fd798d")
+	)
+	(wire
+		(pts
+			(xy 118.11 58.42) (xy 120.65 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "378cf463-b2d9-4e4b-a120-e2f4274e8973")
 	)
 	(wire
 		(pts
@@ -7338,7 +7471,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 118.11) (xy 123.19 118.11)
+			(xy 120.65 123.19) (xy 123.19 123.19)
 		)
 		(stroke
 			(width 0)
@@ -7385,6 +7518,16 @@
 			(type default)
 		)
 		(uuid "449b7bf0-bdb0-42f8-889c-d96d7411f6d7")
+	)
+	(wire
+		(pts
+			(xy 132.08 109.22) (xy 132.08 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "450b1e56-78d2-4961-9d83-b042c8398380")
 	)
 	(wire
 		(pts
@@ -7465,16 +7608,6 @@
 			(type default)
 		)
 		(uuid "4ebde286-23d9-41c6-8a0d-82f52b34821d")
-	)
-	(wire
-		(pts
-			(xy 132.08 64.77) (xy 129.54 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f95c967-8ddd-4818-861d-5b6ee414aed1")
 	)
 	(wire
 		(pts
@@ -7668,16 +7801,6 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 80.01) (xy 129.54 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62e9a260-8299-42d8-b970-f24360a4dce1")
-	)
-	(wire
-		(pts
 			(xy 34.29 107.95) (xy 35.56 107.95)
 		)
 		(stroke
@@ -7768,6 +7891,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 64.77) (xy 127 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b739b9a-3fc2-4a2f-95f2-12ba282679a9")
+	)
+	(wire
+		(pts
 			(xy 238.76 69.85) (xy 240.03 69.85)
 		)
 		(stroke
@@ -7785,16 +7918,6 @@
 			(type default)
 		)
 		(uuid "7114db63-d316-4fc3-a974-e23c13d10dd0")
-	)
-	(wire
-		(pts
-			(xy 109.22 80.01) (xy 111.76 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71a7792c-6166-4a0c-ade3-2aaef58057c4")
 	)
 	(wire
 		(pts
@@ -7918,7 +8041,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 64.77) (xy 109.22 64.77)
+			(xy 111.76 64.77) (xy 118.11 64.77)
 		)
 		(stroke
 			(width 0)
@@ -7945,6 +8068,16 @@
 			(type default)
 		)
 		(uuid "887e3a7f-d2e2-4777-be85-62c3e0d7a0ec")
+	)
+	(wire
+		(pts
+			(xy 120.65 105.41) (xy 134.62 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89cbda90-3b6c-4471-b362-f2dc64e1ac8d")
 	)
 	(wire
 		(pts
@@ -7978,7 +8111,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 118.11) (xy 120.65 118.11)
+			(xy 114.3 123.19) (xy 120.65 123.19)
 		)
 		(stroke
 			(width 0)
@@ -8088,7 +8221,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 118.11) (xy 135.89 118.11)
+			(xy 130.81 123.19) (xy 135.89 123.19)
 		)
 		(stroke
 			(width 0)
@@ -8138,7 +8271,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 95.25) (xy 242.57 95.25)
+			(xy 238.76 95.25) (xy 247.65 95.25)
 		)
 		(stroke
 			(width 0)
@@ -8378,13 +8511,33 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 106.68) (xy 120.65 105.41)
+			(xy 123.19 48.26) (xy 125.73 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b8a12e2a-4899-4397-b8e4-e77547a96754")
+		(uuid "b6d46fcf-afcc-49c7-a331-40672fb33cfe")
+	)
+	(wire
+		(pts
+			(xy 114.3 74.93) (xy 120.65 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6e3a1fc-7f55-40c3-aad3-3a5a7704e0a1")
+	)
+	(wire
+		(pts
+			(xy 132.08 111.76) (xy 127 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7cae047-26db-46ce-ac80-02a1e6d522c0")
 	)
 	(wire
 		(pts
@@ -8438,7 +8591,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 105.41) (xy 135.89 105.41)
+			(xy 114.3 105.41) (xy 120.65 105.41)
 		)
 		(stroke
 			(width 0)
@@ -8618,6 +8771,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 111.76) (xy 127 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4e1bc71-917e-4924-9d02-643e9e3a3005")
+	)
+	(wire
+		(pts
 			(xy 238.76 110.49) (xy 248.92 110.49)
 		)
 		(stroke
@@ -8708,16 +8871,6 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 105.41) (xy 120.65 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd7c4609-cf5a-4c83-a31d-6be9ffa85738")
-	)
-	(wire
-		(pts
 			(xy 238.76 87.63) (xy 266.7 87.63)
 		)
 		(stroke
@@ -8778,6 +8931,26 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 105.41) (xy 120.65 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb362b92-11c7-452b-8a5b-0af8e1460b71")
+	)
+	(wire
+		(pts
+			(xy 127 116.84) (xy 125.73 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebc91bc0-3c26-46a1-8210-e793d340911c")
+	)
+	(wire
+		(pts
 			(xy 34.29 85.09) (xy 35.56 85.09)
 		)
 		(stroke
@@ -8795,16 +8968,6 @@
 			(type default)
 		)
 		(uuid "f05660ce-a774-4e02-a420-e5b1f1a89b33")
-	)
-	(wire
-		(pts
-			(xy 132.08 80.01) (xy 129.54 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0c65ff5-c128-41a5-b1ef-150684283d1a")
 	)
 	(wire
 		(pts
@@ -8845,16 +9008,6 @@
 			(type default)
 		)
 		(uuid "f4268c97-e560-420b-8660-4a15b991a04d")
-	)
-	(wire
-		(pts
-			(xy 109.22 64.77) (xy 109.22 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f44812d9-bbef-4448-b12b-dec7003ccb93")
 	)
 	(wire
 		(pts
@@ -8977,7 +9130,7 @@
 		(uuid "15386538-9f5e-4f39-99a0-4a98cebbab52")
 	)
 	(label "BKBM"
-		(at 132.08 48.26 0)
+		(at 125.73 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9065,6 +9218,16 @@
 			(justify left bottom)
 		)
 		(uuid "2c928e0c-f4b9-4823-a016-a71f49e0ff4c")
+	)
+	(label "GPIO27_ADC2"
+		(at 110.49 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2ed1aa4c-cfc5-4dd1-823a-d9abdca3eab7")
 	)
 	(label "GPIO21"
 		(at 236.22 143.51 90)
@@ -9157,7 +9320,7 @@
 		(uuid "481ec3a7-04a2-456e-80cd-39b1d3e2314e")
 	)
 	(label "CHIP"
-		(at 132.08 64.77 0)
+		(at 127 64.77 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9256,8 +9419,18 @@
 		)
 		(uuid "64164a0f-edf0-4ef7-86bb-6bfb34e545c9")
 	)
+	(label "XOUT_R"
+		(at 118.11 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "643eec03-c3c8-4b60-9ba5-6c373d2d3e2c")
+	)
 	(label "XIN"
-		(at 135.89 105.41 0)
+		(at 134.62 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9317,7 +9490,7 @@
 		(uuid "689bce2d-b8d7-4343-a00e-ae1dc98a0651")
 	)
 	(label "XOUT"
-		(at 135.89 118.11 0)
+		(at 135.89 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9367,7 +9540,7 @@
 		(uuid "7119168d-f7a2-4fe0-b25a-eec3505fc0a4")
 	)
 	(label "BATT_LEVEL"
-		(at 132.08 80.01 0)
+		(at 128.27 81.28 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9577,7 +9750,7 @@
 		(uuid "a1a68641-9547-40d9-aa5c-1e92fe7aa60d")
 	)
 	(label "5V_LEVEL"
-		(at 111.76 80.01 0)
+		(at 109.22 81.28 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9676,6 +9849,16 @@
 		)
 		(uuid "cbe13da6-a2b6-4e0d-81ca-24c20355dfdc")
 	)
+	(label "HV_SENSE"
+		(at 240.03 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cea768e0-3c03-43d1-bcae-027445e16dc9")
+	)
 	(label "DR-"
 		(at 238.76 82.55 0)
 		(effects
@@ -9768,7 +9951,7 @@
 	)
 	(hierarchical_label "HV_SENSE"
 		(shape input)
-		(at 242.57 95.25 0)
+		(at 247.65 95.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9992,130 +10175,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
-		(at 109.22 85.09 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "09310f7c-e66b-4e5f-ac0f-28fc1fc70bf7")
-		(property "Reference" "D23"
-			(at 113.03 83.1849 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BZT52C3V3T-7"
-			(at 113.03 85.7249 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SOD-523"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "BZT52C3V3T-7"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Inc."
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.25"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SOD-523"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C151563"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 109.22 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1bbe5ac5-782e-4837-9e29-7da72d625767")
-		)
-		(pin "1"
-			(uuid "5aeb3ed6-b009-49e9-a322-5457ce43e81a")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D23")
 					(unit 1)
 				)
 			)
@@ -10443,7 +10502,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 88.9 0)
+		(at 114.3 91.44 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10451,7 +10510,7 @@
 		(dnp no)
 		(uuid "12f2ec72-c8a4-496f-8e09-df3111eca464")
 		(property "Reference" "#PWR054"
-			(at 109.22 95.25 0)
+			(at 107.95 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10460,7 +10519,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.474 92.964 0)
+			(at 110.236 91.694 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10468,7 +10527,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 88.9 0)
+			(at 114.3 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10477,7 +10536,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 88.9 0)
+			(at 114.3 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10486,7 +10545,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 109.22 88.9 0)
+			(at 114.3 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10575,7 +10634,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 73.66 0)
+		(at 114.3 74.93 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10583,7 +10642,7 @@
 		(dnp no)
 		(uuid "17724863-39e5-44d2-8b95-bcca9c537e05")
 		(property "Reference" "#PWR069"
-			(at 109.22 80.01 0)
+			(at 107.95 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10592,7 +10651,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.474 77.724 0)
+			(at 110.236 75.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10600,7 +10659,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 73.66 0)
+			(at 114.3 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10609,7 +10668,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 73.66 0)
+			(at 114.3 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10618,7 +10677,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 109.22 73.66 0)
+			(at 114.3 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10633,135 +10692,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "#PWR069")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:PTS647SM38SMTR2LFS")
-		(at 22.86 87.63 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1bcf600d-344c-43af-b520-88d911e9e374")
-		(property "Reference" "U10"
-			(at 22.86 80.01 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "PTS647SM38SMTR2LFS"
-			(at 31.0064 95.3479 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "bots:SW_PTS647SM38SMTR2LFS_CNK"
-			(at 21.59 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 22.86 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "PTS647SM38SMTR2LFS"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "C&K"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1118"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SMD,4.5x4.5mm"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2689502"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 22.86 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "14b3dc35-1a75-4a1e-a7df-7795783e6f2c")
-		)
-		(pin "2"
-			(uuid "5bf4c0b3-1890-4e88-a021-eaacdeed1d3d")
-		)
-		(pin "3"
-			(uuid "c4dae656-c8c9-4e8e-aa43-34c53e7eb157")
-		)
-		(pin "4"
-			(uuid "e930ed56-071d-4a7c-97f8-4f136d8213e0")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -10828,6 +10758,133 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:D_TVS_ESD")
+		(at 120.65 52.07 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2296e602-cf18-4a92-a7cd-09893a21704c")
+		(property "Reference" "D23"
+			(at 127 51.3714 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ESD7C3.3DT5G-MS"
+			(at 127 53.9114 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SOT-723"
+			(at 114.3 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener diode ESD"
+			(at 120.65 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ESD7C3.3DT5G-MS "
+			(at 114.3 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Micro Commercial Co"
+			(at 115.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.63"
+			(at 115.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SOT-723"
+			(at 118.11 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5331072"
+			(at 115.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "extended" "no"
+			(at 120.65 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "65f953e4-3852-41f3-8e3c-3ac40c8a6dfe")
+		)
+		(pin "2"
+			(uuid "1b283c41-7f95-4e1d-acfb-82a614596f76")
+		)
+		(pin "3"
+			(uuid "9d76235d-f325-40c2-91f4-2c5b5055669c")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "D23")
 					(unit 1)
 				)
 			)
@@ -10996,130 +11053,6 @@
 		)
 	)
 	(symbol
-		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
-		(at 129.54 85.09 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "253dee94-e141-4813-928e-984802fa24b1")
-		(property "Reference" "D24"
-			(at 133.35 83.1849 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BZT52C3V3T-7"
-			(at 133.35 85.7249 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SOD-523"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "BZT52C3V3T-7"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Inc."
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.25"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SOD-523"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C151563"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6ba3a598-2be9-4c44-af07-3b14aed6e8cc")
-		)
-		(pin "1"
-			(uuid "6e89e293-8bac-4217-9e24-1140273fb50e")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "bots:JST_TO_LIMITSW")
 		(at 195.58 154.94 0)
 		(unit 1)
@@ -11185,133 +11118,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:ABM3-12.000MHZ-D2Y-T")
-		(at 120.65 111.76 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3325df0e-a430-48fb-b5ee-e143ab66be92")
-		(property "Reference" "Y1"
-			(at 124.46 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "ABM3-12.000MHZ-D2Y-T"
-			(at 124.46 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "bots:ABM3"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "ABM3-12.000MHZ-D2Y-T"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Abracon"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.7616"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SMD5032-2P"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C148313"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 120.65 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f3a7de9-885b-4de9-b936-fddbb61415d6")
-		)
-		(pin "2"
-			(uuid "0839a13a-453b-4f8f-8126-a1103a4837a3")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -11622,6 +11428,130 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:D_ZENER_SMBJ5338B_alternate")
+		(at 71.12 29.21 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ed5cdd0-adb0-4dbd-b538-c2582efb1538")
+		(property "Reference" "D5"
+			(at 74.93 27.3049 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMBJ5338B-TP_alternate"
+			(at 74.93 29.8449 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:D_SMB"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener diode"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SMBJ5338B"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "hongjiacheng"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.149"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMB"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C19077493"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 71.12 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d1bf239-de6c-44ee-9e8e-3297408fa572")
+		)
+		(pin "2"
+			(uuid "556e4110-64d9-4eb0-8d9e-ad7d9290caf6")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -12505,6 +12435,135 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:SW_TS-1187A-B-A-B")
+		(at 22.86 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5dad18b2-8ef3-4a9b-a4a4-237a2b214f9c")
+		(property "Reference" "U10"
+			(at 22.86 80.264 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "SW_TS-1187A-B-A-B"
+			(at 28.702 95.25 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "bots:SW_TS-1187A-B-A-B"
+			(at 21.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 22.86 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 19.05 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0189"
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMD"
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 22.86 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9c762671-0f78-4455-869c-e63a2f47d153")
+		)
+		(pin "3"
+			(uuid "e94d721d-f3ca-48cc-841c-6d7f6a27c316")
+		)
+		(pin "4"
+			(uuid "4716285e-f49e-40b2-8bb6-2c4139179de9")
+		)
+		(pin "2"
+			(uuid "f4d852f6-e481-4705-85d6-abfe84098b7c")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -13493,17 +13552,17 @@
 		)
 	)
 	(symbol
-		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
-		(at 129.54 53.34 270)
+		(lib_id "bots:W25Q128JVSIQ")
+		(at 69.85 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "72ce759d-8a54-489a-b66b-9ceca2a0c3a1")
-		(property "Reference" "D25"
-			(at 133.35 51.4349 90)
+		(uuid "70514091-88cc-4496-a76f-4d2f370da645")
+		(property "Reference" "U5"
+			(at 71.9933 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13511,8 +13570,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BZT52C3V3T-7"
-			(at 133.35 53.9749 90)
+		(property "Value" "W25Q128JVSIQ"
+			(at 71.9933 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13520,8 +13579,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "bots:D_SOD-523"
-			(at 129.54 53.34 0)
+		(property "Footprint" "bots:SOIC-8_208mil"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13529,8 +13588,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 129.54 53.34 0)
+		(property "Datasheet" "http://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13538,8 +13597,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Zener diode"
-			(at 129.54 53.34 0)
+		(property "Description" "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13547,8 +13606,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "BZT52C3V3T-7"
-			(at 129.54 53.34 0)
+		(property "MPN" "W25Q128JVSIQ"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13556,8 +13615,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Diodes Inc."
-			(at 129.54 53.34 0)
+		(property "Manufacturer" "Winbond Elec"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13565,8 +13624,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.25"
-			(at 129.54 53.34 0)
+		(property "Price" "0.65"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13574,8 +13633,8 @@
 				(hide yes)
 			)
 		)
-		(property "JLC" "SOD-523"
-			(at 129.54 53.34 0)
+		(property "JLC" "SOIC-8-208mil "
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13583,8 +13642,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C151563"
-			(at 129.54 53.34 0)
+		(property "LCSC" "C97521"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13592,8 +13651,8 @@
 				(hide yes)
 			)
 		)
-		(property "JLC Extended" "yes"
-			(at 129.54 53.34 0)
+		(property "JLC Extended" "no"
+			(at 69.85 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13601,16 +13660,34 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "3f77a851-e953-4225-bffa-4092c15241a9")
+		(pin "6"
+			(uuid "f778a770-bb59-468a-a117-8b8818841f02")
+		)
+		(pin "5"
+			(uuid "639051c3-c005-462e-a880-ab1dce93b162")
+		)
+		(pin "4"
+			(uuid "ba62d115-57ce-42c4-a8be-faf57afb48ae")
+		)
+		(pin "3"
+			(uuid "af232a53-4495-4243-8bf7-9b24fea98b16")
+		)
+		(pin "7"
+			(uuid "d260d20b-54cd-4aa1-a27c-dd9412db85d7")
 		)
 		(pin "1"
-			(uuid "c14768cc-8b18-4355-b4f7-7e0a3012cf68")
+			(uuid "963c0f10-0f05-4fa3-a3b4-22fb05463bb4")
+		)
+		(pin "8"
+			(uuid "cbcc2cb8-6810-4634-8111-edaa74eef1ba")
+		)
+		(pin "2"
+			(uuid "f8cc150d-885c-4d33-86d1-ce812cc3b213")
 		)
 		(instances
-			(project "chicker"
+			(project ""
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D25")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -13748,6 +13825,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 135.89 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74f3476d-5440-4a0c-916b-504a41189b0c")
+		(property "Reference" "#PWR0104"
+			(at 135.89 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ca7aeba3-e611-45d4-8c40-fdb275a31849")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "bots:R_1k")
 		(at 48.26 97.79 0)
 		(mirror x)
@@ -13861,17 +14004,17 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:D_ZENER_SMBJ5338B-TP")
-		(at 71.12 29.21 270)
+		(lib_id "bots:D_TVS_ESD")
+		(at 120.65 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "791960c8-8a31-4a18-b910-effa85391e36")
-		(property "Reference" "D5"
-			(at 73.66 27.94 90)
+		(uuid "798c26d7-a56c-456b-88de-4725ef8f6021")
+		(property "Reference" "D22"
+			(at 127 84.3914 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13879,8 +14022,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SMBJ5338B-TP"
-			(at 73.66 30.48 90)
+		(property "Value" "ESD7C3.3DT5G-MS"
+			(at 127 86.9314 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13888,8 +14031,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "bots:D_SMB"
-			(at 71.12 29.21 0)
+		(property "Footprint" "bots:SOT-723"
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13898,7 +14041,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 29.21 0)
+			(at 115.57 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13906,8 +14049,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 71.12 29.21 0)
+		(property "Description" "Zener diode ESD"
+			(at 120.65 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13915,8 +14058,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SMBJ5338B-TP"
-			(at 71.12 29.21 0)
+		(property "MPN" "ESD7C3.3DT5G-MS "
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13925,7 +14068,7 @@
 			)
 		)
 		(property "Manufacturer" "Micro Commercial Co"
-			(at 71.12 29.21 0)
+			(at 115.57 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13933,8 +14076,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.25"
-			(at 71.12 29.21 0)
+		(property "Price" "0.63"
+			(at 115.57 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13942,8 +14085,8 @@
 				(hide yes)
 			)
 		)
-		(property "JLC" "DO-214AA(SMB)"
-			(at 71.12 29.21 0)
+		(property "JLC" "SOT-723"
+			(at 118.11 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13951,8 +14094,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C457823"
-			(at 71.12 29.21 0)
+		(property "LCSC" "C5331072"
+			(at 115.57 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13960,8 +14103,8 @@
 				(hide yes)
 			)
 		)
-		(property "JLC Extended" "yes"
-			(at 71.12 29.21 0)
+		(property "extended" "no"
+			(at 120.65 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13970,15 +14113,145 @@
 			)
 		)
 		(pin "1"
-			(uuid "2dfb771c-9990-4227-a01b-80a3a9a2acee")
+			(uuid "098ffdb7-6fb1-4ded-8283-8b20a2bd3022")
 		)
 		(pin "2"
-			(uuid "c227859c-e3eb-47f9-a815-8cd2227d379c")
+			(uuid "f56446e4-2a2e-4fa0-8d11-22c8cf1300f3")
+		)
+		(pin "3"
+			(uuid "7ee7e7ca-0200-4275-817f-99f3275c529f")
 		)
 		(instances
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D5")
+					(reference "D22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:D_TVS_ESD")
+		(at 120.65 68.58 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "798c26d7-a56c-456b-88de-4725ef8f6021")
+		(property "Reference" "D21"
+			(at 127 67.8814 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ESD7C3.3DT5G-MS"
+			(at 127 70.4214 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SOT-723"
+			(at 114.3 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zener diode ESD"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ESD7C3.3DT5G-MS "
+			(at 114.3 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Micro Commercial Co"
+			(at 115.57 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.63"
+			(at 115.57 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SOT-723"
+			(at 118.11 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5331072"
+			(at 115.57 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "extended" "no"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "098ffdb7-6fb1-4ded-8283-8b20a2bd3022")
+		)
+		(pin "2"
+			(uuid "f56446e4-2a2e-4fa0-8d11-22c8cf1300f3")
+		)
+		(pin "3"
+			(uuid "7ee7e7ca-0200-4275-817f-99f3275c529f")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "D21")
 					(unit 1)
 				)
 			)
@@ -15721,71 +15994,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b7b7efd3-350a-4f66-83f5-e80fd0a7c7e4")
-		(property "Reference" "#PWR055"
-			(at 129.54 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 129.794 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 129.54 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6b5a756b-7d14-45d1-bbdd-1b3b336e1c02")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "#PWR055")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 241.3 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15852,7 +16060,7 @@
 	)
 	(symbol
 		(lib_id "bots:R_1k")
-		(at 127 118.11 90)
+		(at 127 123.19 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15861,7 +16069,7 @@
 		(dnp no)
 		(uuid "bb37ffae-7916-42c2-8a81-550341d79bcc")
 		(property "Reference" "R17"
-			(at 130.81 116.84 90)
+			(at 130.81 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15869,7 +16077,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 127 120.65 90)
+			(at 127 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15877,7 +16085,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 127 116.332 90)
+			(at 127 121.412 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15886,7 +16094,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15895,7 +16103,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15904,7 +16112,7 @@
 			)
 		)
 		(property "MPN" "0603WAF1001T5E"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15913,7 +16121,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15922,7 +16130,7 @@
 			)
 		)
 		(property "Price" "0.0007"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15931,7 +16139,7 @@
 			)
 		)
 		(property "JLC" "0603"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15940,7 +16148,7 @@
 			)
 		)
 		(property "LCSC" "C21190"
-			(at 127 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16328,150 +16536,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:W25Q16JVSNIQ")
-		(at 69.85 97.79 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cc41ff7b-32a2-4825-9b79-a98dfe06f715")
-		(property "Reference" "U5"
-			(at 72.0441 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "W25Q16JVSNIQ"
-			(at 72.0441 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "W25Q128JVSIQ"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Winbond Elec"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.5635"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SOIC-8"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C115407"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0011e6c7-9097-4f8e-953b-e3b60155d63a")
-		)
-		(pin "2"
-			(uuid "585f1aa7-d142-463b-91a0-1f9cfd7813d4")
-		)
-		(pin "3"
-			(uuid "8d5fe546-2042-4292-86ad-3b0bb1011eb7")
-		)
-		(pin "4"
-			(uuid "0ab5f5c9-980f-4fb2-8419-1b5217977057")
-		)
-		(pin "5"
-			(uuid "6845ddc9-c3b6-434a-9b2c-f6c49d15e1e5")
-		)
-		(pin "6"
-			(uuid "f18512b9-a8ea-43ae-a6ee-e1396f04c76e")
-		)
-		(pin "7"
-			(uuid "7f1e97c9-c093-450e-91bd-beb3175cb2d4")
-		)
-		(pin "8"
-			(uuid "640f8569-a7b9-4a6d-82c6-561c267cfa80")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "U5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 129.54 57.15 0)
+		(at 118.11 58.42 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16479,7 +16545,7 @@
 		(dnp no)
 		(uuid "d40fe677-6152-441f-ae4b-93ca7e3ff40f")
 		(property "Reference" "#PWR073"
-			(at 129.54 63.5 0)
+			(at 111.76 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16488,7 +16554,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 129.794 61.214 0)
+			(at 114.046 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16496,7 +16562,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 57.15 0)
+			(at 118.11 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16505,7 +16571,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 57.15 0)
+			(at 118.11 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16514,7 +16580,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 129.54 57.15 0)
+			(at 118.11 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16868,383 +16934,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:PTS647SM38SMTR2LFS")
-		(at 21.59 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "de316e5a-1ca1-400e-8062-5965a2a55ce1")
-		(property "Reference" "U9"
-			(at 19.05 105.41 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "PTS647SM38SMTR2LFS"
-			(at 29.21 120.65 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "bots:SW_PTS647SM38SMTR2LFS_CNK"
-			(at 20.32 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 21.59 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "PTS647SM38SMTR2LFS"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "C&K"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.1118"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SMD,4.5x4.5mm"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2689502"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 21.59 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "10e8b2da-6c48-45f4-b8b0-9337d28c7177")
-		)
-		(pin "2"
-			(uuid "9c3dc65b-7e21-459d-a127-4118cce35a8e")
-		)
-		(pin "3"
-			(uuid "343a10df-5588-4ef2-877f-a1890d03934b")
-		)
-		(pin "4"
-			(uuid "5197b04a-4b6a-44d6-9722-839437042239")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "U9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
-		(at 129.54 69.85 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "df5a7a51-191f-4a7d-9609-dbef5c82c9c7")
-		(property "Reference" "D22"
-			(at 133.35 67.9449 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BZT52C3V3T-7"
-			(at 133.35 70.4849 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SOD-523"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "BZT52C3V3T-7"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Inc."
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.25"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SOD-523"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C151563"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 129.54 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e93ec031-78ca-466a-8dda-32f90995ce2a")
-		)
-		(pin "1"
-			(uuid "66936617-15df-4496-abc2-4b5507b08383")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "thebots_symlib:D_ZENER_BZT52C3V3T-7")
-		(at 109.22 69.85 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e375caf4-ebc2-4d1b-9cbb-022ef7376e5e")
-		(property "Reference" "D21"
-			(at 113.03 67.9449 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BZT52C3V3T-7"
-			(at 113.03 70.4849 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SOD-523"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "BZT52C3V3T-7"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Inc."
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.25"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SOD-523"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C151563"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 109.22 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fe9803b8-8f3b-49ee-aac0-e350098ee3ae")
-		)
-		(pin "1"
-			(uuid "af674115-db73-4703-8fd7-c7f117a578c3")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
-					(reference "D21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "thebots_symlib:C_0.1u_0402")
 		(at 232.41 30.48 0)
 		(unit 1)
@@ -17457,6 +17146,268 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
 					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:XTAL-12MHZ-YXC")
+		(at 120.65 114.3 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ee896aff-6aaf-43f2-9059-155aab538388")
+		(property "Reference" "Y1"
+			(at 127 113.0299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "XTAL-12MHZ-YXC"
+			(at 127 115.5699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "bots:SMD3225-4P"
+			(at 115.57 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 120.65 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "X322512MSB4SI"
+			(at 113.792 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YXC Crystal Oscillators"
+			(at 113.792 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0657"
+			(at 113.792 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMD3225-4P"
+			(at 114.554 107.442 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C9002"
+			(at 115.57 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 114.554 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "9a5ff226-c93f-4781-8ad7-4cc7b17027b5")
+		)
+		(pin "3"
+			(uuid "0afd477d-0d03-4f36-8f84-70883edc3860")
+		)
+		(pin "1"
+			(uuid "43a491e9-691a-4ddc-a699-452c60ddb9ff")
+		)
+		(pin "2"
+			(uuid "2a66197f-566f-4f06-b50e-c2bc601de268")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "Y1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:SW_TS-1187A-B-A-B")
+		(at 21.59 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f17a7908-bf88-4ff5-8827-cc0bfe7c68f5")
+		(property "Reference" "U9"
+			(at 20.828 104.902 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "SW_TS-1187A-B-A-B"
+			(at 29.21 120.904 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "bots:SW_TS-1187A-B-A-B"
+			(at 20.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 21.59 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 17.78 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0189"
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMD"
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 21.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e7e263b6-34ab-4ec7-9507-dfc1a6b7f7b2")
+		)
+		(pin "3"
+			(uuid "3a704d57-8337-4ece-bb38-1a59d81377c3")
+		)
+		(pin "4"
+			(uuid "127af0e0-69a5-435d-a82b-6812b79ece19")
+		)
+		(pin "2"
+			(uuid "674f1727-d5ef-4be2-b845-110725c56286")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/44109b35-87db-4b37-b749-86ba1243ffef"
+					(reference "U9")
 					(unit 1)
 				)
 			)
