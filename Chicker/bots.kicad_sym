@@ -10306,7 +10306,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "bots:SOT-723"
+		(property "Footprint" "bots:SOT-23"
 			(at 3.81 -6.35 0)
 			(effects
 				(font
@@ -33638,7 +33638,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "USB4145-03-0170-C_REVA2"
+	(symbol "USB4145-03-0170-C"
 		(pin_names
 			(offset 1.016)
 		)
@@ -33654,7 +33654,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "USB4145-03-0170-C_REVA2"
+		(property "Value" "USB4145-03-0170-C"
 			(at -11.43 26.67 0)
 			(effects
 				(font
@@ -33742,7 +33742,34 @@
 				(hide yes)
 			)
 		)
-		(symbol "USB4145-03-0170-C_REVA2_0_0"
+		(property "JLC" "SMD"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5181332"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "USB4145-03-0170-C_0_0"
 			(rectangle
 				(start -12.7 25.4)
 				(end 12.7 -12.7)

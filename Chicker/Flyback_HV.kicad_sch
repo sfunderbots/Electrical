@@ -11554,7 +11554,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CHICK"
+		(property "Value" "CHIP"
 			(at 38.1 120.65 0)
 			(effects
 				(font
@@ -13695,7 +13695,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CHIP"
+		(property "Value" "KICK"
 			(at 31.75 128.27 0)
 			(effects
 				(font
@@ -14406,7 +14406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 95.25 59.69 0)
 			(effects
 				(font

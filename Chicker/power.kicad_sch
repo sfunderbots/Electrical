@@ -1093,7 +1093,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "bots:SOT-723"
+			(property "Footprint" "bots:SOT-23"
 				(at 3.81 -6.35 0)
 				(effects
 					(font
@@ -8124,7 +8124,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 193.04 49.53 0)
 			(effects
 				(font
@@ -8896,7 +8896,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 205.74 49.53 0)
 			(effects
 				(font
@@ -9688,7 +9688,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "bots:SOT-723"
+		(property "Footprint" "bots:SOT-23"
 			(at 59.69 144.78 0)
 			(effects
 				(font

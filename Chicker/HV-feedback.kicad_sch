@@ -257,7 +257,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "bots:SOT-723"
+			(property "Footprint" "bots:SOT-23"
 				(at 3.81 -6.35 0)
 				(effects
 					(font
@@ -2508,7 +2508,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "bots:SOT-723"
+		(property "Footprint" "bots:SOT-23"
 			(at 85.09 86.36 0)
 			(effects
 				(font
