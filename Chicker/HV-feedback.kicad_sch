@@ -248,7 +248,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "ESD7C3.3DT5G-MS"
+			(property "Value" "H3V3HT2U"
 				(at 1.8414 6.35 90)
 				(effects
 					(font
@@ -275,7 +275,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Zener diode"
+			(property "Description" "Zener diode ESD"
 				(at 0 0 0)
 				(effects
 					(font
@@ -284,7 +284,7 @@
 					(hide yes)
 				)
 			)
-			(property "MPN" "ESD7C3.3DT5G-MS "
+			(property "MPN" "H3V3HT2U"
 				(at 3.81 -6.35 0)
 				(effects
 					(font
@@ -293,7 +293,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer" "Micro Commercial Co"
+			(property "Manufacturer" "hongjiacheng"
 				(at 2.54 -5.08 0)
 				(effects
 					(font
@@ -302,7 +302,7 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "0.63"
+			(property "Price" "0.0379"
 				(at 2.54 -5.08 0)
 				(effects
 					(font
@@ -311,7 +311,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC" "C5331072"
+			(property "JLC" "SOT-23"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -320,7 +320,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" "N/A"
+			(property "LCSC" "C20617924 "
 				(at 2.54 -5.08 0)
 				(effects
 					(font
@@ -2499,7 +2499,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ESD7C3.3DT5G-MS"
+		(property "Value" "H3V3HT2U"
 			(at 97.79 84.3914 90)
 			(effects
 				(font
@@ -2526,7 +2526,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Zener diode"
+		(property "Description" "Zener diode ESD"
 			(at 91.44 82.55 0)
 			(effects
 				(font
@@ -2535,7 +2535,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "ESD7C3.3DT5G-MS "
+		(property "MPN" "H3V3HT2U"
 			(at 85.09 86.36 0)
 			(effects
 				(font
@@ -2544,7 +2544,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Micro Commercial Co"
+		(property "Manufacturer" "hongjiacheng"
 			(at 86.36 85.09 0)
 			(effects
 				(font
@@ -2553,7 +2553,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.63"
+		(property "Price" "0.0379"
 			(at 86.36 85.09 0)
 			(effects
 				(font
@@ -2562,7 +2562,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLC" "C5331072"
+		(property "JLC" "SOT-23"
 			(at 88.9 82.55 0)
 			(effects
 				(font
@@ -2571,7 +2571,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "N/A"
+		(property "LCSC" "C20617924 "
 			(at 86.36 85.09 0)
 			(effects
 				(font

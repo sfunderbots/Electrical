@@ -967,7 +967,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" "C136279"
+			(property "LCSC" "C33129640"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3881,6 +3881,210 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "bots:D_MUR860J_alternate"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MUR860J_alternate"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:D_SMC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "ES8J"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "LGE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.1641"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "SMC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C2940143"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "yes"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode Schottky (1.7V@8A 35ns recovery (slightly worse voltage drop slightly better recovery. Adequate replacement)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_MUR860J_alternate_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_MUR860J_alternate_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:D_MURS160-E3/52T_alternate"
 			(pin_numbers
 				(hide yes)
@@ -4046,6 +4250,222 @@
 				)
 			)
 			(symbol "D_MURS160-E3/52T_alternate_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:D_SMCJ16A"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMCJ16A"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:D_SMC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "TVS Surge Protection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "SMCJ16A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" " RUILON(Shenzhen Ruilongyuan Elec)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.3092"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "SMC(DO-214AB)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C10249"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "yes"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_SMCJ16A_0_1"
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_SMCJ16A_1_1"
+				(polyline
+					(pts
+						(xy -0.5468 2.5984) (xy -1.8168 1.3284) (xy -1.8168 0.0584) (xy -1.8168 -1.2116) (xy -3.0868 -2.4816)
+					)
+					(stroke
+						(width 0.2032)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 1.27) (xy -1.27 0) (xy -1.27 -1.27) (xy -2.54 -2.54)
+					)
+					(stroke
+						(width 0.2032)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -4582,358 +5002,6 @@
 					(at 2.54 -5.08 90)
 					(length 2.54)
 					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "bots:IRFR3410TRPBF"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "IRFR3410TRPBF"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "bots:DPAK-3_ONS"
-				(at 5.08 -1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.st.com/resource/en/datasheet/stb15n80k5.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "N-Channel 150 V 50A (Tc) 160W (Tj) Surface Mount TO-252AA"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "IRFR3410TRPBF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "onsemi"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Price" "0.465"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC" "TO-252"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C3016"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC Extended" "yes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "N-Channel MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO?263*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "IRFR3410TRPBF_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "IRFR3410TRPBF_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5491,7 +5559,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:MCP14A0454-E_SN"
+		(symbol "bots:MCP14A0454-E_SN_alternate"
 			(pin_names
 				(offset 0.254)
 			)
@@ -5506,7 +5574,7 @@
 					)
 				)
 			)
-			(property "Value" "MCP14A0454-E/SN"
+			(property "Value" "MCP14A0454-E/SN_alternate"
 				(at 20.32 7.62 0)
 				(effects
 					(font
@@ -5543,7 +5611,7 @@
 					(hide yes)
 				)
 			)
-			(property "MPN" "MCP14A0454-E/SN"
+			(property "MPN" "RS8802HXK"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5552,7 +5620,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer" "Microchip"
+			(property "Manufacturer" "Jiangsu RUNIC Tech "
 				(at 0 0 0)
 				(effects
 					(font
@@ -5561,7 +5629,7 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "2.42"
+			(property "Price" "0.36"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5570,7 +5638,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC" ""
+			(property "JLC" "SOIC-8"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5579,7 +5647,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" ""
+			(property "LCSC" "C20611883"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5588,7 +5656,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "MCP14A0454-E/SN"
+			(property "JLC Extended" "yes"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5606,7 +5674,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "MCP14A0454-E_SN_0_1"
+			(symbol "MCP14A0454-E_SN_alternate_0_1"
 				(polyline
 					(pts
 						(xy 7.62 3.81) (xy 7.62 -8.89)
@@ -5656,7 +5724,7 @@
 					)
 				)
 			)
-			(symbol "MCP14A0454-E_SN_1_1"
+			(symbol "MCP14A0454-E_SN_alternate_1_1"
 				(pin input line
 					(at 2.54 -1.27 0)
 					(length 4.95)
@@ -5804,34 +5872,53 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:MUR860J"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "bots:Q_IRFR3410TRPBF_alternate"
 			(pin_names
-				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "MUR860J"
-				(at 0 -2.54 0)
+			(property "Value" "IRFR3410TRPBF_alternate"
+				(at 5.08 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "bots:D_SMC"
+			(property "Footprint" "bots:DPAK-3_ONS"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.st.com/resource/en/datasheet/stb15n80k5.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "N-Channel 150 V 50A (Tc) 160W (Tj) Surface Mount TO-252AA"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5840,7 +5927,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "MPN" "CJU15N10"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5849,7 +5936,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Schottky diode"
+			(property "Manufacturer" "Jiangsu Changjing Electronics Technology Co., Ltd. "
 				(at 0 0 0)
 				(effects
 					(font
@@ -5858,7 +5945,7 @@
 					(hide yes)
 				)
 			)
-			(property "MPN" "MUR860J"
+			(property "Price" "0.2772"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5867,7 +5954,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer" "WeEn Semiconductors"
+			(property "JLC" "TO-252-2"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5876,7 +5963,7 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "0.76"
+			(property "LCSC" "C2910347"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5885,7 +5972,7 @@
 					(hide yes)
 				)
 			)
-			(property "JLC" ""
+			(property "JLC Extended" "yes"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5894,7 +5981,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC" ""
+			(property "ki_keywords" "N-Channel MOSFET"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5903,7 +5990,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "diode Schottky"
+			(property "ki_fp_filters" "TO?263*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5912,19 +5999,10 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MUR860J_0_1"
+			(symbol "Q_IRFR3410TRPBF_alternate_0_1"
 				(polyline
 					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
 					(stroke
 						(width 0.254)
@@ -5936,7 +6014,19 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -5948,7 +6038,124 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
 					)
 					(stroke
 						(width 0)
@@ -5959,11 +6166,11 @@
 					)
 				)
 			)
-			(symbol "MUR860J_1_1"
+			(symbol "Q_IRFR3410TRPBF_alternate_1_1"
 				(pin passive line
-					(at -3.81 0 0)
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "K"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5979,9 +6186,9 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "A"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5989,6 +6196,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7583,210 +7808,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:SMCJ15A"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SMCJ15A"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "bots:D_SMC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Zener diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "SMCJ15A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Littelfuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Price" "0.59"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC" "SMC(DO-214AB)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C438099"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "JLC Extended" "yes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SMCJ15A_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SMCJ15A_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "bots:TestPoint_1x1"
 			(pin_numbers
 				(hide yes)
@@ -8755,12 +8776,6 @@
 		(uuid "059430b1-fcee-427e-ab6f-3f6ef62d966c")
 	)
 	(junction
-		(at 121.92 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0b04618a-5bfd-45e9-9ddd-6d067a6a13f0")
-	)
-	(junction
 		(at 101.6 172.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8833,12 +8848,6 @@
 		(uuid "3767eddd-37cb-4af1-bd5f-a1eb4c401836")
 	)
 	(junction
-		(at 121.92 153.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3acb5702-9747-4f81-b5b1-8c45306f2694")
-	)
-	(junction
 		(at 118.11 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8891,6 +8900,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "66c81bd6-e870-464e-a19c-0812422bbf95")
+	)
+	(junction
+		(at 133.35 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "687315a9-77c9-479c-823a-33f6063e66f9")
 	)
 	(junction
 		(at 113.03 123.19)
@@ -8971,10 +8986,22 @@
 		(uuid "99d64d85-7265-4fa4-9485-25ee4ade6c72")
 	)
 	(junction
+		(at 121.92 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b45289d-868f-4a67-8487-891d03eaf873")
+	)
+	(junction
 		(at 118.11 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a07b67fb-74ad-47a7-8739-c40f62c4a1e5")
+	)
+	(junction
+		(at 133.35 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a11d5b4a-4c5e-45cc-9084-c054a6b6cc18")
 	)
 	(junction
 		(at 179.07 41.91)
@@ -9031,12 +9058,6 @@
 		(uuid "cc99b5b9-5cfc-45f6-ae2c-7a0aa72a2616")
 	)
 	(junction
-		(at 133.35 104.14)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d0a0309c-bfef-4b5c-917b-199c8667e4d0")
-	)
-	(junction
 		(at 133.35 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9091,16 +9112,16 @@
 		(uuid "ef1cbc6a-8229-4b1a-8ace-5930d6b72005")
 	)
 	(junction
-		(at 133.35 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f4342585-bd27-4395-849c-1fc440040045")
-	)
-	(junction
 		(at 41.91 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6332a02-72b9-4b8a-90a9-a89356dbd33b")
+	)
+	(junction
+		(at 121.92 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fabf02af-346f-404b-b0ed-b713a2858959")
 	)
 	(junction
 		(at 133.35 132.08)
@@ -11582,6 +11603,136 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:Q_IRFR3410TRPBF_alternate")
+		(at 105.41 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "222d1b34-71da-4715-91d1-d33bce814ca1")
+		(property "Reference" "Q2"
+			(at 111.76 58.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IRFR3410TRPBF_alternate"
+			(at 111.76 60.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:DPAK-3_ONS"
+			(at 110.49 61.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/stb15n80k5.pdf"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-Channel 150 V 50A (Tc) 160W (Tj) Surface Mount TO-252AA"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CJU15N10"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Jiangsu Changjing Electronics Technology Co., Ltd. "
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.2772"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "TO-252-2"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2910347"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 105.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7e8ba383-3826-4a3b-89f7-d8e5d6648767")
+		)
+		(pin "1"
+			(uuid "3dd03d67-992d-4cca-99ea-593ccffea390")
+		)
+		(pin "2"
+			(uuid "760d62cc-87d3-430b-bc1e-851262ce9c7e")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "thebots_symlib:R_0R_0402")
 		(at 25.4 123.19 90)
 		(unit 1)
@@ -12748,6 +12899,150 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:MCP14A0454-E_SN_alternate")
+		(at 35.56 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b37b1ab-b50f-434f-ad8a-596f2f09a047")
+		(property "Reference" "U2"
+			(at 51.6733 113.03 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCP14A0454-E/SN_alternate"
+			(at 51.6733 115.57 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 35.56 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RS8802HXK"
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Jiangsu RUNIC Tech "
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.36"
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SOIC-8"
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C20611883"
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 35.56 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "d7dafe8b-2516-449d-bd30-e4db540bdeb1")
+		)
+		(pin "5"
+			(uuid "faf2ea66-dc0a-4de7-95a6-4cae4c5bc3ec")
+		)
+		(pin "7"
+			(uuid "8b3d9f2b-026d-48b3-b906-125aedcaabcd")
+		)
+		(pin "1"
+			(uuid "4c101af1-a5a5-465a-ae0f-fabfbb5a76d6")
+		)
+		(pin "3"
+			(uuid "1be89ee7-25a1-4415-bd2d-a8085a210dd9")
+		)
+		(pin "4"
+			(uuid "3b72821a-1fe7-43ed-af83-82a874128a81")
+		)
+		(pin "2"
+			(uuid "979a7edc-6baf-4a50-bd9f-7b456a8b0eef")
+		)
+		(pin "8"
+			(uuid "6be31db7-e40a-4f80-82e2-a0abe6568582")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDPWR")
 		(at 168.91 45.72 0)
 		(unit 1)
@@ -13586,9 +13881,9 @@
 		(at 87.63 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6dc015f5-8b9e-486b-b36c-9ff67cf72ea9")
 		(property "Reference" "C38"
@@ -13845,7 +14140,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C136279"
+		(property "LCSC" "C33129640"
 			(at 90.17 33.02 0)
 			(effects
 				(font
@@ -14453,7 +14748,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C136279"
+		(property "LCSC" "C33129640"
 			(at 82.55 33.02 0)
 			(effects
 				(font
@@ -14592,6 +14887,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -14670,141 +14966,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:MCP14A0454-E_SN")
-		(at 35.56 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "86eaf915-ecca-404f-b070-09598bd25eac")
-		(property "Reference" "U2"
-			(at 51.7241 113.03 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MCP14A0454-E/SN"
-			(at 51.7241 115.57 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 35.56 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MCP14A0454-E/SN"
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Microchip"
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "2.42"
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" ""
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 35.56 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "18e8934b-b16c-4c61-bbb5-0a169d3b255b")
-		)
-		(pin "2"
-			(uuid "85027bed-5995-4aa0-bb72-eabedf2f5a26")
-		)
-		(pin "3"
-			(uuid "fbd2a59a-1e8e-47ee-9fdc-f6b196f844f5")
-		)
-		(pin "4"
-			(uuid "36c16768-672d-40f0-abbd-bbab5cf76318")
-		)
-		(pin "5"
-			(uuid "b2d61d8b-1cb2-4500-b632-61fad6b9dff9")
-		)
-		(pin "6"
-			(uuid "13b6afee-0b83-46cd-bce5-819d7743282a")
-		)
-		(pin "7"
-			(uuid "d3fd5bd2-bb69-48a7-87d8-1728ecfde590")
-		)
-		(pin "8"
-			(uuid "d8192ed6-54c6-4472-9ea2-29627316eb3b")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -15240,121 +15401,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "R41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:MUR860J")
-		(at 133.35 107.95 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "965b698d-097a-4998-85ad-a866d760aefa")
-		(property "Reference" "D11"
-			(at 135.89 106.3625 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MUR860J"
-			(at 135.89 108.9025 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SMC"
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MUR860J"
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "WeEn Semiconductors"
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.76"
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" ""
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 133.35 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f9ebbb7f-a84d-44b0-8de2-c7f224d0f7bc")
-		)
-		(pin "2"
-			(uuid "a05634d7-fc7d-4005-84d9-19ee2a436d8d")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -16359,6 +16405,130 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:D_MUR860J_alternate")
+		(at 121.92 157.48 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "befb868a-ddca-4437-9c3c-efdd1185a26e")
+		(property "Reference" "D2"
+			(at 124.46 155.8924 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MUR860J_alternate"
+			(at 124.46 158.4324 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:D_SMC"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ES8J"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LGE"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.1641"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMC"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2940143"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 121.92 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0e29b960-3bff-4fba-8862-7e5cad3b5538")
+		)
+		(pin "1"
+			(uuid "030f70d3-ee9b-4cb3-af62-069374ca8abe")
+		)
+		(instances
+			(project "chicker"
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "bots:R_8m")
 		(at 104.14 72.39 180)
 		(unit 1)
@@ -16484,7 +16654,7 @@
 	)
 	(symbol
 		(lib_id "bots:R_2.4k")
-		(at 81.28 78.74 0)
+		(at 81.28 78.74 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16498,7 +16668,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "2.4k"
@@ -16507,11 +16677,11 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 79.502 78.74 90)
+			(at 83.058 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16598,133 +16768,9 @@
 			(uuid "4fc9a5d9-d76f-4aab-8342-0ea0f7f1cef6")
 		)
 		(instances
-			(project ""
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:SMCJ15A")
-		(at 101.6 177.8 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "c5e064d1-6f27-4b0c-ac2a-da0cc48c40f0")
-		(property "Reference" "D10"
-			(at 104.14 176.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMCJ15A"
-			(at 104.14 179.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SMC"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "23.2V Clamp 64.7A Ipp Tvs Diode Surface Mount DO-214AB (SMCJ)"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SMCJ15A"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Littelfuse"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.59"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "SMC(DO-214AB)"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C438099"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 101.6 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ba81e634-a499-402b-a11c-d8d2576d62a3")
-		)
-		(pin "2"
-			(uuid "9edb4e57-b0ec-4bee-85ee-aa45ea21bdd8")
-		)
-		(instances
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "D10")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -16855,121 +16901,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:MUR860J")
-		(at 121.92 157.48 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "c99f8f0d-8ae6-45b2-bc6a-5ff17ee908c6")
-		(property "Reference" "D2"
-			(at 124.46 155.8925 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MUR860J"
-			(at 124.46 158.4325 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:D_SMC"
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MUR860J"
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "WeEn Semiconductors"
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.76"
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" ""
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 121.92 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8e2e420d-c337-4cde-bf38-11bdf18e2bad")
-		)
-		(pin "2"
-			(uuid "8d9a11df-b59a-4589-ade9-716a34f6e7c8")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "R_100k_2")
 		(lib_id "bots:R_100k")
 		(at 215.9 57.15 180)
@@ -17089,136 +17020,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "R29")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:IRFR3410TRPBF")
-		(at 105.41 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dc42e367-9667-40c7-bdca-e5a53abc4f2c")
-		(property "Reference" "Q2"
-			(at 111.76 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IRFR3410TRPBF"
-			(at 111.76 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:DPAK-3_ONS"
-			(at 110.49 61.595 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.st.com/resource/en/datasheet/stb15n80k5.pdf"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-Channel 150 V 50A (Tc) 160W (Tj) Surface Mount TO-252AA"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "IRFR3410TRPBF"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "onsemi"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.465"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "TO-252"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C3016"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "yes"
-			(at 105.41 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4bd7ceb6-f6ef-40cf-bdb3-aa8e54016616")
-		)
-		(pin "2"
-			(uuid "2b748394-538a-445b-985c-da1ee88955ef")
-		)
-		(pin "3"
-			(uuid "75fe5f72-6789-487f-9b4a-54768150b40a")
-		)
-		(instances
-			(project "chicker"
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -17351,9 +17152,9 @@
 		(at 99.06 128.27 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ddff4c64-eee8-44bc-b15e-7315b9c10e97")
 		(property "Reference" "C9"
@@ -17563,6 +17364,15 @@
 			)
 		)
 		(property "LCSC" "C84289"
+			(at 76.2 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
 			(at 76.2 58.42 0)
 			(effects
 				(font
@@ -17828,6 +17638,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -17955,6 +17766,130 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "C39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:D_MUR860J_alternate")
+		(at 133.35 107.95 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eef9fe2f-71e4-4c39-95e4-b90185ef1943")
+		(property "Reference" "D11"
+			(at 135.89 106.3624 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MUR860J_alternate"
+			(at 135.89 108.9024 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:D_SMC"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ES8J"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LGE"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.1641"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMC"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2940143"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "251f423d-8efb-4964-8a96-c84370fa24ef")
+		)
+		(pin "1"
+			(uuid "af75c1cf-b21b-49b1-ad58-99841423c34d")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -18209,17 +18144,17 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:SMCJ15A")
-		(at 113.03 128.27 270)
+		(lib_id "bots:D_SMCJ16A")
+		(at 101.6 177.8 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f4ebf364-2eec-423e-87f8-4ca2a6a33356")
-		(property "Reference" "D1"
-			(at 115.57 127 90)
+		(uuid "f3b208e6-ae0a-464d-87ff-6e57f8601462")
+		(property "Reference" "D10"
+			(at 105.41 175.6342 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18227,8 +18162,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SMCJ15A"
-			(at 115.57 129.54 90)
+		(property "Value" "SMCJ16A"
+			(at 105.41 178.1742 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18237,7 +18172,7 @@
 			)
 		)
 		(property "Footprint" "bots:D_SMC"
-			(at 113.03 128.27 0)
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18246,7 +18181,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 128.27 0)
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18254,8 +18189,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "23.2V Clamp 64.7A Ipp Tvs Diode Surface Mount DO-214AB (SMCJ)"
-			(at 113.03 128.27 0)
+		(property "Description" "TVS Surge Protection"
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18263,8 +18198,8 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SMCJ15A"
-			(at 113.03 128.27 0)
+		(property "MPN" "SMCJ16A"
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18272,8 +18207,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Littelfuse"
-			(at 113.03 128.27 0)
+		(property "Manufacturer" " RUILON(Shenzhen Ruilongyuan Elec)"
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18281,8 +18216,8 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "0.59"
-			(at 113.03 128.27 0)
+		(property "Price" "0.3092"
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18291,7 +18226,7 @@
 			)
 		)
 		(property "JLC" "SMC(DO-214AB)"
-			(at 113.03 128.27 0)
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18299,8 +18234,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C438099"
-			(at 113.03 128.27 0)
+		(property "LCSC" "C10249"
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18309,7 +18244,7 @@
 			)
 		)
 		(property "JLC Extended" "yes"
-			(at 113.03 128.27 90)
+			(at 101.6 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18317,16 +18252,16 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "e0edc92a-a49a-4353-bd4c-abc1538cd062")
-		)
 		(pin "2"
-			(uuid "2b8789a5-9111-4f16-9deb-9445371e8f7e")
+			(uuid "91246a23-245f-4447-b715-63654a4f4802")
+		)
+		(pin "1"
+			(uuid "cc478c80-5e7b-4d61-89f7-34da472acba3")
 		)
 		(instances
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "D1")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -18337,7 +18272,7 @@
 		(at 130.81 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18514,6 +18449,130 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "TP20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:D_SMCJ16A")
+		(at 113.03 128.27 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff3b5dfa-9a7c-419d-8893-c322a9d8d4e3")
+		(property "Reference" "D1"
+			(at 116.84 126.1042 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMCJ16A"
+			(at 116.84 128.6442 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:D_SMC"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TVS Surge Protection"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SMCJ16A"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" " RUILON(Shenzhen Ruilongyuan Elec)"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.3092"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "SMC(DO-214AB)"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C10249"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "yes"
+			(at 113.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8235248b-d5a6-4f17-a20a-d4d7f197efc6")
+		)
+		(pin "1"
+			(uuid "7d1a7ac2-0ff4-402a-bf05-e0c6acb961de")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "D1")
 					(unit 1)
 				)
 			)

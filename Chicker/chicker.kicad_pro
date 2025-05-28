@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.254
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -58,7 +58,160 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "clearance|67843400|43875408|f5f82aaa-6e41-45ed-9f8a-bd04a5f475a8|f92b6584-e3c5-4f00-ae9e-c4c392b0de6f",
+          ""
+        ],
+        [
+          "clearance|68199000|42721362|1a3ba606-ca9a-4dc4-8c6c-3e9d8668e7fc|cc175b7f-4298-46e3-b7a9-37174e0fabe0",
+          ""
+        ],
+        [
+          "clearance|68199000|42721362|b618f90e-cff8-43a5-862a-570e609476a5|cc175b7f-4298-46e3-b7a9-37174e0fabe0",
+          ""
+        ],
+        [
+          "clearance|68199000|43875408|1a3ba606-ca9a-4dc4-8c6c-3e9d8668e7fc|7b8e0254-bcb3-48ec-8fd2-6fb371649a0f",
+          ""
+        ],
+        [
+          "clearance|68344344|44523648|7b8e0254-bcb3-48ec-8fd2-6fb371649a0f|f92b6584-e3c5-4f00-ae9e-c4c392b0de6f",
+          ""
+        ],
+        [
+          "clearance|68595792|44272200|0318c559-c7aa-4adf-b068-ecff35ad3b90|7b8e0254-bcb3-48ec-8fd2-6fb371649a0f",
+          ""
+        ],
+        [
+          "clearance|68595792|44627800|d22defb5-65a9-4a5b-b17b-de94eff83baf|f92b6584-e3c5-4f00-ae9e-c4c392b0de6f",
+          ""
+        ],
+        [
+          "clearance|68910200|44964593|66b8691d-c25b-40e8-b9ed-8fdfb5df4c07|c0901ee2-f3ac-43d9-94a5-ad8ae562a821",
+          ""
+        ],
+        [
+          "clearance|68910200|48271000|619ecd66-4052-4343-8772-4baac17f6bb8|fafefda3-6bfe-4844-accb-8976ded7159e",
+          ""
+        ],
+        [
+          "clearance|68910200|48670682|619ecd66-4052-4343-8772-4baac17f6bb8|8beb0d74-80d5-47e7-91ae-ea9c38feb4f8",
+          ""
+        ],
+        [
+          "clearance|69014352|44713145|5ec7fcc8-1a2b-4d37-b9a7-902974ef995d|657d732e-0c10-4170-a7be-fbe061dcd1ea",
+          ""
+        ],
+        [
+          "clearance|69014352|48922130|4209dd83-5fcd-4c54-928b-ccd60089caa9|8ec708a0-5790-4060-a1aa-7b96e33fffed",
+          ""
+        ],
+        [
+          "clearance|69265800|45251800|3120f067-7d4f-4c19-8c93-fc0e71989af8|66b8691d-c25b-40e8-b9ed-8fdfb5df4c07",
+          ""
+        ],
+        [
+          "clearance|69265800|45251800|3120f067-7d4f-4c19-8c93-fc0e71989af8|72b2a121-7286-4ab8-af18-a747358c7908",
+          ""
+        ],
+        [
+          "clearance|69265800|48271000|8ec708a0-5790-4060-a1aa-7b96e33fffed|f0d48218-6a53-482a-aae4-1c5edb643c76",
+          ""
+        ],
+        [
+          "clearance|69330247|49238025|4209dd83-5fcd-4c54-928b-ccd60089caa9|9e60e654-5c8c-4b55-9322-f3dd60f62834",
+          ""
+        ],
+        [
+          "clearance|69581695|48986577|8beb0d74-80d5-47e7-91ae-ea9c38feb4f8|e5d81d29-7719-41c5-b9ba-a6cf7a7cde32",
+          ""
+        ],
+        [
+          "clearance|69713824|44013673|28173a91-3d48-425c-8efb-a92caa5d78f3|62072f6a-f1ee-48cf-89d8-ffd5a07d9f85",
+          ""
+        ],
+        [
+          "clearance|69713824|44013673|5ec7fcc8-1a2b-4d37-b9a7-902974ef995d|66899928-1bdd-4d12-9fe0-03160b4f6eee",
+          ""
+        ],
+        [
+          "clearance|69713824|44013673|5ec7fcc8-1a2b-4d37-b9a7-902974ef995d|c0901ee2-f3ac-43d9-94a5-ad8ae562a821",
+          ""
+        ],
+        [
+          "clearance|69713824|44013673|63518336-9d54-44cc-975c-9c3ce6a1a088|bc5a2b6e-57a2-4f82-8ea9-64a7c6282338",
+          ""
+        ],
+        [
+          "clearance|69962443|44016502|0418b54c-fe87-446a-a0f3-c09df79af1a3|eb3fd34c-426a-4d4a-b1c4-8e8b39d05635",
+          ""
+        ],
+        [
+          "clearance|69965272|44265121|62072f6a-f1ee-48cf-89d8-ffd5a07d9f85|63518336-9d54-44cc-975c-9c3ce6a1a088",
+          ""
+        ],
+        [
+          "clearance|69965272|44265121|66899928-1bdd-4d12-9fe0-03160b4f6eee|b8d0b65a-f17a-407c-9b10-a13eece21dc9",
+          ""
+        ],
+        [
+          "clearance|70248929|49342177|62f1573c-98f0-47f1-b417-cb2ebe311ba7|9e60e654-5c8c-4b55-9322-f3dd60f62834",
+          ""
+        ],
+        [
+          "clearance|70248929|49342177|62f1573c-98f0-47f1-b417-cb2ebe311ba7|a706f66a-788f-4bea-9002-6bd22fda4e30",
+          ""
+        ],
+        [
+          "clearance|70436752|42392600|57b8b674-077c-44e3-bc42-1596ba33da11|f07e98c8-c428-484f-b37d-e6a67f07b68f",
+          ""
+        ],
+        [
+          "clearance|70500377|49090729|a706f66a-788f-4bea-9002-6bd22fda4e30|e5d81d29-7719-41c5-b9ba-a6cf7a7cde32",
+          ""
+        ],
+        [
+          "clearance|70688200|42288448|76fe4c91-e64c-42bb-bf90-d1b631edc29e|da8ef804-be9b-411b-bfbb-2bd21f30c93b",
+          ""
+        ],
+        [
+          "clearance|70688200|42288448|76fe4c91-e64c-42bb-bf90-d1b631edc29e|f07e98c8-c428-484f-b37d-e6a67f07b68f",
+          ""
+        ],
+        [
+          "clearance|70714885|41042183|1e88ff9b-e145-4100-8456-7ac7629df69e|734d262e-2f4c-4d5e-9bbc-bdb0bd425198",
+          ""
+        ],
+        [
+          "clearance|70714885|41042183|1e88ff9b-e145-4100-8456-7ac7629df69e|bbc1ab66-af90-4de8-9f6a-8b0198f34ce3",
+          ""
+        ],
+        [
+          "clearance|70714885|41042183|5864a3ed-2539-447f-809f-a25e2305a892|734d262e-2f4c-4d5e-9bbc-bdb0bd425198",
+          ""
+        ],
+        [
+          "clearance|70714885|41389781|0aad7db2-b3bf-4aba-bc2b-4a539473706d|80f8107b-b1ca-4dde-b3e2-ac9fdb52a8ab",
+          ""
+        ],
+        [
+          "clearance|70714885|41389781|0aad7db2-b3bf-4aba-bc2b-4a539473706d|e0172963-2fc8-4012-a99a-49abe7766dfa",
+          ""
+        ],
+        [
+          "clearance|70714885|41758867|251bb16d-8eb8-4c9b-9ad3-9738d26a2147|76fe4c91-e64c-42bb-bf90-d1b631edc29e",
+          ""
+        ],
+        [
+          "clearance|70892686|41215982|02d883ae-b262-48d3-89fe-a61ec17b4597|28a38359-96d3-4c39-bfff-72f5ba591447",
+          ""
+        ],
+        [
+          "clearance|71070487|41758867|80f8107b-b1ca-4dde-b3e2-ac9fdb52a8ab|f07e98c8-c428-484f-b37d-e6a67f07b68f",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -132,7 +285,7 @@
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7874,
         "min_text_thickness": 0.08,
@@ -541,7 +694,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2032,
+        "clearance": 0.254,
         "diff_pair_gap": 3.81,
         "diff_pair_width": 0.1524,
         "line_style": 0,
