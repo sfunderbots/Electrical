@@ -1225,6 +1225,199 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "bots:C_0.17u"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "0.17u"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "bots:C_0603_1608Metric"
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CC0603KRX7R9BB104"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "YAGEO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.0021"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C14663"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0.17u_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_0.17u_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:C_0.1u"
 			(pin_numbers
 				(hide yes)
@@ -8743,7 +8936,7 @@
 		)
 		(uuid "f80bc0ce-2d0c-463b-8ca7-29633030f8bf")
 	)
-	(text_box "RCD snubber Calculation: https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/Design-Guidelines-for-RCD-Snubber-of-Flyback-Converters_2D00_Fairchild-AN4147.pdf\n\nDA2034 Leakage inductance: 0.25uH + trace inductance ~= 0.4uH\nVsn should be 2-2.5 x of nVo-> 24V. Vsn = 60\nts = Llk/(Vsn-nVo)*ipk_pri = 0.25uH/(60V - 24V)*9A = 0.0625us\nfs is 100kHz to 300kHz in open loop - from figure 3 fs is 7us, 143kHz\nPsn = Vsn* (ipk *ts)/2 *fs = 60V*(9A*0.0625us)/2*143kHz = 2.4W\nRsn = Vsn^2/Psn = 60V^2/2.4W = 1492ohms\nmax ripple delta Vsn = Vsn/(Csn*Rsn*fs) = should be 5-10%\nCsn = Vsn/(deltaVsn*Rsn*fs)= 60V/(5%*60V*1492*143k) = 0.094uF = 94nF\n"
+	(text_box "RCD snubber Calculation: https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/Design-Guidelines-for-RCD-Snubber-of-Flyback-Converters_2D00_Fairchild-AN4147.pdf\n\nDA2034 Leakage inductance: 0.25uH + trace inductance ~= 0.4uH\nVsn should be 2-2.5 x of nVo-> Vo is max like 208V ish. 20.8V. Vsn = 41.6. Should I choose 50V?\nnVo is reflected output voltage. so that would be 24V ish\nts = Llk/(Vsn-nVo)*ipk_pri = 0.25uH/(42V - 21V)*9A = 0.107us\nfs is 100kHz to 300kHz in open loop - from figure 3 fs is 7us, 143kHz\nPsn = Vsn* (ipk *ts)/2 *fs = 42V*(9A*0.107us)/2*143kHz = 2.896W\nRsn = Vsn^2/Psn = 42V^2/2.896W = 621ohms\nmax ripple delta Vsn = Vsn/(Csn*Rsn*fs) = should be 5-10%\nCsn = Vsn/(deltaVsn*Rsn*fs)= 42V/(5%*42V*621*143k) = 0.225uF = 225nF\n\nor if i do 2.5. => 52 = Vsn => Rsn = 1129ohms > Psn = 2.4W\noooh... i have an 820ohm resistor 3W. so this could be perfect in between\nVsn = 46.25V. Not bad. we chose 2.245. Psn = Vsn^2/Rsn = 2.608W => Csn = 0.171uF = 171nF"
 		(exclude_from_sim no)
 		(at 133.35 54.61 0)
 		(size 74.93 25.4)
@@ -11854,6 +12047,130 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:C_0.17u")
+		(at 113.03 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27883fca-4d56-489f-a82d-259d0cde8a80")
+		(property "Reference" "C27"
+			(at 116.84 39.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.17u"
+			(at 116.84 41.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:C_0603_1608Metric"
+			(at 113.9952 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0021"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 113.03 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a01b451-0ab8-4a29-bf04-a6aa6943f1ba")
+		)
+		(pin "2"
+			(uuid "be58a857-afd2-4b0a-8dbd-ceda88db10a0")
+		)
+		(instances
+			(project ""
+				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "bots:C_1000u_POL_reversed")
 		(at 204.47 36.83 0)
 		(unit 1)
@@ -12218,129 +12535,6 @@
 			(project "chicker"
 				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
 					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:C_0.1u")
-		(at 113.03 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "43a94c98-b114-4cac-9014-344c79cd241f")
-		(property "Reference" "C27"
-			(at 115.316 38.354 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1u"
-			(at 115.824 41.148 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "bots:C_0603_1608Metric"
-			(at 113.9952 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "CC0603KRX7R9BB104"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Price" "0.0021"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC" "0603"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C14663"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLC Extended" "no"
-			(at 113.03 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1a91b613-b722-4645-b723-7a816b4df0a9")
-		)
-		(pin "1"
-			(uuid "b26d8780-7eda-416b-85ff-6b065565d89f")
-		)
-		(instances
-			(project ""
-				(path "/1a9ce3e8-a091-496c-9c5f-e7b2eb60e275/aa68550e-c35d-4fef-b4e5-f1eb6225215f"
-					(reference "C27")
 					(unit 1)
 				)
 			)

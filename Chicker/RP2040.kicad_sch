@@ -16617,7 +16617,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b31dad95-1572-4f2a-8570-5db521b4eb23")
+		(uuid "b31dad95-1572-4f2a-8570-5db521b4eb24")
 		(property "Reference" "R20"
 			(at 248.412 78.74 90)
 			(effects
@@ -16716,10 +16716,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "24b6fa22-4160-4b60-94db-e2d90b0aec5d")
+			(uuid "24b6fa22-4160-4b60-94db-e2d90b0aec5e")
 		)
 		(pin "2"
-			(uuid "75e45beb-ee16-4047-9178-6dd08f6d9422")
+			(uuid "75e45beb-ee16-4047-9178-6dd08f6d9423")
 		)
 		(instances
 			(project ""

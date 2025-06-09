@@ -5,19 +5,20 @@ import math
 import utime
 import random
 from battery import Voltages
+from high_voltage import SenseHV
 import sys, select
 import pulses
-import MCP2515
+#import MCP2515
 
 
 DONE = Pin(4, Pin.IN)
-#SHELL_OFF = Pin(9, Pin.IN)
-#BREAKBEAM = Pin(23, Pin.IN)
+SHELL_OFF = Pin(9, Pin.IN)
+BREAKBEAM = Pin(23, Pin.IN)
 
 CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
-#NOT_DISCHARGE = Pin(8, Pin.OUT)
+NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
 INT = Pin(20, Pin.IN)
@@ -26,6 +27,7 @@ INT = Pin(20, Pin.IN)
 prev_time_int = 0
 prev_time_can = 0
 prev_time_volt = 0
+prev_time_HV = 0
 prev_time_start_chg = 0
 prev_time_wait_charge_vcc = 0
 prev_sim_time = 0
@@ -54,6 +56,7 @@ delay_time_us = 0
 delay_time_us_temp = 0
 kick_cooldown = 1
 kick_delayed = 0
+HV_voltage = 0
 
 offset = 1000_000
 data_rec = 0
@@ -63,15 +66,16 @@ startup_chg_2sdelay = 0
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
 pulses = pulses.Pulses(None, KICK, 1_000_000)
 
+NOT_DISCHARGE.value(1)
 while True:
     #Read Inputs:
     current_time = utime.ticks_ms()
     #current_ustime = utime.ticks_us()
     
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state = DONE.value() #done_sim #DONE.value()#
+    done_state = DONE.value()  #DONE.value()#done_sim # 
     CHARGE.value(charge)
-    
+    #print(charge_disable)
     
     
 
@@ -168,6 +172,7 @@ while True:
         prev_time_int = current_time
         prev_time_can = current_time
         prev_time_volt = current_time
+        prev_time_HV = current_time
         prev_time_start_chg = current_time
         prev_time_wait_charge_vcc = current_time
         prev_sim_time = current_time
@@ -179,6 +184,7 @@ while True:
         prev_kick_time = current_time
         startup_time = current_time
         charge_ok = Voltages(charge_ok, startup) #
+        HV_voltage = SenseHV()
         pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
@@ -294,9 +300,9 @@ while True:
                 else :
                     charge_disable = 1
                     prev_time_charge_disabled = current_time
-                    if (safe_charge == 1):
-                        print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
-                    else :   
+                    if (safe_charge == 0):
+                        #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
+                    #else :   
                         print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
                         print("Retrying in 30 seconds")
             
@@ -360,18 +366,18 @@ while True:
         charge_started = 0 # reset charge_started to zero for the next charge cycle
         charge_toggle_wait = 0
         check_5s_done = 0
-        # check flyback again in 30 seconds by reasserting the charge_disable variable'
+        # check flyback again in 5 seconds by reasserting the charge_disable variable'
         if (safe_charge == 1):
             charge_disable = 1
         '''
         else :
             if (charge_disable == 1):
                 if (current_time - prev_time_countdown >= 1000):
-                    print("...",int((30000 - (current_time - prev_time_charge_disabled))/1000), "...")
+                    print("...",int((5000 - (current_time - prev_time_charge_disabled))/1000), "...")
                     prev_time_countdown = current_time
-                if (current_time - prev_time_charge_disabled >= 30000):
+                if (current_time - prev_time_charge_disabled >= 5000):
                     charge_disable = 0
-        '''    
+        '''   
         # maybe add checks on how to enable it after this point?? 
     # check voltages every 2 seconds
     if(current_time - prev_time_volt >= 2000):
@@ -387,3 +393,8 @@ while True:
         
         #print("CHARGE OK:", charge_ok)
         #print("Charge toggle wait", charge_toggle_wait)
+    
+    #check high voltage every 50 milliseconds
+    if (current_time - prev_time_HV >= 50):
+        HV_voltage = SenseHV()
+        prev_time_HV = current_time
