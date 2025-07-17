@@ -5,7 +5,7 @@ import math
 import utime
 import random
 from battery import Voltages
-from high_voltage import SenseHV
+#from high_voltage import SenseHV
 import sys, select
 import pulses
 
@@ -121,7 +121,7 @@ def run_setup() :
     prev_cycle_damp = utime.ticks_us()
     prev_time_startDAMP = utime.ticks_us()
     charge_ok = Voltages(charge_ok, startup) #
-    {HV_voltage,HV_scaling} = SenseHV()
+    #{HV_voltage,HV_scaling} = SenseHV()
     pattern=(8, 8, 8)
     start=0
     ar = array("L", pattern)
@@ -141,7 +141,6 @@ def run_setup() :
 
 def idle():
     # Idle mode keeps HV discharged and stops charging.
-    charge_stop = 1
     NOT_DISCHARGE.value(0)
 
 
@@ -149,7 +148,6 @@ def kick(pulse_width):
     if can_rx_time is not None and (current_time - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
 
-    charge_stop = 0
     NOT_DISCHARGE.value(1)
 
     if (data_rec == 0 and kick_cooldown == 0):
@@ -163,7 +161,7 @@ def kick(pulse_width):
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
 
-            {HV_voltage, HV_scaling} = SenseHV()
+            #{HV_voltage, HV_scaling} = SenseHV()
             # HV Pulse width adjustment
             pulse_width_adjusted = HV_scaling * pulse_width
             delay_time_us_temp = pulse_width_adjusted
@@ -212,9 +210,7 @@ def kick(pulse_width):
 def damp(damp_freq, damp_duty, damp_timeout):
     # NEED TO IMPLEMENT A MICROSECOND TIMER OR THIS WILL NOT WORK!
     # utime.ticks_us() works!
-
     prev_time_damp = current_time
-    charge_stop = 1
     NOT_DISCHARGE.value(1)
 
     # Initial Kick (to put plunger out)
@@ -403,8 +399,8 @@ while True:
                 else:
                     stored_prekick_can_data = can_data
                     new_can_data_bool = True
-                can_rx_time = utime.ticks_ms()
-                print("COMMAND RECEIVED")
+            can_rx_time = utime.ticks_ms()
+            print("COMMAND RECEIVED")
 
     # BYTE 0             = MODE
     #
@@ -415,17 +411,21 @@ while True:
     # Mode Select (Idle, Kick, Damp)
     if mode == MODE_IDLE :
         # do idle. HV discharged, stops charging.
+        charge_stop = 1
         idle()
     elif mode == MODE_AUTOKICK :
         # do kick mode. Ready to receive a kick command. High Voltage is Charged
+        charge_stop = 0
         kick()
     elif mode == MODE_DAMP :
         # do damping mode. pulse the kicker to receive a pass and transfer energy. Happens only once and exits.
+        charge_stop = 1
         damp(pulse_freq, duty, 5000)
         # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
         charge_stop = 0
     elif mode == MODE_DISCHARGE :
         # discharge the HV using 7Hz pulses (using the same damping feature)
+        charge_stop = 1
         damp(7,10,1500)
     else :
         # unknown command
@@ -460,52 +460,6 @@ while True:
         # check flyback again in 5 seconds by reasserting the charge_disable variable'
         if (safe_charge == 1):
             charge_disable = 1
-        '''
-        else :
-            if (charge_disable == 1):
-                if (current_time - prev_time_countdown >= 1000):
-                    print("...",int((5000 - (current_time - prev_time_charge_disabled))/1000), "...")
-                    prev_time_countdown = current_time
-                if (current_time - prev_time_charge_disabled >= 5000):
-                    charge_disable = 0
-        '''   
-        # maybe add checks on how to enable it after this point?? 
-    # check voltages every 2 seconds
-    if(current_time - prev_time_volt >= 2000):
-        charge_ok = Voltages(charge, startup) #charge_ok_sim
-        prev_time_volt = current_time
-        # enable disable timer
-        if (charge_ok == 0):
-            print("Charging Disabled, Battery Unplugged")
-        
-        
-        #else:
-            #print("VCC OK")
-        
-        #print("CHARGE OK:", charge_ok)
-        #print("Charge toggle wait", charge_toggle_wait)
     
     #check high voltage constantly to be able to adjust kick power.
-    {HV_voltage, HV_scaling} = SenseHV()
-
-
-    # toggle LEDs at different intervals
-    #CAN_LED.value(charge)
-    #INT_LED.value(data_rec)
-    
-    #if (current_time - prev_time_can >= 50):
-     #   print(startup_cycle)
-     #   prev_time_can = current_time
-    '''
-    if (current_time - prev_time_can >= 200):
-        if (delay_time_us == 0):
-            #delay_time_us_temp = 2 # 1000 is 100us, 100 is 10us, very accurate, 10 is 1us, also pretty accurate
-            delay_time_us = 210#int(delay_time_us_temp*20.0) -> 100us = 111us
-            #50us = 62us
-            #12us = 14us (very weird triangular signal tho)
-            #print("delay set to 5000 us")
-        else:
-            delay_time_us = 0
-            #print("delay reset")
-        prev_time_can = current_time
-    '''
+    #{HV_voltage, HV_scaling} = SenseHV()
