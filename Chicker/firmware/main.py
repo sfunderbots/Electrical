@@ -1,7 +1,6 @@
 from machine import Pin, ADC
 from array import array
 import math
-import utime
 import random
 from battery import Voltages
 #from high_voltage import SenseHV
@@ -57,8 +56,6 @@ prev_pulse_time = 0
 prev_kick_time = 0
 prev_time_damp = 0
 prev_cycle_damp = 0
-prev_time_data = 0
-prev_time_test = 0
 charge_ok = 0
 prev_charge_ok = 0
 startup = 0
@@ -200,7 +197,6 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     # implement a delay here of duty off time.
     # keep damping until preset timetimeout or HV discharged
     while (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10) :
-        
         if (utime.ticks_us() - prev_time_damp*1000 > DAMP_INITIAL_PULSEWIDTH):
             if (utime.ticks_us() - prev_cycle_damp < damp_off_time) :
                 # turn off kicker
@@ -215,6 +211,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             else:
                 print("something broken")
     KICK.value(0)
+    mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
     #CAN_LED.off()
 
 # Interrupt handler
@@ -235,7 +232,7 @@ BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handle
 pulses = pulses.Pulses(None, KICK, 1_000_000)
 
 while True:
-        
+    '''
     ###############################################
     #simulation values (correct ones)
     # rising edge of charge pin
@@ -252,25 +249,30 @@ while True:
         prev_sim_time = 0
         
     prev_charge = charge
-
+    '''
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state = done_sim #DONE.value() # doneSIM 
+    done_state = DONE.value() # done_sim
     CHARGE.value(charge)
     #print(charge_disable)
     
-    '''
+    
     can_data = None
     
     while can.checkReceive():
         what, can_data = can.recv()
-        if (hex(can_data.can_id) == "0x2aa"):
+
+        if hex(can_data.can_id) != "0x2aa":
             if len(can_data) < 4:
-                print("Invalid message length.")
-            else :
+                print("Invalid CAN message length.")
+            else:
                 mode = can_data[0]
                 pulse_freq = int.from_bytes(can_data[1:3], 'little')
                 duty = can_data[3]
-            
+
+                # Clamp unconditionally
+                pulse_freq = max(1, min(pulse_freq, 50000))
+                duty = max(1, min(duty, 99))
+
                 if (mode == MODE_AUTOKICK):
                     # If the breakbeam is already broken, kick immediately
                     if BREAKBEAM.value() == 0:
@@ -281,7 +283,9 @@ while True:
                         new_can_data_bool = True
                     can_rx_time = utime.ticks_ms()
                     print("KICK COMMAND RECEIVED")
-    '''
+                print("COMMAND RECEIVED")
+    
+ 
     # BYTE 0             = MODE
     #
     # BYTE 1-2 IN MODE 1 = PULSE WIDTH 
@@ -340,8 +344,6 @@ while True:
         startup_time = utime.ticks_ms()
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
-        prev_time_data = utime.ticks_ms()
-        prev_time_test = utime.ticks_ms()
         charge_ok = Voltages(charge_ok, startup) #
         #{HV_voltage,HV_scaling} = SenseHV()
         pattern=(8, 8, 8)
@@ -374,7 +376,7 @@ while True:
                 # set wait to toggle charge pin
                 charge_toggle_wait = 0
                 #print(utime.ticks_ms()/1000, done_state)
-                print("charge toggle started on VBAT received after delay")
+                print("charge toggle reset to zero on VBAT received after delay")
                 #startup_cycle = 1
                 prev_time_start_chg = utime.ticks_ms()
                 startup_vcc_wait = 0
@@ -488,27 +490,10 @@ while True:
     
     #check high voltage constantly to be able to adjust kick power.
     #{HV_voltage, HV_scaling} = SenseHV()
-    #if (utime.ticks_ms() - prev_time_test >= 500):
-    #    print(prev_time_damp)
-    #    print(utime.ticks_ms())
-    #    prev_time_test = utime.ticks_ms()
+
         
-
-
-    if (mode == 1 and utime.ticks_ms() - prev_time_data >= 2500 and utime.ticks_ms() - prev_time_data <=2502):
-        data = pulse_freq
-        #print(data)
     # check voltages every 2 seconds
     if(utime.ticks_ms() - prev_time_volt >= 8000):
-        prev_time_data = utime.ticks_ms()
-        #if (mode + 1 == 3):
-        #    mode == 0
-        #else : 
-        #    mode = mode + 1
-        mode = 2
-        pulse_freq = 1
-        duty = 70
-        
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
         # enable disable timer
