@@ -18,9 +18,9 @@ def SenseHV():
     # Need to pulse longer (theoretically) to achieve same result to m/s
     # pulse width_new = pulse_width * 206/ HV_voltage (this is approximate)
 
-    if (HV_voltage < 150) # check if it is way out of bounds
+    if (HV_voltage < 150): # check if it is way out of bounds
         HV_scaling = 1
-    else
+    else:
         HV_scaling = 206.0 / HV_voltage
     return {HV_voltage, HV_scaling}
     

@@ -62,6 +62,6 @@ def Voltages(charge_ok, startup):
     print("Battery: ", battery_voltage, "V")
     #print("HV: ", HV_voltage, "V")
     
-    #charge_ok = 1
+    charge_ok = 1
     return charge_ok
     
