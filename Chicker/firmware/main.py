@@ -142,7 +142,7 @@ while True:
             pulse_width = int(data.data[1]) | int(data.data[0]) << 8
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
-            delay_time_us_temp = pulse_width*HV_Scaling
+            delay_time_us_temp = pulse_width
             # CAN_LED.value(0)
 
             if (delay_time_us_temp > 5000) :
@@ -409,8 +409,9 @@ while True:
         
         #print("CHARGE OK:", charge_ok)
         #print("Charge toggle wait", charge_toggle_wait)
-    
+    '''
     #check high voltage every 50 milliseconds
     if (current_time - prev_time_HV >= 50):
         {HV_voltage, HV_Scaling} = SenseHV()
         prev_time_HV = current_time
+    '''
