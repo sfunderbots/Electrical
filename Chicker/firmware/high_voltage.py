@@ -21,5 +21,5 @@ def SenseHV():
     if (HV_voltage < 150) # check if it is way out of bounds
         HV_scaling = 1
     else:
-        HV_scaling = 206.0 / HV_voltage
+        HV_scaling = 206.0 / HV_voltage # max of 1.3725 (capped to min of 150 but this should never happen unless its trying to kick right again. Theoretically fine to at 150)
     return {HV_voltage, HV_scaling}

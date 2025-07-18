@@ -94,10 +94,10 @@ delay_time_us_temp = 0
 kick_cooldown = 1
 kick_delayed = 0
 HV_voltage = 0
+HV_Scaling = 0
 
 offset = 1000_000
 data_rec = 0
-
 
 startup_chg_2sdelay = 0
 
@@ -142,7 +142,7 @@ while True:
             pulse_width = int(data.data[1]) | int(data.data[0]) << 8
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
-            delay_time_us_temp = pulse_width
+            delay_time_us_temp = pulse_width*HV_Scaling
             # CAN_LED.value(0)
 
             if (delay_time_us_temp > 5000) :
@@ -335,22 +335,22 @@ while True:
                     print("Safe Charge mode, Charge pin reset at 50V")
                     # set charge pin
             else :
-                if (current_time - prev_time_chg_wait >= 14950):
+                if (current_time - prev_time_chg_wait >= 3000):
                     charge_started = 0 # reset charge_started to zero for the next charge cycle
                     charge = 0
                     charge_toggle_wait = 0
                     check_5s_done = 0
                     #print(current_time/1000, done_state)
-                    print("charge toggle (15s waited)")
+                    print("charge toggle (3s waited)")
                     # set charge pin
                 # charge toggle wait is 1, charge_started should be 1 unless its an error    
                 # check after 5 seconds if the done signal actually goes low after being high for charging
-                elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 5000):
+                elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 2500):
                     check_5s_done = 1
                     if(done_state == 0):
                         #good
                         charge_disable = 0
-                        print("DONE is low after 5s, assuming normal operation")
+                        print("DONE is low after 2.5s, assuming normal operation")
                     else :
                         # not good, done does not go low, implying not charging properly
                         charge_disable = 1
@@ -412,5 +412,5 @@ while True:
     
     #check high voltage every 50 milliseconds
     if (current_time - prev_time_HV >= 50):
-        HV_voltage = SenseHV()
+        {HV_voltage, HV_Scaling} = SenseHV()
         prev_time_HV = current_time
