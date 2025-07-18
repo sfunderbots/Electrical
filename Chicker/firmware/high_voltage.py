@@ -10,7 +10,7 @@ def SenseHV():
     # High Voltage Sense Detection
     HV_level_val = HV_SENSE.read_u16()
     HV_voltage_raw = HV_level_val * (3.3 / 65535.0) * ((13.0 + 990.0)/13.0)
-    HV_voltage = round(HV_voltage_raw,2)
+    HV_voltage = round(HV_voltage_raw,2);
 
     print("HV: ", HV_voltage, "V")
     
@@ -20,8 +20,6 @@ def SenseHV():
 
     if (HV_voltage < 150) # check if it is way out of bounds
         HV_scaling = 1
-    else
+    else:
         HV_scaling = 206.0 / HV_voltage
     return {HV_voltage, HV_scaling}
-    
-
