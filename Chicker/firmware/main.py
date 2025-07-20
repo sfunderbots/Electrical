@@ -79,6 +79,7 @@ HV_voltage = 0
 data_rec = 0
 startup_chg_2sdelay = 0
 charge_stop = 1
+damping = 1
 
 idle_mode = 0
 kick_mode = 0
@@ -179,40 +180,48 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
     global prev_time_damp, start, ar, prev_time_test
 
-    # utime.ticks_us() works!
-    prev_time_damp = utime.ticks_ms()
-    damp_duty = damp_duty_percent / 100.0
-    NOT_DISCHARGE.value(1)
+    if (damping == 0):
+        damping = 1
+        # utime.ticks_us() works!
+        prev_time_damp = utime.ticks_ms()
+        damp_duty = damp_duty_percent / 100.0
+        NOT_DISCHARGE.value(1)
 
-    # Initial Kick (to put plunger out)
-    pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
-    start=0
-    ar = array("L", pattern)
-    pulses.put_pulses(ar,start)
-    damp_period = 1/damp_freq *1000_000 # needs to be in microseconds
-    damp_on_time = damp_period*damp_duty # microseconds
-    damp_off_time = damp_period - damp_on_time #microseconds
+        # Initial Kick (to put plunger out)
+        pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
+        start=0
+        ar = array("L", pattern)
+        pulses.put_pulses(ar,start)
+        damp_period = 1/damp_freq *1000_000 # needs to be in microseconds
+        damp_on_time = damp_period*damp_duty # microseconds
+        damp_off_time = damp_period - damp_on_time #microseconds
 
-    prev_cycle_damp = utime.ticks_us()
-    # implement a delay here of duty off time.
-    # keep damping until preset timetimeout or HV discharged
-    while (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10) :
-        if (utime.ticks_us() - prev_time_damp*1000 > DAMP_INITIAL_PULSEWIDTH):
-            if (utime.ticks_us() - prev_cycle_damp < damp_off_time) :
-                # turn off kicker
-                KICK.value(0)
-                #CAN_LED.off()
-                # 
-            elif (utime.ticks_us() - prev_cycle_damp < damp_period) :
-                # turn on kicker
-                KICK.value(1)
-                #CAN_LED.on()
-                prev_cycle_damp = utime.ticks_us()
-            else:
-                print("something broken")
-    KICK.value(0)
-    mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
-    #CAN_LED.off()
+        prev_cycle_damp = utime.ticks_us()
+    else:
+        #started a damping cycle
+    
+        # implement a delay here of duty off time.
+        # keep damping until preset timetimeout or HV discharged
+        if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
+            if (utime.ticks_us() - prev_time_damp*1000 > DAMP_INITIAL_PULSEWIDTH):
+                if (utime.ticks_us() - prev_cycle_damp < damp_off_time) :
+                    # turn off kicker
+                    KICK.value(0)
+                    #CAN_LED.off()
+                    # 
+                elif (utime.ticks_us() - prev_cycle_damp < damp_period) :
+                    # turn on kicker
+                    KICK.value(1)
+                    #CAN_LED.on()
+                    prev_cycle_damp = utime.ticks_us()
+                else:
+                    print("something broken")
+        else :
+            KICK.value(0)
+            mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
+            #CAN_LED.off()
+            # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
+            charge_stop = 0
 
 # Interrupt handler
 def breakbeam_handler(pin):
@@ -318,8 +327,6 @@ while True:
         print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
         charge_stop = 1
         damp(pulse_freq, duty, 5000)
-        # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
-        charge_stop = 0
     else :
         # unknown command
         print("unknown command")
