@@ -11,6 +11,7 @@ def Voltages(charge_ok, startup):
     BATT_LEVEL_val = BATT_LEVEL.read_u16() # read value, 0-65535 across voltage range 0.0v - 3.3v
     battery_voltage_raw = BATT_LEVEL_val * (3.3 / 65535.0) * ((200.0+940.0)/200.0)#((164.1 + 172.0)/164.1)
     battery_voltage = round(battery_voltage_raw,2)
+    
     #battery_voltage = round(battery_voltage_raw*1.05893540282*max(battery_voltage_raw * 1.0342 - 0.5339, 0), 2)
     # note this scale is relative to high level, low voltage is 2V is 2.45V (reading is higher) and 16.8V is 16.76V (reading is lower)
     #if (battery_voltage_raw < 1):
@@ -22,6 +23,7 @@ def Voltages(charge_ok, startup):
     ref_5V_raw = ref_5V_val *3.3 / 65535.0 * (35.0 + 24.2)/24.2 #(51.0+30.0)/30.0 (somehow this is backwkards and i have no idea why)
     net_5V = round(ref_5V_raw, 2)     #37865 * 3.3/ 65535 * 
     #
+    battery_voltage = battery_voltage / 15.7 * 16.76
     print(battery_voltage)
     if ( startup == 0):
         if (net_5V > 4.45) and (net_5V <= 4.70 ):
@@ -44,7 +46,7 @@ def Voltages(charge_ok, startup):
         charge_ok = 0
     elif (battery_voltage > 13.8) and (battery_voltage <= 14.7):
         #print("13.8V to 14.7V Batteries are below nominal, should replace soon")
-        charge_ok = 1
+        charge_ok = 0
     elif (battery_voltage > 14.7) and (battery_voltage <= 14.9):
         #print("14.7V to 14.9V Nominal Battery Voltage")
         charge_ok = 1
