@@ -528,7 +528,7 @@ while True:
                     print("Safe Charge mode, Charge pin reset at 50V")
                     # set charge pin
             else :
-                if (utime.ticks_ms() - prev_time_chg_wait >= 3000 and done_state == 1):
+                if (utime.ticks_ms() - prev_time_chg_wait >= 3000):
                     charge_started = 0 # reset charge_started to zero for the next charge cycle
                     charge = 0
                     charge_toggle_wait = 0
