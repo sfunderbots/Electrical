@@ -12,6 +12,7 @@ def Voltages(charge_ok, startup):
     battery_voltage_raw = BATT_LEVEL_val * (3.3 / 65535.0) * ((200.0+940.0)/200.0)#((164.1 + 172.0)/164.1)
     battery_voltage = round(battery_voltage_raw,2)
     
+    battery_voltage = battery_voltage / 15.7 * 16.76
     #battery_voltage = round(battery_voltage_raw*1.05893540282*max(battery_voltage_raw * 1.0342 - 0.5339, 0), 2)
     # note this scale is relative to high level, low voltage is 2V is 2.45V (reading is higher) and 16.8V is 16.76V (reading is lower)
     #if (battery_voltage_raw < 1):
@@ -23,7 +24,6 @@ def Voltages(charge_ok, startup):
     ref_5V_raw = ref_5V_val *3.3 / 65535.0 * (35.0 + 24.2)/24.2 #(51.0+30.0)/30.0 (somehow this is backwkards and i have no idea why)
     net_5V = round(ref_5V_raw, 2)     #37865 * 3.3/ 65535 * 
     #
-    battery_voltage = battery_voltage / 15.7 * 16.76
     print(battery_voltage)
     if ( startup == 0):
         if (net_5V > 4.45) and (net_5V <= 4.70 ):

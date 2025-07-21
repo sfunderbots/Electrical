@@ -89,6 +89,8 @@ damp_mode = 0
 disc_mode = 0
 charge_mode = 0
 
+idling = 0
+kicking = 0
 damping = 0
 charging = 0
 
@@ -125,23 +127,34 @@ class FakeCANData:
         return len(self.data)
 
 def idle():
+    global charge_stop, idling
     # Idle mode keeps HV discharged and stops charging.
-    NOT_DISCHARGE.value(0)
+    if (idling == 0):
+        idling = 1
+        charge_stop = 1
+        print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
+        NOT_DISCHARGE.value(0)
 
 
 def kick():
     #Global variables (FUCK ME...)
     global can_rx_time, new_can_data_bool, data, data_rec, kick_cooldown, delay_time_us_temp, delay_time_us
-    global charge_stop, pulse_freq, new_can_data_bool, pulse_width_adjusted, done_state
+    global charge_stop, kicking, pulse_freq, new_can_data_bool, pulse_width_adjusted, done_state
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay
    
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
 
+    if (kicking == 0):
+        kicking = 1
+        charge_stop = 0
+        NOT_DISCHARGE.value(1)
+
     if (data_rec == 0 and kick_cooldown == 0):
         if (data == None) :
             data_rec = 0
             delay_time_us_temp = 0
+            charge_stop = 0
         else:
             data_rec = 1
             charge_stop = 1
@@ -367,11 +380,6 @@ while True:
     # Mode Select (Idle, Kick, Damp)
     if mode == MODE_IDLE :
         # do idle. HV discharged, stops charging.
-        kick_mode = 0
-        if (idle_mode == 0):
-            print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
-            idle_mode = 1
-            charge_stop = 1
         idle()
     elif mode == MODE_AUTOKICK :
         idle_mode = 0
@@ -443,7 +451,6 @@ while True:
         
         startup_chg_2sdelay = 1
         startup = 1
-        charge_toggle_wait = 0
         
    # start a new charge cycle if the battery is plugged in
     if (startup_chg_2sdelay == 1): 
@@ -468,19 +475,16 @@ while True:
         startup_chg_2sdelay = 1
         startup = 1
         done_sim = 1
-        NOT_DISCHARGE.value(0)
         #startup_cycle = 0
 
-    if (charge_stop == 1 or charge_disable == 1):
-        NOT_DISCHARGE.value(0)
-    if (charge_ok == 1 and charge_stop == 0 and charge_disable == 0):
-        NOT_DISCHARGE.value(1)
+        
     '''Note,
 
     . Any fault conditions such as thermal shutdown or undervoltage lockout will also turn on the NPN.
         for the DONE pin, which means it will be high if there is a problem
     '''
     if (charge_ok == 1 and charge_disable == 0 and charge_stop == 0):
+        NOT_DISCHARGE.value(1)
         # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
         if (charge_toggle_wait == 0):
            # done will be 0 if either hasnt started charging, or has finished charging
@@ -571,6 +575,7 @@ while True:
         charge_started = 0 # reset charge_started to zero for the next charge cycle
         charge_toggle_wait = 0
         check_3s_done = 0
+        NOT_DISCHARGE.value(0)
         # check flyback again in 5 seconds by reasserting the charge_disable variable'
         if (safe_charge == 1):
             charge_disable = 1
