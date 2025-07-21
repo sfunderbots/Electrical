@@ -33,7 +33,7 @@ def Voltages(charge_ok, startup):
         elif (net_5V > 4.90) and (net_5V <= 5.20):
             print("WARNING!!!!: Series diodes for voltage switch has failed, check circuit!")
         else :
-            print("uh, guys, somethings really broken!!!! Seriously!")
+            print("dont worry, the 5V is actually probably not broken due to ADC but check maybe?")
       
     if (battery_voltage >  5.0) and (battery_voltage <= 12.8):
         #print("Batteries are Exceptionally low, damage is likely!!")

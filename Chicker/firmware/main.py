@@ -67,7 +67,8 @@ charge_toggle_wait = 0
 done_sim = 1
 prev_charge = 0
 charge = 0
-charge_disable = 0
+chg_disable_chip_level = 0
+chg_stop_mode_ctrl = 1
 charge_started = 0
 check_3s_done = 0
 charge_ok_sim = 0
@@ -77,9 +78,10 @@ delay_time_us_temp = 0
 kick_cooldown = 1
 kick_delayed = 0
 HV_voltage = 0
-data_rec = 0
+kick_data_rec = 0
 startup_chg_2sdelay = 0
-charge_stop = 1
+not_dischg = 0
+
 pulse_freq = 0
 duty = 1
 
@@ -127,37 +129,39 @@ class FakeCANData:
         return len(self.data)
 
 def idle():
-    global charge_stop, idling
+    global chg_stop_mode_ctrl, idling
     # Idle mode keeps HV discharged and stops charging.
     if (idling == 0):
         idling = 1
-        charge_stop = 1
+        chg_stop_mode_ctrl = 1
         print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
-        NOT_DISCHARGE.value(0)
+        not_dischg = 0
 
 
 def kick():
     #Global variables (FUCK ME...)
-    global can_rx_time, new_can_data_bool, data, data_rec, kick_cooldown, delay_time_us_temp, delay_time_us
-    global charge_stop, kicking, pulse_freq, new_can_data_bool, pulse_width_adjusted, done_state
-    global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay
+    global can_rx_time, new_can_data_bool, data, kick_data_rec, kick_cooldown, delay_time_us_temp, delay_time_us
+    global chg_stop_mode_ctrl, kicking, pulse_freq, new_can_data_bool, pulse_width_adjusted, done_state
+    global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
    
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
 
     if (kicking == 0):
         kicking = 1
-        charge_stop = 0
-        NOT_DISCHARGE.value(1)
+        chg_stop_mode_ctrl = 0
+        not_dischg = 1
+        charge_toggle_wait = 0
 
-    if (data_rec == 0 and kick_cooldown == 0):
+
+    if (kick_data_rec == 0 and kick_cooldown == 0):
         if (data == None) :
-            data_rec = 0
+            kick_data_rec = 0
             delay_time_us_temp = 0
-            charge_stop = 0
+            chg_stop_mode_ctrl = 0
         else:
-            data_rec = 1
-            charge_stop = 1
+            kick_data_rec = 1
+            chg_stop_mode_ctrl = 1
             pulse_width = pulse_freq
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
@@ -179,7 +183,7 @@ def kick():
         if (done_state == 0):
             prev_kick_time = utime.ticks_ms()
             delay_time_us = delay_time_us_temp
-            data_rec = 0
+            kick_data_rec = 0
             data = None
         # charging still, wait till charging stopped from charge STOP to kick.
         else:
@@ -201,21 +205,25 @@ def kick():
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
         kick_cooldown = 0
         delay_time_us = 0
-        charge_stop = 0
+        chg_stop_mode_ctrl = 0
 
 # damp_freq = freq in Hz (two bytes)
 # damp_duty_percent = duty cycle in percentage (integer)
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global prev_time_damp, start, ar, prev_time_test, damping, damp_off_time
+    global prev_time_damp, start, ar, damping, damp_off_time, mode, chg_stop_mode_ctrl
 
     if (damping == 0):
         damping = 1
+        print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
+        chg_stop_mode_ctrl = 1
+        not_dischg = 1
+
+
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         damp_duty = damp_duty_percent / 100.0
-        NOT_DISCHARGE.value(1)
 
         # Initial Kick (to put plunger out)
         pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
@@ -233,7 +241,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # implement a delay here of duty off time.
         # keep damping until preset timetimeout or HV discharged
         if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
-            if (utime.ticks_us() - prev_time_damp*1000 > DAMP_INITIAL_PULSEWIDTH):
+            if (utime.ticks_us() - prev_time_damp*1000 > DAMP_INITIAL_PULSEWIDTH): # in us?
                 if (utime.ticks_us() - prev_cycle_damp < damp_off_time) :
                     # turn off kicker
                     KICK.value(0)
@@ -251,8 +259,17 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
             #CAN_LED.off()
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
-            charge_stop = 0
+            chg_stop_mode_ctrl = 0
 
+def chg():
+    global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode
+    if (charging == 0):
+        print("CHARGING PREPARE MODE: HV STARTS CHARGING")
+        charging = 1
+        chg_stop_mode_ctrl = 0
+        charge_toggle_wait = 0
+    if (startup_time >= 4500 and startup_time < 4750):
+        mode = 1 # set to autokick mode after startup
 
 # Interrupt handler
 def breakbeam_handler(pin):
@@ -272,6 +289,7 @@ BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handle
 pulses = pulses.Pulses(None, KICK, 1_000_000)
 
 while True:
+
     # FAKE CAN RECEIVE USING USB #######################3
     if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
         line = sys.stdin.readline().strip()
@@ -337,6 +355,7 @@ while True:
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
     done_state = DONE.value() # done_sim
     CHARGE.value(charge)
+    NOT_DISCHARGE.value(not_dischg)
     #print(charge_disable)
     
     
@@ -370,6 +389,8 @@ while True:
                     print("KICK COMMAND RECEIVED")
                 print("COMMAND RECEIVED")
     '''
+
+
  
     # BYTE 0             = MODE
     #
@@ -382,39 +403,19 @@ while True:
         # do idle. HV discharged, stops charging.
         idle()
     elif mode == MODE_AUTOKICK :
-        idle_mode = 0
-        charge_mode = 0
-        damp_mode = 0
-        if (kick_mode == 0):
-            print("AUTOKICK MODE: HV CHARGED. READY TO RECEIVE KICK COMMAND")
-            kick_mode = 1
-            charge_stop = 0
-            charge_toggle_wait = 0
         # do kick mode. Ready to receive a kick command. High Voltage is Charged
         kick()
     elif mode == MODE_DAMP :
         # do damping mode. pulse the kicker to receive a pass and transfer energy. Happens only once and exits.
-        kick_mode = 0
-        idle_mode = 0
-        charge_mode = 0
-        if (damp_mode == 0):
-            print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
-            damp_mode = 1
-            charge_stop = 1
+        # pulse_width or 
         damp(pulse_freq, duty, 1000)
     elif mode == MODE_CHARGE :
-        kick_mode = 0
-        idle_mode = 0
-        damp_mode = 0
-        if (charge_mode == 0):
-            print("CHARGING PREPARE MODE: HV STARTS CHARGING")
-            charge_mode = 1
-            charge_stop = 0
-            charge_toggle_wait = 0
+        # setup charge mode, which charges caps but does not ready for a kick. Useful if you want to turn off autokick or prep a damping cycle but dont want to kick yet
+        chg()
     else :
         # unknown command
         print("unknown command")
-        pass
+        chg_stop_mode_ctrl = 1
     
     # do this only on startup
     if (startup == 0):
@@ -469,7 +470,7 @@ while True:
                 print("charge toggle reset to zero on VBAT received after delay")
                 prev_time_start_chg = utime.ticks_ms()
                 startup_vcc_wait = 0
-                startup_chg_2sdelay = 0
+                startup_chg_2sdelay = 0 #startup_chg_2sdelay will be 0 from 2s onwards after battery plugged in.
             
     if (charge_ok == 0):
         startup_chg_2sdelay = 1
@@ -483,8 +484,8 @@ while True:
     . Any fault conditions such as thermal shutdown or undervoltage lockout will also turn on the NPN.
         for the DONE pin, which means it will be high if there is a problem
     '''
-    if (charge_ok == 1 and charge_disable == 0 and charge_stop == 0):
-        NOT_DISCHARGE.value(1)
+    if (charge_ok == 1 and chg_disable_chip_level == 0 and chg_stop_mode_ctrl == 0):
+        not_dischg = 1
         # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
         if (charge_toggle_wait == 0):
            # done will be 0 if either hasnt started charging, or has finished charging
@@ -496,7 +497,7 @@ while True:
                     prev_time_chg_wait = utime.ticks_ms()
                     #print(utime.ticks_ms()/1000, done_state)
                     print("charge toggle complete on VCC input, waiting")
-            elif (startup_chg_2sdelay == 0) :
+            elif (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
                 #print("waiting for 2 seconds to charge")
                 if (done_state == 0):
                     # setup charge toggle wait time to set charge pin high
@@ -507,7 +508,7 @@ while True:
                         #print(utime.ticks_ms()/1000, done_state)
                         print("charge toggle complete on DONE input, waiting")
                 else :
-                    charge_disable = 1
+                    chg_disable_chip_level = 1
                     prev_time_charge_disabled = utime.ticks_ms()
                     if (safe_charge == 0):
                         #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
@@ -515,7 +516,7 @@ while True:
                         print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
                         print("Retrying in 30 seconds")
             
-        # wait for charge cycle to do the charge toggle every second
+        # wait for charge cycle to do the charge toggle every three seconds
         elif (charge_started == 1):
             if (safe_charge == 1):
                 if (utime.ticks_ms() - prev_time_chg_wait >= 236):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
@@ -523,7 +524,7 @@ while True:
                     charge = 0
                     charge_toggle_wait = 0
                     check_3s_done = 0
-                    charge_disable = 1
+                    chg_disable_chip_level = 1
                     #print(utime.ticks_ms()/1000, done_state)
                     print("Safe Charge mode, Charge pin reset at 50V")
                     # set charge pin
@@ -542,11 +543,11 @@ while True:
                     check_3s_done = 1
                     if(done_state == 0):
                         #good
-                        charge_disable = 0
+                        chg_disable_chip_level = 0
                         print("DONE is low after 2500ms, assuming normal operation")
                     else :
                         # not good, done does not go low, implying not charging properly
-                        charge_disable = 1
+                        chg_disable_chip_level = 1
                         prev_time_charge_disabled = utime.ticks_ms()
                         #print(utime.ticks_ms()/1000, done_state)
                         print("charging disabled, done does not go low: TIMEOUT 5s, not charging properly")
@@ -558,27 +559,27 @@ while True:
             if(done_state == 1):
                 # good
                 charge_started = 1 # variable for the 5s timeout check
-                charge_disable = 0
+                chg_disable_chip_level = 0
                 #print(utime.ticks_ms()/1000, done_state)
                 print("charge started (DONE toggles high properly)")
             else :
                 # not good, disable charging
                 charge_started = 0
-                charge_disable = 1
+                chg_disable_chip_level = 1
                 prev_time_charge_disabled = utime.ticks_ms()
                 #print(utime.ticks_ms()/1000, done_state)
                 print("charging was disabled, no high DONE signal received: no charge cycle started")
                 print("Retrying in 30 seconds")
     else :
-        # not good, charging was disabled.
+        # charging was disabled via battery, mode, or error. Error wont switch back, but battery and mode can turn charging back on.
         charge = 0
         charge_started = 0 # reset charge_started to zero for the next charge cycle
-        charge_toggle_wait = 0
+        charge_toggle_wait = 0 # reset charge_toggle_wait for next charge cycel
         check_3s_done = 0
-        NOT_DISCHARGE.value(0)
-        # check flyback again in 5 seconds by reasserting the charge_disable variable'
+        not_dischg = 0
+        # check flyback again in 5 seconds by reasserting the chg_disable_chip_level variable'
         if (safe_charge == 1):
-            charge_disable = 1
+            chg_disable_chip_level = 1
     
     #check high voltage constantly to be able to adjust kick power.
     #{HV_voltage, HV_scaling} = SenseHV()
