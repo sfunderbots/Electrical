@@ -152,7 +152,7 @@ def kick():
         chg_stop_mode_ctrl = 0
         not_dischg = 1
         charge_toggle_wait = 0
-
+        print("AUTOKICK MODE: HV CHARGED AND CHARGING. STOPS CHARGING WHEN PULSE SENT TO THE KICKER")
 
     if (kick_data_rec == 0 and kick_cooldown == 0):
         if (data == None) :
@@ -262,14 +262,14 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             chg_stop_mode_ctrl = 0
 
 def chg():
-    global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode
+    global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode, charging
     if (charging == 0):
         print("CHARGING PREPARE MODE: HV STARTS CHARGING")
         charging = 1
         chg_stop_mode_ctrl = 0
         charge_toggle_wait = 0
-    if (startup_time >= 4500 and startup_time < 4750):
-        mode = 1 # set to autokick mode after startup
+    if (utime.ticks_ms() - startup_time >= 4500 and utime.ticks_ms() - startup_time < 4750):
+        mode = 0 # set to autokick mode after startup
 
 # Interrupt handler
 def breakbeam_handler(pin):
