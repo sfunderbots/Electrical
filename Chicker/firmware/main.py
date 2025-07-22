@@ -91,6 +91,8 @@ damp_mode = 0
 disc_mode = 0
 charge_mode = 0
 
+prev_startup_idle_mode = 0
+
 idling = 0
 kicking = 0
 damping = 0
@@ -129,14 +131,25 @@ class FakeCANData:
         return len(self.data)
 
 def idle():
-    global chg_stop_mode_ctrl, idling
+    global chg_stop_mode_ctrl, prev_startup_idle_mode
+    global idling, kicking, damping, charging
+    
+    damping = 0
+    kicking = 0
+    charging = 0
+    #if (utime.ticks_ms() - prev_startup_idle_mode >= 7000 and idling == 0):
+    #    startup_chg_2sdelay = 1
+    #    startup = 0
+    #    done_sim = 1
+    #    print("startup signal received on IDLE")
+    
     # Idle mode keeps HV discharged and stops charging.
     if (idling == 0):
         idling = 1
         chg_stop_mode_ctrl = 1
         print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
         not_dischg = 0
-
+        prev_startup_idle_mode = utime.ticks_ms()
 
 def kick():
     #Global variables (FUCK ME...)
@@ -144,6 +157,11 @@ def kick():
     global chg_stop_mode_ctrl, kicking, pulse_freq, new_can_data_bool, pulse_width_adjusted, done_state
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
    
+    global idling, kicking, damping, charging
+    
+    idling = 0
+    damping = 0
+    charging = 0
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
 
@@ -212,8 +230,12 @@ def kick():
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global prev_time_damp, start, ar, damping, damp_off_time, mode, chg_stop_mode_ctrl
-
+    global prev_time_damp, start, ar, damp_off_time, mode, chg_stop_mode_ctrl
+    global idling, kicking, damping, charging
+    
+    idling = 0
+    kicking = 0
+    charging = 0
     if (damping == 0):
         damping = 1
         print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
@@ -262,14 +284,21 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             chg_stop_mode_ctrl = 0
 
 def chg():
-    global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode, charging
+    global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode
+    
+    global idling, kicking, damping, charging
+    
+    idling = 0
+    kicking = 0
+    damping = 0
+    
     if (charging == 0):
         print("CHARGING PREPARE MODE: HV STARTS CHARGING")
         charging = 1
         chg_stop_mode_ctrl = 0
         charge_toggle_wait = 0
-    if (utime.ticks_ms() - startup_time >= 4500 and utime.ticks_ms() - startup_time < 4750):
-        mode = 0 # set to autokick mode after startup
+    #if (utime.ticks_ms() - startup_time >= 4500 and utime.ticks_ms() - startup_time < 4750):
+    #    mode = 0 # set to autokick mode after startup
 
 # Interrupt handler
 def breakbeam_handler(pin):
@@ -586,9 +615,10 @@ while True:
 
         
     # check voltages every 2 seconds
-    if(utime.ticks_ms() - prev_time_volt >= 1000):
+    if(utime.ticks_ms() - prev_time_volt >= 100):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
+        print(done_state)
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")
