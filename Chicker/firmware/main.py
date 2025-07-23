@@ -219,6 +219,7 @@ def kick():
         pulses.put_pulses(ar,start)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
         startup_chg_2sdelay = 1
+        print("just kicked")
             
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
         kick_cooldown = 0
@@ -489,6 +490,7 @@ while True:
             if (charge_ok == 1):
                 prev_time_wait_charge_vcc = utime.ticks_ms()
                 startup_vcc_wait = 1
+                print("waiting to charge")
         else:
             if (utime.ticks_ms() - prev_time_wait_charge_vcc >= 2000):  
                 # wait for 2 seconds then start charge cycle
