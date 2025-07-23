@@ -1,431 +1,593 @@
-%Run -c $EDITOR_CONTENT
+>>> %Run -c $EDITOR_CONTENT
 
-MPY soft reboot
+MPY: soft reboot
 initlized succesuqfully!
-CHARGING PREPARE MODE HV STARTS CHARGING
-16.49
+CHARGING PREPARE MODE: HV STARTS CHARGING
+16.31
 4.6V USB Voltage
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.49 V
-HV  2.67 V
-array('L', [8, 8, 8])
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  2.11 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  2.11 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  2.11 V
-charge toggle reset to zero on VBAT received after delay
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  2.11 V
-charge toggle complete on VCC input, waiting
-charge started (DONE toggles high properly)
-16.36
 Working Battery Voltage
-5V Reference  4.69 V
-Battery  16.36 V
-1
-HV  89.47 V
+5V Reference:  4.68 V
+Battery:  16.31 V
+HV:  2.74 V
+array('L', [8, 8, 8])
 16.32
 Working Battery Voltage
-5V Reference  4.69 V
-Battery  16.32 V
+5V Reference:  4.68 V
+Battery:  16.32 V
 1
-HV  154.82 V
-16.28
+HV:  2.05 V
+16.32
 Working Battery Voltage
-5V Reference  4.69 V
-Battery  16.28 V
+5V Reference:  4.68 V
+Battery:  16.32 V
 1
-HV  204.81 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  2.11 V
+16.32
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.32 V
+1
+HV:  2.05 V
+16.32
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.32 V
+1
+HV:  2.11 V
+charge toggle reset from VBAT Received / AFTER KICK, after delay
+charge toggle complete on VCC input, kick or charge from idle, waiting
+charge started (DONE toggles high properly)
+16.21
+Working Battery Voltage
+5V Reference:  4.69 V
+Battery:  16.21 V
+1
+HV:  88.66 V
+16.15
+Working Battery Voltage
+5V Reference:  4.69 V
+Battery:  16.15 V
+1
+HV:  153.7 V
+16.11
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.11 V
+1
+HV:  203.56 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 0
-HV  208.97 V
-IDLE MODE HV DISCHARGED. STOPS CHARGING.
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  207.79 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  207.05 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  206.42 V
+HV:  208.97 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  207.73 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  206.98 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  206.23 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  205.68 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  205.18 V
+DONE is low after 4500ms, assuming normal operation
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  204.68 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  210.53 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  209.97 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  209.66 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+0
+HV:  209.04 V
+16.29
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.29 V
+0
+HV:  208.73 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  208.29 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  207.98 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  207.67 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  207.3 V
+DONE is low after 4500ms, assuming normal operation
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  206.92 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  210.71 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  210.34 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  209.91 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  209.6 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+0
+HV:  209.28 V
 0x2AA, 0x00, 0x00, 0x00, 0x00
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  205.86 V
 COMMAND RECEIVED
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+IDLE MODE: HV DISCHARGED. STOPS CHARGING.
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  205.43 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  208.97 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  204.93 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  208.73 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  204.56 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  208.29 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  204.06 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  208.04 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  203.81 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  207.67 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  203.31 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  207.42 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  203.0 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  207.11 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  202.69 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  206.92 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  202.38 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  206.55 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  202.13 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  206.3 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  201.7 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  205.99 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  201.51 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  205.74 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  201.2 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  205.49 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  200.76 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  205.24 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  200.58 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  204.99 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  200.21 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  204.56 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  200.08 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  204.43 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  199.77 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  204.06 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  199.52 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  203.87 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  199.15 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  203.62 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  198.84 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  203.25 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  198.59 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  203.06 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  198.34 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  202.75 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  198.03 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  202.51 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  197.84 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  202.26 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  197.59 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  197.22 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  196.97 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  196.79 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  196.54 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  196.29 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  196.04 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  195.79 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  195.48 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  195.29 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  195.05 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  194.86 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  194.61 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  194.24 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  194.11 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  193.8 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  193.68 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  193.31 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  193.18 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  192.87 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  192.62 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  192.5 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
-1
-HV  192.19 V
+HV:  202.01 V
 0x2AA, 0x03, 0x00, 0x00, 0x00
 COMMAND RECEIVED
-CHARGING PREPARE MODE HV STARTS CHARGING
-DONE is still high - Potential reasons Undervoltage Lockout, Thermal Shutdown
-Retrying in 30 seconds
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+CHARGING PREPARE MODE: HV STARTS CHARGING
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  157.92 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  201.76 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
 1
-HV  120.62 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  201.45 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  93.2 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  201.26 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  71.75 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  200.95 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  55.46 V
-16.46
-Fully charged  Batteries (or close to it)
-5V Reference  4.68 V
-Battery  16.46 V
+HV:  200.83 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
 1
-HV  42.9 V
+HV:  200.64 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  200.27 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  200.08 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  199.71 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  199.58 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  199.21 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  199.02 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  198.84 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  198.53 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  198.28 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  198.15 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  197.91 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  197.66 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  197.35 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  197.1 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  196.85 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  196.66 V
+16.31
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.31 V
+1
+HV:  196.41 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  196.23 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  196.04 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  195.73 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  195.48 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  195.29 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  195.11 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  194.86 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  194.55 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  194.3 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  194.11 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  193.86 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  193.55 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  193.49 V
+16.3
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.3 V
+1
+HV:  193.18 V
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Traceback (most recent call last)
-  File stdin, line 625, in module
-KeyboardInterrupt 
+Traceback (most recent call last):
+  File "<stdin>", line 534, in <module>
+KeyboardInterrupt: 
 
-MPY soft reboot
+MPY: soft reboot
 MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
 
-Type help() for more information.
+Type "help()" for more information.
 
- 
+>>> 

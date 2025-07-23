@@ -98,6 +98,10 @@ kicking = 0
 damping = 0
 charging = 0
 
+startup_chg = 0
+startup_chg_wait = 0
+prev_time_wait_chg = 0
+
 CHG_WAIT = 5000
 
 
@@ -132,7 +136,7 @@ class FakeCANData:
 
 def idle():
     global chg_stop_mode_ctrl, prev_startup_idle_mode
-    global idling, kicking, damping, charging
+    global idling, kicking, damping, charging, startup_chg
     
     damping = 0
     kicking = 0
@@ -147,7 +151,7 @@ def idle():
     if (idling == 0):
         idling = 1
         chg_stop_mode_ctrl = 1
-        startup_chg_2sdelay = 1
+        startup_chg = 1
         print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
         #not_dischg = 0
         prev_startup_idle_mode = utime.ticks_ms()
@@ -467,6 +471,7 @@ while True:
         startup_time = utime.ticks_ms()
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
+        prev_time_wait_chg = utime.ticks_us()
         charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
         pattern=(8, 8, 8)
@@ -494,14 +499,31 @@ while True:
             if (utime.ticks_ms() - prev_time_wait_charge_vcc >= 2000):  
                 # wait for 2 seconds then start charge cycle
                 charge = 0
-                startup_cycle = 1
+                
                 # set wait to toggle charge pin
                 charge_toggle_wait = 0
                 #print(utime.ticks_ms()/1000, done_state)
-                print("charge toggle reset from VBAT Received / Chg from IDLE / AFTER KICK after delay")
+                print("charge toggle reset from VBAT Received / AFTER KICK, after delay")
                 prev_time_start_chg = utime.ticks_ms()
                 startup_vcc_wait = 0
+                startup_cycle = 1
                 startup_chg_2sdelay = 0 #startup_chg_2sdelay will be 0 from 2s onwards after battery plugged in.
+    # start a new charge cycle if starting up from new charge cycle or after kick
+    if (startup_chg == 1):
+        if (startup_chg_wait == 0):
+            prev_time_wait_chg = utime.ticks_ms()
+            startup_chg_wait = 1
+        elif (utime.ticks_ms() - prev_time_wait_chg >= 50):    
+            charge = 0
+            # set wait to toggle charge pin
+            charge_toggle_wait = 0
+            #print(utime.ticks_ms()/1000, done_state)
+            #print("charge toggle reset - Chg from IDLE")
+            prev_time_start_chg = utime.ticks_ms()
+            startup_vcc_wait = 0
+            startup_cycle = 1
+            startup_chg = 0
+            startup_chg_2sdelay = 0 #startup_chg_2sdelay will be 0 from 2s onwards after battery plugged in.            
             
     if (charge_ok == 0):
         startup_chg_2sdelay = 1
@@ -519,20 +541,19 @@ while True:
     
     if (charge_ok == 1 and chg_disable_chip_level == 0):
         not_dischg = 1
-        
-        if (startup_cycle == 1):
-            if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
-                charge = 1
-                startup_cycle = 0
-                charge_toggle_wait = 1
-                prev_time_chg_wait = utime.ticks_ms()
-                #print(utime.ticks_ms()/1000, done_state)
-                print("charge toggle complete on VCC input, kick or charge from idle, waiting")
         if (chg_stop_mode_ctrl == 0): # chg_stop_mode_ctrl controls charging, not discharging. chg_stop = 1 for stop, 0 for charge okay
             # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
             if (charge_toggle_wait == 0):
+                if (startup_cycle == 1):
+                    if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
+                        charge = 1
+                        startup_cycle = 0
+                        charge_toggle_wait = 1
+                        prev_time_chg_wait = utime.ticks_ms()
+                        #print(utime.ticks_ms()/1000, done_state)
+                        print("charge toggle complete on VCC input, kick or charge from idle, waiting")
                # done will be 0 if either hasnt started charging, or has finished charging
-                if (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
+                elif (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
                     #print("waiting for 2 seconds to charge")
                     if (done_state == 0):
                         # setup charge toggle wait time to set charge pin high
