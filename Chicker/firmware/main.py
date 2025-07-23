@@ -4,6 +4,7 @@ from array import array
 import math
 import utime
 import random
+from battery import Voltages
 from high_voltage import SenseHV
 import sys, select
 import pulses
@@ -176,7 +177,7 @@ while True:
         prev_pulse_time = current_time # start pulse timer
         startup_chg_2sdelay = 1
         
-        #print("stufffffffffffffff")
+        print("just kicked")
     elif (kick_cooldown == 1 and current_time - prev_pulse_time >= 100):
         kick_cooldown = 0
         delay_time_us = 0
@@ -239,6 +240,7 @@ while True:
             if (charge_ok == 1):
                 prev_time_wait_charge_vcc = current_time
                 startup_vcc_wait = 1
+                print("waiting to charge")
         else:
             if (current_time - prev_time_wait_charge_vcc >= 2000):  
                 # wait for 2 seconds then start charge cycle
