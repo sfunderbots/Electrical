@@ -22,6 +22,6 @@ def SenseHV():
         HV_scaling = 1
     else:
         HV_scaling = 206.0 / HV_voltage
-    return {HV_voltage, HV_scaling}
+    return HV_voltage
     
 

@@ -1,0 +1,135 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+initlized succesuqfully!
+CHARGING PREPARE MODE: HV STARTS CHARGING
+16.58
+4.6V USB Voltage
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.58 V
+HV:  2.3 V
+array('L', [8, 8, 8])
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.55 V
+1
+HV:  1.8 V
+16.56
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.56 V
+1
+HV:  1.74 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.55 V
+1
+HV:  1.8 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.55 V
+1
+HV:  1.86 V
+charge toggle reset to zero on VBAT received after delay
+charge toggle complete on VCC input, waiting
+charge started (DONE toggles high properly)
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.46 V
+1
+HV:  89.28 V
+16.38
+Working Battery Voltage
+5V Reference:  4.69 V
+Battery:  16.38 V
+1
+HV:  154.57 V
+16.36
+Working Battery Voltage
+5V Reference:  4.69 V
+Battery:  16.36 V
+1
+HV:  204.56 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.55 V
+0
+HV:  208.66 V
+IDLE MODE: HV DISCHARGED. STOPS CHARGING.
+16.54
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.54 V
+0
+HV:  207.36 V
+DONE is low after 2500ms, assuming normal operation
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.55 V
+0
+HV:  206.48 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charging was disabled, no high DONE signal received: no charge cycle started
+Retrying in 30 seconds
+16.54
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.54 V
+1
+HV:  169.18 V
+16.54
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.54 V
+1
+HV:  129.45 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.55 V
+1
+HV:  98.98 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.55 V
+1
+HV:  76.22 V
+16.54
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.54 V
+1
+HV:  58.63 V
+16.54
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.54 V
+1
+HV:  45.01 V
+16.55
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.55 V
+1
+HV:  34.82 V
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Traceback (most recent call last):
+  File "<stdin>", line 625, in <module>
+KeyboardInterrupt: 
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
+
+Type "help()" for more information.
+
+>>> 

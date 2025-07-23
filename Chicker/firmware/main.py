@@ -4,7 +4,7 @@ import math
 import random
 from battery import Voltages
 import utime
-#from high_voltage import SenseHV
+from high_voltage import SenseHV
 import sys, select
 import pulses
 
@@ -146,9 +146,9 @@ def idle():
     # Idle mode keeps HV discharged and stops charging.
     if (idling == 0):
         idling = 1
-        chg_stop_mode_ctrl = 1
+        #chg_stop_mode_ctrl = 1
         print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
-        not_dischg = 0
+        #not_dischg = 0
         prev_startup_idle_mode = utime.ticks_ms()
 
 def kick():
@@ -186,7 +186,7 @@ def kick():
 
             #{HV_voltage, HV_scaling} = SenseHV()
             # HV Pulse width adjustment
-            HV_scaling = 1
+            #HV_scaling = 1
             pulse_width_adjusted = HV_scaling * pulse_width
             delay_time_us_temp = pulse_width_adjusted
             CAN_LED.value(0)
@@ -296,9 +296,9 @@ def chg():
         print("CHARGING PREPARE MODE: HV STARTS CHARGING")
         charging = 1
         chg_stop_mode_ctrl = 0
-        charge_toggle_wait = 0
-    #if (utime.ticks_ms() - startup_time >= 4500 and utime.ticks_ms() - startup_time < 4750):
-    #    mode = 0 # set to autokick mode after startup
+        
+    if (utime.ticks_ms() - startup_time >= 4500 and utime.ticks_ms() - startup_time < 4750):
+        mode = 0 # set to autokick mode after startup
 
 # Interrupt handler
 def breakbeam_handler(pin):
@@ -466,7 +466,7 @@ while True:
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
         charge_ok = Voltages(charge_ok, startup) #
-        #{HV_voltage,HV_scaling} = SenseHV()
+        HV_voltage = SenseHV()
         pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
@@ -513,112 +513,121 @@ while True:
     . Any fault conditions such as thermal shutdown or undervoltage lockout will also turn on the NPN.
         for the DONE pin, which means it will be high if there is a problem
     '''
-    if (charge_ok == 1 and chg_disable_chip_level == 0 and chg_stop_mode_ctrl == 0):
+    
+    
+    if (charge_ok == 1 and chg_disable_chip_level == 0):
         not_dischg = 1
-        # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
-        if (charge_toggle_wait == 0):
-           # done will be 0 if either hasnt started charging, or has finished charging
-            if (startup_cycle == 1):
-                if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
-                    charge = 1
-                    startup_cycle = 0
-                    charge_toggle_wait = 1
-                    prev_time_chg_wait = utime.ticks_ms()
-                    #print(utime.ticks_ms()/1000, done_state)
-                    print("charge toggle complete on VCC input, waiting")
-            elif (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
-                #print("waiting for 2 seconds to charge")
-                if (done_state == 0):
-                    # setup charge toggle wait time to set charge pin high
+        if (chg_stop_mode_ctrl == 0): # chg_stop_mode_ctrl controls charging, not discharging. chg_stop = 1 for stop, 0 for charge okay
+            # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
+            if (charge_toggle_wait == 0):
+               # done will be 0 if either hasnt started charging, or has finished charging
+                if (startup_cycle == 1):
                     if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
                         charge = 1
+                        startup_cycle = 0
                         charge_toggle_wait = 1
                         prev_time_chg_wait = utime.ticks_ms()
                         #print(utime.ticks_ms()/1000, done_state)
-                        print("charge toggle complete on DONE input, waiting")
-                else :
-                    chg_disable_chip_level = 1
-                    prev_time_charge_disabled = utime.ticks_ms()
-                    if (safe_charge == 0):
-                        #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
-                    #else :   
-                        print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
-                        print("Retrying in 30 seconds")
-            
-        # wait for charge cycle to do the charge toggle every three seconds
-        elif (charge_started == 1):
-            if (safe_charge == 1):
-                if (utime.ticks_ms() - prev_time_chg_wait >= 236):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
-                    charge_started = 0 # reset charge_started to zero for the next charge cycle
-                    charge = 0
-                    charge_toggle_wait = 0
-                    check_3s_done = 0
-                    chg_disable_chip_level = 1
-                    #print(utime.ticks_ms()/1000, done_state)
-                    print("Safe Charge mode, Charge pin reset at 50V")
-                    # set charge pin
-            else :
-                if (utime.ticks_ms() - prev_time_chg_wait >= 3000):
-                    charge_started = 0 # reset charge_started to zero for the next charge cycle
-                    charge = 0
-                    charge_toggle_wait = 0
-                    check_3s_done = 0
-                    #print(utime.ticks_ms()/1000, done_state)
-                    print("charge toggle (3s waited)")
-                    # set charge pin
-                # charge toggle wait is 1, charge_started should be 1 unless its an error    
-                # check after 5 seconds if the done signal actually goes low after being high for charging
-                elif (check_3s_done == 0 and utime.ticks_ms() - prev_time_chg_wait >= 2500):
-                    check_3s_done = 1
-                    if(done_state == 0):
-                        #good
-                        chg_disable_chip_level = 0
-                        print("DONE is low after 2500ms, assuming normal operation")
+                        print("charge toggle complete on VCC input, waiting")
+                elif (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
+                    #print("waiting for 2 seconds to charge")
+                    if (done_state == 0):
+                        # setup charge toggle wait time to set charge pin high
+                        if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
+                            charge = 1
+                            charge_toggle_wait = 1
+                            prev_time_chg_wait = utime.ticks_ms()
+                            #print(utime.ticks_ms()/1000, done_state)
+                            print("charge toggle complete on DONE input, waiting")
                     else :
-                        # not good, done does not go low, implying not charging properly
                         chg_disable_chip_level = 1
                         prev_time_charge_disabled = utime.ticks_ms()
+                        if (safe_charge == 0):
+                            #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
+                        #else :   
+                            print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
+                            print("Retrying in 30 seconds")
+                
+            # wait for charge cycle to do the charge toggle every three seconds
+            elif (charge_started == 1):
+                if (safe_charge == 1):
+                    if (utime.ticks_ms() - prev_time_chg_wait >= 236):#236 = 50V ish,  # 1108 = 160V ish (175 in sim)
+                        charge_started = 0 # reset charge_started to zero for the next charge cycle
+                        charge = 0
+                        charge_toggle_wait = 0
+                        check_3s_done = 0
+                        chg_disable_chip_level = 1
                         #print(utime.ticks_ms()/1000, done_state)
-                        print("charging disabled, done does not go low: TIMEOUT 5s, not charging properly")
-                        print("Retrying in 30 seconds")
-                    
-        # charge_toggle wait is 1 and charge_started is 0, implying a "started" charge cycle, need to check
-        # check after 50ms if done actually toggles high, implying good flyback chip
-        elif (utime.ticks_ms() - prev_time_chg_wait >= 50):
-            if(done_state == 1):
-                # good
-                charge_started = 1 # variable for the 5s timeout check
-                chg_disable_chip_level = 0
-                #print(utime.ticks_ms()/1000, done_state)
-                print("charge started (DONE toggles high properly)")
-            else :
-                # not good, disable charging
-                charge_started = 0
-                chg_disable_chip_level = 1
-                prev_time_charge_disabled = utime.ticks_ms()
-                #print(utime.ticks_ms()/1000, done_state)
-                print("charging was disabled, no high DONE signal received: no charge cycle started")
-                print("Retrying in 30 seconds")
+                        print("Safe Charge mode, Charge pin reset at 50V")
+                        # set charge pin
+                else :
+                    if (utime.ticks_ms() - prev_time_chg_wait >= 5000):
+                        charge_started = 0 # reset charge_started to zero for the next charge cycle
+                        charge = 0
+                        charge_toggle_wait = 0
+                        check_3s_done = 0
+                        #print(utime.ticks_ms()/1000, done_state)
+                        print("charge toggle (3s waited)")
+                        # set charge pin
+                    # charge toggle wait is 1, charge_started should be 1 unless its an error    
+                    # check after 5 seconds if the done signal actually goes low after being high for charging
+                    elif (check_3s_done == 0 and utime.ticks_ms() - prev_time_chg_wait >= 4500):
+                        check_3s_done = 1
+                        if(done_state == 0):
+                            #good
+                            chg_disable_chip_level = 0
+                            print("DONE is low after 4500ms, assuming normal operation")
+                        else :
+                            # not good, done does not go low, implying not charging properly
+                            chg_disable_chip_level = 1
+                            prev_time_charge_disabled = utime.ticks_ms()
+                            #print(utime.ticks_ms()/1000, done_state)
+                            print("charging disabled, done does not go low: TIMEOUT 5s, not charging properly")
+                            print("Retrying in 30 seconds")
+                        
+            # charge_toggle wait is 1 and charge_started is 0, implying a "started" charge cycle, need to check
+            # check after 50ms if done actually toggles high, implying good flyback chip
+            elif (utime.ticks_ms() - prev_time_chg_wait >= 10): # previous bug here would check and fail. works at 15s because it takes ~200ms to charge, where 50ms is just enough , but 5s does not, because DONE would go high then go low again before it would check
+                if(done_state == 1):
+                    # good
+                    charge_started = 1 # variable for the 5s timeout check
+                    chg_disable_chip_level = 0
+                    #print(utime.ticks_ms()/1000, done_state)
+                    print("charge started (DONE toggles high properly)")
+                else :
+                    # not good, disable charging
+                    charge_started = 0
+                    chg_disable_chip_level = 1
+                    prev_time_charge_disabled = utime.ticks_ms()
+                    #print(utime.ticks_ms()/1000, done_state)
+                    print("charging was disabled, no high DONE signal received: no charge cycle started")
+                    print("Retrying in 30 seconds")
+        else:
+            charge = 0
+            charge_started = 0 # reset charge_started to zero for the next charge cycle
+            charge_toggle_wait = 0 # reset charge_toggle_wait for next charge cycel
+            check_3s_done = 0
     else :
         # charging was disabled via battery, mode, or error. Error wont switch back, but battery and mode can turn charging back on.
         charge = 0
         charge_started = 0 # reset charge_started to zero for the next charge cycle
         charge_toggle_wait = 0 # reset charge_toggle_wait for next charge cycel
         check_3s_done = 0
-        not_dischg = 0
+        not_dischg = 0 # 
         # check flyback again in 5 seconds by reasserting the chg_disable_chip_level variable'
         if (safe_charge == 1):
             chg_disable_chip_level = 1
     
-    #check high voltage constantly to be able to adjust kick power.
-    #{HV_voltage, HV_scaling} = SenseHV()
+    
 
         
     # check voltages every 2 seconds
-    if(utime.ticks_ms() - prev_time_volt >= 100):
+    if(utime.ticks_ms() - prev_time_volt >= 500):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
         print(done_state)
+        #check high voltage constantly to be able to adjust kick power.
+        HV_voltage = SenseHV()
         # enable disable timer
         if (charge_ok == 0):
             print("Charging Disabled, Battery Unplugged")

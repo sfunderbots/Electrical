@@ -1,0 +1,431 @@
+%Run -c $EDITOR_CONTENT
+
+MPY soft reboot
+initlized succesuqfully!
+CHARGING PREPARE MODE HV STARTS CHARGING
+16.49
+4.6V USB Voltage
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.49 V
+HV  2.67 V
+array('L', [8, 8, 8])
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  2.11 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  2.11 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  2.11 V
+charge toggle reset to zero on VBAT received after delay
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  2.11 V
+charge toggle complete on VCC input, waiting
+charge started (DONE toggles high properly)
+16.36
+Working Battery Voltage
+5V Reference  4.69 V
+Battery  16.36 V
+1
+HV  89.47 V
+16.32
+Working Battery Voltage
+5V Reference  4.69 V
+Battery  16.32 V
+1
+HV  154.82 V
+16.28
+Working Battery Voltage
+5V Reference  4.69 V
+Battery  16.28 V
+1
+HV  204.81 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+0
+HV  208.97 V
+IDLE MODE HV DISCHARGED. STOPS CHARGING.
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  207.79 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  207.05 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  206.42 V
+0x2AA, 0x00, 0x00, 0x00, 0x00
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  205.86 V
+COMMAND RECEIVED
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  205.43 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  204.93 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  204.56 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  204.06 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  203.81 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  203.31 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  203.0 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  202.69 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  202.38 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  202.13 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  201.7 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  201.51 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  201.2 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  200.76 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  200.58 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  200.21 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  200.08 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  199.77 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  199.52 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  199.15 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  198.84 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  198.59 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  198.34 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  198.03 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  197.84 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  197.59 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  197.22 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  196.97 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  196.79 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  196.54 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  196.29 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  196.04 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  195.79 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  195.48 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  195.29 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  195.05 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  194.86 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  194.61 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  194.24 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  194.11 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  193.8 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  193.68 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  193.31 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  193.18 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  192.87 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  192.62 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  192.5 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  192.19 V
+0x2AA, 0x03, 0x00, 0x00, 0x00
+COMMAND RECEIVED
+CHARGING PREPARE MODE HV STARTS CHARGING
+DONE is still high - Potential reasons Undervoltage Lockout, Thermal Shutdown
+Retrying in 30 seconds
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  157.92 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  120.62 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  93.2 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  71.75 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  55.46 V
+16.46
+Fully charged  Batteries (or close to it)
+5V Reference  4.68 V
+Battery  16.46 V
+1
+HV  42.9 V
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Traceback (most recent call last)
+  File stdin, line 625, in module
+KeyboardInterrupt 
+
+MPY soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
+
+Type help() for more information.
+
+ 
