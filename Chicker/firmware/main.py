@@ -4,7 +4,6 @@ from array import array
 import math
 import utime
 import random
-from battery import Voltages
 from high_voltage import SenseHV
 import sys, select
 import pulses
@@ -200,7 +199,6 @@ while True:
         prev_kick_time = current_time
         startup_time = current_time
         charge_ok = Voltages(charge_ok, startup) #
-        HV_voltage = SenseHV()
         pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
@@ -335,7 +333,7 @@ while True:
                     print("Safe Charge mode, Charge pin reset at 50V")
                     # set charge pin
             else :
-                if (current_time - prev_time_chg_wait >= 3000):
+                if (current_time - prev_time_chg_wait >= 14950):
                     charge_started = 0 # reset charge_started to zero for the next charge cycle
                     charge = 0
                     charge_toggle_wait = 0
@@ -345,7 +343,7 @@ while True:
                     # set charge pin
                 # charge toggle wait is 1, charge_started should be 1 unless its an error    
                 # check after 5 seconds if the done signal actually goes low after being high for charging
-                elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 2500):
+                elif (check_5s_done == 0 and current_time - prev_time_chg_wait >= 5000):
                     check_5s_done = 1
                     if(done_state == 0):
                         #good
@@ -409,9 +407,3 @@ while True:
         
         #print("CHARGE OK:", charge_ok)
         #print("Charge toggle wait", charge_toggle_wait)
-    '''
-    #check high voltage every 50 milliseconds
-    if (current_time - prev_time_HV >= 50):
-        {HV_voltage, HV_Scaling} = SenseHV()
-        prev_time_HV = current_time
-    '''
