@@ -75,7 +75,7 @@ charge_ok_sim = 0
 safe_charge = 0
 delay_time_us = 0
 delay_time_us_temp = 0
-kick_cooldown = 1
+kick_cooldown = 0
 kick_delayed = 0
 HV_voltage = 0
 kick_data_rec = 0
@@ -84,12 +84,6 @@ not_dischg = 0
 
 pulse_freq = 0
 duty = 1
-
-idle_mode = 0
-kick_mode = 0
-damp_mode = 0
-disc_mode = 0
-charge_mode = 0
 
 prev_startup_idle_mode = 0
 
@@ -193,7 +187,7 @@ def kick():
             #{HV_voltage, HV_scaling} = SenseHV()
             # HV Pulse width adjustment
             #HV_scaling = 1
-            pulse_width_adjusted = HV_scaling * pulse_width
+            pulse_width_adjusted = pulse_width
             delay_time_us_temp = pulse_width_adjusted
             CAN_LED.value(0)
 
@@ -236,7 +230,7 @@ def kick():
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global prev_time_damp, start, ar, damp_off_time, mode, chg_stop_mode_ctrl
+    global prev_time_damp, start, ar, damp_off_time, prev_cycle_damp, mode, chg_stop_mode_ctrl
     global idling, kicking, damping, charging
     
     idling = 0
@@ -388,7 +382,7 @@ while True:
     '''
 
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state = DONE.value() # done_sim
+    done_state = 0 #DONE.value() # done_sim
     CHARGE.value(charge)
     NOT_DISCHARGE.value(not_dischg)
     #print(charge_disable)
@@ -646,10 +640,10 @@ while True:
 
         
     # check voltages every 2 seconds
-    if(utime.ticks_ms() - prev_time_volt >= 500):
+    if(utime.ticks_ms() - prev_time_volt >= 2000):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
-        print(done_state)
+        #print(done_state)
         #check high voltage constantly to be able to adjust kick power.
         HV_voltage = SenseHV()
         # enable disable timer
