@@ -166,9 +166,9 @@ def kick():
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
         
+    if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
+        startup_chg = 1
     if (kicking == 0):
-        if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
-            startup_chg = 1
         kicking = 1
         chg_stop_mode_ctrl = 0
         not_dischg = 1
@@ -288,6 +288,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
             #CAN_LED.off()
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
+            chg_stop_mode_ctrl = 0
 
 def chg():
     global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode, prev_mode, startup_chg
@@ -298,17 +299,18 @@ def chg():
     kicking = 0
     damping = 0
     
+    if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
+        startup_chg = 1
+    
     if (charging == 0):
-        if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
-            startup_chg = 1
         print("CHARGING PREPARE MODE: HV STARTS CHARGING")
         charging = 1
         not_dischg = 1
         chg_stop_mode_ctrl = 0
         prev_mode = 3
         
-    #if (utime.ticks_ms() - startup_time >= 5250 and utime.ticks_ms() - startup_time < 5500):
-    #    mode = 0 # set to autokick mode after startup
+    if (utime.ticks_ms() - startup_time >= 5250 and utime.ticks_ms() - startup_time < 5500):
+        mode = 0 # set to autokick mode after startup
 
 # Interrupt handler
 def breakbeam_handler(pin):
@@ -456,7 +458,7 @@ while True:
         # unknown command
         print("unknown command")
         chg_stop_mode_ctrl = 1
-        #not_dischg = 0
+        not_dischg = 0
     
     # do this only on startup
     if (startup == 0):
@@ -478,6 +480,7 @@ while True:
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
         prev_time_wait_chg = utime.ticks_us()
+        prev_time_chg_wait_newchg = utime.ticks_ms()
         charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
         pattern=(8, 8, 8)
@@ -522,9 +525,9 @@ while True:
             charge_toggle_wait = 0
             #print(utime.ticks_ms()/1000, done_state)
             print("charge toggle reset - Chg from IDLE or DAMP")
-            prev_time_start_chg = utime.ticks_ms()
-            startup_cycle = 1
-            startup_vcc_wait = 0
+            prev_time_chg_wait_newchg = utime.ticks_ms()
+            prev_time_chg_wait = utime.ticks_ms()
+            startup_cycle_chg = 1
             startup_chg = 0
             startup_chg_2sdelay = 0
             
@@ -553,7 +556,15 @@ while True:
                         charge_toggle_wait = 1
                         prev_time_chg_wait = utime.ticks_ms()
                         #print(utime.ticks_ms()/1000, done_state)
-                        print("charge toggle complete on VCC input or kick, or chg from IDLE OR DAMP waiting for 5s")
+                        print("charge toggle complete on VCC input or kick, waiting for 5s")
+                elif (startup_cycle_chg == 1):
+                    if (utime.ticks_ms() - prev_time_chg_wait_newchg >= 50): 
+                        charge = 1
+                        startup_cycle_chg = 0
+                        charge_toggle_wait = 1
+                        prev_time_chg_wait_newchg = utime.ticks_ms()
+                        #print(utime.ticks_ms()/1000, done_state)
+                        print("charge toggle complete on charge from idle or damp, waiting for 5s")
                # done will be 0 if either hasnt started charging, or has finished charging
                 elif (startup_chg_2sdelay == 0) : # this should be true always after 2s of battery
                     #print("waiting for 2 seconds to charge")
@@ -596,7 +607,7 @@ while True:
                         # set charge pin
                     # charge toggle wait is 1, charge_started should be 1 unless its an error    
                     # check after 5 seconds if the done signal actually goes low after being high for charging
-                    elif (check_3s_done == 0 and utime.ticks_ms() - prev_time_chg_wait >= 4750):
+                    elif (check_3s_done == 0 and utime.ticks_ms() - prev_time_chg_wait >= 4500):
                         check_3s_done = 1
                         if(done_state == 0):
                             #good

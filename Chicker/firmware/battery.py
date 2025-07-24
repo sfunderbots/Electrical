@@ -23,16 +23,16 @@ def Voltages(charge_ok, startup):
     ref_5V_raw = ref_5V_val *3.3 / 65535.0 * (35.0 + 24.2)/24.2 #(51.0+30.0)/30.0 (somehow this is backwkards and i have no idea why)
     net_5V = round(ref_5V_raw, 2)     #37865 * 3.3/ 65535 * 
     #
-    print(battery_voltage)
-    if ( startup == 0):
-        if (net_5V > 4.45) and (net_5V <= 4.70 ):
-            print("4.6V USB Voltage")
-        elif (net_5V > 4.70) and (net_5V <= 4.90):
-            print("4.8V Battery Voltage (USB could still be plugged in, check LED)")
-        elif (net_5V > 4.90) and (net_5V <= 5.20):
-            print("WARNING!!!!: Series diodes for voltage switch has failed, check circuit!")
-        else :
-            print("dont worry, the 5V is actually probably not broken due to ADC but check maybe?")
+    #print(battery_voltage)
+    #if ( startup == 0):
+    #    if (net_5V > 4.45) and (net_5V <= 4.70 ):
+    #        print("4.6V USB Voltage")
+   #     elif (net_5V > 4.70) and (net_5V <= 4.90):
+    #        print("4.8V Battery Voltage (USB could still be plugged in, check LED)")
+    #    elif (net_5V > 4.90) and (net_5V <= 5.20):
+    #        print("WARNING!!!!: Series diodes for voltage switch has failed, check circuit!")
+    #    else :
+    #        print("dont worry, the 5V is actually probably not broken due to ADC but check maybe?")
       
     if (battery_voltage >  5.0) and (battery_voltage <= 12.8):
         #print("Batteries are Exceptionally low, damage is likely!!")
@@ -47,7 +47,7 @@ def Voltages(charge_ok, startup):
         #print("13.8V to 14.7V Batteries are below nominal, should replace soon")
         charge_ok = 0
     elif (battery_voltage > 14.7) and (battery_voltage <= 14.9):
-        #print("14.7V to 14.9V Nominal Battery Voltage")
+        print("14.7V to 14.9V Nominal Battery Voltage")
         charge_ok = 1
     elif (battery_voltage > 14.9) and (battery_voltage <= 16.4):
         print("Working Battery Voltage")

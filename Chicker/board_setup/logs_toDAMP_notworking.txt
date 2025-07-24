@@ -1,0 +1,226 @@
+
+MPY: soft reboot
+initlized succesuqfully!
+CHARGING PREPARE MODE: HV STARTS CHARGING
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.89 V
+HV:  2.67 V
+array('L', [8, 8, 8])
+waiting to charge
+charge toggle reset - Chg from IDLE or DAMP
+charge toggle complete on charge from idle or damp, waiting for 5s
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.85 V
+HV:  208.91 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  205.43 V
+IDLE MODE: HV DISCHARGED. STOPS CHARGING.
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  203.56 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  202.07 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  200.83 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  199.58 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  198.46 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  197.28 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  196.29 V
+0x2AA, 0x03, 0x00, 0x00, 0x00
+COMMAND RECEIVED
+CHARGING PREPARE MODE: HV STARTS CHARGING
+charge toggle reset - Chg from IDLE or DAMP
+charge toggle complete on charge from idle or damp, waiting for 5s
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.85 V
+HV:  210.9 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  209.04 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  207.79 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  210.09 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  208.91 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  210.9 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  209.66 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  208.48 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+0x2AA, 0x01, 0x00, 0x00, 0x00
+KICK COMMAND RECEIVED
+COMMAND RECEIVED
+AUTOKICK MODE: HV CHARGED AND CHARGING. STOPS CHARGING WHEN PULSE SENT TO THE KICKER
+charge toggle complete on DONE input, waiting
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  210.28 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  209.16 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  210.96 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  209.72 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  208.66 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  210.34 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  209.28 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  211.03 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.87 V
+HV:  209.84 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  208.73 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  210.4 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  209.28 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  211.03 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  209.78 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  208.79 V
+DONE is low after 4500ms, assuming normal operation
+charge toggle (5s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+0x2AA, 0x02, 0x01, 0x01, 0x01
+COMMAND RECEIVED
+DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING
+array('L', [8, 200, 8])
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.88 V
+HV:  209.28 V
+DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown
+AUTOKICK MODE: HV CHARGED AND CHARGING. STOPS CHARGING WHEN PULSE SENT TO THE KICKER
+charge toggle reset - Chg from IDLE or DAMP
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  119.5 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  42.9 V
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  15.86 V
+HV:  16.66 V
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Traceback (most recent call last):
+  File "main.py", line 462, in <module>
+KeyboardInterrupt: 
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
+Type "help()" for more information.
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
+
+Type "help()" for more information.
+
+>>> 
