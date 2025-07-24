@@ -197,7 +197,7 @@ def kick():
             #HV_scaling = 1
             pulse_width_adjusted = pulse_width
             delay_time_us_temp = pulse_width_adjusted
-            CAN_LED.value(0)
+            #CAN_LED.value(0)
 
             if (delay_time_us_temp > 5000) :
                 delay_time_us_temp = 5000 # set a limit to the delay time
@@ -223,7 +223,7 @@ def kick():
         ar = array("L", pattern)
         # Kick here
         #
-        CAN_LED.off()
+        #CAN_LED.off()
         pulses.put_pulses(ar,start)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
         startup_chg_2sdelay = 1
@@ -239,10 +239,10 @@ def kick():
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global start, ar, damp_off_time, damp_on_time, damp_period, prev_cycle_damp, mode, chg_stop_mode_ctrl
+    global start, ar, damp_off_time, damp_on_time, damp_period, prev_cycle_damp
     global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
-    global prev_mode, startup_chg, not_dischg
-    global DAMP_INITIAL_PULSE_WIDTH, damp_duty
+    global mode, prev_mode, startup_chg, not_dischg, chg_stop_mode_ctrl
+    global DAMP_INITIAL_PULSE_WIDTH, damp_duty, damping_on_cycle, damping_off_cycle
     
     idling = 0
     kicking = 0
@@ -261,11 +261,11 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         damp_duty = damp_duty_percent / 100.0
 
         # Initial Kick (to put plunger out)
-        pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
-        start=0
-        ar = array("L", pattern)
-        pulses.put_pulses(ar,start)
-        damp_period = int(1/damp_freq *1000_000) # needs to be in microseconds
+        #pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
+        #start=0
+        #ar = array("L", pattern)
+        #pulses.put_pulses(ar,start)
+        damp_period = int((1/damp_freq) *1000_000) # needs to be in microseconds
         damp_on_time = int(damp_period*damp_duty) # microseconds
         damp_off_time = damp_period - damp_on_time #microseconds
         print("Damp period", damp_period) # in seconds
@@ -279,23 +279,26 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # keep damping until preset timetimeout or HV discharged
         if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
             # it is getting here.
-            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*5000): # in us?
+            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*500): # in us?
                 # also getting here now that I changed the timer to us rather than *1000 in ms timer
-                if (utime.ticks_us() - prev_cycle_damp < damp_off_time and damping_off_cycle == 0) :
-                    damping_off_cycle = 1
-                    damping_on_cycle = 0
-                    # turn off kicker
-                    #KICK.value(0)
-                    CAN_LED.off()
-                    print("off")
-                elif (utime.ticks_us() - prev_cycle_damp < damp_period and damping_on_cycle == 0) :
-                    damping_on_cycle = 1
-                    damping_off_cycle = 0
+                if (utime.ticks_us() - prev_cycle_damp >= damp_period) :
+                    #damping_on_cycle = 1
+                    #damping_off_cycle = 0
                     # turn on kicker
                     #KICK.value(1)
                     CAN_LED.on()
                     prev_cycle_damp = utime.ticks_us()
                     print("on")
+                elif (utime.ticks_us() - prev_cycle_damp >= damp_off_time ) :
+                    #damping_off_cycle = 1
+                    #damping_on_cycle = 0
+                    # turn off kicker
+                    #KICK.value(0)
+                    CAN_LED.off()
+                    print("off")
+                else:
+                    prev_cycle_damp = utime.ticks_us()
+
         else :
             #KICK.value(0)
             mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
@@ -329,12 +332,12 @@ def chg():
 def breakbeam_handler(pin):
     global new_can_data_bool, data, stored_prekick_can_data
     if not pin.value():
-        CAN_LED.value(1)   # Rising edge: turn on LED
+        #CAN_LED.value(1)   # Rising edge: turn on LED
         if new_can_data_bool: # Only kick if armed
             data = stored_prekick_can_data
     else:
         pass
-        CAN_LED.value(0)  # Falling edge: turn off LED
+        #CAN_LED.value(0)  # Falling edge: turn off LED
 
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
@@ -457,7 +460,7 @@ while True:
     elif mode == MODE_DAMP :
         # do damping mode. pulse the kicker to receive a pass and transfer energy. Happens only once and exits.
         # pulse_width or 
-        damp(pulse_freq, duty, 8000)
+        damp(pulse_freq, duty, 5000)
     elif mode == MODE_CHARGE :
         # setup charge mode, which charges caps but does not ready for a kick. Useful if you want to turn off autokick or prep a damping cycle but dont want to kick yet
         chg()
@@ -492,7 +495,7 @@ while True:
         startup_time = utime.ticks_ms()
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
-        prev_time_wait_chg = utime.ticks_us()
+        prev_time_wait_chg = utime.ticks_ms()
         charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
         pattern=(8, 8, 8)
