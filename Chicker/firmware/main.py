@@ -261,10 +261,10 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         damp_duty = damp_duty_percent / 100.0
 
         # Initial Kick (to put plunger out)
-        #pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
-        #start=0
-        #ar = array("L", pattern)
-        #pulses.put_pulses(ar,start)
+        pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
+        start=0
+        ar = array("L", pattern)
+        pulses.put_pulses(ar,start)
         damp_period = int((1/damp_freq) *1000_000) # needs to be in microseconds
         damp_on_time = int(damp_period*damp_duty) # microseconds
         damp_off_time = damp_period - damp_on_time #microseconds
@@ -272,6 +272,10 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         print("Damp on time", damp_off_time)
         print("Damp Frequency", damp_freq)
         prev_cycle_damp = utime.ticks_us()
+        #if(damp_period>=10000
+        
+        if (damp_on_time >= 5000):
+            damp_on_time = 5000
     else:
         #started a damping cycle
         # definetely getting here. good to know
@@ -281,26 +285,24 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             # it is getting here.
             if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*500): # in us?
                 # also getting here now that I changed the timer to us rather than *1000 in ms timer
-                if (utime.ticks_us() - prev_cycle_damp >= damp_period) :
-                    #damping_on_cycle = 1
-                    #damping_off_cycle = 0
+                
+                if (utime.ticks_us() - prev_cycle_damp >= damp_period and damping_on_cycle == 0) :
+                    damping_on_cycle = 1
+                    damping_off_cycle = 0
                     # turn on kicker
-                    #KICK.value(1)
+                    KICK.value(1)
                     CAN_LED.on()
                     prev_cycle_damp = utime.ticks_us()
                     print("on")
-                elif (utime.ticks_us() - prev_cycle_damp >= damp_off_time ) :
-                    #damping_off_cycle = 1
-                    #damping_on_cycle = 0
+                elif (utime.ticks_us() - prev_cycle_damp >= damp_off_time and damping_off_cycle == 0) :
+                    damping_off_cycle = 1
+                    damping_on_cycle = 0
                     # turn off kicker
-                    #KICK.value(0)
+                    KICK.value(0)
                     CAN_LED.off()
                     print("off")
-                else:
-                    prev_cycle_damp = utime.ticks_us()
-
         else :
-            #KICK.value(0)
+            KICK.value(0)
             mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
             CAN_LED.off()
             print("whyyyy")
