@@ -235,9 +235,9 @@ def kick():
         chg_stop_mode_ctrl = 0
 
 # damp_freq = freq in Hz (two bytes)
-# damp_duty_percent = duty cycle in percentage (integer)
+# damp_duty_perc_div100 = duty cycle in percentage / 100 (integer) => ie 1 = 0.01%, 10 = 0.1%, 100 = 1%. 265  = 2.65%
 # damp_timeout = timeout in milliseconds
-def damp(damp_freq, damp_duty_percent, damp_timeout):
+def damp(damp_freq, damp_duty_perc_div100, damp_timeout):
     #Global variables (FUCK ME...)
     global start, ar, damp_off_time, damp_on_time, damp_period, prev_cycle_damp
     global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
@@ -258,7 +258,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         prev_time_damp_us = utime.ticks_us()
-        damp_duty = damp_duty_percent / 100.0
+        damp_duty = (damp_duty_perc_div100 / 100.0) / 100.0 # twice from integer to decimal at proper percentage then to actual decimal
 
         # Initial Kick (to put plunger out)
         pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
@@ -272,7 +272,10 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         print("Damp on time", damp_off_time)
         print("Damp Frequency", damp_freq)
         prev_cycle_damp = utime.ticks_us()
-        #if(damp_period>=10000
+        if(damp_period * damp_on_time >= 0.001)
+            print("too big duty")
+            damp_duty_perc_div100 = 10
+            damp_duty = (damp_duty_perc_div100 / 100.0) / 100.0
         
         if (damp_on_time >= 5000):
             damp_on_time = 5000
@@ -280,11 +283,13 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         #started a damping cycle
         # definetely getting here. good to know
         # implement a delay here of duty off time.
+        # Example I will try: 0x2AA, 2,     0xE8,          0x03,           10
+        #                     ID     mode   low byte freq, high byte freq  duty / 100
         # keep damping until preset timetimeout or HV discharged
         if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
             # it is getting here.
-            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*500): # in us?
-                # also getting here now that I changed the timer to us rather than *1000 in ms timer
+            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*1000): # in us? # waiting for a second to do the damping
+                # also getting here now that I changed the timer to us rather than *1000 in ms timer  
                 
                 if (utime.ticks_us() - prev_cycle_damp >= damp_period and damping_on_cycle == 0) :
                     damping_on_cycle = 1
@@ -303,11 +308,10 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
                     print("off")
         else :
             KICK.value(0)
-            mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
+            #mode = 1 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
             CAN_LED.off()
             print("whyyyy")
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
-            chg_stop_mode_ctrl = 0
 
 def chg():
     global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode
@@ -462,7 +466,7 @@ while True:
     elif mode == MODE_DAMP :
         # do damping mode. pulse the kicker to receive a pass and transfer energy. Happens only once and exits.
         # pulse_width or 
-        damp(pulse_freq, duty, 5000)
+        damp(pulse_freq, duty, 2000)
     elif mode == MODE_CHARGE :
         # setup charge mode, which charges caps but does not ready for a kick. Useful if you want to turn off autokick or prep a damping cycle but dont want to kick yet
         chg()
