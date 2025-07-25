@@ -154,8 +154,12 @@ def idle():
         print("IDLE MODE: HV DISCHARGED. STOPS CHARGING.")
         not_dischg = 0
         prev_startup_idle_mode = utime.ticks_ms()
-
-
+# maximum is around 210 to 210.9? lets assume lower end so 210V
+# 500us  0x2AA, 1, 0xF4, 0x01, 0x00 => discharges down to 203.6 V => - 6.4V
+# 1000us 0x2AA, 1, 0xE8, 0x03, 0x00 => discharges down to 192.5 V => -17.5V
+# 1500us 0x2AA, 1, 0xDC, 0x05, 0x00 => discharges down to 173.4 V => -36.6V
+# 2000us 0x2AA, 1, 0xD0, 0x07, 0x00 => discharges down to 153.3 V => -56.7V
+# 2500us 0x2AA, 1, 0xC4, 0x09, 0x00 => discharges down to 132.9 V => -77.1V
 def kick():
     #Global variables (FUCK ME...)
     global can_rx_time, new_can_data_bool, data, kick_data_rec, kick_cooldown, delay_time_us_temp, delay_time_us
@@ -233,7 +237,14 @@ def kick():
         kick_cooldown = 0
         delay_time_us = 0
         chg_stop_mode_ctrl = 0
-
+# 100Hz @ 14 / 10 duty aka 140us pulses             // 0x2AA, 2, 0x64, 0x00, 14  // period = 10k * 0.01 * 1.4 = 140us
+# 1kHz @ 35 / 10 duty  aka 35us pulses              // 0x2AA, 2, 0xE8, 0x03, 35 // period = 1k * 0.01 * 3.5 = 35us
+# 5kHz @ 15 / 1 duty   aka 30us pulse                // 0x2AA, 2, 0x88, 0x13, 15 // period = 200 * 0.01 * 15 = 30us
+# 10kHz @ 27 / 1 duty  aka 27us pulse                // 0x2AA, 2, 0x10, 0x27, 27 // period = 100 * 0.01 * 27 = 27us
+# 20kHz @ 52 / 1 duty  aka 26us pulse               // 0x2AA, 2, 0x20, 0x4E, 52 // period = 50 * 0.01 * 52 = 26us pulse
+# 30kHz @ 82 / 1 duty  aka 27us pulse               // 0x2AA, 2, 0x30, 0x75, 82 // period = 33 * 0.01 * 82 = 27us pulse
+# if the pulse does not work slightly increase the duty cycle.
+# max frequency would be like 37kHz technically but 30kHz is already pushing it.
 # damp_freq = freq in Hz (two bytes)
 # damp_duty_percent = duty cycle in percentage (integer)
 # damp_timeout = timeout in milliseconds
@@ -258,7 +269,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         prev_time_damp_us = utime.ticks_us()
-        damp_duty = (damp_duty_percent / 10) / 100.0 # percentage to actual decimal
+        damp_duty = (damp_duty_percent) / 100.0 # percentage to actual decimal
 
         # Initial Kick (to put plunger out)
         pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
