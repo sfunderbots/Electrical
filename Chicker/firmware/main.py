@@ -1,4 +1,4 @@
-from machine import Pin, ADC
+from machine import Pin, ADC, PWM
 from array import array
 import math
 import random
@@ -36,6 +36,7 @@ BREAKBEAM = Pin(23, Pin.IN)
 CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
+pwm = PWM(KICK)
 NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
@@ -167,6 +168,7 @@ def kick():
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
     global prev_mode, startup_chg, not_dischg
     global idling, kicking, damping, charging
+    global pwm, damping_on_cycle
     
     idling = 0
     damping = 0
@@ -177,6 +179,7 @@ def kick():
     if (kicking == 0):
         if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
             startup_chg = 1
+            HV_voltage = SenseHV()
         prev_mode = mode
         kicking = 1
         chg_stop_mode_ctrl = 0
@@ -222,6 +225,7 @@ def kick():
  #############################################
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
+        
         pattern=(8, delay_time_us, 8)
         start=0
         ar = array("L", pattern)
@@ -234,9 +238,38 @@ def kick():
         print("just kicked")
             
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
+        HV_voltage = SenseHV()
         kick_cooldown = 0
         delay_time_us = 0
         chg_stop_mode_ctrl = 0
+        # kick speeds
+        # interesting note: 1000us at 210V ~= 1500us at ~120V
+        # kick at 1000us at 210V ends at ~191.5V
+        # sqrt(210^2 - 172^2) = ~120.5V drop for 1500us
+        # sqrt(210^2 - 191.5^2) = ~86V drop for 1000us
+        # sqrt(210^2 - 197^2) for 800us
+        # sqrt(120V^2 - 101V^2) = ~64.8V drop for 1500us
+        #
+        # 120.5 ~= ~64.8V? => 1.86
+        # same current for different voltages but same
+        # I * dt = 
+        # (210^2 - 197^2)/(1.5 + jwL) * delta t = (120^2 - 101^2)/(1.5 + jwL) * delta t
+        # (210^2 - 197^2)/(1.5 + jwL) * 0.8ms = (120^2 - 101^2)/(1.5 + jwL) * 1.5ms
+
+        # 0.45s for 800us at 210V
+        # ~0.4s for 1500us at 120V (this is hard to measure accurately but it seemed very similar
+        # 120V*1500us / 1000us = ~180V
+        # aka this theory seems to make sense.
+        # sqrt(max^2 - current^2) 
+        # 210^2 - ^2 = X^2 - 102^2
+        # 0x2AA, 1, 0xF4, 0x01, 0x00   ==> 500us  =>
+        # 0x2AA, 1, 0x20, 0x03, 0x00   ==> 800us  =>
+        # 0x2AA, 1, 0xE8, 0x03, 0x00   ==> 1000us =>
+        # 0x2AA, 1, 0x78, 0x05, 0x00   ==> 1400us =>
+        # 0x2AA, 1, 0xDC, 0x05, 0x00   ==> 1500us =>
+        # 0x2AA, 1, 0xD0, 0x07, 0x00   ==> 2000us =>
+        # 0x2AA, 1, 0xC4, 0x09, 0x00   ==> 2500us =>
+        # chatgpt and calculations approximated my inductance to about 18.75uH
 # 100Hz @ 14 / 10 duty aka 140us pulses             // 0x2AA, 2, 0x64, 0x00, 14  // period = 10k * 0.01 * 1.4 = 140us
 # 1kHz @ 35 / 10 duty  aka 35us pulses              // 0x2AA, 2, 0xE8, 0x03, 35 // period = 1k * 0.01 * 3.5 = 35us
 # 5kHz @ 15 / 1 duty   aka 30us pulse                // 0x2AA, 2, 0x88, 0x13, 15 // period = 200 * 0.01 * 15 = 30us
@@ -254,7 +287,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
     global mode, prev_mode, startup_chg, not_dischg, chg_stop_mode_ctrl
     global DAMP_INITIAL_PULSE_WIDTH, damp_duty, damping_on_cycle, damping_off_cycle
-    
+    global pwm
     idling = 0
     kicking = 0
     charging = 0
@@ -269,8 +302,8 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         prev_time_damp_us = utime.ticks_us()
-        damp_duty = (damp_duty_percent) / 100.0 # percentage to actual decimal
-
+        damp_duty = (damp_duty_percent) / 100.0  # percentage to actual decimal
+        
         # Initial Kick (to put plunger out)
         pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
         start=0
@@ -303,7 +336,17 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             # it is getting here.
             if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*15): # in us? # waiting for a second to do the damping
                 # also getting here now that I changed the timer to us rather than *1000 in ms timer  
+                '''
+                pwm = PWM(KICK) # KICK
+
+                # Set the frequency (e.g., 1000 Hz)
+                pwm.freq(damp_freq)
+
+                # Set the duty cycle (0-65535, where 65535 is 100%)
+                pwm.duty_ns(1000*damp_duty_percent) #275_000)
                 
+                damping_on_cycle = 1
+                '''
                 if (utime.ticks_us() - prev_cycle_damp >= damp_period and damping_on_cycle == 0) :
                     damping_on_cycle = 1
                     damping_off_cycle = 0
@@ -325,10 +368,11 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
                     #KICK.value(0)
                     CAN_LED.off()
                     #print("off")
+                
         else :
-            KICK.value(0)
+            #pwm.deinit() # doesnt explicity retract control from the pin
             mode = 3 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
-            CAN_LED.off()
+            #CAN_LED.off()
             #print("whyyyy")
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
 # 0x64 is 100 in hex
@@ -485,7 +529,7 @@ while True:
     elif mode == MODE_DAMP :
         # do damping mode. pulse the kicker to receive a pass and transfer energy. Happens only once and exits.
         # pulse_width or 
-        damp(pulse_freq, duty, 2000)
+        damp(pulse_freq, duty, 3000)
     elif mode == MODE_CHARGE :
         # setup charge mode, which charges caps but does not ready for a kick. Useful if you want to turn off autokick or prep a damping cycle but dont want to kick yet
         chg()
@@ -692,7 +736,7 @@ while True:
         not_dischg = 0 #
         
     # check voltages every 2 seconds
-    if(utime.ticks_ms() - prev_time_volt >= 2000):
+    if(utime.ticks_ms() - prev_time_volt >= 500):
         charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
         #print("damp time", utime.ticks_us() - prev_cycle_damp)
