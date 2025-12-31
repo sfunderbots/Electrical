@@ -9834,7 +9834,7 @@
 		)
 		(uuid "6e547b0e-1fda-43e9-bb9c-c8a102304b13")
 	)
-	(label "GPIO27_ADC2"
+	(label "GPIO28_ADC2"
 		(at 238.76 97.79 0)
 		(effects
 			(font
@@ -9874,7 +9874,7 @@
 		)
 		(uuid "71803dae-5da5-4d97-844e-a206634ff8fb")
 	)
-	(label "GPIO27_ADC2"
+	(label "GPIO28_ADC2"
 		(at 243.84 143.51 90)
 		(effects
 			(font
