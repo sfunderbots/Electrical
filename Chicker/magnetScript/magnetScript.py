@@ -2,61 +2,123 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import ellipk, ellipe
 
+# ============================
+# Physical constants
+# ============================
+mu0 = 4 * np.pi * 1e-7
+M = 1e6  # magnetization (A/m)
+
+# ============================
 # Magnet geometry
-R = 3e-3
-L = 3e-3
-z0 = 2.5e-3
-M = 1e6
-mu0 = 4*np.pi*1e-7
+# ============================
+R = 3e-3      # radius (m)  -> 6 mm diameter
+L = 3e-3      # thickness (m)
+z0 = 2.5e-3   # sensor height above magnet center (m)
 
-def Bz_exact(r, z):
-    def safe_ellipk(m):
-        return ellipk(m) if m < 1 else ellipk(0.999999999)
-    ztp = z - (+L/2)
-    zbp = z - (-L/2)
-    def f_component(r, zp):
-        denom = (R + r)**2 + zp**2
-        m = 4*R*r / denom if r != 0 else 0.0
-        K = safe_ellipk(m)
-        E = ellipe(m)
-        term1 = ((R - r) / np.sqrt((R - r)**2 + zp**2)) * E if r != R else 0
-        term2 = (R + r) / np.sqrt((R + r)**2 + zp**2)
-        return term1 - term2 * E + zp * K
-    return (mu0 * M / np.pi) * (f_component(r, ztp) - f_component(r, zbp))
+# ============================
+# Spatial domain
+# ============================
+x_vals = np.linspace(0, 20e-3, 5000)
 
-# X-axis offsets
-x_vals = np.linspace(0, 20e-3, 5000)  # high resolution
-Bz_vals = np.array([Bz_exact(x, z0) for x in x_vals])
+# ============================
+# Elliptic-integral kernel
+# ============================
+def f_component(r, zp):
+    denom = (R + r)**2 + zp**2
+    m = 4 * R * r / denom if r != 0 else 0.0
 
-# Threshold magnitude based on experimental 15mm point
+    # numerical safety
+    if m >= 1:
+        m = 0.999999999
+
+    K = ellipk(m)
+    E = ellipe(m)
+
+    term1 = ((R - r) / np.sqrt((R - r)**2 + zp**2)) * E if r != R else 0.0
+    term2 = (R + r) / np.sqrt((R + r)**2 + zp**2)
+
+    return term1 - term2 * E + zp * K
+
+# ============================
+# Pole distances
+# ============================
+ztp = z0 - L / 2   # top face
+zbp = z0 + L / 2   # bottom face
+
+# ============================
+# Field contributions
+# ============================
+B_top = np.array([
+    mu0 * M / np.pi * f_component(x, ztp)
+    for x in x_vals
+])
+
+B_bottom = np.array([
+    mu0 * M / np.pi * f_component(x, zbp)
+    for x in x_vals
+])
+
+# ============================
+# Total field
+# ============================
+B_total = B_top - B_bottom
+
+# ============================
+# Proper normalization
+# ============================
+B_max = np.max(np.abs(B_total))
+B_norm = B_total / B_max
+
+print("Max |B_norm| =", np.max(np.abs(B_norm)))  # should be ~1
+
+# ============================
+# Plot base field
+# ============================
+plt.figure(figsize=(10, 6))
+plt.plot(x_vals * 1e3, B_norm, label="Bz(x)")
+
+# ============================
+# Threshold based on x = 15 mm
+# ============================
 x_ref = 15e-3
-threshold = np.interp(x_ref, x_vals, np.abs(Bz_vals))
+B_ref = np.interp(x_ref, x_vals, np.abs(B_norm))
 
-# Find all crossings using interpolation
+# ============================
+# Find all |B| = threshold crossings
+# ============================
 crossings = []
-for i in range(len(x_vals)-1):
-    if (np.abs(Bz_vals[i]) - threshold) * (np.abs(Bz_vals[i+1]) - threshold) < 0:
-        # linear interpolation to get exact x
-        x_cross = x_vals[i] + (threshold - np.abs(Bz_vals[i])) / (np.abs(Bz_vals[i+1]) - np.abs(Bz_vals[i])) * (x_vals[i+1] - x_vals[i])
-        y_cross = np.interp(x_cross, x_vals, Bz_vals)
+
+for i in range(len(x_vals) - 1):
+    y1 = np.abs(B_norm[i]) - B_ref
+    y2 = np.abs(B_norm[i + 1]) - B_ref
+
+    if y1 * y2 < 0:
+        x_cross = x_vals[i] + (0 - y1) * (x_vals[i+1] - x_vals[i]) / (y2 - y1)
+        y_cross = np.interp(x_cross, x_vals, B_norm)
         crossings.append((x_cross, y_cross))
 
-# Include the original 15mm reference explicitly
-y_ref = np.interp(x_ref, x_vals, Bz_vals)
-crossings.append((x_ref, y_ref))
+# explicitly include the 15 mm reference point
+crossings.append((x_ref, np.interp(x_ref, x_vals, B_norm)))
 
-# Plot
-plt.figure(figsize=(10,6))
-plt.plot(x_vals*1e3, Bz_vals, label='Bz(x)')  
-
-# Mark all threshold points
+# ============================
+# Plot labels and markers
+# ============================
 for x_pt, y_pt in crossings:
-    plt.scatter(x_pt*1e3, y_pt, color='red', zorder=5)
-    plt.text(x_pt*1e3+0.3, y_pt, f'x={x_pt*1e3:.2f}mm\ny={y_pt:.3f}', ha='left', va='center', fontsize=8)
+    plt.scatter(x_pt * 1e3, y_pt, color='red', zorder=6)
+    plt.text(
+        x_pt * 1e3 + 0.3,
+        y_pt,
+        f"x = {x_pt*1e3:.2f} mm\nB = {y_pt:.3f}",
+        fontsize=8,
+        verticalalignment='center'
+    )
 
-plt.xlabel("Lateral Offset x (mm)")
-plt.ylabel("B_z (T)")
-plt.title("Normalized Z Magnetic Field vs Horizontal Offset")
+# ============================
+# Final plot formatting
+# ============================
+plt.xlabel("Lateral offset x (mm)")
+plt.ylabel("Normalized Bz")
+plt.title("Normalized Magnetic Field vs Lateral Offset")
 plt.grid(True)
 plt.legend()
 plt.show()
