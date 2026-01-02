@@ -147,18 +147,6 @@ plt.text(
     fontsize=8
 )
 
-# Your chosen test point
-x_test = 7.3e-3
-y_test = np.interp(x_test, x_vals, B_reed_avg)
-plt.scatter(x_test*1e3, y_test, color='green', zorder=7)
-plt.text(
-    x_test*1e3 + 0.3,   # horizontal offset
-    y_test -0.03,      # vertical offset above the line
-    f"Chosen Test Point: {x_test*1e3:.1f} mm",
-    fontsize=8
-)
-
-
 plt.axvline(0, color='gray', linestyle='--', alpha=0.5)
 plt.xlabel("Lateral offset x (mm)")
 plt.ylabel("Normalized Bz")
