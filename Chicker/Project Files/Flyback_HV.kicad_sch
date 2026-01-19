@@ -8870,6 +8870,16 @@
 		)
 		(uuid "16975a4c-59b9-4c64-b769-3697fd8399bb")
 	)
+	(text "Technically the transformer is inverted, but it works electrically \nand likely does not cause an excess current leakage for the dot being on the wrong side."
+		(exclude_from_sim no)
+		(at 195.072 19.558 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1ec123e1-741f-46ae-859b-6893b4f6f893")
+	)
 	(text "Q3,Q7,J1,J2,J3,NT1,J5,J6,C5,C6,U1"
 		(exclude_from_sim no)
 		(at 181.61 54.61 0)
@@ -8906,7 +8916,7 @@
 	)
 	(text "1.24*40.2/2.4*10 -1.25= 206V ish (good)"
 		(exclude_from_sim no)
-		(at 104.902 86.36 0)
+		(at 87.884 85.598 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8936,10 +8946,10 @@
 		)
 		(uuid "f80bc0ce-2d0c-463b-8ca7-29633030f8bf")
 	)
-	(text_box "RCD snubber Calculation: https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/Design-Guidelines-for-RCD-Snubber-of-Flyback-Converters_2D00_Fairchild-AN4147.pdf\n\nDA2034 Leakage inductance: 0.25uH + trace inductance ~= 0.4uH\nVsn should be 2-2.5 x of nVo-> Vo is max like 208V ish. 20.8V. Vsn = 41.6. Should I choose 50V?\nnVo is reflected output voltage. so that would be 24V ish\nts = Llk/(Vsn-nVo)*ipk_pri = 0.25uH/(42V - 21V)*9A = 0.107us\nfs is 100kHz to 300kHz in open loop - from figure 3 fs is 7us, 143kHz\nPsn = Vsn* (ipk *ts)/2 *fs = 42V*(9A*0.107us)/2*143kHz = 2.896W\nRsn = Vsn^2/Psn = 42V^2/2.896W = 621ohms\nmax ripple delta Vsn = Vsn/(Csn*Rsn*fs) = should be 5-10%\nCsn = Vsn/(deltaVsn*Rsn*fs)= 42V/(5%*42V*621*143k) = 0.225uF = 225nF\n\nor if i do 2.5. => 52 = Vsn => Rsn = 1129ohms > Psn = 2.4W\noooh... i have an 820ohm resistor 3W. so this could be perfect in between\nVsn = 46.25V. Not bad. we chose 2.245. Psn = Vsn^2/Rsn = 2.608W => Csn = 0.171uF = 171nF"
+	(text_box "RCD snubber Calculation: https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/Design-Guidelines-for-RCD-Snubber-of-Flyback-Converters_2D00_Fairchild-AN4147.pdf\n\nDA2034 Leakage inductance: 0.25uH + trace inductance ~= 0.4uH.   \nVsn should be 2-2.5 x of nVo-> Vo is max like 208V ish. 20.8V. Vsn = 41.6. Should I choose 50V?\nnVo is reflected output voltage. so that would be 24V ish.                 \nts = Llk/(Vsn-nVo)*ipk_pri = 0.25uH/(42V - 21V)*9A = 0.107us\nfs is 100kHz to 300kHz in open loop - from figure 3 fs is 7us, 143kHz.     \nPsn = Vsn* (ipk *ts)/2 *fs = 42V*(9A*0.107us)/2*143kHz = 2.896W\nRsn = Vsn^2/Psn = 42V^2/2.896W = 621ohms.                                  \nmax ripple delta Vsn = Vsn/(Csn*Rsn*fs) = should be 5-10%\nCsn = Vsn/(deltaVsn*Rsn*fs)= 42V/(5%*42V*621*143k) = 0.225uF = 225nF\n\nor if i do 2.5. => 52 = Vsn => Rsn = 1129ohms > Psn = 2.4W\noooh... i have an 820ohm resistor 3W. so this could be perfect in between\nVsn = 46.25V. Not bad. we chose 2.245. Psn = Vsn^2/Rsn = 2.608W => Csn = 0.171uF = 171nF\n\nNote: The snubber has never been tuned properly."
 		(exclude_from_sim no)
-		(at 133.35 54.61 0)
-		(size 74.93 25.4)
+		(at 179.07 96.52 0)
+		(size 104.14 40.64)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
