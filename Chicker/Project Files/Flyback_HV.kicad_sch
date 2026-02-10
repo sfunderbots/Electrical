@@ -8880,17 +8880,6 @@
 		)
 		(uuid "1ec123e1-741f-46ae-859b-6893b4f6f893")
 	)
-	(text "Q3,Q7,J1,J2,J3,NT1,J5,J6,C5,C6,U1"
-		(exclude_from_sim no)
-		(at 181.61 54.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3e5386ac-ff69-4604-95f7-c598744406d6")
-	)
 	(text "Flyback"
 		(exclude_from_sim no)
 		(at 16.51 19.05 0)
@@ -8901,6 +8890,16 @@
 			(justify left bottom)
 		)
 		(uuid "416a7fd7-06be-4d8f-814a-13e138dc3ac7")
+	)
+	(text "TIGERs has a simple RC snubber on the primary."
+		(exclude_from_sim no)
+		(at 112.014 21.082 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "63ce83d0-fc2d-482d-b129-5b1e6fb694f2")
 	)
 	(text "RED"
 		(exclude_from_sim no)
@@ -8914,13 +8913,14 @@
 		)
 		(uuid "ad079566-6b11-4e4a-bc48-d2ef3e3777d7")
 	)
-	(text "1.24*40.2/2.4*10 -1.25= 206V ish (good)"
+	(text "CAP VOLTAGE: 1.24V*40.2kohm/2.4kohm*10 -  1.25  = 206V\n          V_RBG-^    RVOUT/RBG     N-^   (V_diode)"
 		(exclude_from_sim no)
-		(at 87.884 85.598 0)
+		(at 99.822 87.122 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "b335d8d3-497e-4a2f-b59b-a137d263e5a8")
 	)
