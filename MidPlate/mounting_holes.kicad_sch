@@ -1,399 +1,1052 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid dc9845aa-1f66-48c6-937e-dd78cbdfc7a4)
-
-  (paper "A4")
-
-  (lib_symbols
-    (symbol "bots:MountingHoleM2.5NoThread" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "H" (at 0 6.35 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "MountingHoleM2.5NoThread" (at 0 4.445 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "mounting hole" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Mounting Hole no connection M2.5" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "MountingHole*Pad*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MountingHoleM2.5NoThread_1_1"
-        (circle (center 0 1.27) (radius 1.27)
-          (stroke (width 1.27) (type solid) (color 203 130 1 1))
-          (fill (type none))
-        )
-        (pin no_connect line (at 0 -2.54 90) (length 2.54) hide
-          (name "1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "thebots_symlib:SMTSO2515CTJ" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "H" (at 0 6.35 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "SMTSO2515CTJ" (at 0 4.445 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "bots:SMTSO2515CTJ" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "mounting hole" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Mounting Hole with connection" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "MountingHole*Pad*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "SMTSO2515CTJ_1_1"
-        (circle (center 0 1.27) (radius 1.27)
-          (stroke (width 1) (type default) (color 70 0 0 1))
-          (fill (type color) (color 187 181 11 1))
-        )
-        (pin input line (at 0 -2.54 90) (length 2.54)
-          (name "1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-
-  (no_connect (at 67.31 71.12) (uuid 28e30e79-6346-4b00-8c70-4a733c176ce9))
-  (no_connect (at 81.28 69.85) (uuid 3abdc698-d391-4373-a7fc-b76d50b34a3a))
-  (no_connect (at 55.88 69.85) (uuid acbe08f7-584b-4dfd-9263-5fd9e8e22339))
-
-  (wire (pts (xy 81.28 69.85) (xy 81.28 67.31))
-    (stroke (width 0) (type default))
-    (uuid 0ca59529-39b9-48c8-8265-0e3149750fc0)
-  )
-  (wire (pts (xy 55.88 67.31) (xy 55.88 69.85))
-    (stroke (width 0) (type default))
-    (uuid 865137cd-926d-4378-aaef-8481fd516cd0)
-  )
-  (wire (pts (xy 67.31 67.31) (xy 67.31 71.12))
-    (stroke (width 0) (type default))
-    (uuid f9d6dab4-028e-4b32-8ec7-7788d6c8d63d)
-  )
-
-  (text_box "Cap Holder Mounts"
-    (at 49.53 87.63 0) (size 102.87 29.21)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (effects (font (size 1.27 1.27)) (justify left top))
-    (uuid 2b19afc7-f28b-4fd2-a0c8-0a0684694adb)
-  )
-  (text_box "RPI mounts"
-    (at 48.26 55.88 0) (size 49.53 19.05)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (effects (font (size 1.27 1.27)) (justify left top))
-    (uuid b6bed2f0-ceef-40af-a188-a40985b94650)
-  )
-  (text_box "Baseplate Mounting"
-    (at 110.49 45.72 0) (size 167.64 29.21)
-    (stroke (width 0) (type default))
-    (fill (type none))
-    (effects (font (size 1.27 1.27)) (justify left top))
-    (uuid d0867efb-8dac-40e6-b868-ff617b09a17f)
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 102.87 107.95 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 08504586-c7a8-4594-9826-2c80c525e6b4)
-    (property "Reference" "H24" (at 105.41 106.68 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 102.87 103.505 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 102.87 107.95 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 102.87 107.95 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid d1b6a7aa-5395-45d5-b03a-02289e53604b))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H24") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "thebots_symlib:SMTSO2515CTJ") (at 81.28 64.77 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 14c8a45e-5a5e-4987-9e2b-e120c1ff3d79)
-    (property "Reference" "H9" (at 83.82 62.23 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "RPI" (at 83.82 64.77 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "bots:SMTSO2515CTJ" (at 81.28 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 81.28 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid e3784b33-03e7-46fc-8d98-5d6a4e0eafcc))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "H9") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H12") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 116.84 107.95 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 15c878f2-e134-412a-a253-996e2ac1834a)
-    (property "Reference" "H25" (at 119.38 106.68 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 116.84 103.505 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 116.84 107.95 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 116.84 107.95 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 7c09d801-442f-4670-bc6f-68dc9e9388d0))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H25") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 116.84 96.52 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 96f5f333-5200-4413-9f15-f2c8676929f4)
-    (property "Reference" "H21" (at 119.38 95.25 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 116.84 92.075 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 116.84 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 116.84 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 30417a29-57d5-4517-8e9f-ff00c515c498))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H21") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 102.87 96.52 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid ba38fa72-eac9-4bd0-9ed3-513621af33f3)
-    (property "Reference" "H20" (at 105.41 95.25 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 102.87 92.075 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 102.87 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 102.87 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid feafb520-0234-4354-b759-b1769f76b59a))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H20") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 67.31 96.52 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid c3fab57f-3b8d-4997-b2db-b771755c9231)
-    (property "Reference" "H14" (at 69.85 95.25 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 67.31 92.075 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 67.31 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 67.31 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid a8a5ab52-f2f2-40b3-8f72-a501845eb703))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H14") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "thebots_symlib:SMTSO2515CTJ") (at 67.31 64.77 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid d2485693-6183-422f-b5a6-44e21ced3d3b)
-    (property "Reference" "H9" (at 69.85 62.23 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "RPI" (at 69.85 64.77 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "bots:SMTSO2515CTJ" (at 67.31 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 67.31 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ee672841-abab-4840-90d7-b4bf8e7701e2))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "H9") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H11") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 67.31 109.22 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid d74837f7-4338-4c6e-923c-2949dd1cec12)
-    (property "Reference" "H18" (at 69.85 107.95 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 67.31 104.775 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 67.31 109.22 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 67.31 109.22 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 9a3a84e5-f935-4acc-a9e8-23fe4dcd4d0b))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H18") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 81.28 109.22 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid d84a86fd-9b2b-45e0-88e4-cfc8e84da674)
-    (property "Reference" "H19" (at 83.82 107.95 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 81.28 104.775 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 81.28 109.22 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 81.28 109.22 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid fbd4fdbd-ffcd-4996-ad7e-01699acf9b82))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H19") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "thebots_symlib:SMTSO2515CTJ") (at 55.88 64.77 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid e3d9580d-cc1b-4a86-be80-f142fe2974f7)
-    (property "Reference" "H9" (at 58.42 62.23 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "RPI" (at 58.42 64.77 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "bots:SMTSO2515CTJ" (at 55.88 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 55.88 64.77 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 497a9b5d-8634-4b0c-9901-1d4c51db99dd))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/5699b499-0901-4542-927f-3a0270375bb5"
-          (reference "H9") (unit 1)
-        )
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H10") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "bots:MountingHoleM2.5NoThread") (at 81.28 96.52 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid ee745b87-065a-4f7d-824a-ee987647033a)
-    (property "Reference" "H15" (at 83.82 95.25 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHoleM2.5NoThread" (at 81.28 92.075 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad" (at 81.28 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 81.28 96.52 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 072c4f88-34f8-4e6c-a2d5-ea1518ad08e2))
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
-          (reference "H15") (unit 1)
-        )
-      )
-    )
-  )
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "dc9845aa-1f66-48c6-937e-dd78cbdfc7a4")
+	(paper "A4")
+	(lib_symbols
+		(symbol "bots:MountingHoleM2.5NoThread"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHoleM2.5NoThread"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole no connection M2.5"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHoleM2.5NoThread_1_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type solid)
+						(color 203 130 1 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin no_connect line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(hide yes)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:SMTSO2515CTJ"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMTSO2515CTJ"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:SMTSO2515CTJ"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMTSO2515CTJ_1_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1)
+						(type default)
+						(color 70 0 0 1)
+					)
+					(fill
+						(type color)
+						(color 187 181 11 1)
+					)
+				)
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text_box "Cap Holder Mounts"
+		(exclude_from_sim no)
+		(at 49.53 87.63 0)
+		(size 102.87 29.21)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2b19afc7-f28b-4fd2-a0c8-0a0684694adb")
+	)
+	(text_box "RPI mounts"
+		(exclude_from_sim no)
+		(at 48.26 55.88 0)
+		(size 49.53 19.05)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "b6bed2f0-ceef-40af-a188-a40985b94650")
+	)
+	(text_box "Baseplate Mounting"
+		(exclude_from_sim no)
+		(at 110.49 45.72 0)
+		(size 167.64 29.21)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d0867efb-8dac-40e6-b868-ff617b09a17f")
+	)
+	(no_connect
+		(at 67.31 71.12)
+		(uuid "28e30e79-6346-4b00-8c70-4a733c176ce9")
+	)
+	(no_connect
+		(at 81.28 69.85)
+		(uuid "3abdc698-d391-4373-a7fc-b76d50b34a3a")
+	)
+	(no_connect
+		(at 55.88 69.85)
+		(uuid "acbe08f7-584b-4dfd-9263-5fd9e8e22339")
+	)
+	(wire
+		(pts
+			(xy 81.28 69.85) (xy 81.28 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ca59529-39b9-48c8-8265-0e3149750fc0")
+	)
+	(wire
+		(pts
+			(xy 55.88 67.31) (xy 55.88 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "865137cd-926d-4378-aaef-8481fd516cd0")
+	)
+	(wire
+		(pts
+			(xy 67.31 67.31) (xy 67.31 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9d6dab4-028e-4b32-8ec7-7788d6c8d63d")
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 102.87 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08504586-c7a8-4594-9826-2c80c525e6b4")
+		(property "Reference" "H24"
+			(at 105.41 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 102.87 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 102.87 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 102.87 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d1b6a7aa-5395-45d5-b03a-02289e53604b")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:SMTSO2515CTJ")
+		(at 81.28 64.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "14c8a45e-5a5e-4987-9e2b-e120c1ff3d79")
+		(property "Reference" "H12"
+			(at 83.82 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RPI"
+			(at 83.82 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SMTSO2515CTJ"
+			(at 81.28 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 81.28 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3784b33-03e7-46fc-8d98-5d6a4e0eafcc")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 116.84 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "15c878f2-e134-412a-a253-996e2ac1834a")
+		(property "Reference" "H25"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 116.84 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 116.84 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c09d801-442f-4670-bc6f-68dc9e9388d0")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 116.84 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "96f5f333-5200-4413-9f15-f2c8676929f4")
+		(property "Reference" "H21"
+			(at 119.38 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 116.84 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 116.84 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "30417a29-57d5-4517-8e9f-ff00c515c498")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 102.87 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba38fa72-eac9-4bd0-9ed3-513621af33f3")
+		(property "Reference" "H20"
+			(at 105.41 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 102.87 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 102.87 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 102.87 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "feafb520-0234-4354-b759-b1769f76b59a")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 67.31 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3fab57f-3b8d-4997-b2db-b771755c9231")
+		(property "Reference" "H14"
+			(at 69.85 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 67.31 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 67.31 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a8a5ab52-f2f2-40b3-8f72-a501845eb703")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:SMTSO2515CTJ")
+		(at 67.31 64.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d2485693-6183-422f-b5a6-44e21ced3d3b")
+		(property "Reference" "H11"
+			(at 69.85 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RPI"
+			(at 69.85 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SMTSO2515CTJ"
+			(at 67.31 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee672841-abab-4840-90d7-b4bf8e7701e2")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 67.31 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d74837f7-4338-4c6e-923c-2949dd1cec12")
+		(property "Reference" "H18"
+			(at 69.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 67.31 104.775 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 67.31 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9a3a84e5-f935-4acc-a9e8-23fe4dcd4d0b")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 81.28 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d84a86fd-9b2b-45e0-88e4-cfc8e84da674")
+		(property "Reference" "H19"
+			(at 83.82 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 81.28 104.775 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 81.28 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 81.28 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fbd4fdbd-ffcd-4996-ad7e-01699acf9b82")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:SMTSO2515CTJ")
+		(at 55.88 64.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3d9580d-cc1b-4a86-be80-f142fe2974f7")
+		(property "Reference" "H10"
+			(at 58.42 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RPI"
+			(at 58.42 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:SMTSO2515CTJ"
+			(at 55.88 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 55.88 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 55.88 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "497a9b5d-8634-4b0c-9901-1d4c51db99dd")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread")
+		(at 81.28 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ee745b87-065a-4f7d-824a-ee987647033a")
+		(property "Reference" "H15"
+			(at 83.82 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHoleM2.5NoThread"
+			(at 81.28 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 81.28 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 81.28 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "072c4f88-34f8-4e6c-a2d5-ea1518ad08e2")
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae/dd4f1e83-2671-4cd9-8990-217fc355ed24"
+					(reference "H15")
+					(unit 1)
+				)
+			)
+		)
+	)
 )

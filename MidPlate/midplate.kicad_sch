@@ -1,99 +1,224 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid 69058343-dac8-421b-a3f6-e069eb1ba8ae)
-
-  (paper "A4")
-
-  (lib_symbols
-  )
-
-
-  (sheet (at 73.66 40.64) (size 26.67 25.4) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 5699b499-0901-4542-927f-3a0270375bb5)
-    (property "Sheetname" "Power Board Connections" (at 73.66 39.9284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "powerboard-conn.kicad_sch" (at 73.66 66.6246 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 118.11 40.64) (size 21.59 27.94) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 5956ea5b-5c98-49b4-b8ae-cf424631ffad)
-    (property "Sheetname" "Baseplate Connections" (at 118.11 39.9284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "baseplate-conn.kicad_sch" (at 118.11 69.1646 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "4"))
-      )
-    )
-  )
-
-  (sheet (at 38.1 39.37) (size 22.86 27.94) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid ab54f000-c596-4ae0-81be-92723dd47fdf)
-    (property "Sheetname" "Power Input" (at 38.1 38.6584 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "power-input.kicad_sch" (at 38.1 67.8946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "2"))
-      )
-    )
-  )
-
-  (sheet (at 38.1 80.01) (size 22.86 26.67) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid dd4f1e83-2671-4cd9-8990-217fc355ed24)
-    (property "Sheetname" "Mounting Holes" (at 38.1 79.2984 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "mounting_holes.kicad_sch" (at 38.1 107.2646 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "6"))
-      )
-    )
-  )
-
-  (sheet (at 157.48 40.64) (size 24.13 33.02) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid e962e4a0-6822-4b24-92cd-4a40d2d1132c)
-    (property "Sheetname" "Faceplate Connections" (at 157.48 39.9284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "faceplate.kicad_sch" (at 157.48 74.2446 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "midplate"
-        (path "/69058343-dac8-421b-a3f6-e069eb1ba8ae" (page "5"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "7"))
-  )
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "69058343-dac8-421b-a3f6-e069eb1ba8ae")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 73.66 40.64)
+		(size 26.67 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5699b499-0901-4542-927f-3a0270375bb5")
+		(property "Sheetname" "Power Board Connections"
+			(at 73.66 39.9284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "powerboard-conn.kicad_sch"
+			(at 73.66 66.6246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 118.11 40.64)
+		(size 21.59 27.94)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5956ea5b-5c98-49b4-b8ae-cf424631ffad")
+		(property "Sheetname" "Baseplate Connections"
+			(at 118.11 39.9284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "baseplate-conn.kicad_sch"
+			(at 118.11 69.1646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 39.37)
+		(size 22.86 27.94)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ab54f000-c596-4ae0-81be-92723dd47fdf")
+		(property "Sheetname" "Power Input"
+			(at 38.1 38.6584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power-input.kicad_sch"
+			(at 38.1 67.8946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 38.1 80.01)
+		(size 22.86 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "dd4f1e83-2671-4cd9-8990-217fc355ed24")
+		(property "Sheetname" "Mounting Holes"
+			(at 38.1 79.2984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mounting_holes.kicad_sch"
+			(at 38.1 107.2646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 157.48 40.64)
+		(size 24.13 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e962e4a0-6822-4b24-92cd-4a40d2d1132c")
+		(property "Sheetname" "Faceplate Connections"
+			(at 157.48 39.9284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "faceplate.kicad_sch"
+			(at 157.48 74.2446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "7")
+		)
+	)
+	(embedded_fonts no)
 )
