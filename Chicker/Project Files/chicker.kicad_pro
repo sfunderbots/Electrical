@@ -642,7 +642,8 @@
   },
   "libraries": {
     "pinned_footprint_libs": [
-      "bots"
+      "bots",
+      "footprints"
     ],
     "pinned_symbol_libs": [
       "bots",
