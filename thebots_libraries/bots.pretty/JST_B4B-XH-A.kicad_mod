@@ -190,15 +190,15 @@
 		(uuid "4ec5e2dc-f73d-4489-8fc1-10d146efea80")
 	)
 	(embedded_fonts no)
-	(model ":KICAD7_3DMODEL_DIR:Connector_JST.3dshapes/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+	(model "${BOTS_3DMODEL_DIR}/B4B-XH-A.STEP"
 		(offset
-			(xyz 5 -0.5 0)
+			(xyz 1.240800008 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 180)
+			(xyz -90 -0 -0)
 		)
 	)
 )
