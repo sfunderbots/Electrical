@@ -55,7 +55,7 @@
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
-  (model "${KIPRJMOD}/Fuse - mini 10A.step"
+  (model "${BOTS_3DMODEL_DIR}/Fuse - mini 10A.step"
     (offset (xyz 5 -1.5 16.5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

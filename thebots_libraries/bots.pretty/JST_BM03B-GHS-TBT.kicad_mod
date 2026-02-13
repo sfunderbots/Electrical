@@ -49,7 +49,7 @@
     (solder_mask_margin 0.102) (tstamp 881621f9-3d44-440e-a068-73fb26ea9fb9))
   (pad "S2" smd rect (at 3.1 0 270) (size 2.8 1) (layers "F.Cu" "F.Paste" "F.Mask")
     (solder_mask_margin 0.102) (tstamp 73833916-6124-4ef9-b5ff-111cf57d32cf))
-  (model "${KIPRJMOD}/BM03B-GHS-TBT.STEP"
+  (model "${BOTS_3DMODEL_DIR}/BM03B-GHS-TBT.STEP"
     (offset (xyz 0 1 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

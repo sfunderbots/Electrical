@@ -73,7 +73,7 @@
     (stroke (width 0.0254) (type solid)) (layer "F.Fab") (tstamp b920d95b-ce32-4ab1-890c-7b4cd118f020))
   (pad "1" smd rect (at -3.6068 0) (size 3.81 1.4986) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 2d00144f-a741-441c-8e2b-a6723248bde0))
   (pad "2" smd rect (at 3.6068 0) (size 3.81 1.4986) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp fea42f40-2759-42c9-ad51-1f20e76436ef))
-  (model "${KIPRJMOD}/25svpf100m.step"
+  (model "${BOTS_3DMODEL_DIR}/25svpf100m.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 90))

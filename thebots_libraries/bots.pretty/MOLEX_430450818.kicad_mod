@@ -153,7 +153,7 @@
   (pad "8" smd rect (at -4.5 -4.7) (size 1.27 2.54) (layers "F.Cu" "F.Paste") (tstamp 074184ad-ac74-4c96-8586-b4dcd2f90a51))
   (pad "S1" smd rect (at 8.385 0) (size 3.43 1.65) (layers "F.Cu" "F.Paste") (tstamp 22c11f94-892b-4bfc-856d-95f6887282c8))
   (pad "S2" smd rect (at -8.385 0) (size 3.43 1.65) (layers "F.Cu" "F.Paste") (tstamp ec642d96-68a7-4d7c-a836-d060f25b9f2a))
-  (model "${KIPRJMOD}/430450818.stp"
+  (model "${BOTS_3DMODEL_DIR}/430450818.stp"
     (offset (xyz 0 0 5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

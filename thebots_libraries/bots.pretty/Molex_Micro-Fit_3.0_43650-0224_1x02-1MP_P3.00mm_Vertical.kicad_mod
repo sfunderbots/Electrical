@@ -116,7 +116,7 @@
   (pad "2" smd rect (at 1.5 3.135) (size 1.27 2.54) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 3a42df24-29d1-4d00-aea0-9aa730dd11d2))
   (pad "MP1" smd rect (at -5.385 -0.285) (size 3.43 1.65) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 98fae7aa-ec4c-416e-bd9b-aadf337516ab))
   (pad "MP2" smd rect (at 5.385 -0.285) (size 3.43 1.65) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8ab49f01-9134-4de7-a1c8-ec29ac456c79))
-  (model "${KIPRJMOD}/436500224.stp"
+  (model "${BOTS_3DMODEL_DIR}/436500224.stp"
     (offset (xyz 0 0 5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 180))

@@ -65,7 +65,7 @@
     (stroke (width 0.0254) (type solid)) (layer "F.Fab") (tstamp cf85df4f-d583-4ea6-b794-9350005c961f))
   (pad "1" smd rect (at -4.45 0) (size 3.5 5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp b14b28fe-8da7-43ba-bab7-c44c2b10d704))
   (pad "2" smd rect (at 4.45 0) (size 3.5 5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 623ceaff-1e54-4853-8d56-ade6fd1e1132))
-  (model "${KIPRJMOD}/sru1048.stp"
+  (model "${BOTS_3DMODEL_DIR}/sru1048.stp"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

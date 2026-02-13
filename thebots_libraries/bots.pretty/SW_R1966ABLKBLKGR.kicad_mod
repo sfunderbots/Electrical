@@ -55,7 +55,7 @@
     (solder_mask_margin 0.102) (tstamp 65b13e06-f5d9-4562-85df-09ad42c1436c))
   (pad "2" thru_hole circle (at -7 0) (size 2.775 2.775) (drill 1.85) (layers "*.Cu" "*.Mask")
     (solder_mask_margin 0.102) (tstamp e9c87f4e-e07c-42be-ab70-30d30fd3b82f))
-  (model "${KIPRJMOD}/R1966ABLKBLKGR.step"
+  (model "${BOTS_3DMODEL_DIR}/R1966ABLKBLKGR.step"
     (offset (xyz 0 0 -0.1))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

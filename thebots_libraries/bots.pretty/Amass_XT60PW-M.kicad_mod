@@ -74,7 +74,7 @@
     (zone_connect 2) (tstamp 6eedb482-5071-43a4-9e6e-e2ae3c4b3636))
   (pad "2" thru_hole circle (at 3.6 0) (size 4.5 4.5) (drill 3) (layers "*.Cu" "*.Mask")
     (zone_connect 2) (tstamp 6dd36f7c-22f6-42e4-9f3a-5a4dd8900559))
-  (model "${KIPRJMOD}/XT60PW-M.STEP"
+  (model "${BOTS_3DMODEL_DIR}/XT60PW-M.STEP"
     (offset (xyz 7.75 -1.7 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 180 0))

@@ -65,7 +65,7 @@
     (solder_mask_margin 0.102) (tstamp 4a069c7d-a04a-49c9-ab11-1a2d72cdbc35))
   (pad "SH2" thru_hole oval (at 6.25 0) (size 1.6 3.2) (drill oval 0.8 2.3) (layers "*.Cu" "*.Mask")
     (solder_mask_margin 0.102) (tstamp adc256ce-b74b-4818-8157-85b4e4c058bf))
-  (model "${KIPRJMOD}/EG1206.step"
+  (model "${BOTS_3DMODEL_DIR}/EG1206.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

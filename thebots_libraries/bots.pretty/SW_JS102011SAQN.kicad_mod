@@ -109,7 +109,7 @@
     (solder_mask_margin 0.102) (tstamp b38788ea-9f53-4df8-b9e8-9b8ce44b323c))
   (pad "3" smd rect (at 2.5 -2.75) (size 1.2 2.5) (layers "F.Cu" "F.Paste" "F.Mask")
     (solder_mask_margin 0.102) (tstamp 8f82536b-ccbb-4dc9-9462-7ccf7566f997))
-  (model "${KIPRJMOD}/JS102011SAQN.step"
+  (model "${BOTS_3DMODEL_DIR}/JS102011SAQN.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
