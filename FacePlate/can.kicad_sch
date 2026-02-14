@@ -112,257 +112,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "bots:0R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 0.762 0.508 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "0R"
-				(at 0.762 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "bots:R_0603_1608Metric"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "0R_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "0R_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "bots:ABM3-8.000MHZ-D2Y-T"
 			(pin_names
 				(offset 1.016)
@@ -1417,6 +1166,362 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "bots:R_0R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:R_0603_1608Metric"
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "0603WAF0000T5E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.001"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C21189"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_0R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:R_10k"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_10k"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:R_0603_1608Metric"
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "0603WAF1002T5E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Price" "0.0008"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC" "0603"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C25804"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_10k_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_10k_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:SN65HVD233"
 			(pin_names
 				(offset 1.016)
@@ -2065,26 +2170,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 66.04) (xy 121.92 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f19f923-c7aa-45e2-b456-62c7fbc6d12b")
-	)
-	(wire
-		(pts
-			(xy 184.15 63.5) (xy 200.025 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f814072-cef2-466b-bd58-0ac946a242cb")
-	)
-	(wire
-		(pts
 			(xy 135.89 66.04) (xy 143.51 66.04)
 		)
 		(stroke
@@ -2095,7 +2180,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 66.04) (xy 200.66 66.04)
+			(xy 195.58 66.04) (xy 200.66 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2115,7 +2200,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 66.04) (xy 135.89 66.04)
+			(xy 129.54 66.04) (xy 135.89 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2125,7 +2210,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 71.12) (xy 189.23 71.12)
+			(xy 173.99 71.12) (xy 187.96 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2205,7 +2290,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 68.58) (xy 179.07 68.58)
+			(xy 173.99 68.58) (xy 177.8 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2235,16 +2320,6 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 78.74) (xy 143.51 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66980729-34c2-476c-ad33-38a14df117ed")
-	)
-	(wire
-		(pts
 			(xy 186.055 80.645) (xy 187.325 80.645)
 		)
 		(stroke
@@ -2255,7 +2330,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 71.12) (xy 200.66 71.12)
+			(xy 195.58 71.12) (xy 200.66 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2265,7 +2340,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 77.47) (xy 120.65 77.47)
+			(xy 110.49 77.47) (xy 118.11 77.47)
 		)
 		(stroke
 			(width 0)
@@ -2275,7 +2350,17 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 80.01) (xy 119.38 80.01)
+			(xy 142.24 78.74) (xy 143.51 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "970cae80-9d30-49f3-a1cd-0042eafe67ac")
+	)
+	(wire
+		(pts
+			(xy 110.49 80.01) (xy 115.57 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2305,7 +2390,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 85.09) (xy 81.28 85.09)
+			(xy 78.74 85.09) (xy 81.28 85.09)
 		)
 		(stroke
 			(width 0)
@@ -2315,7 +2400,7 @@
 	)
 	(wire
 		(pts
-			(xy 136.525 78.74) (xy 137.16 78.74)
+			(xy 130.81 78.74) (xy 134.62 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2325,7 +2410,17 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 68.58) (xy 200.66 68.58)
+			(xy 71.12 85.09) (xy 69.85 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7e7abf9-c5b5-4855-983d-3d24a59853e6")
+	)
+	(wire
+		(pts
+			(xy 185.42 68.58) (xy 200.66 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2335,7 +2430,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 80.01) (xy 81.28 80.01)
+			(xy 78.74 80.01) (xy 81.28 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2355,7 +2450,17 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 66.04) (xy 189.23 66.04)
+			(xy 185.42 63.5) (xy 200.025 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bec8d08e-87f1-4576-b963-47d56890c49a")
+	)
+	(wire
+		(pts
+			(xy 173.99 66.04) (xy 187.96 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2405,6 +2510,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 80.01) (xy 69.85 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d096dbbc-029e-4c9c-a2a7-926d6a891e11")
+	)
+	(wire
+		(pts
 			(xy 111.76 50.8) (xy 111.76 52.07)
 		)
 		(stroke
@@ -2415,6 +2530,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 66.04) (xy 121.92 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d771ba74-3a28-497c-a65e-233548e17739")
+	)
+	(wire
+		(pts
 			(xy 124.46 93.98) (xy 124.46 95.25)
 		)
 		(stroke
@@ -2422,6 +2547,16 @@
 			(type default)
 		)
 		(uuid "d77f63ff-41a3-4c7d-8890-ba826a66923d")
+	)
+	(wire
+		(pts
+			(xy 115.57 63.5) (xy 116.84 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dad2ae28-fbfb-4494-b496-1475809ee5a3")
 	)
 	(wire
 		(pts
@@ -2445,7 +2580,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 77.47) (xy 120.65 66.04)
+			(xy 118.11 77.47) (xy 118.11 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2475,7 +2610,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 63.5) (xy 179.07 63.5)
+			(xy 173.99 63.5) (xy 177.8 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2505,7 +2640,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 63.5) (xy 119.38 80.01)
+			(xy 115.57 63.5) (xy 115.57 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2618,7 +2753,7 @@
 	)
 	(hierarchical_label "CAN_INT"
 		(shape output)
-		(at 136.525 78.74 180)
+		(at 130.81 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2740,7 +2875,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
+		(lib_id "bots:R_0R")
 		(at 191.77 71.12 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2765,7 +2900,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 191.77 71.12 0)
+			(at 191.77 72.898 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2782,15 +2917,61 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 191.77 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
+			(at 191.77 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 191.77 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 191.77 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 191.77 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 191.77 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
 			(at 191.77 71.12 0)
 			(effects
 				(font
@@ -3028,7 +3209,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
+		(lib_id "bots:R_0R")
 		(at 181.61 63.5 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3053,7 +3234,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 181.61 63.5 0)
+			(at 181.61 65.278 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3070,15 +3251,61 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 181.61 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 181.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
 			(at 181.61 63.5 0)
 			(effects
 				(font
@@ -3103,8 +3330,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
-		(at 72.39 85.09 90)
+		(lib_id "bots:R_0R")
+		(at 74.93 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3112,7 +3339,7 @@
 		(dnp no)
 		(uuid "1837f61c-1005-4cf9-8142-cb253c217911")
 		(property "Reference" "R13"
-			(at 72.39 87.63 90)
+			(at 74.93 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3120,7 +3347,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 68.58 86.36 90)
+			(at 71.12 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,7 +3355,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 72.39 85.09 0)
+			(at 74.93 86.868 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3137,7 +3364,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 85.09 0)
+			(at 74.93 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3145,16 +3372,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 85.09 0)
+		(property "Description" "Resistor"
+			(at 74.93 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 72.39 85.09 0)
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 74.93 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3178,7 +3451,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k")
 		(at 138.43 99.06 0)
 		(mirror x)
 		(unit 1)
@@ -3203,7 +3476,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "bots:R_0603_1608Metric"
 			(at 136.652 99.06 90)
 			(effects
 				(font
@@ -3221,16 +3494,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 138.43 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C25804"
-			(at 138.43 99.06 90)
+			(at 138.43 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 138.43 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 138.43 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0008"
+			(at 138.43 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 138.43 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 138.43 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4011,8 +4330,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
-		(at 124.46 66.04 90)
+		(lib_id "bots:R_0R")
+		(at 125.73 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4020,7 +4339,7 @@
 		(dnp no)
 		(uuid "5c0553e8-f4ad-4662-817e-c4a7d30e7b1b")
 		(property "Reference" "R11"
-			(at 124.46 68.58 90)
+			(at 125.73 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4028,7 +4347,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 120.65 67.31 90)
+			(at 121.92 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4036,7 +4355,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 124.46 66.04 0)
+			(at 125.73 67.818 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4045,7 +4364,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 124.46 66.04 0)
+			(at 125.73 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4053,16 +4372,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 124.46 66.04 0)
+		(property "Description" "Resistor"
+			(at 125.73 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 124.46 66.04 0)
+			(at 125.73 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 125.73 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 125.73 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 125.73 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 125.73 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 125.73 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4384,7 +4749,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k")
 		(at 115.57 92.71 0)
 		(mirror x)
 		(unit 1)
@@ -4409,7 +4774,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "bots:R_0603_1608Metric"
 			(at 113.792 92.71 90)
 			(effects
 				(font
@@ -4427,16 +4792,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 115.57 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C25804"
-			(at 115.57 92.71 90)
+			(at 115.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 115.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 115.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0008"
+			(at 115.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 115.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 115.57 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4460,8 +4871,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
-		(at 121.92 63.5 90)
+		(lib_id "bots:R_0R")
+		(at 120.65 63.5 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4469,7 +4880,7 @@
 		(dnp no)
 		(uuid "99c92898-2dab-4c4e-9dab-b3dc7a64d8ae")
 		(property "Reference" "R10"
-			(at 121.92 66.04 90)
+			(at 120.65 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4477,7 +4888,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 118.11 64.77 90)
+			(at 116.84 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4485,7 +4896,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 121.92 63.5 0)
+			(at 120.65 65.278 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4494,7 +4905,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 63.5 0)
+			(at 120.65 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4502,16 +4913,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 121.92 63.5 0)
+		(property "Description" "Resistor"
+			(at 120.65 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 121.92 63.5 0)
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 120.65 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4535,7 +4992,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k")
 		(at 124.46 90.17 0)
 		(mirror x)
 		(unit 1)
@@ -4560,7 +5017,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "bots:R_0603_1608Metric"
 			(at 122.682 90.17 90)
 			(effects
 				(font
@@ -4578,16 +5035,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 124.46 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C25804"
-			(at 124.46 90.17 90)
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.0008"
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 124.46 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4843,7 +5346,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "footprints:XTAL_ABM3-8.000MHZ-D2Y-T_ABR"
+		(property "Footprint" "bots:ABM3"
 			(at 186.055 86.995 0)
 			(effects
 				(font
@@ -5291,7 +5794,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
+		(lib_id "bots:R_0R")
 		(at 191.77 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5316,7 +5819,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 191.77 66.04 0)
+			(at 191.77 67.818 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5333,15 +5836,61 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 191.77 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
+			(at 191.77 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 191.77 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 191.77 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 191.77 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 191.77 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
 			(at 191.77 66.04 0)
 			(effects
 				(font
@@ -5431,8 +5980,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
-		(at 139.7 78.74 90)
+		(lib_id "bots:R_0R")
+		(at 138.43 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5440,7 +5989,7 @@
 		(dnp no)
 		(uuid "dc5b4f23-edb9-402a-b963-0b14604f2a35")
 		(property "Reference" "R18"
-			(at 139.7 81.28 90)
+			(at 138.43 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5448,7 +5997,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 135.89 80.01 90)
+			(at 134.62 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5456,7 +6005,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 139.7 78.74 0)
+			(at 138.43 80.518 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5465,7 +6014,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 139.7 78.74 0)
+			(at 138.43 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5473,16 +6022,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 139.7 78.74 0)
+		(property "Description" "Resistor"
+			(at 138.43 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 139.7 78.74 0)
+			(at 138.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 138.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 138.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 138.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 138.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 138.43 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5506,8 +6101,8 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
-		(at 72.39 80.01 90)
+		(lib_id "bots:R_0R")
+		(at 74.93 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5515,7 +6110,7 @@
 		(dnp no)
 		(uuid "dedafc7a-f354-4352-bd92-79bf8ed7ddbe")
 		(property "Reference" "R12"
-			(at 72.39 82.55 90)
+			(at 74.93 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5523,7 +6118,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 68.58 81.28 90)
+			(at 71.12 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5531,7 +6126,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 72.39 80.01 0)
+			(at 74.93 81.788 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5540,7 +6135,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 80.01 0)
+			(at 74.93 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5548,16 +6143,62 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 80.01 0)
+		(property "Description" "Resistor"
+			(at 74.93 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
-			(at 72.39 80.01 0)
+			(at 74.93 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 74.93 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 74.93 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 74.93 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 74.93 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 74.93 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5581,7 +6222,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:0R")
+		(lib_id "bots:R_0R")
 		(at 181.61 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5606,7 +6247,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 181.61 68.58 0)
+			(at 181.61 70.358 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5623,15 +6264,61 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 181.61 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21189"
+			(at 181.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 181.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 181.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "0.001"
+			(at 181.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC" "0603"
+			(at 181.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLC Extended" "no"
 			(at 181.61 68.58 0)
 			(effects
 				(font
