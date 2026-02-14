@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "abe0815c-84a6-4f50-b8cc-7c6820cba0cc")
 	(paper "A4")
+	(title_block
+		(title "Faceplate")
+		(date "2024-02-04")
+		(rev "V1.0")
+		(company "The Bots")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
 			(pin_numbers

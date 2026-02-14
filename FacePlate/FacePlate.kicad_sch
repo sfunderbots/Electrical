@@ -5,7 +5,10 @@
 	(uuid "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55")
 	(paper "A4")
 	(title_block
-		(date "15 nov 2012")
+		(title "Faceplate")
+		(date "2024-02-04")
+		(rev "V1.0")
+		(company "The Bots")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -3273,7 +3276,7 @@
 	)
 	(text "Additional pin functions:\nhttps://pinout.xyz/"
 		(exclude_from_sim no)
-		(at 179.197 179.832 0)
+		(at 178.054 177.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)

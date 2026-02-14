@@ -3,7 +3,13 @@
 	(generator "eeschema")
 	(generator_version "9.0")
 	(uuid "d5d1d365-bab2-4527-b639-afcf1aa3899a")
-	(paper "A5")
+	(paper "A4")
+	(title_block
+		(title "Faceplate")
+		(date "2024-02-04")
+		(rev "V1.0")
+		(company "The Bots")
+	)
 	(lib_symbols
 		(symbol "bots:C_100n_0402"
 			(pin_numbers

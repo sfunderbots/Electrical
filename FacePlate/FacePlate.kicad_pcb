@@ -11181,7 +11181,7 @@
 			(pinfunction "PAD")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
-			(uuid "7bb26573-1f75-497e-8ba2-b4803875b2ba")
+			(uuid "76fba528-9172-4b9d-9bd8-56884de274c6")
 		)
 		(pad "25" thru_hole circle
 			(at 0 0)
@@ -11193,7 +11193,7 @@
 			(pinfunction "PAD")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
-			(uuid "7bb26573-1f75-497e-8ba2-b4803875b2ba")
+			(uuid "40ee1331-2f46-44b6-aac2-ebc5b8930924")
 		)
 		(pad "25" smd rect
 			(at 0 0)
@@ -11204,7 +11204,7 @@
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
 			(thermal_bridge_angle 45)
-			(uuid "7bb26573-1f75-497e-8ba2-b4803875b2ba")
+			(uuid "d0967737-7e4c-47f5-9e9f-e62d5f5a949b")
 		)
 		(pad "25" thru_hole circle
 			(at 0.9 -0.85)
@@ -11216,7 +11216,7 @@
 			(pinfunction "PAD")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
-			(uuid "7bb26573-1f75-497e-8ba2-b4803875b2ba")
+			(uuid "b619254c-b6d9-4fbe-8aa2-cedb31b6c51e")
 		)
 		(pad "25" thru_hole circle
 			(at 0.9 0.85)
@@ -11228,7 +11228,7 @@
 			(pinfunction "PAD")
 			(pintype "power_in")
 			(solder_mask_margin 0.1016)
-			(uuid "7bb26573-1f75-497e-8ba2-b4803875b2ba")
+			(uuid "4fc17e2f-8c1b-426a-9601-d32867444328")
 		)
 		(embedded_fonts no)
 		(model "${BOTS_3DMODEL_DIR}/ICM-20689.step"
@@ -17083,7 +17083,7 @@
 			(net 3 "+3.3V")
 			(pinfunction "OUTPUT")
 			(pintype "output")
-			(uuid "a4c52ff3-83d3-4bfa-87ff-64079a7fbbbb")
+			(uuid "d0c3d2d9-e553-4233-af03-8732f1833274")
 		)
 		(pad "3" smd roundrect
 			(at -3.15 2.3)
