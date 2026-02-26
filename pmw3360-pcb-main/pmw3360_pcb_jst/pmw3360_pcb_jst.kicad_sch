@@ -14,27 +14,26 @@
 		(comment 3 "JST GH 1.25mm Connector")
 	)
 	(lib_symbols
-		(symbol "Connector:TestPoint"
+		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0.762)
-				(hide yes)
+				(offset 0)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
+			(property "Reference" "R"
+				(at 2.032 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
+			(property "Value" "R"
+				(at 0 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -42,7 +41,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 5.08 0 0)
+				(at -1.778 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -51,15 +50,6 @@
 				)
 			)
 			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
 				(at 0 0 0)
 				(effects
 					(font
@@ -68,7 +58,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "test point tp"
+			(property "Description" "Resistor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -77,7 +67,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Pin* Test*"
+			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -86,12 +76,21 @@
 					(hide yes)
 				)
 			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -99,11 +98,11 @@
 					)
 				)
 			)
-			(symbol "TestPoint_1_1"
+			(symbol "R_1_1"
 				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -118,10 +117,972 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x08"
+		(symbol "bots:C_0.1uF_HS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "0.1uF_HS"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0.1uF_HS_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_0.1uF_HS_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:C_1uF_HS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "1uF_HS"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_1uF_HS_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1uF_HS_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:C_22nF_HS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "22nF_HS"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C21122"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CL10B223KB8NNNC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_22nF_HS_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_22nF_HS_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:C_4.7uF_HS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "4.7uF_HS"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_4.7uF_HS_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_4.7uF_HS_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:IC_PMW3360DM-T2QU"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U?"
+				(at -7.62 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "IC_PMW3360DM-T2QU"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:IC_PMW3360DM-T2QU 16Pin"
+				(at -1.27 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.pixart.com/products-detail/tw/10/PMW3360DM-T2QU"
+				(at -5.08 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Optical mouse sensor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "PMW3360"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "IC_PMW3360DM-T2QU_0_1"
+				(rectangle
+					(start -8.89 10.16)
+					(end 8.89 -10.16)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "IC_PMW3360DM-T2QU_1_1"
+				(pin power_in line
+					(at -11.43 7.62 0)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -11.43 5.08 0)
+					(length 2.54)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -11.43 2.54 0)
+					(length 2.54)
+					(name "LED_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -11.43 0 0)
+					(length 2.54)
+					(name "VDDPIX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -11.43 -7.62 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 21.59 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect inverted
+					(at -2.54 19.05 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 16.51 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 13.97 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 11.43 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 7.62 180)
+					(length 2.54)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 11.43 5.08 180)
+					(length 2.54)
+					(name "MOTION"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 11.43 0 180)
+					(length 2.54)
+					(name "MISO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -2.54 180)
+					(length 2.54)
+					(name "MOSI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input clock
+					(at 11.43 -5.08 180)
+					(length 2.54)
+					(name "SCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -7.62 180)
+					(length 2.54)
+					(name "~{CS}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:JST_SM08B-GHS-TB"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -137,7 +1098,7 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x08"
+			(property "Value" "JST_SM08B-GHS-TB"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -145,7 +1106,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Connector_JST:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
 				(at 0 0 0)
 				(effects
 					(font
@@ -190,7 +1151,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x08_1_1"
+			(symbol "JST_SM08B-GHS-TB_1_1"
 				(rectangle
 					(start -1.27 8.89)
 					(end 1.27 -11.43)
@@ -434,39 +1395,209 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 0 -15.24 90)
+					(length 3.81)
+					(name "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C_Small"
+		(symbol "bots:LDO_TLV74318PDBVR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LDO_TLV74318PDBVR"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:SOT-23-5"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "LDO Voltage Regulators 300-mA low-IQ low-dropout (LDO) voltage regulator with enable 5-SOT-23 -40 to 125"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LDO_TLV74318PDBVR_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LDO_TLV74318PDBVR_1_1"
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:MountingHole_Pad_M2NoThread"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0.254)
+				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
-			(property "Reference" "C"
-				(at 0.254 1.778 0)
+			(property "Reference" "H"
+				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "C_Small"
-				(at 0.254 -2.032 0)
+			(property "Value" "M2"
+				(at 0 4.445 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "bots:MountingHole_2.2mm_M2_ISO14580_Pad"
 				(at 0 0 0)
 				(effects
 					(font
@@ -484,7 +1615,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Unpolarized capacitor, small symbol"
+			(property "Description" "Mounting Hole with connection"
 				(at 0 0 0)
 				(effects
 					(font
@@ -493,7 +1624,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "capacitor cap"
+			(property "ki_keywords" "mounting hole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -502,7 +1633,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "C_*"
+			(property "ki_fp_filters" "MountingHole*Pad*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -511,25 +1642,12 @@
 					(hide yes)
 				)
 			)
-			(symbol "C_Small_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
-					)
+			(symbol "MountingHole_Pad_M2NoThread_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
 					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 -0.508) (xy 1.524 -0.508)
-					)
-					(stroke
-						(width 0.3302)
+						(width 1.27)
 						(type default)
 					)
 					(fill
@@ -537,11 +1655,11 @@
 					)
 				)
 			)
-			(symbol "C_Small_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 2.032)
-					(name "~"
+			(symbol "MountingHole_Pad_M2NoThread_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -556,28 +1674,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
+		(symbol "bots:R_10k_HS"
 			(pin_numbers
 				(hide yes)
 			)
@@ -595,15 +1695,15 @@
 					)
 				)
 			)
-			(property "Value" "R"
-				(at 0 0 90)
+			(property "Value" "10k_HS"
+				(at -3.556 0.508 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 				(at -1.778 0 90)
 				(effects
 					(font
@@ -648,7 +1748,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_0_1"
+			(symbol "R_10k_HS_0_1"
 				(rectangle
 					(start -1.016 -2.54)
 					(end 1.016 2.54)
@@ -661,7 +1761,7 @@
 					)
 				)
 			)
-			(symbol "R_1_1"
+			(symbol "R_10k_HS_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -701,13 +1801,13 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_3_Open"
+		(symbol "bots:SolderJumper_3_Open"
 			(pin_names
 				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
 			(property "Reference" "JP"
 				(at -2.54 -2.54 0)
@@ -723,9 +1823,10 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(hide yes)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
 				(at 0 0 0)
 				(effects
 					(font
@@ -949,35 +2050,35 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mechanical:MountingHole_Pad"
+		(symbol "bots:TestPoint1.0mm"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 1.016)
+				(offset 0.762)
 				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
+			(property "Value" "1.0mm"
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+				(at 5.08 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -986,6 +2087,15 @@
 				)
 			)
 			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
 				(at 0 0 0)
 				(effects
 					(font
@@ -994,7 +2104,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Mounting Hole with connection"
+			(property "ki_keywords" "test point tp"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1003,7 +2113,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "mounting hole"
+			(property "ki_fp_filters" "Pin* Test*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1012,21 +2122,12 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
+			(symbol "TestPoint1.0mm_0_1"
 				(circle
-					(center 0 1.27)
-					(radius 1.27)
+					(center 0 3.302)
+					(radius 0.762)
 					(stroke
-						(width 1.27)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1034,9 +2135,9 @@
 					)
 				)
 			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
+			(symbol "TestPoint1.0mm_1_1"
+				(pin passive line
+					(at 0 0 90)
 					(length 2.54)
 					(name "1"
 						(effects
@@ -1056,28 +2157,20 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PMW3360_PCB:PMW3360DM-T2QU"
+		(symbol "power:+5V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U?"
-				(at -6.35 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "PMW3360DM-T2QU"
-				(at 1.27 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "PMW3360_PCB:16pin‐DIP(PMW3360DM-T2QU)"
-				(at 0 -17.78 0)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1085,365 +2178,16 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.pixart.com/products-detail/tw/10/PMW3360DM-T2QU"
-				(at -3.81 -20.32 0)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
-			(property "Description" "Optical mouse sensor"
+			(property "Footprint" ""
 				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "PMW3360"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PMW3360DM-T2QU_0_1"
-				(rectangle
-					(start -7.62 10.16)
-					(end 8.89 -10.16)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "PMW3360DM-T2QU_1_1"
-				(pin power_in line
-					(at -10.16 7.62 0)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 5.08 0)
-					(length 2.54)
-					(name "VDDIO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "LED_P"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "VDDPIX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -7.62 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -1.27 21.59 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect inverted
-					(at -1.27 19.05 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -1.27 16.51 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -1.27 13.97 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -1.27 11.43 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 7.62 180)
-					(length 2.54)
-					(name "~{RESET}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 5.08 180)
-					(length 2.54)
-					(name "MOTION"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 0 180)
-					(length 2.54)
-					(name "MISO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -2.54 180)
-					(length 2.54)
-					(name "MOSI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input clock
-					(at 11.43 -5.08 180)
-					(length 2.54)
-					(name "SCLK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -7.62 180)
-					(length 2.54)
-					(name "~{CS}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "PMW3360_PCB:TLV74318PDBVR"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TLV74318PDBVR"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "bots:SOT-23-5"
-				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1460,7 +2204,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "LDO Voltage Regulators 300-mA low-IQ low-dropout (LDO) voltage regulator with enable 5-SOT-23 -40 to 125"
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1469,24 +2213,58 @@
 					(hide yes)
 				)
 			)
-			(symbol "TLV74318PDBVR_0_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -5.08)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 			)
-			(symbol "TLV74318PDBVR_1_1"
+			(symbol "+5V_1_1"
 				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "IN"
+					(at 0 0 90)
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1501,85 +2279,17 @@
 						)
 					)
 				)
-				(pin input line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
 			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1628,7 +2338,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "power-flag"
+			(property "ki_keywords" "global power"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1655,8 +2365,7 @@
 				(pin power_in line
 					(at 0 0 270)
 					(length 0)
-					(hide yes)
-					(name "GND"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1676,8 +2385,12 @@
 		)
 		(symbol "power:VDD"
 			(power)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1692,7 +2405,7 @@
 				)
 			)
 			(property "Value" "VDD"
-				(at 0 3.81 0)
+				(at 0 3.556 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1726,7 +2439,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "power-flag"
+			(property "ki_keywords" "global power"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1777,8 +2490,7 @@
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(hide yes)
-					(name "VDD"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1959,6 +2671,26 @@
 		(color 0 0 0 0)
 		(uuid "fc093300-4dbd-4260-8ac4-f78b6688a522")
 	)
+	(no_connect
+		(at 223.52 119.38)
+		(uuid "0738b1cd-ecef-4260-aa69-9d5177afbcf3")
+	)
+	(no_connect
+		(at 90.17 90.17)
+		(uuid "1ca1f42c-1d44-4617-8e05-9b69198d9498")
+	)
+	(no_connect
+		(at 215.9 119.38)
+		(uuid "25829f01-1513-4967-bf16-ad6c22aa9cce")
+	)
+	(no_connect
+		(at 238.76 119.38)
+		(uuid "8d42e61b-9364-4f43-a6e6-5f588cade837")
+	)
+	(no_connect
+		(at 231.14 119.38)
+		(uuid "b5aa26d5-e8ef-4d87-931a-5a0e542cfa41")
+	)
 	(wire
 		(pts
 			(xy 106.68 118.11) (xy 123.19 118.11)
@@ -1991,17 +2723,27 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 118.11) (xy 80.01 118.11)
+			(xy 71.12 82.55) (xy 85.09 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "094de91e-9b27-44d6-abbe-f85928037eba")
+		(uuid "0bc7f520-4180-4c6b-b259-47c56b703c26")
 	)
 	(wire
 		(pts
-			(xy 152.4 76.2) (xy 170.18 76.2)
+			(xy 68.58 118.11) (xy 80.01 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cddd7ff-2c11-48c6-8fb1-f0fd26ed07a1")
+	)
+	(wire
+		(pts
+			(xy 153.67 76.2) (xy 170.18 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2018,6 +2760,16 @@
 			(type default)
 		)
 		(uuid "163b43ee-6b70-4550-9f9f-1d255a77666b")
+	)
+	(wire
+		(pts
+			(xy 160.02 130.81) (xy 160.02 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ad35ade-7e24-4d0d-bb66-a38c2eed964c")
 	)
 	(wire
 		(pts
@@ -2038,16 +2790,6 @@
 			(type default)
 		)
 		(uuid "20d27a84-4e1e-4304-8ec9-5a579a9ca2e5")
-	)
-	(wire
-		(pts
-			(xy 82.55 82.55) (xy 85.09 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "215c9183-dcd3-4d10-9c25-db1d730527a6")
 	)
 	(wire
 		(pts
@@ -2098,6 +2840,26 @@
 			(type default)
 		)
 		(uuid "35734e6b-d633-4de1-b0e4-6b1f52b58134")
+	)
+	(wire
+		(pts
+			(xy 160.02 130.81) (xy 168.91 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36e5d0e4-5ee5-42ba-9147-4d7687bc8fab")
+	)
+	(wire
+		(pts
+			(xy 71.12 81.28) (xy 71.12 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37402910-eaa2-4e66-bbfe-04a4c4d99b23")
 	)
 	(wire
 		(pts
@@ -2161,16 +2923,6 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 128.27) (xy 168.91 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d72cad9-cc9e-4190-a946-e27b0ba7cd75")
-	)
-	(wire
-		(pts
 			(xy 154.94 50.8) (xy 154.94 49.53)
 		)
 		(stroke
@@ -2231,6 +2983,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 114.3) (xy 68.58 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "772b72fd-9704-4987-be2b-c6b98bbcec96")
+	)
+	(wire
+		(pts
 			(xy 107.95 120.65) (xy 115.57 120.65)
 		)
 		(stroke
@@ -2241,7 +3003,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 83.82) (xy 177.8 83.82)
+			(xy 153.67 83.82) (xy 177.8 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2271,7 +3033,17 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 68.58) (xy 154.94 68.58)
+			(xy 129.54 113.03) (xy 129.54 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82d3d39f-a676-4139-a603-fafc22142706")
+	)
+	(wire
+		(pts
+			(xy 153.67 68.58) (xy 154.94 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2281,7 +3053,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 71.12) (xy 165.1 71.12)
+			(xy 153.67 71.12) (xy 165.1 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2321,7 +3093,17 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 81.28) (xy 177.8 81.28)
+			(xy 130.81 71.12) (xy 129.54 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4f32212-1984-4ef2-9b0e-121f3bf8e975")
+	)
+	(wire
+		(pts
+			(xy 153.67 81.28) (xy 177.8 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2401,6 +3183,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 69.85) (xy 251.46 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7299917-437d-43cf-931a-5729f1541b95")
+	)
+	(wire
+		(pts
 			(xy 123.19 118.11) (xy 129.54 118.11)
 		)
 		(stroke
@@ -2431,6 +3223,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 130.81) (xy 168.91 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e83b9fd1-1f29-45f9-96ca-a03b6fe54194")
+	)
+	(wire
+		(pts
 			(xy 116.84 83.82) (xy 116.84 85.09)
 		)
 		(stroke
@@ -2451,7 +3253,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 78.74) (xy 177.8 78.74)
+			(xy 153.67 78.74) (xy 177.8 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2623,28 +3425,6 @@
 			)
 		)
 	)
-	(global_label "V_{IN}"
-		(shape input)
-		(at 72.39 118.11 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "508f6a24-f541-4f37-9b63-8c5ac2f4adf6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.9855 118.0306 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "V_{IO}"
 		(shape input)
 		(at 172.72 123.19 0)
@@ -2669,7 +3449,7 @@
 	)
 	(global_label "V_{IO}"
 		(shape input)
-		(at 130.81 71.12 180)
+		(at 129.54 71.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2679,51 +3459,7 @@
 		)
 		(uuid "73747eb4-0310-4447-9ece-1b1acd5e0803")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 124.4055 71.0406 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "V_{IN}"
-		(shape input)
-		(at 82.55 82.55 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b897dc83-fa1a-4d91-8dad-385b988a7c64")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.1455 82.4706 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "V_{IN}"
-		(shape input)
-		(at 167.64 128.27 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "def37a39-b920-4b1b-9326-b46c480129ae")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 162.2148 128.27 0)
+			(at 123.1355 71.0406 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2799,12 +3535,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 129.54 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2820,7 +3557,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
+		(lib_id "bots:TestPoint1.0mm")
 		(at 227.33 71.12 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2837,13 +3574,12 @@
 				(justify right)
 			)
 		)
-		(property "Value" "V_{DD}"
-			(at 228.6 77.47 0)
+		(property "Value" "1.0mm"
+			(at 227.33 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
@@ -2864,12 +3600,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 227.33 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2886,7 +3623,7 @@
 	)
 	(symbol
 		(lib_id "power:VDD")
-		(at 129.54 118.11 0)
+		(at 129.54 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2894,7 +3631,7 @@
 		(dnp no)
 		(uuid "0df66ff5-6ce4-4bb3-a542-11ed4cd12c83")
 		(property "Reference" "#PWR06"
-			(at 129.54 121.92 0)
+			(at 129.54 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2903,7 +3640,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 129.54 114.3 0)
+			(at 129.54 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2911,7 +3648,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 118.11 0)
+			(at 129.54 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2920,7 +3657,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 118.11 0)
+			(at 129.54 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2928,12 +3665,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 129.54 118.11 0)
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
+			(at 129.54 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2992,12 +3730,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
 			(at 116.84 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3013,7 +3752,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k_HS")
 		(at 119.38 120.65 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3030,7 +3769,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "28k"
+		(property "Value" "10k_HS"
 			(at 118.11 125.73 90)
 			(effects
 				(font
@@ -3057,12 +3796,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 119.38 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3081,8 +3821,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 220.98 116.84 0)
+		(lib_id "bots:MountingHole_Pad_M2NoThread")
+		(at 223.52 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3091,7 +3831,7 @@
 		(fields_autoplaced yes)
 		(uuid "16aa6da4-365f-4c7a-8819-968499f570a6")
 		(property "Reference" "H2"
-			(at 223.52 114.2999 0)
+			(at 226.06 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3100,18 +3840,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 223.52 116.8399 0)
+		(property "Value" "M2"
+			(at 226.06 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO14580_Pad"
-			(at 220.98 116.84 0)
+		(property "Footprint" "bots:MountingHole_2.2mm_M2_ISO14580_Pad"
+			(at 223.52 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3120,7 +3859,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 220.98 116.84 0)
+			(at 223.52 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,12 +3867,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 220.98 116.84 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 223.52 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3149,7 +3889,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "bots:C_1uF_HS")
 		(at 129.54 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3159,7 +3899,7 @@
 		(fields_autoplaced yes)
 		(uuid "1d32441c-50a0-435c-be28-14df0d7aaa0a")
 		(property "Reference" "C4"
-			(at 132.08 121.9263 0)
+			(at 132.08 121.9262 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3167,8 +3907,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
-			(at 132.08 124.4663 0)
+		(property "Value" "1uF_HS"
+			(at 132.08 124.4662 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3194,12 +3934,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 129.54 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3218,7 +3959,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
+		(lib_id "bots:MountingHole_Pad_M2NoThread")
 		(at 215.9 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3237,17 +3978,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 218.44 116.8399 0)
+		(property "Value" "M2"
+			(at 218.44 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO14580_Pad"
+		(property "Footprint" "bots:MountingHole_2.2mm_M2_ISO14580_Pad"
 			(at 215.9 116.84 0)
 			(effects
 				(font
@@ -3265,12 +4005,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Mounting Hole with connection"
 			(at 215.9 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3303,7 +4044,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "39R"
+		(property "Value" "R"
 			(at 122.555 73.66 90)
 			(effects
 				(font
@@ -3330,12 +4071,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 120.65 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3397,12 +4139,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 116.84 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3418,7 +4161,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "bots:C_4.7uF_HS")
 		(at 116.84 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3435,8 +4178,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF/10V"
-			(at 104.14 81.28 0)
+		(property "Value" "4.7uF_HS"
+			(at 107.442 81.788 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3462,12 +4205,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 116.84 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3529,12 +4273,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 78.74 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3550,7 +4295,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "bots:C_22nF_HS")
 		(at 107.95 124.46 0)
 		(mirror y)
 		(unit 1)
@@ -3568,7 +4313,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "22nF"
+		(property "Value" "22nF_HS"
 			(at 110.49 125.73 0)
 			(effects
 				(font
@@ -3595,12 +4340,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C21122"
@@ -3612,7 +4358,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mfr. #" "CL10B223KB8NNNC"
+		(property "MPN" "CL10B223KB8NNNC"
 			(at 107.95 124.46 0)
 			(effects
 				(font
@@ -3631,6 +4377,71 @@
 			(project "pmw3360_pcb_jst"
 				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:TestPoint1.0mm")
+		(at 251.46 71.12 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "44e5957d-db03-41d1-9c7f-77118a79b6e2")
+		(property "Reference" "TP4"
+			(at 251.46 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1.0mm"
+			(at 251.46 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 246.38 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 246.38 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 251.46 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "faf17467-3491-47e1-b5c8-d3750af6d881")
+		)
+		(instances
+			(project "pmw3360_pcb_jst"
+				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -3680,12 +4491,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 240.03 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3701,8 +4513,74 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 231.14 116.84 0)
+		(lib_id "power:+5V")
+		(at 71.12 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c8d7e1f-460b-4ef8-9954-ac9d678270b7")
+		(property "Reference" "#PWR011"
+			(at 71.12 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 71.12 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 71.12 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dcd4b47f-cba8-4a6b-bffe-29550655758b")
+		)
+		(instances
+			(project "pmw3360_pcb_jst"
+				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHole_Pad_M2NoThread")
+		(at 238.76 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3711,7 +4589,7 @@
 		(fields_autoplaced yes)
 		(uuid "5953b714-f6a7-41c6-9dd2-6d3a12cdb95f")
 		(property "Reference" "H4"
-			(at 233.68 114.2999 0)
+			(at 241.3 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3720,18 +4598,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 233.68 116.8399 0)
+		(property "Value" "M2"
+			(at 241.3 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO14580_Pad"
-			(at 231.14 116.84 0)
+		(property "Footprint" "bots:MountingHole_2.2mm_M2_ISO14580_Pad"
+			(at 238.76 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3740,7 +4617,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 231.14 116.84 0)
+			(at 238.76 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3748,12 +4625,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 231.14 116.84 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 238.76 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3769,8 +4647,74 @@
 		)
 	)
 	(symbol
-		(lib_id "PMW3360_PCB:PMW3360DM-T2QU")
-		(at 140.97 76.2 0)
+		(lib_id "power:+5V")
+		(at 68.58 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a14b56d-7ca0-4a8a-a5ac-7b606381d4b0")
+		(property "Reference" "#PWR08"
+			(at 68.58 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 68.58 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d603093-87ba-45dc-848d-48dc361896dd")
+		)
+		(instances
+			(project ""
+				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:IC_PMW3360DM-T2QU")
+		(at 142.24 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3778,23 +4722,23 @@
 		(dnp no)
 		(uuid "64ae11a9-fe0f-4202-8f52-bdf2d081c7cb")
 		(property "Reference" "U1"
-			(at 140.97 87.63 0)
+			(at 142.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "PMW3360DM-T2QU"
-			(at 142.24 90.17 0)
+		(property "Value" "IC_PMW3360DM-T2QU"
+			(at 143.51 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "PMW3360_PCB:PMW3360DM-T2QU 16Pin"
-			(at 135.89 74.93 0)
+		(property "Footprint" "bots:IC_PMW3360DM-T2QU 16Pin"
+			(at 140.97 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3803,7 +4747,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.pixart.com/products-detail/tw/10/PMW3360DM-T2QU"
-			(at 135.89 74.93 0)
+			(at 137.16 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3811,12 +4755,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 140.97 76.2 0)
+		(property "Description" "Optical mouse sensor"
+			(at 142.24 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3920,12 +4865,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
 			(at 227.33 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3941,7 +4887,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "bots:C_1uF_HS")
 		(at 80.01 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3958,7 +4904,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "1uF_HS"
 			(at 73.66 124.46 0)
 			(effects
 				(font
@@ -3985,12 +4931,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 80.01 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4009,7 +4956,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k_HS")
 		(at 154.94 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4026,7 +4973,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10k_HS"
 			(at 156.21 55.88 0)
 			(effects
 				(font
@@ -4053,12 +5000,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 154.94 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4077,7 +5025,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "bots:C_0.1uF_HS")
 		(at 121.92 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4094,8 +5042,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
-			(at 124.46 81.28 0)
+		(property "Value" "0.1uF_HS"
+			(at 122.936 81.788 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4121,12 +5069,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 121.92 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4145,7 +5094,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
+		(lib_id "bots:TestPoint1.0mm")
 		(at 240.03 71.12 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4162,13 +5111,12 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 245.11 77.47 0)
+		(property "Value" "1.0mm"
+			(at 240.03 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
@@ -4189,12 +5137,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 240.03 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4210,7 +5159,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
+		(lib_id "bots:R_10k_HS")
 		(at 170.18 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4227,7 +5176,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10k_HS"
 			(at 171.45 55.88 0)
 			(effects
 				(font
@@ -4254,12 +5203,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 170.18 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4272,6 +5222,72 @@
 			(project "pmw3360_pcb_jst"
 				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 160.02 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3df8050-f554-47d6-b5ed-2807f3231c72")
+		(property "Reference" "#PWR09"
+			(at 160.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 160.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 160.02 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c73bfa1f-34bf-4300-836c-9e6d1aeeb90c")
+		)
+		(instances
+			(project "pmw3360_pcb_jst"
+				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -4321,12 +5337,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 80.01 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4336,6 +5353,72 @@
 			(project "pmw3360_pcb_jst"
 				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 251.46 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6cb9295-4f4b-40c3-972c-42acb7fce882")
+		(property "Reference" "#PWR010"
+			(at 251.46 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 251.46 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 251.46 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5ace162-b444-4801-afd5-92e5ecc7f28b")
+		)
+		(instances
+			(project "pmw3360_pcb_jst"
+				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -4385,12 +5468,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 107.95 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4406,11 +5490,11 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
+		(lib_id "bots:SolderJumper_3_Open")
 		(at 168.91 123.19 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "d2623ef6-094c-470c-9361-b0406965e9c3")
@@ -4423,7 +5507,7 @@
 			)
 		)
 		(property "Value" "SolderJumper_3_Open"
-			(at 162.56 123.19 0)
+			(at 166.116 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4449,12 +5533,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Solder Jumper, 3-pole, open"
 			(at 168.91 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4519,12 +5604,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 96.52 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4540,7 +5626,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PMW3360_PCB:TLV74318PDBVR")
+		(lib_id "bots:LDO_TLV74318PDBVR")
 		(at 96.52 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4556,8 +5642,8 @@
 				)
 			)
 		)
-		(property "Value" "TLV74318PDBVR"
-			(at 96.52 113.03 0)
+		(property "Value" "LDO_TLV74318PDBVR"
+			(at 96.52 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4588,6 +5674,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C485152"
@@ -4633,7 +5720,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x08")
+		(lib_id "bots:JST_SM08B-GHS-TB")
 		(at 90.17 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4650,14 +5737,12 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x08"
-			(at 92.71 77.4699 0)
+		(property "Value" "JST_SM08B-GHS-TB"
+			(at 90.17 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
@@ -4678,12 +5763,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 90.17 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4710,6 +5796,9 @@
 		(pin "8"
 			(uuid "3c58b41f-3867-40e9-b8ef-9bcddbad3b7b")
 		)
+		(pin "MP"
+			(uuid "527ae564-03e9-4523-93a6-d61f043abfea")
+		)
 		(instances
 			(project "pmw3360_pcb_jst"
 				(path "/45d2ba16-f6c4-413f-a27a-bb6cd0965582"
@@ -4720,8 +5809,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 226.06 116.84 0)
+		(lib_id "bots:MountingHole_Pad_M2NoThread")
+		(at 231.14 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4730,7 +5819,7 @@
 		(fields_autoplaced yes)
 		(uuid "ec652d98-a8a0-4313-ac53-44f7c64ff17c")
 		(property "Reference" "H3"
-			(at 228.6 114.2999 0)
+			(at 233.68 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4739,18 +5828,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "MountingHole_Pad"
-			(at 228.6 116.8399 0)
+		(property "Value" "M2"
+			(at 233.68 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO14580_Pad"
-			(at 226.06 116.84 0)
+		(property "Footprint" "bots:MountingHole_2.2mm_M2_ISO14580_Pad"
+			(at 231.14 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4759,7 +5847,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 226.06 116.84 0)
+			(at 231.14 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4767,12 +5855,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 226.06 116.84 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 231.14 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4831,12 +5920,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
 			(at 168.91 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4852,7 +5942,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
+		(lib_id "bots:TestPoint1.0mm")
 		(at 214.63 71.12 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4869,13 +5959,12 @@
 				(justify left)
 			)
 		)
-		(property "Value" "V_{IO}"
-			(at 218.44 77.47 0)
+		(property "Value" "1.0mm"
+			(at 214.63 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
@@ -4896,12 +5985,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 214.63 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
