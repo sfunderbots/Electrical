@@ -6244,7 +6244,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "bots:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 0 0 0)
 			(effects
 				(font
@@ -8736,7 +8736,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "bots:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 0 0 0)
 			(effects
 				(font
@@ -9365,7 +9365,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "bots:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 0 0 0)
 			(effects
 				(font
@@ -10286,7 +10286,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "bots:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 0 0 0)
 			(effects
 				(font
@@ -22128,7 +22128,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
+		(property "Footprint" "bots:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
 			(at 0 0 0)
 			(effects
 				(font
@@ -22176,7 +22176,7 @@
 		(symbol "JST_SM08B-GHS-TB_1_1"
 			(rectangle
 				(start -1.27 8.89)
-				(end 1.27 -11.43)
+				(end 3.81 -11.43)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -35553,7 +35553,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at -1.778 0 90)
 			(effects
 				(font
@@ -38284,7 +38284,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at -1.778 0 90)
 			(effects
 				(font
@@ -45742,7 +45742,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
+		(property "Footprint" "bots:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
 			(at 0 0 0)
 			(effects
 				(font
@@ -47405,7 +47405,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "bots:TestPoint_Pad_D1.0mm"
 			(at 5.08 0 0)
 			(effects
 				(font
