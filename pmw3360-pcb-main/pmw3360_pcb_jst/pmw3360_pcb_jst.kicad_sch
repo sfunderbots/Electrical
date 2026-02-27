@@ -958,7 +958,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:JST_SM08B-GHS-TB"
+		(symbol "bots:JST_BM08B-GHS-TBT"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -974,7 +974,7 @@
 					)
 				)
 			)
-			(property "Value" "JST_SM08B-GHS-TB"
+			(property "Value" "JST_BM08B-GHS-TBT"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -982,7 +982,7 @@
 					)
 				)
 			)
-			(property "Footprint" "bots:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
+			(property "Footprint" "bots:JST_BM08B-GHS-TBT_LF__SN__N_"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1027,7 +1027,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "JST_SM08B-GHS-TB_1_1"
+			(symbol "JST_BM08B-GHS-TBT_1_1"
 				(rectangle
 					(start -1.27 8.89)
 					(end 3.81 -11.43)
@@ -5702,7 +5702,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:JST_SM08B-GHS-TB")
+		(lib_id "bots:JST_BM08B-GHS-TBT")
 		(at 90.17 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5719,15 +5719,15 @@
 				(justify left)
 			)
 		)
-		(property "Value" "JST_SM08B-GHS-TB"
-			(at 91.948 63.246 0)
+		(property "Value" "JST_BM08B-GHS-TBT"
+			(at 92.71 92.202 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_GH_SM08B-GHS-TB_1x08-1MP_P1.25mm_Horizontal"
+		(property "Footprint" "bots:JST_BM08B-GHS-TBT_LF__SN__N_"
 			(at 90.17 74.93 0)
 			(effects
 				(font
