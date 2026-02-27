@@ -31566,7 +31566,7 @@
 			)
 		)
 		(property "Value" "IRFR3410TRPBF_alternate"
-			(at 5.08 0 0)
+			(at 14.224 2.286 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31844,6 +31844,76 @@
 			)
 		)
 		(symbol "Q_IRFR3410TRPBF_alternate_1_1"
+			(polyline
+				(pts
+					(xy -3.81 6.35) (xy -3.81 3.81) (xy -3.81 5.08) (xy -5.08 5.08) (xy -5.08 0)
+				)
+				(stroke
+					(width 0)
+					(type solid)
+					(color 194 194 0 1)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 5.08) (xy -2.54 5.08) (xy -2.54 6.35) (xy -2.54 3.81)
+				)
+				(stroke
+					(width 0)
+					(type solid)
+					(color 194 194 0 1)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 5.08) (xy 8.89 5.08) (xy 8.89 1.27) (xy 7.62 1.27) (xy 10.16 1.27)
+				)
+				(stroke
+					(width 0)
+					(type solid)
+					(color 194 194 0 1)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 7.62 0) (xy 10.16 0) (xy 8.89 0) (xy 8.89 -5.08) (xy 2.54 -5.08)
+				)
+				(stroke
+					(width 0)
+					(type solid)
+					(color 194 194 0 1)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(text "Cgd"
+				(at -2.286 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 132 132 0 1)
+					)
+				)
+			)
+			(text "Cds"
+				(at 10.922 2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 132 132 0 1)
+					)
+				)
+			)
 			(pin passive line
 				(at -5.08 0 0)
 				(length 2.54)
@@ -34299,7 +34369,7 @@
 				)
 			)
 		)
-		(property "Value" "R_0OHM_JUMPER"
+		(property "Value" "0R"
 			(at 0 0 90)
 			(effects
 				(font
@@ -39927,6 +39997,130 @@
 			)
 		)
 		(symbol "R_34k_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name "~"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "R_39R_HS"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "39R_HS"
+			(at 0 0 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at -1.778 0 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "R_39R_HS_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_39R_HS_1_1"
 			(pin passive line
 				(at 0 3.81 270)
 				(length 1.27)

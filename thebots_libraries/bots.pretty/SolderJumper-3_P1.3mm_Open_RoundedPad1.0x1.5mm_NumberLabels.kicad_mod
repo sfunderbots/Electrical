@@ -53,11 +53,12 @@
 			)
 		)
 	)
+	(solder_mask_margin 0.1016)
 	(zone_connect 1)
 	(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
 	(fp_rect
-		(start -0.75 -0.75)
-		(end 0.75 0.75)
+		(start -0.75 -0.849497)
+		(end 0.75 0.849496)
 		(stroke
 			(width 0)
 			(type default)

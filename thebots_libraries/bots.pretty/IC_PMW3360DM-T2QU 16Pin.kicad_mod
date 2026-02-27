@@ -427,4 +427,15 @@
 		)
 	)
 	(embedded_fonts no)
+	(model "${BOTS_3DMODEL_DIR}/PMW3360 v12.step"
+		(offset
+			(xyz -0.508 0 1.905)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -90)
+		)
+	)
 )
