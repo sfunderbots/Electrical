@@ -70,6 +70,24 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C14663"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CC0603KRX7R9BB104"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "capacitor cap"
 				(at 0 0 0)
 				(effects
@@ -202,6 +220,24 @@
 				)
 			)
 			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C15849"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CL10A105KB8NNNC"
 				(at 0 0 0)
 				(effects
 					(font
@@ -508,6 +544,24 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C19666"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CL10A475KO8NNNC"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "capacitor cap"
 				(at 0 0 0)
 				(effects
@@ -631,6 +685,24 @@
 				)
 			)
 			(property "Description" "Optical mouse sensor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C20612443"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" " PMW3360DM-T2QU"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1009,6 +1081,24 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C133062"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" " BM08B-GHS-TBT(LF)(SN)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "connector"
 				(at 0 0 0)
 				(effects
@@ -1339,6 +1429,24 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C485152"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "TLV74318PDBVR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(symbol "LDO_TLV74318PDBVR_0_1"
 				(rectangle
 					(start -7.62 5.08)
@@ -1606,6 +1714,24 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C25804"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "0603WAF1002T5E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
@@ -1722,6 +1848,33 @@
 				)
 			)
 			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C23154"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "0603WAF390JT5E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Extended" "Yes"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3640,7 +3793,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 129.54 109.22 0)
+			(at 129.54 109.474 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3705,7 +3858,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 116.84 63.5 0)
+			(at 116.84 63.754 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3770,12 +3923,11 @@
 			)
 		)
 		(property "Value" "10k_HS"
-			(at 118.11 125.73 90)
+			(at 119.888 117.094 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -3797,6 +3949,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 119.38 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 119.38 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
 			(at 119.38 120.65 0)
 			(effects
 				(font
@@ -3943,6 +4113,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C15849"
+			(at 129.54 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 129.54 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6e877028-70b4-43f0-b52e-b2495bc4fc1b")
 		)
@@ -4045,12 +4233,11 @@
 			)
 		)
 		(property "Value" "39R_HS"
-			(at 116.586 74.676 90)
+			(at 120.65 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -4072,6 +4259,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 120.65 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23154"
+			(at 120.65 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF390JT5E"
+			(at 120.65 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Extended" "Yes"
 			(at 120.65 73.66 0)
 			(effects
 				(font
@@ -4179,7 +4393,7 @@
 			)
 		)
 		(property "Value" "4.7uF_HS"
-			(at 107.442 81.788 0)
+			(at 117.094 82.042 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4206,6 +4420,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 116.84 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C19666"
+			(at 116.84 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A475KO8NNNC"
 			(at 116.84 80.01 0)
 			(effects
 				(font
@@ -4314,12 +4546,12 @@
 			)
 		)
 		(property "Value" "22nF_HS"
-			(at 110.49 125.73 0)
+			(at 107.696 126.492 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "bots:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
@@ -4532,11 +4764,12 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 71.12 76.2 0)
+			(at 73.66 80.0099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -4666,11 +4899,12 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 68.58 109.22 0)
+			(at 71.12 113.0299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -4730,7 +4964,7 @@
 			)
 		)
 		(property "Value" "IC_PMW3360DM-T2QU"
-			(at 143.51 90.17 0)
+			(at 142.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4756,6 +4990,24 @@
 			)
 		)
 		(property "Description" "Optical mouse sensor"
+			(at 142.24 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C20612443"
+			(at 142.24 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" " PMW3360DM-T2QU"
 			(at 142.24 76.2 0)
 			(effects
 				(font
@@ -4840,7 +5092,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 227.33 67.31 0)
+			(at 227.33 67.564 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4905,7 +5157,7 @@
 			)
 		)
 		(property "Value" "1uF_HS"
-			(at 73.66 124.46 0)
+			(at 80.264 125.222 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4932,6 +5184,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 80.01 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 80.01 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
 			(at 80.01 123.19 0)
 			(effects
 				(font
@@ -4974,12 +5244,11 @@
 			)
 		)
 		(property "Value" "10k_HS"
-			(at 156.21 55.88 0)
+			(at 151.384 54.102 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -5001,6 +5270,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 154.94 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 154.94 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
 			(at 154.94 54.61 0)
 			(effects
 				(font
@@ -5043,7 +5330,7 @@
 			)
 		)
 		(property "Value" "0.1uF_HS"
-			(at 122.936 81.788 0)
+			(at 122.174 82.042 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5070,6 +5357,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 121.92 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 121.92 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
 			(at 121.92 80.01 0)
 			(effects
 				(font
@@ -5177,12 +5482,11 @@
 			)
 		)
 		(property "Value" "10k_HS"
-			(at 171.45 55.88 0)
+			(at 166.624 54.102 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -5204,6 +5508,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 170.18 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 170.18 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
 			(at 170.18 54.61 0)
 			(effects
 				(font
@@ -5247,11 +5569,12 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 160.02 123.19 0)
+			(at 162.56 126.9999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -5378,11 +5701,12 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 251.46 64.77 0)
+			(at 254 68.5799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -5677,6 +6001,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C485152"
+			(at 96.52 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "TLV74318PDBVR"
+			(at 96.52 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "536b12b7-750c-4718-a651-db9ca9a2f41d")
 		)
@@ -5720,7 +6062,7 @@
 			)
 		)
 		(property "Value" "JST_BM08B-GHS-TBT"
-			(at 92.71 92.202 0)
+			(at 90.17 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5746,6 +6088,24 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 90.17 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C133062"
+			(at 90.17 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" " BM08B-GHS-TBT(LF)(SN)"
 			(at 90.17 74.93 0)
 			(effects
 				(font
@@ -5877,7 +6237,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 168.91 114.3 0)
+			(at 168.91 114.554 0)
 			(effects
 				(font
 					(size 1.27 1.27)
