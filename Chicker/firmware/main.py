@@ -42,6 +42,12 @@ TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
 INT = Pin(20, Pin.IN)
 
+# ── Instantiate PIO at maximum resolution (125MHz = 8ns per tick) ────────────
+# Renamed to pulse_lib to avoid shadowing the imported module name
+pulse_lib = pulses.Pulses(None, CAN_LED, 125_000_000)
+print("machine freq", machine.freq())
+print("pulse_lib sm_freq", pulse_lib.sm_freq)
+
 # initial states
 prev_time_int = 0
 prev_time_can = 0
@@ -105,7 +111,7 @@ new_can_data_bool = False
 can_rx_time = None
 AUTOKICK_EXPIRE_THRESH_MS = 2000
 stored_prekick_can_data = None
-DAMP_INITIAL_PULSEWIDTH = 500
+DAMP_INITIAL_KICK_US = 500
 
 offset = 1000_000
 
@@ -150,7 +156,7 @@ def apply_command_frame(can_id, payload):
 
     # Clamp values
     pulse_freq = max(1, min(pulse_freq, 50000))
-    duty = max(1, min(duty, 99))
+    duty = max(1, min(duty, 100)) # there should not be a clamp on duty past 100 so we can use kick at 100% duty as well
 
     if mode == MODE_AUTOKICK:
         if BREAKBEAM.value() == 0:
@@ -236,33 +242,31 @@ def kick():
             delay_time_us_temp = pulse_width_adjusted
             #CAN_LED.value(0)
 
-            if (delay_time_us_temp > 5000) :
+            if (delay_time_us_temp > 5000_000) :
                 delay_time_us_temp = 5000 # set a limit to the delay time
                 print("Pulse duration too long, setting to 5000us")
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     else :
-        if (done_state == 0):
+        #if (done_state == 0):
             prev_kick_time = utime.ticks_ms()
             delay_time_us = delay_time_us_temp
             kick_data_rec = 0
             data = None
         # charging still, wait till charging stopped from charge STOP to kick.
-        else:
-            delay_time_us = 0
+        #else:
+        #    delay_time_us = 0
             
  #############################################
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
         
-        pattern=(8, delay_time_us, 8)
-        start=0
-        ar = array("L", pattern)
-        # Kick here
-        #
-        #CAN_LED.off()
-        pulses.put_pulses(ar,start)
+        # ── NEW: single clean kick pulse at full 8ns resolution ──────────────
+        # duty=100 means solid HIGH for exactly delay_time_us microseconds.
+        # No bookend glitches, no pattern array needed.
+        pulse_lib.put_pulses_v2(duration_us=delay_time_us, duty=100)
+        
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
         startup_chg_2sdelay = 1
         print("just kicked")
@@ -329,82 +333,64 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         not_dischg = 1
 
 
-        # utime.ticks_us() works!
-        prev_time_damp = utime.ticks_ms()
-        prev_time_damp_us = utime.ticks_us()
-        damp_duty = (damp_duty_percent) / 100.0  # percentage to actual decimal
-        
-        # Initial Kick (to put plunger out)
-        pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
-        start=0
-        ar = array("L", pattern)
-        pulses.put_pulses(ar,start)
-        
-        damp_period = int((1/damp_freq) *1000_000) # needs to be in microseconds
-        damp_on_time = int(damp_period*damp_duty) # microseconds
-        damp_off_time = damp_period - damp_on_time #microseconds
-        print("Damp period", damp_period) # in seconds
-        print("Damp on time", damp_on_time)
-        print("Damp Frequency", damp_freq)
-        prev_cycle_damp = utime.ticks_us()
-        
-        #if(damp_freq * damp_on_time > 20000):
-        #    print("too big duty")
-        #    damp_duty_perc_div100 = 10
-        #    damp_duty = damp_duty_percent / 100.0
-        
-        if (damp_on_time > 5000):
-            damp_on_time = 5000
-    else:
-        #started a damping cycle
-        # definetely getting here. good to know
-        # implement a delay here of duty off time.
-        # Example I will try: 0x2AA, 2,     0xE8,          0x03,           10
-        #                     ID     mode   low byte freq, high byte freq  duty / 100
-        # keep damping until preset timetimeout or HV discharged
-        if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
-            # it is getting here.
-            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*15): # in us? # waiting for a second to do the damping
-                # also getting here now that I changed the timer to us rather than *1000 in ms timer  
-                '''
-                pwm = PWM(KICK) # KICK
+        # ── NEW: entire damp sequence in one call ─────────────────────────────
+        #
+        # Step 1 — initial extension kick:
+        #   duty=100, duration=DAMP_INITIAL_KICK_US → solid pulse, extends plunger
+        #
+        # Step 2 — PWM hold:
+        #   duty=damp_duty_percent, freq=damp_freq, duration=damp_timeout_ms
+        #   → plunger held with minimal force so ball impact creates partial
+        #     elastic / partial inelastic collision (target COR ~0.6)
+        #
+        # Both steps use put_pulses_v2. Two calls but no PIO restart between
+        # them because put_pulses_v2 is blocking — the second call starts
+        # immediately after the first finishes, pin goes LOW between them
+        # for only the off_ticks of the first call (≈1 tick = 8ns). No glitch.
+        #
+        # Tuning COR:
+        #   higher duty  → stiffer hold → more elastic  → COR closer to 1.0
+        #   lower duty   → softer hold  → more inelastic → COR closer to 0.0
+        #   start at 8-12% for COR ~0.6, adjust from there
+        #
+        # CAN_LED mirrors intent: ON during initial kick, dim during hold.
+        # To validate at low frequency before full speed:
+        #   send 0x2AA, 2, 0x01, 0x00, 10  → 1Hz, 10% duty, easy to see on LED
 
-                # Set the frequency (e.g., 1000 Hz)
-                pwm.freq(damp_freq)
+        #CAN_LED.on()
+        print("firing initial kick")
+        pulse_lib.put_pulses_v2(
+            duration_us = DAMP_INITIAL_KICK_US,
+            duty        = 100
+        )
+        #CAN_LED.off()
+        
+        utime.sleep_ms(int(DAMP_INITIAL_KICK_US/1000*15))  # wait for plunger to physically extend
+        
+        print("firing initial kick")
+        pulse_lib.put_pulses_v2(
+            duration_us = 100_000,
+            duty        = 100
+        )
+        utime.sleep_ms(500) # extra sleep to check if the led is actually turning on after the initial damp pulse (a one shot pulse to verify the timing)
+        
+        
+        # Hold phase — blocking, runs for damp_timeout milliseconds total
+        print("firing damping")
+        pulse_lib.put_pulses_v2(
+            duration_us = damp_timeout * 1000,
+            duty        = damp_duty_percent,
+            freq_hz     = damp_freq
+        )
 
-                # Set the duty cycle (0-65535, where 65535 is 100%)
-                pwm.duty_ns(1000*damp_duty_percent) #275_000)
-                
-                damping_on_cycle = 1
-                '''
-                if (utime.ticks_us() - prev_cycle_damp >= damp_period and damping_on_cycle == 0) :
-                    damping_on_cycle = 1
-                    damping_off_cycle = 0
-                    # turn on kicker
-                    #KICK.value(1)
-                    
-                    pattern=(8, damp_on_time, 8)
-                    start=0
-                    ar = array("L", pattern)
-                    pulses.put_pulses(ar,start)
-                    
-                    CAN_LED.on()
-                    prev_cycle_damp = utime.ticks_us()
-                    #print("on")
-                elif (utime.ticks_us() - prev_cycle_damp >= damp_off_time and damping_off_cycle == 0) :
-                    damping_off_cycle = 1
-                    damping_on_cycle = 0
-                    # turn off kicker
-                    #KICK.value(0)
-                    CAN_LED.off()
-                    #print("off")
-                
-        else :
-            #pwm.deinit() # doesnt explicity retract control from the pin
-            mode = 3 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
-            #CAN_LED.off()
-            #print("whyyyy")
-            # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
+        # Done — return to charge mode so caps recharge for next kick
+        mode = MODE_CHARGE
+        print("DAMPING COMPLETE: returning to charge mode")
+
+        # No else branch needed — put_pulses_v2 is blocking so by the time (that is if we use blocking)
+        # we return from the first call to damp(), the sequence is already done
+        # and mode has been set to MODE_CHARGE. The main loop will handle the rest.
+
 # 0x64 is 100 in hex
 def chg():
     global chg_stop_mode_ctrl, charge_toggle_wait, startup_time, mode
@@ -440,9 +426,6 @@ def breakbeam_handler(pin):
 
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
-
-#kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, 1_000_000)
 
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
@@ -549,11 +532,7 @@ while True:
         prev_time_wait_chg = utime.ticks_ms()
         charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
-        pattern=(8, 8, 8)
-        start=0
-        ar = array("L", pattern)
-        #kickpulse.put_pulses(ar, start)
-        pulses.put_pulses(ar,start)
+        
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
         CAN_LED.value(0)
