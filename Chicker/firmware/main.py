@@ -133,6 +133,36 @@ class FakeCANData:
     def __len__(self):
         return len(self.data)
 
+
+def apply_command_frame(can_id, payload):
+    global mode, pulse_freq, duty, data, stored_prekick_can_data, new_can_data_bool, can_rx_time
+
+    if can_id != 0x2AA:
+        return
+
+    if len(payload) < 4:
+        print("Invalid CAN message length.")
+        return
+
+    mode = payload[0]
+    pulse_freq = int.from_bytes(bytes(payload[1:3]), "little")
+    duty = payload[3]
+
+    # Clamp values
+    pulse_freq = max(1, min(pulse_freq, 50000))
+    duty = max(1, min(duty, 99))
+
+    if mode == MODE_AUTOKICK:
+        if BREAKBEAM.value() == 0:
+            data = pulse_freq
+        else:
+            stored_prekick_can_data = payload
+            new_can_data_bool = True
+        can_rx_time = utime.ticks_ms()
+        print("KICK COMMAND RECEIVED")
+
+    print("COMMAND RECEIVED")
+
 def idle():
     global chg_stop_mode_ctrl, prev_startup_idle_mode
     global idling, kicking, damping, charging
@@ -431,30 +461,7 @@ while True:
                 continue
 
             fake_can_data = FakeCANData(parts[0], parts[1:])
-
-            if hex(fake_can_data.can_id) != "0x2aa":
-                continue
-
-            if len(fake_can_data) < 4:
-                print("Invalid CAN message length.")
-            else:
-                mode = fake_can_data[0]
-                pulse_freq = int.from_bytes(bytes(fake_can_data[1:3]), 'little')
-                duty = fake_can_data[3]
-
-                # Clamp values
-                pulse_freq = max(1, min(pulse_freq, 50000))
-                duty = max(1, min(duty, 99))
-
-                if mode == MODE_AUTOKICK:
-                    if BREAKBEAM.value() == 0:
-                        data = pulse_freq
-                    else:
-                        stored_prekick_can_data = fake_can_data
-                        new_can_data_bool = True
-                    can_rx_time = utime.ticks_ms()
-                    print("KICK COMMAND RECEIVED")
-                print("COMMAND RECEIVED")
+            apply_command_frame(fake_can_data.can_id, fake_can_data.data)
 
         except Exception as e:
             print("Error parsing input:", e)
@@ -482,34 +489,9 @@ while True:
     
     can_data = None
     
-    '''
     while can.checkReceive():
         what, can_data = can.recv()
-
-        if hex(can_data.can_id) != "0x2aa":
-            if len(can_data) < 4:
-                print("Invalid CAN message length.")
-            else:
-                mode = can_data[0]
-                pulse_freq = int.from_bytes(can_data[1:3], 'little')
-                duty = can_data[3]
-
-                # Clamp unconditionally
-                pulse_freq = max(1, min(pulse_freq, 50000))
-                duty = max(1, min(duty, 99))
-
-                if (mode == MODE_AUTOKICK):
-                    # If the breakbeam is already broken, kick immediately
-                    if BREAKBEAM.value() == 0:
-                        data = pulse_freq
-                    # Otherwise, queue up an autokick using interrupt
-                    else:
-                        stored_prekick_can_data = can_data
-                        new_can_data_bool = True
-                    can_rx_time = utime.ticks_ms()
-                    print("KICK COMMAND RECEIVED")
-                print("COMMAND RECEIVED")
-    '''
+        apply_command_frame(can_data.can_id, can_data.data)
 
 
  
