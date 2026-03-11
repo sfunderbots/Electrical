@@ -112,7 +112,7 @@ new_can_data_bool = False
 can_rx_time = None
 AUTOKICK_EXPIRE_THRESH_MS = 2000
 stored_prekick_can_data = None
-DAMP_INITIAL_KICK_US = 500000   # 500ms for visualization, change to 500 for real use
+DAMP_INITIAL_KICK_US = 500_000   # 500*1000us for visualization, change to 500us for real use
 
 DAMP_STATE_KICK   = 0
 DAMP_STATE_SETTLE = 1
@@ -352,6 +352,8 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     idling   = 0
     kicking  = 0
     charging = 0
+    
+    damp_timeout_us = damp_timeout * 1000
 
     if damping == 0:
         prev_mode          = mode
@@ -368,15 +370,14 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
             damp_state      = DAMP_STATE_HOLD
 
     elif damp_state == DAMP_STATE_HOLD:
-        damp_hold_start = utime.ticks_us()
         print("starting PIO PWM hold: freq", damp_freq, "Hz  duty", damp_duty_percent, "%")
-        
-        #TODO change this to nonblocking assignment
-        while (utime.ticks_us() - damp_hold_start < damp_timeout * 1000):
-            pulse_lib.put_pwm(duty=damp_duty_percent,freq_hz=damp_freq,blocking = False)
-        
-        if utime.ticks_us() - damp_hold_start >= damp_timeout * 1000:
-            damp_state = DAMP_STATE_KICK
+        pulse_lib.put_pwm_v2(duty=damp_duty_percent, freq_hz=damp_freq, duration_us=damp_timeout_us)
+        damp_hold_start = utime.ticks_us()
+        damp_state = DAMP_STATE_KICK
+
+    elif damp_state == DAMP_STATE_KICK:
+        if utime.ticks_us() - damp_hold_start >= damp_timeout_us:
+            pulse_lib.sm_put.active(0)
             mode       = MODE_CHARGE
             print("DAMPING COMPLETE: returning to charge mode")
 

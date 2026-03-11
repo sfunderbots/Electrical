@@ -1,9 +1,11 @@
 import machine
 import rp2
 import rp2_util
-#import dma_util
+import dma_util
 import time
 import array
+import uctypes
+
 
 PUT_WORD_SIZE = const(32)
 GET_WORD_SIZE = const(32)
@@ -154,40 +156,6 @@ class Pulses:
         label("end")
         irq(noblock, rel(0))        # get finished!
 
-
-    def _fire(self, buf, blocking=True):
-        self.put_done = False
-        self.sm_put.restart()
-        self.sm_put.active(1)
-        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
-        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
-        print("DMA started, transfer count:", rp2_util.dma_transfer_count(0))
-        if blocking:
-            count = 0
-            while rp2_util.dma_transfer_count(0) > 0:
-                time.sleep_us(1)
-                count += 1
-                if count > 100000:
-                    print("DMA stuck, transfer count:", rp2_util.dma_transfer_count(0))
-                    break
-        if blocking:
-            # Wait for DMA to finish filling the FIFO
-            while rp2_util.dma_transfer_count(0) > 0:
-                time.sleep_us(1)
-            # Wait for PIO to finish clocking out remaining FIFO contents
-            # Each word takes on_ticks + off_ticks cycles at sm_freq
-            # We wait for the FIFO TX level to drop to 0
-            while rp2_util.sm_tx_fifo_level(self.sm_put_nr) > 0:
-                time.sleep_us(1)
-            # Wait for the last pair to finish clocking out
-            # Worst case is one full period
-            total_us = 0
-            for i in range(0, len(buf), 2):
-                total_us += (buf[i] + buf[i+1]) // (self.sm_freq // 1_000_000)
-            last_period_us = (buf[-2] + buf[-1]) // (self.sm_freq // 1_000_000)
-            time.sleep_us(last_period_us + 100)
-            self.sm_put.active(0)
-            self.put_done = True
     def _dma_done(self, expected_count):
         """Check if DMA has finished transferring expected_count words."""
         remaining = rp2_util.dma_transfer_count(0)
@@ -196,38 +164,60 @@ class Pulses:
     def put_pulses(self, duration_us, blocking=True):
         if self.sm_put is None:
             raise ValueError("put_pin not configured")
-        ticks_per_us = self.sm_freq // 1_000_000  # 125 at 125MHz
-
-        # ── Single solid kick pulse ──────────────────────────────────────
-        # One on/off pair: [kick_ticks, 0]
-        # off_ticks = 0 means the off_count loop exits immediately
-        # (jmp(x_dec) with x=0 decrements to 0xFFFFFFFF and loops once,
-        #  so use 1 instead of 0 to avoid a spurious long off-time)
-        on_ticks  = max(1, duration_us * ticks_per_us - 7)  # -7 overhead compensation
-        off_ticks = 1                                         # minimum off, exits fast
+        ticks_per_us = self.sm_freq // 1_000_000
+        on_ticks  = max(1, duration_us * ticks_per_us - 7)
+        off_ticks = 1
         buf = array.array("L", [on_ticks, off_ticks])
-        print("on_ticks", on_ticks, "off_ticks", off_ticks, "ticks_per_us", ticks_per_us)
-        self._fire(buf, blocking)
+        self._fire(buf, blocking, restart=True)
 
-    def put_pwm(self, duty, freq_hz, blocking):
+    def put_pwm(self, duty, freq_hz, duration_us):
         if self.sm_put is None:
             raise ValueError("put_pin not configured")
-
-        ticks_per_us = self.sm_freq // 1_000_000  # 125 at 125MHz
-
-        if duty <= 99 and duty >= 1 and freq_hz is not None:
-            # ── PWM hold ─────────────────────────────────────────────────────
-            period_us = 1_000_000 // freq_hz
-            on_us     = max(1, (period_us * duty) // 100)
-            off_us    = period_us - on_us
-
-            on_ticks  = max(1, on_us  * ticks_per_us - 7)  # -7 overhead compensation
-            off_ticks = max(1, off_us * ticks_per_us - 7)
-            
+        if not (1 <= duty <= 99) or freq_hz is None:
+            raise ValueError("duty must be 1-99 and freq_hz must be set")
+        ticks_per_us = self.sm_freq // 1_000_000
+        period_us    = 1_000_000 // freq_hz
+        on_us        = max(1, (period_us * duty) // 100)
+        off_us       = period_us - on_us
+        on_ticks     = max(1, on_us  * ticks_per_us - 4)
+        off_ticks    = max(1, off_us * ticks_per_us - 4)
+        n_cycles     = duration_us // period_us
         buf = array.array("L", [on_ticks, off_ticks])
-        print("on_ticks", on_ticks, "off_ticks", off_ticks, "ticks_per_us", ticks_per_us)
-        self._fire(buf, blocking)
+        for _ in range(n_cycles):
+            self._fire(buf, blocking=True, restart=False)
 
+    def put_pwm_v2(self, duty, freq_hz, duration_us):
+        if self.sm_put is None:
+            raise ValueError("put_pin not configured")
+        if not (1 <= duty <= 99) or freq_hz is None:
+            raise ValueError("duty must be 1-99 and freq_hz must be set")
+        ticks_per_us = self.sm_freq // 1_000_000
+        period_us    = 1_000_000 // freq_hz
+        on_us        = max(1, (period_us * duty) // 100)
+        off_us       = period_us - on_us
+        on_ticks     = max(1, on_us  * ticks_per_us - 4)
+        off_ticks    = max(1, off_us * ticks_per_us - 4)
+        n_cycles     = duration_us // period_us
+        buf = array.array("L", [on_ticks, off_ticks])
+        for _ in range(n_cycles):
+            self._fire(buf, blocking=True, restart=False)
+
+    def _fire(self, buf, blocking=True, restart=False):
+        self.put_done = False
+        self._buf = buf
+        if restart:
+            self.sm_put.restart()
+        self.sm_put.active(1)
+        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
+        if blocking:
+            while rp2_util.dma_transfer_count(0) > 0:
+                time.sleep_us(1)
+            while rp2_util.sm_tx_fifo_level(self.sm_put_nr) > 0:
+                time.sleep_us(1)
+            last_period_us = (buf[-2] + buf[-1]) // (self.sm_freq // 1_000_000)
+            time.sleep_us(last_period_us + 100)
+            self.sm_put.active(0)
+            self.put_done = True
     # ── GET (unchanged from original) ─────────────────────────────────────────
 
     def get_pulses(self, buffer, start_timeout=100_000, bit_timeout=100_000):
