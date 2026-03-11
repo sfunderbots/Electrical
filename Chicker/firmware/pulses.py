@@ -1,7 +1,7 @@
 import machine
 import rp2
 import rp2_util
-import dma_util
+#import dma_util
 import time
 import array
 
@@ -48,14 +48,6 @@ class Pulses:
         else:
             self.sm_put = None
 
-    # ── PUT PIO program ───────────────────────────────────────────────────────
-    #
-    # Protocol: FIFO receives alternating [on_ticks, off_ticks, on_ticks, off_ticks ...]
-    # For a single kick:          [kick_ticks, off_ticks]
-    # For PWM hold over N cycles: [on, off, on, off, ...] x N — fed by DMA ring
-    #
-    # PIO stalls at pull() when FIFO empties — pin stays LOW safely.
-
     @staticmethod
     @rp2.asm_pio(
         out_init     = rp2.PIO.OUT_LOW,
@@ -65,24 +57,33 @@ class Pulses:
         pull_thresh  = PUT_WORD_SIZE
     )
     def sm_put_pulses():
-        set(pindirs, 1)
+        set(pindirs, 1)         # pin = output
 
         label("on_phase")
-        pull()                      # stall here with pin LOW when FIFO empty
-        mov(x, osr)
-        set(pins, 1)                # pin HIGH
+        pull()                  # pull on_ticks — stalls here when done, pin is LOW
+        mov(x, osr)             # x = countdown
+        set(pins, 1)            # pin HIGH
 
         label("on_count")
-        jmp(x_dec, "on_count")
+        jmp(x_dec, "on_count")  # count down on_ticks
 
-        pull()                      # pull off_ticks
-        mov(x, osr)
-        set(pins, 0)                # pin LOW
+        set(pins, 0)            # pin LOW before pulling off_ticks
+                                # if FIFO empties here, pin stays LOW safely
+        pull()                  # pull off_ticks
+        mov(x, osr)             # x = countdown
 
         label("off_count")
-        jmp(x_dec, "off_count")
+        jmp(x_dec, "off_count") # count down off_ticks
 
-        jmp("on_phase")
+        jmp("on_phase")         # loop back for next pair
+
+    # ── IRQ handler ─────────────────────────────────────────────────────────
+
+    def _irq_finished(self, sm):
+        if sm == self.sm_put:
+            self.put_done = True
+        else:
+            self.get_done = True
 
     # ── GET PIO program (unchanged from original) ─────────────────────────────
 
@@ -94,102 +95,138 @@ class Pulses:
         push_thresh = GET_WORD_SIZE
     )
     def sm_get_pulses():
-        set(pindirs, 0)
-        pull()
+        set(pindirs, 0)             # set to input
+        pull()                      # get start timeout value
+
+# start section: wait for a transition up to start_timeout ticks
         mov(isr, null)
-        in_(pins, 1)
-        mov(y, isr)
+        in_(pins, 1)                # get the initial pin state
+        mov(y, isr)                 # cannot use mov(y, pins)
         jmp("start_timeout")
+
         label("trigger")
-        mov(osr, x)
-        mov(isr, null)
-        in_(pins, 1)
-        mov(x, isr)
-        jmp(x_not_y, "start")
-        label("start_timeout")
-        mov(x, osr)
-        jmp(x_dec, "trigger")
-        label("start")
-        push(block)
-        pull()
-        mov(y, osr)
-        pull()
+        mov(osr, x)                 # save the decremented timeout
+        mov(isr, null)              # clear ISR
+        in_(pins, 1)                # and get a clean 1/0
+        mov(x, isr)                 # get the actual pin state
+        jmp(x_not_y, "start")       # Transition found
+
+        label("start_timeout")      # test for start timeout
+        mov(x, osr)                 # get the timeout value
+        jmp(x_dec, "trigger")       # nope, still wait
+
+# trigger seen or timeout
+# get the pulse counter, bit_timeout and report the inital state
+        label("start")              # got a trigger, go
+        push(block)                 # report the last pin value
+        pull()                      # pull bit count
+        mov(y, osr)                 # store it into the counter
+        pull()                      # get the bit timeout value
+                                    # keep it in osr
         jmp("check_done")
+
+# pulse loop section, go and time pulses
         label("get_pulse")
-        mov(x, osr)
-        jmp(pin, "count_high")
-        label("count_low")
-        jmp(pin, "issue")
-        jmp(x_dec, "count_low")
-        jmp("issue")
+        mov(x, osr)                 # preload with the max value
+        jmp(pin, "count_high")      # have a high level
+
+        label("count_low")          # timing a low pulse
+        jmp(pin, "issue")           #
+        jmp(x_dec, "count_low")     # count cycles
+        # get's here if the pulse is longer than max_time
+        jmp("issue")                # could as well jmp("end")
+
         label("count_high")
         jmp(pin, "still_high")
         jmp("issue")
+
         label("still_high")
-        jmp(x_dec, "count_high")
-        label("issue")
+        jmp(x_dec, "count_high")    # count cycles
+        # get's here if the pulse is longer than max_time
+
+        label("issue")              # report the result
         mov(isr, x)
         push(block)
-        label("check_done")
-        jmp(y_dec, "get_pulse")
+
+        label("check_done")         # pulse counter
+        jmp(y_dec, "get_pulse")     # and go for another loop
+
         label("end")
-        irq(noblock, rel(0))
+        irq(noblock, rel(0))        # get finished!
 
-    # ── IRQ handler ──────────────────────────────────────────────────────────
 
-    def _irq_finished(self, sm):
-        if sm == self.sm_put:
-            self.put_done = True
-        else:
-            self.get_done = True
-
-    # ── Public API ────────────────────────────────────────────────────────────
-
-    def put_pulses(self, duration_us):
-        """
-        Fire a single kick pulse. Blocking.
-        duration_us: pulse duration in microseconds.
-        """
-        if self.sm_put is None:
-            raise ValueError("put_pulses is not enabled")
-        ticks_per_us = self.sm_freq // 1_000_000
-        on_ticks     = max(1, duration_us * ticks_per_us - 7)
-        off_ticks    = max(1, ticks_per_us - 7)  # 1us off time
-        self._buf    = array.array("L", [on_ticks, off_ticks])
+    def _fire(self, buf, blocking=True):
         self.put_done = False
         self.sm_put.restart()
         self.sm_put.active(1)
-        rp2_util.sm_dma_put(0, self.sm_put_nr, self._buf, len(self._buf))
-        # wait for DMA to complete
-        while rp2_util.dma_transfer_count(0) > 0:
-            time.sleep_us(10)
-        # wait for PIO to finish clocking out FIFO
-        while rp2_util.sm_tx_fifo_level(self.sm_put_nr) > 0:
-            time.sleep_us(10)
-        # wait for last pulse to complete
-        last_us = (on_ticks + off_ticks) // ticks_per_us
-        time.sleep_us(last_us + 100)
-        self.sm_put.active(0)
-        self.put_done = True
-
-    def put_pwm(self, on_us, off_us, duration_us):
-        """
-        PWM hold via DMA ring buffer. Non-blocking.
-        on_us:       on time per cycle in microseconds
-        off_us:      off time per cycle in microseconds
-        duration_us: total duration in microseconds
-        Only 2 words in RAM regardless of duration or frequency.
-        No restart() — no glitch.
-        """
+        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
+        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
+        print("DMA started, transfer count:", rp2_util.dma_transfer_count(0))
+        if blocking:
+            count = 0
+            while rp2_util.dma_transfer_count(0) > 0:
+                time.sleep_us(1)
+                count += 1
+                if count > 100000:
+                    print("DMA stuck, transfer count:", rp2_util.dma_transfer_count(0))
+                    break
+        if blocking:
+            # Wait for DMA to finish filling the FIFO
+            while rp2_util.dma_transfer_count(0) > 0:
+                time.sleep_us(1)
+            # Wait for PIO to finish clocking out remaining FIFO contents
+            # Each word takes on_ticks + off_ticks cycles at sm_freq
+            # We wait for the FIFO TX level to drop to 0
+            while rp2_util.sm_tx_fifo_level(self.sm_put_nr) > 0:
+                time.sleep_us(1)
+            # Wait for the last pair to finish clocking out
+            # Worst case is one full period
+            total_us = 0
+            for i in range(0, len(buf), 2):
+                total_us += (buf[i] + buf[i+1]) // (self.sm_freq // 1_000_000)
+            last_period_us = (buf[-2] + buf[-1]) // (self.sm_freq // 1_000_000)
+            time.sleep_us(last_period_us + 100)
+            self.sm_put.active(0)
+            self.put_done = True
+    def _dma_done(self, expected_count):
+        """Check if DMA has finished transferring expected_count words."""
+        remaining = rp2_util.dma_transfer_count(0)
+        return remaining == 0
+    
+    def put_pulses(self, duration_us, blocking=True):
         if self.sm_put is None:
             raise ValueError("put_pin not configured")
-        ticks_per_us  = self.sm_freq // 1_000_000
-        on_ticks      = max(1, on_us  * ticks_per_us - 7)
-        off_ticks     = max(1, off_us * ticks_per_us - 7)
-        n_cycles      = duration_us // (on_us + off_us)
-        self._pwm_buf = array.array("L", [on_ticks, off_ticks])
-        # ring_size=3 wraps every 2^3=8 bytes = 2 x 32-bit words
-        dma_util.sm_dma_put_ring(0, self.sm_put_nr, self._pwm_buf, n_cycles * 2, 3)
+        ticks_per_us = self.sm_freq // 1_000_000  # 125 at 125MHz
+
+        # ── Single solid kick pulse ──────────────────────────────────────
+        # One on/off pair: [kick_ticks, 0]
+        # off_ticks = 0 means the off_count loop exits immediately
+        # (jmp(x_dec) with x=0 decrements to 0xFFFFFFFF and loops once,
+        #  so use 1 instead of 0 to avoid a spurious long off-time)
+        on_ticks  = max(1, duration_us * ticks_per_us - 7)  # -7 overhead compensation
+        off_ticks = 1                                         # minimum off, exits fast
+        buf = array.array("L", [on_ticks, off_ticks])
+        print("on_ticks", on_ticks, "off_ticks", off_ticks, "ticks_per_us", ticks_per_us)
+        self._fire(buf, blocking)
+
+    def put_pwm(self, duty, freq_hz, blocking):
+        if self.sm_put is None:
+            raise ValueError("put_pin not configured")
+
+        ticks_per_us = self.sm_freq // 1_000_000  # 125 at 125MHz
+
+        if duty <= 99 and duty >= 1 and freq_hz is not None:
+            # ── PWM hold ─────────────────────────────────────────────────────
+            period_us = 1_000_000 // freq_hz
+            on_us     = max(1, (period_us * duty) // 100)
+            off_us    = period_us - on_us
+
+            on_ticks  = max(1, on_us  * ticks_per_us - 7)  # -7 overhead compensation
+            off_ticks = max(1, off_us * ticks_per_us - 7)
+            
+        buf = array.array("L", [on_ticks, off_ticks])
+        print("on_ticks", on_ticks, "off_ticks", off_ticks, "ticks_per_us", ticks_per_us)
+        self._fire(buf, blocking)
 
     # ── GET (unchanged from original) ─────────────────────────────────────────
 
