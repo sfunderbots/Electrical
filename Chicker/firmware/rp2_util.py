@@ -25,6 +25,42 @@ SM_FIFO_RXEMPTY = const(0x00000100)
 SM_FIFO_TXFULL  = const(0x00010000)
 SM_FIFO_TXEMPTY = const(0x01000000)
 
+@micropython.viper
+def sm_dma_put_ring(chan:int, sm:int, src:ptr32, nword:int, ring_size:int) -> int:
+    """
+    Same as sm_dma_put but with RING_SIZE support for looping DMA.
+    ring_size: power of 2 number of BYTES to wrap over.
+    e.g. ring_size=3 wraps every 8 bytes = 2 x 32-bit words = [on_ticks, off_ticks]
+    DMA will loop over those 2 words for nword total transfers.
+    """
+    dma=ptr32(uint(DMA_BASE) + chan * 0x40)
+    if sm < 4:
+        pio = ptr32(uint(PIO0_BASE))
+        TREQ_SEL = sm
+    else:
+        sm %= 4
+        pio = ptr32(uint(PIO1_BASE))
+        TREQ_SEL = sm + 8
+    smx = SM_REG_BASE + sm * SMx_SIZE + SMx_SHIFTCTRL
+    DATA_SIZE = (pio[smx] >> 25) & 0x1f
+    if DATA_SIZE > 16 or DATA_SIZE == 0:
+        DATA_SIZE = 2
+    elif DATA_SIZE > 8:
+        DATA_SIZE = 1
+    else:
+        DATA_SIZE = 0
+
+    INCR_WRITE = 0
+    INCR_READ  = 1
+    RING_SEL   = 0  # ring on read address
+    DMA_control_word = ((IRQ_QUIET << 21) | (TREQ_SEL << 15) | (CHAIN_TO << 11) | (RING_SEL << 10) |
+                        (ring_size << 6) | (INCR_WRITE << 5) | (INCR_READ << 4) | (DATA_SIZE << 2) |
+                        (HIGH_PRIORITY << 1) | (EN << 0))
+    dma[READ_ADDR]  = uint(src)
+    dma[WRITE_ADDR] = uint(pio) + PIO_TXF0 + sm * 4
+    dma[TRANS_COUNT] = nword
+    dma[CTRL_TRIG]  = DMA_control_word
+    return DMA_control_word
 
 @micropython.viper
 def sm_restart(sm: int, program) -> uint:
