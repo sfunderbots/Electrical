@@ -36,7 +36,7 @@ BREAKBEAM = Pin(23, Pin.IN)
 CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
-pwm = PWM(KICK)
+pwm = None
 NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
@@ -116,9 +116,6 @@ MODE_CHARGE = 3
 mode = 3 # automatically boot into charge mode to keep caps charged. and make sure there is no booting bug
 
 prev_mode = 0
-
-damping_on_cycle = 0
-damping_off_cycle = 0
 CAN_LED.on()
 
 # Simulates the CAN data object
@@ -132,6 +129,33 @@ class FakeCANData:
 
     def __len__(self):
         return len(self.data)
+
+
+def stop_damp_pwm():
+    global pwm
+
+    if pwm is not None:
+        pwm.deinit()
+        pwm = None
+    KICK.value(0)
+
+
+def send_kick_pulse(width_us):
+    stop_damp_pwm()
+
+    pattern = (8, width_us, 8)
+    start = 0
+    ar = array("L", pattern)
+    pulses.put_pulses(ar, start)
+
+
+def start_damp_pwm(freq_hz, duty_percent):
+    global pwm
+
+    stop_damp_pwm()
+    pwm = PWM(KICK)
+    pwm.freq(freq_hz)
+    pwm.duty_u16((duty_percent * 65535) // 100)
 
 
 def apply_command_frame(can_id, payload):
@@ -179,6 +203,7 @@ def idle():
     
     # Idle mode keeps HV discharged and stops charging.
     if (idling == 0):
+        stop_damp_pwm()
         prev_mode = mode
         idling = 1
         chg_stop_mode_ctrl = 1
@@ -198,7 +223,6 @@ def kick():
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
     global prev_mode, startup_chg, not_dischg
     global idling, kicking, damping, charging
-    global pwm, damping_on_cycle
     
     idling = 0
     damping = 0
@@ -207,6 +231,7 @@ def kick():
         new_can_data_bool = False
 
     if (kicking == 0):
+        stop_damp_pwm()
         if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
             startup_chg = 1
             HV_voltage = SenseHV()
@@ -255,14 +280,7 @@ def kick():
  #############################################
     if(kick_cooldown == 0 and delay_time_us != 0):
         kick_cooldown = 1
-        
-        pattern=(8, delay_time_us, 8)
-        start=0
-        ar = array("L", pattern)
-        # Kick here
-        #
-        #CAN_LED.off()
-        pulses.put_pulses(ar,start)
+        send_kick_pulse(delay_time_us)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
         startup_chg_2sdelay = 1
         print("just kicked")
@@ -313,15 +331,14 @@ def kick():
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global start, ar, damp_off_time, damp_on_time, damp_period, prev_cycle_damp
     global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
     global mode, prev_mode, startup_chg, not_dischg, chg_stop_mode_ctrl
-    global DAMP_INITIAL_PULSE_WIDTH, damp_duty, damping_on_cycle, damping_off_cycle
-    global pwm
+
     idling = 0
     kicking = 0
     charging = 0
     if (damping == 0):
+        stop_damp_pwm()
         prev_mode = mode
         damping = 1
         print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
@@ -332,75 +349,28 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         prev_time_damp_us = utime.ticks_us()
-        damp_duty = (damp_duty_percent) / 100.0  # percentage to actual decimal
         
         # Initial Kick (to put plunger out)
-        pattern=(8, DAMP_INITIAL_PULSEWIDTH, 8)
-        start=0
-        ar = array("L", pattern)
-        pulses.put_pulses(ar,start)
-        
-        damp_period = int((1/damp_freq) *1000_000) # needs to be in microseconds
-        damp_on_time = int(damp_period*damp_duty) # microseconds
-        damp_off_time = damp_period - damp_on_time #microseconds
-        print("Damp period", damp_period) # in seconds
-        print("Damp on time", damp_on_time)
-        print("Damp Frequency", damp_freq)
-        prev_cycle_damp = utime.ticks_us()
-        
-        #if(damp_freq * damp_on_time > 20000):
-        #    print("too big duty")
-        #    damp_duty_perc_div100 = 10
-        #    damp_duty = damp_duty_percent / 100.0
-        
+        send_kick_pulse(DAMP_INITIAL_PULSEWIDTH)
+
+        damp_period = int((1 / damp_freq) * 1000_000)
+        damp_on_time = int(damp_period * (damp_duty_percent / 100.0))
+
         if (damp_on_time > 5000):
             damp_on_time = 5000
+
+        print("Damp period", damp_period)
+        print("Damp on time", damp_on_time)
+        print("Damp Frequency", damp_freq)
     else:
-        #started a damping cycle
-        # definetely getting here. good to know
-        # implement a delay here of duty off time.
-        # Example I will try: 0x2AA, 2,     0xE8,          0x03,           10
-        #                     ID     mode   low byte freq, high byte freq  duty / 100
-        # keep damping until preset timetimeout or HV discharged
-        if (utime.ticks_ms() - prev_time_damp < damp_timeout): # or HV_voltage > 10)
-            # it is getting here.
-            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH*15): # in us? # waiting for a second to do the damping
-                # also getting here now that I changed the timer to us rather than *1000 in ms timer  
-                '''
-                pwm = PWM(KICK) # KICK
-
-                # Set the frequency (e.g., 1000 Hz)
-                pwm.freq(damp_freq)
-
-                # Set the duty cycle (0-65535, where 65535 is 100%)
-                pwm.duty_ns(1000*damp_duty_percent) #275_000)
-                
-                damping_on_cycle = 1
-                '''
-                if (utime.ticks_us() - prev_cycle_damp >= damp_period and damping_on_cycle == 0) :
-                    damping_on_cycle = 1
-                    damping_off_cycle = 0
-                    # turn on kicker
-                    #KICK.value(1)
-                    
-                    pattern=(8, damp_on_time, 8)
-                    start=0
-                    ar = array("L", pattern)
-                    pulses.put_pulses(ar,start)
-                    
+        if (utime.ticks_ms() - prev_time_damp < damp_timeout):
+            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH * 15):
+                if pwm is None:
+                    start_damp_pwm(damp_freq, damp_duty_percent)
                     CAN_LED.on()
-                    prev_cycle_damp = utime.ticks_us()
-                    #print("on")
-                elif (utime.ticks_us() - prev_cycle_damp >= damp_off_time and damping_off_cycle == 0) :
-                    damping_off_cycle = 1
-                    damping_on_cycle = 0
-                    # turn off kicker
-                    #KICK.value(0)
-                    CAN_LED.off()
-                    #print("off")
-                
         else :
-            #pwm.deinit() # doesnt explicity retract control from the pin
+            stop_damp_pwm()
+            CAN_LED.off()
             mode = 3 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
             #CAN_LED.off()
             #print("whyyyy")
@@ -416,6 +386,7 @@ def chg():
     damping = 0
     
     if (charging == 0):
+        stop_damp_pwm()
         if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
             startup_chg = 1
         prev_mode = mode
@@ -519,6 +490,7 @@ while True:
         # unknown command
         print("unknown command")
         chg_stop_mode_ctrl = 1
+        stop_damp_pwm()
     
     
     # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
@@ -557,7 +529,7 @@ while True:
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
         CAN_LED.value(0)
-        KICK.value(0)
+        stop_damp_pwm()
         CHIP.value(0)
         #TESTPIN.value(1)
         
@@ -622,7 +594,9 @@ while True:
         if (chg_stop_mode_ctrl == 0): # chg_stop_mode_ctrl controls charging, not discharging. chg_stop = 1 for stop, 0 for charge okay
             # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
             if (charge_toggle_wait == 0):
-                if (startup_cycle == 1):
+                if (startup_chg == 1):
+                    pass
+                elif (startup_cycle == 1):
                     if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
                         charge = 1
                         startup_cycle = 0
