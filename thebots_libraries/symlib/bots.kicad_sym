@@ -27686,7 +27686,7 @@
 				)
 			)
 		)
-		(property "Value" "LED_blue"
+		(property "Value" "LED_white"
 			(at 2.54 -2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
