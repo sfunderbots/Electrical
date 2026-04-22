@@ -1,3 +1,4 @@
 (sym_lib_table
-  (version 7)
+	(version 7)
+	(lib (name "bots") (type "KiCad") (uri "/Users/akhil/proj/Electrical/thebots_libraries/symlib") (options "") (descr ""))
 )
