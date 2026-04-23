@@ -1278,13 +1278,13 @@
         "uuid": "69058343-dac8-421b-a3f6-e069eb1ba8ae"
       }
     ],
-    "used_designators": "H13",
+    "used_designators": "#PWR9-10,#PWR23-24,U2",
     "variants": []
   },
   "sheets": [
     [
-      "ad1cc405-a7f8-427a-b77b-b46137334ec7",
-      "skidplate"
+      "02d3f36b-f2a3-4378-aadd-953fa674f75f",
+      "IMU"
     ],
     [
       "ab54f000-c596-4ae0-81be-92723dd47fdf",
@@ -1309,6 +1309,10 @@
     [
       "69058343-dac8-421b-a3f6-e069eb1ba8ae",
       "midplate"
+    ],
+    [
+      "65044f77-6cc8-4689-86b6-22dfd980e4bd",
+      "USB PD"
     ]
   ],
   "text_variables": {},

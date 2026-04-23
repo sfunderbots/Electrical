@@ -6,6 +6,52 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
+		(at 74.93 80.01)
+		(size 25.4 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "02d3f36b-f2a3-4378-aadd-953fa674f75f")
+		(property "Sheetname" "IMU"
+			(at 74.93 79.2984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "imu.kicad_sch"
+			(at 74.93 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "1")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 73.66 40.64)
 		(size 26.67 25.4)
 		(exclude_from_sim no)
@@ -98,6 +144,52 @@
 		)
 	)
 	(sheet
+		(at 111.76 80.01)
+		(size 25.4 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "65044f77-6cc8-4689-86b6-22dfd980e4bd")
+		(property "Sheetname" "USB PD"
+			(at 111.76 79.2984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb_pd.kicad_sch"
+			(at 111.76 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "midplate"
+				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 38.1 39.37)
 		(size 22.86 27.94)
 		(exclude_from_sim no)
@@ -139,52 +231,6 @@
 			(project "midplate"
 				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
 					(page "2")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 81.28 81.28)
-		(size 21.59 24.13)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "ad1cc405-a7f8-427a-b77b-b46137334ec7")
-		(property "Sheetname" "skidplate"
-			(at 81.28 80.5684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "skidplate.kicad_sch"
-			(at 81.28 105.9946 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "midplate"
-				(path "/69058343-dac8-421b-a3f6-e069eb1ba8ae"
-					(page "1")
 				)
 			)
 		)
