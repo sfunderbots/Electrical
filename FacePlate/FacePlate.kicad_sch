@@ -4063,16 +4063,16 @@
 		(uuid "c156f779-9f3f-4fb7-b432-c36bc502f5e5")
 	)
 	(junction
+		(at 59.69 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4df99d0-0f0c-428f-90fb-a033058e9cb4")
+	)
+	(junction
 		(at 166.37 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9180efb-1386-4238-beaf-edcfe9031342")
-	)
-	(junction
-		(at 210.82 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ebebbd39-88b4-4121-8377-5db81f609ca6")
 	)
 	(junction
 		(at 38.1 38.1)
@@ -4606,6 +4606,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 48.26) (xy 59.69 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d269671-a19f-4685-81ea-8e9d7f89c5a5")
+	)
+	(wire
+		(pts
 			(xy 121.92 76.2) (xy 148.59 76.2)
 		)
 		(stroke
@@ -4883,16 +4893,6 @@
 			(type default)
 		)
 		(uuid "743759a0-350f-44ac-a7c1-4e746ee6e3ba")
-	)
-	(wire
-		(pts
-			(xy 210.82 134.62) (xy 215.9 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "744946fd-ba26-4f39-84de-cb879d5210d1")
 	)
 	(wire
 		(pts
@@ -5574,16 +5574,6 @@
 		)
 		(uuid "fdda75c4-00bd-4815-a59d-f502bcd0051f")
 	)
-	(wire
-		(pts
-			(xy 36.83 48.26) (xy 59.69 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff2a2e28-32a6-450c-b611-e63cf327b509")
-	)
 	(label "SPI5_MISO"
 		(at 237.49 31.75 0)
 		(effects
@@ -6195,7 +6185,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000580c1d11")
-		(property "Reference" "#PWR10"
+		(property "Reference" "#PWR012"
 			(at 124.46 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6255,7 +6245,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR10")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -6272,7 +6262,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000580c1e01")
-		(property "Reference" "#PWR9"
+		(property "Reference" "#PWR010"
 			(at 106.68 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -6332,7 +6322,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR9")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -6349,7 +6339,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "016ee290-9138-483f-90ba-5022a4854a62")
-		(property "Reference" "#PWR8"
+		(property "Reference" "#PWR08"
 			(at 62.23 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -6409,7 +6399,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR8")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -6427,7 +6417,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0289610d-fd3f-4426-83fb-a0af00d5ec55")
-		(property "Reference" "H5"
+		(property "Reference" "H4"
 			(at 140.97 147.3199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6485,7 +6475,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H5")
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -6503,7 +6493,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "041ede36-c2c9-4c02-87e3-cb74cbdb3ce1")
-		(property "Reference" "H3"
+		(property "Reference" "H7"
 			(at 140.97 162.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6561,7 +6551,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H3")
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -6578,7 +6568,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0aebd69f-9f70-4006-a57d-c79228db010e")
-		(property "Reference" "R27"
+		(property "Reference" "R8"
 			(at 54.61 86.868 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6706,7 +6696,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R27")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -6723,7 +6713,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "11861cef-85b9-449b-a322-0b92e1920ffd")
-		(property "Reference" "#PWR18"
+		(property "Reference" "#PWR022"
 			(at 194.31 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -6783,7 +6773,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR18")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -6810,7 +6800,7 @@
 				)
 			)
 		)
-		(property "Value" "JST_XH_A_1x4"
+		(property "Value" "STEMMA_QT"
 			(at 245.11 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6820,7 +6810,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -6842,7 +6832,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
 			(at 245.11 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -6886,7 +6876,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "15a25089-a25c-4b44-a4ec-6c78ff8bee04")
-		(property "Reference" "H1"
+		(property "Reference" "H3"
 			(at 140.97 139.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6944,7 +6934,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H1")
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -6961,7 +6951,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "15d558dc-0e2d-490c-87d6-46a519bc0cb2")
-		(property "Reference" "J6"
+		(property "Reference" "J11"
 			(at 252.73 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7066,7 +7056,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J6")
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -7083,7 +7073,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "17ab47d2-502a-4fb9-a55c-0e7c0eb163cf")
-		(property "Reference" "#PWR5"
+		(property "Reference" "#PWR06"
 			(at 59.69 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -7143,7 +7133,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR5")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -7161,7 +7151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "19279f0d-c29c-4ba0-8199-2ab5b3984ed6")
-		(property "Reference" "C3"
+		(property "Reference" "C4"
 			(at 50.8 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7291,7 +7281,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C3")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -7308,7 +7298,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1941d4c6-4b91-4543-9b19-df61ccf5fd93")
-		(property "Reference" "R20"
+		(property "Reference" "R9"
 			(at 55.88 53.848 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7436,7 +7426,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R20")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -7454,7 +7444,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2223610f-bf0a-4a06-a8b1-513b9bb3e57e")
-		(property "Reference" "#PWR20"
+		(property "Reference" "#PWR016"
 			(at 166.37 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -7514,7 +7504,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR20")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7531,7 +7521,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "233bcbb1-a5dd-4048-ab1d-1b5f7b35eacc")
-		(property "Reference" "#PWR43"
+		(property "Reference" "#PWR015"
 			(at 166.37 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7591,7 +7581,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR43")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -7608,7 +7598,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "243a696d-7307-4daf-824e-663f00dd228c")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 172.72 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7618,7 +7608,7 @@
 				)
 			)
 		)
-		(property "Value" "JST_XH_A_1x4"
+		(property "Value" "JST_GH_BM04B-GHS-TBT_1x04"
 			(at 172.72 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7628,7 +7618,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical"
 			(at 172.72 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -7650,7 +7640,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" "4-pin JST GH CAN connector"
 			(at 172.72 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -7676,7 +7666,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J3")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -7693,7 +7683,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2dbf28fb-bf3f-403b-aeb4-da1f09045736")
-		(property "Reference" "J5"
+		(property "Reference" "J6"
 			(at 203.2 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7798,7 +7788,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J5")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -7815,7 +7805,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2f9c720d-fa59-4172-8064-a34fcca733f7")
-		(property "Reference" "R26"
+		(property "Reference" "R5"
 			(at 45.72 84.328 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7943,7 +7933,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R26")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -8056,7 +8046,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32cef526-7159-4605-9846-64e2119abdd5")
-		(property "Reference" "C4"
+		(property "Reference" "C2"
 			(at 44.45 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8186,7 +8176,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C4")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -8203,7 +8193,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4631ef27-c7ca-495f-a66c-ad6e17dc55d5")
-		(property "Reference" "#PWR48"
+		(property "Reference" "#PWR029"
 			(at 231.14 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -8263,7 +8253,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR48")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -8281,7 +8271,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53c8ad8f-f303-4d8d-8230-c3938d85a33d")
-		(property "Reference" "#PWR13"
+		(property "Reference" "#PWR018"
 			(at 181.61 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -8342,7 +8332,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR13")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -8359,7 +8349,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5598c9a0-a1e2-49e8-bd84-3d40985fe5da")
-		(property "Reference" "#PWR50"
+		(property "Reference" "#PWR031"
 			(at 231.14 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -8419,7 +8409,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR50")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -8446,7 +8436,7 @@
 				)
 			)
 		)
-		(property "Value" "JST_XH_A_1x4"
+		(property "Value" "STEMMA_QT"
 			(at 245.11 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8456,7 +8446,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -8478,7 +8468,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
 			(at 245.11 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -8521,7 +8511,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5f0a7ef9-43af-4406-8a96-c4cb30eea160")
-		(property "Reference" "R28"
+		(property "Reference" "R6"
 			(at 45.72 89.408 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8649,7 +8639,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R28")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -8666,7 +8656,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "60ed8aa4-9bc2-4522-a738-9d6b26c505e2")
-		(property "Reference" "#PWR12"
+		(property "Reference" "#PWR04"
 			(at 36.83 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -8726,7 +8716,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR12")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -8743,7 +8733,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6457952d-f188-43af-902b-cf74c0568509")
-		(property "Reference" "R21"
+		(property "Reference" "R10"
 			(at 55.88 58.928 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8871,7 +8861,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R21")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -9082,7 +9072,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6725156b-8893-42ef-9b4d-0244473ebd8d")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR020"
 			(at 185.42 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -9142,7 +9132,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR025")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -9159,7 +9149,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "683366ee-3dd7-43e4-82a9-c8fb6848742c")
-		(property "Reference" "R25"
+		(property "Reference" "R7"
 			(at 54.61 81.788 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9287,7 +9277,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R25")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -9305,7 +9295,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6cdace2e-d1e2-41ad-985e-2c929d9cbd26")
-		(property "Reference" "H2"
+		(property "Reference" "H5"
 			(at 140.97 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9363,7 +9353,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H2")
+					(reference "H5")
 					(unit 1)
 				)
 			)
@@ -9381,7 +9371,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6d377f38-0475-48e9-9cf6-a080b909105b")
-		(property "Reference" "#PWR40"
+		(property "Reference" "#PWR025"
 			(at 210.82 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -9441,85 +9431,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR40")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 215.9 134.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6e182be2-d825-4f07-9ce0-5e477c2e614a")
-		(property "Reference" "#FLG01"
-			(at 215.9 132.715 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 215.9 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 215.9 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 215.9 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 215.9 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d546dafb-1973-4b46-a20f-58c800218054")
-		)
-		(instances
-			(project "FacePlate"
-				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#FLG01")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -9537,7 +9449,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ed9178d-f385-4411-9f5e-d1aaeee3ba91")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 127.635 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -9598,7 +9510,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -9682,6 +9594,83 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
+		(at 59.69 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72a89807-6725-4130-bcc6-55841ccde204")
+		(property "Reference" "#PWR07"
+			(at 59.69 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 59.69 44.704 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 59.69 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b25dab48-4eae-4a2e-aa9c-7ac098203671")
+		)
+		(instances
+			(project "FacePlate"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
 		(at 208.28 130.81 0)
 		(unit 1)
 		(body_style 1)
@@ -9691,7 +9680,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "755d5286-3dde-4f54-9a8b-9f885175b473")
-		(property "Reference" "#PWR19"
+		(property "Reference" "#PWR024"
 			(at 208.28 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -9751,7 +9740,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR19")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -9768,7 +9757,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "769c7e0b-e754-47b3-8ec1-6b448f69fd0f")
-		(property "Reference" "J11"
+		(property "Reference" "J1"
 			(at 102.235 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9830,7 +9819,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J11")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -9848,7 +9837,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "776a157c-2164-4607-97eb-033360a5744d")
-		(property "Reference" "#PWR17"
+		(property "Reference" "#PWR023"
 			(at 204.47 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -9909,7 +9898,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR17")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -9927,7 +9916,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "79f3c552-e9c9-43c2-b896-51ff95e83ffa")
-		(property "Reference" "C1"
+		(property "Reference" "C3"
 			(at 49.53 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10057,7 +10046,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C1")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -10074,7 +10063,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7f367ab1-4d6f-40a3-b309-05a9dce8dad8")
-		(property "Reference" "#PWR6"
+		(property "Reference" "#PWR09"
 			(at 67.31 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -10134,7 +10123,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR6")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -10151,7 +10140,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8b5ee017-8433-4e12-bb99-5ab6014b0b11")
-		(property "Reference" "#PWR7"
+		(property "Reference" "#PWR05"
 			(at 58.42 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10211,7 +10200,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR7")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -10228,7 +10217,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8bb82d2c-1d2f-45d1-8240-12a477fe3c9f")
-		(property "Reference" "J1"
+		(property "Reference" "J3"
 			(at 170.18 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10290,7 +10279,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J1")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -10307,7 +10296,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8bf85d57-d837-40a8-9d15-a9ac398148c7")
-		(property "Reference" "C16"
+		(property "Reference" "C5"
 			(at 167.005 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10443,7 +10432,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C16")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -10460,7 +10449,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "913f1adc-29a5-4e31-9775-b4437ed87aa6")
-		(property "Reference" "R22"
+		(property "Reference" "R2"
 			(at 45.72 56.388 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10588,7 +10577,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R22")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -10605,7 +10594,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "968ffc74-5401-477b-947e-9165827fa74b")
-		(property "Reference" "#PWR2"
+		(property "Reference" "#PWR02"
 			(at 35.56 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -10671,7 +10660,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR2")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -10688,7 +10677,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "96c70c79-8472-4c4b-a9dd-57b7ddb15b64")
-		(property "Reference" "#PWR53"
+		(property "Reference" "#PWR032"
 			(at 241.3 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -10748,7 +10737,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR53")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -10765,7 +10754,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9906645f-60a5-442b-907c-2ff5604b0d3b")
-		(property "Reference" "#PWR11"
+		(property "Reference" "#PWR03"
 			(at 36.83 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -10825,7 +10814,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR11")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -10842,7 +10831,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99fcc4f8-90f7-4b31-a8be-20ca93b71225")
-		(property "Reference" "C17"
+		(property "Reference" "C6"
 			(at 211.455 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10912,7 +10901,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C17")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -10929,7 +10918,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9d75708b-66eb-47df-905a-249a8d07bcc5")
-		(property "Reference" "#PWR52"
+		(property "Reference" "#PWR033"
 			(at 231.14 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -10989,7 +10978,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR52")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -11007,7 +10996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e742001-97df-4ecf-a471-386de22365d9")
-		(property "Reference" "#PWR24"
+		(property "Reference" "#PWR027"
 			(at 229.87 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -11068,7 +11057,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR24")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -11086,7 +11075,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e9f86b4-33e6-4231-913b-f3b7e1c69bdf")
-		(property "Reference" "H6"
+		(property "Reference" "H2"
 			(at 140.97 134.6199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11144,7 +11133,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H6")
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -11162,7 +11151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a4555a00-6041-454e-9d32-ef657d8abdf6")
-		(property "Reference" "U7"
+		(property "Reference" "U3"
 			(at 186.055 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11295,7 +11284,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "U7")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -11313,7 +11302,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2bb90e6-0131-4d2f-8c63-ab8089bc279c")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR011"
 			(at 121.92 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -11373,7 +11362,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR04")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -11390,7 +11379,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b487127d-5a8f-42ae-978a-0ad1168bbd52")
-		(property "Reference" "#PWR21"
+		(property "Reference" "#PWR021"
 			(at 191.77 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -11450,7 +11439,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR21")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -11477,7 +11466,7 @@
 				)
 			)
 		)
-		(property "Value" "JST_XH_A_1x4"
+		(property "Value" "STEMMA_QT"
 			(at 245.11 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11487,7 +11476,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -11509,7 +11498,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
 			(at 245.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -11552,7 +11541,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b7abb8e4-0329-41d2-9df7-fec7a732c6a9")
-		(property "Reference" "#PWR41"
+		(property "Reference" "#PWR014"
 			(at 170.18 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -11612,7 +11601,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR41")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -11629,7 +11618,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c19aeaba-6e3f-4682-bf62-9b64be72d6f5")
-		(property "Reference" "R23"
+		(property "Reference" "R3"
 			(at 45.72 61.468 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11757,7 +11746,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R23")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -11774,7 +11763,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c9d715d1-0e08-40f7-94bc-15d8ce2af9b8")
-		(property "Reference" "#PWR47"
+		(property "Reference" "#PWR034"
 			(at 242.57 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -11834,7 +11823,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR47")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -11851,7 +11840,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cb7c0cbf-3b8a-42ea-b4a3-cffe23d363b5")
-		(property "Reference" "R24"
+		(property "Reference" "R4"
 			(at 45.72 79.248 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11979,7 +11968,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R24")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -11996,7 +11985,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cbd0ac85-3c19-4341-a5f3-122f8da7cc26")
-		(property "Reference" "#PWR1"
+		(property "Reference" "#PWR01"
 			(at 35.56 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -12062,7 +12051,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR1")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -12080,7 +12069,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ceaf65e9-0962-49c2-9d47-96ba5c004e12")
-		(property "Reference" "#PWR14"
+		(property "Reference" "#PWR013"
 			(at 160.02 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -12141,7 +12130,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR14")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -12158,7 +12147,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d0630dca-bc7a-4ad6-b858-03e2b32a9d73")
-		(property "Reference" "#PWR51"
+		(property "Reference" "#PWR030"
 			(at 241.3 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -12218,7 +12207,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR51")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -12235,7 +12224,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d0af3e40-905f-4133-87c7-bfecfce4112c")
-		(property "Reference" "#PWR22"
+		(property "Reference" "#PWR026"
 			(at 232.41 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -12295,7 +12284,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR22")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -12312,7 +12301,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d542a514-7359-46d6-b70d-3231be056cd4")
-		(property "Reference" "#PWR16"
+		(property "Reference" "#PWR019"
 			(at 182.88 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -12372,7 +12361,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR16")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -12389,7 +12378,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e3f32903-b161-4a2c-8fe0-71be02d2e52d")
-		(property "Reference" "#PWR15"
+		(property "Reference" "#PWR017"
 			(at 171.45 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -12449,7 +12438,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR15")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -12476,7 +12465,7 @@
 				)
 			)
 		)
-		(property "Value" "JST_XH_A_1x4"
+		(property "Value" "STEMMA_QT"
 			(at 245.11 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12486,7 +12475,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -12508,7 +12497,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
 			(at 245.11 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -12551,7 +12540,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ef5f245e-eee1-45be-af22-0f783aae09e8")
-		(property "Reference" "R19"
+		(property "Reference" "R1"
 			(at 45.72 51.308 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12679,7 +12668,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "R19")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -12697,7 +12686,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0392518-08c2-4036-ac5c-3a35f1731d62")
-		(property "Reference" "C2"
+		(property "Reference" "C1"
 			(at 41.91 33.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12827,7 +12816,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "C2")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -12844,7 +12833,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f18d9c58-a0c9-467e-bc51-160704f24778")
-		(property "Reference" "#PWR49"
+		(property "Reference" "#PWR028"
 			(at 241.3 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -12904,7 +12893,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR49")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -12921,7 +12910,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f3ca69f7-d43f-4821-a998-de98310ee1bf")
-		(property "Reference" "J4"
+		(property "Reference" "J5"
 			(at 193.04 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12983,7 +12972,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J4")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -13001,7 +12990,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f5091c21-ebca-4857-894c-2190da36f55e")
-		(property "Reference" "H7"
+		(property "Reference" "H6"
 			(at 140.97 158.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13059,7 +13048,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H7")
+					(reference "H6")
 					(unit 1)
 				)
 			)
@@ -13076,7 +13065,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fbb279cc-583a-4329-9fed-c9ce85968a21")
-		(property "Reference" "#PWR23"
+		(property "Reference" "#PWR035"
 			(at 241.3 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -13136,7 +13125,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "#PWR23")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -13154,7 +13143,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fbcabf8a-1220-40e0-8924-173c37df98c8")
-		(property "Reference" "H4"
+		(property "Reference" "H1"
 			(at 140.97 128.2699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13212,7 +13201,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "H4")
+					(reference "H1")
 					(unit 1)
 				)
 			)

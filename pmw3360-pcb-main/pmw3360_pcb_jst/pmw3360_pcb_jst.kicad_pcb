@@ -2398,7 +2398,7 @@
 			(uuid "8d65011b-3527-46a1-a677-a9ce365f6ca7")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM08B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM08B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 0 0)
 			)

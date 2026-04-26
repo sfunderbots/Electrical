@@ -3107,7 +3107,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0011c333-1bb2-4a60-9858-723d75a8a279")
-		(property "Reference" "#PWR30"
+		(property "Reference" "#PWR043"
 			(at 153.67 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -3181,7 +3181,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR30")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -3198,7 +3198,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "03d08e44-ff2a-4f2a-acb6-039808479e5b")
-		(property "Reference" "R17"
+		(property "Reference" "R22"
 			(at 186.69 80.518 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3326,7 +3326,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R17")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -3343,7 +3343,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "085c0503-15da-4696-9786-2ec51529069f")
-		(property "Reference" "C19"
+		(property "Reference" "C9"
 			(at 186.182 112.268 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3487,7 +3487,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C19")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -3505,7 +3505,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0d624862-f3df-44af-96d2-43c5602e414a")
-		(property "Reference" "#PWR29"
+		(property "Reference" "#PWR046"
 			(at 227.33 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -3579,7 +3579,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR29")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -3596,7 +3596,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "116cfd90-4fbc-4160-a55f-1e9dd31dbe63")
-		(property "Reference" "R16"
+		(property "Reference" "R19"
 			(at 176.53 72.898 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3724,7 +3724,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R16")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -3741,7 +3741,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1837f61c-1005-4cf9-8142-cb253c217911")
-		(property "Reference" "R13"
+		(property "Reference" "R12"
 			(at 69.85 94.488 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3869,7 +3869,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R13")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -3887,7 +3887,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1925ae8a-dd81-40e4-8a63-c20c9299c342")
-		(property "Reference" "R3"
+		(property "Reference" "R18"
 			(at 135.382 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4029,7 +4029,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R3")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -4048,7 +4048,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1d026c58-6f8e-428b-ab45-df43d8537b15")
-		(property "Reference" "U6"
+		(property "Reference" "U4"
 			(at 95.8281 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4186,7 +4186,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "U6")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -4204,7 +4204,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22525481-815f-414a-9e37-81cf9944bf93")
-		(property "Reference" "C12"
+		(property "Reference" "C7"
 			(at 110.49 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4334,7 +4334,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C12")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -4351,7 +4351,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2bb86677-cee2-4f70-91f9-4eca1bfdbf0e")
-		(property "Reference" "TP12"
+		(property "Reference" "TP2"
 			(at 76.2 103.378 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4424,7 +4424,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "TP12")
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -4441,7 +4441,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4f465f64-2be5-463e-9670-bf387c54e994")
-		(property "Reference" "TP10"
+		(property "Reference" "TP4"
 			(at 130.81 85.598 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4514,7 +4514,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "TP10")
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -4531,7 +4531,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "50ebb432-b91d-47de-adfb-e58a8a3537a3")
-		(property "Reference" "C18"
+		(property "Reference" "C8"
 			(at 185.674 86.868 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4675,7 +4675,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C18")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -4693,7 +4693,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "526b75c2-62e3-4518-b3d2-e8c830a4cc7a")
-		(property "Reference" "#PWR33"
+		(property "Reference" "#PWR036"
 			(at 92.71 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4767,7 +4767,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR33")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -4785,7 +4785,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "584b6937-547f-4bfa-9a7c-c3298a2185f9")
-		(property "Reference" "#PWR32"
+		(property "Reference" "#PWR047"
 			(at 227.33 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -4859,7 +4859,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR32")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -4877,7 +4877,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5970684c-c315-4441-8608-cfe1a89bf1d3")
-		(property "Reference" "TP9"
+		(property "Reference" "TP3"
 			(at 130.81 68.072 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4950,7 +4950,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "TP9")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -4967,7 +4967,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5c0553e8-f4ad-4662-817e-c4a7d30e7b1b")
-		(property "Reference" "R11"
+		(property "Reference" "R16"
 			(at 120.65 75.438 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5095,7 +5095,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R11")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -5112,7 +5112,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "61c16c07-c46e-4f59-b572-768a6bfb3eb1")
-		(property "Reference" "#PWR31"
+		(property "Reference" "#PWR039"
 			(at 106.68 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -5172,7 +5172,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR31")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -5190,7 +5190,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ca68ab4-8dd0-43fb-909f-03c36894d100")
-		(property "Reference" "#PWR3"
+		(property "Reference" "#PWR045"
 			(at 191.77 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -5264,7 +5264,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR3")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -5282,7 +5282,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7f6744d4-8d5f-4103-a8d4-eacea446dff3")
-		(property "Reference" "#PWR38"
+		(property "Reference" "#PWR042"
 			(at 133.35 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -5356,7 +5356,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR38")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -5374,7 +5374,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92a50e7a-05c6-40f3-b5b5-25c676d90708")
-		(property "Reference" "C13"
+		(property "Reference" "C10"
 			(at 231.14 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5504,7 +5504,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C13")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -5522,7 +5522,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9848a132-7ddb-4a75-b084-57c1bfd4148e")
-		(property "Reference" "R36"
+		(property "Reference" "R13"
 			(at 112.522 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5650,7 +5650,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R36")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -5667,7 +5667,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99c92898-2dab-4c4e-9dab-b3dc7a64d8ae")
-		(property "Reference" "R10"
+		(property "Reference" "R14"
 			(at 115.57 72.898 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5795,7 +5795,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R10")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -5813,7 +5813,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ac73769-4dca-42c7-af56-f759e0b6dff1")
-		(property "Reference" "R2"
+		(property "Reference" "R15"
 			(at 121.412 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5941,7 +5941,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R2")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -5958,7 +5958,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a2dedb6b-0583-4e92-86ef-696f046c2a9e")
-		(property "Reference" "TP11"
+		(property "Reference" "TP1"
 			(at 76.2 84.582 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6031,7 +6031,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "TP11")
+					(reference "TP1")
 					(unit 1)
 				)
 			)
@@ -6049,7 +6049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab1cf31c-9cda-4e71-9309-a51da606f1ed")
-		(property "Reference" "#PWR46"
+		(property "Reference" "#PWR040"
 			(at 110.49 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -6109,7 +6109,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR46")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -6126,7 +6126,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b5f6ebce-9e44-4188-b8bf-d5cb3b95ced7")
-		(property "Reference" "#PWR28"
+		(property "Reference" "#PWR038"
 			(at 106.68 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -6186,7 +6186,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR28")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -6203,7 +6203,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bfe0dcf9-a45b-460c-8caf-317e21b2a0a4")
-		(property "Reference" "Y2"
+		(property "Reference" "Y1"
 			(at 175.514 106.172 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6342,7 +6342,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "Y2")
+					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -6360,7 +6360,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bffe0eef-a850-49f8-b619-49a578639bea")
-		(property "Reference" "#PWR37"
+		(property "Reference" "#PWR041"
 			(at 119.38 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -6420,7 +6420,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR37")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -6651,7 +6651,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cba83086-cd9c-4308-b92b-068b9343eb72")
-		(property "Reference" "#PWR39"
+		(property "Reference" "#PWR044"
 			(at 153.67 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -6725,7 +6725,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR39")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -6742,7 +6742,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d8e301ec-d40f-4803-83e1-db6f0c950ac2")
-		(property "Reference" "R15"
+		(property "Reference" "R21"
 			(at 186.69 75.438 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6870,7 +6870,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R15")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -6888,7 +6888,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc267031-5c75-421e-9102-ff7b8a191d2f")
-		(property "Reference" "#PWR36"
+		(property "Reference" "#PWR037"
 			(at 92.71 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -6948,7 +6948,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "#PWR36")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -6965,7 +6965,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc5b4f23-edb9-402a-b963-0b14604f2a35")
-		(property "Reference" "R18"
+		(property "Reference" "R17"
 			(at 133.35 88.138 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7093,7 +7093,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R18")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -7110,7 +7110,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dedafc7a-f354-4352-bd92-79bf8ed7ddbe")
-		(property "Reference" "R12"
+		(property "Reference" "R11"
 			(at 69.85 89.408 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7238,7 +7238,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R12")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -7255,7 +7255,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f7283f15-786e-4c39-831f-aeb54f4c2517")
-		(property "Reference" "R14"
+		(property "Reference" "R20"
 			(at 176.53 77.978 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7383,7 +7383,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R14")
+					(reference "R20")
 					(unit 1)
 				)
 			)

@@ -203,10 +203,8 @@
       ],
       "track_widths": [
         0.0,
-        0.1,
         0.3,
-        0.5,
-        1.0
+        0.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -238,6 +236,10 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.7,
+          "drill": 0.3
         }
       ],
       "zones_allow_external_fillets": false
@@ -1280,7 +1282,7 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "#FLG1-2,#FLG4,#PWR4,#PWR25,J11",
+    "used_designators": "#FLG2-3",
     "variants": []
   },
   "sheets": [
