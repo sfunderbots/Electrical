@@ -1183,12 +1183,6 @@
         },
         {
           "group_by": false,
-          "label": "Manufacturer",
-          "name": "Manufacturer",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Price",
           "name": "Price",
           "show": false
@@ -1209,6 +1203,108 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "CREATOR",
+          "name": "CREATOR",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Purchase-URL",
+          "name": "Purchase-URL",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Type",
+          "name": "Sim.Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "VERIFIER",
+          "name": "VERIFIER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Availability",
+          "name": "Availability",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "MANUFACTURER",
           "show": false
         }
       ],
@@ -1278,7 +1374,7 @@
         "uuid": "69058343-dac8-421b-a3f6-e069eb1ba8ae"
       }
     ],
-    "used_designators": "#PWR9-10,#PWR23-24,U2",
+    "used_designators": "J8,#PWR32,#PWR34",
     "variants": []
   },
   "sheets": [

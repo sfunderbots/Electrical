@@ -2735,7 +2735,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4"
 			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -2746,7 +2746,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://jlcpcb.com/partdetail/DMBJ-RVT1H1R0M0405_1UF50V/C970594"
 			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
