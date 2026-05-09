@@ -3198,7 +3198,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "03d08e44-ff2a-4f2a-acb6-039808479e5b")
-		(property "Reference" "R22"
+		(property "Reference" "R17"
 			(at 186.69 80.518 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3326,7 +3326,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R22")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -3343,8 +3343,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "085c0503-15da-4696-9786-2ec51529069f")
-		(property "Reference" "C9"
-			(at 186.182 112.268 90)
+		(property "Reference" "C19"
+			(at 187.452 109.982 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3355,7 +3355,7 @@
 			)
 		)
 		(property "Value" "C_22p"
-			(at 181.102 112.014 90)
+			(at 184.658 108.458 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3487,7 +3487,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C9")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -3596,7 +3596,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "116cfd90-4fbc-4160-a55f-1e9dd31dbe63")
-		(property "Reference" "R19"
+		(property "Reference" "R16"
 			(at 176.53 72.898 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3724,7 +3724,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R19")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -3741,7 +3741,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1837f61c-1005-4cf9-8142-cb253c217911")
-		(property "Reference" "R12"
+		(property "Reference" "R13"
 			(at 69.85 94.488 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3869,7 +3869,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R12")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -3887,7 +3887,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1925ae8a-dd81-40e4-8a63-c20c9299c342")
-		(property "Reference" "R18"
+		(property "Reference" "R3"
 			(at 135.382 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4029,7 +4029,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R18")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -4048,7 +4048,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1d026c58-6f8e-428b-ab45-df43d8537b15")
-		(property "Reference" "U4"
+		(property "Reference" "U6"
 			(at 95.8281 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4186,7 +4186,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "U4")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -4531,8 +4531,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "50ebb432-b91d-47de-adfb-e58a8a3537a3")
-		(property "Reference" "C8"
-			(at 185.674 86.868 90)
+		(property "Reference" "C18"
+			(at 186.944 87.122 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4543,7 +4543,7 @@
 			)
 		)
 		(property "Value" "C_22p"
-			(at 192.278 86.868 90)
+			(at 191.77 88.9 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4675,7 +4675,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C8")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -4967,7 +4967,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5c0553e8-f4ad-4662-817e-c4a7d30e7b1b")
-		(property "Reference" "R16"
+		(property "Reference" "R11"
 			(at 120.65 75.438 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5095,7 +5095,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R16")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -5374,7 +5374,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92a50e7a-05c6-40f3-b5b5-25c676d90708")
-		(property "Reference" "C10"
+		(property "Reference" "C13"
 			(at 231.14 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5504,7 +5504,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "C10")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -5522,7 +5522,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9848a132-7ddb-4a75-b084-57c1bfd4148e")
-		(property "Reference" "R13"
+		(property "Reference" "R"
 			(at 112.522 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5650,7 +5650,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R13")
+					(reference "R")
 					(unit 1)
 				)
 			)
@@ -5667,7 +5667,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99c92898-2dab-4c4e-9dab-b3dc7a64d8ae")
-		(property "Reference" "R14"
+		(property "Reference" "R10"
 			(at 115.57 72.898 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5795,7 +5795,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R14")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -5813,7 +5813,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ac73769-4dca-42c7-af56-f759e0b6dff1")
-		(property "Reference" "R15"
+		(property "Reference" "R2"
 			(at 121.412 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5941,7 +5941,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R15")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -6203,8 +6203,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bfe0dcf9-a45b-460c-8caf-317e21b2a0a4")
-		(property "Reference" "Y1"
-			(at 175.514 106.172 90)
+		(property "Reference" "Y2"
+			(at 187.198 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6342,7 +6342,7 @@
 			)
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "Y1")
+					(reference "Y2")
 					(unit 1)
 				)
 			)
@@ -6742,7 +6742,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d8e301ec-d40f-4803-83e1-db6f0c950ac2")
-		(property "Reference" "R21"
+		(property "Reference" "R15"
 			(at 186.69 75.438 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6870,7 +6870,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R21")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -6965,7 +6965,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc5b4f23-edb9-402a-b963-0b14604f2a35")
-		(property "Reference" "R17"
+		(property "Reference" "R18"
 			(at 133.35 88.138 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7093,7 +7093,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R17")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -7110,7 +7110,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dedafc7a-f354-4352-bd92-79bf8ed7ddbe")
-		(property "Reference" "R11"
+		(property "Reference" "R12"
 			(at 69.85 89.408 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7238,7 +7238,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R11")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -7255,7 +7255,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f7283f15-786e-4c39-831f-aeb54f4c2517")
-		(property "Reference" "R20"
+		(property "Reference" "R14"
 			(at 176.53 77.978 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7383,7 +7383,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R20")
+					(reference "R14")
 					(unit 1)
 				)
 			)
