@@ -6800,7 +6800,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "14dd9d5d-cd14-4f6a-8658-23772f73b8c9")
-		(property "Reference" "J"
+		(property "Reference" "J8"
 			(at 245.11 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6868,7 +6868,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -6961,7 +6961,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "15d558dc-0e2d-490c-87d6-46a519bc0cb2")
-		(property "Reference" "J"
+		(property "Reference" "J11"
 			(at 252.73 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7066,7 +7066,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -7693,7 +7693,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2dbf28fb-bf3f-403b-aeb4-da1f09045736")
-		(property "Reference" "J"
+		(property "Reference" "J6"
 			(at 203.2 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7798,7 +7798,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -8436,7 +8436,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "592672d3-80f7-46e5-b6ad-eea74a73bfe2")
-		(property "Reference" "J"
+		(property "Reference" "J10"
 			(at 245.11 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8504,7 +8504,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -9767,7 +9767,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "769c7e0b-e754-47b3-8ec1-6b448f69fd0f")
-		(property "Reference" "J"
+		(property "Reference" "J5"
 			(at 102.235 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9829,7 +9829,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -11470,7 +11470,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b69d20fc-c8ee-4d68-a725-0bba8f5f901f")
-		(property "Reference" "J"
+		(property "Reference" "J7"
 			(at 245.11 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11538,7 +11538,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -12469,7 +12469,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e4165de2-544a-4c09-a92e-2de8aad7e512")
-		(property "Reference" "J"
+		(property "Reference" "J9"
 			(at 245.11 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12537,7 +12537,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
-					(reference "J")
+					(reference "J9")
 					(unit 1)
 				)
 			)

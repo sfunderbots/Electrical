@@ -5522,7 +5522,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9848a132-7ddb-4a75-b084-57c1bfd4148e")
-		(property "Reference" "R"
+		(property "Reference" "R1"
 			(at 112.522 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5650,7 +5650,7 @@
 		(instances
 			(project "FacePlate"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/99bd3b0c-5cef-43ec-97f5-6b19c715565b"
-					(reference "R")
+					(reference "R1")
 					(unit 1)
 				)
 			)
