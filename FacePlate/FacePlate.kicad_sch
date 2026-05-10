@@ -9881,7 +9881,7 @@
 				)
 			)
 		)
-		(pin "CAN_H" output
+		(pin "CAN+" output
 			(at 177.8 90.17 180)
 			(uuid "dbfd6cad-94fc-41be-a4fb-87e3bf269692")
 			(effects
@@ -9891,7 +9891,7 @@
 				(justify left)
 			)
 		)
-		(pin "CAN_L" output
+		(pin "CAN-" output
 			(at 177.8 87.63 180)
 			(uuid "3743334d-1875-411f-84e4-7a715b951d36")
 			(effects

@@ -1,4 +1,4 @@
-(version 6.0)
+(version 1)
 (rule SPI_CAN_converter
 	(condition "A.enclosedByArea('SPI_C')")
 	(constraint clearance (min 9.8mil)))
