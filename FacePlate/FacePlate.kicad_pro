@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -238,12 +238,16 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.5,
-          "drill": 0.2
+          "diameter": 0.6,
+          "drill": 0.25
         },
         {
           "diameter": 0.7,
           "drill": 0.3
+        },
+        {
+          "diameter": 1.5,
+          "drill": 0.7
         }
       ],
       "zones_allow_external_fillets": false
@@ -1286,13 +1290,17 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "C17,R1,J3,J5-11,TP9-10,TP12-13",
+    "used_designators": "C1-4,C17,R1,R19-28,J3,J5-11,TP9-10,TP12-13,#PWR1-9,U1-2",
     "variants": []
   },
   "sheets": [
     [
       "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
       "FacePlate"
+    ],
+    [
+      "e46586b7-2dd1-4ffd-a913-c044639681c3",
+      "Display"
     ],
     [
       "99bd3b0c-5cef-43ec-97f5-6b19c715565b",
