@@ -17291,7 +17291,7 @@
 			)
 		)
 	)
-	(footprint "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+	(footprint "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 		(layer "B.Cu")
 		(uuid "53176d4f-09fa-46c6-9256-9e1647d5848e")
 		(at 129.390083 74.816 -90)
@@ -17333,7 +17333,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -17368,6 +17368,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
+		(solder_mask_margin 0.1016)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -18020,7 +18021,7 @@
 			)
 		)
 	)
-	(footprint "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+	(footprint "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 		(layer "B.Cu")
 		(uuid "a1e9c13f-fa9b-46f3-9921-a9b21af8ed72")
 		(at 122.677416 74.816 -90)
@@ -18062,7 +18063,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -18097,6 +18098,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
+		(solder_mask_margin 0.1016)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -18901,7 +18903,7 @@
 			)
 		)
 	)
-	(footprint "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+	(footprint "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 		(layer "B.Cu")
 		(uuid "b0715cdb-d890-4ae4-ba6c-5d33dacde139")
 		(at 142.815416 74.816 -90)
@@ -18943,7 +18945,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -18978,6 +18980,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
+		(solder_mask_margin 0.1016)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19383,7 +19386,7 @@
 			)
 		)
 	)
-	(footprint "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+	(footprint "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 		(layer "B.Cu")
 		(uuid "f177404f-bec9-42df-a3b0-47f3aee87ff7")
 		(at 136.102749 74.816 -90)
@@ -19425,7 +19428,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -19460,6 +19463,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
+		(solder_mask_margin 0.1016)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line

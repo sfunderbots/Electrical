@@ -3003,7 +3003,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:JST_XH_A_1x4"
+		(symbol "bots:STEMMA_QT"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -3023,7 +3023,7 @@
 					)
 				)
 			)
-			(property "Value" "JST_XH_A_1x4"
+			(property "Value" "STEMMA_QT"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3033,7 +3033,7 @@
 					)
 				)
 			)
-			(property "Footprint" "bots:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical"
+			(property "Footprint" "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3088,7 +3088,7 @@
 					)
 				)
 			)
-			(symbol "JST_XH_A_1x4_1_1"
+			(symbol "STEMMA_QT_1_1"
 				(rectangle
 					(start -3.81 5.08)
 					(end 2.54 -6.35)
@@ -6019,7 +6019,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:JST_XH_A_1x4")
+		(lib_id "bots:STEMMA_QT")
 		(at 245.11 105.41 180)
 		(unit 1)
 		(body_style 1)
@@ -6049,7 +6049,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+		(property "Footprint" "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -6071,7 +6071,7 @@
 				)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 245.11 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -6812,7 +6812,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:JST_XH_A_1x4")
+		(lib_id "bots:STEMMA_QT")
 		(at 245.11 135.89 180)
 		(unit 1)
 		(body_style 1)
@@ -6842,7 +6842,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+		(property "Footprint" "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -6864,7 +6864,7 @@
 				)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 245.11 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -8650,7 +8650,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:JST_XH_A_1x4")
+		(lib_id "bots:STEMMA_QT")
 		(at 245.11 90.17 180)
 		(unit 1)
 		(body_style 1)
@@ -8680,7 +8680,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+		(property "Footprint" "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -8702,7 +8702,7 @@
 				)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 245.11 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -9276,7 +9276,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:JST_XH_A_1x4")
+		(lib_id "bots:STEMMA_QT")
 		(at 245.11 120.65 180)
 		(unit 1)
 		(body_style 1)
@@ -9306,7 +9306,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+		(property "Footprint" "bots:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
 			(at 245.11 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -9328,7 +9328,7 @@
 				)
 			)
 		)
-		(property "Description" "STEMMA QT / Qwiic 4-pin I2C connector"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 245.11 120.65 0)
 			(hide yes)
 			(show_name no)

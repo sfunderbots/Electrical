@@ -7031,7 +7031,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "S4B-PH-SM4-TB:JST_S4B-PH-SM4-TB"
+		(property "Footprint" "bots:JST_S4B-PH-SM4-TB"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

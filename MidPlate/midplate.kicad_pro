@@ -1374,7 +1374,7 @@
         "uuid": "69058343-dac8-421b-a3f6-e069eb1ba8ae"
       }
     ],
-    "used_designators": "J8,#PWR32,#PWR34",
+    "used_designators": "J6,#PWR22,#PWR26,#PWR28-29,#PWR35,C7-8,U3,H16-17,H22-23,H26-29",
     "variants": []
   },
   "sheets": [
@@ -1405,10 +1405,6 @@
     [
       "69058343-dac8-421b-a3f6-e069eb1ba8ae",
       "midplate"
-    ],
-    [
-      "65044f77-6cc8-4689-86b6-22dfd980e4bd",
-      "USB PD"
     ]
   ],
   "text_variables": {},
