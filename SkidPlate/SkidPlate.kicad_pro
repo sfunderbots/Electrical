@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 2.7,
+          "height": 5.5,
+          "width": 5.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -50,10 +50,16 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.254
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -77,7 +83,7 @@
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
-        "hole_to_hole": "warning",
+        "hole_to_hole": "error",
         "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
@@ -99,7 +105,7 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
@@ -120,27 +126,27 @@
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
-        "zones_intersect": "error"
+        "zones_intersect": "ignore"
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
-        "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_clearance": 0.1778,
+        "min_connection": 0.1524,
+        "min_copper_edge_clearance": 0.508,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
+        "min_text_height": 0.7874,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_through_hole_diameter": 0.2,
+        "min_track_width": 0.1524,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -187,7 +193,13 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.2032,
+        0.254,
+        0.508,
+        1.016
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -214,8 +226,25 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
-      "zones_allow_external_fillets": false
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.5,
+          "drill": 0.2
+        },
+        {
+          "diameter": 0.7,
+          "drill": 0.35
+        },
+        {
+          "diameter": 4.0,
+          "drill": 2.0
+        }
+      ],
+      "zones_allow_external_fillets": true
     },
     "ipc2581": {
       "bom_rev": "",
@@ -481,7 +510,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.254,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -492,10 +521,136 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.1778,
         "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.508,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "BAT",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.381,
+        "tuning_profile": "",
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.254,
+        "diff_pair_gap": 0.4,
+        "diff_pair_width": 4.0,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CAN_DIFF",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.1778,
+        "tuning_profile": "",
+        "via_diameter": 0.5,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.254,
+        "diff_pair_gap": 3.81,
+        "diff_pair_width": 0.1524,
+        "line_style": 0,
+        "microvia_diameter": 0.5,
+        "microvia_drill": 0.2,
+        "name": "DIFF_USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.1524,
+        "tuning_profile": "",
+        "via_diameter": 0.5,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 1.27,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HIGH_CURRENT",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.54,
+        "tuning_profile": "",
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 1.524,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HV",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.27,
+        "tuning_profile": "",
+        "via_diameter": 3.0,
+        "via_drill": 1.6,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.254,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 5,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.254,
+        "tuning_profile": "",
+        "via_diameter": 0.7,
+        "via_drill": 0.35,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2413,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.5,
+        "microvia_drill": 0.2,
+        "name": "SIGNALS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 6,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.1524,
+        "tuning_profile": "",
+        "via_diameter": 0.5,
+        "via_drill": 0.2,
         "wire_width": 6
       }
     ],
@@ -504,7 +659,480 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/Data-"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/Data+"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "VCC"
+      },
+      {
+        "netclass": "HIGH_CURRENT",
+        "pattern": "/Flyback_HV/VSOURCE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "CHARGE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "DONE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "CHICKER"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "CHIP_EXTRA"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/EXTRA_HV"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/SNUB"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "5V_USB"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CC1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CC2"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/D-"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/D+"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/XIN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/XOUT"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+1V1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/RX"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/TX"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO6"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO7"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO8"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO9"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO10"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO11"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO12"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO13"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO14"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO15"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SWCLK"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SWDIO"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SPI0_RX"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SPI0_CS"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SPI0_TX"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SPI0_SCK"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/INT"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO21"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "PMS_SDA"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "PMS_SCL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO24"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO25"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO26_ADC0"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO27_ADC1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO28_ADC2"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/GPIO29_ADC3"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/DR+"
+      },
+      {
+        "netclass": "DIFF_USB",
+        "pattern": "/RP2040_CAN_FLASH/DR-"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SD3"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SCLK"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SD0"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SD2"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SD1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/QSPI_SS"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/RXCAN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/TXCAN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/RP2040_CAN_FLASH/Vref2.5V"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CANH"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CANL"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Power/VCC_RPP"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Power/USB_DIO"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Power/3V3_DIO"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/Power/VCC_DIO"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/RP2040_CAN_FLASH/+1.1V"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/CHICKER_HV"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/IGBTGATE_CHICKER"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/IGBTGATE_EXTRA"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/HV_DIO"
+      },
+      {
+        "netclass": "HIGH_CURRENT",
+        "pattern": "/Flyback_HV/Q2D"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "GNDPWR"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Power/FLAG"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+12V"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Power/12V_DIO"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/AD_R"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/AD_50W"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Power/U6SCL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Power/U6SDA"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/AD_G"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/AD_LV_G"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "CANH"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "CANL"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/RCD"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/SNUB2"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "CAN-"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "CAN+"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/Power/CANR-"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/Power/CANR+"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/EXTRA_GATE"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Flyback_HV/CHICKER_GATE"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/V_GATE_Q2"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/RDCM"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Flyback_HV/RVOUT"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/Flyback_HV/AD_35W"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/BOOT"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/RUN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "BKBM"
+      },
+      {
+        "netclass": "BAT",
+        "pattern": "/Power/VCC_FUSE"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "EXTRA_HV"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "CHICKER_HV"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Power/5V_IN"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Flyback_HV/~DISCHARGE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/SHELL_OFF"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/RP2040_CAN_FLASH/CAN-"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/RP2040_CAN_FLASH/CAN+"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/RP2040_CAN_FLASH/ADC_3v3"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/High Voltage Feedback/HV_FDBK2"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/High Voltage Feedback/HV_FDBK1"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/Power/BKBM"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/BATT_LEVEL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/5V_LEVEL"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/3v3_ref"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/High Voltage Feedback/HV_SENSE"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/CAN_LED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/High Voltage Feedback/HV_RAW"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "/RP2040_CAN_FLASH/BKBM"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -646,17 +1274,13 @@
         "uuid": "c24cc35a-7b6f-4292-8822-a3ae94215b62"
       }
     ],
-    "used_designators": "U1,#PWR4-5,#PWR7-15,#PWR18-19,#PWR22-23,#PWR34-36,C3-4,H1-15,TP11,R2-3,J1-7,J9-14",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
     [
       "c24cc35a-7b6f-4292-8822-a3ae94215b62",
       "SkidPlate"
-    ],
-    [
-      "4c943ff1-1270-408a-91a3-7ec599342626",
-      "baseplate"
     ]
   ],
   "text_variables": {},

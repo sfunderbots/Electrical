@@ -5086,7 +5086,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "LSM6DSOX:PQFN50P250X300X86-14N"
+		(property "Footprint" "bots:PQFN50P250X300X86-14N"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5262,6 +5262,28 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+			)
+		)
+		(property "JLC" "LGA-14(2.5x3)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2655100"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(symbol "LSM6DSOX_0_0"

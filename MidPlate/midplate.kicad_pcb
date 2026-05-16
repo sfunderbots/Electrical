@@ -18369,7 +18369,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "6aca6263-c2a5-4eb3-8a10-0771ade47784")
 	)
@@ -18380,7 +18379,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "1a0a0efb-4d1b-4946-987c-4cc8d75f9d0c")
 	)
@@ -18391,7 +18389,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "7729b347-6e69-4f19-b53d-f1dd5b7579ea")
 	)
@@ -18402,7 +18399,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "75a77d38-e688-4c0c-b879-679d1c30ffae")
 	)
@@ -18413,7 +18409,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "06f28355-b777-4b98-a123-6c7aaee3ebde")
 	)
@@ -18424,7 +18419,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "e86059ed-0e8c-497d-aa32-afbeb795ce62")
 	)
@@ -18435,7 +18429,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "3a30b8a5-73d1-47a4-8c59-f45a727d89b3")
 	)
@@ -18446,7 +18439,6 @@
 			(width 0.2)
 			(type solid)
 		)
-		(locked yes)
 		(layer "F.SilkS")
 		(uuid "c7df52b0-7a81-4000-9fb3-10a0aaec121c")
 	)
@@ -21533,6 +21525,16 @@
 		(locked yes)
 		(layer "Edge.Cuts")
 		(uuid "c16bd2bb-f84b-4970-8506-a21c7f10236f")
+	)
+	(gr_line
+		(start 90.17 125.73)
+		(end 98.806 125.73)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "7ebd41bc-7e53-4af4-919a-542656611881")
 	)
 	(gr_line
 		(start 137.167998 22.352)
@@ -34559,15 +34561,6 @@
 				(xy 106.68 53.848) (xy 107.95 55.118) (xy 123.698 55.118) (xy 126.492 52.324) (xy 126.492 51.562)
 				(xy 113.284 38.354) (xy 106.68 38.354)
 			)
-		)
-	)
-	(group ""
-		(uuid "8a462f60-4415-45b6-80c4-c8f1e9995d59")
-		(locked yes)
-		(members "06f28355-b777-4b98-a123-6c7aaee3ebde" "1a0a0efb-4d1b-4946-987c-4cc8d75f9d0c"
-			"3a30b8a5-73d1-47a4-8c59-f45a727d89b3" "6aca6263-c2a5-4eb3-8a10-0771ade47784"
-			"75a77d38-e688-4c0c-b879-679d1c30ffae" "7729b347-6e69-4f19-b53d-f1dd5b7579ea"
-			"c7df52b0-7a81-4000-9fb3-10a0aaec121c" "e86059ed-0e8c-497d-aa32-afbeb795ce62"
 		)
 	)
 	(group ""
