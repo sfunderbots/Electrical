@@ -214,6 +214,28 @@
 					(justify bottom)
 				)
 			)
+			(property "LCSC" "C481766"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLC" "LGA-14(2.5x3)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(symbol "LSM6DSOX_0_0"
 				(rectangle
 					(start -12.7 -15.24)
@@ -916,7 +938,7 @@
 				)
 			)
 		)
-		(property "Footprint" "bots:PQFN50P300X250X86-14N"
+		(property "Footprint" "LSM6DSOX:PQFN50P250X300X86-14N"
 			(at 132.08 85.09 0)
 			(hide yes)
 			(show_name no)

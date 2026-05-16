@@ -7377,6 +7377,18 @@
 		(layer "Edge.Cuts")
 		(uuid "96fa25e4-17c8-426c-a534-58fdee5a2873")
 	)
+	(gr_text "BOARD PADS WRONG LOCATION. lines up more with 5V, BKBM, CANH, CANL. no GND. "
+		(at 106.553 114.173 0)
+		(layer "F.SilkS")
+		(uuid "17ed0b69-b350-4221-aa34-a102d913143e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "------GND------"
 		(at 166.497 120.777 0)
 		(layer "F.SilkS" knockout)
@@ -9007,14 +9019,6 @@
 		(layer "F.Cu")
 		(net "/BKBM")
 		(uuid "1fc3b1b2-97bb-42f7-9aca-58f5b75aa2ff")
-	)
-	(segment
-		(start 107.736318 107.648681)
-		(end 138.255681 107.648681)
-		(width 0.2032)
-		(layer "F.Cu")
-		(net "/BKBM")
-		(uuid "4ddd80bf-3c03-4474-8fb9-ca9210175721")
 	)
 	(segment
 		(start 184.632962 123.570638)

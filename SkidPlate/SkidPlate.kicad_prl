@@ -48,7 +48,8 @@
       "drc_warnings",
       "locked_item_shadows",
       "conflict_shadows",
-      "shapes"
+      "shapes",
+      "board_outline_area"
     ],
     "visible_layers": "ffffffff_ffffffff_ff555575_ffffffff",
     "zone_display_mode": 0
