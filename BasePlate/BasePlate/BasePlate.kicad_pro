@@ -196,6 +196,7 @@
       ],
       "track_widths": [
         0.0,
+        0.2032,
         0.254
       ],
       "tuning_pattern_settings": {
@@ -531,7 +532,6 @@
         "bus_width": 12,
         "clearance": 0.762,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -550,7 +550,6 @@
         "bus_width": 12,
         "clearance": 0.254,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -569,7 +568,6 @@
         "bus_width": 12,
         "clearance": 0.1778,
         "diff_pair_gap": 3.81,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.1524,
         "line_style": 0,
         "microvia_diameter": 0.5,
@@ -588,7 +586,6 @@
         "bus_width": 12,
         "clearance": 1.27,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -607,7 +604,6 @@
         "bus_width": 12,
         "clearance": 1.524,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -626,7 +622,6 @@
         "bus_width": 12,
         "clearance": 0.254,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -645,7 +640,6 @@
         "bus_width": 12,
         "clearance": 0.2413,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.5,
@@ -1082,6 +1076,18 @@
       {
         "netclass": "Power",
         "pattern": "+5V"
+      },
+      {
+        "netclass": "SIGNALS",
+        "pattern": "BKBM"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/jumper"
+      },
+      {
+        "netclass": "CAN_DIFF",
+        "pattern": "/jumper2"
       }
     ]
   },
@@ -1260,7 +1266,7 @@
         "uuid": "bbc21205-8f0b-4bb2-8208-e4469bfb9468"
       }
     ],
-    "used_designators": "J10-13",
+    "used_designators": "R4,J10-13,JP1",
     "variants": []
   },
   "sheets": [

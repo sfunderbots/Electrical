@@ -1342,6 +1342,375 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "bots:Jumper_2_Bridged_smd"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "JP"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Jumper_2_Bridged_smd"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Jumper, 2-pole, closed/bridged"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Jumper SPST"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Jumper_2_Bridged_smd_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Bridged_smd_0_1"
+				(arc
+					(start -1.524 0.254)
+					(mid 0 0.762)
+					(end 1.524 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Bridged_smd_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "bots:R_0R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "bots:R_0603_1608Metric"
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "0603WAF0000T5E"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.001"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLC" "0603"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C21189"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLC Extended" "no"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_0R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:TE_1586842-6_6PIN"
 			(pin_names
 				(offset 1.016)
@@ -2387,169 +2756,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "thebots_symlib:Jumper_2_Bridged_smd"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at 0 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper_2_Bridged_smd"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "thebots_baseplate:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Jumper, 2-pole, closed/bridged"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "Jumper SPST"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Jumper_2_Bridged_smd_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Bridged_smd_0_1"
-				(arc
-					(start -1.524 0.254)
-					(mid 0 0.762)
-					(end 1.524 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_Bridged_smd_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "thebots_symlib:R_120R"
 			(pin_numbers
 				(hide yes)
@@ -2757,11 +2963,15 @@
 			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 111.76 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "17274e9b-aba0-4b31-9e63-e6dc68dc4e34")
+	(text "Matching resistor for length"
+		(exclude_from_sim no)
+		(at 97.536 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "649bfd88-7f75-4cf4-a886-008fdbd74bfd")
 	)
 	(junction
 		(at 162.56 124.46)
@@ -2776,10 +2986,10 @@
 		(uuid "410ea1fe-09a4-43c8-ae18-ee1480871f48")
 	)
 	(junction
-		(at 137.16 115.57)
+		(at 113.03 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "46a72a8f-f937-4afe-9c29-deaddf83cead")
+		(uuid "5f28b3ea-910e-4326-904c-8db96046cd50")
 	)
 	(junction
 		(at 196.85 73.66)
@@ -2798,6 +3008,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e04f6ef-f675-4973-ba91-442fb87d9741")
+	)
+	(junction
+		(at 125.73 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc106788-455f-46b8-9713-28b04a369411")
 	)
 	(no_connect
 		(at 109.22 158.75)
@@ -2824,7 +3040,7 @@
 		(uuid "4c833694-277b-45c1-8a49-96ac9d0a7e68")
 	)
 	(no_connect
-		(at 127 72.39)
+		(at 130.81 72.39)
 		(uuid "9baeb3b3-ce6f-46b0-a39a-9e5f77a5199a")
 	)
 	(no_connect
@@ -2832,7 +3048,7 @@
 		(uuid "adaf7a20-18fc-4cb4-9e7f-4abbb2291c34")
 	)
 	(no_connect
-		(at 104.14 72.39)
+		(at 107.95 72.39)
 		(uuid "bafb4ddc-3d21-4a55-9448-cc340d6d61b3")
 	)
 	(no_connect
@@ -2842,6 +3058,16 @@
 	(no_connect
 		(at 52.07 158.75)
 		(uuid "f885b96c-2744-4d6e-b0c9-560ea98f0b38")
+	)
+	(wire
+		(pts
+			(xy 107.95 115.57) (xy 113.03 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00752d89-70db-43f6-9f68-435c2a31f74d")
 	)
 	(wire
 		(pts
@@ -2855,7 +3081,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 82.55) (xy 119.38 90.17)
+			(xy 123.19 82.55) (xy 123.19 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2865,7 +3091,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 82.55) (xy 116.84 111.76)
+			(xy 120.65 82.55) (xy 120.65 105.41)
 		)
 		(stroke
 			(width 0)
@@ -2882,16 +3108,6 @@
 			(type default)
 		)
 		(uuid "0f6fc545-1b9d-404c-ac46-a261a04d6f72")
-	)
-	(wire
-		(pts
-			(xy 140.97 118.11) (xy 140.97 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "123e1419-a79e-4d49-b832-ba9ca49958c7")
 	)
 	(wire
 		(pts
@@ -2915,6 +3131,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 128.27) (xy 113.03 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d588397-9f17-4345-8a07-c30f09abec79")
+	)
+	(wire
+		(pts
 			(xy 156.21 111.76) (xy 162.56 111.76)
 		)
 		(stroke
@@ -2935,7 +3161,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 115.57) (xy 125.73 115.57)
+			(xy 123.19 135.89) (xy 125.73 135.89)
 		)
 		(stroke
 			(width 0)
@@ -2962,6 +3188,16 @@
 			(type default)
 		)
 		(uuid "274c6fcf-00a4-457a-8366-16174135054d")
+	)
+	(wire
+		(pts
+			(xy 125.73 128.27) (xy 125.73 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b66542b-2ca8-4fbb-9feb-e8ec1db84b08")
 	)
 	(wire
 		(pts
@@ -3025,7 +3261,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 82.55) (xy 114.3 111.76)
+			(xy 118.11 82.55) (xy 118.11 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3035,13 +3271,23 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 111.76) (xy 114.3 111.76)
+			(xy 113.03 105.41) (xy 118.11 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4a6f60f4-d52f-47df-b115-2cf17e9524f7")
+	)
+	(wire
+		(pts
+			(xy 228.6 80.01) (xy 237.49 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4abf9e9a-1e7e-4bf3-af97-8f205889b76f")
 	)
 	(wire
 		(pts
@@ -3052,6 +3298,16 @@
 			(type default)
 		)
 		(uuid "51d0f5ef-8a4b-4947-af1f-9a1f51e3b309")
+	)
+	(wire
+		(pts
+			(xy 228.6 93.98) (xy 234.95 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51da1b26-376c-4d81-8c41-00026a4d05cd")
 	)
 	(wire
 		(pts
@@ -3085,6 +3341,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 120.65) (xy 113.03 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64d2df0e-7ea0-4172-a45a-a784dc6cbcb2")
+	)
+	(wire
+		(pts
 			(xy 44.45 115.57) (xy 44.45 114.3)
 		)
 		(stroke
@@ -3112,6 +3378,16 @@
 			(type default)
 		)
 		(uuid "76dbf8a0-5c8e-40aa-8524-1103191290ce")
+	)
+	(wire
+		(pts
+			(xy 125.73 115.57) (xy 130.81 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b2313fb-1034-426f-87f6-d087430ba551")
 	)
 	(wire
 		(pts
@@ -3145,6 +3421,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 115.57) (xy 125.73 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80c0f3c7-c5c3-48a8-b869-1cc85cf6aaff")
+	)
+	(wire
+		(pts
 			(xy 83.82 115.57) (xy 83.82 114.3)
 		)
 		(stroke
@@ -3155,17 +3441,17 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 115.57) (xy 137.16 115.57)
+			(xy 228.6 82.55) (xy 237.49 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "853d5409-fbe8-46d8-bd34-124fe9e2c9fa")
+		(uuid "84bba56d-c4f5-4ef9-bcb2-e4b6581f0731")
 	)
 	(wire
 		(pts
-			(xy 137.16 111.76) (xy 137.16 115.57)
+			(xy 125.73 105.41) (xy 125.73 115.57)
 		)
 		(stroke
 			(width 0)
@@ -3195,7 +3481,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 90.17) (xy 119.38 90.17)
+			(xy 125.73 90.17) (xy 123.19 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3205,7 +3491,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 82.55) (xy 111.76 90.17)
+			(xy 115.57 82.55) (xy 115.57 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3215,7 +3501,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 111.76) (xy 111.76 115.57)
+			(xy 113.03 105.41) (xy 113.03 115.57)
 		)
 		(stroke
 			(width 0)
@@ -3295,23 +3581,13 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 90.17) (xy 111.76 90.17)
+			(xy 113.03 90.17) (xy 115.57 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b84d723d-43d4-420e-bf51-9ffbd8e3081a")
-	)
-	(wire
-		(pts
-			(xy 111.76 115.57) (xy 102.87 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb709c8b-254f-48a3-a2ce-562cfa35e97a")
 	)
 	(wire
 		(pts
@@ -3385,7 +3661,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 90.17) (xy 121.92 99.06)
+			(xy 125.73 90.17) (xy 125.73 97.79)
 		)
 		(stroke
 			(width 0)
@@ -3395,23 +3671,13 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 111.76) (xy 116.84 111.76)
+			(xy 120.65 105.41) (xy 125.73 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "dc6005e3-6fe3-4d70-8859-c86b427cdd9f")
-	)
-	(wire
-		(pts
-			(xy 140.97 115.57) (xy 137.16 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dcf5ce08-b034-4ea6-857e-564579044d91")
 	)
 	(wire
 		(pts
@@ -3425,7 +3691,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 90.17) (xy 109.22 97.79)
+			(xy 113.03 90.17) (xy 113.03 97.79)
 		)
 		(stroke
 			(width 0)
@@ -3442,16 +3708,6 @@
 			(type default)
 		)
 		(uuid "e68fb418-89af-4e3d-ad97-91ed01976534")
-	)
-	(wire
-		(pts
-			(xy 113.03 115.57) (xy 111.76 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef8a18db-790c-40ed-bf0a-f642391d09e4")
 	)
 	(wire
 		(pts
@@ -3514,7 +3770,7 @@
 		(uuid "1304c22e-5dac-42c4-8048-9c50a6b38a7b")
 	)
 	(label "CAN_P"
-		(at 102.87 115.57 180)
+		(at 107.95 115.57 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3532,6 +3788,16 @@
 			(justify right bottom)
 		)
 		(uuid "4172e5d5-e6e2-4295-86f5-dc9f72239b43")
+	)
+	(label "jumper_P"
+		(at 113.03 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "445656fd-27a5-4b41-adfb-20834b4fc467")
 	)
 	(label "VCC"
 		(at 91.44 114.3 0)
@@ -3604,7 +3870,7 @@
 		(uuid "8c24081a-c4d9-4111-a1c7-a8e4900c4b9b")
 	)
 	(label "CAN_N"
-		(at 140.97 118.11 0)
+		(at 130.81 115.57 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3672,6 +3938,16 @@
 			(justify left bottom)
 		)
 		(uuid "d3c74a51-c81e-4edf-b5c3-b48bd0a9591a")
+	)
+	(label "jumper_N"
+		(at 125.73 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7946635-04ad-4c3d-8460-bad0372773e7")
 	)
 	(label "CAN_N"
 		(at 91.44 182.88 180)
@@ -3921,6 +4197,154 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:R_0R")
+		(at 113.03 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e8643f8-56eb-411d-b675-90885ab83a6f")
+		(property "Reference" "R4"
+			(at 115.57 123.1899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 115.57 125.7299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:R_0603_1608Metric"
+			(at 111.252 124.46 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.001"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC" "0603"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC Extended" "no"
+			(at 113.03 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1dadd8e5-2e70-4cb4-b85a-a4fd19245706")
+		)
+		(pin "2"
+			(uuid "08ceb0c3-7a0a-4625-9958-340ebaf96d15")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 162.56 115.57 0)
 		(unit 1)
@@ -4082,7 +4506,7 @@
 	)
 	(symbol
 		(lib_id "bots:JST_BM04B-GHS-TBT")
-		(at 114.3 77.47 90)
+		(at 118.11 77.47 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4093,7 +4517,7 @@
 		(fields_autoplaced yes)
 		(uuid "21624db9-b518-41aa-8c5c-d08849fa0497")
 		(property "Reference" "J1"
-			(at 115.57 64.77 90)
+			(at 119.38 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4103,7 +4527,7 @@
 			)
 		)
 		(property "Value" "JST_BM04B-GHS-TBT"
-			(at 115.57 67.31 90)
+			(at 119.38 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4113,7 +4537,7 @@
 			)
 		)
 		(property "Footprint" "bots:JST_BM04B-GHS-TBT"
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4125,7 +4549,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4136,7 +4560,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4147,7 +4571,7 @@
 			)
 		)
 		(property "MPN" "BM04B-GHS-TBT"
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4159,7 +4583,7 @@
 			)
 		)
 		(property "Manufacturer" "JST Sales America Inc."
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4171,7 +4595,7 @@
 			)
 		)
 		(property "Price" "0.31"
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4182,7 +4606,7 @@
 			)
 		)
 		(property "JLC" ""
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4193,7 +4617,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 114.3 77.47 0)
+			(at 118.11 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4551,7 +4975,7 @@
 	)
 	(symbol
 		(lib_id "thebots_symlib:R_120R")
-		(at 129.54 115.57 90)
+		(at 125.73 124.46 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4561,7 +4985,7 @@
 		(dnp no)
 		(uuid "5e81aacf-0546-4a74-ad18-eefef9d5f39c")
 		(property "Reference" "R1"
-			(at 129.54 113.03 90)
+			(at 123.19 124.46 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4571,7 +4995,7 @@
 			)
 		)
 		(property "Value" "120R"
-			(at 130.81 119.38 90)
+			(at 129.54 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4581,7 +5005,7 @@
 			)
 		)
 		(property "Footprint" "bots:R_0603_1608Metric"
-			(at 129.54 117.348 90)
+			(at 127.508 124.46 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4592,7 +5016,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4603,7 +5027,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4614,7 +5038,7 @@
 			)
 		)
 		(property "MPN" "0603WAF1200T5E"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4625,7 +5049,7 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4636,7 +5060,7 @@
 			)
 		)
 		(property "Price" "0.001"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4647,7 +5071,7 @@
 			)
 		)
 		(property "JLC" "0603"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4658,7 +5082,7 @@
 			)
 		)
 		(property "LCSC" "C22787"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4669,7 +5093,7 @@
 			)
 		)
 		(property "JLC Extended" "no"
-			(at 129.54 115.57 0)
+			(at 125.73 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5464,7 +5888,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 97.79 0)
+		(at 113.03 97.79 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5475,7 +5899,7 @@
 		(fields_autoplaced yes)
 		(uuid "8a572181-d05a-4887-8d5b-f738ba0ee836")
 		(property "Reference" "#PWR01"
-			(at 109.22 104.14 0)
+			(at 113.03 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5486,7 +5910,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.22 102.87 0)
+			(at 113.03 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5496,7 +5920,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 97.79 0)
+			(at 113.03 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5507,7 +5931,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 97.79 0)
+			(at 113.03 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5518,7 +5942,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 109.22 97.79 0)
+			(at 113.03 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5535,6 +5959,86 @@
 			(project "BasePlate"
 				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:Jumper_2_Bridged_smd")
+		(at 118.11 135.89 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8d5d2511-bbb7-4e98-aa42-38218499bab9")
+		(property "Reference" "JP1"
+			(at 118.11 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Jumper_2_Bridged_smd"
+			(at 118.11 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "bots:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+			(at 118.11 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, closed/bridged"
+			(at 118.11 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3a2e0841-dbe4-4444-9861-10b6f471a23d")
+		)
+		(pin "2"
+			(uuid "a4e6834e-ad83-4503-b618-954614b178b5")
+		)
+		(instances
+			(project "BasePlate"
+				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
+					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -5700,7 +6204,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 237.49 80.01 90)
+		(at 228.6 80.01 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5710,7 +6214,7 @@
 		(dnp no)
 		(uuid "9c1501a0-9540-430e-9538-b94a12a4b6e7")
 		(property "Reference" "#PWR015"
-			(at 241.3 80.01 0)
+			(at 232.41 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5721,7 +6225,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 233.68 80.01 0)
+			(at 224.79 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5731,7 +6235,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 237.49 80.01 0)
+			(at 228.6 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5742,7 +6246,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 80.01 0)
+			(at 228.6 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5753,7 +6257,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 80.01 0)
+			(at 228.6 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6017,7 +6521,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 234.95 93.98 90)
+		(at 228.6 93.98 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6027,7 +6531,7 @@
 		(dnp no)
 		(uuid "b2296c07-9a6d-4e64-be24-3fa5e19e8326")
 		(property "Reference" "#PWR017"
-			(at 238.76 93.98 0)
+			(at 232.41 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6038,7 +6542,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 231.14 93.98 0)
+			(at 224.79 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6048,7 +6552,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 234.95 93.98 0)
+			(at 228.6 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6059,7 +6563,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 234.95 93.98 0)
+			(at 228.6 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6070,7 +6574,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 234.95 93.98 0)
+			(at 228.6 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6484,7 +6988,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 237.49 82.55 270)
+		(at 228.6 82.55 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6495,7 +6999,7 @@
 		(fields_autoplaced yes)
 		(uuid "cbebb56a-3dda-4af9-a816-14767f09e195")
 		(property "Reference" "#PWR016"
-			(at 231.14 82.55 0)
+			(at 222.25 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6506,7 +7010,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 233.68 82.5499 90)
+			(at 224.79 82.5499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6517,7 +7021,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 237.49 82.55 0)
+			(at 228.6 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6528,7 +7032,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 82.55 0)
+			(at 228.6 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6539,7 +7043,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 82.55 0)
+			(at 228.6 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7120,86 +7624,6 @@
 		)
 	)
 	(symbol
-		(lib_id "thebots_symlib:Jumper_2_Bridged_smd")
-		(at 118.11 115.57 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "deffad32-6b88-44d2-a608-b24fd8b34714")
-		(property "Reference" "JP1"
-			(at 118.11 110.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_2_Bridged_smd"
-			(at 118.11 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "thebots_baseplate:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left"
-			(at 118.11 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 118.11 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, closed/bridged"
-			(at 118.11 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "647b50d0-7957-4caa-a626-69406938792c")
-		)
-		(pin "2"
-			(uuid "6a7cc25e-01ff-44c4-8dd4-85b9288c7358")
-		)
-		(instances
-			(project "BasePlate"
-				(path "/bbc21205-8f0b-4bb2-8208-e4469bfb9468"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "bots:JST_BM04B-GHS-TBT")
 		(at 68.58 163.83 90)
 		(unit 1)
@@ -7351,7 +7775,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 121.92 99.06 0)
+		(at 125.73 97.79 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -7363,7 +7787,7 @@
 		(fields_autoplaced yes)
 		(uuid "e886e0c8-65bc-4d40-b672-a2b4a7001bf4")
 		(property "Reference" "#PWR02"
-			(at 121.92 105.41 0)
+			(at 125.73 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7374,7 +7798,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 121.92 104.14 0)
+			(at 125.73 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7384,7 +7808,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 99.06 0)
+			(at 125.73 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7395,7 +7819,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 99.06 0)
+			(at 125.73 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7406,7 +7830,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 121.92 99.06 0)
+			(at 125.73 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

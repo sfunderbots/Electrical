@@ -1,8 +1,4 @@
-(version 6.0)
-(rule dp_gap_CAN
-    (condition "A.NetClass == 'CAN_DIFF'")
-	(constraint diff_pair_uncoupled (max 800mil))
-	(constraint diff_pair_gap (max 800mil) (opt 11mil) (min 10mil)))
+(version 1)
 (rule power_clearance_width
 	(condition "A.NetClass == 'Power'")
 	(constraint clearance (min 15mil))
@@ -10,3 +6,9 @@
 (rule JST_CAN
 	(condition "A.enclosedByArea('JST_CAN') && A.NetClass == 'BAT'")
 	(constraint clearance (min 25mil)))
+(rule Routing_diff_pair_CAN1
+	(constraint track_width (min 0.1778mm) (opt 0.2032mm) (max 0.2286mm))
+	(constraint diff_pair_gap (min 0.0294mm) (opt 0.2794mm) (max 2.1mm))
+	(constraint diff_pair_uncoupled (max 30mm))
+	(condition "A.hasNetclass('CAN_DIFF')")
+)
