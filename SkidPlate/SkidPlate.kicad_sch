@@ -4110,8 +4110,12 @@
 		(uuid "e6a931ef-1cc3-4502-8cfd-a84cf425f29d")
 	)
 	(no_connect
-		(at 91.44 101.6)
-		(uuid "1a961a22-cbd6-4ff4-9d97-8d3cfc622fc3")
+		(at 81.28 106.68)
+		(uuid "3576ac42-f056-400d-8824-2294aca307b7")
+	)
+	(no_connect
+		(at 62.23 99.06)
+		(uuid "6ddd5ce4-b62a-4a59-bf77-58b28a6faad6")
 	)
 	(no_connect
 		(at 175.26 73.66)
@@ -4229,7 +4233,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 99.06) (xy 66.04 102.87)
+			(xy 101.6 99.06) (xy 101.6 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4429,7 +4433,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 99.06) (xy 82.55 102.87)
+			(xy 71.12 99.06) (xy 71.12 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4479,13 +4483,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 99.06) (xy 105.41 101.6)
+			(xy 81.28 106.68) (xy 81.28 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aa7def28-da5b-4401-bfe5-3d9c1dc3fd6f")
+		(uuid "a5096adc-da47-44be-92c3-f872fd201e61")
 	)
 	(wire
 		(pts
@@ -4609,16 +4613,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 99.06) (xy 91.44 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f545064d-fb97-4f35-98fb-1cc88930357b")
-	)
-	(wire
-		(pts
 			(xy 215.9 53.34) (xy 215.9 50.8)
 		)
 		(stroke
@@ -4646,6 +4640,16 @@
 			(justify right bottom)
 		)
 		(uuid "07da66ba-3f55-406c-b502-a54c2e35357d")
+	)
+	(label "CANH"
+		(at 81.28 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0e28a7fa-dd81-4d88-8f7d-d85d6e9d80a4")
 	)
 	(label "IMU_SDA"
 		(at 151.13 102.87 270)
@@ -4787,16 +4791,6 @@
 		)
 		(uuid "cd722ccb-8293-445f-8334-e91fc337d094")
 	)
-	(label "BKBM"
-		(at 200.66 129.54 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d4e6cf47-fb48-479f-9762-c73ec51429ab")
-	)
 	(label "INT1"
 		(at 210.82 71.12 0)
 		(effects
@@ -4816,16 +4810,6 @@
 			(justify left bottom)
 		)
 		(uuid "e0e829f4-1b9b-43ef-aef9-e70cd4ddd6d0")
-	)
-	(label "BKBM"
-		(at 105.41 101.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f4941841-e384-4f37-9410-f5d86fc0c8b6")
 	)
 	(symbol
 		(lib_id "bots:LSM6DSOX")
@@ -5261,84 +5245,6 @@
 			(project "SkidPlate"
 				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
 					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
-		(at 91.44 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "088c875d-ffa2-42d1-9f46-a73232055c9b")
-		(property "Reference" "H6"
-			(at 93.98 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EXTRA"
-			(at 91.44 92.075 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
-			(at 91.44 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7287c0a4-5830-4571-b1e0-410df00881e1")
-		)
-		(instances
-			(project "SkidPlate"
-				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
-					(reference "H6")
 					(unit 1)
 				)
 			)
@@ -6953,7 +6859,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 82.55 102.87 180)
+		(at 71.12 102.87 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6964,7 +6870,7 @@
 		(fields_autoplaced yes)
 		(uuid "44d91299-e9b5-4bae-8893-343d932a959c")
 		(property "Reference" "#PWR05"
-			(at 82.55 99.06 0)
+			(at 71.12 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6975,7 +6881,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 82.55 107.95 0)
+			(at 71.12 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6985,7 +6891,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 82.55 102.87 0)
+			(at 71.12 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6996,7 +6902,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 102.87 0)
+			(at 71.12 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7007,7 +6913,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 82.55 102.87 0)
+			(at 71.12 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7103,6 +7009,84 @@
 			(project "SkidPlate"
 				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
+		(at 62.23 96.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "478d5cea-bc92-4007-91cd-e4ed5b564548")
+		(property "Reference" "H1"
+			(at 64.77 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RPI"
+			(at 62.23 92.075 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 62.23 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 62.23 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c4e7412e-139f-4c33-baed-16b76d27dfd1")
+		)
+		(instances
+			(project "SkidPlate"
+				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -7572,6 +7556,85 @@
 		)
 	)
 	(symbol
+		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
+		(at 81.28 96.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "616314dd-3c27-468b-a07c-740e052e09c0")
+		(property "Reference" "H3"
+			(at 83.82 93.9799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CANH"
+			(at 83.82 96.5199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
+			(at 81.28 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 81.28 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "68872d1d-2ba8-4165-9ba1-3a0e8edb2190")
+		)
+		(instances
+			(project "SkidPlate"
+				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "bots:R_0R")
 		(at 69.85 134.62 90)
 		(unit 1)
@@ -7789,6 +7852,85 @@
 			(project "SkidPlate"
 				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 200.66 129.54 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b593929-11fc-4531-9b86-e37c1790d7d1")
+		(property "Reference" "#PWR042"
+			(at 196.85 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 204.47 129.5399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 200.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "28343603-1236-4a85-b629-70ea82664e9c")
+		)
+		(instances
+			(project "SkidPlate"
+				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -8028,7 +8170,7 @@
 	)
 	(symbol
 		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
-		(at 82.55 96.52 0)
+		(at 71.12 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8038,8 +8180,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8cf3a503-c4b6-4794-b211-c6769161140c")
-		(property "Reference" "H5"
-			(at 85.09 95.25 0)
+		(property "Reference" "H2"
+			(at 73.66 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8050,17 +8192,18 @@
 			)
 		)
 		(property "Value" "5V"
-			(at 82.55 92.075 0)
+			(at 73.66 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
-			(at 82.55 96.52 0)
+			(at 71.12 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8071,7 +8214,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 96.52 0)
+			(at 71.12 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8082,7 +8225,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 82.55 96.52 0)
+			(at 71.12 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8098,7 +8241,7 @@
 		(instances
 			(project "SkidPlate"
 				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
-					(reference "H5")
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -8497,85 +8640,7 @@
 	)
 	(symbol
 		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
-		(at 105.41 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9cbae80e-f36f-4fec-8426-29dc249729ca")
-		(property "Reference" "H9"
-			(at 107.95 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "BKBM"
-			(at 105.41 92.075 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
-			(at 105.41 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 105.41 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a7be1079-ae40-4e1b-b579-1da13d831144")
-		)
-		(instances
-			(project "SkidPlate"
-				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
-					(reference "H9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bots:MountingHoleM2.5NoThread_wConn")
-		(at 66.04 96.52 0)
+		(at 101.6 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8585,8 +8650,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a08fce65-6456-4030-8987-c2403e4e3ac4")
-		(property "Reference" "H2"
-			(at 68.58 95.25 0)
+		(property "Reference" "H5"
+			(at 104.14 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8597,17 +8662,18 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 66.04 92.075 0)
+			(at 104.14 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "bots:MountingHole_2.7mm_M2.5_DIN965_Pad"
-			(at 66.04 96.52 0)
+			(at 101.6 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8618,7 +8684,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 96.52 0)
+			(at 101.6 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8629,7 +8695,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 66.04 96.52 0)
+			(at 101.6 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8645,7 +8711,7 @@
 		(instances
 			(project "SkidPlate"
 				(path "/c24cc35a-7b6f-4292-8822-a3ae94215b62"
-					(reference "H2")
+					(reference "H5")
 					(unit 1)
 				)
 			)
@@ -9126,7 +9192,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 66.04 102.87 0)
+		(at 101.6 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9137,7 +9203,7 @@
 		(fields_autoplaced yes)
 		(uuid "c90b59a8-f7ba-4d85-ba17-14b86ec83b84")
 		(property "Reference" "#PWR018"
-			(at 66.04 109.22 0)
+			(at 101.6 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9148,7 +9214,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 66.04 107.95 0)
+			(at 101.6 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9158,7 +9224,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 102.87 0)
+			(at 101.6 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9169,7 +9235,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 102.87 0)
+			(at 101.6 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9180,7 +9246,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 66.04 102.87 0)
+			(at 101.6 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
