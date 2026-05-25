@@ -20,7 +20,7 @@ The Faceplate[^1], one of five of our robot's on board custom PCBs (not includin
 
 ## Schematics
 ### Power
-From the midplate, the Faceplate receives a regulated 5V supply for the Raspberry Pi at 3A, including the CANBUS which is wired all throughout our robot for between-board communication. Specifically, this uses a JST XH connector, which is easily sourced among hobbyists. Then, the board also steps this down to 3.3V for the onboard logic circuits needed such as peripherals and LCD screens. Decoupling capacitors are needed on the Low Voltage Regulator (LDO) to help maintain power stability, and is chosen over a DC/DC converter due to low current requirements. The part chosen as shown below is a SOT-223 package that can handle up to 1A of current (this is significantly over specification).
+From the midplate, the Faceplate receives a regulated 5V supply for the Raspberry Pi at 3A, including the CANBUS which is wired all throughout our robot for between-board communication. Specifically, this uses a JST XH connector, which is easily sourced among hobbyists. Then, the board also steps this down to 3.3V for the onboard logic circuits needed such as peripherals and LCD screens. Bypass and decoupling capacitors are needed on the Low Voltage Regulator (LDO) to help maintain power stability, and is chosen over a DC/DC converter due to low current requirements. The part chosen as shown below is a SOT-223 package that can handle up to 1A of current (this is significantly over specification).
 
 <div style="display: flex; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/c87480ca-adc4-4e60-b1d5-105cca5da72c" alt="5V_CAN" style="flex: 1; width: 49%;" />
@@ -33,5 +33,21 @@ Since the Raspberry Pi 4 has a 40x2 standard dupont style 2.54mm pitch connector
 <p align="center">
 <img width="1027" height="1080" alt="40pin" src="https://github.com/user-attachments/assets/6dfb532c-1686-45f4-a116-06a886afbfaf" style="flex: 1; width: 49%;"/>
 </p>
-## smaller
-### evens maller
+
+### LCD Displays (eyes)
+Our LCD displays are a circular GC9A LCD display for which the board is then covered by custom-made 3D printed material for protection surrounding the eyes. Each display (and corresponding breakout board) attaches to a standard 7x1 Dupont style 2.54mm pitch connector, and includes decoupling power capacitors for the 3.3V logic rail to maintain chip operation during normal operating transients. The parts are organized into hierarchical sheets for better organization and viewing of schematics.
+
+<p align="center">
+<img width="1295" height="522" alt="image" src="https://github.com/user-attachments/assets/f5988cd9-373f-4fc7-a52b-0c29e8d25a3f" style="flex: 1; width: 50%;"/>
+
+<img width="1605" height="812" alt="displays" src="https://github.com/user-attachments/assets/6bb74e0a-a286-4728-9c26-5810eb765e33" style="flex: 1; width: 70%;"/>
+</p>
+
+### CANBUS
+In order to communicate on the CANBUS, one needs to convert the standard SPI interface on the Raspberry Pi to a CAN interface, using a CAN controller (MCP2515T), and a CAN transceiver (SN65HVD233). The CAN controller operates on an 8MHz clock and communicates with a CAN transceiver to send and receive commands over the CANBUS interface. As with the displays, the CAN interface is grouped into a hierarchical sheet to simplify organization
+
+<p align="center">
+<img width="1113" height="508" alt="can-top" src="https://github.com/user-attachments/assets/df21f037-adb1-4dfb-80ee-1a108f11854f" style="flex: 1; width: 40%;"/>
+  
+<img width="1816" height="610" alt="can" src="https://github.com/user-attachments/assets/a01f5431-a823-4e52-9366-4c31954d321d" style="flex: 1; width: 100%;"/>
+</p>
