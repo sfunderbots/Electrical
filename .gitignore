@@ -28,3 +28,5 @@ fp-info-cache
 **/.history/
 **/backups/
 **/*-backups/
+
+*.lck
