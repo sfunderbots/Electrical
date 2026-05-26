@@ -30,8 +30,9 @@ The Faceplate[^1], one of five of our robot's on board custom PCBs (not includin
 > [!TIP]
 > If you select edit symbol library, you will see that it opens up the library tab in KiCad, which has all of our parts listed. The same information for the LDO as above is here as well.
 <p align="center">
-<img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 49%;" />
+<img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 70%;" />
 </p>
+
 ### Power
 From the midplate, the Faceplate receives a regulated 5V supply for the Raspberry Pi at 3A, including the CANBUS which is wired all throughout our robot for between-board communication. Specifically, this uses a JST XH connector, which is easily sourced among hobbyists. Then, the board also steps this down to 3.3V for the onboard logic circuits needed such as peripherals and LCD screens. Bypass and decoupling capacitors are needed on the Low Voltage Regulator (LDO) to help maintain power stability, and is chosen over a DC/DC converter due to low current requirements.
 
