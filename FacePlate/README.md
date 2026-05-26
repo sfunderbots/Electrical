@@ -69,4 +69,12 @@ Two 8-pin JST GH series connectors link the Raspberry Pi with two identical cust
   <img width="1940" height="776" alt="image" src="https://github.com/user-attachments/assets/f85c225d-284f-4928-872c-f2d36272836f" style="flex: 1; width: 80%;"/>
 </p>
 
-The board files of the mouse sensor can be found on our github page under [PWM3360_PCB_JST](https://github.com/sfunderbots/Electrical/tree/main/pmw3360-pcb-main/pmw3360_pcb_jst)
+
+The board files of the mouse sensor can be found on our github page under [PWM3360_PCB_JST](https://github.com/sfunderbots/Electrical/tree/main/pmw3360-pcb-main/pmw3360_pcb_jst).
+
+### IMU
+For this revision of the faceplate, we have removed the direct connection of the IMU on the faceplate in place of an external connector to be wired to an IMU, in our case chosen as a breakout board from Adafruit: [4438](https://www.adafruit.com/product/4438). This will provide accurate 6-DoF for the robot to improve robot control speed. This is connected using a 4 pin JST PH connector which provides both power and data lines.
+<p align="center">
+  <img width="1137" height="575" alt="imu" src="https://github.com/user-attachments/assets/0043f4e1-8bf4-47eb-837b-108d4a3a492e" style="flex: 1; width: 50%;"/>
+</p>
+
