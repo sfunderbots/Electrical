@@ -28,9 +28,17 @@ The Faceplate[^1], one of five of our robot's on board custom PCBs (not includin
 </p>
 
 > [!TIP]
-> If you select edit symbol library, you will see that it opens up the library tab in KiCad, which has all of our parts listed. The same information for the LDO as above is here as well.
+> If you select "edit symbol library", you will see that it opens up the library tab in KiCad, which has all of our parts listed. The same information for the LDO as above is here as well.
+
 <p align="center">
 <img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 70%;" />
+</p>
+
+> [!IMPORTANT]
+> You will need to add your library path to the .KICAD_SYM schematic library file, which stores all of your components. While separating the components into groups hasnt been done yet on our end due to time constraints, we recommend grouping these components by type in separate .KICAD_SYM files to increase productivity.
+
+<p align="center">
+<img width="1256" height="831" alt="image" src="https://github.com/user-attachments/assets/c45acfb7-16f0-4e79-8f1a-0f4201c3d013" style="flex: 1; width: 70%;" />
 </p>
 
 ### Power
