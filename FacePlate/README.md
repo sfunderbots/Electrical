@@ -20,6 +20,18 @@ The Faceplate[^1], one of five of our robot's on board custom PCBs (not includin
 
 > ## Schematics
 
+> [!TIP]
+> For any of the following schematics, it is useful to group components into a schematic library file inside the EDA tool you are using - in this case, KiCad. Saving custom schematics ensures that when you update a board design you carry over any modifications like manufacturer part numbers, JLC part numbers (LCSC), price, etc. The following serves as an example for what information is useful to keep in the schematic part.
+
+<p align="center">
+<img width="906" height="922" alt="image" src="https://github.com/user-attachments/assets/e92225a0-547a-401e-ab69-4eb361320a10"  style="flex: 1; width: 49%;"/>
+</p>
+
+> [!TIP]
+> If you select edit symbol library, you will see that it opens up the library tab in KiCad, which has all of our parts listed. The same information for the LDO as above is here as well.
+<p align="center">
+<img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 49%;" />
+</p>
 ### Power
 From the midplate, the Faceplate receives a regulated 5V supply for the Raspberry Pi at 3A, including the CANBUS which is wired all throughout our robot for between-board communication. Specifically, this uses a JST XH connector, which is easily sourced among hobbyists. Then, the board also steps this down to 3.3V for the onboard logic circuits needed such as peripherals and LCD screens. Bypass and decoupling capacitors are needed on the Low Voltage Regulator (LDO) to help maintain power stability, and is chosen over a DC/DC converter due to low current requirements.
 
@@ -77,4 +89,11 @@ For this revision of the faceplate, we have removed the direct connection of the
 <p align="center">
   <img width="1137" height="575" alt="imu" src="https://github.com/user-attachments/assets/0043f4e1-8bf4-47eb-837b-108d4a3a492e" style="flex: 1; width: 50%;"/>
 </p>
+
+> ## Layout
+
+> ## Implementation
+
+To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user coupon link, 
+https://jlcpcb.com/?from=Newv
 
