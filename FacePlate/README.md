@@ -41,6 +41,9 @@ The Faceplate[^1], one of five of our robot's on board custom PCBs (not includin
 <img width="1256" height="831" alt="image" src="https://github.com/user-attachments/assets/c45acfb7-16f0-4e79-8f1a-0f4201c3d013" style="flex: 1; width: 70%;" />
 </p>
 
+> [!NOTE]
+> Additionally, for each symbol in your library, an associated footprint needs to be added to each symbol used in the schematics, which will be covered in the layout section.
+
 ### Power
 From the midplate, the Faceplate receives a regulated 5V supply for the Raspberry Pi at 3A, including the CANBUS which is wired all throughout our robot for between-board communication. Specifically, this uses a JST XH connector, which is easily sourced among hobbyists. Then, the board also steps this down to 3.3V for the onboard logic circuits needed such as peripherals and LCD screens. Bypass and decoupling capacitors are needed on the Low Voltage Regulator (LDO) to help maintain power stability, and is chosen over a DC/DC converter due to low current requirements.
 
@@ -100,10 +103,20 @@ For this revision of the faceplate, we have removed the direct connection of the
 </p>
 
 > ## Layout
-The layout of this board can be described into the following sections. Part placment, power routing, signal routing, electrical clearances (including differential pairs), and mechanical clearances with fasteners (keepouts). The following image shows the layout of the board, where red refers to the top layer, blue refers to the bottom layer, green refers to the inner 1 / power layer, and orange refers to the inner 2 / ground layer. These planes on the board make up the 4 layers for the most common PCB to be fabricated, with power layers included for better power distribution, and signals routed generally on the top and bottom layers, if possible.
+
+The layout of this board and boards in general can be described by the following seven steps:
+1. Footprint Libraries (for schematic)
+2. Part Placment
+3. Board Setup (Layers and Shape)
+4. Board DRC Rules (including differential pairs)
+5. Power routing (including zones / polygons)
+6. Signal routing (best practices)
+7. Custom Clearance Rule Areas or keepouts
+
+The following image shows the layout of the board, where red refers to the top layer, blue refers to the bottom layer, green refers to the inner 1 / power layer, and orange refers to the inner 2 / ground layer. These planes on the board make up the 4 layers for the most common PCB to be fabricated, with power layers included for better power distribution, and signals routed generally on the top and bottom layers, if possible.
 
 <p align="center">
-<img width="1262" height="467" alt="image" src="https://github.com/user-attachments/assets/c34c5978-9bda-4755-929a-95637f420a8d" style="flex: 1; width: 50%;"/>
+<img width="1262" height="467" alt="image" src="https://github.com/user-attachments/assets/c34c5978-9bda-4755-929a-95637f420a8d" style="flex: 1; width: 80%;"/>
 </p>
 
 > ## Implementation
