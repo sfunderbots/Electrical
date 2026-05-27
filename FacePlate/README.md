@@ -121,5 +121,5 @@ The following image shows the layout of the board, where red refers to the top l
 
 > ## Implementation
 
-To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user coupon [link](https://jlcpcb.com/?from=Newv) so you can start your own projects with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
+To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
 
