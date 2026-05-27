@@ -2409,7 +2409,7 @@
 		)
 		(uuid "d4b3fb69-bdf3-4cb5-a68a-e4fb27326733")
 	)
-	(text "Crystal Oscillator 8MHz"
+	(text "Crystal Oscillator 16MHz"
 		(exclude_from_sim no)
 		(at 157.988 68.58 0)
 		(effects
@@ -3391,7 +3391,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_22p"
+		(property "Value" "C_27p"
 			(at 161.29 87.376 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3435,7 +3435,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C220JB8NNNC"
+		(property "MPN" "CL10C270JB8NNNC"
 			(at 162.56 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4399,7 +4399,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_22p"
+		(property "Value" "C_27p"
 			(at 169.926 71.12 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4443,7 +4443,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C220JB8NNNC"
+		(property "MPN" "CL10C270JB8NNNC"
 			(at 162.56 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -6122,7 +6122,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "ABM3-8.000MHZ-D2Y-T"
+		(property "Value" "ABM3-16.000MHZ-D2Y-T"
 			(at 193.548 77.724 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6167,7 +6167,7 @@
 				)
 			)
 		)
-		(property "MPN" "ABM3-8.000MHZ-D2Y-T"
+		(property "MPN" "ABM3-16.000MHZ-D2Y-T"
 			(at 157.48 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -6201,7 +6201,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C144380"
+		(property "LCSC" "C596861"
 			(at 157.48 78.74 0)
 			(hide yes)
 			(show_name no)

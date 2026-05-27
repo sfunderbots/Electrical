@@ -612,7 +612,7 @@
 				)
 			)
 		)
-		(property "Value" "C_22p"
+		(property "Value" "C_27p"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "9c5232d5-8017-46b5-b04f-b3bffdf415f9")
@@ -645,7 +645,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C220JB8NNNC"
+		(property "MPN" "CL10C270JB8NNNC"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1522,18 +1522,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "555af713-f3ee-4c86-b223-88df30d97211")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/15a25089-a25c-4b44-a4ec-6c78ff8bee04")
 		(sheetname "/")
@@ -1605,7 +1593,7 @@
 				)
 			)
 		)
-		(property "Value" "C_22p"
+		(property "Value" "C_27p"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "45b2ab0b-8f25-435c-b55c-636529017541")
@@ -1638,7 +1626,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C220JB8NNNC"
+		(property "MPN" "CL10C270JB8NNNC"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3178,18 +3166,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "eb90991a-f044-4c23-a1fc-5e36ee74cfb7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/f5091c21-ebca-4857-894c-2190da36f55e")
 		(sheetname "/")
@@ -3605,18 +3581,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "3f563027-02b5-42a1-80a0-12ef96993f1e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -5291,18 +5255,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "8232d238-eaa8-4bd1-8ac2-717305367018")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -10362,18 +10314,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "f863e786-95b1-4e12-bc27-92cf4aff0cc1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/6eff2592-e2d7-46ad-81f0-fa8de2d54e93")
 		(sheetname "/")
@@ -11437,18 +11377,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "0385a6b3-145e-42dc-8833-d9f02cd44af5")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/6cdace2e-d1e2-41ad-985e-2c929d9cbd26")
 		(sheetname "/")
@@ -12146,7 +12074,7 @@
 				)
 			)
 		)
-		(property "Value" "ABM3-8.000MHZ-D2Y-T"
+		(property "Value" "ABM3-16.000MHZ-D2Y-T"
 			(at 1.9536 3.2564 90)
 			(layer "F.Fab")
 			(uuid "3a64fc72-dba6-4099-ab5d-b73318aaaa19")
@@ -12181,7 +12109,7 @@
 				)
 			)
 		)
-		(property "MPN" "ABM3-8.000MHZ-D2Y-T"
+		(property "MPN" "ABM3-16.000MHZ-D2Y-T"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12220,7 +12148,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C144380"
+		(property "LCSC" "C596861"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13090,18 +13018,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "d7c5520c-8a7d-4e85-80ae-23734f057331")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/fbcabf8a-1220-40e0-8924-173c37df98c8")
 		(sheetname "/")
@@ -13834,18 +13750,6 @@
 				)
 			)
 		)
-		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "0b306bad-010f-4200-81be-4bb3803d313b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "MountingHole*")
 		(path "/9e9f86b4-33e6-4231-913b-f3b7e1c69bdf")
 		(sheetname "/")
@@ -14348,19 +14252,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-				(justify mirror)
-			)
-		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 270)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "8d40e1cd-bdba-4fd7-8b3e-83bfab931b5a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -16850,19 +16741,6 @@
 				(justify mirror)
 			)
 		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "199d046d-c017-447f-8f80-f451ef136701")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/f3ca69f7-d43f-4821-a998-de98310ee1bf")
 		(sheetname "/")
@@ -17098,19 +16976,6 @@
 				(justify mirror)
 			)
 		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "25bf947a-8f76-49fe-b4b3-7776f81e140b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/8bb82d2c-1d2f-45d1-8240-12a477fe3c9f")
 		(sheetname "/")
@@ -17342,19 +17207,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-				(justify mirror)
-			)
-		)
-		(property "KiLib_Generator" "connector/SMD_single_row_plus_mounting_pad"
-			(at 0 0 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "0af261c0-0fec-4138-9621-15eb3a571fee")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -18229,19 +18081,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-				(justify mirror)
-			)
-		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "e5111923-ef94-4f73-9161-af1087808efe")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
