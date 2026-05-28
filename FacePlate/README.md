@@ -113,7 +113,10 @@ The layout of this board and boards in general can be described by the following
 6. Signal routing (best practices)
 7. Custom Clearance Rule Areas or keepouts
 
-The following image shows the layout of the board, where red refers to the top layer, blue refers to the bottom layer, green refers to the inner 1 / power layer, and orange refers to the inner 2 / ground layer. These planes on the board make up the 4 layers for the most common PCB to be fabricated, with power layers included for better power distribution, and signals routed generally on the top and bottom layers, if possible.
+The following image shows the overall layout of the board, where red refers to the top layer, blue refers to the bottom layer, green refers to the inner 1 / power layer, and orange refers to the inner 2 / ground layer. These planes on the board make up the 4 layers for the most common PCB to be fabricated, with power layers included for better power distribution, and signals routed generally on the top and bottom layers, if possible.
+
+### Footprint Libraries
+Setting up the footprints for each component can be accomplished manually or by downloading a footprint from an EDA library online. One should always consult the datasheet to confirm the validity of the suggested layout.
 
 <p align="center">
 <img width="1262" height="467" alt="image" src="https://github.com/user-attachments/assets/c34c5978-9bda-4755-929a-95637f420a8d" style="flex: 1; width: 80%;"/>
