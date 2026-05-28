@@ -2243,6 +2243,28 @@
 					)
 				)
 			)
+			(property "LCSC" "C20631974"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLC" "SMD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "ki_keywords" "mounting hole"
 				(at 0 0 0)
 				(show_name no)
@@ -3116,6 +3138,10 @@
 		(uuid "29ed19a5-0ec2-4b52-b624-09574dd50752")
 	)
 	(no_connect
+		(at 256.54 54.61)
+		(uuid "2a942927-89f0-4f25-92c6-8c299b258bc3")
+	)
+	(no_connect
 		(at 203.2 55.88)
 		(uuid "2aa4b302-f696-4ada-9123-93ee2784dce2")
 	)
@@ -3130,6 +3156,10 @@
 	(no_connect
 		(at 203.2 35.56)
 		(uuid "4c833694-277b-45c1-8a49-96ac9d0a7e68")
+	)
+	(no_connect
+		(at 256.54 39.37)
+		(uuid "531b3934-c51d-4f13-8a64-5be56f371214")
 	)
 	(no_connect
 		(at 185.42 135.89)
@@ -3158,6 +3188,14 @@
 	(no_connect
 		(at 115.57 135.89)
 		(uuid "d5d4e0de-506c-4f8e-8e94-d2cbc26a22bf")
+	)
+	(no_connect
+		(at 241.3 54.61)
+		(uuid "d956a1db-29df-4cc5-83de-2e02c2251e0d")
+	)
+	(no_connect
+		(at 241.3 39.37)
+		(uuid "dc0fecd7-5827-432b-bc02-6cf23ad91c9e")
 	)
 	(no_connect
 		(at 81.28 135.89)
@@ -4389,6 +4427,28 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 256.54 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C20631974"
+			(at 256.54 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC" "SMD"
 			(at 256.54 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -6022,6 +6082,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C20631974"
+			(at 241.3 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC" "SMD"
+			(at 241.3 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0aa27eb4-c4f6-41fb-9bcb-501f53385a1a")
 		)
@@ -7095,6 +7177,28 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 256.54 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C20631974"
+			(at 256.54 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC" "SMD"
 			(at 256.54 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -8978,6 +9082,28 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 241.3 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C20631974"
+			(at 241.3 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLC" "SMD"
 			(at 241.3 52.07 0)
 			(hide yes)
 			(show_name no)
