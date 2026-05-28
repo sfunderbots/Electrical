@@ -2579,6 +2579,155 @@
 			)
 		)
 	)
+	(footprint "bots:Keystone_24929"
+		(layer "F.Cu")
+		(uuid "61141cd0-199e-49ce-b6e1-7d4dd1f7e39e")
+		(at 44 135)
+		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
+		(tags "mounting hole 2.7mm m2.5 din965")
+		(property "Reference" "H1"
+			(at -4.4704 -2.413 0)
+			(layer "F.SilkS")
+			(uuid "f523bc5e-7b7f-425a-9a40-6665f07b3553")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "24929"
+			(at 0 3.35 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0444fe4e-d68e-41ce-82a7-91bfecac6f28")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d51a6a58-e41a-411b-96ce-012cf8a7ff28")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "664562ec-58b8-44a9-8c96-2775ea02bf62")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C20631974"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1834a109-8123-4861-b582-183d60cce4e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLC" "SMD"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f6f5d519-32db-48ae-a1a6-277794599855")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/601d29a7-f2a0-4f8b-974c-8f8f58fb2d34")
+		(sheetname "/")
+		(sheetfile "BasePlate.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(solder_mask_margin 0.1016)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.35 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "9873cc6a-165c-43c3-ac96-1984683d7d1a")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.6 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6ab4564d-9073-4a57-818d-3990b7a315f0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "092fb5bb-7646-49f7-9542-f9cc9a754e6d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 6.2 6.2)
+			(drill 3.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "unconnected-(H1-Pad1)")
+			(pinfunction "1_1")
+			(pintype "input+no_connect")
+			(solder_mask_margin 0.1016)
+			(uuid "cbb65510-9a91-4b00-b99e-8e6cec3ba3d5")
+		)
+		(embedded_fonts no)
+		(model "${BOTS_3DMODEL_DIR}/Keystone_24929.STEP"
+			(offset
+				(xyz 0 0 -1.6)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 0 0)
+			)
+		)
+	)
 	(footprint "bots:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "682775a1-0b5d-4ce3-9cf7-afa2738446c9")
@@ -6551,6 +6700,155 @@
 			)
 		)
 	)
+	(footprint "bots:Keystone_24929"
+		(layer "F.Cu")
+		(uuid "c21371d4-6649-4918-8457-1d29b318fdb4")
+		(at 78.8162 69.6214)
+		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
+		(tags "mounting hole 2.7mm m2.5 din965")
+		(property "Reference" "H4"
+			(at 3.937 -2.7178 0)
+			(layer "F.SilkS")
+			(uuid "597fc561-2a58-4f2b-a4c0-97a202ce6a57")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "24929"
+			(at 0 3.35 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "20f40f3b-2765-41d1-82aa-88621a0183ff")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d00331db-bec1-4963-88d7-562bb2997242")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6446e499-d8de-4669-9ea6-6c93164eff37")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C20631974"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "001208f6-a963-45d7-9c42-d8c0383704f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLC" "SMD"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f91d6f0-89b2-4b64-bc95-8a75f3ecaf85")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*Pad*")
+		(path "/0cfd7379-df14-4718-af56-da653dc49370")
+		(sheetname "/")
+		(sheetfile "BasePlate.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(solder_mask_margin 0.1016)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.35 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "0f59a57f-def7-4ffc-961e-13e9cb2030a5")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.6 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e95ab819-d3f6-4adc-8a96-1908e7f4d5ef")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "c6f7f6ad-3467-4df2-b2fe-91dd34205b67")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 6.2 6.2)
+			(drill 3.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "unconnected-(H4-Pad1)")
+			(pinfunction "1_1")
+			(pintype "input+no_connect")
+			(solder_mask_margin 0.1016)
+			(uuid "c4515686-ac1c-4769-ac73-bb08f2335818")
+		)
+		(embedded_fonts no)
+		(model "${BOTS_3DMODEL_DIR}/Keystone_24929.STEP"
+			(offset
+				(xyz 0 0 -1.6)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 0 0)
+			)
+		)
+	)
 	(footprint "LOGO"
 		(layer "F.Cu")
 		(uuid "c9089c20-c363-4c13-bf57-5ecba1c9b06f")
@@ -7711,338 +8009,25 @@
 		)
 	)
 	(footprint "bots:Keystone_24929"
-		(layer "B.Cu")
-		(uuid "61141cd0-199e-49ce-b6e1-7d4dd1f7e39e")
-		(at 44 135 180)
-		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
-		(tags "mounting hole 2.7mm m2.5 din965")
-		(property "Reference" "H1"
-			(at -4.4704 2.413 0)
-			(layer "B.SilkS")
-			(uuid "f523bc5e-7b7f-425a-9a40-6665f07b3553")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Value" "24929"
-			(at 0 -3.35 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "0444fe4e-d68e-41ce-82a7-91bfecac6f28")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "d51a6a58-e41a-411b-96ce-012cf8a7ff28")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "664562ec-58b8-44a9-8c96-2775ea02bf62")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "LCSC" "C20631974"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "1834a109-8123-4861-b582-183d60cce4e1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "JLC" "SMD"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "f6f5d519-32db-48ae-a1a6-277794599855")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property ki_fp_filters "MountingHole*Pad*")
-		(path "/601d29a7-f2a0-4f8b-974c-8f8f58fb2d34")
-		(sheetname "/")
-		(sheetfile "BasePlate.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
-		(solder_mask_margin 0.1016)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_circle
-			(center 0 0)
-			(end 2.35 0)
-			(stroke
-				(width 0.15)
-				(type solid)
-			)
-			(fill no)
-			(layer "Cmts.User")
-			(uuid "9873cc6a-165c-43c3-ac96-1984683d7d1a")
-		)
-		(fp_circle
-			(center 0 0)
-			(end 2.6 0)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "B.CrtYd")
-			(uuid "6ab4564d-9073-4a57-818d-3990b7a315f0")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "092fb5bb-7646-49f7-9542-f9cc9a754e6d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(pad "1" thru_hole circle
-			(at 0 0 180)
-			(size 6.2 6.2)
-			(drill 3.7)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "unconnected-(H1-Pad1)")
-			(pinfunction "1_1")
-			(pintype "input+no_connect")
-			(solder_mask_margin 0.1016)
-			(uuid "cbb65510-9a91-4b00-b99e-8e6cec3ba3d5")
-		)
-		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/Keystone_24929.STEP"
-			(offset
-				(xyz 0 0 -1.6)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz -90 0 0)
-			)
-		)
-	)
-	(footprint "bots:Keystone_24929"
-		(layer "B.Cu")
-		(uuid "c21371d4-6649-4918-8457-1d29b318fdb4")
-		(at 78.8162 69.6214 180)
-		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
-		(tags "mounting hole 2.7mm m2.5 din965")
-		(property "Reference" "H4"
-			(at 3.937 2.7178 0)
-			(layer "B.SilkS")
-			(uuid "597fc561-2a58-4f2b-a4c0-97a202ce6a57")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Value" "24929"
-			(at 0 -3.35 0)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "20f40f3b-2765-41d1-82aa-88621a0183ff")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "d00331db-bec1-4963-88d7-562bb2997242")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "6446e499-d8de-4669-9ea6-6c93164eff37")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "LCSC" "C20631974"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "001208f6-a963-45d7-9c42-d8c0383704f0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "JLC" "SMD"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "2f91d6f0-89b2-4b64-bc95-8a75f3ecaf85")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property ki_fp_filters "MountingHole*Pad*")
-		(path "/0cfd7379-df14-4718-af56-da653dc49370")
-		(sheetname "/")
-		(sheetfile "BasePlate.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1")
-			)
-		)
-		(solder_mask_margin 0.1016)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_circle
-			(center 0 0)
-			(end 2.35 0)
-			(stroke
-				(width 0.15)
-				(type solid)
-			)
-			(fill no)
-			(layer "Cmts.User")
-			(uuid "0f59a57f-def7-4ffc-961e-13e9cb2030a5")
-		)
-		(fp_circle
-			(center 0 0)
-			(end 2.6 0)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "B.CrtYd")
-			(uuid "e95ab819-d3f6-4adc-8a96-1908e7f4d5ef")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "c6f7f6ad-3467-4df2-b2fe-91dd34205b67")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(pad "1" thru_hole circle
-			(at 0 0 180)
-			(size 6.2 6.2)
-			(drill 3.7)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "unconnected-(H4-Pad1)")
-			(pinfunction "1_1")
-			(pintype "input+no_connect")
-			(solder_mask_margin 0.1016)
-			(uuid "c4515686-ac1c-4769-ac73-bb08f2335818")
-		)
-		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/Keystone_24929.STEP"
-			(offset
-				(xyz 0 0 -1.6)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz -90 0 0)
-			)
-		)
-	)
-	(footprint "bots:Keystone_24929"
-		(layer "B.Cu")
+		(layer "F.Cu")
 		(uuid "e80ff714-7bd3-4c52-bf1f-3621f61fe7d6")
-		(at 114 135 180)
+		(at 114 135)
 		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
 		(tags "mounting hole 2.7mm m2.5 din965")
 		(property "Reference" "H2"
-			(at 6 -2 0)
-			(layer "B.SilkS")
+			(at 6 2 0)
+			(layer "F.SilkS")
 			(uuid "af8786d1-f729-4688-91c4-c4137753e045")
 			(effects
 				(font
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Value" "24929"
-			(at 2.286 -4.3688 0)
-			(layer "B.SilkS")
+			(at 2.286 4.3688 0)
+			(layer "F.SilkS")
 			(hide yes)
 			(uuid "708d81bd-50a8-4939-a074-1c8393b1e549")
 			(effects
@@ -8050,12 +8035,11 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Datasheet" ""
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "b956222f-83b5-4341-bd56-607dc32cdbd6")
 			(effects
@@ -8063,12 +8047,11 @@
 					(size 1.27 1.27)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "4c65a8e0-8d20-4719-9f2c-d73bcd4bb55e")
 			(effects
@@ -8076,13 +8059,12 @@
 					(size 1.27 1.27)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "LCSC" "C20631974"
 			(at 0 0 180)
 			(unlocked yes)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "d2b15902-b3db-4ed4-a3d1-94d5b2edc427")
 			(effects
@@ -8090,13 +8072,12 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "JLC" "SMD"
 			(at 0 0 180)
 			(unlocked yes)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "d8767f24-007f-4082-8bee-188a39eac281")
 			(effects
@@ -8104,7 +8085,6 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
@@ -8138,23 +8118,22 @@
 				(type solid)
 			)
 			(fill no)
-			(layer "B.CrtYd")
+			(layer "F.CrtYd")
 			(uuid "af7a5eb5-859f-4dde-8fa4-13892c0b6d4a")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(uuid "8a854b43-d358-4888-87d4-de2f92fa9897")
 			(effects
 				(font
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(pad "1" thru_hole circle
-			(at 0 0 180)
+			(at 0 0)
 			(size 6.2 6.2)
 			(drill 3.7)
 			(layers "*.Cu" "*.Mask")
@@ -8179,26 +8158,25 @@
 		)
 	)
 	(footprint "bots:Keystone_24929"
-		(layer "B.Cu")
+		(layer "F.Cu")
 		(uuid "fef0c739-5a1d-4493-85ed-9d10405f1a36")
-		(at 78.6638 49.3776 180)
+		(at 78.6638 49.3776)
 		(descr "Mounting Hole 2.7mm, M2.5, DIN965")
 		(tags "mounting hole 2.7mm m2.5 din965")
 		(property "Reference" "H3"
-			(at 3.1242 3.3274 0)
-			(layer "B.SilkS")
+			(at 3.1242 -3.3274 0)
+			(layer "F.SilkS")
 			(uuid "110458ad-5999-4fd7-a9dd-ecde464b4430")
 			(effects
 				(font
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Value" "24929"
-			(at 0 -3.35 0)
-			(layer "B.SilkS")
+			(at 0 3.35 0)
+			(layer "F.SilkS")
 			(hide yes)
 			(uuid "f2fdc7cc-3838-41b7-b167-edafc1715fd9")
 			(effects
@@ -8206,12 +8184,11 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Datasheet" ""
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "80423909-4253-491a-a38f-854d6482d5ed")
 			(effects
@@ -8219,12 +8196,11 @@
 					(size 1.27 1.27)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "dad3defc-e841-4a06-83b6-34e44e1ab67d")
 			(effects
@@ -8232,13 +8208,12 @@
 					(size 1.27 1.27)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "LCSC" "C20631974"
 			(at 0 0 180)
 			(unlocked yes)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "4be0be84-b560-4b0e-b0a8-a18f9b2e7fae")
 			(effects
@@ -8246,13 +8221,12 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property "JLC" "SMD"
 			(at 0 0 180)
 			(unlocked yes)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(hide yes)
 			(uuid "fb34b4df-f08c-422d-8087-7676e3a72268")
 			(effects
@@ -8260,7 +8234,6 @@
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(property ki_fp_filters "MountingHole*Pad*")
@@ -8294,23 +8267,22 @@
 				(type solid)
 			)
 			(fill no)
-			(layer "B.CrtYd")
+			(layer "F.CrtYd")
 			(uuid "9ca10eeb-0233-4e4f-9c42-fdcc4b905959")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
-			(layer "B.Fab")
+			(layer "F.Fab")
 			(uuid "066db743-cc4e-4a3e-899d-561c6650bcd9")
 			(effects
 				(font
 					(size 1 1)
 					(thickness 0.15)
 				)
-				(justify mirror)
 			)
 		)
 		(pad "1" thru_hole circle
-			(at 0 0 180)
+			(at 0 0)
 			(size 6.2 6.2)
 			(drill 3.7)
 			(layers "*.Cu" "*.Mask")
