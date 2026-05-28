@@ -477,7 +477,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bots:C_22p"
+		(symbol "bots:C_27p"
 			(pin_numbers
 				(hide yes)
 			)
@@ -500,7 +500,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "C_22p"
+			(property "Value" "C_27p"
 				(at 0.635 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -544,7 +544,7 @@
 					)
 				)
 			)
-			(property "MPN" "CL10C220JB8NNNC"
+			(property "MPN" "CC0603JRNPO9BN270"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -555,7 +555,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "Samsung Electro-Mechanics"
+			(property "Manufacturer" "YAGEO"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -566,7 +566,7 @@
 					)
 				)
 			)
-			(property "Price" "0.0052"
+			(property "Price" "0.0027"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -588,7 +588,7 @@
 					)
 				)
 			)
-			(property "LCSC" "C1653"
+			(property "LCSC" "C107045"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -632,7 +632,7 @@
 					)
 				)
 			)
-			(symbol "C_22p_0_1"
+			(symbol "C_27p_0_1"
 				(polyline
 					(pts
 						(xy -2.032 0.762) (xy 2.032 0.762)
@@ -658,7 +658,7 @@
 					)
 				)
 			)
-			(symbol "C_22p_1_1"
+			(symbol "C_27p_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -3370,7 +3370,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:C_22p")
+		(lib_id "bots:C_27p")
 		(at 162.56 85.09 90)
 		(unit 1)
 		(body_style 1)
@@ -3392,7 +3392,7 @@
 			)
 		)
 		(property "Value" "C_27p"
-			(at 161.29 87.376 90)
+			(at 165.1 84.455 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3435,7 +3435,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C270JB8NNNC"
+		(property "MPN" "CC0603JRNPO9BN270"
 			(at 162.56 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3446,7 +3446,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 162.56 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3457,7 +3457,7 @@
 				)
 			)
 		)
-		(property "Price" "0.0052"
+		(property "Price" "0.0027"
 			(at 162.56 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3479,7 +3479,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1653"
+		(property "LCSC" "C107045"
 			(at 162.56 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4378,7 +4378,7 @@
 		)
 	)
 	(symbol
-		(lib_id "bots:C_22p")
+		(lib_id "bots:C_27p")
 		(at 162.56 72.39 90)
 		(unit 1)
 		(body_style 1)
@@ -4400,7 +4400,7 @@
 			)
 		)
 		(property "Value" "C_27p"
-			(at 169.926 71.12 90)
+			(at 165.1 71.755 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4443,7 +4443,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10C270JB8NNNC"
+		(property "MPN" "CC0603JRNPO9BN270"
 			(at 162.56 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -4454,7 +4454,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 162.56 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -4465,7 +4465,7 @@
 				)
 			)
 		)
-		(property "Price" "0.0052"
+		(property "Price" "0.0027"
 			(at 162.56 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -4487,7 +4487,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1653"
+		(property "LCSC" "C107045"
 			(at 162.56 72.39 0)
 			(hide yes)
 			(show_name no)
