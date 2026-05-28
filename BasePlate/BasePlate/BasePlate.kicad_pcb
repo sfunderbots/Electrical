@@ -501,7 +501,7 @@
 			(uuid "2756b931-c762-4537-a713-5bc72ff2627d")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/XT30UPB-M.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/XT30UPB-M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -781,7 +781,7 @@
 			(uuid "513e5847-f099-4e22-9955-1371fb09ed19")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -1384,7 +1384,7 @@
 			(uuid "f6e1b715-529f-46c1-b272-c9ebd88838d5")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/XT30UPB-M.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/XT30UPB-M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1742,7 +1742,7 @@
 			(uuid "2f62afef-5877-4040-9e99-233e1e8b7760")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/XT30UPB-M.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/XT30UPB-M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2404,7 +2404,7 @@
 			(uuid "a5598e2e-b59e-4a5f-b5ea-3797e33c784e")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -2638,7 +2638,7 @@
 			(uuid "fd2812e4-f4c8-4ab1-9882-50efba5fdc73")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/B2B-XH-A_LF__SN_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/B2B-XH-A_LF__SN_.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3062,7 +3062,7 @@
 			(uuid "f535a622-e5ca-4875-87dd-a6a05671a3c3")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/c-3-794636-6-l-3d.stp"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/c-3-794636-6-l-3d.stp"
 			(offset
 				(xyz -3 4.75 9.25)
 			)
@@ -3342,7 +3342,7 @@
 			(uuid "8a78210b-34c1-4fea-b2b0-7d1df46d1c13")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -3622,7 +3622,7 @@
 			(uuid "3b3d49a5-b548-4b3a-addc-2184a417b9c4")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -4167,7 +4167,7 @@
 			(uuid "e660a123-bdfd-43cb-8beb-495f6082e8bf")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM03B-GHS-TBT.STEP"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM03B-GHS-TBT.STEP"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -4954,7 +4954,7 @@
 			(uuid "7566a963-81f3-4c51-9e3f-20a14634f7f2")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/XT30UPB-M.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/XT30UPB-M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5234,7 +5234,7 @@
 			(uuid "7ecc99fb-42e0-4064-974a-1f300ad4ef20")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
@@ -5866,7 +5866,7 @@
 			(uuid "2dd5610f-f496-4d1a-8b7e-88e17bb71ef8")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/XT30UPB-M.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/XT30UPB-M.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -6146,7 +6146,7 @@
 			(uuid "7ad09f55-88b9-42ef-997e-fc25f1b3670e")
 		)
 		(embedded_fonts no)
-		(model "${BOTS_3DMODEL_DIR}/BM04B-GHS-TBT_LF__SN__N_.step"
+		(model "${KIPRJMOD}/../../thebots_libraries/3dmodels/BM04B-GHS-TBT_LF__SN__N_.step"
 			(offset
 				(xyz 0 1 0)
 			)
