@@ -557,6 +557,418 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "JST_BM04B-GHS-TBT_2"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "JST_BM04B-GHS-TBT"
+				(at 10.16 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "bots:JST_BM04B-GHS-TBT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "BM04B-GHS-TBT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Manufacturer" "JST Sales America Inc."
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Price" "0.31"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLC" "SMD,P=1.25mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C161692"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "JST_BM04B-GHS-TBT_2_0_0"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 0 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 1.905 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 1.905 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 1.905 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.35) (xy 1.27 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 0.635 2.2225)
+					(end 2.2225 2.8575)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.635 -0.3175)
+					(end 2.2225 0.3175)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.635 -2.2225)
+					(end 2.2225 -2.8575)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.635 -4.7625)
+					(end 2.2225 -5.3975)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -7.62) (xy 7.62 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "JST_BM04B-GHS-TBT_2_1_0"
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 10.16 270)
+					(length 5.08)
+					(name "S1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "S1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -12.7 90)
+					(length 5.08)
+					(name "S2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "S2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "bots:JST_B2B-XH-A"
 			(pin_names
 				(offset 1.016)
@@ -1616,7 +2028,7 @@
 					)
 				)
 			)
-			(property "JLC" ""
+			(property "JLC" "SMD,P=1.25mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1627,7 +2039,7 @@
 					)
 				)
 			)
-			(property "LCSC" ""
+			(property "LCSC" "C161692"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5122,6 +5534,7 @@
 		)
 	)
 	(symbol
+		(lib_name "JST_BM04B-GHS-TBT_2")
 		(lib_id "bots:JST_BM04B-GHS-TBT")
 		(at 195.58 140.97 90)
 		(unit 1)
@@ -5222,7 +5635,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 195.58 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -5233,7 +5646,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 195.58 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -7016,7 +7429,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 125.73 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -7027,7 +7440,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 125.73 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -7166,7 +7579,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 154.94 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -7177,7 +7590,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 154.94 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -8686,7 +9099,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 68.58 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -8697,7 +9110,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 68.58 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -9310,7 +9723,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 97.79 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -9321,7 +9734,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 97.79 140.97 0)
 			(hide yes)
 			(show_name no)

@@ -3354,7 +3354,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3367,7 +3367,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4375,7 +4375,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4388,7 +4388,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4726,7 +4726,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4739,7 +4739,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6661,7 +6661,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6674,7 +6674,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8192,7 +8192,7 @@
 				)
 			)
 		)
-		(property "JLC" ""
+		(property "JLC" "SMD,P=1.25mm"
 			(at 0 0 135)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8205,7 +8205,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C161692"
 			(at 0 0 135)
 			(unlocked yes)
 			(layer "F.Fab")
