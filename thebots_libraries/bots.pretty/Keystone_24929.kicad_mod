@@ -1,14 +1,14 @@
 (footprint "Keystone_24929"
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(layer "F.Cu")
 	(descr "Mounting Hole 2.7mm, M2.5, DIN965")
 	(tags "mounting hole 2.7mm m2.5 din965")
 	(property "Reference" "REF**"
 		(at 0 -3.35 0)
 		(layer "F.SilkS")
-		(uuid "3e94d29c-7f21-45dd-b26e-fb6c204f14f9")
+		(uuid "19934b0f-1d03-4ee1-aa19-71fbdbceb492")
 		(effects
 			(font
 				(size 1 1)
@@ -19,7 +19,7 @@
 	(property "Value" "Keystone_24929"
 		(at 0 3.35 0)
 		(layer "F.SilkS")
-		(uuid "43b9889b-de9b-4d57-9f8b-d64e56edb999")
+		(uuid "f14dac00-085e-4ef8-8525-a654f842de21")
 		(effects
 			(font
 				(size 1 1)
@@ -31,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "5054ed32-a594-4908-bf42-fbe82ea16ddc")
+		(uuid "1ef2bc15-9e2a-496d-b64f-b52331ca4bf9")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "fa2a67f2-935c-4b94-8bb3-e5cdac9cd099")
+		(uuid "41ba0b90-439a-44b0-aecd-98e763b83b28")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -52,6 +52,7 @@
 		)
 	)
 	(solder_mask_margin 0.1016)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_circle
 		(center 0 0)
 		(end 2.35 0)
@@ -61,7 +62,7 @@
 		)
 		(fill no)
 		(layer "Cmts.User")
-		(uuid "9e7d1567-ec58-4967-bf3c-96b87edb78e4")
+		(uuid "51d9d796-f96d-4986-a28b-8457a84f5745")
 	)
 	(fp_circle
 		(center 0 0)
@@ -72,12 +73,12 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "22d22fe0-c31f-4474-8651-ed99be8c495e")
+		(uuid "c21dc63f-4fe8-4253-901e-1cc439c9b814")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "92a2db24-334b-4e5f-a7f6-62e6c4c81fa2")
+		(uuid "6161f356-6c1b-464f-a9ea-501cc3433c4f")
 		(effects
 			(font
 				(size 1 1)
@@ -92,7 +93,7 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(solder_mask_margin 0.1016)
-		(uuid "7ff21f1f-8e6e-4574-8fd4-d28a82947f78")
+		(uuid "30d87d4d-aaa7-40d5-82f5-431e0e637942")
 	)
 	(embedded_fonts no)
 	(model "${BOTS_3DMODEL_DIR}/Keystone_24929.STEP"
