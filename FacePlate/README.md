@@ -119,6 +119,12 @@ The following image shows the overall layout of the board, where red refers to t
 <img width="1262" height="467" alt="image" src="https://github.com/user-attachments/assets/c34c5978-9bda-4755-929a-95637f420a8d" style="flex: 1; width: 80%;"/>
 </p>
 
+Below reference most of the important shortcuts on the top bar used in KiCad: On the far left shows the board setup, then on the right past the lock and unlock icons are the footprint library editor, footprint library browser, 3D viewer, import changes from schematic, and DRC rules. 
+
+<p align="center">
+  <img width="1437" height="48" alt="image" src="https://github.com/user-attachments/assets/35a69b79-4f0d-41d1-bc0d-7787352f569e" />
+</p>
+
 ### Footprint Libraries
 Setting up the footprints for each component can be accomplished manually or by downloading a footprint from an EDA library online. One should always consult the datasheet to confirm the validity of the suggested layout. As an example, the 3.3V LDO mentioned in the symbol library section is shown below. One should always verify the validity of a footprint by downloading the 3D model of the part so that the pins will have sufficient solder area and are easy enough to rework with a soldering iron. 
 
@@ -151,14 +157,9 @@ Lastly, with the same process as the symbol libraries, you need to ensure the pa
 
 > ## Implementation
 
-To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. Below reference most of the important shortcuts used in KiCad: Footprint library editor, footprint library browser, 3D viewer. 
-
-<p align="center">
-<img width="137" height="50" alt="Screenshot 2026-05-29 214805" src="https://github.com/user-attachments/assets/93bf8eef-e415-42e7-8edf-1d8715d29a71" />
-</p>
+To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
 
 Clicking the 3D model view in KiCad (the icon that looks like a capacitor) you can view the 3D model of the board - the Faceplate looks as follows:
-
 
 <p align="center">
   <img width="1293" height="507" alt="image" src="https://github.com/user-attachments/assets/6715656e-b172-49ec-b217-de1b871c9253" style="flex: 1; width: 80%;"/>
