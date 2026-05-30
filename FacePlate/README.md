@@ -111,18 +111,57 @@ The layout of this board and boards in general can be described by the following
 4. Board DRC Rules (including differential pairs)
 5. Power routing (including zones / polygons)
 6. Signal routing (best practices)
-7. Custom Clearance Rule Areas or keepouts
+7. Custom Rule Areas (e.g. clearance / keepouts) 
 
 The following image shows the overall layout of the board, where red refers to the top layer, blue refers to the bottom layer, green refers to the inner 1 / power layer, and orange refers to the inner 2 / ground layer. These planes on the board make up the 4 layers for the most common PCB to be fabricated, with power layers included for better power distribution, and signals routed generally on the top and bottom layers, if possible.
-
-### Footprint Libraries
-Setting up the footprints for each component can be accomplished manually or by downloading a footprint from an EDA library online. One should always consult the datasheet to confirm the validity of the suggested layout.
 
 <p align="center">
 <img width="1262" height="467" alt="image" src="https://github.com/user-attachments/assets/c34c5978-9bda-4755-929a-95637f420a8d" style="flex: 1; width: 80%;"/>
 </p>
 
+### Footprint Libraries
+Setting up the footprints for each component can be accomplished manually or by downloading a footprint from an EDA library online. One should always consult the datasheet to confirm the validity of the suggested layout. As an example, the 3.3V LDO mentioned in the symbol library section is shown below. One should always verify the validity of a footprint by downloading the 3D model of the part so that the pins will have sufficient solder area and are easy enough to rework with a soldering iron. 
+
+<p align="center">
+  <img width="2560" height="1362" alt="image" src="https://github.com/user-attachments/assets/7ea4a366-30a1-4323-8226-1f12ca5f67f9" style="flex: 1; width: 80%;"/>
+</p>
+
+> [!NOTE]
+> One can access pre-built footprint files for your EDA tool of choice from libraries such as [snapeda.com](https://www.snapeda.com/home/) or [ultralibrarian.com](https://www.ultralibrarian.com/) for example. Many more exist, but these are the most frequently used. 
+
+> [!IMPORTANT]
+> It is especially important to pay attention to drill sizes on through hole parts, as even half a millimeter of difference from the part size may be enough to cause interference during fabrication. For this reason we always recommend to check the "confirm production files" and "confirm part placement", so that the JLCPCB engineers can review your board and catch any issues before they are manufactured.
+
+Lastly, with the same process as the symbol libraries, you need to ensure the path to the footprint library exists in the global or project path directories, so that KiCad knows where to look for this board when you place parts.
+
+### Part Placement
+- proper power decoupling/bypass capacitors
+- 
+### Board Setup
+- edge cuts layer
+- 
+
+### DRC Rules
+
+### Power Routing
+
+### Signal Routing
+
+### Custom Rule Areas
+
 > ## Implementation
 
-To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
+To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. Below reference most of the important shortcuts used in KiCad: Footprint library editor, footprint library browser, 3D viewer. 
+
+<p align="center">
+<img width="137" height="50" alt="Screenshot 2026-05-29 214805" src="https://github.com/user-attachments/assets/93bf8eef-e415-42e7-8edf-1d8715d29a71" />
+</p>
+
+Clicking the 3D model view in KiCad (the icon that looks like a capacitor) you can view the 3D model of the board - the Faceplate looks as follows:
+
+
+<p align="center">
+  <img width="1293" height="507" alt="image" src="https://github.com/user-attachments/assets/6715656e-b172-49ec-b217-de1b871c9253" style="flex: 1; width: 80%;"/>
+  <img width="1325" height="507" alt="image" src="https://github.com/user-attachments/assets/fc6b64f9-f950-49e7-b4a1-05ee0faa1b3d" style="flex: 1; width: 80%;" />
+</p>
 
