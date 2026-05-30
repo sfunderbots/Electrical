@@ -133,7 +133,7 @@ Setting up the footprints for each component can be accomplished manually or by 
 </p>
 
 > [!NOTE]
-> One can access pre-built footprint files for your EDA tool of choice from libraries such as [snapeda.com](https://www.snapeda.com/home/) or [ultralibrarian.com](https://www.ultralibrarian.com/) for example. Many more exist, but these are the most frequently used. 
+> One can access pre-built footprint files for your EDA tool of choice from libraries such as [snapeda.com](https://www.snapeda.com/home/) or [ultralibrarian.com](https://www.ultralibrarian.com/) for example. Many more exist, but these are the most frequently used. Always remember to verify these footprints as they may not match the datasheet.
 
 > [!IMPORTANT]
 > It is especially important to pay attention to drill sizes on through hole parts, as even half a millimeter of difference from the part size may be enough to cause interference during fabrication. For this reason we always recommend to check the "confirm production files" and "confirm part placement", so that the JLCPCB engineers can review your board and catch any issues before they are manufactured.
