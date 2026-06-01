@@ -107,9 +107,9 @@ For this revision of the faceplate, we have removed the direct connection of the
 
 The layout of this board and boards in general can be described by the following seven steps:
 1. Footprint Libraries (for schematic)
-2. Part Placment
-3. Board Setup (Layers and Shape)
-4. Board DRC Rules (including differential pairs)
+2. Board Setup (Layers and Shape)
+3. Part Placment
+4. DRC Rules (including differential pairs)
 5. Power routing (including zones / polygons)
 6. Signal routing (best practices)
 7. Custom Rule Areas (e.g. clearance / keepouts) 
@@ -162,11 +162,47 @@ The shape of the PCB can be defined by creating a bounding box (or whatever clos
 > <img width="1992" height="712" alt="image" src="https://github.com/user-attachments/assets/dce4e3fd-fd2b-4687-8935-91476e46a78f" />
 
 ### Part Placement
-When placing parts on the PCB
+When placing parts on the PCB one should think ahead where the power routing will go. In this case, the I would anticipate that the 5V net for the Raspberry Pi would go near the edge of the board and wrap around to the rightmost pins on the 40 pin header, with the 3.3V being the main power plane on the board. Secondly, one should leave enough space around parts to make it easier to solder if rework must be completed, or if you are soldering the boards yourselves. For the faceplate below, you can see that it was ideal to put our power and CAN connector (JST XH 4 pin) on the same side as our power switch and power connector on the midplate. The rest of the components will be arranged in similar fashion leaving enough space for connecting vias for power connection.
+
+<p align="center">
 <img width="2560" height="1362" alt="image" src="https://github.com/user-attachments/assets/51da4a68-74ab-4dae-ab09-b8cd4301047d" />
+</p>
+
+To help your process in laying out the PCB parts, you can see the "ratnest" of white lines across the board, which show you where the pads will be connected according to the schematic. 
+
+> [!IMPORTANT]
+> It is also super important at this time to pay attention to any missing ratnest wires or pads that do not have any connection, which may be a mistake on the schematic. For this reason I always label my net names on the schematic so that when laying out the PCB it will be obvious if something is missing.
+
+> [!TIP]
+> It is always useful to include mounting holes on the PCB so that you can attach the board to an enclosure, which may not be necessary for prototyping but it will be necessary in the end - therefore getting it out of the way early will avoid headaches in the future!
+>
+> Lastly, one should avoid placing components too close to the edge of the board, especially if the board is panelized, as any stresses to the PCB may cause early failure in certain components, such as capacitors. A guide about part placement for proper power and signal delivery can be seen on the JLCPCB website here: [JLCPCB design guidelines for placement and routing](https://jlcpcb.com/blog/pcb-design-guidelines-placement-and-routing).
 
 ### DRC Rules
 
+On any board project, DRC rules should be set up so that you are generally following manufacturer specifications. You can view the capabilities of JLCPCB on their website [here](https://jlcpcb.com/capabilities/pcb-capabilities), and if I can find it there should be a downloadable file for DRC rules. In the case that this doesn't exist any more, these settings can be set up as follows:
+
+The default constraints should be filled out first, which shows important rules which will dictate how the PCB is fabricated later. Important values to consider here are the minimum widths for trace widths and clearance/spacing (for which I tend to at least double the minimum specified by JLCPCB, as this only specifies an absolute minimum, but not a practical number to avoid noise and EMI), copper to hole, and copper to edge clearances.
+
+<p align="center">
+  <img width="1242" height="771" alt="image" src="https://github.com/user-attachments/assets/3a5842b7-2010-4c59-a28b-589f2a777f9a" style="flex: 1; width: 49%;"/>
+</p>
+
+Additionally, you can include DRC rules by setting up Net Classes in the schematic with colors, and in the PCB you can select these net classes to choose specific clearance and widths based on the expected current on those traces. The following shows the example of the "Power" Net Class which I have colored orange for example.
+
+<p align="center">
+<img width="608" height="341" alt="image" src="https://github.com/user-attachments/assets/46ad4845-ede2-413d-99ac-c60b696a1c5e" style="flex: 1; width: 30%;"/>
+<img width="1235" height="373" alt="image" src="https://github.com/user-attachments/assets/eb28bcfb-426c-48cf-a639-a56d932a4290" style="flex: 1; width: 80%;"/>
+</p>
+
+For these specific nets, I have selected a slightly larger default via size (0.7/0.35mm) with larger overall trace width minimum. Generally speaking with larger trace widths the larger the clearance should be as well.
+
+> [!TIP]
+> Always check your DRC rules BEFORE you start routing component tracks. This way, you will ensure there are no part placement issues you will have to solve later.
+
+> [!WARNING]
+> It is important not to look over any DRC warnings and especially errors, I would recommend only setting a DRC rule to "ignore" if it is absolutely necessary (set in "Violation Severity" under board setup design rules), as this can cause issues to be forgotten about especially when a lot of errors that seem meaningless show up can mask a significant board error if those are ignored.
+ 
 ### Power Routing
 
 ### Signal Routing
