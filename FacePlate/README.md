@@ -195,15 +195,30 @@ Additionally, you can include DRC rules by setting up Net Classes in the schemat
 <img width="1235" height="373" alt="image" src="https://github.com/user-attachments/assets/eb28bcfb-426c-48cf-a639-a56d932a4290" style="flex: 1; width: 80%;"/>
 </p>
 
-For these specific nets, I have selected a slightly larger default via size (0.7/0.35mm) with larger overall trace width minimum. Generally speaking with larger trace widths the larger the clearance should be as well.
+For these specific nets, I have selected a slightly larger default via size (0.7/0.35mm) with larger overall trace width minimum. Generally speaking with larger trace widths the larger the clearance should be as well. 
 
 > [!TIP]
-> Always check your DRC rules BEFORE you start routing component tracks. This way, you will ensure there are no part placement issues you will have to solve later.
+> It is advisable to consult a PCB calculator for trace and via sizing, such as [Saturn PCB Toolkit](https://saturnpcb.com/saturn-pcb-toolkit/).
+>
+> Secondly, always check your DRC rules BEFORE you start routing component tracks. This way, you will ensure there are no part placement conflicts or issues with footprints you will have to solve later and re-route components. To ensure components are not conflicting in 3D space, the pink courtyards must not overlap.
 
 > [!WARNING]
-> It is important not to look over any DRC warnings and especially errors, I would recommend only setting a DRC rule to "ignore" if it is absolutely necessary (set in "Violation Severity" under board setup design rules), as this can cause issues to be forgotten about especially when a lot of errors that seem meaningless show up can mask a significant board error if those are ignored.
+> It is important not to look over any DRC warnings and especially errors, I would only recommend setting a DRC rule to "ignore" if it is absolutely necessary (set in "Violation Severity" under board setup design rules), as this can cause issues to be forgotten about especially when a lot of errors that seem meaningless show up can mask a significant board error if those are ignored.
  
 ### Power Routing
+
+Moving on to power routing, we can set up zones (or polygons depending on what EDA tool you use) of copper that will fill in our board layers and make up our copper planes. For a 4 layer board such as this one, I generally recommend filling in ground on 3 of the four layers and power on one of the two internal power planes. This enables easy routing for power delivery to most components, assuming one (or more depending on current draw) correctly sized vias are used. 
+
+<p align="center">
+<img width="1521" height="552" alt="image" src="https://github.com/user-attachments/assets/e0e3e66c-d3d1-4b1d-879c-fcf7b38ab448" style="flex: 1; width: 80%;"/>
+</p>
+
+On this image above, you can see the zone created, where on the power layer we have a thick trace going from the 5V connector to the Raspberry Pi 40 pin header. 
+
+
+> [!IMPORTANT]
+> It should be noted that at 3A and below the return current here does not matter as much, but on a design that pulls more than 10A I would recommend matching the return ground plane such that the return current goes directly underneath the power trace.
+
 
 ### Signal Routing
 
