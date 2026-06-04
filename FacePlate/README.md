@@ -101,7 +101,8 @@ For this revision of the faceplate, we have removed the direct connection of the
   <img width="1137" height="575" alt="imu" src="https://github.com/user-attachments/assets/0043f4e1-8bf4-47eb-837b-108d4a3a492e" style="flex: 1; width: 50%;"/>
 </p>
 
-> ## Layout
+## Layout
+---
 
 The layout of this board and boards in general can be described by the following seven steps:
 1. Footprint Libraries (for schematic)
@@ -234,21 +235,29 @@ With most signal traces, it is recommended to try and maintain a standardized pa
 
 ### Custom Rule Areas
 
-In some cases, you may have ICs on your board that have very fine pitch (such as the TSSOP-20 Can Controller), and your standard DRC rule clearances will not work here. In this case, you can temporarily shrink the clearance required around this chip by adding a custom rule area with all the toggles turned off (so that it does not exclude copper, pads, footprints, etc) for which we will add a custom rule later. The fine pitch chip is shown below, with a zone created around it and all options deselected.
+In some cases, you may have ICs on your board that have very fine pitch (such as the TSSOP-20 Can Controller), and your standard DRC rule clearances may not work here if your overall clearance is larger. In this case, you can temporarily shrink the clearance required around this chip by adding a custom rule area with all the toggles turned off (so that it does not exclude copper, pads, footprints, etc) for which we will add a custom rule later. The fine pitch chip is shown below, with a zone created around it and all options deselected.
 
 <p align="center">
-<img width="851" height="738" alt="image" src="https://github.com/user-attachments/assets/3f9dc022-371e-4b58-ba52-fd1e44367a21" style="flex: 1; width: 80%;"/>
+<img width="1308" height="877" alt="image" src="https://github.com/user-attachments/assets/f2f89bf2-4cb6-4b41-b602-5d3ffce776b0" style="flex: 1; width: 75%;"/>
 </p>
 
-With this we can now go into the DRC rule editor and 
+With this we can now go into the DRC rule editor (much easier than custom rules in the board setup tab in older KiCad versions) and add a custom fine pitch spacing rule. This can be found from Tools -> DRC rule editor.
 
-<img width="952" height="782" alt="image" src="https://github.com/user-attachments/assets/7dd27b9f-cae6-41f6-928a-97dad931cc0d" />
+<p align="center">
+<img width="952" height="782" alt="image" src="https://github.com/user-attachments/assets/7dd27b9f-cae6-41f6-928a-97dad931cc0d" style="flex: 1; width: 50%;"/>
+</p>
 
+Here, object A refers to the currently-being-routed track, via, or other item, where the new clearance rule now only gets applied inside this area. There are multiple ways to accomplish the same feature with custom rulests, and there are a lot of other use cases that you can explore - this is only an example. 
+
+> [!TIP]
+> KiCad has a previous version guide (pre-V10) about custom rules and their use cases, so please feel free to use [this guide](https://forum.kicad.info/t/custom-design-rules-examples/43987/2) to your liking. There are also a lot of github links that people have made including JLCPCB specific rulesets you can use if you search these up.
 
 ## Implementation
 ---
 
-To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
+To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. 
+
+Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
 
 Clicking the 3D model view in KiCad (the icon that looks like a capacitor) you can view the 3D model of the board - the Faceplate looks as follows:
 
