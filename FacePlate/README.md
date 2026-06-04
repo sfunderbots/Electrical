@@ -32,13 +32,13 @@ For any of the following schematics, it is useful to group components into a sch
 > [!TIP]
 > If you select "edit symbol library", you will see that it opens up the library tab in KiCad, which has all of our parts listed. The same information for the LDO as above is here as well.
 > <p align="center">
-> <img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 70%;" />
+> <img width="1918" height="1115" alt="image" src="https://github.com/user-attachments/assets/99134821-deaf-4334-96a6-c61dcacc3b2f" style="flex: 1; width: 55%;" />
 > </p>
 
 > [!IMPORTANT]
 > You will need to add your library path to the .KICAD_SYM schematic library file, which stores all of your components. While separating the components into groups hasnt been done yet on our end due to time constraints, we recommend grouping these components by type in separate .KICAD_SYM files to increase productivity.
 > <p align="center">
-> <img width="1256" height="831" alt="image" src="https://github.com/user-attachments/assets/c45acfb7-16f0-4e79-8f1a-0f4201c3d013" style="flex: 1; width: 70%;" />
+> <img width="1256" height="831" alt="image" src="https://github.com/user-attachments/assets/c45acfb7-16f0-4e79-8f1a-0f4201c3d013" style="flex: 1; width: 60%;" />
 > </p>
 
 Additionally, for each symbol in your library, an associated footprint needs to be added to each symbol used in the schematics, which will be covered in the layout section.
@@ -93,7 +93,7 @@ Two 8-pin JST GH series connectors link the Raspberry Pi with two identical cust
 </p>
 
 
-The board files of the mouse sensor can be found on our github page under [PWM3360_PCB_JST](https://github.com/sfunderbots/Electrical/tree/main/pmw3360-pcb-main/pmw3360_pcb_jst).
+The board files of the mouse sensor can be found on our github page under [PWM3360_PCB_JST](https://github.com/sfunderbots/Electrical/tree/main/pmw3360-pcb-main/pmw3360_pcb_jst), which was modified from the github user siderakb to add a JST connector.
 
 ### IMU
 For this revision of the faceplate, we have removed the direct connection of the IMU on the faceplate in place of an external connector to be wired to an IMU, in our case chosen as a breakout board from Adafruit: [4438](https://www.adafruit.com/product/4438). This will provide accurate 6-DoF for the robot to improve robot control speed. This is connected using a 4 pin JST PH connector (Adafruit calls it the STEMMA QT QWIIC) which provides both power and data lines.
@@ -257,7 +257,14 @@ Here, object A refers to the currently-being-routed track, via, or other item, w
 
 To fabricate the boards, we used JLCPCB, which has been extremely reliable for countless hobby projects over the last five years. Here’s JLC's new user [6-layer PCB coupon](https://jlcpcb.com/6-layer-pcb?from=social) which saves you 30$ on your project so you can start a project with relatively low cost. 
 
-Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective. Alternate components on their partner LCSC make board projects feasible at lower cost with similar or the same specifications. 
+Apart from being a reliable PCB manufacturer, JLCPCB has also been very cost effective - on their part library website, you can find alternate components from their partner LCSC to make board projects feasible at lower cost with similar or the same specifications. 
+
+However, before you fabricate the boards, you need to run a DRC check, under Inspect -> Design Rules Checker. This ensures that any clearance violations (short-circuits), unconnected nets (any traces you forgot to route), or trace widths that are out of the Net Class spec.
+
+> [!IMPORTANT]
+> For this very reason, it is highly advisable, while not strictly necessary, to set up different Net Classes and assign them in the schematic by right clicking the wire. With a larger trace width for a high current trace set, this will ensure that when you go to manufacture your boards that trace will not burn up from too little copper area to conduct the required current, with the DRC check ensuring you fix the mistake before this stage.
+
+For this board specifically, Net Class rules didn't need to be set up as it is a relatively simple board and my knowledge is sufficient to accomplish it without any major hiccups, knowing the rough sizing for traces we need. At a very minimum, it is recommended to use the toolkit recommended earlier ([Saturn PCB Toolkit](https://saturnpcb.com/saturn-pcb-toolkit/)) to verify that your trace width will sufficiently carry the current without heating up too much.
 
 Clicking the 3D model view in KiCad (the icon that looks like a capacitor) you can view the 3D model of the board - the Faceplate looks as follows:
 
@@ -265,4 +272,12 @@ Clicking the 3D model view in KiCad (the icon that looks like a capacitor) you c
   <img width="1293" height="507" alt="image" src="https://github.com/user-attachments/assets/6715656e-b172-49ec-b217-de1b871c9253" style="flex: 1; width: 80%;"/>
   <img width="1325" height="507" alt="image" src="https://github.com/user-attachments/assets/fc6b64f9-f950-49e7-b4a1-05ee0faa1b3d" style="flex: 1; width: 80%;" />
 </p>
+
+And with that, the board is done, and you will need to export your design files to gerbers and drill files for the manufacturer. You can do this manually by using the export options, or, you can use the JLCPCB Fabrication tookit as an installed library in KiCad. With the toolkit, all it requires is a simple click where the files will be saved in a "production" folder in your repository.
+
+<p align="center">
+<img width="607" height="493" alt="Screenshot 2026-06-04 081611" src="https://github.com/user-attachments/assets/2535ca5f-1fe5-418a-b123-495e8af0abb8" width: 30%;"/>
+</p>
+
+This process is now complete and you should have your board in a couple weeks depending on shipping and manufacturing timelines!
 
