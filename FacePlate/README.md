@@ -22,8 +22,6 @@ The Faceplate can be seen on the front of our robot, with the eyes visible and t
 
 ## Schematics
 ---
-
-
   
 For any of the following schematics, it is useful to group components into a schematic library file inside the EDA tool you are using - in this case, KiCad. Saving custom schematics ensures that when you update a board design you carry over any modifications like manufacturer part numbers, JLC part numbers (LCSC), price, etc. The following serves as an example for what information is useful to keep in the schematic part.
 
@@ -198,7 +196,7 @@ Additionally, you can include DRC rules by setting up Net Classes in the schemat
 For these specific nets, I have selected a slightly larger default via size (0.7/0.35mm) with larger overall trace width minimum. Generally speaking with larger trace widths the larger the clearance should be as well. 
 
 > [!TIP]
-> It is advisable to consult a PCB calculator for trace and via sizing, such as [Saturn PCB Toolkit](https://saturnpcb.com/saturn-pcb-toolkit/).
+> It is advisable to consult a PCB calculator for non-logic level trace and via sizing, such as [Saturn PCB Toolkit](https://saturnpcb.com/saturn-pcb-toolkit/).
 >
 > Secondly, always check your DRC rules BEFORE you start routing component tracks. This way, you will ensure there are no part placement conflicts or issues with footprints you will have to solve later and re-route components. To ensure components are not conflicting in 3D space, the pink courtyards must not overlap.
 
@@ -215,14 +213,37 @@ Moving on to power routing, we can set up zones (or polygons depending on what E
 
 On this image above, you can see the zone created, where on the power layer we have a thick trace going from the 5V connector to the Raspberry Pi 40 pin header. 
 
-
 > [!IMPORTANT]
 > It should be noted that at 3A and below the return current here does not matter as much, but on a design that pulls more than 10A I would recommend matching the return ground plane such that the return current goes directly underneath the power trace.
 
+Additionally, each component includes power vias to connect to the 3.3V and GND planes of the board, which are sized slightly bigger for extra margin.
 
 ### Signal Routing
 
+With the power traces routed on the board, signals are the next thing I would consider. 
+
+> [!TIP]
+> Remember to keep the inner layers as power distribution as much as possible avoiding signals on those layers, as it could increase noise on the signals.
+
+For recommended trace widths, I tend to use anywhere from 8-10mil traces for signals, depending on space. It is advisable to not decrease the size too much, as it may become hard for your PCB manufacturer (such as JLCPCB in our case) to manufacture. On the other end, having a trace width too large may impact impedance of the line, if you are designing a higher speed communication board. 
+
+> [!TIP]
+> For most signal traces, the trace width isn't super important at this range, as long as its big enough for the load expected. JLCPCB has a handy guide in determining the trace width of a PCB trace.
+
+With most signal traces, it is recommended to try and maintain a standardized pattern of top and bottom layers for either horizontal or vertical traces, to permit densely populated routing without causing too much hassle. This can be seen with the PCB design in the full layout shown earlier.
+
 ### Custom Rule Areas
+
+In some cases, you may have ICs on your board that have very fine pitch (such as the TSSOP-20 Can Controller), and your standard DRC rule clearances will not work here. In this case, you can temporarily shrink the clearance required around this chip by adding a custom rule area with all the toggles turned off (so that it does not exclude copper, pads, footprints, etc) for which we will add a custom rule later. The fine pitch chip is shown below, with a zone created around it and all options deselected.
+
+<p align="center">
+<img width="851" height="738" alt="image" src="https://github.com/user-attachments/assets/3f9dc022-371e-4b58-ba52-fd1e44367a21" style="flex: 1; width: 80%;"/>
+</p>
+
+With this we can now go into the DRC rule editor and 
+
+<img width="952" height="782" alt="image" src="https://github.com/user-attachments/assets/7dd27b9f-cae6-41f6-928a-97dad931cc0d" />
+
 
 ## Implementation
 ---
