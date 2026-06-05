@@ -20,6 +20,8 @@ The Faceplate can be seen on the front of our robot, with the eyes visible and t
   <img width="1575" height="789" alt="image" src="https://github.com/user-attachments/assets/d8db98a9-bbcf-47a2-81a0-988f7e6c8df0" style="flex: 1; width: 49%;"/>
 </p>
 
+This guide will serve as a way of a tutorial to design this or a similar board in your own projects, for which we recommend to use JLCPCB as a PCB manufacturer - wew users can register through the link below and receive up to $123 in coupons: [New User](https://jlcpcb.com/?from=Newv).1
+
 ## Schematics
 ---
   
