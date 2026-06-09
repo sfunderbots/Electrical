@@ -283,3 +283,6 @@ And with that, the board is done, and you will need to export your design files 
 
 This process is now complete and you should have your board in a couple weeks depending on shipping and manufacturing timelines!
 
+## License
+This project is licensed under the open-sourced MIT License - see the [LICENSE](LICENSE) file for details.
+
