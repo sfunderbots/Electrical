@@ -177,7 +177,7 @@ To help your process in laying out the PCB parts, you can see the "ratnest" of w
 > [!TIP]
 > It is always useful to include mounting holes on the PCB so that you can attach the board to an enclosure, which may not be necessary for prototyping but it will be necessary in the end - therefore getting it out of the way early will avoid headaches in the future!
 >
-> Lastly, one should avoid placing components too close to the edge of the board, especially if the board is panelized, as any stresses to the PCB may cause early failure in certain components, such as capacitors. A guide about part placement for proper power and signal delivery can be seen on the JLCPCB website here: [JLCPCB design guidelines for placement and routing](https://jlcpcb.com/blog/pcb-design-guidelines-placement-and-routing).
+> Lastly, one should avoid placing components too close to the edge of the board, especially if the board is panelized, as any stresses to the PCB may cause early failure in certain components, such as PCB mount capacitors (not radial caps). A guide about part placement for proper power and signal delivery can be seen on the JLCPCB website here: [JLCPCB design guidelines for placement and routing](https://jlcpcb.com/blog/pcb-design-guidelines-placement-and-routing).
 
 ### DRC Rules
 
