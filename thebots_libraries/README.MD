@@ -1,4 +1,4 @@
-#KiCad Project Libraries
+# KiCad Project Libraries
 
 For most of our boards, a project library is used to store components in symbol and footprint editors. This improves the process at which a board is updated in the future, where all changes are saved on the library rather than locally. 
 
