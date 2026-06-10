@@ -20,6 +20,8 @@ The Faceplate can be seen on the front of our robot, with the eyes visible and t
   <img width="1575" height="789" alt="image" src="https://github.com/user-attachments/assets/d8db98a9-bbcf-47a2-81a0-988f7e6c8df0" style="flex: 1; width: 49%;"/>
 </p>
 
+This guide will serve as a way of a tutorial to design this or a similar board in your own projects, for which we recommend to use JLCPCB as a PCB manufacturer - wew users can register through the link below and receive up to $123 in coupons: [New User](https://jlcpcb.com/?from=Newv).1
+
 ## Schematics
 ---
   
@@ -175,7 +177,7 @@ To help your process in laying out the PCB parts, you can see the "ratnest" of w
 > [!TIP]
 > It is always useful to include mounting holes on the PCB so that you can attach the board to an enclosure, which may not be necessary for prototyping but it will be necessary in the end - therefore getting it out of the way early will avoid headaches in the future!
 >
-> Lastly, one should avoid placing components too close to the edge of the board, especially if the board is panelized, as any stresses to the PCB may cause early failure in certain components, such as capacitors. A guide about part placement for proper power and signal delivery can be seen on the JLCPCB website here: [JLCPCB design guidelines for placement and routing](https://jlcpcb.com/blog/pcb-design-guidelines-placement-and-routing).
+> Lastly, one should avoid placing components too close to the edge of the board, especially if the board is panelized, as any stresses to the PCB may cause early failure in certain components, such as PCB mount capacitors (not radial caps). A guide about part placement for proper power and signal delivery can be seen on the JLCPCB website here: [JLCPCB design guidelines for placement and routing](https://jlcpcb.com/blog/pcb-design-guidelines-placement-and-routing).
 
 ### DRC Rules
 
@@ -280,4 +282,7 @@ And with that, the board is done, and you will need to export your design files 
 </p>
 
 This process is now complete and you should have your board in a couple weeks depending on shipping and manufacturing timelines!
+
+## License
+This project is licensed under the open-sourced MIT License - see the [LICENSE](LICENSE) file for details.
 

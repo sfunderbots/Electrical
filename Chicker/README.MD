@@ -9,5 +9,6 @@ When the robot kicks, the chicker sends a pulse from 500 to 5000us to the IGBT g
 ![Chicker V1.1 Front View](Images/ChickerV1.1_front.jpeg)
 ![Chicker V1.1 Back View](Images/ChickerV1.1_back.jpeg)
 
-
+## License
+This project is licensed under the open-sourced MIT License - see the [LICENSE](LICENSE) file for details.
 
