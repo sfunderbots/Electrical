@@ -31,6 +31,12 @@ What we are achieving here is somewhere in the middle, a partially inelastic col
 
 From our tests, it is interesting to note that from the partially inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be seen that both tests had some nonzero horizontal velocity. However the hese tests also showed that the plunger would re-extend (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. Thus, perhaps both of these explanations could be the causes for the reflections shown in those tests. 
 
+## Recommendations
+
+As each team's robot will be slightly different, it is important to note that the active damping described here may differ in implementation due to the plunger weight. The heavier the plunger, the larger the force (and subsequently momentum) required to collapse the plunger. What this means is that with a heavier plunger the ball will remain in contact with the plunger longer, effectively raising the coefficient of restitution (e) (a measure of inelastic collision), and the ball will bounce off the plunger with increasing velocity.
+
+
+
 
 
 
