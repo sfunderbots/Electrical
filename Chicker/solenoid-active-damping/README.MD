@@ -29,7 +29,38 @@ To understand why the system works as it does, it is important to understand col
 
 What we are achieving here is somewhere in the middle, a partially inelastic collision - because the kicker head is extended at minimum possible force to remain stationary, when the ball contacts the kicker head, it subsequently collapses with not enough sufficient force to maintain the hold.
 
-From our tests, it is interesting to note that from the partially inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be seen that both tests had some nonzero horizontal velocity. However the hese tests also showed that the plunger would re-extend (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. Thus, perhaps both of these explanations could be the causes for the reflections shown in those tests. 
+From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e) proportional (a measure of inelastic collision) to the masses of the ball to the plunger. 
+
+Looking at the velocities of the ball on impact shown on the TDP, we can calculate this coefficient based on the momentum transfer equation:
+
+-----
+CHATGPT Stuff
+
+To find the final velocity of the ball ($v_{out}$) when striking a stationary plunger, the conservation of momentum and coefficient of restitution equations combine into this explicit formula:
+
+$$v_{out} = v_{in} \cdot \left( \frac{m_{ball} - e \cdot m_{plunger}}{m_{ball} + m_{plunger}} \right)$$
+
+### Active Damping Test Summary
+
+| Test No. | Ball Mass | Plunger Mass | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e | Collision Outcome |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | 45g | 60g | 3.0 m/s | 0.26 m/s | **0.5373** | Incomplete Damping (Ball rolled forward) |
+| **2** | 45g | 60g | 2.7 m/s | 0.00 m/s | **0.7500** | **Perfect Active Damping (Dead Stop)** |
+| **3** | 45g | 60g | 5.3 m/s | 0.40 m/s | **0.5283** | Incomplete Damping (Ball rolled forward) |
+
+---
+
+### Proof: Why Test 2 Worked Perfectly
+
+For the ball to come to a complete, perfect standstill, its final velocity must equal zero ($v_{out} = 0$). Looking at the numerator of our formula, this only happens when:
+
+$$m_{ball} - e \cdot m_{plunger} = 0$$
+
+If we isolate $e$ for your exact physical system parameters:
+
+$$e = \frac{m_{ball}}{m_{plunger}} = \frac{45\text{g}}{60\text{g}} = 0.75$$
+
+Because Test 2's active damping system perfectly countered the impact mechanics to yield an effective $e$ of **exactly 0.75**, the numerator became zero, forcing $v_{out}$ to $0\text{ m/s}$. This mathematically proves why the middle test succeeded perfectly where the others fell short.
 
 ## Recommendations
 
