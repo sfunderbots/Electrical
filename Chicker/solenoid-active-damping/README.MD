@@ -29,7 +29,7 @@ To understand why the system works as it does, it is important to understand col
 
 What we are achieving here is somewhere in the middle, a partially inelastic collision - because the kicker head is extended at minimum possible force to remain stationary, when the ball contacts the kicker head, it subsequently collapses with not enough sufficient force to maintain the hold.
 
-From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e, a measure of inelastic collision) proportional  to the masses of the ball to the plunger. 
+From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e, a measure of inelastic collision) proportional to the masses of the ball to the plunger. 
 
 Looking at the velocities of the ball on impact shown on the TDP, we can calculate this coefficient based on the momentum transfer equation, where the coefficient of restitution (e) is defined by the difference in separation velocity (post collision) divided by the difference in incoming velocity (only the ball is moving pre-collision):
 
@@ -38,16 +38,12 @@ $$e = \frac{v'_{plunger} - v'_{ball}}{v_{ball}}$$
 therefore
 $$v'_{plunger} = e \cdot v_{ball} + v'_{ball}$$
 
-momentum transfer equation
+Using the momentum transfer equation below, we can substitute in the equation for $$v'_{plunger}$$ in terms of e into the equation below:
 $$m_{ball} v_{ball} = m_{ball} v'_{ball} + m_{plunger} v'_{plunger}$$
-
-
-therefore from the momentum transfer equation we can substitute the unknown plunger velocity after collision:
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
-combining these equations, we can calculate the ball velocity after the collision knowing the coefficient of restitution.
+Combining these equations, we can calculate the ball velocity after the collision knowing the coefficient of restitution.
 $$v'_{ball} = \frac{m_{ball} - e \cdot m_{plunger}}{m_{ball} + m_{plunger}} \cdot v_{ball}$$
-
 
 However, as the coefficient is unknown, we can calculate it in reverse as we have simulated known values from our testing:
 
