@@ -21,7 +21,7 @@ As mentioned in our TDP, one needs to apply a short pulse which is equivalent to
 
 Then, some nonzero waiting time should be applied to allow the mechanical system to finish actuating from the electrical force generated. The electrical system has a time scale of microseconds to milliseconds, however the mechanical system has a timescale from several milliseconds to seconds. The electrical force and mechanical force on the plunger can be modelled, but this requires a complex simulation involving the change in inductance over position of the solenoid - this is not important for one to get started, but may help one understand the exact time delay needed. This will hopefully be covered in our 2027 TDP.
 
-Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. Due to the limitations on the RP2040 at the time, the 
+Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. Due to the limitations on the RP2040 at the time, this was not achievable.
 
 ## Rough Dynamic Model
 
@@ -29,24 +29,41 @@ To understand why the system works as it does, it is important to understand col
 
 What we are achieving here is somewhere in the middle, a partially inelastic collision - because the kicker head is extended at minimum possible force to remain stationary, when the ball contacts the kicker head, it subsequently collapses with not enough sufficient force to maintain the hold.
 
-From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e) proportional (a measure of inelastic collision) to the masses of the ball to the plunger. 
+From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e, a measure of inelastic collision) proportional  to the masses of the ball to the plunger. 
 
-Looking at the velocities of the ball on impact shown on the TDP, we can calculate this coefficient based on the momentum transfer equation:
+Looking at the velocities of the ball on impact shown on the TDP, we can calculate this coefficient based on the momentum transfer equation, where the coefficient of restitution (e) is defined by the difference in separation velocity (post collision) divided by the difference in incoming velocity (only the ball is moving pre-collision):
 
------
-CHATGPT Stuff
+$$e = \frac{v'_{plunger} - v'_{ball}}{v_{ball}}$$
 
-To find the final velocity of the ball ($v_{out}$) when striking a stationary plunger, the conservation of momentum and coefficient of restitution equations combine into this explicit formula:
+therefore
+$$v'_{plunger} = e \cdot v_{ball} + v'_{ball}$$
 
-$$v_{out} = v_{in} \cdot \left( \frac{m_{ball} - e \cdot m_{plunger}}{m_{ball} + m_{plunger}} \right)$$
+momentum transfer equation
+$$m_{ball} v_{ball} = m_{ball} v'_{ball} + m_{plunger} v'_{plunger}$$
 
-### Active Damping Test Summary
 
-| Test No. | Ball Mass | Plunger Mass | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e | Collision Outcome |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | 45g | 60g | 3.0 m/s | 0.26 m/s | **0.5373** | Incomplete Damping (Ball rolled forward) |
-| **2** | 45g | 60g | 2.7 m/s | 0.00 m/s | **0.7500** | **Perfect Active Damping (Dead Stop)** |
-| **3** | 45g | 60g | 5.3 m/s | 0.40 m/s | **0.5283** | Incomplete Damping (Ball rolled forward) |
+therefore from the momentum transfer equation we can substitute the unknown plunger velocity after collision:
+$$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
+
+combining these equations, we can calculate the ball velocity after the collision knowing the coefficient of restitution.
+$$v'_{ball} = \frac{m_{ball} - e \cdot m_{plunger}}{m_{ball} + m_{plunger}} \cdot v_{ball}$$
+
+
+However, as the coefficient is unknown, we can calculate it in reverse as we have simulated known values from our testing:
+
+$$((m_{ball} \cdot v_{ball} - m_{ball} \cdot v'_{ball})/m_{plunger} -v'_{ball})/v_{ball} =  e $$
+
+ ((0.045 * 3 - 0.045 * 0.26)/0.060 - 0.26)/3= 0.598 (effectively lower due to re-extension of plunger)
+ ((0.045 * 2.7 - 0.045 * 0)/0.060 - 0)/2.7 = 0.75 (good test)
+ ((0.045 * 5.3 - 0.045 * 0.4)/0.060 - 0.4)/5.3 = 0.617 (effectively lower due to re-extension of plunger)
+
+### Test Summary
+
+| Test No. | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | 3.0 m/s | 0.26 m/s | **0.5373** |
+| **2** | 2.7 m/s | -0.05 m/s | **0.7500** |
+| **3** | 5.3 m/s | 0.40 m/s | **0.5283** |
 
 ---
 
