@@ -4,11 +4,11 @@
 ---
 ## Motivation
 
-The solenoid active damping theory and subsequent implementation was developed by The Bots as a tool to improve pass receiving performance of the SSL league. This was first tested after RoboCup 2025, with updated code for The Bots' Chicker board which split the CAN messages into operating modes - a key change to incoroprate damping was first to be able to test it seamlessly without changing the kicking functions of the robot. A more detailed explanation of the changes to the firmware and the 'modes' can be seen on our 2026 TDP. 
+The solenoid active damping theory and subsequent implementation was developed by The Bots as a tool to improve pass receiving performance of the SSL league. This was first tested after RoboCup 2025, with updated code for The Bots' Chicker board which split the CAN messages into operating modes - a key change to incorporate damping was first to be able to test it seamlessly without changing the kicking functions of the robot. A more detailed explanation of the changes to the firmware and the 'modes' can be seen on our 2026 TDP. 
 
-To achieve a pass, most teams build some complex damping mechanism involving the rotating dribbler and compliant mechanisms, which was explained on our 2026 TDP. However, as this adds cost and complexity for new teams and becomes a significant hurdle to overcome, we decided to try a theory that would use the existing electromechanical energy on the robot to achieve the same goal (and potentially better, pending full testing).
+To achieve a pass, most teams build some complex damping mechanism involving the rotating dribbler and compliant mechanisms, which was explained on our 2026 TDP. However, as this adds cost and complexity for new teams and becomes a significant hurdle to overcome, we decided to try a theory that would use the existing electromechanical energy on the robot to achieve the same goal with less resources.
 
-If one is to calculate the energy on SSL robots, one can notice there is a tremendous amount of energy that is unspent during the receiving phase. For our robots specifically, there is 1/2 * 2000uF * 210V^2 = 44.1J of energy on the robot at a full charge of the capacitors. One important question we wanted to ask ourselves is: why is that same energy used for kicking, not used for the opposite, in ball receiving. When the robot is receiving a pass, it is subsequently not kicking at that moment - and secondly, the time that would need to be used for repositioning once a pass is received is sufficiently long enough for the capacitors to charge back up again for a 9A charging circuit. 
+If one is to calculate the energy on SSL robots, one can notice there is a tremendous amount of energy that is unspent during the receiving phase. For our robots specifically, there is 1/2 * 2000uF * 210V^2 = 44.1J of energy on the robot at a full charge of the capacitors. One important question we wanted to ask ourselves is: why is that same energy used for kicking, but not used for the opposite for ball receiving. When the robot is receiving a pass, it is subsequently not kicking at that moment - and secondly, the time that would need to be used for repositioning once a pass is received is sufficiently long enough for the capacitors to charge back up again for a 9A charging circuit. 
 
 Thus, the reasoning to develop an electromechanical damping framework was formed. 
 
@@ -17,7 +17,7 @@ Thus, the reasoning to develop an electromechanical damping framework was formed
 
 Before the ball is received, the robot extends the kicker head with a low power kick, and then is held at the minimum required force to remain extended. The holding force is accomplished by pulsing the IGBT with a PWM signal with a duty cycle equal to just above the threshold where the kicker head would otherwise collapse back into the robot. 
 
-Once the ball (weighing 45 grams) contacts the plunger (weighing 60 grams), the inertia from the ball transfers to the plunger, making it retract fully into the robot without enough energy for re-extension. The ball then rolls towards the dribbler with any remaining energy left, allowing for operation even without a dribbler or even better control with a simple dribbler which are both very acheiveable for new teams.
+Once the ball (weighing 45 grams) contacts the plunger (weighing 60 grams), the inertia from the ball transfers to the plunger, making it retract fully into the robot without enough energy for re-extension. The ball then rolls towards the dribbler with any remaining energy left, allowing for operation even without a dribbler or even better control with a simple dribbler which are both very achievable for new teams.
 
 ---
 ## Firmware Elaboration
@@ -32,12 +32,12 @@ Then, some nonzero waiting time should be applied to allow the mechanical system
 > [!NOTE]
 > The electrical system has a time scale of microseconds to milliseconds, however the mechanical system has a timescale from several milliseconds to seconds, which is why this time delay is needed. 
 
-Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Due to the limitations on the RP2040 at the time, a higher frequency was not achievable. 
+Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Due to the limitations on the RP2040 at the time, a higher frequency was not achievable. Similarly, the PWM force applied on the plunger can be modelled if more accurate PWM duty cycles are desired.
 
 > [!TIP]
 > Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. 
 
-Code snippets for the firmware are available in this folder with relevant pwm code for the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [Chicker/firmware/main.py](https://github.com/sfunderbots/Electrical/edit/main/Chicker/firmware/main.py)
+Code snippets for the firmware are available in this folder with relevant pwm code for solenoid active damping on the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [Chicker/firmware/main.py](https://github.com/sfunderbots/Electrical/edit/main/Chicker/firmware/main.py)
 
 ---
 ## Rough Dynamic Model
@@ -85,12 +85,12 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 
 </div>
 
-With any coefficient above 0.75, the ball would bounce off slightly (more elastic), and below 0.75 the ball would roll forward with topspin.
+With any coefficient above $\frac{m_{ball}}{m_{plunger}}$, the ball would bounce off (more of an elastic collision), and at or below this threshold the damping is considered successful. While a failed attempt at damping the ball is immediately obvious, this method of calculating the coefficient can be useful to determine how far from ideal the collision was, and to determine if the failure was velocity dependent or not. In our case, we can clearly see that two tests were captured at near 3 m/s, and both produced different results - thus, these results prove a non-velocity dependent factor, which in our case we know to be the re-extension of the plunger. 
 
 ---
 ## Future Work and Recommendations
 
-As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force to required overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision.
+As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force required overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision. In reality, the momentum math should be time dependent and an instantaneous collision should not be analyzed here - however, with extremely low holding force on the plunger due to the minimal plunger weight, this additional friction was ignored. 
 
 > [!WARNING]
 > Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance. 
