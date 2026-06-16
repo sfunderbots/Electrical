@@ -65,7 +65,7 @@ $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger} \cdot v'_{plu
 
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
-In the case of a perfectly damped test, the ball velocity after collision is zero or slightly negative (implying it rolls with topspin), therefore we know that e must be above the following ratio of ball to plunger weight:
+In the case of a perfectly damped test, the ball velocity after collision is zero or slightly positive (implying it rolls with topspin), therefore we know that e must be below the following ratio of ball to plunger weight, which was simplified from the above equation:
 
 $$ e = \frac{m_{ball}}{m_{plunger}} = \frac{0.045kg}{0.060kg} = 0.75 $$
 
@@ -79,11 +79,13 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 
 | Test No. | Input Velocity ($v_{ball}$) | Output Velocity ($v'_{ball}$) | Calculated Effective e |
 | :---: | :---: | :---: | :---: |
-| **1** | 3.0 m/s | 0.26 m/s | 0.598 |
+| **1** | 3.0 m/s | -0.26 m/s | 0.902 |
 | **2** | 2.7 m/s | 0 m/s | 0.75 |
-| **3** | 5.3 m/s | 0.40 m/s | 0.617 |
+| **3** | 5.3 m/s | -0.40 m/s | 0.882 |
 
 </div>
+
+With any coefficient above 0.75, the ball would bounce off slightly (more elastic), and below 0.75 the ball would roll forward with topspin.
 
 ---
 ## Future Work and Recommendations
