@@ -48,18 +48,20 @@ $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger} \cdot v'_{plu
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
 In the case of a perfectly damped test, the ball velocity after collision is zero or slightly negative (implying it rolls with topspin), therefore we know that e must be above the following ratio of ball to plunger weight:
+
 $$ e = \frac{m_{ball}}{m_{plunger}} = \frac{0.045kg}{0.060kg} = 0.75 $$
 
 ### Test Summary
 
 Combining these equations, we can calculate the effective coefficient of restitution (e) for the inconclusive tests shown on our TDP, which prove that the kicker head re-extended increasing the force on the ball:
+
 $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v_{ball}}$$
 
 | Test No. | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | **1** | 3.0 m/s | 0.26 m/s | 0.598 |
-| **2** | 2.7 m/s | 0 m/s | 0.7500 |
-| **3** | 5.3 m/s | 0.40 m/s | 0.617|
+| **2** | 2.7 m/s | 0 m/s | 0.75 |
+| **3** | 5.3 m/s | 0.40 m/s | 0.617 |
 
 ## Future Work and Recommendations
 
