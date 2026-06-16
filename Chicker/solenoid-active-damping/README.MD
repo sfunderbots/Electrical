@@ -91,7 +91,8 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force to required overcome and collapse the plunger. This in turn will decrease the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot.
 
 > [!WARNING]
-> Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance.
+> Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance. 
+> Secondly, as the high voltage banks get depleted the plunger may retract due to insufficient force - you may need to tune the PWM duty cycle over time if the plunger is extended for longer periods of time than initially tested at around 2s.
 
 For reference to the PWM code written in micropython, you can refer to this snippet included in the folder, or the main firmware included in the chicker firmware folder.
 
