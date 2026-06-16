@@ -77,7 +77,7 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 
 <div align="center">
 
-| Test No. | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e |
+| Test No. | Input Velocity ($v_{ball}$) | Output Velocity ($v'_{ball}$) | Calculated Effective e |
 | :---: | :---: | :---: | :---: |
 | **1** | 3.0 m/s | 0.26 m/s | 0.598 |
 | **2** | 2.7 m/s | 0 m/s | 0.75 |
