@@ -96,7 +96,7 @@ As this math only pertains to a perfect collision with minimal friction, it woul
 > Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance. 
 
 > [!CAUTION]
-> Secondly, as the high voltage banks get depleted the plunger may retract due to insufficient force - you may need to tune the PWM duty cycle over time if the plunger is extended for longer periods of time than initially tested at around 2s.
+> As the high voltage banks get depleted, the plunger may retract due to insufficient force - you may need to tune the PWM duty cycle over time if the plunger is extended for longer periods of time than initially tested at around 2s.
 
 For reference to the PWM code written in micropython, you can refer to this snippet included in the folder, or the main firmware included in the chicker firmware folder.
 
