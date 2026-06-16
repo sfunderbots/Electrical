@@ -22,11 +22,20 @@ Once the ball (weighing 45 grams) contacts the plunger (weighing 60 grams), the 
 ---
 ## Firmware Elaboration
 
-As mentioned in our TDP, one needs to apply a short pulse which is equivalent to a very soft kick (just enough to get the kicker head out) to first extend the plunger. On our chicker boards, this is about 500 micro-seconds or less. All that is required is that the kicker head extends fully but with almost no power. 
+As mentioned in our TDP, one needs to apply a short pulse which is equivalent to a very soft kick (just enough to get the kicker head out) to first extend the plunger. 
 
-Then, some nonzero waiting time should be applied to allow the mechanical system to finish actuating from the electrical force generated. The electrical system has a time scale of microseconds to milliseconds, however the mechanical system has a timescale from several milliseconds to seconds. The electrical force and mechanical force on the plunger can be modelled, but this requires a complex simulation involving the change in inductance over position of the solenoid - this is not important for one to get started, but may help one understand the exact time delay needed. This will hopefully be covered in our 2027 TDP.
+> [!IMPORTANT]
+> On our chicker boards, this is about 500 micro-seconds or less. All that is required is that the kicker head extends fully but with almost no power. 
 
-Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. Due to the limitations on the RP2040 at the time, this was not achievable. 
+Then, some nonzero waiting time should be applied to allow the mechanical system to finish actuating from the electrical force generated. The electrical force and mechanical force on the plunger can be modelled, but this requires a complex simulation involving the change in inductance over position of the solenoid - this is not important for one to get started, but may help one understand the exact time delay needed. 
+
+> [!NOTE]
+> The electrical system has a time scale of microseconds to milliseconds, however the mechanical system has a timescale from several milliseconds to seconds, which is why this time delay is needed. 
+
+Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Due to the limitations on the RP2040 at the time, a higher frequency was not achievable. 
+
+> [!TIP]
+> Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. 
 
 Code snippets for the firmware are available in this folder with relevant pwm code for the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [Chicker/firmware/main.py](https://github.com/sfunderbots/Electrical/edit/main/Chicker/firmware/main.py)
 
@@ -81,7 +90,10 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 
 As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force to required overcome and collapse the plunger. This in turn will decrease the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot.
 
-Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section. For reference to the PWM code written in micropython, you can refer to this snippet included in the folder, or the main firmware included in the chicker firmware folder.
+> [!WARNING]
+> Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance.
+
+For reference to the PWM code written in micropython, you can refer to this snippet included in the folder, or the main firmware included in the chicker firmware folder.
 
 ---
 ## Open Source License
