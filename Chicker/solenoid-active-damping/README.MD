@@ -43,7 +43,7 @@ $$v'_{plunger} = e \cdot v_{ball} + v'_{ball}$$
 
 Using the momentum transfer equation below, we can substitute in the equation for $$v'_{plunger}$$ in terms of e into the equation below:
 
-$$m_{ball} v_{ball} = m_{ball} v'_{ball} + m_{plunger} v'_{plunger}$$
+$$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger} \cdot v'_{plunger}$$
 
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
