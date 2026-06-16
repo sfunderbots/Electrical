@@ -1,0 +1,556 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+initlized succesuqfully!
+CHARGING PREPARE MODE: HV STARTS CHARGING
+16.52
+4.6V USB Voltage
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.52 V
+HV:  2.36 V
+array('L', [8, 8, 8])
+16.53
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.53 V
+1
+HV:  1.93 V
+16.52
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.52 V
+1
+HV:  1.86 V
+16.51
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.51 V
+1
+HV:  1.99 V
+16.51
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.51 V
+1
+HV:  1.93 V
+charge toggle reset to zero on VBAT received after delay
+charge toggle complete on VCC input, waiting
+charge started (DONE toggles high properly)
+16.42
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.42 V
+1
+HV:  88.85 V
+16.39
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.39 V
+1
+HV:  154.38 V
+16.32
+Working Battery Voltage
+5V Reference:  4.68 V
+Battery:  16.32 V
+1
+HV:  204.18 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.73 V
+IDLE MODE: HV DISCHARGED. STOPS CHARGING.
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  207.42 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  206.67 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  205.86 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  205.3 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  204.68 V
+DONE is low after 4500ms, assuming normal operation
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  204.25 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.53 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.84 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.41 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.97 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.54 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.17 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  207.73 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  207.3 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  206.98 V
+DONE is low after 4500ms, assuming normal operation
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  206.61 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.71 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.28 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.78 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.53 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.1 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.73 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.48 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.17 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  207.79 V
+DONE is low after 4500ms, assuming normal operation
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  207.42 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.65 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.69 V
+Battery:  16.49 V
+0
+HV:  210.34 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  210.03 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.66 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.41 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.04 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.79 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.41 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.1 V
+DONE is low after 4500ms, assuming normal operation
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  207.79 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  210.71 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.4 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  210.09 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.78 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.41 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.1 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.91 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.54 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.29 V
+DONE is low after 4500ms, assuming normal operation
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  207.98 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  210.78 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.4 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.09 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.84 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.53 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.16 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.97 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.66 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.41 V
+DONE is low after 4500ms, assuming normal operation
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.1 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.71 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.47 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.09 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.84 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.66 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.28 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.97 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.66 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.48 V
+DONE is low after 4500ms, assuming normal operation
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.23 V
+charge toggle (3s waited)
+charge toggle complete on DONE input, waiting
+charge started (DONE toggles high properly)
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  210.71 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.4 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  210.15 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.91 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  209.53 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  209.35 V
+16.5
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.5 V
+0
+HV:  208.97 V
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.66 V
+DONE is low after 4500ms, assuming normal operation
+16.49
+Fully charged  Batteries (or close to it)
+5V Reference:  4.68 V
+Battery:  16.49 V
+0
+HV:  208.6 V
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Traceback (most recent call last):
+  File "<stdin>", line 433, in <module>
+  File "<stdin>", line 147, in idle
+KeyboardInterrupt: 
+
+MPY: soft reboot
+MicroPython v1.25.0 on 2025-04-15; Raspberry Pi Pico with RP2040
+
+Type "help()" for more information.
+
+>>> 

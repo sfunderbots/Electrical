@@ -10,7 +10,7 @@ def SenseHV():
     # High Voltage Sense Detection
     HV_level_val = HV_SENSE.read_u16()
     HV_voltage_raw = HV_level_val * (3.3 / 65535.0) * ((13.0 + 990.0)/13.0)
-    HV_voltage = round(HV_voltage_raw,2);
+    HV_voltage = round(HV_voltage_raw,2)
 
     print("HV: ", HV_voltage, "V")
     
@@ -18,8 +18,10 @@ def SenseHV():
     # Need to pulse longer (theoretically) to achieve same result to m/s
     # pulse width_new = pulse_width * 206/ HV_voltage (this is approximate)
 
-    if (HV_voltage < 150) # check if it is way out of bounds
+    if (HV_voltage < 150): # check if it is way out of bounds
         HV_scaling = 1
     else:
-        HV_scaling = 206.0 / HV_voltage # max of 1.3725 (capped to min of 150 but this should never happen unless its trying to kick right again. Theoretically fine to at 150)
-    return {HV_voltage, HV_scaling}
+        HV_scaling = 206.0 / HV_voltage
+    return HV_voltage
+    
+

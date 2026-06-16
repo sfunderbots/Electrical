@@ -1,58 +1,100 @@
-# Trial class to get and put pulse trains on a GPIO pin
-# using PIO. The pulse duration is set or returned as
-# the multiple of a basic tick, defined by the PIO clock,
-# which gives a lot of flexibilty. Since the duration values
-# used can be 32 bit integers, that gives a wide range of
-# duration and resolution. The maximum frequency for timing
-# pulses is machine.freq()/2, for sending pulses it's
-# machine.freq(). So at 125MHz MCU clock
-# for timing input pulses, the resolution can be 16ns
-# for a pulse range of ~120ns - ~68 seconds, for sending
-# the resolution can be 8 ns and the range ~60ns to ~34 seconds.
-# At lower frequencies for the PIO, resolution and range
-# scale accordingly.
-
 import machine
 import rp2
 import rp2_util
+import dma_util
 import time
 import array
+import uctypes
 
-GET_WORD_SIZE = const(32)
+
 PUT_WORD_SIZE = const(32)
+GET_WORD_SIZE = const(32)
+
+SM_FREQ_DEFAULT = const(125_000_000)  # 125MHz = 8ns per tick (maximum resolution)
 
 
 class Pulses:
-    def __init__(self, get_pin=None, put_pin=None, sm_freq=1_000_000):
+    def __init__(self, get_pin=None, put_pin=None, sm_freq=SM_FREQ_DEFAULT):
+        self.sm_freq  = sm_freq
         self.get_done = False
+        self.put_done = False
         self.sm_get_nr = 0
+        self.sm_put_nr = 4
+
         if get_pin is not None:
             if (sm_freq * 2) > machine.freq():
-                raise (ValueError, "frequency too high")
-            self.sm_get = rp2.StateMachine(self.sm_get_nr, self.sm_get_pulses,
-                freq=sm_freq * 2, jmp_pin=get_pin, in_base=get_pin,
-                set_base=get_pin)
-            self.sm_get.irq(self.irq_finished)
+                raise ValueError("sm_freq too high for get")
+            self.sm_get = rp2.StateMachine(
+                self.sm_get_nr,
+                self.sm_get_pulses,
+                freq     = sm_freq * 2,
+                jmp_pin  = get_pin,
+                in_base  = get_pin,
+                set_base = get_pin
+            )
+            self.sm_get.irq(self._irq_finished)
         else:
             self.sm_get = None
 
-        self.put_done = False
-        self.sm_put_nr = 4
         if put_pin is not None:
-            if (sm_freq) > machine.freq():
-                raise (ValueError, "frequency too high")
-            self.sm_put = rp2.StateMachine(self.sm_put_nr, self.sm_put_pulses,
-                freq=sm_freq, out_base=put_pin)
-            self.sm_put.irq(self.irq_finished)
+            if sm_freq > machine.freq():
+                raise ValueError("sm_freq too high for put")
+            self.sm_put = rp2.StateMachine(
+                self.sm_put_nr,
+                self.sm_put_pulses,
+                freq     = sm_freq,
+                out_base = put_pin,
+                set_base = put_pin
+            )
+            self.sm_put.irq(self._irq_finished)
         else:
             self.sm_put = None
 
     @staticmethod
     @rp2.asm_pio(
-        in_shiftdir=rp2.PIO.SHIFT_LEFT,
-        autopull=False,
-        autopush=False,
-        push_thresh=GET_WORD_SIZE
+        out_init     = rp2.PIO.OUT_LOW,
+        out_shiftdir = rp2.PIO.SHIFT_RIGHT,
+        set_init     = rp2.PIO.OUT_LOW,
+        autopull     = False,
+        pull_thresh  = PUT_WORD_SIZE
+    )
+    def sm_put_pulses():
+        set(pindirs, 1)         # pin = output
+
+        label("on_phase")
+        pull()                  # pull on_ticks — stalls here when done, pin is LOW
+        mov(x, osr)             # x = countdown
+        set(pins, 1)            # pin HIGH
+
+        label("on_count")
+        jmp(x_dec, "on_count")  # count down on_ticks
+
+        set(pins, 0)            # pin LOW before pulling off_ticks
+                                # if FIFO empties here, pin stays LOW safely
+        pull()                  # pull off_ticks
+        mov(x, osr)             # x = countdown
+
+        label("off_count")
+        jmp(x_dec, "off_count") # count down off_ticks
+
+        jmp("on_phase")         # loop back for next pair
+
+    # ── IRQ handler ─────────────────────────────────────────────────────────
+
+    def _irq_finished(self, sm):
+        if sm == self.sm_put:
+            self.put_done = True
+        else:
+            self.get_done = True
+
+    # ── GET PIO program (unchanged from original) ─────────────────────────────
+
+    @staticmethod
+    @rp2.asm_pio(
+        in_shiftdir = rp2.PIO.SHIFT_LEFT,
+        autopull    = False,
+        autopush    = False,
+        push_thresh = GET_WORD_SIZE
     )
     def sm_get_pulses():
         set(pindirs, 0)             # set to input
@@ -114,113 +156,83 @@ class Pulses:
         label("end")
         irq(noblock, rel(0))        # get finished!
 
-    @staticmethod
-    @rp2.asm_pio(
-        out_init=rp2.PIO.OUT_HIGH ,
-        out_shiftdir=rp2.PIO.SHIFT_RIGHT,
-        autopull=False,
-        pull_thresh=PUT_WORD_SIZE
-    )
-    def sm_put_pulses():
-        set(pindirs, 1)         # set the Pin to output
-        pull()                  # get the number of pulses
-        mov(y, osr)
-        pull()                  # get start level
-        mov(isr, osr)           # save to isr
-        jmp("check_done")       # check pulse count
+    def _dma_done(self, expected_count):
+        """Check if DMA has finished transferring expected_count words."""
+        remaining = rp2_util.dma_transfer_count(0)
+        return remaining == 0
+    
+    def put_pulses(self, duration_us, blocking=True):
+        if self.sm_put is None:
+            raise ValueError("put_pin not configured")
+        ticks_per_us = self.sm_freq // 1_000_000
+        on_ticks  = max(1, duration_us * ticks_per_us - 7)
+        off_ticks = 1
+        buf = array.array("L", [on_ticks, off_ticks])
+        self._fire(buf, blocking, restart=True)
 
-# This is the main loop issueing the pulses
-        label("pulse_loop")
-        pull()                  # get the duration
-        out(x, PUT_WORD_SIZE)
-        mov(osr, isr)           # restore bit level from isr
-        mov(isr, invert(isr))   # and toggle isr
-        jmp(x_dec, "set_pin")   # test pulse length
-        jmp("check_done")       # if zero, next pulse
+    def put_pwm(self, duty, freq_hz, duration_us):
+        if self.sm_put is None:
+            raise ValueError("put_pin not configured")
+        if not (1 <= duty <= 99) or freq_hz is None:
+            raise ValueError("duty must be 1-99 and freq_hz must be set")
+        ticks_per_us = self.sm_freq // 1_000_000
+        period_us    = 1_000_000 // freq_hz
+        on_us        = max(1, (period_us * duty) // 100)
+        off_us       = period_us - on_us
+        on_ticks     = max(1, on_us  * ticks_per_us - 4)
+        off_ticks    = max(1, off_us * ticks_per_us - 4)
+        n_cycles     = duration_us // period_us
+        buf = array.array("L", [on_ticks, off_ticks])
+        for _ in range(n_cycles):
+            self._fire(buf, blocking=True, restart=False)
 
-        label("set_pin")        # now set the pin value
-        out(pins, 1)
+    def put_pwm_v2(self, duty, freq_hz, duration_us):
+        if self.sm_put is None:
+            raise ValueError("put_pin not configured")
+        if not (1 <= duty <= 99) or freq_hz is None:
+            raise ValueError("duty must be 1-99 and freq_hz must be set")
+        ticks_per_us = self.sm_freq // 1_000_000
+        period_us    = 1_000_000 // freq_hz
+        on_us        = max(1, (period_us * duty) // 100)
+        off_us       = period_us - on_us
+        on_ticks     = max(1, on_us  * ticks_per_us - 4)
+        off_ticks    = max(1, off_us * ticks_per_us - 4)
+        n_cycles     = duration_us // period_us
+        buf = array.array("L", [on_ticks, off_ticks])
+        for _ in range(n_cycles):
+            self._fire(buf, blocking=True, restart=False)
 
-        label("count")          # wait x ticks
-        jmp(x_dec, "count")
-
-        label("check_done")     # check if more to do
-        jmp(y_dec, "pulse_loop") # and start over
-
-        label("end")
-        irq(noblock, rel(0))    # wave finished!
-
-    def irq_finished(self, sm):
-        if sm == self.sm_put:  # put irq?
+    def _fire(self, buf, blocking=True, restart=False):
+        self.put_done = False
+        self._buf = buf
+        if restart:
+            self.sm_put.restart()
+        self.sm_put.active(1)
+        rp2_util.sm_dma_put(0, self.sm_put_nr, buf, len(buf))
+        if blocking:
+            while rp2_util.dma_transfer_count(0) > 0:
+                time.sleep_us(1)
+            while rp2_util.sm_tx_fifo_level(self.sm_put_nr) > 0:
+                time.sleep_us(1)
+            last_period_us = (buf[-2] + buf[-1]) // (self.sm_freq // 1_000_000)
+            time.sleep_us(last_period_us + 100)
+            self.sm_put.active(0)
             self.put_done = True
-        else:
-            self.get_done = True
+    # ── GET (unchanged from original) ─────────────────────────────────────────
 
     def get_pulses(self, buffer, start_timeout=100_000, bit_timeout=100_000):
         if self.sm_get is None:
-            raise(ValueError, "get_pulses is not enabled")
+            raise ValueError("get_pulses is not enabled")
         self.get_done = False
         self.sm_get.restart()
-        self.sm_get.put(start_timeout)  # set the start timeout
-        self.sm_get.put(len(buffer))  # set number of pulses
-        self.sm_get.put(bit_timeout)  # set the bit timeout
-
+        self.sm_get.put(start_timeout)
+        self.sm_get.put(len(buffer))
+        self.sm_get.put(bit_timeout)
         self.sm_get.active(1)
-        start_state = self.sm_get.get()  # get the start state
-        # rp2_util.sm_dma_get(0, 0, buffer, len(buffer))
-        # while (rp2_util.sm_dma_count(0)) > 0:
-            # pass
-        self.sm_get.get(buffer)  # get data
+        start_state = self.sm_get.get()
+        self.sm_get.get(buffer)
         self.sm_get.active(0)
-        buffer[0] = bit_timeout - buffer[0] + 7  # scale the first value
-        for i in range(1, len(buffer)):  # scale the other values
+        buffer[0] = bit_timeout - buffer[0] + 7
+        for i in range(1, len(buffer)):
             buffer[i] = bit_timeout - buffer[i] + 3
         return start_state
-
-    def put_pulses(self, buffer, start_level=1):
-        if self.sm_put is None:
-            raise(ValueError, "put_pulses is not enabled")
-        self.put_done = False
-        print(buffer)
-        # compensate handling time
-        for i in range(len(buffer)):
-            buffer[i] = max(0, buffer[i] - 7)
-        self.sm_put.restart()
-        self.sm_put.active(1)
-        self.sm_put.put(len(buffer))   # tell the size
-        self.sm_put.put(start_level != 0) # tell the start level
-        # self.sm_put.put(buffer)        # send the pulse train
-        rp2_util.sm_dma_put(0, 4, buffer, len(buffer))
-        while self.put_done is False:  # and wait for getting is done
-            time.sleep_us(1)
-
-        self.sm_put.active(0)
-
-
-#
-# Instantiate the class
-#
-
-#pulses = Pulses(machine.Pin(10, machine.Pin.IN), machine.Pin(11, machine.Pin.OUT), sm_freq=1_000_000)
-
-#
-# two test functions
-#
-'''
-def get(samples=10, start_timeout=100_000, bit_timeout=100_000):
-    global pulses
-    ar = array.array("I", bytearray(samples * 4))
-    start = pulses.get_pulses(ar, start_timeout, bit_timeout)
-    print("Start state: ", start)
-    print(pulses.get_done, ar)
-
-def put(pattern="10 20 30 40", start=1):
-    global pulses
-    v = [int(i) for i in pattern.strip().split()]
-    ar = array.array("I", v)
-    pulses.put_pulses(ar, start)
-    print(pulses.put_done)
-
-get()
-put()
-'''
