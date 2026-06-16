@@ -11,7 +11,7 @@ Thus, the reasoning to develop an electromechanical damping framework was formed
 
 ## How does it work?
 
-Before the ball is received, the robot extends the kicker head with a low power kick, and then is held at the minimum required force to remain extended (Note: this increases slightly as you deplete your capacitor banks). The holding force is accomplished by pulsing the IGBT with a PWM signal with a duty cycle equal to just above the threshold where the kicker head would otherwise collapse back into the robot. 
+Before the ball is received, the robot extends the kicker head with a low power kick, and then is held at the minimum required force to remain extended. The holding force is accomplished by pulsing the IGBT with a PWM signal with a duty cycle equal to just above the threshold where the kicker head would otherwise collapse back into the robot. 
 
 Once the ball (weighing 45 grams) contacts the plunger (weighing 60 grams), the inertia from the ball transfers to the plunger, making it retract fully into the robot without enough energy for re-extension. The ball then rolls towards the dribbler with any remaining energy left, allowing for operation even without a dribbler or even better control with a simple dribbler which are both very acheiveable for new teams.
 
@@ -31,54 +31,42 @@ What we are achieving here is somewhere in the middle, a partially inelastic col
 
 From our inconclusive tests 1 and 3 shown on our 2026 TDP where the ball bounced off the robot, it can be observed that the plunger re-extends (due to microcontroller inaccuracy), causing a significantly more elastic collision than expected. This can be verified using momentum math, expecting a perfect damping to produce a coefficient of restitution (e, a measure of inelastic collision) proportional to the masses of the ball to the plunger. 
 
+### Momentum Transfer Equations
+
 Looking at the velocities of the ball on impact shown on the TDP, we can calculate this coefficient based on the momentum transfer equation, where the coefficient of restitution (e) is defined by the difference in separation velocity (post collision) divided by the difference in incoming velocity (only the ball is moving pre-collision):
 
 $$e = \frac{v'_{plunger} - v'_{ball}}{v_{ball}}$$
 
-therefore
+Next, the unknown plunger velocity after the collision can be written in terms of e:
 $$v'_{plunger} = e \cdot v_{ball} + v'_{ball}$$
 
 Using the momentum transfer equation below, we can substitute in the equation for $$v'_{plunger}$$ in terms of e into the equation below:
 $$m_{ball} v_{ball} = m_{ball} v'_{ball} + m_{plunger} v'_{plunger}$$
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
-Combining these equations, we can calculate the ball velocity after the collision knowing the coefficient of restitution.
-$$v'_{ball} = \frac{m_{ball} - e \cdot m_{plunger}}{m_{ball} + m_{plunger}} \cdot v_{ball}$$
-
-However, as the coefficient is unknown, we can calculate it in reverse as we have simulated known values from our testing:
-
-$$((m_{ball} \cdot v_{ball} - m_{ball} \cdot v'_{ball})/m_{plunger} -v'_{ball})/v_{ball} =  e $$
-
- ((0.045 * 3 - 0.045 * 0.26)/0.060 - 0.26)/3= 0.598 (effectively lower due to re-extension of plunger)
- ((0.045 * 2.7 - 0.045 * 0)/0.060 - 0)/2.7 = 0.75 (good test)
- ((0.045 * 5.3 - 0.045 * 0.4)/0.060 - 0.4)/5.3 = 0.617 (effectively lower due to re-extension of plunger)
+In the case of a perfectly damped test, the ball velocity after collision is zero or slightly negative (implying it rolls with topspin), therefore we know that e must be above the following ratio of ball to plunger weight:
+$$ e = \frac{m_{ball}}{m_{plunger}} = \frac{0.045kg}{0.060kg} = 0.75 $$
 
 ### Test Summary
 
+Combining these equations, we can calculate the effective coefficient of restitution (e) for the inconclusive tests shown on our TDP, which prove that the kicker head re-extended increasing the force on the ball:
+$$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v_{ball}}$$
+
 | Test No. | Input Velocity ($v_{in}$) | Output Velocity ($v_{out}$) | Calculated Effective e |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | 3.0 m/s | 0.26 m/s | **0.5373** |
-| **2** | 2.7 m/s | -0.05 m/s | **0.7500** |
-| **3** | 5.3 m/s | 0.40 m/s | **0.5283** |
+| **1** | 3.0 m/s | 0.26 m/s | 0.598 |
+| **2** | 2.7 m/s | 0 m/s | 0.7500 |
+| **3** | 5.3 m/s | 0.40 m/s | 0.617|
 
----
+## Future Work and Recommendations
 
-### Proof: Why Test 2 Worked Perfectly
+As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force to required overcome and collapse the plunger. This in turn will decrease the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot.
 
-For the ball to come to a complete, perfect standstill, its final velocity must equal zero ($v_{out} = 0$). Looking at the numerator of our formula, this only happens when:
+Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section. For reference to the PWM code written in micropython, you can refer to this snippet included in the folder, or the main firmware included in the chicker firmware folder.
 
-$$m_{ball} - e \cdot m_{plunger} = 0$$
+## Open Source License
 
-If we isolate $e$ for your exact physical system parameters:
-
-$$e = \frac{m_{ball}}{m_{plunger}} = \frac{45\text{g}}{60\text{g}} = 0.75$$
-
-Because Test 2's active damping system perfectly countered the impact mechanics to yield an effective $e$ of **exactly 0.75**, the numerator became zero, forcing $v_{out}$ to $0\text{ m/s}$. This mathematically proves why the middle test succeeded perfectly where the others fell short.
-
-## Recommendations
-
-As each team's robot will be slightly different, it is important to note that the active damping described here may differ in implementation due to the plunger weight. The heavier the plunger, the larger the force (and subsequently momentum) required to collapse the plunger. What this means is that with a heavier plunger the ball will remain in contact with the plunger longer, effectively raising the coefficient of restitution (e) (a measure of inelastic collision), and the ball will bounce off the plunger with increasing velocity.
-
+This work is open-sourced with the MIT license, please refer to the license file for more details.
 
 
 
