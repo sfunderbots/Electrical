@@ -38,10 +38,13 @@ Looking at the velocities of the ball on impact shown on the TDP, we can calcula
 $$e = \frac{v'_{plunger} - v'_{ball}}{v_{ball}}$$
 
 Next, the unknown plunger velocity after the collision can be written in terms of e:
+
 $$v'_{plunger} = e \cdot v_{ball} + v'_{ball}$$
 
 Using the momentum transfer equation below, we can substitute in the equation for $$v'_{plunger}$$ in terms of e into the equation below:
+
 $$m_{ball} v_{ball} = m_{ball} v'_{ball} + m_{plunger} v'_{plunger}$$
+
 $$m_{ball} \cdot v_{ball} = m_{ball} \cdot v'_{ball} + m_{plunger}(e \cdot v_{ball} + v'_{ball})$$
 
 In the case of a perfectly damped test, the ball velocity after collision is zero or slightly negative (implying it rolls with topspin), therefore we know that e must be above the following ratio of ball to plunger weight:
