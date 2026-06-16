@@ -28,7 +28,7 @@ Then, some nonzero waiting time should be applied to allow the mechanical system
 
 Once the mechanical system has actuated the plunger, the PWM will be applied to the IGBT. Choosing a frequency for the PWM signal is somewhat important, as it will slightly change the audible sound from the robot, but will only matter depending on the accuracy of your microcontroller timer and any minimum limitations for pulse width. Higher frequencies (20kHz +) are recommended if you are able to achieve very accurate pulse widths for each switching cycle, with our initial goal to raise the frequency outside the audible range of the human ear. Due to the limitations on the RP2040 at the time, this was not achievable. 
 
-Code snippets for the firmware are available in this folder with relevant pwm code for the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [
+Code snippets for the firmware are available in this folder with relevant pwm code for the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [Chicker/firmware/main.py](https://github.com/sfunderbots/Electrical/edit/main/Chicker/firmware/main.py)
 
 ---
 ## Rough Dynamic Model
