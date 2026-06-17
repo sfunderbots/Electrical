@@ -29,7 +29,7 @@ charging = 0
 CHG_WAIT = 5000
 
 
-DAMP_INITIAL_KICK_US = 500_000   # 500*1000us for visualization, change to 500us for real use
+DAMP_INITIAL_KICK_US = 500   # 500*1000us for visualization on an LED, change to 500us for real use
 
 DAMP_STATE_KICK   = 0
 DAMP_STATE_SETTLE = 1
@@ -47,9 +47,6 @@ MODE_CHARGE = 3
 mode = 3 # automatically boot into charge mode to keep caps charged. and make sure there is no booting bug
 
 prev_mode = 0
-
-
-
 
 def idle():
     # Pseudo: Charging disabled, auto-discharge enabled, caps are discharged. Useful for time-outs or long periods of waiting to save battery life
