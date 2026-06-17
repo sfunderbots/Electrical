@@ -95,12 +95,10 @@ From these adapted tests we found significant improvement to ball reception capa
 
 Videos from our recent testing can be seen in the Testing Videos folder on this repository. Below, you can see two frames from the testing captured, one where the ball contacts the plunger, and the next where the plunger retracts and the ball ends up from a perfect damping receive.
 
-<p align="center">
-<div style="display: flex; gap: 10px;">
-  <img width="752" height="661" alt="Image" src="https://github.com/user-attachments/assets/e127af5f-b590-4f8e-a67b-e10ee46ee322" style="flex: 1; width: 30%;" />
-  <img width="748" height="656" alt="Image" src="https://github.com/user-attachments/assets/cf8b383b-95c0-4115-bc06-1626adeb3b07" style="flex: 1; width: 30%;" />
+<div align="center">
+  <img width="30%" alt="Image" src="https://github.com/user-attachments/assets/e127af5f-b590-4f8e-a67b-e10ee46ee322" />
+  <img width="30%" alt="Image" src="https://github.com/user-attachments/assets/cf8b383b-95c0-4115-bc06-1626adeb3b07" />
 </div>
-</p>
 
 
 ## Future Work and Recommendations
