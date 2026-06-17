@@ -93,6 +93,8 @@ Further testing was completed sometime around March of this year, from which we 
 
 From these adapted tests we found significant improvement to ball reception capabilities - with the ball either stopping dead at the mouth of the robot, or bouncing less than one robot diameter away - with similar input velocities as shown above. 
 
+Videos from our recent testing can be seen in the Videos folder on this repository.
+
 ## Future Work and Recommendations
 
 As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force required overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision. In reality, the momentum math should be time dependent and an instantaneous collision should not be analyzed here - however, with extremely low holding force on the plunger due to the minimal plunger weight, this additional friction was ignored. 
