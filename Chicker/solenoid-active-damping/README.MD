@@ -1,5 +1,5 @@
 # Solenoid Active Damping
-> An Electromechanical ball damping method for SSL robots that uses existing kicker hardware, without any mechanical mechanisms required.
+> An electromechanical ball damping method for SSL robots that uses existing kicker hardware, without any costly and complex mechanical mechanisms required. This decouples the ball receiving damping from the ball holding damping needed for dribbling.
 
 ---
 ## Motivation
@@ -87,17 +87,17 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 
 With any coefficient above $\frac{m_{ball}}{m_{plunger}}$, the ball would bounce off (more of an elastic collision), and at or below this threshold the damping is considered successful. While a failed attempt at damping the ball is immediately obvious, this method of calculating the coefficient can be useful to determine how far from ideal the collision was, and to determine if the failure was velocity dependent or not. In our case, we can clearly see that two tests were captured at near 3 m/s, and both produced different results - thus, these results prove a non-velocity dependent factor, which in our case we know to be the re-extension of the plunger. 
 
-### Discussion
+### Discussion on further testing
 
 Further testing was completed sometime around March of this year, from which we noticed the plunger collapsing with enough time elapsed. This is due to the slow depletion of the high voltage net on the chicker board, which discharges at about 30V/s. Increasing the force over time was accomplished by modifying the code shown in this folder which has a tuned constant to increase the PWM duty cycle over time. 
 
 From these adapted tests we found significant improvement to ball reception capabilities - with the ball either stopping dead at the mouth of the robot, or bouncing less than one robot diameter away - with similar input velocities as shown above. 
 
-Videos from our recent testing can be seen in the Videos folder on this repository.
+Videos from our recent testing can be seen in the Testing Videos folder on this repository.
 
 ## Future Work and Recommendations
 
-As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force required overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision. In reality, the momentum math should be time dependent and an instantaneous collision should not be analyzed here - however, with extremely low holding force on the plunger due to the minimal plunger weight, this additional friction was ignored. 
+As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force required to overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision. In reality, the momentum math should be time dependent and an instantaneous collision should not be analyzed here - however, with extremely low holding force on the plunger due to the minimal plunger weight, this additional friction was ignored. 
 
 > [!WARNING]
 > Depending on your team's plunger weight, you will have to tune the duty cycle of the PWM to hold the plunger out, as described by the Firmware section, which may also affect the quality of the damping performance. 
