@@ -69,7 +69,7 @@ In the case of a perfectly damped test, the ball velocity after collision is zer
 
 $$ e = \frac{m_{ball}}{m_{plunger}} = \frac{0.045kg}{0.060kg} = 0.75 $$
 
-### Test Summary
+### Test Summary from TDP results
 
 Combining these equations, we can calculate the effective coefficient of restitution (e) for the inconclusive tests shown on our TDP, which prove that the kicker head re-extended increasing the force on the ball:
 
