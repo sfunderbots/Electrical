@@ -95,7 +95,7 @@ From these adapted tests we found significant improvement to ball reception capa
 
 Videos from our recent testing can be seen in the Testing Videos folder on this repository. Below, you can see two frames from the testing captured, one where the ball contacts the plunger, and the next where the plunger retracts and the ball ends up from a perfect damping receive.
 
-https://github.com/sfunderbots/Electrical/issues/8
+![image](https://github.com/sfunderbots/Electrical/issues/8)
 
 ## Future Work and Recommendations
 
