@@ -58,6 +58,12 @@ $$e = \frac{\frac{m_{ball}}{m_{plunger}} ( v_{ball} -  v'_{ball}) - v'_{ball}}{v
 | **2** | 2.7 m/s | 0 m/s | 0.7500 |
 | **3** | 5.3 m/s | 0.40 m/s | 0.617|
 
+### Discussion
+
+Further testing was completed sometime around March of this year, from which we noticed the plunger collapsing with enough time elapsed. This is due to the slow depletion of the high voltage net on the chicker board, which discharges at about 30V/s. Increasing the force over time was accomplished by modifying the code shown in this folder which has a tuned constant to increase the PWM duty cycle over time. 
+
+From these adapted tests we found significant improvement to ball reception capabilities - with the ball either stopping dead at the mouth of the robot, or bouncing less than one robot diameter away - with similar input velocities as shown above. 
+
 ## Future Work and Recommendations
 
 As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force to required overcome and collapse the plunger. This in turn will decrease the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot.
