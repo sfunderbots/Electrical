@@ -95,6 +95,8 @@ From these adapted tests we found significant improvement to ball reception capa
 
 Videos from our recent testing can be seen in the Testing Videos folder on this repository. Below, you can see two frames from the testing captured, one where the ball contacts the plunger, and the next where the plunger retracts and the ball ends up from a perfect damping receive.
 
+https://github.com/sfunderbots/Electrical/issues/8
+
 ## Future Work and Recommendations
 
 As this math only pertains to a perfect collision with minimal friction, it would be important to model and understand the static friction needed to overcome the holding force of the solenoid. This will vary based on the plunger weight, as the heavier the plunger, the more force required to overcome and collapse the plunger. This in turn will increase the coefficient of restitution as there is more contact time with the plunger, where the ball will start to bounce off of the robot with more of an elastic collision. In reality, the momentum math should be time dependent and an instantaneous collision should not be analyzed here - however, with extremely low holding force on the plunger due to the minimal plunger weight, this additional friction was ignored. 
