@@ -39,7 +39,7 @@ Once the mechanical system has actuated the plunger, the PWM will be applied to 
 
 Code snippets for the firmware are available in this folder with relevant pwm code for solenoid active damping on the RP2040 in micropython with the rest being abstracted away. The full code can be viewed under [Chicker/firmware/main.py](https://github.com/sfunderbots/Electrical/edit/main/Chicker/firmware/main.py)
 
-The library used in this code to send a PWM instruction is in the file `pulses.py`, which uses a PIO implementation of PWM. The function used is a modified version of `put_pulses()` which generates a PWM object with a specified frequency, duty cycle, and duration through the RP2040 PIO state machine. 
+The library used in this code to send a PWM instruction is in the file `pulses.py`, which uses a PIO implementation of PWM. The function used is `put_pwm_v2()`, which is a modified version of `put_pulses()` which generates a PWM object with a specified frequency, duty cycle, and duration through the RP2040 PIO state machine. 
 
 ---
 ## Rough Dynamic Model
