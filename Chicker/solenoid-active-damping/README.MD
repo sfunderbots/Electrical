@@ -93,7 +93,7 @@ Further testing was completed sometime around March of this year, from which we 
 
 From these adapted tests we found significant improvement to ball reception capabilities - with the ball either stopping dead at the mouth of the robot, or bouncing less than one robot diameter away - with similar input velocities as shown above. 
 
-Videos from our recent testing can be seen in the Testing Videos folder on this repository.
+Videos from our recent testing can be seen in the Testing Videos folder on this repository. Below, you can see two frames from the testing captured, one where the ball contacts the plunger, and the next where the plunger retracts and the ball ends up from a perfect damping receive.
 
 ## Future Work and Recommendations
 
