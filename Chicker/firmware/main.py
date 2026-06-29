@@ -158,7 +158,7 @@ def stop_damp_pwm():
         pwm.deinit()
         pwm = None
         kick_pulses_need_reinit = True
-    KICK.init(Pin.OUT, value=0)
+        KICK.init(Pin.OUT, value=0)
 
 
 def send_kick_pulse(width_us):
@@ -171,6 +171,13 @@ def send_kick_pulse(width_us):
     start = 0
     ar = array("L", pattern)
     pulses.put_pulses(ar, start)
+
+
+def kick_pulse_width_from_data(kick_data):
+    if isinstance(kick_data, int):
+        return kick_data
+
+    return int.from_bytes(bytes(kick_data[1:3]), "little")
 
 
 def start_damp_pwm(freq_hz, duty_percent):
@@ -281,7 +288,7 @@ def kick():
         else:
             kick_data_rec = 1
             chg_stop_mode_ctrl = 1
-            pulse_width = pulse_freq
+            pulse_width = kick_pulse_width_from_data(data)
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
 
