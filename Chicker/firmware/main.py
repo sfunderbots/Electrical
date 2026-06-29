@@ -92,7 +92,7 @@ idling = 0
 kicking = 0
 damping = 0
 charging = 0
-kick_pulses_need_reinit = False
+kick_pulses_need_reinit = True
 
 startup_chg = 0
 startup_chg_wait = 0
@@ -174,10 +174,7 @@ def send_kick_pulse(width_us):
 
 
 def kick_pulse_width_from_data(kick_data):
-    if isinstance(kick_data, int):
-        return kick_data
-
-    return int.from_bytes(bytes(kick_data[1:3]), "little")
+    return kick_data
 
 
 def start_damp_pwm(freq_hz, duty_percent):
@@ -218,7 +215,7 @@ def apply_command_frame(can_id, payload):
         if BREAKBEAM.value() == 0:
             data = pulse_freq
         else:
-            stored_prekick_can_data = payload
+            stored_prekick_can_data = pulse_freq
             new_can_data_bool = True
         can_rx_time = utime.ticks_ms()
         print("KICK COMMAND RECEIVED")
