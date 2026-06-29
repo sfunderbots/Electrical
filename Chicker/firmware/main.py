@@ -6,7 +6,7 @@ from battery import Voltages
 import utime
 from high_voltage import SenseHV
 import sys, select
-import pulses
+import pulses as pulses_module
 
 from canbus import Can, CanError, CanMsg, CanMsgFlag
 
@@ -137,12 +137,24 @@ class FakeCANData:
         return len(self.data)
 
 
+def reinit_kick_pulses():
+    pulses.sm_put.active(0)
+    pulses.sm_put.init(
+        pulses_module.Pulses.sm_put_pulses,
+        freq=1_000_000,
+        out_base=KICK,
+    )
+    pulses.sm_put.irq(pulses.irq_finished)
+    KICK.value(0)
+
+
 def stop_damp_pwm():
     global pwm
 
     if pwm is not None:
         pwm.deinit()
         pwm = None
+        reinit_kick_pulses()
     KICK.value(0)
 
 
@@ -428,8 +440,8 @@ def breakbeam_handler(pin):
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
 
-#kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, 1_000_000)
+#kickpulse = pulses_module.Pulses(None, KICK, 1_000_000)
+pulses = pulses_module.Pulses(None, KICK, 1_000_000)
 
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
