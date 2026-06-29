@@ -92,6 +92,7 @@ idling = 0
 kicking = 0
 damping = 0
 charging = 0
+kick_pulses_need_reinit = False
 
 startup_chg = 0
 startup_chg_wait = 0
@@ -138,6 +139,8 @@ class FakeCANData:
 
 
 def reinit_kick_pulses():
+    global kick_pulses_need_reinit
+
     pulses.sm_put.active(0)
     pulses.sm_put.init(
         pulses_module.Pulses.sm_put_pulses,
@@ -145,21 +148,24 @@ def reinit_kick_pulses():
         out_base=KICK,
     )
     pulses.sm_put.irq(pulses.irq_finished)
-    KICK.value(0)
+    kick_pulses_need_reinit = False
 
 
 def stop_damp_pwm():
-    global pwm
+    global pwm, kick_pulses_need_reinit
 
     if pwm is not None:
         pwm.deinit()
         pwm = None
-        reinit_kick_pulses()
-    KICK.value(0)
+        kick_pulses_need_reinit = True
+    KICK.init(Pin.OUT, value=0)
 
 
 def send_kick_pulse(width_us):
     stop_damp_pwm()
+
+    if kick_pulses_need_reinit:
+        reinit_kick_pulses()
 
     pattern = (8, width_us, 8)
     start = 0
