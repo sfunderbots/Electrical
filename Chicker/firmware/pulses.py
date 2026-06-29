@@ -116,7 +116,7 @@ class Pulses:
 
     @staticmethod
     @rp2.asm_pio(
-        out_init=rp2.PIO.OUT_LOW ,
+        out_init=rp2.PIO.OUT_HIGH ,
         out_shiftdir=rp2.PIO.SHIFT_RIGHT,
         autopull=False,
         pull_thresh=PUT_WORD_SIZE
