@@ -106,6 +106,12 @@ can_rx_time = None
 AUTOKICK_EXPIRE_THRESH_MS = 2000
 stored_prekick_can_data = None
 DAMP_INITIAL_PULSEWIDTH = 500
+DAMP_CATCH_MS = 120
+DAMP_CATCH_DUTY_BOOST = 2
+DAMP_MAX_DUTY = 5
+DAMP_ADJUST_PERIOD_MS = 25
+DAMP_NOMINAL_HV = 210
+DAMP_MIN_HV = 60
 
 offset = 1000_000
 
@@ -155,6 +161,13 @@ def start_damp_pwm(freq_hz, duty_percent):
     stop_damp_pwm()
     pwm = PWM(KICK)
     pwm.freq(freq_hz)
+    pwm.duty_u16((duty_percent * 65535) // 100)
+
+
+def set_damp_pwm_duty(duty_percent):
+    if pwm is None:
+        return
+
     pwm.duty_u16((duty_percent * 65535) // 100)
 
 
@@ -333,6 +346,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
     global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
     global mode, prev_mode, startup_chg, not_dischg, chg_stop_mode_ctrl
+    global prev_time_HV, HV_voltage
 
     idling = 0
     kicking = 0
@@ -349,25 +363,28 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         # utime.ticks_us() works!
         prev_time_damp = utime.ticks_ms()
         prev_time_damp_us = utime.ticks_us()
+        prev_time_HV = utime.ticks_ms()
         
         # Initial Kick (to put plunger out)
         send_kick_pulse(DAMP_INITIAL_PULSEWIDTH)
-
-        damp_period = int((1 / damp_freq) * 1000_000)
-        damp_on_time = int(damp_period * (damp_duty_percent / 100.0))
-
-        if (damp_on_time > 5000):
-            damp_on_time = 5000
-
-        print("Damp period", damp_period)
-        print("Damp on time", damp_on_time)
+        catch_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST))
         print("Damp Frequency", damp_freq)
+        print("Damp catch duty", catch_duty)
+        print("Damp hold duty", damp_duty_percent)
     else:
         if (utime.ticks_ms() - prev_time_damp < damp_timeout):
             if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH * 15):
                 if pwm is None:
-                    start_damp_pwm(damp_freq, damp_duty_percent)
+                    start_damp_pwm(damp_freq, min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST)))
                     CAN_LED.on()
+                elif (utime.ticks_ms() - prev_time_damp >= DAMP_CATCH_MS):
+                    if (utime.ticks_ms() - prev_time_HV >= DAMP_ADJUST_PERIOD_MS):
+                        prev_time_HV = utime.ticks_ms()
+                        HV_voltage = SenseHV()
+
+                    adjusted_duty = int((damp_duty_percent * DAMP_NOMINAL_HV) / max(HV_voltage, DAMP_MIN_HV))
+                    adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
+                    set_damp_pwm_duty(adjusted_duty)
         else :
             stop_damp_pwm()
             CAN_LED.off()
@@ -402,12 +419,11 @@ def chg():
 def breakbeam_handler(pin):
     global new_can_data_bool, data, stored_prekick_can_data
     if not pin.value():
-        #CAN_LED.value(1)   # Rising edge: turn on LED
+        CAN_LED.value(1)
         if new_can_data_bool: # Only kick if armed
             data = stored_prekick_can_data
     else:
-        pass
-        #CAN_LED.value(0)  # Falling edge: turn off LED
+        CAN_LED.value(0)
 
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
