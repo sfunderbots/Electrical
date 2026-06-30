@@ -92,7 +92,9 @@ idling = 0
 kicking = 0
 damping = 0
 charging = 0
-kick_pulses_need_reinit = True
+# The PIO pulse state machine is initialized at boot. It only needs reinit
+# after damping PWM has owned the KICK pin.
+kick_pulses_need_reinit = False
 
 startup_chg = 0
 startup_chg_wait = 0
@@ -174,7 +176,10 @@ def send_kick_pulse(width_us):
 
 
 def kick_pulse_width_from_data(kick_data):
-    return kick_data
+    if isinstance(kick_data, int):
+        return kick_data
+
+    return int.from_bytes(bytes(kick_data[1:3]), "little")
 
 
 def start_damp_pwm(freq_hz, duty_percent):
