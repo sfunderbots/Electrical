@@ -698,13 +698,25 @@ while True:
                             #print(utime.ticks_ms()/1000, done_state)
                             print("charge toggle complete on DONE input, waiting")
                     else :
-                        chg_disable_chip_level = 1
-                        prev_time_charge_disabled = utime.ticks_ms()
-                        if (safe_charge == 0):
-                            #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
-                        #else :   
-                            print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
-                            print("Retrying in 30 seconds")
+                        HV_voltage = SenseHV()
+                        if (HV_voltage >= CHARGE_ALREADY_FULL_HV):
+                            charge_started = 1
+                            charge = 0
+                            charge_toggle_wait = 1
+                            check_3s_done = 1
+                            prev_time_chg_wait = utime.ticks_ms()
+                            prev_time_start_chg = prev_time_chg_wait
+                            chg_disable_chip_level = 0
+                            not_dischg = 1
+                            print("DONE high, HV already charged; skipping top-off")
+                        else :
+                            chg_disable_chip_level = 1
+                            prev_time_charge_disabled = utime.ticks_ms()
+                            if (safe_charge == 0):
+                                #print("Safe Charge mode active, charged to 50V and stopped. Need to power cycle to restart safe charge")
+                            #else :   
+                                print("DONE is still high - Potential reasons: Undervoltage Lockout, Thermal Shutdown")
+                                print("Retrying in 30 seconds")
                 
             # wait for charge cycle to do the charge toggle every three seconds
             elif (charge_started == 1):
