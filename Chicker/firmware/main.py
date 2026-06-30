@@ -115,6 +115,10 @@ DAMP_MAX_DUTY = 5
 DAMP_ADJUST_PERIOD_MS = 25
 DAMP_NOMINAL_HV = 210
 DAMP_MIN_HV = 60
+KICK_NOMINAL_HV = 210
+KICK_MIN_SCALE_HV = 150
+CHARGE_START_CHECK_MS = 50
+CHARGE_RETRY_MS = 30000
 
 offset = 1000_000
 
@@ -180,6 +184,41 @@ def kick_pulse_width_from_data(kick_data):
         return kick_data
 
     return int.from_bytes(bytes(kick_data[1:3]), "little")
+
+
+def clamp_kick_pulse_width(width_us):
+    if (width_us > 5000):
+        print("Pulse duration too long, setting to 5000us")
+        return 5000
+    elif (width_us < 0):
+        return 0
+
+    return width_us
+
+
+def scale_kick_pulse_width(width_us):
+    HV_voltage = SenseHV()
+
+    if (HV_voltage >= KICK_MIN_SCALE_HV):
+        width_us = int((width_us * KICK_NOMINAL_HV) / HV_voltage)
+
+    return clamp_kick_pulse_width(width_us)
+
+
+def request_charge_cycle():
+    global charge, charge_toggle_wait, prev_time_start_chg, startup_vcc_wait, startup_cycle
+    global charge_started, check_3s_done, startup_chg, startup_chg_2sdelay, not_dischg
+
+    charge = 0
+    charge_toggle_wait = 0
+    prev_time_start_chg = utime.ticks_ms()
+    startup_vcc_wait = 0
+    startup_cycle = 1
+    charge_started = 0
+    check_3s_done = 0
+    startup_chg = 0
+    startup_chg_2sdelay = 0
+    not_dischg = 1
 
 
 def start_damp_pwm(freq_hz, duty_percent):
@@ -295,22 +334,14 @@ def kick():
             new_can_data_bool = False
 
             #{HV_voltage, HV_scaling} = SenseHV()
-            # HV Pulse width adjustment
-            #HV_scaling = 1
-            pulse_width_adjusted = pulse_width
-            delay_time_us_temp = pulse_width_adjusted
+            delay_time_us_temp = clamp_kick_pulse_width(pulse_width)
             #CAN_LED.value(0)
-
-            if (delay_time_us_temp > 5000) :
-                delay_time_us_temp = 5000 # set a limit to the delay time
-                print("Pulse duration too long, setting to 5000us")
-            elif (delay_time_us_temp < 0):
-                delay_time_us_temp = 0
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     else :
         if (done_state == 0):
             prev_kick_time = utime.ticks_ms()
-            delay_time_us = delay_time_us_temp
+            pulse_width_adjusted = scale_kick_pulse_width(delay_time_us_temp)
+            delay_time_us = pulse_width_adjusted
             kick_data_rec = 0
             data = None
         # charging still, wait till charging stopped from charge STOP to kick.
@@ -322,7 +353,8 @@ def kick():
         kick_cooldown = 1
         send_kick_pulse(delay_time_us)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
-        startup_chg_2sdelay = 1
+        request_charge_cycle()
+        chg_stop_mode_ctrl = 0
         print("just kicked")
             
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
@@ -625,6 +657,12 @@ while True:
         done_sim = 1
         #startup_cycle = 0
 
+    if (chg_disable_chip_level == 1 and safe_charge == 0 and charge_ok == 1):
+        if (utime.ticks_ms() - prev_time_charge_disabled >= CHARGE_RETRY_MS):
+            chg_disable_chip_level = 0
+            request_charge_cycle()
+            print("charge retry reset after timeout")
+
         
     '''Note,
 
@@ -706,7 +744,7 @@ while True:
                         
             # charge_toggle wait is 1 and charge_started is 0, implying a "started" charge cycle, need to check
             # check after 50ms if done actually toggles high, implying good flyback chip
-            elif (utime.ticks_ms() - prev_time_chg_wait >= 10): # previous bug here would check and fail. works at 15s because it takes ~200ms to charge, where 50ms is just enough , but 5s does not, because DONE would go high then go low again before it would check
+            elif (utime.ticks_ms() - prev_time_chg_wait >= CHARGE_START_CHECK_MS): # previous bug here would check and fail. works at 15s because it takes ~200ms to charge, where 50ms is just enough , but 5s does not, because DONE would go high then go low again before it would check
                 if(done_state == 1):
                     # good
                     charge_started = 1 # variable for the 5s timeout check
