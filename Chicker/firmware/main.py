@@ -1,12 +1,11 @@
 from machine import Pin, ADC, PWM
-from array import array
+import machine
 import math
 import random
 from battery import Voltages
 import utime
 from high_voltage import SenseHV
 import sys, select
-import pulses
 
 from canbus import Can, CanError, CanMsg, CanMsgFlag
 
@@ -144,16 +143,18 @@ def stop_damp_pwm():
     if pwm is not None:
         pwm.deinit()
         pwm = None
+    KICK.init(Pin.OUT)
     KICK.value(0)
 
 
 def send_kick_pulse(width_us):
     stop_damp_pwm()
 
-    pattern = (8, width_us, 8)
-    start = 0
-    ar = array("L", pattern)
-    kickpulse.put_pulses(ar, start)
+    irq_state = machine.disable_irq()
+    KICK.value(1)
+    utime.sleep_us(width_us)
+    KICK.value(0)
+    machine.enable_irq(irq_state)
 
 
 def start_damp_pwm(freq_hz, duty_percent):
@@ -452,8 +453,6 @@ def breakbeam_handler(pin):
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
 
-kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
     
@@ -560,12 +559,7 @@ while True:
         prev_time_wait_chg = utime.ticks_ms()
         charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
-        pattern=(8, 8, 8)
-        start=0
-        ar = array("L", pattern)
-        kickpulse.put_pulses(ar,start)
-        #print(ledpulse.put_done)
-        #print(kickpulse.put_done)
+        send_kick_pulse(8)
         CAN_LED.value(0)
         stop_damp_pwm()
         CHIP.value(0)
