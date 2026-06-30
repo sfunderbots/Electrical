@@ -119,6 +119,7 @@ KICK_NOMINAL_HV = 210
 KICK_MIN_SCALE_HV = 150
 CHARGE_START_CHECK_MS = 50
 CHARGE_RETRY_MS = 30000
+CHARGE_ALREADY_FULL_HV = 205
 
 offset = 1000_000
 
@@ -752,13 +753,25 @@ while True:
                     #print(utime.ticks_ms()/1000, done_state)
                     print("charge started (DONE toggles high properly)")
                 else :
-                    # not good, disable charging
-                    charge_started = 0
-                    chg_disable_chip_level = 1
-                    prev_time_charge_disabled = utime.ticks_ms()
-                    #print(utime.ticks_ms()/1000, done_state)
-                    print("charging was disabled, no high DONE signal received: no charge cycle started")
-                    print("Retrying in 30 seconds")
+                    HV_voltage = SenseHV()
+                    if (HV_voltage >= CHARGE_ALREADY_FULL_HV):
+                        charge_started = 1
+                        charge = 0
+                        charge_toggle_wait = 1
+                        check_3s_done = 1
+                        prev_time_chg_wait = utime.ticks_ms()
+                        prev_time_start_chg = prev_time_chg_wait
+                        chg_disable_chip_level = 0
+                        not_dischg = 1
+                        print("DONE stayed low, HV already charged; skipping top-off")
+                    else :
+                        # not good, disable charging
+                        charge_started = 0
+                        chg_disable_chip_level = 1
+                        prev_time_charge_disabled = utime.ticks_ms()
+                        #print(utime.ticks_ms()/1000, done_state)
+                        print("charging was disabled, no high DONE signal received: no charge cycle started")
+                        print("Retrying in 30 seconds")
         #else:
         #    charge = 0
         #    charge_started = 0 # reset charge_started to zero for the next charge cycle

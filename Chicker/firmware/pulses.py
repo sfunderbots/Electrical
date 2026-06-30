@@ -186,11 +186,11 @@ class Pulses:
         for i in range(len(buffer)):
             buffer[i] = max(0, buffer[i] - 7)
         self.sm_put.restart()
-        self.sm_put.active(1)
         self.sm_put.put(len(buffer))   # tell the size
         self.sm_put.put(start_level != 0) # tell the start level
         # self.sm_put.put(buffer)        # send the pulse train
         rp2_util.sm_dma_put(0, 4, buffer, len(buffer))
+        self.sm_put.active(1)
         while self.put_done is False:  # and wait for getting is done
             time.sleep_us(1)
 
