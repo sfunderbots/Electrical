@@ -143,6 +143,7 @@ def stop_damp_pwm():
     if pwm is not None:
         pwm.deinit()
         pwm = None
+    KICK.init(Pin.OUT)
     KICK.value(0)
 
 
@@ -169,6 +170,25 @@ def set_damp_pwm_duty(duty_percent):
         return
 
     pwm.duty_u16((duty_percent * 65535) // 100)
+
+
+def stop_charging_now():
+    global charge, charge_started, charge_toggle_wait, check_3s_done, startup_cycle
+
+    charge = 0
+    charge_started = 0
+    charge_toggle_wait = 0
+    check_3s_done = 0
+    startup_cycle = 0
+    CHARGE.value(0)
+
+
+def schedule_recharge_after_kick():
+    global startup_chg_2sdelay, startup_vcc_wait
+
+    stop_charging_now()
+    startup_chg_2sdelay = 1
+    startup_vcc_wait = 0
 
 
 def apply_command_frame(can_id, payload):
@@ -263,6 +283,7 @@ def kick():
         else:
             kick_data_rec = 1
             chg_stop_mode_ctrl = 1
+            stop_charging_now()
             pulse_width = pulse_freq
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
@@ -280,7 +301,7 @@ def kick():
             elif (delay_time_us_temp < 0):
                 delay_time_us_temp = 0
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
-    else :
+    elif (kick_data_rec == 1):
         if (done_state == 0):
             prev_kick_time = utime.ticks_ms()
             delay_time_us = delay_time_us_temp
@@ -295,7 +316,7 @@ def kick():
         kick_cooldown = 1
         send_kick_pulse(delay_time_us)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
-        startup_chg_2sdelay = 1
+        schedule_recharge_after_kick()
         print("just kicked")
             
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
@@ -357,6 +378,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         damping = 1
         print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
         chg_stop_mode_ctrl = 1
+        stop_charging_now()
         not_dischg = 1
 
 
@@ -388,7 +410,9 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         else :
             stop_damp_pwm()
             CAN_LED.off()
-            mode = 3 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
+            mode = MODE_CHARGE
+            chg_stop_mode_ctrl = 0
+            startup_chg = 1
             #CAN_LED.off()
             #print("whyyyy")
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
@@ -694,11 +718,8 @@ while True:
                     #print(utime.ticks_ms()/1000, done_state)
                     print("charging was disabled, no high DONE signal received: no charge cycle started")
                     print("Retrying in 30 seconds")
-        #else:
-        #    charge = 0
-        #    charge_started = 0 # reset charge_started to zero for the next charge cycle
-        #    charge_toggle_wait = 0 # reset charge_toggle_wait for next charge cycel
-        #    check_3s_done = 0
+        else:
+            stop_charging_now()
     else :
         # charging was disabled via battery, mode, or error. Error wont switch back, but battery and mode can turn charging back on.
         charge = 0
