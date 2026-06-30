@@ -37,6 +37,7 @@ CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
 pwm = None
+pulse_driver = None
 NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
@@ -143,8 +144,15 @@ def stop_damp_pwm():
     if pwm is not None:
         pwm.deinit()
         pwm = None
-    KICK.init(Pin.OUT)
     KICK.value(0)
+
+
+def ensure_pulse_driver():
+    global pulse_driver
+
+    if pulse_driver is None:
+        pulse_driver = pulses.Pulses(None, KICK, 1_000_000)
+    return pulse_driver
 
 
 def send_kick_pulse(width_us):
@@ -153,13 +161,16 @@ def send_kick_pulse(width_us):
     pattern = (8, width_us, 8)
     start = 0
     ar = array("L", pattern)
-    pulses.put_pulses(ar, start)
+    ensure_pulse_driver().put_pulses(ar, start)
 
 
 def start_damp_pwm(freq_hz, duty_percent):
-    global pwm
+    global pwm, pulse_driver
 
     stop_damp_pwm()
+    if pulse_driver is not None:
+        pulse_driver.sm_put.active(0)
+        pulse_driver = None
     pwm = PWM(KICK)
     pwm.freq(freq_hz)
     pwm.duty_u16((duty_percent * 65535) // 100)
@@ -453,7 +464,7 @@ def breakbeam_handler(pin):
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
 
 #kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-pulses = pulses.Pulses(None, KICK, 1_000_000)
+ensure_pulse_driver()
 
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
@@ -565,7 +576,7 @@ while True:
         start=0
         ar = array("L", pattern)
         #kickpulse.put_pulses(ar, start)
-        pulses.put_pulses(ar,start)
+        ensure_pulse_driver().put_pulses(ar,start)
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
         CAN_LED.value(0)
