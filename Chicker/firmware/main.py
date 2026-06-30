@@ -37,7 +37,6 @@ CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
 pwm = None
-pulse_driver = None
 NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
@@ -113,6 +112,7 @@ DAMP_MAX_DUTY = 5
 DAMP_ADJUST_PERIOD_MS = 25
 DAMP_NOMINAL_HV = 210
 DAMP_MIN_HV = 60
+KICK_CHARGE_STOP_WAIT_MS = 50
 
 offset = 1000_000
 
@@ -147,30 +147,19 @@ def stop_damp_pwm():
     KICK.value(0)
 
 
-def ensure_pulse_driver():
-    global pulse_driver
-
-    if pulse_driver is None:
-        pulse_driver = pulses.Pulses(None, KICK, 1_000_000)
-    return pulse_driver
-
-
 def send_kick_pulse(width_us):
     stop_damp_pwm()
 
     pattern = (8, width_us, 8)
     start = 0
     ar = array("L", pattern)
-    ensure_pulse_driver().put_pulses(ar, start)
+    kickpulse.put_pulses(ar, start)
 
 
 def start_damp_pwm(freq_hz, duty_percent):
-    global pwm, pulse_driver
+    global pwm
 
     stop_damp_pwm()
-    if pulse_driver is not None:
-        pulse_driver.sm_put.active(0)
-        pulse_driver = None
     pwm = PWM(KICK)
     pwm.freq(freq_hz)
     pwm.duty_u16((duty_percent * 65535) // 100)
@@ -295,6 +284,7 @@ def kick():
             kick_data_rec = 1
             chg_stop_mode_ctrl = 1
             stop_charging_now()
+            prev_kick_time = utime.ticks_ms()
             pulse_width = pulse_freq
             # We processed this frame, so set new data flag to false
             new_can_data_bool = False
@@ -313,8 +303,7 @@ def kick():
                 delay_time_us_temp = 0
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     elif (kick_data_rec == 1):
-        if (done_state == 0):
-            prev_kick_time = utime.ticks_ms()
+        if (done_state == 0 or utime.ticks_ms() - prev_kick_time >= KICK_CHARGE_STOP_WAIT_MS):
             delay_time_us = delay_time_us_temp
             kick_data_rec = 0
             data = None
@@ -463,8 +452,7 @@ def breakbeam_handler(pin):
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
 
-#kickpulse = pulses.Pulses(None, KICK, 1_000_000)
-ensure_pulse_driver()
+kickpulse = pulses.Pulses(None, KICK, 1_000_000)
 
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
@@ -575,8 +563,7 @@ while True:
         pattern=(8, 8, 8)
         start=0
         ar = array("L", pattern)
-        #kickpulse.put_pulses(ar, start)
-        ensure_pulse_driver().put_pulses(ar,start)
+        kickpulse.put_pulses(ar,start)
         #print(ledpulse.put_done)
         #print(kickpulse.put_done)
         CAN_LED.value(0)
