@@ -1,4 +1,4 @@
-from machine import Pin, ADC, PWM
+from machine import Pin, ADC, PWM, Timer
 from array import array
 import math
 import random
@@ -28,6 +28,7 @@ can.init_filter(3, 0, 0x2AA)
 can.init_filter(4, 0, 0x2AA)
 can.init_filter(5, 0, 0x2AA)
 
+kick_timer = Timer()
 
 DONE = Pin(4, Pin.IN)
 SHELL_OFF = Pin(9, Pin.IN)
@@ -159,11 +160,29 @@ class FakeCANData:
 def stop_damp_pwm():
     pwm.duty_u16(0)
 
+def stop_kick(timer):
+    global pwm
+    pwm.duty_u16(0)
+
+
 def send_kick_pulse(width_us):
-    pattern = (8, width_us, 8)
-    start = 0
-    ar = array("L", pattern)
-    pulses.put_pulses(ar, start)
+    global pwm
+
+    if width_us < 300:
+        width_us = 300
+    elif width_us > 5000:
+        width_us = 5000
+
+    pwm = PWM(KICK)
+    pwm.freq(100000)          # doesn't matter much at 100% duty
+    pwm.duty_u16(65535)
+
+    kick_timer.init(
+        mode=Timer.ONE_SHOT,
+        period=width_us,
+        callback=stop_kick,
+        hard=True
+    )
 
 
 def kick_pulse_width_from_data(kick_data):
