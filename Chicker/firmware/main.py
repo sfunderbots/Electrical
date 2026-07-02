@@ -206,22 +206,6 @@ def scale_kick_pulse_width(width_us):
     return clamp_kick_pulse_width(width_us)
 
 
-def request_charge_cycle():
-    global charge, charge_toggle_wait, prev_time_start_chg, startup_vcc_wait, startup_cycle
-    global charge_started, check_3s_done, startup_chg, startup_chg_2sdelay, not_dischg
-
-    charge = 0
-    charge_toggle_wait = 0
-    prev_time_start_chg = utime.ticks_ms()
-    startup_vcc_wait = 0
-    startup_cycle = 1
-    charge_started = 0
-    check_3s_done = 0
-    startup_chg = 0
-    startup_chg_2sdelay = 0
-    not_dischg = 1
-
-
 def start_damp_pwm(freq_hz, duty_percent):
     global pwm
 
@@ -354,8 +338,7 @@ def kick():
         kick_cooldown = 1
         send_kick_pulse(delay_time_us)
         prev_pulse_time = utime.ticks_ms() # start pulse timer # this seems redundant honestly, we are only sending pulse widths 
-        request_charge_cycle()
-        chg_stop_mode_ctrl = 0
+        startup_chg_2sdelay = 1
         print("just kicked")
             
     elif (kick_cooldown == 1 and utime.ticks_ms() - prev_pulse_time >= 100):
@@ -661,7 +644,7 @@ while True:
     if (chg_disable_chip_level == 1 and safe_charge == 0 and charge_ok == 1):
         if (utime.ticks_ms() - prev_time_charge_disabled >= CHARGE_RETRY_MS):
             chg_disable_chip_level = 0
-            request_charge_cycle()
+            startup_chg_2sdelay = 1
             print("charge retry reset after timeout")
 
         
@@ -698,18 +681,6 @@ while True:
                             #print(utime.ticks_ms()/1000, done_state)
                             print("charge toggle complete on DONE input, waiting")
                     else :
-                        HV_voltage = SenseHV()
-                        if (HV_voltage >= CHARGE_ALREADY_FULL_HV):
-                            charge_started = 1
-                            charge = 0
-                            charge_toggle_wait = 1
-                            check_3s_done = 1
-                            prev_time_chg_wait = utime.ticks_ms()
-                            prev_time_start_chg = prev_time_chg_wait
-                            chg_disable_chip_level = 0
-                            not_dischg = 1
-                            print("DONE high, HV already charged; skipping top-off")
-                        else :
                             chg_disable_chip_level = 1
                             prev_time_charge_disabled = utime.ticks_ms()
                             if (safe_charge == 0):
@@ -765,25 +736,13 @@ while True:
                     #print(utime.ticks_ms()/1000, done_state)
                     print("charge started (DONE toggles high properly)")
                 else :
-                    HV_voltage = SenseHV()
-                    if (HV_voltage >= CHARGE_ALREADY_FULL_HV):
-                        charge_started = 1
-                        charge = 0
-                        charge_toggle_wait = 1
-                        check_3s_done = 1
-                        prev_time_chg_wait = utime.ticks_ms()
-                        prev_time_start_chg = prev_time_chg_wait
-                        chg_disable_chip_level = 0
-                        not_dischg = 1
-                        print("DONE stayed low, HV already charged; skipping top-off")
-                    else :
-                        # not good, disable charging
-                        charge_started = 0
-                        chg_disable_chip_level = 1
-                        prev_time_charge_disabled = utime.ticks_ms()
-                        #print(utime.ticks_ms()/1000, done_state)
-                        print("charging was disabled, no high DONE signal received: no charge cycle started")
-                        print("Retrying in 30 seconds")
+                    # not good, disable charging
+                    charge_started = 0
+                    chg_disable_chip_level = 1
+                    prev_time_charge_disabled = utime.ticks_ms()
+                    #print(utime.ticks_ms()/1000, done_state)
+                    print("charging was disabled, no high DONE signal received: no charge cycle started")
+                    print("Retrying in 30 seconds")
         #else:
         #    charge = 0
         #    charge_started = 0 # reset charge_started to zero for the next charge cycle
