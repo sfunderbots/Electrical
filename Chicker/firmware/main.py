@@ -1,4 +1,4 @@
-from machine import Pin, ADC, PWM
+from machine import Pin, ADC, PWM, Timer
 from array import array
 import math
 import random
@@ -28,6 +28,7 @@ can.init_filter(3, 0, 0x2AA)
 can.init_filter(4, 0, 0x2AA)
 can.init_filter(5, 0, 0x2AA)
 
+kick_timer = Timer()
 
 DONE = Pin(4, Pin.IN)
 SHELL_OFF = Pin(9, Pin.IN)
@@ -36,7 +37,10 @@ BREAKBEAM = Pin(23, Pin.IN)
 CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
-pwm = None
+pwm = PWM(KICK)
+pwm.freq(1000)          # placeholder
+pwm.duty_u16(0)
+
 NOT_DISCHARGE = Pin(8, Pin.OUT)
 TESTPIN = Pin(24, Pin.OUT)
 CAN_LED = Pin(6, Pin.OUT)
@@ -92,9 +96,6 @@ idling = 0
 kicking = 0
 damping = 0
 charging = 0
-# The PIO pulse state machine is initialized at boot. It only needs reinit
-# after damping PWM has owned the KICK pin.
-kick_pulses_need_reinit = False
 
 startup_chg = 0
 startup_chg_wait = 0
@@ -120,6 +121,18 @@ KICK_MIN_SCALE_HV = 150
 CHARGE_START_CHECK_MS = 50
 CHARGE_RETRY_MS = 30000
 CHARGE_ALREADY_FULL_HV = 205
+
+damp_state = 0
+
+DAMP_STATE_SETTLE = 1
+DAMP_STATE_HOLD   = 2
+DAMP_STATE_MAINTAIN   = 3
+
+DAMP_INITIAL_KICK_US = 500_000   # 500*1000us for visualization, change to 500us for real use
+
+damp_state        = DAMP_STATE_MAINTAIN
+damp_settle_start = 0
+damp_hold_start   = 0
 
 offset = 1000_000
 
@@ -164,20 +177,18 @@ def stop_damp_pwm():
     if pwm is not None:
         pwm.deinit()
         pwm = None
-        kick_pulses_need_reinit = True
-        KICK.init(Pin.OUT, value=0)
+
+    kick_pin_to_gpio_low()
+    kick_pulses_need_reinit = True
 
 
 def send_kick_pulse(width_us):
     stop_damp_pwm()
 
-    if kick_pulses_need_reinit:
-        reinit_kick_pulses()
+    kick_pin_to_pio()
 
     pattern = (8, width_us, 8)
-    start = 0
-    ar = array("L", pattern)
-    pulses.put_pulses(ar, start)
+    pulses.put_pulses(array("L", pattern), 0)
 
 
 def kick_pulse_width_from_data(kick_data):
@@ -210,7 +221,9 @@ def start_damp_pwm(freq_hz, duty_percent):
     global pwm
 
     stop_damp_pwm()
-    pwm = PWM(KICK)
+
+    kick_pin_to_pwm()
+
     pwm.freq(freq_hz)
     pwm.duty_u16((duty_percent * 65535) // 100)
 
@@ -220,6 +233,17 @@ def set_damp_pwm_duty(duty_percent):
         return
 
     pwm.duty_u16((duty_percent * 65535) // 100)
+
+def kick_pin_to_gpio_low():
+    KICK.init(Pin.OUT, value=0)
+
+def kick_pin_to_pio():
+    # Give ownership to the PIO
+    reinit_kick_pulses()
+
+def kick_pin_to_pwm():
+    global pwm
+    pwm = PWM(KICK)
 
 
 def apply_command_frame(can_id, payload):
@@ -387,53 +411,56 @@ def kick():
 # damp_timeout = timeout in milliseconds
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
-    global idling, kicking, damping, charging, prev_time_damp_us, prev_time_damp
-    global mode, prev_mode, startup_chg, not_dischg, chg_stop_mode_ctrl
+    global idling, kicking, damping, charging
+    global mode, prev_mode, chg_stop_mode_ctrl, not_dischg
+    global damp_state, damp_settle_start, damp_hold_start
     global prev_time_HV, HV_voltage
 
-    idling = 0
-    kicking = 0
+    idling   = 0
+    kicking  = 0
     charging = 0
-    if (damping == 0):
-        stop_damp_pwm()
-        prev_mode = mode
-        damping = 1
-        print("DAMPING MODE: HV STOPS CHARGING. SENDS A PULSE TO THE KICKER TO HOLD FOR DAMPING")
+    
+    damp_timeout_us = damp_timeout * 1000
+
+    if damping == 0:
+        prev_mode          = mode
+        damping            = 1
+        damp_state         = DAMP_STATE_SETTLE
         chg_stop_mode_ctrl = 1
-        not_dischg = 1
-
-
-        # utime.ticks_us() works!
-        prev_time_damp = utime.ticks_ms()
-        prev_time_damp_us = utime.ticks_us()
-        prev_time_HV = utime.ticks_ms()
-        
-        # Initial Kick (to put plunger out)
+        not_dischg         = 1
+        print("DAMPING MODE: firing initial kick")
         send_kick_pulse(DAMP_INITIAL_PULSEWIDTH)
-        catch_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST))
-        print("Damp Frequency", damp_freq)
-        print("Damp catch duty", catch_duty)
-        print("Damp hold duty", damp_duty_percent)
-    else:
-        if (utime.ticks_ms() - prev_time_damp < damp_timeout):
-            if (utime.ticks_us() - prev_time_damp_us > DAMP_INITIAL_PULSEWIDTH * 15):
-                if pwm is None:
-                    start_damp_pwm(damp_freq, min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST)))
-                    CAN_LED.on()
-                elif (utime.ticks_ms() - prev_time_damp >= DAMP_CATCH_MS):
-                    if (utime.ticks_ms() - prev_time_HV >= DAMP_ADJUST_PERIOD_MS):
-                        prev_time_HV = utime.ticks_ms()
-                        HV_voltage = SenseHV()
+        damp_settle_start  = utime.ticks_us()
 
-                    adjusted_duty = int((damp_duty_percent * DAMP_NOMINAL_HV) / max(HV_voltage, DAMP_MIN_HV))
-                    adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
-                    set_damp_pwm_duty(adjusted_duty)
-        else :
+    elif damp_state == DAMP_STATE_SETTLE:
+        if utime.ticks_us() - damp_settle_start >= DAMP_INITIAL_KICK_US * 15:
+            damp_state      = DAMP_STATE_HOLD
+
+    elif damp_state == DAMP_STATE_HOLD:
+        print("starting PWM hold: freq", damp_freq, "Hz  duty", damp_duty_percent, "%")
+        # start PWM and do boost 
+        catch_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST))
+        start_damp_pwm(damp_freq, catch_duty)
+        prev_time_HV = utime.ticks_us()
+        damp_hold_start = utime.ticks_us()
+        damp_state = DAMP_STATE_MAINTAIN
+
+    elif damp_state == DAMP_STATE_MAINTAIN:
+        if utime.ticks_us() - damp_hold_start >= DAMP_CATCH_MS*1000:
+
+            if utime.ticks_us() - prev_time_HV >= DAMP_ADJUST_PERIOD_MS*1000:
+                prev_time_HV = utime.ticks_us()
+                HV_voltage = SenseHV()
+
+            adjusted_duty = int((damp_duty_percent * DAMP_NOMINAL_HV) / max(HV_voltage, DAMP_MIN_HV))
+            adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
+            set_damp_pwm_duty(adjusted_duty)
+            
+        if utime.ticks_us() - damp_hold_start >= damp_timeout_us:
+            # stop pwm 
             stop_damp_pwm()
-            CAN_LED.off()
-            mode = 3 # KICK MODE TO TURN ON CHARGING. AKA BACK READY TO RECEIVE KICK
-            #CAN_LED.off()
-            #print("whyyyy")
+            mode = MODE_CHARGE
+            print("DAMPING COMPLETE: returning to charge mode")
             # done damping, recharge HV for kick. Need to tell PI when it is charged using the done signal.
 # 0x64 is 100 in hex
 def chg():
