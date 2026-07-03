@@ -500,23 +500,19 @@ while True:
                 parts = [0x2AA, MODE_AUTOKICK, 0xF4, 0x01, 0]  # example payload
                 can_rx_time = utime.ticks_ms()
                 print(">> SIM KICK 500us")
-                continue
             elif line == "d":
                 pulse_freq = 20000
                 duty = 8
                 parts = [0x2AA, MODE_DAMP, 0x30, 0x75, 12]
                 print(">> SIM DAMP 20kHz 8%")
-                continue
             elif line == "s":
                 dump_state()
-                continue
             
             else:
                 # Expected format: 0x2AA, 0x01, 0xE8, 0x03, 0x32
                 parts = [int(p.strip(), 0) for p in line.split(',')]
                 if len(parts) < 5:
                     print("Invalid test input (need 5 bytes: id, mode, freq_l, freq_h, duty)")
-                    continue
 
             fake_can_data = FakeCANData(parts[0], parts[1:])
             apply_command_frame(fake_can_data.can_id, fake_can_data.data)
@@ -570,7 +566,6 @@ while True:
             done_sim = 0                               # fake cycle completes in 1.2s
         prev_charge = charge
         done_state = done_sim
-        charge_ok = 1                                  # fake battery present
     else:
         done_state = DONE.value()
         # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
@@ -599,7 +594,10 @@ while True:
         prev_time_damp = utime.ticks_ms()
         prev_cycle_damp = utime.ticks_us()
         prev_time_wait_chg = utime.ticks_ms()
-        charge_ok = Voltages(charge_ok, startup) #
+        if (SIM_MODE == 1):
+            charge_ok = 1
+        else:
+            charge_ok = Voltages(charge_ok, startup) #
         HV_voltage = SenseHV()
         send_kick_pulse(8)
         #print(ledpulse.put_done)
@@ -779,7 +777,10 @@ while True:
         
     # check voltages every 2 seconds
     if(utime.ticks_ms() - prev_time_volt >= 500):
-        charge_ok = Voltages(charge, startup) #charge_ok_sim
+        if (SIM_MODE == 1):
+            charge_ok = 1
+        else:
+            charge_ok = Voltages(charge, startup) #charge_ok_sim
         prev_time_volt = utime.ticks_ms()
         #print("damp time", utime.ticks_us() - prev_cycle_damp)
         #check high voltage constantly to be able to adjust kick power.
