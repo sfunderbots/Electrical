@@ -84,7 +84,7 @@ kick_delayed = 0
 HV_voltage = 0
 kick_data_rec = 0
 startup_chg_2sdelay = 0
-not_dischg = 0
+not_dischg = 1
 
 pulse_freq = 0
 duty = 1
