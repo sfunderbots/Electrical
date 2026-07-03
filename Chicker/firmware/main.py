@@ -37,7 +37,7 @@ CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
 pwm = PWM(KICK)
-pwm.freq(1000)          # placeholder
+pwm.freq(1000000)
 pwm.duty_u16(0)
 
 NOT_DISCHARGE = Pin(8, Pin.OUT)
@@ -112,13 +112,15 @@ DAMP_CATCH_MS = 120
 DAMP_CATCH_DUTY_BOOST = 2
 DAMP_MAX_DUTY = 5
 DAMP_ADJUST_PERIOD_MS = 25
-DAMP_NOMINAL_HV = 210
-DAMP_MIN_HV = 60
+
 KICK_NOMINAL_HV = 210
 KICK_MIN_SCALE_HV = 150
 CHARGE_START_CHECK_MS = 50
+
+DAMP_NOMINAL_HV = 210
+DAMP_MIN_HV = 60
 CHARGE_RETRY_MS = 30000
-CHARGE_ALREADY_FULL_HV = 205
+CHARGE_ALREADY_FULL_HV = 206
 
 damp_state = 0
 
@@ -164,14 +166,17 @@ def stop_kick(timer):
 
 
 def send_kick_pulse(width_us):
+    global pwm
     if width_us < 300:
         width_us = 300
     elif width_us > 5000:
         width_us = 5000
 
-    pwm.duty_u16(65535)          # pin high — full on
-    utime.sleep_us(width_us)     # blocks, exactly like put_pulses did
-    pwm.duty_u16(0)              # pin low
+    pwm.duty_u16(0)          # make sure PWM output is low
+    KICK.init(Pin.OUT, value=0)   # take the pin as GPIO
+    KICK.value(1)
+    utime.sleep_us(width_us)
+    KICK.value(0)
 
 
 def kick_pulse_width_from_data(kick_data):
@@ -200,10 +205,13 @@ def scale_kick_pulse_width(width_us):
 
 
 def start_damp_pwm(freq_hz, duty_percent):
+    global pwm
+    pwm = PWM(KICK)               # reconstruct - this re-latches the pin mux to PWM
     pwm.freq(freq_hz)
     pwm.duty_u16((duty_percent * 65535) // 100)
 
 def set_damp_pwm_duty(duty_percent):
+    global pwm
     pwm.duty_u16((duty_percent * 65535) // 100)
 
 
@@ -398,22 +406,22 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     elif damp_state == DAMP_STATE_HOLD:
         print("starting PWM hold: freq", damp_freq, "Hz  duty", damp_duty_percent, "%")
         # start PWM and do boost 
-        catch_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent + DAMP_CATCH_DUTY_BOOST))
-        start_damp_pwm(damp_freq, catch_duty)
+        duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent))
+        start_damp_pwm(damp_freq, duty)
         prev_time_HV = utime.ticks_us()
         damp_hold_start = utime.ticks_us()
         damp_state = DAMP_STATE_MAINTAIN
 
     elif damp_state == DAMP_STATE_MAINTAIN:
-        if utime.ticks_us() - damp_hold_start >= DAMP_CATCH_MS*1000:
+        #if utime.ticks_us() - damp_hold_start >= DAMP_CATCH_MS*1000:
+#
+        #    if utime.ticks_us() - prev_time_HV >= DAMP_ADJUST_PERIOD_MS*1000:
+        #        prev_time_HV = utime.ticks_us()
+        #        HV_voltage = SenseHV()
 
-            if utime.ticks_us() - prev_time_HV >= DAMP_ADJUST_PERIOD_MS*1000:
-                prev_time_HV = utime.ticks_us()
-                HV_voltage = SenseHV()
-
-            adjusted_duty = int((damp_duty_percent * DAMP_NOMINAL_HV) / max(HV_voltage, DAMP_MIN_HV))
-            adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
-            set_damp_pwm_duty(adjusted_duty)
+         #   adjusted_duty = int((damp_duty_percent * DAMP_NOMINAL_HV) / max(HV_voltage, DAMP_MIN_HV))
+        #    adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
+        #    set_damp_pwm_duty(adjusted_duty)
             
         if utime.ticks_us() - damp_hold_start >= damp_timeout_us:
             # stop pwm 
@@ -578,6 +586,7 @@ while True:
             if (charge_ok == 1):
                 prev_time_wait_charge_vcc = utime.ticks_ms()
                 startup_vcc_wait = 1
+                not_dischg = 1
                 print("waiting to charge")
         else:
             if (utime.ticks_ms() - prev_time_wait_charge_vcc >= 2000):  
@@ -710,13 +719,19 @@ while True:
                     #print(utime.ticks_ms()/1000, done_state)
                     print("charge started (DONE toggles high properly)")
                 else :
-                    # not good, disable charging
-                    charge_started = 0
-                    chg_disable_chip_level = 1
-                    prev_time_charge_disabled = utime.ticks_ms()
-                    #print(utime.ticks_ms()/1000, done_state)
-                    print("charging was disabled, no high DONE signal received: no charge cycle started")
-                    print("Retrying in 30 seconds")
+                    HV_voltage = SenseHV()
+                    if (HV_voltage >= CHARGE_ALREADY_FULL_HV):
+                        # cap already at target - charge cycle completed before the 10ms check
+                        charge_started = 1
+                        chg_disable_chip_level = 0
+                        print("DONE already low, HV at target; top-off completed instantly")
+                    else :
+                        # not good, disable charging
+                        charge_started = 0
+                        chg_disable_chip_level = 1
+                        prev_time_charge_disabled = utime.ticks_ms()
+                        print("charging was disabled, no high DONE signal received: no charge cycle started")
+                        print("Retrying in 30 seconds")
         #else:
         #    charge = 0
         #    charge_started = 0 # reset charge_started to zero for the next charge cycle
