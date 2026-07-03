@@ -6,7 +6,6 @@ from battery import Voltages
 import utime
 from high_voltage import SenseHV
 import sys, select
-import pulses as pulses_module
 
 from canbus import Can, CanError, CanMsg, CanMsgFlag
 
@@ -457,9 +456,6 @@ def breakbeam_handler(pin):
 # Attach interrupt for both edges
 BREAKBEAM.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=breakbeam_handler)
 
-#kickpulse = pulses_module.Pulses(None, KICK, 1_000_000)
-pulses = pulses_module.Pulses(None, KICK, 1_000_000)
-
 while True:
     # LITTLE ENDIAN. ~500 us ish = 0x01, 0x02. ~250 ish = 0x02, 0x01
     
@@ -639,9 +635,7 @@ while True:
         if (chg_stop_mode_ctrl == 0): # chg_stop_mode_ctrl controls charging, not discharging. chg_stop = 1 for stop, 0 for charge okay
             # charge_toggle_wait should be 0 if ready to start charging, and 1 if waiting after starting a charge cycle
             if (charge_toggle_wait == 0):
-                if (startup_chg == 1):
-                    pass
-                elif (startup_cycle == 1):
+                if (startup_cycle == 1):
                     if (utime.ticks_ms() - prev_time_start_chg >= 50 and utime.ticks_ms() - prev_kick_time >= 50): 
                         charge = 1
                         startup_cycle = 0
