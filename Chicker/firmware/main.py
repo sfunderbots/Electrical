@@ -109,7 +109,6 @@ new_can_data_bool = False
 can_rx_time = None
 AUTOKICK_EXPIRE_THRESH_MS = 2000
 stored_prekick_can_data = None
-DAMP_INITIAL_PULSEWIDTH = 500
 DAMP_CATCH_MS = 120
 DAMP_CATCH_DUTY_BOOST = 2
 DAMP_MAX_DUTY = 5
@@ -128,7 +127,7 @@ DAMP_STATE_SETTLE = 1
 DAMP_STATE_HOLD   = 2
 DAMP_STATE_MAINTAIN   = 3
 
-DAMP_INITIAL_KICK_US = 500_000   # 500*1000us for visualization, change to 500us for real use
+DAMP_INITIAL_KICK_US = 500   # 500*1000us for visualization, change to 500us for real use
 
 damp_state        = DAMP_STATE_MAINTAIN
 damp_settle_start = 0
@@ -175,13 +174,13 @@ def send_kick_pulse(width_us):
 
     pwm = PWM(KICK)
     pwm.freq(100000)          # doesn't matter much at 100% duty
-    pwm.duty_u16(65535)
+    pwm.duty_u16(65535) # full 100% duty
 
     kick_timer.init(
-        mode=Timer.ONE_SHOT,
-        period=width_us,
-        callback=stop_kick,
-        hard=True
+    mode=Timer.ONE_SHOT,
+    freq=1_000_000 // width_us,
+    callback=stop_kick,
+    hard=True
     )
 
 
@@ -399,7 +398,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         chg_stop_mode_ctrl = 1
         not_dischg         = 1
         print("DAMPING MODE: firing initial kick")
-        send_kick_pulse(DAMP_INITIAL_PULSEWIDTH)
+        send_kick_pulse(DAMP_INITIAL_KICK_US)
         damp_settle_start  = utime.ticks_us()
 
     elif damp_state == DAMP_STATE_SETTLE:
