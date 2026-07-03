@@ -125,6 +125,7 @@ CHARGE_RETRY_MS = 30000
 CHARGE_ALREADY_FULL_HV = 206
 
 DAMP_MIN_START_HV = 206
+KICK_READY_HV = 180   # constant, tune to taste
 
 damp_state = 0
 
@@ -296,6 +297,7 @@ def kick():
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
     global prev_mode, startup_chg, not_dischg
     global idling, kicking, damping, charging
+    global charge_abort_req
     
     idling = 0
     damping = 0
@@ -321,7 +323,7 @@ def kick():
         else:
             kick_data_rec = 1
             HV_voltage = SenseHV()
-            if (HV_voltage > 180)
+            if (HV_voltage > 180):
                 charge_abort_req = 1
             chg_stop_mode_ctrl = 1
             pulse_width = kick_pulse_width_from_data(data)
@@ -333,7 +335,7 @@ def kick():
             #CAN_LED.value(0)
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
     else:
-            if (done_state == 0):
+            if (done_state == 0 and SenseHV() >= KICK_READY_HV):
                 prev_kick_time = utime.ticks_ms()
                 if (kick_data_rec == 1):
                     delay_time_us = delay_time_us_temp
@@ -403,6 +405,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     global mode, prev_mode, chg_stop_mode_ctrl, not_dischg
     global damp_state, damp_settle_start, damp_hold_start
     global prev_time_HV, HV_voltage
+    global charge_abort_req
 
     idling   = 0
     kicking  = 0
