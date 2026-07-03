@@ -151,7 +151,6 @@ mode = 3 # automatically boot into charge mode to keep caps charged. and make su
 prev_mode = 0
 CAN_LED.on()
 
-charge_abort_req = 0
 
 
 
@@ -297,7 +296,6 @@ def kick():
     global prev_kick_time, kick_delayed, start, ar, prev_pulse_time, startup_chg_2sdelay, charge_toggle_wait
     global prev_mode, startup_chg, not_dischg
     global idling, kicking, damping, charging
-    global charge_abort_req
     
     idling = 0
     damping = 0
@@ -323,8 +321,7 @@ def kick():
         else:
             kick_data_rec = 1
             HV_voltage = SenseHV()
-            if (HV_voltage > 180):
-                charge_abort_req = 1
+            
             chg_stop_mode_ctrl = 1
             pulse_width = kick_pulse_width_from_data(data)
             # We processed this frame, so set new data flag to false
@@ -405,7 +402,6 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     global mode, prev_mode, chg_stop_mode_ctrl, not_dischg
     global damp_state, damp_settle_start, damp_hold_start
     global prev_time_HV, HV_voltage
-    global charge_abort_req
 
     idling   = 0
     kicking  = 0
@@ -420,7 +416,6 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         print("DAMP REQUESTED: waiting for charge cycle")
         
     elif damp_state == DAMP_STATE_WAIT:
-        charge_abort_req = 1
         if done_state == 0:
             chg_stop_mode_ctrl = 1
             not_dischg         = 1
@@ -618,15 +613,6 @@ while True:
         startup_chg_2sdelay = 1
         startup = 1
         not_dischg = 1
-    
-    if (charge_abort_req == 1):
-        if (charge == 1):
-            charge = 0
-            charge_toggle_wait = 0
-            charge_started = 0
-            check_3s_done = 0
-            print("charge cycle aborted for pending kick/damp")
-        charge_abort_req = 0
         
    # start a new charge cycle if the battery is plugged in
     if (startup_chg_2sdelay == 1): 
