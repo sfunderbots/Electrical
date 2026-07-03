@@ -37,7 +37,7 @@ CHARGE = Pin(5, Pin.OUT)
 CHIP = Pin(2, Pin.OUT)
 KICK = Pin(3, Pin.OUT)
 pwm = PWM(KICK)
-pwm.freq(1000000)
+pwm.freq(100000)
 pwm.duty_u16(0)
 
 NOT_DISCHARGE = Pin(8, Pin.OUT)
@@ -110,7 +110,8 @@ AUTOKICK_EXPIRE_THRESH_MS = 2000
 stored_prekick_can_data = None
 DAMP_CATCH_MS = 120
 DAMP_CATCH_DUTY_BOOST = 2
-DAMP_MAX_DUTY = 5
+DAMP_MAX_DUTY = 95
+DAMP_MIN_DUTY = 5
 DAMP_ADJUST_PERIOD_MS = 25
 
 KICK_NOMINAL_HV = 210
@@ -376,6 +377,9 @@ def kick():
 # damp_freq = freq in Hz (two bytes)
 # damp_duty_percent = duty cycle in percentage (integer)
 # damp_timeout = timeout in milliseconds
+
+
+# New damping with new setup .> 30kHz at 12% duty. 0x2AA, 2, 0x30, 0x75, 12
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
     global idling, kicking, damping, charging
@@ -406,7 +410,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     elif damp_state == DAMP_STATE_HOLD:
         print("starting PWM hold: freq", damp_freq, "Hz  duty", damp_duty_percent, "%")
         # start PWM and do boost 
-        duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, damp_duty_percent))
+        duty = min(DAMP_MAX_DUTY, max(DAMP_MIN_DUTY, damp_duty_percent))
         start_damp_pwm(damp_freq, duty)
         prev_time_HV = utime.ticks_us()
         damp_hold_start = utime.ticks_us()
