@@ -165,23 +165,14 @@ def stop_kick(timer):
 
 
 def send_kick_pulse(width_us):
-    global pwm
-
     if width_us < 300:
         width_us = 300
     elif width_us > 5000:
         width_us = 5000
 
-    pwm = PWM(KICK)
-    pwm.freq(100000)          # doesn't matter much at 100% duty
-    pwm.duty_u16(65535) # full 100% duty
-
-    kick_timer.init(
-    mode=Timer.ONE_SHOT,
-    freq=1_000_000 // width_us,
-    callback=stop_kick,
-    hard=True
-    )
+    pwm.duty_u16(65535)          # pin high — full on
+    utime.sleep_us(width_us)     # blocks, exactly like put_pulses did
+    pwm.duty_u16(0)              # pin low
 
 
 def kick_pulse_width_from_data(kick_data):
