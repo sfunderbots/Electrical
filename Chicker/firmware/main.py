@@ -27,7 +27,8 @@ can.init_filter(3, 0, 0x2AA)
 can.init_filter(4, 0, 0x2AA)
 can.init_filter(5, 0, 0x2AA)
 
-kick_timer = Timer()
+SIM_MODE = 1
+
 
 DONE = Pin(4, Pin.IN)
 SHELL_OFF = Pin(9, Pin.IN)
@@ -127,6 +128,7 @@ DAMP_MIN_START_HV = 206
 
 damp_state = 0
 
+DAMP_STATE_WAIT = 0   # with the other state constants
 DAMP_STATE_SETTLE = 1
 DAMP_STATE_HOLD   = 2
 DAMP_STATE_MAINTAIN   = 3
@@ -147,6 +149,8 @@ mode = 3 # automatically boot into charge mode to keep caps charged. and make su
 
 prev_mode = 0
 CAN_LED.on()
+
+
 
 # Simulates the CAN data object
 class FakeCANData:
@@ -217,6 +221,14 @@ def set_damp_pwm_duty(duty_percent):
     global pwm
     pwm.duty_u16((duty_percent * 65535) // 100)
 
+def dump_state():
+    print("--- STATE ---")
+    print("mode", mode, "| kicking", kicking, "damping", damping, "charging", charging, "idling", idling)
+    print("kick_data_rec", kick_data_rec, "cooldown", kick_cooldown, "delay_us", delay_time_us, "data", data)
+    print("armed", new_can_data_bool, "breakbeam", BREAKBEAM.value())
+    print("chg_stop", chg_stop_mode_ctrl, "chip_disable", chg_disable_chip_level)
+    print("charge", charge, "toggle_wait", charge_toggle_wait, "started", charge_started, "startup_cycle", startup_cycle)
+    print("s_chg", startup_chg, "s_2sdelay", startup_chg_2sdelay, "done", done_state, "not_dischg", not_dischg, "damp_state", damp_state)
 
 def apply_command_frame(can_id, payload):
     global mode, pulse_freq, duty, data, stored_prekick_can_data, new_can_data_bool, can_rx_time
@@ -315,16 +327,15 @@ def kick():
             delay_time_us_temp = clamp_kick_pulse_width(pulse_width)
             #CAN_LED.value(0)
             #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
-    else :
-        if (done_state == 0):
-            prev_kick_time = utime.ticks_ms()
-            pulse_width_adjusted = scale_kick_pulse_width(delay_time_us_temp)
-            delay_time_us = pulse_width_adjusted
-            kick_data_rec = 0
-            data = None
-        # charging still, wait till charging stopped from charge STOP to kick.
-        else:
-            delay_time_us = 0
+    else:
+            if (done_state == 0):
+                prev_kick_time = utime.ticks_ms()
+                if (kick_data_rec == 1):
+                    delay_time_us = delay_time_us_temp
+                    kick_data_rec = 0
+                    data = None
+            else:
+                delay_time_us = 0
             
  #############################################
     if(kick_cooldown == 0 and delay_time_us != 0):
@@ -379,7 +390,7 @@ def kick():
 # damp_duty_percent = duty cycle in percentage (integer)
 # damp_timeout = timeout in milliseconds
 
-
+#20kHz at 9???
 # New damping with new setup .> 30kHz at 12% duty. 0x2AA, 2, 0x30, 0x75, 12
 def damp(damp_freq, damp_duty_percent, damp_timeout):
     #Global variables (FUCK ME...)
@@ -395,18 +406,20 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     damp_timeout_us = damp_timeout * 1000
 
     if damping == 0:
-        HV_voltage = SenseHV()
-        if (done_state == 1 or HV_voltage < DAMP_MIN_START_HV):
-            return    # cap not ready; retry next loop, prime fires once charged
         prev_mode          = mode
         damping            = 1
-        damp_state         = DAMP_STATE_SETTLE
-        chg_stop_mode_ctrl = 1
-        not_dischg         = 1
-        print("DAMPING MODE: firing initial kick")
-        send_kick_pulse(DAMP_INITIAL_KICK_US)
-        damp_settle_start  = utime.ticks_us()
-
+        damp_state         = DAMP_STATE_WAIT
+        print("DAMP REQUESTED: waiting for charge cycle")
+        
+    elif damp_state == DAMP_STATE_WAIT:
+        if done_state == 0:
+            chg_stop_mode_ctrl = 1
+            not_dischg         = 1
+            print("DAMPING MODE: firing initial kick")
+            send_kick_pulse(DAMP_INITIAL_KICK_US)
+            damp_settle_start  = utime.ticks_us()
+            damp_state = DAMP_STATE_SETTLE
+            
     elif damp_state == DAMP_STATE_SETTLE:
         if utime.ticks_us() - damp_settle_start >= DAMP_INITIAL_KICK_US * 15:
             damp_state      = DAMP_STATE_HOLD
@@ -482,11 +495,28 @@ while True:
             continue
 
         try:
-            # Expected format: 0x2AA, 0x01, 0xE8, 0x03, 0x32
-            parts = [int(p.strip(), 0) for p in line.split(',')]
-            if len(parts) < 5:
-                print("Invalid test input (need 5 bytes: id, mode, freq_l, freq_h, duty)")
+            if line == "k":
+                data = 500                                  # bypass breakbeam for bench
+                parts = [0x2AA, MODE_AUTOKICK, 0xF4, 0x01, 0]  # example payload
+                can_rx_time = utime.ticks_ms()
+                print(">> SIM KICK 500us")
                 continue
+            elif line == "d":
+                pulse_freq = 20000
+                duty = 8
+                parts = [0x2AA, MODE_DAMP, 0x30, 0x75, 12]
+                print(">> SIM DAMP 20kHz 8%")
+                continue
+            elif line == "s":
+                dump_state()
+                continue
+            
+            else:
+                # Expected format: 0x2AA, 0x01, 0xE8, 0x03, 0x32
+                parts = [int(p.strip(), 0) for p in line.split(',')]
+                if len(parts) < 5:
+                    print("Invalid test input (need 5 bytes: id, mode, freq_l, freq_h, duty)")
+                    continue
 
             fake_can_data = FakeCANData(parts[0], parts[1:])
             apply_command_frame(fake_can_data.can_id, fake_can_data.data)
@@ -495,26 +525,7 @@ while True:
             print("Error parsing input:", e)
     ################## FAKE CAN DATA STOP $$$$$$$$$$####################33
     
-    '''
-    ###############################################
-    #simulation values (correct ones)
-    # rising edge of charge pin
-    if (charge == 1 and prev_charge == 0):
-        done_sim = 1
-        prev_sim_time = utime.ticks_ms()
-        #print(utime.ticks_ms()/1000)
-        #print("done signal set to 1")        
-    #elif (charge == 1) :
-    elif (utime.ticks_ms() - prev_sim_time >= 2000):
-        done_sim = 0
-        #print(utime.ticks_ms()/1000)
-        #print("done signal set to 0")
-        prev_sim_time = 0
-        
-    prev_charge = charge
-    '''
-    
-    
+
     can_data = None
     
     while can.checkReceive():
@@ -549,8 +560,21 @@ while True:
         chg_stop_mode_ctrl = 1
     
     
-    # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
-    done_state = DONE.value() # done_sim
+    if SIM_MODE:
+        if (charge == 1 and prev_charge == 0):        # rising edge starts fake cycle
+            done_sim = 1
+            prev_sim_time = utime.ticks_ms()
+            #print(utime.ticks_ms()/1000)
+            #print("done signal set to 1") 
+        if (done_sim == 1 and utime.ticks_ms() - prev_sim_time >= 1200):
+            done_sim = 0                               # fake cycle completes in 1.2s
+        prev_charge = charge
+        done_state = done_sim
+        charge_ok = 1                                  # fake battery present
+    else:
+        done_state = DONE.value()
+        # DONE actually stays high until the end of a charge cycle is reached. so you cant do it the way i have my checks for startup.
+        
     CHARGE.value(charge)
     NOT_DISCHARGE.value(not_dischg)
     #print(charge_disable)
