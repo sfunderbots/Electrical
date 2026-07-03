@@ -123,6 +123,8 @@ DAMP_MIN_HV = 60
 CHARGE_RETRY_MS = 30000
 CHARGE_ALREADY_FULL_HV = 206
 
+DAMP_MIN_START_HV = 206
+
 damp_state = 0
 
 DAMP_STATE_SETTLE = 1
@@ -295,7 +297,6 @@ def kick():
         kicking = 1
         chg_stop_mode_ctrl = 0
         not_dischg = 1
-        charge_toggle_wait = 0
         print("AUTOKICK MODE: HV CHARGED AND CHARGING. STOPS CHARGING WHEN PULSE SENT TO THE KICKER")
 
     if (kick_data_rec == 0 and kick_cooldown == 0):
@@ -394,6 +395,9 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
     damp_timeout_us = damp_timeout * 1000
 
     if damping == 0:
+        HV_voltage = SenseHV()
+        if (done_state == 1 or HV_voltage < DAMP_MIN_START_HV):
+            return    # cap not ready; retry next loop, prime fires once charged
         prev_mode          = mode
         damping            = 1
         damp_state         = DAMP_STATE_SETTLE
