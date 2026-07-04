@@ -3,8 +3,10 @@ import uasyncio
 from machine import Pin, ADC
 HV_SENSE = ADC(Pin(29)) # channel 3
 
+#prev_time_hv = 0
 prev_time_voltages_startup = 0
 def SenseHV():
+    global prev_time_hv
     # High Voltage Reference = 206V
     #######################################
     # High Voltage Sense Detection
@@ -12,7 +14,9 @@ def SenseHV():
     HV_voltage_raw = HV_level_val * (3.3 / 65535.0) * ((13.0 + 990.0)/13.0)
     HV_voltage = round(HV_voltage_raw,2)
 
-    print("HV: ", HV_voltage, "V")
+    #if (utime.ticks_us() - prev_time_hv >= 500*1000):
+    #    print("HV: ", HV_voltage, "V")
+    #    prev_time_hv = utime.ticks_us
     
     #imagine you receive a pulse width of 1800us. High voltage is currently 180V. 
     # Need to pulse longer (theoretically) to achieve same result to m/s
