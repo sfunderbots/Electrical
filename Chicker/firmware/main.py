@@ -27,7 +27,7 @@ can.init_filter(3, 0, 0x2AA)
 can.init_filter(4, 0, 0x2AA)
 can.init_filter(5, 0, 0x2AA)
 
-SIM_MODE = 1
+SIM_MODE = 0 # change this to 0 if on real robots.
 
 
 DONE = Pin(4, Pin.IN)
@@ -298,8 +298,17 @@ def kick():
     global idling, kicking, damping, charging
     
     idling = 0
-    damping = 0
     charging = 0
+
+    if damping == 1:
+        # stop PWM from damping mode
+        damping = 0
+        stop_damp_pwm()
+        print("DAMPING COMPLETE FROM KICK REQUEST")
+    else:
+        damping = 0
+    
+
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
         new_can_data_bool = False
 
@@ -313,33 +322,30 @@ def kick():
         not_dischg = 1
         print("AUTOKICK MODE: HV CHARGED AND CHARGING. STOPS CHARGING WHEN PULSE SENT TO THE KICKER")
 
-    if (kick_data_rec == 0 and kick_cooldown == 0):
+    if (kick_data_rec == 0):
         if (data == None) :
             kick_data_rec = 0
             delay_time_us_temp = 0
             chg_stop_mode_ctrl = 0
         else:
+            # STATE 1: We got a command.
             kick_data_rec = 1
-            HV_voltage = SenseHV()
-            
-            chg_stop_mode_ctrl = 1
+            # Do NOT stop the charger here! Leave it at 0 so it keeps charging.
+            chg_stop_mode_ctrl = 0
             pulse_width = kick_pulse_width_from_data(data)
-            # We processed this frame, so set new data flag to false
             new_can_data_bool = False
-
-            #{HV_voltage, HV_scaling} = SenseHV()
             delay_time_us_temp = clamp_kick_pulse_width(pulse_width)
-            #CAN_LED.value(0)
-            #print("Kicking in 2 seconds, at ", delay_time_us_temp, "us. Stand back!")
-    else:
-            if (done_state == 0 and SenseHV() >= KICK_READY_HV):
-                prev_kick_time = utime.ticks_ms()
-                if (kick_data_rec == 1):
-                    delay_time_us = delay_time_us_temp
-                    kick_data_rec = 0
-                    data = None
-            else:
-                delay_time_us = 0
+    else :
+        if (done_state == 0 and SenseHV() >= KICK_READY_HV):
+            prev_kick_time = utime.ticks_ms()
+            if (kick_data_rec == 1):
+                delay_time_us = delay_time_us_temp
+                kick_data_rec = 0
+                data = None
+        else:
+            delay_time_us = 0
+            chg_stop_mode_ctrl = 0
+
             
  #############################################
     if(kick_cooldown == 0 and delay_time_us != 0):
@@ -448,7 +454,7 @@ def damp(damp_freq, damp_duty_percent, damp_timeout):
         #    adjusted_duty = min(DAMP_MAX_DUTY, max(damp_duty_percent, adjusted_duty))
         #    set_damp_pwm_duty(adjusted_duty)
             
-        if utime.ticks_us() - damp_hold_start >= damp_timeout_us:
+        if (utime.ticks_us() - damp_hold_start >= damp_timeout_us):
             # stop pwm 
             stop_damp_pwm()
             mode = MODE_CHARGE
