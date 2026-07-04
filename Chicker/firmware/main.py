@@ -315,8 +315,6 @@ def kick():
         # stop PWM from damping mode
         damping = 0
         stop_damp_pwm()
-        damp_settle_start = 0
-        damp_hold_start = 0
         print("DAMPING COMPLETE FROM KICK REQUEST")
     
 
