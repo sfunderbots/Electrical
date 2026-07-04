@@ -323,7 +323,7 @@ def kick():
 
     if (kicking == 0):
         if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
-            startup_chg = 1
+            startup_cmhg = 1
             HV_voltage = SenseHV()
         prev_mode = mode
         kicking = 1
@@ -345,9 +345,7 @@ def kick():
             new_can_data_bool = False
             delay_time_us_temp = clamp_kick_pulse_width(pulse_width)
     else :
-        if (SenseHV() >= KICK_READY_HV):
-            chg_stop_mode_ctrl = 1
-        elif (done_state == 0 and kick_cooldown == 0):
+        if (done_state == 0 and SenseHV() >= KICK_READY_HV):
             prev_kick_time = utime.ticks_ms()
             delay_time_us = delay_time_us_temp
             kick_data_rec = 0
@@ -524,7 +522,7 @@ while True:
                 pulse_freq = 30000
                 duty = 12
                 parts = [0x2AA, 2, 0x88, 0x13, 3]
-                print(">> SIM DAMP 30kHz 12%")
+                print(">> SIM DAMP 5kHz 3%")
             elif line == "s":
                 dump_state()
             
