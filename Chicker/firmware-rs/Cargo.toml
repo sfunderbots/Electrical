@@ -1,0 +1,38 @@
+[package]
+name = "chicker-fw"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+embassy-executor = { version = "0.10.0", features = ["platform-cortex-m", "executor-thread"] }
+embassy-time = "0.5.1"
+embassy-rp = { version = "0.10.0", features = ["rp2040", "time-driver", "critical-section-impl", "boot2-w25q080", "unstable-pac"] }
+embassy-sync = "0.8.0"
+embassy-usb = "0.6.0"
+embassy-usb-logger = "0.6.0"
+embassy-futures = "0.1.2"
+
+mcp25xx = { version = "0.4.0", features = ["mcp2515"] }
+embedded-can = "0.4.1"
+nb = "1"
+embedded-hal = "1.0"
+embedded-hal-bus = "0.3.0"
+
+pio = "0.3.0"
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.5"
+static_cell = "2.1"
+portable-atomic = { version = "1", features = ["critical-section"] }
+log = "0.4"
+heapless = "0.9"
+
+[profile.release]
+lto = "fat"
+opt-level = "s"
+codegen-units = 1
+# debug info stays in the ELF for post-mortem work; elf2uf2 strips it from the UF2
+debug = 2
+
+[profile.dev]
+opt-level = 1
