@@ -126,12 +126,15 @@ pub const CAN_SILENCE_DISARM: Duration = Duration::from_secs(1);
 // This protocol v0 is the NEW canonical interface for the chicker (the old
 // firmware's message system is deliberately not carried over); the robot
 // side should be updated to match protocol.rs.
-// The MCP2515 crystal is 8 MHz, which caps this node at 500 kbps — every
-// other node on the bus must run the same bitrate.
-// [OLD-FW] the old deployed firmware ran the bus at 250 kbps (ID 0x2AA).
-// If legacy nodes must coexist during migration, switch to CNF_250K_BPS.
+// 250 kbps to match the robot's existing shared motor/power bus
+// (Rustware setup_bot.sh brings can0 up at 250000; tinymovr motor
+// controllers share that bus, so all nodes must move together). The
+// MCP2515's 8 MHz crystal would allow up to CNF_500K_BPS if the whole bus
+// is ever upgraded.
+// NEVER flash this board with a bitrate that doesn't match the live bus:
+// a wrong-bitrate node emits error frames that disturb motor traffic.
 
-pub const CAN_BITRATE_CNF: CNF = mcp25xx::bitrates::clock_8mhz::CNF_500K_BPS;
+pub const CAN_BITRATE_CNF: CNF = mcp25xx::bitrates::clock_8mhz::CNF_250K_BPS;
 
 /// SPI clock to the MCP2515 (its max is 10 MHz).
 pub const MCP2515_SPI_HZ: u32 = 8_000_000;

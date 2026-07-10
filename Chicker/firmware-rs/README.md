@@ -54,10 +54,12 @@ cooldown <ms>              benchmode on|off        status
 `benchmode on` disables the CAN-silence auto-disarm for probe-less bench
 work — it logs loudly and should never be on in a robot.
 
-## CAN protocol v0 (500 kbps, 11-bit IDs)
+## CAN protocol v0 (250 kbps, 11-bit IDs)
 
 New canonical interface — the robot side should adopt this (the old
-firmware's message system is deliberately not carried over). IDs in
+firmware's message system is deliberately not carried over). 250 kbps
+matches the robot's existing shared motor/power bus; the 8 MHz MCP2515
+allows up to 500 kbps if the whole bus is ever upgraded. IDs in
 `src/config.rs`.
 
 | ID    | Dir | Payload |
@@ -127,9 +129,12 @@ worst fails loud) if the fact is wrong:
 - **The CHIP channel (GPIO2) was never fired by any firmware.** Treat the
   first chip kick as untested-hardware bring-up: scope it at low bank
   voltage first.
-- **Legacy CAN bus ran 250 kbps** (ID 0x2AA) per `[OLD-FW]`. This firmware
-  defines a new 500 kbps protocol; switch `CAN_BITRATE_CNF` to
-  `CNF_250K_BPS` if legacy nodes must coexist during migration.
+- **Legacy CAN bus ran 250 kbps** (ID 0x2AA) per `[OLD-FW]`, confirmed by
+  the robot's `setup_bot.sh`. This firmware keeps 250 kbps (new message
+  format, same bitrate) so it can join the live bus without disturbing the
+  motor controllers. With the old robot firmware still in place the board
+  simply never receives a valid ARM frame and stays safely Disarmed
+  (no charging, bank dumped).
 - The old firmware had no watchdog and polled CAN; both are fixed here.
 
 ## Still to verify on the bench

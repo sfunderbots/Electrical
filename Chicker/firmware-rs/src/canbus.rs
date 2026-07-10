@@ -53,7 +53,7 @@ pub async fn can_task(spi_dev: SpiDev, mut int: Input<'static>, mut led: Output<
             }
         }
     }
-    log::info!("MCP2515 up, 500 kbps (8 MHz xtal)");
+    log::info!("MCP2515 up, 250 kbps (8 MHz xtal)");
 
     let mut status_rx = STATUS.receiver().unwrap();
     let mut tx_tick = Ticker::every(config::STATUS_PERIOD);
