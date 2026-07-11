@@ -5,6 +5,10 @@ runner = "elf2uf2-rs -d"
 rustflags = [
     "-C", "link-arg=--nmagic",
     "-C", "link-arg=-Tlink.x",
+    # embassy-rp's fragment that pins the .boot2 blob to 0x10000000 — without
+    # it the ROM finds no valid second-stage bootloader and the chip falls
+    # back into BOOTSEL instead of booting the firmware.
+    "-C", "link-arg=-Tlink-rp.x",
 ]
 
 [build]
