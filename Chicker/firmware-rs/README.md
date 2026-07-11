@@ -63,6 +63,7 @@ console. Commands go through the exact same state machine as CAN:
 arm manual | arm auto      disarm
 kick <us>  | chip <us>     autofire <us> [kick|chip]
 cooldown <ms>              benchmode on|off        status
+canstat                    (MCP2515 CNF readback + error counters)
 bootloader                 (reboot into the UF2 bootloader for reflash)
 ```
 
@@ -150,6 +151,15 @@ worst fails loud) if the fact is wrong:
   motor controllers. With the old robot firmware still in place the board
   simply never receives a valid ARM frame and stays safely Disarmed
   (no charging, bank dumped).
+- **MCP2515 post-RESET dead window**: after the SPI RESET instruction the
+  chip ignores SPI for ~128 OSC1 cycles (16 µs at 8 MHz). Writes issued in
+  that window are silently lost — this firmware was fast enough to hit it,
+  leaving the chip in Normal mode with all-zero CNF and jamming the whole
+  robot bus with wrong-bitrate retries (found live on the robot; the old
+  Python firmware was far too slow to ever trigger it). Init now waits 2 ms
+  after reset and readback-verifies CNF **before** entering Normal mode; on
+  mismatch the board stays off-bus in Configuration mode and logs loudly.
+  `canstat` on the console dumps the live registers.
 - The old firmware had no watchdog and polled CAN; both are fixed here.
 
 ## Still to verify on the bench

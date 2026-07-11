@@ -123,6 +123,7 @@ fn parse_line(line: &str) -> Action {
         ("benchmode", Some("on")) => send(Event::CmdBenchMode(true)),
         ("benchmode", Some("off")) => send(Event::CmdBenchMode(false)),
         ("status", _) => send(Event::CmdLogStatus),
+        ("canstat", _) => crate::canbus::DIAG_REQ.store(true, portable_atomic::Ordering::Relaxed),
         ("bootloader", _) => return Action::Bootloader,
         ("", _) => {}
         _ => log::warn!(
