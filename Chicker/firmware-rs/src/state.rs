@@ -25,7 +25,7 @@ use embassy_rp::watchdog::Watchdog;
 use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use embassy_sync::channel::Channel;
 use embassy_sync::watch::Watch;
-use embassy_time::{Duration, Instant, Timer};
+use embassy_time::{Duration, Instant, Ticker, Timer};
 
 use crate::charger::Charger;
 use crate::config;
@@ -97,8 +97,6 @@ pub enum Event {
     Overvoltage { hv_mv: u32 },
     /// Any valid CAN frame arrived; feeds the comms watchdog.
     CanActivity,
-    /// 50 ms housekeeping (generated locally on receive timeout).
-    Tick,
 }
 
 /// Telemetry snapshot, encoded into the STATUS CAN frame.
@@ -145,6 +143,7 @@ pub struct Machine {
     v5_mv: u32,
     beam_active: bool,
     last_can: Instant,
+    last_tick: Instant,
     last_done_raw: bool,
     last_fire: Instant,
     last_cycle_start: Instant,
@@ -185,6 +184,7 @@ impl Machine {
             v5_mv: 0,
             beam_active: false,
             last_can: Instant::MIN,
+            last_tick: Instant::MIN,
             last_done_raw: false,
             last_fire: Instant::MIN,
             last_cycle_start: Instant::MIN,
@@ -195,7 +195,9 @@ impl Machine {
     }
 
     pub async fn run(mut self) -> ! {
+        const TICK_PERIOD: Duration = Duration::from_millis(50);
         log::info!("state: boot -> Disarmed (charge off, bank dumping)");
+        let mut ticker = Ticker::every(TICK_PERIOD);
         loop {
             // Feed the hardware watchdog only while telemetry is alive. If
             // this loop or the ADC dies, the chip resets within 1 s, pads
@@ -208,17 +210,23 @@ impl Machine {
                 self.watchdog.feed(config::HW_WATCHDOG);
             }
 
-            let ev = match embassy_futures::select::select(
-                EVENTS.receive(),
-                Timer::after_millis(50),
-            )
-            .await
-            {
-                embassy_futures::select::Either::First(ev) => ev,
-                embassy_futures::select::Either::Second(()) => Event::Tick,
-            };
+            // The ticker must live outside the select: a fresh
+            // `Timer::after(..)` per iteration would be reset by every event,
+            // and the 20 ms ADC sample stream would starve it forever —
+            // silently disabling all of tick()'s housekeeping (this happened;
+            // the CAN-silence auto-disarm never fired on the bench).
+            match embassy_futures::select::select(EVENTS.receive(), ticker.next()).await {
+                embassy_futures::select::Either::First(ev) => self.handle(ev).await,
+                embassy_futures::select::Either::Second(()) => {}
+            }
 
-            self.handle(ev).await;
+            // Run housekeeping on elapsed time, not on who won the select, so
+            // event pressure can never starve it.
+            if self.last_tick.elapsed() >= TICK_PERIOD {
+                self.last_tick = Instant::now();
+                self.tick();
+            }
+
             self.tick_charge().await;
             self.apply_outputs();
             STATUS.sender().send(self.snapshot());
@@ -328,8 +336,6 @@ impl Machine {
                     self.bench_mode,
                 );
             }
-
-            Event::Tick => self.tick(),
         }
     }
 
