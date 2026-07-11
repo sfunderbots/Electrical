@@ -27,23 +27,32 @@ can only send events into a queue. Layers, outermost first:
 States: `Disarmed → Armed{Manual|AutoBreakBeam} → Firing → Cooldown → Armed`,
 plus latched `Faulted`. Boot enters Disarmed (bank dumping).
 
-## Build & flash (UF2, no probe needed)
+## Build & flash (USB, no probe needed)
 
 ```sh
-rustup target add thumbv6m-none-eabi   # once
-cargo install elf2uf2-rs               # once
-
 ./flash.sh    # build + reflash entirely over USB, no buttons
 ```
 
+Flashing uses [picotool](https://github.com/raspberrypi/picotool), which
+speaks the PICOBOOT USB protocol straight to the ROM bootloader — unlike
+UF2 drag-and-drop (or `elf2uf2-rs -d`) it does not depend on the RPI-RP2
+drive getting auto-mounted, which desktop Linux often doesn't do.
+
+One-time setup (installs the Rust target, builds picotool from source, and
+installs the udev rule from `udev/` — the only step that needs sudo):
+
+```sh
+./setup.sh
+```
+
 Once this firmware is running, `flash.sh` sends the console command
-`bootloader` over the serial port — the chip reboots into the ROM UF2
-bootloader (`RPI-RP2` drive, CAN LED as activity light) and the script
-flashes it. Only a blank/old board needs the buttons: hold BOOT, tap
-RESET, release BOOT, then run `./flash.sh` (or `cargo run --release`,
-or copy a UF2 onto the drive by hand). The bootloader reboot is safe at
-any time — a chip reset returns every pad to pull-down, which is the
-same charge-off/bank-dumping state as Disarmed.
+`bootloader` over the serial port — the chip reboots into the ROM
+bootloader (CAN LED becomes the activity light) and picotool flashes and
+restarts it. Only a blank/old board needs the buttons: hold BOOT, tap
+RESET, release BOOT, then run `./flash.sh` (or `cargo run --release`).
+The bootloader reboot is safe at any time — a chip reset returns every
+pad to pull-down, which is the same charge-off/bank-dumping state as
+Disarmed.
 
 ## Bench console (USB CDC)
 

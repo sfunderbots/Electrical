@@ -1,7 +1,8 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-# `cargo run --release` converts the ELF to UF2 and copies it to a mounted
-# RPI-RP2 BOOTSEL drive (hold BOOT, tap RESET, then run).
-runner = "elf2uf2-rs -d"
+# `cargo run --release` flashes a board already in BOOTSEL mode via the
+# PICOBOOT USB protocol (no mounted drive needed). Prefer ./flash.sh, which
+# also reboots running firmware into BOOTSEL first (console `bootloader`).
+runner = "picotool load -u -v -x -t elf"
 rustflags = [
     "-C", "link-arg=--nmagic",
     "-C", "link-arg=-Tlink.x",
