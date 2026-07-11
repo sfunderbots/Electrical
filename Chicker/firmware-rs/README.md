@@ -33,12 +33,17 @@ plus latched `Faulted`. Boot enters Disarmed (bank dumping).
 rustup target add thumbv6m-none-eabi   # once
 cargo install elf2uf2-rs               # once
 
-cargo build --release
-elf2uf2-rs target/thumbv6m-none-eabi/release/chicker-fw chicker-fw.uf2
-# hold BOOT, tap RESET, release BOOT -> RPI-RP2 drive appears
-cp chicker-fw.uf2 /media/$USER/RPI-RP2/
-# or simply: cargo run --release   (auto-detects the mounted drive)
+./flash.sh    # build + reflash entirely over USB, no buttons
 ```
+
+Once this firmware is running, `flash.sh` sends the console command
+`bootloader` over the serial port — the chip reboots into the ROM UF2
+bootloader (`RPI-RP2` drive, CAN LED as activity light) and the script
+flashes it. Only a blank/old board needs the buttons: hold BOOT, tap
+RESET, release BOOT, then run `./flash.sh` (or `cargo run --release`,
+or copy a UF2 onto the drive by hand). The bootloader reboot is safe at
+any time — a chip reset returns every pad to pull-down, which is the
+same charge-off/bank-dumping state as Disarmed.
 
 ## Bench console (USB CDC)
 
@@ -49,6 +54,7 @@ console. Commands go through the exact same state machine as CAN:
 arm manual | arm auto      disarm
 kick <us>  | chip <us>     autofire <us> [kick|chip]
 cooldown <ms>              benchmode on|off        status
+bootloader                 (reboot into the UF2 bootloader for reflash)
 ```
 
 `benchmode on` disables the CAN-silence auto-disarm for probe-less bench

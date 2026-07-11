@@ -12,6 +12,7 @@
 //!   cooldown <ms>
 //!   benchmode on|off     disables the CAN-silence auto-disarm (bench only)
 //!   status
+//!   bootloader           reboot into the USB UF2 bootloader (RPI-RP2)
 
 use core::cell::RefCell;
 
@@ -57,11 +58,25 @@ impl ReceiverHandler for Console {
             });
             if let Some(line) = line {
                 if let Ok(s) = core::str::from_utf8(&line) {
-                    parse_line(s.trim());
+                    if parse_line(s.trim()) == Action::Bootloader {
+                        // Deliberately bypasses the state machine: the chip
+                        // reset returns every pad to its pull-down (charge
+                        // off, bank dumping) — the exact pin state Disarmed
+                        // drives — before the bootloader comes up.
+                        log::warn!("rebooting into USB bootloader (RPI-RP2)");
+                        embassy_time::Timer::after_millis(100).await; // flush log
+                        embassy_rp::rom_data::reset_to_usb_boot(1 << 6, 0); // CAN LED = activity light
+                    }
                 }
             }
         }
     }
+}
+
+#[derive(PartialEq)]
+enum Action {
+    None,
+    Bootloader,
 }
 
 fn send(ev: Event) {
@@ -70,7 +85,7 @@ fn send(ev: Event) {
     }
 }
 
-fn parse_line(line: &str) {
+fn parse_line(line: &str) -> Action {
     let mut words = line.split_whitespace();
     let cmd = words.next().unwrap_or("");
     let arg1 = words.next();
@@ -108,11 +123,13 @@ fn parse_line(line: &str) {
         ("benchmode", Some("on")) => send(Event::CmdBenchMode(true)),
         ("benchmode", Some("off")) => send(Event::CmdBenchMode(false)),
         ("status", _) => send(Event::CmdLogStatus),
+        ("bootloader", _) => return Action::Bootloader,
         ("", _) => {}
         _ => log::warn!(
-            "unknown cmd. try: arm manual|auto, disarm, kick <us>, chip <us>, autofire <us> [kick|chip], cooldown <ms>, benchmode on|off, status"
+            "unknown cmd. try: arm manual|auto, disarm, kick <us>, chip <us>, autofire <us> [kick|chip], cooldown <ms>, benchmode on|off, status, bootloader"
         ),
     }
+    Action::None
 }
 
 #[embassy_executor::task]
