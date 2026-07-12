@@ -118,6 +118,7 @@ pub enum FireRefused {
     CapTooLow,
     HvStale,
     PulseBusy,
+    ChipNotInstalled,
 }
 
 // ---------------------------------------------------------------------------
@@ -367,6 +368,9 @@ impl Machine {
         let State::Armed { mode } = self.state else {
             return Err(FireRefused::NotArmed);
         };
+        if matches!(kind, FireKind::Chip) && !config::CHIP_INSTALLED {
+            return Err(FireRefused::ChipNotInstalled);
+        }
         if self.hv_at.elapsed() > config::ADC_STALE {
             return Err(FireRefused::HvStale);
         }

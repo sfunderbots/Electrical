@@ -25,6 +25,11 @@ pub const PULSE_MAX_US: u32 = 5000;
 /// Default pulse used by break-beam auto-fire until CONFIG changes it.
 pub const DEFAULT_AUTOFIRE_US: u32 = 2000;
 
+/// [BENCH] Only the KICK solenoid is mounted right now. While false, chip
+/// fire commands are refused (loudly) and the self-test skips the chip
+/// stage. Flip to true when the chip solenoid is installed.
+pub const CHIP_INSTALLED: bool = false;
+
 /// Lockout after every fire. Also gives the bank time to recharge.
 pub const DEFAULT_COOLDOWN_MS: u32 = 500;
 

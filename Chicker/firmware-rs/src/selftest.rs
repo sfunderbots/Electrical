@@ -198,13 +198,17 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
     let hv_charged = s.hv_mv;
 
     // Stage 5: chip fire — this channel has never been driven on this board.
-    let sag = fire_and_measure(rx, FireKind::Chip, hv_charged)
-        .await
-        .map_err(abort_msg)?;
-    if sag < MIN_SAG_MV {
-        return Err("CHIP fired but HV barely sagged — chip IGBT/solenoid path suspect");
+    if crate::config::CHIP_INSTALLED {
+        let sag = fire_and_measure(rx, FireKind::Chip, hv_charged)
+            .await
+            .map_err(abort_msg)?;
+        if sag < MIN_SAG_MV {
+            return Err("CHIP fired but HV barely sagged — chip IGBT/solenoid path suspect");
+        }
+        log::info!("selftest: [5/6] CHIP fire OK (sag {} mV)", sag);
+    } else {
+        log::info!("selftest: [5/6] CHIP skipped (config::CHIP_INSTALLED = false)");
     }
-    log::info!("selftest: [5/6] CHIP fire OK (sag {} mV)", sag);
 
     // Stage 6: disarm and watch the bank dump.
     send(Event::CmdDisarm).await;
@@ -246,7 +250,10 @@ pub async fn selftest_task() -> ! {
         let ceiling = SELFTEST.receive().await;
         log::info!("selftest: START");
         match run(&mut rx, ceiling).await {
-            Ok(()) => log::info!("selftest: PASS (all 6 stages)"),
+            Ok(()) if crate::config::CHIP_INSTALLED => {
+                log::info!("selftest: PASS (all 6 stages)")
+            }
+            Ok(()) => log::info!("selftest: PASS (5 stages, chip skipped)"),
             Err(msg) => {
                 cleanup().await;
                 log::error!("selftest: FAIL — {}", msg);
