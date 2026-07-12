@@ -63,6 +63,8 @@ console. Commands go through the exact same state machine as CAN:
 arm manual | arm auto      disarm
 kick <us>  | chip <us>     autofire <us> [kick|chip]
 cooldown <ms>              benchmode on|off        status
+ceiling <V> | ceiling off  (bench charge ceiling — only lowers the target)
+selftest [V|full]          (built-in bring-up test, default 35 V ceiling)
 canstat                    (MCP2515 CNF readback + error counters)
 bootloader                 (reboot into the UF2 bootloader for reflash)
 ```
@@ -92,7 +94,20 @@ bit4 hv_ready, bit5 benchmode. state: 0 Disarmed, 1 Armed/Manual,
 2 Armed/Auto, 3 Firing, 4 Cooldown, 5 Faulted. fault: 1 overvolt,
 2 charge-timeout, 3 pulse-busy, 4 adc-stale.
 
-## Bench bring-up (safest first — HV disconnected/discharged for 1–4)
+## Built-in self-test (no instruments needed)
+
+`selftest` runs the whole DUT bring-up from the board itself (see
+`src/selftest.rs`): static checks → charge to a 35 V ceiling → KICK fire →
+recharge → CHIP fire → dump decay. The HV ADC is the voltmeter, the
+LT3750's resistor-set ~210 V target is the calibration reference, and the
+HV sag after each pulse proves real solenoid current. It drives the normal
+event queue (all guards stay active); `disarm` aborts at any point. Run it
+with the robot on a stand and the kicker face clear. After a low-voltage
+PASS, `selftest full` repeats it at the real target — at completion the
+reported voltage should read ≈210 V, which doubles as the HV calibration
+check. `ceiling <V>` is available separately for manual bench work.
+
+## Bench bring-up (manual variant — HV disconnected/discharged for 1–4)
 
 1. **No HV**: flash, open the serial port, check logs; meter: GPIO2/3/5 low,
    GPIO8 low at boot.

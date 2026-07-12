@@ -11,6 +11,8 @@
 //!   autofire <us> [kick|chip]
 //!   cooldown <ms>
 //!   benchmode on|off     disables the CAN-silence auto-disarm (bench only)
+//!   ceiling <V>|off      bench charge ceiling (can only lower the target)
+//!   selftest [V|full]    built-in bring-up test, see selftest.rs
 //!   status
 //!   bootloader           reboot into the USB UF2 bootloader (RPI-RP2)
 
@@ -124,10 +126,33 @@ fn parse_line(line: &str) -> Action {
         ("benchmode", Some("off")) => send(Event::CmdBenchMode(false)),
         ("status", _) => send(Event::CmdLogStatus),
         ("canstat", _) => crate::canbus::DIAG_REQ.store(true, portable_atomic::Ordering::Relaxed),
+        ("ceiling", Some("off")) => send(Event::CmdSetChargeCeiling(None)),
+        ("ceiling", Some(v)) => match v.parse::<u32>() {
+            Ok(volts) if (5..=250).contains(&volts) => {
+                send(Event::CmdSetChargeCeiling(Some(volts * 1000)))
+            }
+            _ => log::warn!("usage: ceiling <volts 5-250>|off"),
+        },
+        ("selftest", arg) => {
+            let req = match arg {
+                None => Some(crate::selftest::DEFAULT_CEILING_MV),
+                Some("full") => None,
+                Some(v) => match v.parse::<u32>() {
+                    Ok(volts) if (20..=60).contains(&volts) => Some(volts * 1000),
+                    _ => {
+                        log::warn!("usage: selftest [volts 20-60|full]");
+                        return Action::None;
+                    }
+                },
+            };
+            if crate::selftest::SELFTEST.try_send(req).is_err() {
+                log::warn!("selftest already queued/running");
+            }
+        }
         ("bootloader", _) => return Action::Bootloader,
         ("", _) => {}
         _ => log::warn!(
-            "unknown cmd. try: arm manual|auto, disarm, kick <us>, chip <us>, autofire <us> [kick|chip], cooldown <ms>, benchmode on|off, status, bootloader"
+            "unknown cmd. try: arm manual|auto, disarm, kick <us>, chip <us>, autofire <us> [kick|chip], cooldown <ms>, benchmode on|off, ceiling <V>|off, selftest [V|full], status, canstat, bootloader"
         ),
     }
     Action::None

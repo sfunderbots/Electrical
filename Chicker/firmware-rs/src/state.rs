@@ -87,6 +87,9 @@ pub enum Event {
     CmdFire { kind: FireKind, width_us: u32 },
     CmdSetAutofire { kind: FireKind, width_us: u32 },
     CmdSetCooldownMs(u32),
+    /// Bench/self-test charge ceiling in mV (None = normal thresholds).
+    /// Clamped to CHARGE_BACKSTOP_MV — it can only ever lower the target.
+    CmdSetChargeCeiling(Option<u32>),
     CmdBenchMode(bool),
     /// Log a full status line (console `status` command).
     CmdLogStatus,
@@ -136,6 +139,9 @@ pub struct Machine {
     autofire_us: u32,
     cooldown: Duration,
     bench_mode: bool,
+    /// Bench/self-test override: charge only to this (mV). Persists until
+    /// changed or reboot; can never raise the target above the backstop.
+    charge_ceiling_mv: Option<u32>,
 
     hv_mv: u32,
     hv_at: Instant,
@@ -178,6 +184,7 @@ impl Machine {
             autofire_us: config::DEFAULT_AUTOFIRE_US,
             cooldown: Duration::from_millis(config::DEFAULT_COOLDOWN_MS as u64),
             bench_mode: false,
+            charge_ceiling_mv: None,
             hv_mv: 0,
             hv_at: Instant::MIN,
             batt_mv: 0,
@@ -244,7 +251,10 @@ impl Machine {
                         log::warn!("arm refused: no fresh HV telemetry");
                     } else {
                         // Re-arming while armed just switches mode.
-                        log::info!("armed, mode {:?}", mode);
+                        match self.charge_ceiling_mv {
+                            Some(c) => log::info!("armed, mode {:?} (charge ceiling {} mV)", mode, c),
+                            None => log::info!("armed, mode {:?}", mode),
+                        }
                         self.state = State::Armed { mode };
                         // Don't let the comms watchdog trip on the very next tick.
                         self.last_can = Instant::now();
@@ -311,6 +321,19 @@ impl Machine {
                 let ms = ms.clamp(100, 60_000);
                 self.cooldown = Duration::from_millis(ms as u64);
                 log::info!("cooldown = {} ms", ms);
+            }
+
+            Event::CmdSetChargeCeiling(mv) => {
+                self.charge_ceiling_mv =
+                    mv.map(|v| v.clamp(5_000, config::CHARGE_BACKSTOP_MV));
+                match self.charge_ceiling_mv {
+                    Some(v) => log::warn!(
+                        "charge ceiling set: {}.{:03} V (bench/self-test; persists until 'ceiling off' or reboot)",
+                        v / 1000,
+                        v % 1000
+                    ),
+                    None => log::info!("charge ceiling off (normal thresholds)"),
+                }
             }
 
             Event::CmdBenchMode(on) => {
@@ -441,6 +464,16 @@ impl Machine {
             return;
         }
 
+        // A bench/self-test ceiling only ever lowers the targets.
+        let backstop_mv = self
+            .charge_ceiling_mv
+            .map_or(config::CHARGE_BACKSTOP_MV, |c| {
+                c.min(config::CHARGE_BACKSTOP_MV)
+            });
+        let recharge_on_mv = self.charge_ceiling_mv.map_or(config::RECHARGE_ON_MV, |c| {
+            config::RECHARGE_ON_MV.min(c.saturating_sub(3_000))
+        });
+
         if self.charge.charging() {
             // done_raw() == false means the DONE net is HIGH = switching.
             if !self.done_raw() {
@@ -448,7 +481,7 @@ impl Machine {
             }
             let elapsed = self.charge.cycle_elapsed();
             if elapsed > config::DONE_SETTLE && self.cycle_saw_charging && self.done_raw() {
-                if self.hv_mv < config::RECHARGE_ON_MV {
+                if self.hv_mv < recharge_on_mv {
                     // Finished far below target: DONE interpretation or HV
                     // calibration is suspect — say so instead of pretending
                     // the bank is charged.
@@ -460,8 +493,12 @@ impl Machine {
                     log::info!("charge cycle complete (DONE) at {} mV", self.hv_mv);
                 }
                 self.charge.pause();
-            } else if self.hv_mv >= config::CHARGE_BACKSTOP_MV {
-                log::warn!("charge stopped by ADC backstop at {} mV", self.hv_mv);
+            } else if self.hv_mv >= backstop_mv {
+                if self.charge_ceiling_mv.is_some_and(|c| backstop_mv == c) {
+                    log::info!("charge paused at test ceiling ({} mV)", self.hv_mv);
+                } else {
+                    log::warn!("charge stopped by ADC backstop at {} mV", self.hv_mv);
+                }
                 self.charge.pause();
             } else if elapsed > config::DONE_RISE_WARN
                 && !self.cycle_saw_charging
@@ -474,7 +511,7 @@ impl Machine {
             }
             // A cycle where DONE never goes high keeps `charging` set until
             // the CHARGE_TIMEOUT fault in tick().
-        } else if self.hv_mv < config::RECHARGE_ON_MV
+        } else if self.hv_mv < recharge_on_mv
             && self.hv_at.elapsed() < config::ADC_STALE
             && self.last_fire.elapsed() > config::POST_FIRE_CHARGE_HOLDOFF
             && self.last_cycle_start.elapsed() > config::MIN_CYCLE_INTERVAL

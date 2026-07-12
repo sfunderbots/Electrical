@@ -19,6 +19,7 @@ mod charger;
 mod config;
 mod protocol;
 mod pulse;
+mod selftest;
 mod state;
 mod usb;
 
@@ -83,6 +84,7 @@ async fn main(spawner: Spawner) {
     spawner.spawn(beam::beam_task(beam_in).unwrap());
     spawner.spawn(canbus::can_task(spi_dev, can_int, can_led).unwrap());
     spawner.spawn(state::state_task(machine).unwrap());
+    spawner.spawn(selftest::selftest_task().unwrap());
 }
 
 /// Last-resort panic handler: reclaim the four power-stage pins from
