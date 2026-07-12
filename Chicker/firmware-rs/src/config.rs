@@ -49,9 +49,11 @@ pub const PIO_CYCLES_PER_US: u32 = 125;
 /// ([OLD-FW] logs show real-world peaks of 206-211 V; [SCH] target ~210 V.)
 pub const OVERVOLT_MV: u32 = 225_000;
 /// Software backstop: force CHARGE low at/above this even if DONE never
-/// falls. Above the [OLD-FW]-observed 211 V peak, below the overvoltage
-/// fault. Independent of DONE, so it holds even if DONE handling is wrong.
-pub const CHARGE_BACKSTOP_MV: u32 = 215_000;
+/// falls. Independent of DONE, so it holds even if DONE handling is wrong.
+/// [BENCH 2026-07-12] the LT3750's own DONE stop reads ~214.9 V indicated
+/// on this board (selftest full), so the backstop sits just above that and
+/// below the 225 V overvoltage fault.
+pub const CHARGE_BACKSTOP_MV: u32 = 220_000;
 /// Start a new charge cycle when the bank sags below this while armed.
 pub const RECHARGE_ON_MV: u32 = 195_000;
 /// Never start charge cycles closer together than this. Defensive: if the

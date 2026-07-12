@@ -204,6 +204,19 @@ impl Machine {
 
     pub async fn run(mut self) -> ! {
         const TICK_PERIOD: Duration = Duration::from_millis(50);
+        // Why did we boot? Tells a watchdog reset (firmware stall) apart
+        // from a power glitch (por = brownout/power-on, run = RUN pin)
+        // when the board dies during heavy flyback draw.
+        let wd = embassy_rp::pac::WATCHDOG.reason().read();
+        let cr = embassy_rp::pac::VREG_AND_CHIP_RESET.chip_reset().read();
+        log::warn!(
+            "boot: reset reason wd_timer={} wd_force={} por={} run_pin={} psm={}",
+            wd.timer(),
+            wd.force(),
+            cr.had_por(),
+            cr.had_run(),
+            cr.had_psm_restart(),
+        );
         log::info!("state: boot -> Disarmed (charge off, bank dumping)");
         let mut ticker = Ticker::every(TICK_PERIOD);
         loop {

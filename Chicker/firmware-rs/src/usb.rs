@@ -138,9 +138,9 @@ fn parse_line(line: &str) -> Action {
                 None => Some(crate::selftest::DEFAULT_CEILING_MV),
                 Some("full") => None,
                 Some(v) => match v.parse::<u32>() {
-                    Ok(volts) if (20..=60).contains(&volts) => Some(volts * 1000),
+                    Ok(volts) if (20..=200).contains(&volts) => Some(volts * 1000),
                     _ => {
-                        log::warn!("usage: selftest [volts 20-60|full]");
+                        log::warn!("usage: selftest [volts 20-200|full]");
                         return Action::None;
                     }
                 },

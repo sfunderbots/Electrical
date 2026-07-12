@@ -92,6 +92,14 @@ async fn cleanup() {
     send(Event::CmdBenchMode(false)).await;
 }
 
+/// [SCH] bank is 2x 1000 uF, so E[mJ] = V[volts]^2.
+const BANK_UF: u64 = 2_000;
+
+fn energy_mj(mv: u32) -> u64 {
+    let mv = mv as u64;
+    mv * mv * BANK_UF / 2 / 1_000_000_000
+}
+
 async fn fire_and_measure(
     rx: &mut StatusRx,
     kind: FireKind,
@@ -102,10 +110,26 @@ async fn fire_and_measure(
         width_us: TEST_PULSE_US,
     })
     .await;
-    // Pulse (1 ms) + cooldown entry + a few ADC/IIR periods to settle.
-    Timer::after_millis(400).await;
-    let s = wait_for(rx, Duration::from_secs(1), false, "timeout: no status after fire", |_| true).await?;
-    Ok(hv_before.saturating_sub(s.hv_mv))
+    // Track the LOWEST bank voltage across the post-fire window: the
+    // auto-recharge can start refilling within ~100 ms and a single
+    // delayed sample then sees no sag at all (bit us at 120 V).
+    let deadline = Instant::now() + Duration::from_millis(700);
+    let mut min_hv = hv_before;
+    loop {
+        match embassy_futures::select::select(rx.changed(), Timer::at(deadline)).await {
+            embassy_futures::select::Either::First(s) => {
+                if s.state_code == STATE_FAULTED {
+                    return Err(Abort::Fault(s.fault_code));
+                }
+                if s.state_code == STATE_DISARMED {
+                    return Err(Abort::Disarmed);
+                }
+                min_hv = min_hv.min(s.hv_mv);
+            }
+            embassy_futures::select::Either::Second(()) => break,
+        }
+    }
+    Ok(hv_before.saturating_sub(min_hv))
 }
 
 async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str> {
@@ -203,7 +227,14 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
     if sag < MIN_SAG_MV {
         return Err("KICK fired but HV barely sagged — kick IGBT/solenoid path suspect");
     }
-    log::info!("selftest: [3/6] KICK fire OK (sag {} mV)", sag);
+    let delivered = energy_mj(hv_charged) - energy_mj(hv_charged - sag);
+    let pct = delivered * 100 / energy_mj(hv_charged).max(1);
+    log::info!(
+        "selftest: [3/6] KICK fire OK (sag {} mV, ~{} mJ = {}% of stored energy)",
+        sag,
+        delivered,
+        pct
+    );
 
     // Stage 4: recharge (cooldown 500 ms + cycle interval floor apply).
     let t0 = Instant::now();
@@ -227,7 +258,14 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
         if sag < MIN_SAG_MV {
             return Err("CHIP fired but HV barely sagged — chip IGBT/solenoid path suspect");
         }
-        log::info!("selftest: [5/6] CHIP fire OK (sag {} mV)", sag);
+        let delivered = energy_mj(hv_charged) - energy_mj(hv_charged - sag);
+        let pct = delivered * 100 / energy_mj(hv_charged).max(1);
+        log::info!(
+            "selftest: [5/6] CHIP fire OK (sag {} mV, ~{} mJ = {}% of stored energy)",
+            sag,
+            delivered,
+            pct
+        );
     } else {
         log::info!("selftest: [5/6] CHIP skipped (config::CHIP_INSTALLED = false)");
     }
