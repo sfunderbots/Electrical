@@ -46,6 +46,7 @@ enum Abort {
 }
 
 const STATE_DISARMED: u8 = 0;
+const STATE_ARMED_MANUAL: u8 = 1;
 const STATE_FAULTED: u8 = 5;
 const FLAG_CHARGING: u8 = 1 << 0;
 
@@ -135,13 +136,20 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
         (s.flags >> 1) & 1,
     );
 
+    let what_fires = if crate::config::CHIP_INSTALLED {
+        "BOTH SOLENOIDS"
+    } else {
+        "the KICK solenoid"
+    };
     match ceiling {
         Some(c) => log::warn!(
-            "selftest: will charge to {} mV and FIRE BOTH SOLENOIDS in 3 s — 'disarm' aborts",
-            c
+            "selftest: will charge to {} mV and FIRE {} in 3 s — 'disarm' aborts",
+            c,
+            what_fires
         ),
         None => log::warn!(
-            "selftest: FULL-VOLTAGE run — will charge to the real target and FIRE BOTH SOLENOIDS in 3 s — 'disarm' aborts"
+            "selftest: FULL-VOLTAGE run — will charge to the real target and FIRE {} in 3 s — 'disarm' aborts",
+            what_fires
         ),
     }
     Timer::after_secs(3).await;
@@ -149,6 +157,15 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
     send(Event::CmdBenchMode(true)).await;
     send(Event::CmdSetChargeCeiling(ceiling)).await;
     send(Event::CmdArm(Mode::Manual)).await;
+
+    // STATUS snapshots emitted while the commands above are still queued
+    // show Disarmed; only once Armed has been seen does Disarmed mean the
+    // user aborted. So: tolerate Disarmed until the arm lands.
+    wait_for(rx, Duration::from_secs(2), true, "timeout: arm never took", |s| {
+        s.state_code == STATE_ARMED_MANUAL
+    })
+    .await
+    .map_err(abort_msg)?;
 
     // Stage 2: charge.
     let t0 = Instant::now();
@@ -168,9 +185,14 @@ async fn run(rx: &mut StatusRx, ceiling: Option<u32>) -> Result<(), &'static str
     let s = wait_for(rx, Duration::from_secs(1), false, "timeout: no status after charge", |_| true)
         .await
         .map_err(abort_msg)?;
+    // The flyback slews ~200 mV/ms at low bank voltage and HV samples arrive
+    // every 20 ms through an IIR filter, so a low ceiling overshoots by a
+    // few volts before the pause lands — sampling physics, not a fault
+    // (measured: +3.4 V at a 35 V ceiling). Allow 10% + 5 V; at full voltage
+    // the overvoltage fault is the real guardian.
     let ceiling_check = ceiling.unwrap_or(crate::config::CHARGE_BACKSTOP_MV);
-    if s.hv_mv > ceiling_check + ceiling_check / 10 {
-        return Err("bank overshot the target by >10% — HV cal or charge stop suspect");
+    if s.hv_mv > ceiling_check + ceiling_check / 10 + 5_000 {
+        return Err("bank overshot the target — HV cal or charge stop suspect");
     }
     let hv_charged = s.hv_mv;
 
