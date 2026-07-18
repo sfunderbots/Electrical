@@ -48,7 +48,7 @@ fn log_diag(mcp: &mut MCP25xx<SpiDev>, tx_drops: u32) {
     let s2 = mcp.read_register::<CNF2>().map(|r| r.into_bytes()[0]).unwrap_or(0xFF);
     let s1 = mcp.read_register::<CNF1>().map(|r| r.into_bytes()[0]).unwrap_or(0xFF);
     log::info!(
-        "canstat: uptime={}s CNF3/2/1 burst={:02x} {:02x} {:02x} single={:02x} {:02x} {:02x} (want 85 b1 00) CANSTAT={:02x} TEC={} REC={} EFLG={:02x} tx_drops={}",
+        "canstat: uptime={}s CNF3/2/1 burst={:02x} {:02x} {:02x} single={:02x} {:02x} {:02x} (want 82 90 00) CANSTAT={:02x} TEC={} REC={} EFLG={:02x} tx_drops={}",
         Instant::now().as_secs(),
         cnf[0],
         cnf[1],
@@ -136,7 +136,7 @@ pub async fn can_task(spi_dev: SpiDev, mut int: Input<'static>, mut led: Output<
         .map(|r| r.into_bytes()[0])
         .unwrap_or(0xFF);
     log::info!(
-        "MCP2515 up, 250 kbps (8 MHz xtal): CNF3/2/1 = {:02x} {:02x} {:02x} (want 85 b1 00), CANSTAT = {:02x} (top 3 bits 000 = normal mode)",
+        "MCP2515 up, 500 kbps (8 MHz xtal): CNF3/2/1 = {:02x} {:02x} {:02x} (want 82 90 00), CANSTAT = {:02x} (top 3 bits 000 = normal mode)",
         cnf[0],
         cnf[1],
         cnf[2],

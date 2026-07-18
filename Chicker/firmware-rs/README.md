@@ -72,13 +72,13 @@ bootloader                 (reboot into the UF2 bootloader for reflash)
 `benchmode on` disables the CAN-silence auto-disarm for probe-less bench
 work — it logs loudly and should never be on in a robot.
 
-## CAN protocol v0 (250 kbps, 11-bit IDs)
+## CAN protocol v0 (500 kbps, 11-bit IDs)
 
 New canonical interface — the robot side should adopt this (the old
-firmware's message system is deliberately not carried over). 250 kbps
-matches the robot's existing shared motor/power bus; the 8 MHz MCP2515
-allows up to 500 kbps if the whole bus is ever upgraded. IDs in
-`src/config.rs`.
+firmware's message system is deliberately not carried over). 500 kbps
+matches the shared motor/power bus after the 250k->500k cutover; 500 kbps
+is the ceiling for the 8 MHz MCP2515 (1 Mbps would need a crystal swap).
+IDs in `src/config.rs`.
 
 | ID    | Dir | Payload |
 |-------|-----|---------|
@@ -160,12 +160,13 @@ worst fails loud) if the fact is wrong:
 - **The CHIP channel (GPIO2) was never fired by any firmware.** Treat the
   first chip kick as untested-hardware bring-up: scope it at low bank
   voltage first.
-- **Legacy CAN bus ran 250 kbps** (ID 0x2AA) per `[OLD-FW]`, confirmed by
-  the robot's `setup_bot.sh`. This firmware keeps 250 kbps (new message
-  format, same bitrate) so it can join the live bus without disturbing the
-  motor controllers. With the old robot firmware still in place the board
-  simply never receives a valid ARM frame and stays safely Disarmed
-  (no charging, bank dumped).
+- **Legacy CAN bus ran 250 kbps** (ID 0x2AA) per `[OLD-FW]`. The bus is
+  being raised to **500 kbps**: this firmware, the robot host
+  (`setup_bot.sh` -> `can0 @ 500000`) and every tinymovr must be moved in
+  the same cutover, since one wrong-bitrate node emits error frames that
+  corrupt all motor traffic. New message format on the new bitrate. With
+  the old robot firmware still in place the board simply never receives a
+  valid ARM frame and stays safely Disarmed (no charging, bank dumped).
 - **MCP2515 post-RESET dead window**: after the SPI RESET instruction the
   chip ignores SPI for ~128 OSC1 cycles (16 µs at 8 MHz). Writes issued in
   that window are silently lost — this firmware was fast enough to hit it,
