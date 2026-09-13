@@ -1,6 +1,8 @@
 # Solenoid Active Damping
 > An electromechanical ball damping method for SSL robots that uses existing kicker hardware, without any costly and complex mechanical mechanisms required. This decouples the ball receiving damping from the ball holding damping needed for dribbling.
 
+Winner of the Open Source Award at RoboCup 2026!
+
 ---
 ## Motivation
 
