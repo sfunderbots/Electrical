@@ -313,9 +313,10 @@ def kick():
 
     if damping == 1:
         # stop PWM from damping mode
-        damping = 0
         stop_damp_pwm()
         print("DAMPING COMPLETE FROM KICK REQUEST")
+    damping = 0
+
     
 
     if can_rx_time is not None and (utime.ticks_ms() - can_rx_time > AUTOKICK_EXPIRE_THRESH_MS):
@@ -323,7 +324,7 @@ def kick():
 
     if (kicking == 0):
         if (prev_mode == MODE_IDLE or prev_mode == MODE_DAMP):
-            startup_cmhg = 1
+            startup_chg = 1
             HV_voltage = SenseHV()
         prev_mode = mode
         kicking = 1
@@ -333,14 +334,10 @@ def kick():
 
     if (kick_data_rec == 0):
         if (data == None) :
-            kick_data_rec = 0
             delay_time_us_temp = 0
-            chg_stop_mode_ctrl = 0
         else:
             # STATE 1: We got a command.
             kick_data_rec = 1
-            # Do NOT stop the charger here! Leave it at 0 so it keeps charging.
-            chg_stop_mode_ctrl = 0
             pulse_width = kick_pulse_width_from_data(data)
             new_can_data_bool = False
             delay_time_us_temp = clamp_kick_pulse_width(pulse_width)
@@ -352,7 +349,6 @@ def kick():
             data = None
         else:
             delay_time_us = 0
-            chg_stop_mode_ctrl = 0
 
             
  #############################################
@@ -367,7 +363,6 @@ def kick():
         HV_voltage = SenseHV()
         kick_cooldown = 0
         delay_time_us = 0
-        chg_stop_mode_ctrl = 0
         # kick speeds
         # interesting note: 1000us at 210V ~= 1500us at ~120V
         # kick at 1000us at 210V ends at ~191.5V
