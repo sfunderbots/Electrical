@@ -1,0 +1,61 @@
+import _thread, micropython
+from machine import ADC
+
+C_BANK   = 0.002            # calibrate!
+HV_ADC   = ADC(26)          # your sense pin
+HV_SCALE = 250 / 65535      # V per count, from divider
+DT_LOOP  = 16e-6            # MEASURE these two on the bench,
+DT_BASE  = DT_LOOP * 8      # don't trust my placeholders
+DIP_A    = 5.0              # dip depth threshold (A), tune
+
+v_filt  = 0.0   # filtered HV (V)
+i_est   = 0.0   # windowed current (A)
+p_est   = 0.0   # instantaneous power (W)
+e_out   = 0.0   # energy since mark (J)
+q_out   = 0.0   # charge since mark (C)
+imp_sum = 0.0   # sum of i^2*dt since mark (A^2*s)
+i_peak  = 0.0   # peak current since mark (A)
+dip_flag = 0    # 1 once plunger-motion dip confirmed
+
+_v0 = 0.0
+_dipstate = 0
+_i_min = 0.0
+
+def mark():                    # call right before kick / at damp hold start
+    global _v0, e_out, q_out, imp_sum, i_peak, dip_flag, _dipstate
+    _v0 = v_filt
+    e_out = 0.0
+    q_out = 0.0
+    imp_sum = 0.0
+    i_peak = 0.0
+    dip_flag = 0
+    _dipstate = 0
+
+@micropython.native
+def sampler():
+    global v_filt, i_est, p_est, e_out, q_out, imp_sum
+    global i_peak, dip_flag, _dipstate, _i_min
+    hist = [0.0] * 8
+    idx = 0
+    while True:
+        acc = 0
+        for _ in range(8):                 # boxcar oversample
+            acc += HV_ADC.read_u16()
+        v = (acc >> 3) * HV_SCALE
+        v_filt = v
+
+        old = hist[idx]                    # value from 8 loops ago
+        hist[idx] = v
+        idx = (idx + 1) & 7
+
+        i = C_BANK * (old - v) / DT_BASE   # windowed current
+
+        i_est = i
+        p_est = v * i
+
+        e_out   = 0.5 * C_BANK * (_v0 * _v0 - v * v)
+        q_out   = C_BANK * (_v0 - v)
+        imp_sum += i * i * DT_LOOP         # impulse proxy
+
+
+_thread.start_new_thread(sampler, ())
