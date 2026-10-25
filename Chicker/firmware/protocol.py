@@ -3,19 +3,29 @@
 #
 # All multi-byte fields are little-endian. IDs live in config.py.
 #
-# robot -> board
-#   MODE       [mode]                                  0 = IDLE (dump), 1 = CHARGE (charge and hold)
-#   KICK       [trigger, width_us u16, arm_ms u16]     trigger 0 = on break-beam, 1 = now; arm_ms 0 = default
+# robot -> board (each frame is one of the four modes on Henry's mode chart)
+#   MODE       [mode]                                  0 = MODE_IDLE (dump), 1 = MODE_CHG (charge and hold)
+#   KICK       [trigger, width_us u16, arm_ms u16]     MODE_AUTOKICK: kick when the ball breaks the beam.
+#                                                      trigger must be 0 (break-beam); arm_ms is ignored
+#                                                      (the chart has no arm timeout)
 #   DAMP       [freq_hz u16, duty u16, hold_ms u16, init_kick_us u16]
-#                                                      duty in 0.01 % units; hold_ms / init_kick_us 0 = default
-#   HEARTBEAT  [seq]
+#                                                      MODE_DAMP. duty in 0.01 % units; hold_ms = the damp
+#                                                      timeout; freq / hold_ms / init_kick_us 0 = default
+#   HEARTBEAT  [seq]                                   5 Hz keep-alive from the Pi
 #   LEGACY     [mode, value u16, duty]                 old frame, mapped onto the commands above
+#
+# decode() only returns GOOD commands (mode element 7): known ID, right length, every value in range.
+# Anything else comes back with a reject reason and must not change what the board is doing.
 # board -> robot
 #   STATUS     [mode_state, charge_state, flags, hv_dV u16, batt_dV, fault, seq]
 #   EVENT      [code, a u16, b u16, c u16, seq]
 
+# The chart's modes. MODE frames carry MODE_IDLE / MODE_CHG; KICK and DAMP frames are the other two.
 MODE_IDLE = 0
-MODE_CHARGE = 1
+MODE_CHG = 1
+MODE_AUTOKICK = 2
+MODE_DAMP = 3
+MODE_CHARGE = MODE_CHG      # old name, kept for the bench tools
 
 TRIGGER_BEAM = 0
 TRIGGER_NOW = 1
@@ -35,15 +45,18 @@ REJ_FAULTED = 5
 REJ_UNKNOWN_ID = 6
 REJ_HV_NOT_READY = 7
 REJ_KICKER_UNAVAILABLE = 8
+REJ_NOT_READY = 9         # command before the board is ready (Wait for Bat / Start BKBM interrupt)
 
 # Fault codes (STATUS fault byte, EVENT FAULT)
+# Charge faults are the "Charging Disabled" reasons on the charge chart. 2, 3, 4 and 7 were faults of the
+# old HV-based charge logic (dropped in the review) and stay unused so old logs still decode.
 F_NONE = 0
-F_CHG_NO_START = 1        # DONE never rose and bank not full (LT3750 UVLO/thermal or DONE path)
-F_CHG_EARLY_DONE = 2      # DONE fell well below target (datasheet fault behaviour)
-F_CHG_NO_PROGRESS = 3     # HV not rising while charging (dead flyback or HV sense)
-F_CHG_NO_REGULATION = 4   # HV above the backstop: LT3750 did not stop
-F_CHG_TIMEOUT = 5
-F_OVERVOLT = 6
+F_CHG_UVLO_THERMAL = 1    # no DONE rising edge after a toggle: LT3750 UVLO / thermal shutdown (element 8)
+F_CHG_TOO_SLOW = 5        # DONE still high 4500 ms after the toggle (element 10)
+F_OVERVOLT = 6            # HV >= 220 V, 3 readings in a row (X-1). EVENT b = the reading, dV
+F_SAFE_CHARGE_TEST = 8    # safe_chg test finished (element 9): bench mode, needs a power cycle
+F_CHG_NO_START = F_CHG_UVLO_THERMAL     # old names
+F_CHG_TIMEOUT = F_CHG_TOO_SLOW
 F_KICKER_SELFTEST = 10
 F_KICKER_READBACK = 11    # kick pin not low after an abort
 F_POWER_READBACK = 12     # CHARGE / ~DISCHARGE readback mismatch
@@ -55,25 +68,25 @@ EV_BOOT = 1               # a = reset cause, b = FW major*100 + minor
 EV_KICK_FIRED = 2         # a = width_us, b = hv_before dV, c = hv_after dV
 EV_DAMP_DONE = 3          # a = hold_ms actual, b = hv_start dV, c = hv_end dV
 EV_ARM_EXPIRED = 4
-EV_FAULT = 5              # a = fault code
+EV_FAULT = 5              # a = fault code, b = HV at the time dV, c = state the fault came from
 EV_CMD_REJECTED = 6       # a = CAN id, b = reason
 EV_COMMS_LOST = 7
 EV_DAMP_ABORTED = 8       # a = reason (REJ_*)
 
 # STATUS flags
 FL_BEAM = 0x01            # ball present / beam broken
-FL_KICK_READY = 0x02      # a kick right now would fire without waiting for charge
-FL_DAMP_READY = 0x04
+FL_KICK_READY = 0x02      # HV >= KICK_MIN_HV: an armed kick would fire without waiting for charge
+FL_DAMP_READY = 0x04      # HV >= DAMP_START_V
 FL_ARMED = 0x08
 FL_CHARGING = 0x10        # CHARGE pin high
 FL_DISCHARGING = 0x20     # ~DISCHARGE low (bank dumping)
-FL_HEARTBEAT_OK = 0x40
+FL_HEARTBEAT_OK = 0x40    # a frame from the Pi within HEARTBEAT_LATE_MS (early warning, note HB-1)
 FL_SHELL = 0x80           # reed switch raw level (analog version in to-test/)
 
 
 class Command:
     __slots__ = ("kind", "mode", "trigger", "width_us", "arm_ms", "freq_hz",
-                 "duty", "hold_ms", "init_kick_us", "seq", "can_id", "implied")
+                 "duty", "hold_ms", "init_kick_us", "seq", "can_id")
 
     def __init__(self, kind, can_id):
         self.kind = kind
@@ -87,17 +100,15 @@ class Command:
         self.hold_ms = 0
         self.init_kick_us = 0
         self.seq = 0
-        self.implied = False     # legacy: MODE CHARGE implied by a kick/damp frame
 
 
 def _u16(d, i):
     return d[i] | (d[i + 1] << 8)
 
 
-def _mode(can_id, mode, implied=False):
+def _mode(can_id, mode):
     c = Command(CMD_MODE, can_id)
     c.mode = mode
-    c.implied = implied
     return c
 
 
@@ -107,29 +118,38 @@ def decode(can_id, data, cfg):
     if can_id == cfg.CAN_ID_MODE:
         if n < 1:
             return [], REJ_BAD_LENGTH
-        if data[0] not in (MODE_IDLE, MODE_CHARGE):
+        if data[0] not in (MODE_IDLE, MODE_CHG):
             return [], REJ_BAD_VALUE
         return [_mode(can_id, data[0])], 0
 
     if can_id == cfg.CAN_ID_KICK:
         if n < 5:
             return [], REJ_BAD_LENGTH
-        if data[0] not in (TRIGGER_BEAM, TRIGGER_NOW):
+        if data[0] != TRIGGER_BEAM:            # "kick now" is not on the chart: AUTOKICK only
             return [], REJ_BAD_VALUE
         c = Command(CMD_KICK, can_id)
+        c.mode = MODE_AUTOKICK
         c.trigger = data[0]
         c.width_us = _u16(data, 1)
         c.arm_ms = _u16(data, 3)
+        if not (cfg.KICK_MIN_US <= c.width_us <= cfg.KICK_MAX_US):
+            return [], REJ_OUT_OF_RANGE
         return [c], 0
 
     if can_id == cfg.CAN_ID_DAMP:
         if n < 8:
             return [], REJ_BAD_LENGTH
         c = Command(CMD_DAMP, can_id)
-        c.freq_hz = _u16(data, 0)
+        c.mode = MODE_DAMP
+        c.freq_hz = _u16(data, 0) or cfg.DAMP_FREQ_DEFAULT
         c.duty = _u16(data, 2) / 100.0
-        c.hold_ms = _u16(data, 4)
-        c.init_kick_us = _u16(data, 6)
+        c.hold_ms = _u16(data, 4) or cfg.DAMP_HOLD_MS_DEFAULT
+        c.init_kick_us = _u16(data, 6) or cfg.DAMP_INITIAL_KICK_US
+        if (not (cfg.DAMP_FREQ_MIN <= c.freq_hz <= cfg.DAMP_FREQ_MAX)
+                or not (cfg.DAMP_DUTY_MIN <= c.duty <= cfg.DAMP_DUTY_MAX)
+                or c.hold_ms > cfg.DAMP_HOLD_MS_MAX
+                or not (cfg.KICK_MIN_US <= c.init_kick_us <= cfg.KICK_MAX_US)):
+            return [], REJ_OUT_OF_RANGE
         return [c], 0
 
     if can_id == cfg.CAN_ID_HEARTBEAT:
@@ -152,21 +172,22 @@ def _decode_legacy(can_id, data, cfg):
     value = _u16(data, 1)
     if mode == 0:
         return [_mode(can_id, MODE_IDLE)], 0
-    if mode == 3:
-        return [_mode(can_id, MODE_CHARGE)], 0
+    if mode == 3 or (mode == 1 and not value):
+        return [_mode(can_id, MODE_CHG)], 0
     if mode == 1:
-        cmds = [_mode(can_id, MODE_CHARGE, True)]
-        if value:
-            c = Command(CMD_KICK, can_id)
-            c.trigger = TRIGGER_BEAM
-            c.width_us = min(max(value, cfg.KICK_MIN_US), cfg.KICK_MAX_US)
-            cmds.append(c)
-        return cmds, 0
+        c = Command(CMD_KICK, can_id)
+        c.mode = MODE_AUTOKICK
+        c.trigger = TRIGGER_BEAM
+        c.width_us = min(max(value, cfg.KICK_MIN_US), cfg.KICK_MAX_US)
+        return [c], 0
     if mode == 2:
         c = Command(CMD_DAMP, can_id)
+        c.mode = MODE_DAMP
         c.freq_hz = min(max(value, cfg.DAMP_FREQ_MIN), cfg.DAMP_FREQ_MAX)
         c.duty = min(max(float(data[3]), cfg.DAMP_DUTY_MIN), cfg.DAMP_DUTY_MAX)
-        return [_mode(can_id, MODE_CHARGE, True), c], 0
+        c.hold_ms = cfg.DAMP_HOLD_MS_DEFAULT
+        c.init_kick_us = cfg.DAMP_INITIAL_KICK_US
+        return [c], 0
     return [], REJ_BAD_VALUE
 
 

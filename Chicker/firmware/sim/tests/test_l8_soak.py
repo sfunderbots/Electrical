@@ -8,7 +8,7 @@ import protocol as P
 
 def _soak(seed, seconds):
     rng = random.Random(seed)
-    s = Sim(seed=seed, CHARGE_RETRY_MS=2000, physics=dict(R_bleed=rng.choice((1.003e6, 60e3))))
+    s = Sim(seed=seed, physics=dict(R_bleed=rng.choice((1.003e6, 60e3))))
     if rng.random() < 0.5:
         s.heartbeat_ms = 50
     end = s.w.now + seconds * 1_000_000_000

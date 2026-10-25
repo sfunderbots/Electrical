@@ -400,7 +400,7 @@ def _make_canbus():
 
 
 def _make_usb_io():
-    m = types.ModuleType("usb_io")
+    m = types.ModuleType("sim_usb_io")
 
     def read_char():
         w = _w()
@@ -416,15 +416,10 @@ def _make_usb_io():
     return m
 
 
-_FIRMWARE_MODULES = ("config", "protocol", "sm_base", "charge_sm", "mode_sm", "kickmath", "kicker",
-                     "power_stage", "sensors", "board", "console", "app", "main")
-
-
 def install(firmware_dir):
     """Install the fakes and put the firmware directory on sys.path. Idempotent."""
     for name, maker in (("utime", _make_utime), ("machine", _make_machine), ("rp2", _make_rp2),
-                        ("micropython", _make_micropython), ("canbus", _make_canbus),
-                        ("usb_io", _make_usb_io)):
+                        ("micropython", _make_micropython), ("canbus", _make_canbus)):
         if not isinstance(sys.modules.get(name), types.ModuleType) or \
                 not getattr(sys.modules[name], "__sim__", False):
             mod = maker()
@@ -435,3 +430,10 @@ def install(firmware_dir):
         sys.print_exception = lambda e, f=None: traceback.print_exception(e)
     if firmware_dir not in sys.path:
         sys.path.insert(0, firmware_dir)
+    # USB serial: the firmware's console.read_char / console.write go to the simulated world instead
+    import console as con
+    if not getattr(con, "__sim__", False):
+        fake = _make_usb_io()
+        con.read_char = fake.read_char
+        con.write = fake.write
+        con.__sim__ = True

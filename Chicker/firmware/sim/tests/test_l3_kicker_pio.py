@@ -7,7 +7,7 @@ relaxed for this file; every other invariant stays on.
 import random
 from sim.harness import Sim
 from sim import world as W
-import kickmath as K
+import kicker as K    # noqa: E402
 
 CYC_NS = 8
 
@@ -50,7 +50,7 @@ def test_pulse_widths_are_exact():
     s = _dry_sim()
     k = s.board.kicker
     rng = random.Random(4)
-    widths = [50, 51, 500, 800, 1000, 4999, 5000] + [rng.randrange(50, 5001) for _ in range(20)]
+    widths = [100, 101, 500, 800, 1000, 4999, 5000] + [rng.randrange(100, 5001) for _ in range(20)]
     for w in widths:
         assert k.fire(w)
         s.run(7)

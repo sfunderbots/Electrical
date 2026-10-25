@@ -1,11 +1,11 @@
 # Chicker firmware v2 entry point.
 #
 # Boot: every power-stage pin is driven to its reset-safe level before anything else is imported
-# (CHARGE low, ~DISCHARGE low = dumping, KICK/CHIP low). The board then sits in Idle until the robot
-# (or the USB console) sends MODE CHARGE. Any exception - including Ctrl-C / Thonny "Stop" - lands in
+# (CHARGE low, ~DISCHARGE low = dumping, KICK/CHIP low). The mode machine then waits for the battery and the
+# first heartbeat from the Pi, and idles until a command arrives. Any exception - including Ctrl-C / Thonny "Stop" - lands in
 # the safe state: kick pin low, CHARGE low, bank dumping.
 #
-# Old firmware (RoboCup 2026) is kept in legacy/ for reference.
+# Files on the board: every .py file in this folder, plus canbus/. Old firmware (RoboCup 2026) is in legacy/.
 
 from machine import Pin
 import config

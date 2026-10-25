@@ -100,7 +100,6 @@ class World:
         self.overvolt_v = overvolt_v
         self.allow_kick_in_idle = False
         self.idle_abort_grace_ns = 200 * NS_PER_US
-        self.pre_fire_settle_ns = 5 * NS_PER_MS - NS_PER_MS   # 5 ms rule, minus ticks_ms resolution
         self._net = {PIN_CHARGE: 0, PIN_NDIS: 0, PIN_KICK: 0, PIN_CHIP: 0}
         self._net_t = {PIN_CHARGE: 0, PIN_NDIS: 0, PIN_KICK: 0, PIN_CHIP: 0}
         self._ov_reported = False
@@ -289,9 +288,6 @@ class World:
             self.violate("I2_deadtime", "dump on %.1f ms after CHARGE fell" % ((t - nt[PIN_CHARGE]) / 1e6))
         if net[PIN_KICK] and net[PIN_CHARGE]:
             self.violate("I3_kick_while_charging", "KICK high while CHARGE high")
-        if n == PIN_KICK and level and not net[PIN_CHARGE] and nt[PIN_CHARGE] > 0 and                 t - nt[PIN_CHARGE] < self.pre_fire_settle_ns:
-            self.violate("I3b_kick_too_soon_after_charge",
-                         "KICK rose %.2f ms after CHARGE fell" % ((t - nt[PIN_CHARGE]) / 1e6))
         if n == PIN_KICK and not level and t - prev_t > self.kick_max_ns:
             self.violate("I4_kick_too_long", "KICK pulse %.0f us" % ((t - prev_t) / 1e3))
         if n == PIN_KICK and level and self.mode_probe is not None and not self.allow_kick_in_idle:

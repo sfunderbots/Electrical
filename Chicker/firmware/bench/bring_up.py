@@ -12,7 +12,7 @@ Stages (each needs a typed "y"; any anomaly -> IDLE, wait for the bank to bleed 
   5  ladder         30 -> 60 -> 100 -> 150 V: one 500 us kick per step, HV sag vs model
   6  hold power     damp holds at 60 V and 100 V over a duty sweep -> R_eff of the solenoid (new air gap) ->
                     predicted full-voltage hold power and how long the bank lasts
-  7  full voltage   stop point 205-217 V, one 500 us kick (expect ~6.4 V sag), one short damp
+  7  full voltage   stop point 203-216 V, one 500 us kick (expect ~6.4 V sag), one short damp
   8  end            IDLE, bank below 10 V, logs written to bench/logs/<timestamp>/
 
 While any stage runs, every telemetry line is checked: CHARGE and ~DISCHARGE both active, HV more than
@@ -215,7 +215,8 @@ class BringUp:
         self.record("first charge", "holds without creeping", self.tl("hv") <= 34, hv=self.tl("hv"))
         t_idle = self.link.clock()
         self.cmd("idle")
-        self.wait(lambda l: l.tlm["hv"] < 4, 30, "dump to 4 V")
+        self.wait(lambda l: l.tlm["hv"] < 4, 30,
+                  "the discharge path to dump the bank (dump resistors / MOSFET?)")
         pts = [(t - t_idle, d["hv"]) for t, d in self.link.tlm_history if t >= t_idle + 0.15 and d["hv"] > 4]
         tau = _fit_tau(pts)
         self.record("first charge", "dump time constant ~ 2 s (1 k x 2 mF)", tau is not None and 1.2 <= tau <= 3.5,
@@ -271,7 +272,7 @@ class BringUp:
         self.gate("FULL VOLTAGE (~215 V). Solenoid secured, kicker face clear, everyone back?")
         self.charge_to(214)
         hv = self.tl("hv")
-        self.record("full", "LT3750 stop point 205-217 V", 205 <= hv <= 217, hv=hv)
+        self.record("full", "LT3750 stop point 203-216 V", 203 <= hv <= 216, hv=hv)
         n0 = self.n_events(EV_KICK_FIRED)
         self.cmd("kick 500 now")
         ev = self.wait_event(EV_KICK_FIRED, n0, 3)

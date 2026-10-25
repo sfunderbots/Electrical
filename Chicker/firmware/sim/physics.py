@@ -18,10 +18,11 @@ DEFAULTS = dict(
     # bank / charger
     C=2000e-6,
     R_bleed=1.003e6,           # HV divider is the main bleed path
-    lt_target_v=214.9,         # [RF] LT3750 stop point, as the HV ADC indicates it
+    lt_target_v=210.0,         # Henry: full bank reads 206-212 V (Steven's board read 214.9 V)
     lt_k=1.159, lt_alpha=0.67, lt_pmax=60.0, lt_eff=0.8,
     lt_vin_min=10.0,           # LT3750 UVLO on VCC
-    lt_fault="ok",             # ok | uvlo | no_regulation | early_done | done_stuck_high | done_stuck_low | slow
+    lt_fault="ok",             # ok | uvlo | no_regulation | early_done | done_stuck_high | done_stuck_low |
+                               # done_follows_charge | slow
     lt_early_done_v=120.0,
     lt_done_in_shutdown=0,     # DONE level while CHARGE is low (datasheet: NPN state; old fw observed 0)
     # dump
@@ -113,6 +114,8 @@ class Physics:
             return 1
         if f == "done_stuck_low":
             return 0
+        if f == "done_follows_charge":          # DONE never falls while CHARGE is held high
+            return self.charge_pin
         if self.lt_charging:
             return 1
         if not self.charge_pin:

@@ -67,7 +67,7 @@ def test_readback_mismatch_goes_safe_and_raises():
 def test_boot_state_is_reset_state():
     s = Sim()
     assert s.w.level(W.PIN_CHARGE) == 0 and s.w.level(W.PIN_NDIS) == 0 and s.w.level(W.PIN_KICK) == 0
-    assert s.mode == "Idle"
+    assert s.mode == "WaitForBat"      # mode chart: boots into Wait for Bat with charging stopped
     s.run(5000)                        # nothing charges without a command
     assert not any(n == W.PIN_CHARGE and lv for _, n, lv in s.w.pin_events)
     assert s.hv < 1.0

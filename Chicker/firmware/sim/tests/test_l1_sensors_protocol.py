@@ -17,9 +17,9 @@ def test_hv_conversion_matches_divider_within_one_lsb():
 
 
 def test_hv_reading_tracks_simulated_bank():
-    s = Sim()
+    s = Sim().ready()
     s.charge()
-    s.run_until(lambda: s.charge_state == "Full", 6000, "full")
+    s.run_until(lambda: s.charge_state == "AssumingCharged", 8000, "charged")
     s.run(10)
     assert abs(s.app.hv - s.hv) < 1.0, (s.app.hv, s.hv)
 
@@ -50,11 +50,14 @@ def test_battery_debounce_ignores_single_dips():
 def test_protocol_roundtrip_all_commands():
     c, r = P.decode(cfg.CAN_ID_MODE, P.encode_mode(P.MODE_CHARGE), cfg)
     assert r == 0 and c[0].kind == P.CMD_MODE and c[0].mode == P.MODE_CHARGE
-    c, r = P.decode(cfg.CAN_ID_KICK, P.encode_kick(1234, P.TRIGGER_NOW, 1500), cfg)
-    assert r == 0 and (c[0].width_us, c[0].trigger, c[0].arm_ms) == (1234, P.TRIGGER_NOW, 1500)
+    c, r = P.decode(cfg.CAN_ID_KICK, P.encode_kick(1234, P.TRIGGER_BEAM, 1500), cfg)
+    assert r == 0 and c[0].mode == P.MODE_AUTOKICK and (c[0].width_us, c[0].arm_ms) == (1234, 1500)
     c, r = P.decode(cfg.CAN_ID_DAMP, P.encode_damp(30000, 12.34, 2500, 700), cfg)
-    assert r == 0 and c[0].freq_hz == 30000 and abs(c[0].duty - 12.34) < 1e-9
+    assert r == 0 and c[0].mode == P.MODE_DAMP and c[0].freq_hz == 30000 and abs(c[0].duty - 12.34) < 1e-9
     assert (c[0].hold_ms, c[0].init_kick_us) == (2500, 700)
+    c, r = P.decode(cfg.CAN_ID_DAMP, P.encode_damp(0, 12.0, 0, 0), cfg)          # 0 = defaults
+    assert r == 0 and (c[0].freq_hz, c[0].hold_ms, c[0].init_kick_us) == (
+        cfg.DAMP_FREQ_DEFAULT, cfg.DAMP_HOLD_MS_DEFAULT, cfg.DAMP_INITIAL_KICK_US)
     c, r = P.decode(cfg.CAN_ID_HEARTBEAT, P.encode_heartbeat(77), cfg)
     assert r == 0 and c[0].kind == P.CMD_HEARTBEAT and c[0].seq == 77
 
@@ -65,6 +68,12 @@ def test_protocol_rejects_bad_frames():
     assert P.decode(cfg.CAN_ID_KICK, b"\x00\x10", cfg)[1] == P.REJ_BAD_LENGTH
     assert P.decode(cfg.CAN_ID_KICK, b"\x05\xe8\x03\x00\x00", cfg)[1] == P.REJ_BAD_VALUE
     assert P.decode(cfg.CAN_ID_DAMP, b"\x30\x75\x00", cfg)[1] == P.REJ_BAD_LENGTH
+    # "kick now" is not on the chart, and a good command must have every value in range (mode element 7)
+    assert P.decode(cfg.CAN_ID_KICK, P.encode_kick(1000, P.TRIGGER_NOW), cfg)[1] == P.REJ_BAD_VALUE
+    assert P.decode(cfg.CAN_ID_KICK, P.encode_kick(99), cfg)[1] == P.REJ_OUT_OF_RANGE
+    assert P.decode(cfg.CAN_ID_KICK, P.encode_kick(5001), cfg)[1] == P.REJ_OUT_OF_RANGE
+    assert P.decode(cfg.CAN_ID_DAMP, P.encode_damp(30000, 99.0), cfg)[1] == P.REJ_OUT_OF_RANGE
+    assert P.decode(cfg.CAN_ID_DAMP, P.encode_damp(30000, 12.0, 9000), cfg)[1] == P.REJ_OUT_OF_RANGE
     assert P.decode(0x123, b"\x00", cfg)[1] == P.REJ_UNKNOWN_ID
 
 
@@ -81,15 +90,15 @@ def test_protocol_fuzz_never_raises():
 def test_legacy_frames_map_onto_v2_commands():
     # the RoboCup frames from the old main.py comments
     c, _ = P.decode(0x2AA, P.encode_legacy(1, 1000, 0), cfg)         # autokick 1000 us
-    assert [x.kind for x in c] == [P.CMD_MODE, P.CMD_KICK] and c[0].implied and c[1].width_us == 1000
+    assert [x.mode for x in c] == [P.MODE_AUTOKICK] and c[0].width_us == 1000
     c, _ = P.decode(0x2AA, P.encode_legacy(2, 30000, 12), cfg)       # damp 30 kHz 12 %
-    assert c[1].kind == P.CMD_DAMP and c[1].freq_hz == 30000 and c[1].duty == 12.0
+    assert [x.mode for x in c] == [P.MODE_DAMP] and c[0].freq_hz == 30000 and c[0].duty == 12.0
     c, _ = P.decode(0x2AA, P.encode_legacy(0, 0, 0), cfg)
     assert c[0].mode == P.MODE_IDLE
     c, _ = P.decode(0x2AA, P.encode_legacy(3, 0, 0), cfg)
-    assert c[0].mode == P.MODE_CHARGE and not c[0].implied
-    c, _ = P.decode(0x2AA, P.encode_legacy(1, 0, 0), cfg)            # width 0: charge only, no 1 us kick
-    assert [x.kind for x in c] == [P.CMD_MODE]
+    assert c[0].mode == P.MODE_CHG
+    c, _ = P.decode(0x2AA, P.encode_legacy(1, 0, 0), cfg)            # width 0: charge only, no kick
+    assert [x.mode for x in c] == [P.MODE_CHG]
     off = make_cfg(LEGACY_PROTOCOL_ENABLED=False)
     assert P.decode(0x2AA, P.encode_legacy(1, 1000, 0), off)[1] == P.REJ_UNKNOWN_ID
 

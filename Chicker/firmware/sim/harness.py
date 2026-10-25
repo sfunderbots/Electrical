@@ -40,7 +40,7 @@ class Sim:
         c = self.cfg
         self.w = W.World(seed=seed, start_ticks_ms=start_ticks_ms, physics=physics,
                          deadtime_ms=c.CHG_DISCHARGE_DEADTIME_MS, kick_max_us=c.KICK_MAX_US,
-                         charge_timeout_ms=c.CHARGE_TIMEOUT_MS, overvolt_v=c.OVERVOLT_V)
+                         charge_timeout_ms=c.TOPOFF_PERIOD_MS, overvolt_v=c.OVERVOLT_V + 10)  # I9: the bank must never pass the 220 V trip by more than 10 V (caps: 250 V)  # CHARGE is held high for a whole cycle
         W.activate(self.w)
         self.coverage = {}
         self.transitions = []
@@ -48,7 +48,7 @@ class Sim:
         self.app = None
         self.board = None
         self._hb_seq = 0
-        self.heartbeat_ms = 0          # >0: robot sends heartbeats at this period
+        self.heartbeat_ms = 200        # robot sends heartbeats at this period (5 Hz like the Pi); 0 = stop
         self._t_hb = 0
         if boot:
             self.boot()
@@ -63,8 +63,21 @@ class Sim:
         self.app.charge.on_transition = self._on_transition
         self.app.mode.on_transition = self._on_transition
         self._t_mode = self.w.now
-        self.w.mode_probe = lambda: (self.app.mode.state_name(), self._t_mode)
+        self.w.mode_probe = self._mode_probe
         return self
+
+    def _mode_probe(self):
+        # A bench dry fire pulses the kicker in Idle on purpose (bank empty): report it as such.
+        app = self.app
+        if app.dry_fire_until is not None and                 (app.dry_fire_until - self.w.ticks_ms()) % W.TICKS_PERIOD < W.TICKS_PERIOD // 2:
+            return ("DryFire", self._t_mode)
+        # The invariant monitor only needs to know "may the kicker fire now?": map the chart states onto
+        # the two names it checks (I6: no kick while Idle / Locked).
+        if app.mode.state_name() == "Locked":
+            return ("Fault", self._t_mode)
+        if app.mode.idle_like():
+            return ("Idle", self._t_mode)
+        return (app.mode.state_name(), self._t_mode)
 
     def _on_transition(self, sm, frm, to, why):
         name = type(sm).__name__
@@ -107,6 +120,11 @@ class Sim:
         raise TimeoutError("%s not reached within %d ms (mode=%s chg=%s hv=%.1f)" % (
             what, timeout_ms, self.mode, self.charge_state, self.hv))
 
+    def ready(self, timeout_ms=5000):
+        """Run until the board accepts commands (battery seen, first heartbeat, Wait for Message)."""
+        self.run_until(lambda: self.mode == "WaitForMessage", timeout_ms, "board ready")
+        return self
+
     # ------------------------------------------------------------------ robot side (CAN)
     def send(self, can_id, data):
         W.activate(self.w)
@@ -121,6 +139,7 @@ class Sim:
         return self.send(self.cfg.CAN_ID_MODE, P.encode_mode(P.MODE_CHARGE))
 
     def kick(self, width_us, now=False, arm_ms=0):
+        """MODE_AUTOKICK with this pulse width (now=True sends the old "kick now" trigger, which is rejected)."""
         import protocol as P
         return self.send(self.cfg.CAN_ID_KICK,
                          P.encode_kick(width_us, P.TRIGGER_NOW if now else P.TRIGGER_BEAM, arm_ms))

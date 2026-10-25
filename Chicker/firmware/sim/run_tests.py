@@ -14,13 +14,28 @@ import sys
 import time
 import traceback
 
-ORDER = ("test_l0_flowcharts", "test_l1_sensors_protocol", "test_l2_kickmath", "test_l3_kicker_pio", "test_l4_power_stage",
-         "test_l5_charge", "test_l6_modes", "test_l7_system", "test_l8_soak", "test_l9_legacy", "test_l10_bench")
+ORDER = ("test_l0_flowcharts", "test_l1_sensors_protocol", "test_l2_kicker_maths", "test_l3_kicker_pio", "test_l4_power_stage",
+         "test_l5_charge", "test_l6_modes", "test_l6b_matrix", "test_l7_system", "test_l8_soak", "test_l9_legacy", "test_l10_bench")
 
 
 def slow(fn):
     fn.slow = True
     return fn
+
+
+class Skip(Exception):
+    pass
+
+
+def skip(reason):
+    """Mark a test as skipped (it is listed with the reason instead of being run)."""
+    def wrap(fn):
+        def skipped():
+            raise Skip(reason)
+        skipped.__name__ = fn.__name__
+        skipped.__code__ = skipped.__code__.replace(co_firstlineno=fn.__code__.co_firstlineno)
+        return skipped
+    return wrap
 
 
 def discover(filters):
@@ -73,7 +88,11 @@ def main(argv):
             fn()
             passed += 1
             print("PASS %-62s %5.1fs" % (full, time.time() - t0))
-        except Exception:      # noqa
+        except Exception as e:      # noqa
+            if type(e).__name__ == "Skip":   # by name: the tests import sim.run_tests, this file runs as __main__
+                skipped += 1
+                print("SKIP %-62s %s" % (full, e))
+                continue
             failed.append(full)
             print("FAIL %-62s %5.1fs" % (full, time.time() - t0))
             traceback.print_exc(limit=6)

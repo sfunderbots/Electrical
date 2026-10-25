@@ -4,20 +4,40 @@
 # SAME decoder and mode machine as a real CAN frame. Only the transport differs.
 #
 #   can <id> <b0> [b1 ...]        raw frame, hex (e.g. "can 2A1 00 E8 03 00 00")
-#   idle | charge                 MODE frames
-#   kick <us> [now] [arm_ms]      KICK frame (default trigger: break-beam)
-#   damp <hz> <duty%> [hold_ms] [init_kick_us]
-#   hb                            one heartbeat
+#   idle | charge                 MODE frames (MODE_IDLE / MODE_CHG)
+#   kick <us>                     KICK frame = MODE_AUTOKICK: kick with this pulse width when the ball breaks the beam
+#   damp <hz> <duty%> [timeout_ms] [init_kick_us]     MODE_DAMP
+#   hb                            one heartbeat (the board needs one at least every 5 s, like the Pi sends)
 #   legacy <mode> <value> <duty>  old 0x2AA frame
-#   ceil <volts> | ceil off       bench charge ceiling (only ever lowers the target)
+#   ceil ...                      bench charge ceiling: deferred (answers with a message)
 #   tlm <ms>                      telemetry period, 0 = off
 #   status | info | help
 #   dry kick <us> | dry pwm <hz> <duty%> <ms> | dry abort
 #                                 bench only: fires the kicker directly, allowed only in Idle with
 #                                 the bank dumped below DRY_FIRE_MAX_V (no energy behind it)
 
+import sys
 import protocol as P
-import usb_io
+
+# ---- non-blocking USB serial I/O (the simulator replaces read_char / write) ----------------------
+_poll = None
+
+
+def read_char():
+    """One character from USB if one is waiting, else None. Never blocks."""
+    global _poll
+    if _poll is None:
+        import select
+        _poll = select.poll()
+        _poll.register(sys.stdin, select.POLLIN)
+    if _poll.poll(0):
+        return sys.stdin.read(1)
+    return None
+
+
+def write(line):
+    """One line to USB (telemetry "T ...", events "E ...", logs "L ...", replies "C ...")."""
+    print(line)
 
 
 class Console:
@@ -25,10 +45,11 @@ class Console:
         self.cfg = cfg
         self.app = app
         self._buf = []
+        self._hb_seq = 0
 
     def poll(self):
         for _ in range(64):
-            ch = usb_io.read_char()
+            ch = read_char()
             if ch is None:
                 return
             if ch == "\n" or ch == "\r":
@@ -40,7 +61,7 @@ class Console:
                 self._buf.append(ch)
 
     def _out(self, msg):
-        usb_io.write("C " + msg)
+        write("C " + msg)
 
     def handle(self, line):
         try:
@@ -64,19 +85,18 @@ class Console:
         elif cmd == "charge":
             self._frame(c.CAN_ID_MODE, P.encode_mode(P.MODE_CHARGE))
         elif cmd == "kick":
-            trigger = P.TRIGGER_NOW if "now" in a[2:] else P.TRIGGER_BEAM
-            nums = [int(x) for x in a[2:] if x != "now"]
-            self._frame(c.CAN_ID_KICK, P.encode_kick(int(a[1]), trigger, nums[0] if nums else 0))
+            self._frame(c.CAN_ID_KICK, P.encode_kick(int(a[1]), P.TRIGGER_BEAM))
         elif cmd == "damp":
             hold = int(a[3]) if len(a) > 3 else 0
             init = int(a[4]) if len(a) > 4 else 0
             self._frame(c.CAN_ID_DAMP, P.encode_damp(int(a[1]), float(a[2]), hold, init))
         elif cmd == "hb":
-            self._frame(c.CAN_ID_HEARTBEAT, P.encode_heartbeat(0))
+            self._hb_seq = (self._hb_seq + 1) & 0xFF
+            self._frame(c.CAN_ID_HEARTBEAT, P.encode_heartbeat(self._hb_seq))
         elif cmd == "legacy":
             self._frame(c.CAN_ID_LEGACY, P.encode_legacy(int(a[1]), int(a[2]), int(a[3])))
         elif cmd == "ceil":
-            self.app.set_ceiling(None if a[1] == "off" else float(a[1]))
+            self.app.set_ceiling(None)
         elif cmd == "tlm":
             self.app.tlm_period_ms = int(a[1])
         elif cmd == "status":

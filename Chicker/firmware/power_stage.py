@@ -43,10 +43,13 @@ class PowerStage:
         dead = self.cfg.CHG_DISCHARGE_DEADTIME_MS
         if want_discharge:
             want_charge = False
+        # The dead-time clocks are read at the moment each pin is written, not taken from now_ms (the start of the
+        # loop pass): a pin can change later in the pass, after a millisecond tick, and the dead time must be
+        # measured from the real edge (found by the simulator's soak test: 49.99 ms instead of 50).
         if not want_charge and self.charge_on:
             self._chg.value(0)
             self.charge_on = False
-            self.t_charge_low = now_ms
+            self.t_charge_low = utime.ticks_ms()
         if want_discharge:
             if not self.discharging and not self.charge_on and \
                     utime.ticks_diff(now_ms, self.t_charge_low) > dead:
@@ -55,7 +58,7 @@ class PowerStage:
         elif self.discharging:
             self._nd.value(1)
             self.discharging = False
-            self._t_dump_off = now_ms
+            self._t_dump_off = utime.ticks_ms()
         if want_charge and not self.charge_on and self.charge_permitted(now_ms):
             self._chg.value(1)
             self.charge_on = True

@@ -4,7 +4,7 @@ import random
 from sim.harness import make_cfg
 
 cfg = make_cfg()
-import kickmath as K    # noqa: E402
+import kicker as K    # noqa: E402
 
 CYC = 125              # 125 MHz
 
@@ -52,6 +52,8 @@ def test_pwm_frequency_limits():
 
 
 def test_hold_force_law_keeps_dv_constant_and_never_exceeds_start():
+    # mode 1 (hold force) is kept as an option; the firmware runs mode 2 (RoboCup formula, mode note DMP-3)
+    cfg = make_cfg(DAMP_COMP_MODE=1)
     rng = random.Random(2)
     for _ in range(5000):
         d0 = rng.uniform(cfg.DAMP_DUTY_MIN, 30)
@@ -76,6 +78,7 @@ def test_power_limit_always_wins():
 
 
 def test_gain_cap():
+    cfg = make_cfg(DAMP_COMP_MODE=1)
     d, lim = K.damp_duty(cfg, 10.0, 200.0, 50.0, 500)
     assert lim and abs(d - 10.0 * cfg.DAMP_COMP_MAX_GAIN) < 1e-9
 
