@@ -95,6 +95,9 @@ HV adjustment kept as RoboCup (validate duty / power on the bench, DMP-3). Item 
 
 ## Next
 
+Plan for the next sessions (board on USB, then the bench): `docs/NEXT-STEPS-2026-10-26.md`.
+
+
 * Henry: check the code against the charts (start with `charge_sm.py` / `mode_sm.py`; the top of each file explains
   how to read them).
 * Rewrite `bench/bring_up.py` for the reviewed firmware (its 3 rehearsal tests are skipped): needs the decision on

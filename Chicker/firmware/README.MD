@@ -33,7 +33,7 @@ Everything that goes on the board sits directly in this folder (plus `canbus/`).
 | `sim/` | simulator + test suite (fake `machine`/`rp2`/`utime`/`canbus`, PIO emulator, board physics) |
 | `bench/` | hardware bring-up sweep over USB serial (rehearsable on the simulator) |
 | `flowcharts/` | Henry's original charts and his updated `*-v2` charts |
-| `docs/` | `CHANGES-v2.md` (start here: what changed and why), the three state-machine reviews (the spec the code is written from), `REVIEW-PLAN.md` (status and next steps) |
+| `docs/` | `CHANGES-v2.md` (start here: what changed and why), the three state-machine reviews (the spec the code is written from), `REVIEW-PLAN.md` (status), `NEXT-STEPS-2026-10-26.md` (plan for the next sessions) |
 | `legacy/` | the RoboCup 2026 firmware, kept for reference |
 | `to-test/` | ideas not in the firmware yet (reed switch, HV current sensing) |
 
