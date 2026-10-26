@@ -40,7 +40,7 @@ def test_heartbeat_late_flag_is_an_early_warning_only():
     s.heartbeat_ms = 0
     s.run(1500)
     assert not s.statuses()[-1][1]["flags"] & P.FL_HEARTBEAT_OK
-    assert s.mode == "ArmKick" and s.app.mode.armed
+    assert s.mode == "WaitForKick" and s.app.mode.armed
 
 
 def test_heartbeat_gaps_are_counted_not_acted_on():
@@ -150,6 +150,8 @@ def test_exception_in_main_loop_lands_safe_via_main_py():
                 raise Stop()
             return orig_ticks()
         utime.ticks_ms = ticks_ms
+        print("(expected) this test crashes the firmware on purpose mid-charge; the traceback below is main.py "
+              "catching it and leaving the board safe", flush=True)
         main.run(s.cfg)
     finally:
         charge_sm.ChargeSM.step = real

@@ -6,8 +6,9 @@
 # robot -> board (each frame is one of the four modes on Henry's mode chart)
 #   MODE       [mode]                                  0 = MODE_IDLE (dump), 1 = MODE_CHG (charge and hold)
 #   KICK       [trigger, width_us u16, arm_ms u16]     MODE_AUTOKICK: kick when the ball breaks the beam.
-#                                                      trigger must be 0 (break-beam); arm_ms is ignored
-#                                                      (the chart has no arm timeout)
+#                                                      trigger must be 0 (break-beam); arm_ms is ignored:
+#                                                      an armed kick with no ball expires after a fixed 2 s
+#                                                      (KICK_ARM_TIMEOUT_MS, EVENT ARM_EXPIRED)
 #   DAMP       [freq_hz u16, duty u16, hold_ms u16, init_kick_us u16]
 #                                                      MODE_DAMP. duty in 0.01 % units; hold_ms = the damp
 #                                                      timeout; freq / hold_ms / init_kick_us 0 = default
@@ -67,7 +68,7 @@ F_INTERNAL = 14
 EV_BOOT = 1               # a = reset cause, b = FW major*100 + minor
 EV_KICK_FIRED = 2         # a = width_us, b = hv_before dV, c = hv_after dV
 EV_DAMP_DONE = 3          # a = hold_ms actual, b = hv_start dV, c = hv_end dV
-EV_ARM_EXPIRED = 4
+EV_ARM_EXPIRED = 4        # a = kick width: no ball within KICK_ARM_TIMEOUT_MS of the AUTOKICK command
 EV_FAULT = 5              # a = fault code, b = HV at the time dV, c = state the fault came from
 EV_CMD_REJECTED = 6       # a = CAN id, b = reason
 EV_COMMS_LOST = 7

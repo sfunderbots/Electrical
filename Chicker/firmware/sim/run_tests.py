@@ -87,14 +87,14 @@ def main(argv):
         try:
             fn()
             passed += 1
-            print("PASS %-62s %5.1fs" % (full, time.time() - t0))
+            print("PASS %-62s %5.1fs" % (full, time.time() - t0), flush=True)
         except Exception as e:      # noqa
             if type(e).__name__ == "Skip":   # by name: the tests import sim.run_tests, this file runs as __main__
                 skipped += 1
-                print("SKIP %-62s %s" % (full, e))
+                print("SKIP %-62s %s" % (full, e), flush=True)
                 continue
             failed.append(full)
-            print("FAIL %-62s %5.1fs" % (full, time.time() - t0))
+            print("FAIL %-62s %5.1fs" % (full, time.time() - t0), flush=True)
             traceback.print_exc(limit=6)
     print("-" * 78)
     print("%d passed, %d failed, %d skipped in %.0fs" % (passed, len(failed), skipped, time.time() - t_all))

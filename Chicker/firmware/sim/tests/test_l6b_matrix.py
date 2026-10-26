@@ -73,7 +73,7 @@ def _mode_autokick_enable_charging():
 def _mode_arm_kick():
     s = _charging(Sim())
     s.kick(1000)
-    return _step_until(s, lambda: s.mode == "ArmKick", 300, "ArmKick")
+    return _step_until(s, lambda: s.mode == "WaitForKick", 300, "WaitForKick")
 
 
 def _mode_charge_hold():
@@ -122,7 +122,7 @@ MODE_STATES = {
     "WaitForMessage": _mode_wait_for_message,
     "Locked": _mode_locked,
     "AutokickEnableCharging": _mode_autokick_enable_charging,
-    "ArmKick": _mode_arm_kick,
+    "WaitForKick": _mode_arm_kick,
     "ChargeHold": _mode_charge_hold,
     "DampEnableCharging": _mode_damp_enable_charging,
     "DampChargeHold": _mode_damp_charge_hold,

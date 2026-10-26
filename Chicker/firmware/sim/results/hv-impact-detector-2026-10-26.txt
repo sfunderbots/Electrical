@@ -1,0 +1,14 @@
+PASS test_no_ball_no_false_triggers
+PASS test_slow_drift_is_not_an_impact
+PASS test_a_lasting_step_is_one_event_at_most_then_relearned
+PASS test_impact_dip_is_caught_quickly
+PASS test_impact_bump_is_caught_too
+PASS test_bounce_gives_two_events
+impact size -> caught in 20 runs (3 ms pulse, 200 V bank, 0.1 A hold):
+  0.03 A:  0 / 20
+  0.05 A:  0 / 20
+  0.08 A: 13 / 20
+  0.10 A: 20 / 20
+  0.15 A: 20 / 20
+  0.20 A: 20 / 20
+exit code 0

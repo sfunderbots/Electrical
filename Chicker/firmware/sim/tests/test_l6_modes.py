@@ -57,14 +57,16 @@ def test_boot_waits_for_battery_then_the_first_heartbeat():
 
 
 def test_heartbeat_loss_dumps_dearms_and_recovers():
-    # element 4, HB-2: no frame for 5 s -> Disable Charging, discharge -> de-arm kick, stop PWM -> Start BKBM
-    s = _charged()
+    # element 4, HB-2: no frame for 5 s -> Disable Charging, discharge -> de-arm kick, stop PWM -> Start BKBM.
+    # The heartbeat timeout is shortened to 1.5 s here so the kick is still armed when the link is lost (with the
+    # real 5 s, the 2 s arm timeout, element 21, would de-arm it first).
+    s = _charged(HEARTBEAT_TIMEOUT_MS=1500)
     s.kick(1000)
-    s.run(600)
+    s.run(200)
     assert s.app.mode.armed
     s.heartbeat_ms = 0
     s.run(s.cfg.HEARTBEAT_TIMEOUT_MS - 300)
-    assert s.app.mode.armed                              # carries on as normal before the 5 s are up
+    assert s.app.mode.armed                              # carries on as normal before the timeout
     s.run(600)
     assert s.mode == "StartBKBM" and not s.app.mode.armed
     assert s.charge_state == "Inhibited" and P.EV_COMMS_LOST in s.event_codes()
@@ -95,7 +97,7 @@ def test_autokick_fires_when_the_ball_arrives_then_charges_again():
     s = _charged()
     s.kick(1200)
     s.run(300)
-    assert s.mode == "ArmKick" and s.app.mode.armed and not _kicks(s)
+    assert s.mode == "WaitForKick" and s.app.mode.armed and not _kicks(s)
     s.place_ball(0.0)
     s.run(200)
     k = _kicks(s)
@@ -117,6 +119,66 @@ def test_ball_already_in_the_beam_is_kicked_as_soon_as_armed():
     s.kick(1000)
     s.run(100)
     assert len(_kicks(s)) == 1
+    s.assert_safe()
+
+
+def test_arm_expires_after_2s_without_a_ball():
+    # element 21: no ball within KICK_ARM_TIMEOUT_MS of the AUTOKICK command -> de-arm, back to Wait for Message
+    s = _charged()
+    s.kick(1000)
+    s.run(s.cfg.KICK_ARM_TIMEOUT_MS - 200)
+    assert s.mode == "WaitForKick" and s.app.mode.armed
+    s.run(400)
+    assert s.mode == "WaitForMessage" and not s.app.mode.armed
+    assert P.EV_ARM_EXPIRED in s.event_codes()
+    assert s.app.mode.chg_stop_mode_ctrl == 0            # still charging
+    s.place_ball(0.0)
+    s.run(500)
+    assert not _kicks(s)                                 # a late ball is not kicked
+    s.kick(1000)                                         # a new AUTOKICK arms again (ball already there: kicks)
+    s.run(100)
+    assert len(_kicks(s)) == 1
+    s.assert_safe()
+
+
+def test_repeated_autokick_renews_the_arm_without_re_arming():
+    # element 23: AUTOKICK while armed -> renew (timer + PW), no de-arm, no Enable Charging, charging untouched
+    s = _charged()
+    s.kick(1000)
+    s.run(100)
+    n0 = len(s.transitions)
+    for _ in range(15):                                  # every 200 ms for 3 s: longer than the 2 s timeout
+        s.kick(1200)
+        s.run(200)
+        assert s.mode == "WaitForKick" and s.app.mode.armed
+    whys = [w for _, m, _, _, w in s.transitions[n0:] if m == "ModeSM"]
+    assert whys and set(whys) == {"cmd_autokick_renew"}, set(whys)
+    assert P.EV_ARM_EXPIRED not in s.event_codes()
+    s.place_ball(0.0)
+    s.run(100)
+    k = _kicks(s)
+    assert len(k) == 1 and abs(k[0][1] - 1200) < 1            # the newest PW is used
+    s.heartbeat_ms = 200
+    s.run(s.cfg.KICK_ARM_TIMEOUT_MS + 300)                    # and it still expires once the Pi stops asking
+    s.assert_safe()
+
+
+def test_autokick_renew_during_charge_hold_does_not_touch_charging():
+    # element 23: a renew that lands in Charge Hold (ball seen, kick about to fire) never releases the charge hold
+    s = _charged()
+    s.kick(1000)
+    s.run(300)
+    s.place_ball(0.0)
+    s.run_until(lambda: s.mode == "ChargeHold", 500, "Charge Hold")
+    n0 = len(s.transitions)
+    s.kick(1000)
+    s.run(200)
+    assert len(_kicks(s)) == 1
+    after = s.transitions[n0:]
+    whys = [w for _, m, _, _, w in after]
+    assert "cmd_autokick_renew" in whys
+    before_kick = after[:whys.index("kicked")]
+    assert not [w for _, m, _, _, w in before_kick if m == "ChargeSM"], before_kick   # charging never touched
     s.assert_safe()
 
 
@@ -153,8 +215,8 @@ def test_bad_frames_and_heartbeats_never_dearm():
     s.run(200)
     s.send(s.cfg.CAN_ID_KICK, P.encode_kick(50))          # PW below 100 us: bad command
     s.send(s.cfg.CAN_ID_MODE, b"\x07")                    # unknown mode
-    s.run(3000)                                           # 15 heartbeats meanwhile
-    assert s.mode == "ArmKick" and s.app.mode.armed
+    s.run(1500)                                           # 7 heartbeats meanwhile (and under the 2 s arm timeout)
+    assert s.mode == "WaitForKick" and s.app.mode.armed
     reasons = [e["b"] for _, e in s.events() if e["code"] == P.EV_CMD_REJECTED]
     assert P.REJ_OUT_OF_RANGE in reasons and P.REJ_BAD_VALUE in reasons
     s.assert_safe()
@@ -249,6 +311,18 @@ def test_kick_during_a_damp_is_dropped_at_the_timeout():
     assert not _pwm_on(s) and not s.app.mode.armed and s.mode == "WaitForMessage"
     s.place_ball(0.0); s.run(300)
     assert len(_kicks(s, 500)) == 1                       # only the Initial Kick ever fired
+    s.assert_safe()
+
+
+def test_kick_armed_during_a_damp_does_not_time_out():
+    # Henry: no 2 s arm timeout during a damp (the kick is expected; the damp's own timeout ends it)
+    s = _charged()
+    s.damp(30000, 12.0, 3000)
+    s.run_until(lambda: _pwm_on(s), 500, "damping")
+    s.kick(1500)
+    s.run(s.cfg.KICK_ARM_TIMEOUT_MS + 300)
+    assert s.app.mode.armed and _pwm_on(s) and s.mode == "DampWait"
+    assert P.EV_ARM_EXPIRED not in s.event_codes()
     s.assert_safe()
 
 

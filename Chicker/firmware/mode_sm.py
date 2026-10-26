@@ -32,7 +32,8 @@ START_BKBM = const(1)                 # "Start BKBM interrupt": waits for the fi
 WAIT_FOR_MESSAGE = const(2)           # "Wait for Message" (idle or charging, nothing armed)
 LOCKED = const(3)                     # "Locked. Message pi4 to substitute" (end state)
 AUTOKICK_ENABLE_CHARGING = const(4)   # AUTOKICK "Enable Charging": waits for "last kick >= 500ms"
-ARM_KICK = const(5)                   # "Arm Kick": waits for "HV >= 100V && kick assigned"
+WAIT_FOR_KICK = const(5)              # "wait for kick" (after the "Arm Kick" action): waits for
+                                      # "HV >= 100V && kick assigned", or the 2 s arm timeout
 CHARGE_HOLD = const(6)                # "Charge Hold" -> GUARD -> "Kick with PW Assigned"
 DAMP_ENABLE_CHARGING = const(7)       # DAMP "Enable Charging": waits for "last kick >= 500ms && HV >= 180"
 DAMP_CHARGE_HOLD = const(8)           # DAMP "Charge Hold": waits for done == 0
@@ -40,7 +41,7 @@ INITIAL_KICK = const(9)               # "Initial Kick", then "wait for 5 x PW = 
 DAMP_WAIT = const(10)                 # damp loop "Wait" (with HV Adjustment / Set Duty every 25 ms)
 DAMP_STOP_PWM = const(11)             # low-bank kick: "Stop PWM", then "wait 50ms"
 
-NAMES = ("WaitForBat", "StartBKBM", "WaitForMessage", "Locked", "AutokickEnableCharging", "ArmKick",
+NAMES = ("WaitForBat", "StartBKBM", "WaitForMessage", "Locked", "AutokickEnableCharging", "WaitForKick",
          "ChargeHold", "DampEnableCharging", "DampChargeHold", "InitialKick", "DampWait", "DampStopPWM")
 
 # States where commands are not acted on (mode element 7: before the board is ready, and Locked)
@@ -73,8 +74,11 @@ ARROWS = (
     (_ANY_READY, "cmd_chg", WAIT_FOR_MESSAGE, "cmd_chg", "mode == MODE_CHG"),
     (_ANY_READY, "cmd_autokick_pwm_running", DAMP_WAIT, "cmd_autokick_in_damp",
      "mode == MODE_AUTOKICK && PWM running"),
+    # element 23: AUTOKICK while a kick is already armed on the AUTOKICK path = renew (no de-arm, no re-arming)
+    (_ANY_READY, "cmd_autokick_already_armed", WAIT_FOR_KICK, "cmd_autokick_renew",
+     "mode == MODE_AUTOKICK && PWM not running && kick armed"),
     (_ANY_READY, "cmd_autokick_pwm_not_running", AUTOKICK_ENABLE_CHARGING, "cmd_autokick",
-     "mode == MODE_AUTOKICK && PWM not running"),
+     "mode == MODE_AUTOKICK && PWM not running && kick not armed"),
     (_ANY_READY, "cmd_damp_pwm_running", DAMP_WAIT, "cmd_damp_renew", "mode == MODE_DAMP && PWM running"),
     (_ANY_READY, "cmd_damp_pwm_not_running", DAMP_ENABLE_CHARGING, "cmd_damp", "mode == MODE_DAMP && PWM not running"),
 
@@ -83,8 +87,10 @@ ARROWS = (
     ((START_BKBM,), "heartbeat_ok", WAIT_FOR_MESSAGE, "heartbeat_ok", "heartbeat == OK"),
 
     # ---- AUTOKICK (elements 9-12) -------------------------------------------------------------------------
-    ((AUTOKICK_ENABLE_CHARGING,), "kick_spacing_ok", ARM_KICK, "arm", "last kick >= KICK_MIN_INTERVAL_MS"),
-    ((ARM_KICK,), "hv_ge_100_and_kick_assigned", CHARGE_HOLD, "kick_assigned", "HV >= 100V && kick assigned"),
+    ((AUTOKICK_ENABLE_CHARGING,), "kick_spacing_ok", WAIT_FOR_KICK, "arm", "last kick >= KICK_MIN_INTERVAL_MS"),
+    ((WAIT_FOR_KICK,), "hv_ge_100_and_kick_assigned", CHARGE_HOLD, "kick_assigned", "HV >= 100V && kick assigned"),
+    # element 21: no ball within 2 s of the AUTOKICK command -> de-arm, back to waiting (RoboCup 2026 behaviour)
+    ((WAIT_FOR_KICK,), "arm_expired", WAIT_FOR_MESSAGE, "arm_expired", "time since AUTOKICK >= 2s && no ball"),
     ((CHARGE_HOLD,), "kick_guard_ok", WAIT_FOR_MESSAGE, "kicked",
      "done == 0, GUARD: PW >= 100 us && PW <= 5000 us -> Kick with PW Assigned"),
 
@@ -97,7 +103,7 @@ ARROWS = (
     ((DAMP_WAIT,), "damp_kick_ready", WAIT_FOR_MESSAGE, "damp_kicked", "HV >= 100V && kick assigned -> GUARD"),
     ((DAMP_WAIT,), "damp_kick_bank_low", DAMP_STOP_PWM, "damp_kick_bank_low", "HV < 100V && kick assigned"),
     ((DAMP_WAIT,), "damp_timed_out", WAIT_FOR_MESSAGE, "damp_done", "time since last DAMP >= timeout || max hold"),
-    ((DAMP_STOP_PWM,), "waited_50ms", ARM_KICK, "recharge_for_kick", "wait 50ms -> Enable Charging"),
+    ((DAMP_STOP_PWM,), "waited_50ms", WAIT_FOR_KICK, "recharge_for_kick", "wait 50ms -> Enable Charging"),
 )
 
 TRANSITIONS = expand(ARROWS)          # used by the simulator's coverage report
@@ -137,6 +143,8 @@ class ModeSM(StateMachine):
         self.kick_width_us = 0           # "PW" of the armed kick
         # ---- kick spacing (KICK_MIN_INTERVAL_MS counts from the last pulse, Initial Kick included)
         self._t_last_kick = None
+        # ---- arm timeout (KICK_ARM_TIMEOUT_MS counts from the AUTOKICK command)
+        self._t_autokick = now_ms
         # ---- damp parameters (from the DAMP command) and timers
         self._damp_freq_hz = cfg.DAMP_FREQ_DEFAULT
         self._damp_duty_pct = cfg.DAMP_DUTY_DEFAULT
@@ -194,6 +202,12 @@ class ModeSM(StateMachine):
     def cmd_autokick_pwm_running(self, now, i):
         return self._cmd_is(i, P.MODE_AUTOKICK) and i.pwm_running
 
+    def cmd_autokick_already_armed(self, now, i):
+        # "kick armed" = armed on the AUTOKICK path: waiting for the ball, or in Charge Hold about to fire. (Armed in
+        # the low-bank recharge of a damp, Stop PWM, doesn't count: that path still has to re-enable charging.)
+        return (self._cmd_is(i, P.MODE_AUTOKICK) and not i.pwm_running and self.armed == 1
+                and self.state in (WAIT_FOR_KICK, CHARGE_HOLD))
+
     def cmd_autokick_pwm_not_running(self, now, i):
         return self._cmd_is(i, P.MODE_AUTOKICK) and not i.pwm_running
 
@@ -217,6 +231,12 @@ class ModeSM(StateMachine):
 
     def hv_ge_100_and_kick_assigned(self, now, i):
         return i.hv >= self.cfg.KICK_MIN_HV and self.kick_assigned == 1
+
+    def arm_expired(self, now, i):
+        # Only in Arm Kick (not during a damp) and only while no ball has been seen: once the kick is assigned it
+        # goes ahead (e.g. waiting for a recharge)
+        return (self.armed == 1 and self.kick_assigned == 0 and
+                utime.ticks_diff(now, self._t_autokick) >= self.cfg.KICK_ARM_TIMEOUT_MS)
 
     def kick_guard_ok(self, now, i):
         # The kick GUARD: done == 0 (the LT3750 has stopped), CHARGE is low, the PIO is free. The PW range
@@ -319,12 +339,21 @@ class ModeSM(StateMachine):
         self.armed = 1
         self.kick_assigned = 0
         self.kick_width_us = i.command.width_us
+        # No 2 s arm timeout here (Henry): during a damp the kick is expected, and the damp's own timeout (or a
+        # renew) ends it; the kick is de-armed when the damp exits.
         self.mode = P.MODE_DAMP
+
+    def do_cmd_autokick_renew(self, now, i):
+        # element 23: "Renew kick timer (+ new PW)". Nothing is de-armed and charging is not touched, so a Pi that
+        # repeats AUTOKICK keeps the kick armed for as long as it keeps asking (team item T-5).
+        self._t_autokick = now
+        self.kick_width_us = i.command.width_us
 
     def do_cmd_autokick(self, now, i):
         self._de_arm_kick()
         self._enable_charging()                     # AUTOKICK "Enable Charging"
         self.kick_width_us = i.command.width_us
+        self._t_autokick = now                      # the 2 s arm timeout starts now (element 21)
         self.mode = P.MODE_AUTOKICK
 
     def do_cmd_damp_renew(self, now, i):
@@ -353,6 +382,12 @@ class ModeSM(StateMachine):
     # kick path
     def do_arm(self, now, i):
         self.armed = 1                              # "Arm Kick"
+
+    def do_arm_expired(self, now, i):
+        # element 21: no ball within 2 s -> de-arm, tell the Pi, keep charging (mode CHG: nothing armed)
+        self.events.append((P.EV_ARM_EXPIRED, self.kick_width_us, 0, 0))
+        self._de_arm_kick()
+        self.mode = P.MODE_CHG
 
     def do_kick_assigned(self, now, i):
         self._charge_hold()                         # "Charge Hold"

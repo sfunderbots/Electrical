@@ -79,6 +79,8 @@ OVERVOLT_SAMPLES = 3             # [Henry] X-1 trips after this many readings in
 KICK_MIN_US = 100                # [Henry] kick GUARD "PW >= 100 us"
 KICK_MAX_US = 5000               # [Henry] kick GUARD "PW <= 5000 us"
 KICK_MIN_HV = 100.0              # [Henry] Arm Kick: "HV >= 100V && kick assigned" (mode element 10)
+KICK_ARM_TIMEOUT_MS = 2000       # [RC26] AUTOKICK_EXPIRE_THRESH_MS: an armed kick with no ball expires after this
+                                 #        (Henry: "definitely include the 2s timeout, it's dangerous otherwise")
 KICK_MIN_INTERVAL_MS = 500       # [Henry] "last kick >= 500ms": two pulses closer than this combine into one
                                  #         oversized kick. Starting guess, tune on the field (mode KCK-2)
 KICK_TAIL_LOW_US = 1             # low time appended after a single pulse

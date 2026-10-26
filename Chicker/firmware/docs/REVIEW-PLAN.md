@@ -49,7 +49,7 @@ HV adjustment kept as RoboCup (validate duty / power on the bench, DMP-3). Item 
   everything not on the board is in a subfolder.
 * `charge_sm.py` and `mode_sm.py` rewritten from the three reviews: each chart arrow is one table row, state names are
   the chart's, comments point at the review elements.
-* Simulator: 83 tests pass, 0 fail; every arrow of both machines is exercised. Tests are organised by review element.
+* Simulator: 90 tests pass, 0 fail (latest run); every arrow of both machines is exercised. Tests are organised by review element.
   `sim/drawio.py` (old chart generator) removed; `test_l0_flowcharts.py` now checks every code state has a box on
   Henry's charts.
 * Bugs the simulator found during the rebuild (fixed): the 500 ms GUARD was timed from the request instead of the real
@@ -73,3 +73,35 @@ HV adjustment kept as RoboCup (validate duty / power on the bench, DMP-3). Item 
    (Henry): the kick during a damp still waits for the beam. Note DMP-5: test it; idea of stopping the PWM when the AI
    says kick, then reading the beam; ball detection from the HV / current signature (DMP-6).
 
+
+10. **Arm timeout put back** (Henry: "definitely include the 2s timeout, it's dangerous otherwise"): an AUTOKICK with
+    no ball expires after 2 s, as at RoboCup (mode element 21). Not during a damp (element 22, rejected). **Henry to
+    add it to the mode chart.** Whether 2 s suits the AI: team item T-5.
+11. **AUTOKICK renew** (Henry's chart): an AUTOKICK while a kick is armed restarts the 2 s timer and takes the new
+    PW, without de-arming or touching charging (mode element 23). Chart: add a "Renew kick timer (+ new PW)" box on
+    the renew arrow, and start the 2 s timeout arrow from "wait for kick". Message handling (#7) rewritten to match.
+
+## Tabled for later (Henry, 2026-10-26)
+
+* **Damping PWM precision.** The PIO itself is exact (full 125 MHz clock, 8 ns steps: ~4,200 steps per period at
+  30 kHz, the same as the hardware PWM; only a 40 ns longer low gap once every 25 ms when the next segment loads).
+  Where precision is lost:
+  1. the RoboCup HV-adjustment formula rounds the duty down to a whole percent (`int(...)`): 333 ns steps at 30 kHz,
+     ~40x coarser than the PIO. Dropping the `int()` gives full resolution;
+  2. a new duty lands on the next 25 ms segment, i.e. 25-50 ms after it is computed (the RoboCup PWM peripheral took
+     one period). Shorter segments (e.g. 5 ms) would cut that, at some main-loop cost;
+  3. the two extra duty caps in `kicker.py` (hold-power cap: ~14 % max at full voltage; 200 us per-period on-time cap:
+     20 % max at 1 kHz). Recommendation: remove both.
+
+## Next
+
+* Henry: check the code against the charts (start with `charge_sm.py` / `mode_sm.py`; the top of each file explains
+  how to read them).
+* Rewrite `bench/bring_up.py` for the reviewed firmware (its 3 rehearsal tests are skipped): needs the decision on
+  the bench charge ceiling / `safe_chg` (charge element 9, "Not on the chart").
+* Bench tests: break-beam polarity and debounce (`BEAM_DEBOUNCE_MS`); the break-beam during a damp (DMP-5); LT3750
+  DONE pulse on a full bank (charge N-2); dump curve (~7 s); damp HV-adjustment duty and how fast a hold drains the
+  bank (DMP-3); full-charge time (tighten `CHARGE_TIMEOUT_MS` if always < 3 s); kick spacing tuning; HV ball-hit
+  captures (`to-test/hv-current-sensing/README.md`).
+* Team items: T-1 (CAN IDs), T-2 (reject messages), T-3 (command sequence numbers / ack), T-4 (Pi-side protocol
+  changes), R-1 (Pi heartbeat 5 Hz).

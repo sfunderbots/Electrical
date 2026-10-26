@@ -19,6 +19,7 @@ FLOW_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.
 # Code state -> the box text on the chart, where they differ (the chart reuses a box name on several paths).
 MODE_BOX = {
     "StartBKBM": "Start BKBM interrupt",
+    "WaitForKick": "wait for kick",
     "Locked": "Locked",
     "AutokickEnableCharging": "Enable Charging",
     "DampEnableCharging": "Enable Charging",

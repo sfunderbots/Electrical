@@ -9,7 +9,7 @@ The firmware was rebuilt from the ground up from Henry's two state-machine chart
 Each chart was reviewed element by element and every change was agreed before any code was written. The result
 is two small state machines that do exactly what the charts say, a kicker driver that can no longer glitch, a power
 stage that can never charge into the dump resistors, and a simulator that runs the real firmware (real CAN frames
-in, real pin timings out) with 86 tests. The board still runs MicroPython.
+in, real pin timings out) with 90 tests. The board still runs MicroPython.
 
 ## Where the specification lives
 
@@ -102,7 +102,10 @@ and the power stage below it enforces the dead time on its own.
   STATUS frame). Nothing leaves Locked.
 * **AUTOKICK:** enable charging → arm once the last kick was ≥ `KICK_MIN_INTERVAL_MS` (500 ms) ago → when the ball
   breaks the beam and HV ≥ **100 V**: hold the charge (no dump), wait for DONE low → kick → recharge. **One kick per
-  AUTOKICK command.** A ball that is already in the beam when the kick is armed is kicked straight away.
+  AUTOKICK command.** A ball that is already in the beam when the kick is armed is kicked straight away. **No ball
+  within 2 s → the kick is de-armed** (as at RoboCup), and the Pi gets an ARM_EXPIRED event (not during a damp).
+  **Repeating AUTOKICK while a kick is armed renews it** (2 s timer restarts, newest PW) without de-arming or touching
+  charging, so the Pi keeps a kick armed by repeating AUTOKICK and it dies ~2 s after the Pi stops asking.
 * **DAMP:** enable charging → once the last kick was ≥ 500 ms ago and HV ≥ **180 V**: hold the charge → wait for DONE
   low → Initial Kick (800 µs) → **4 ms** → PWM hold with the RoboCup HV adjustment every **25 ms** → ends at the
   timeout (from the command, default 3 s).
@@ -115,7 +118,7 @@ and the power stage below it enforces the dead time on its own.
     board; to test (mode review notes DMP-5, DMP-6).
 * **Messages:** only good commands (known ID, right length, every value in range) are acted on, one per loop pass, in
   the order they arrived; nothing is dropped. A bad frame changes nothing. Every good command de-arms the kick,
-  except a DAMP renew. Commands before the board is ready, or in Locked, are rejected, not saved for later.
+  except the two renews (DAMP while damping, AUTOKICK while armed). Commands before the board is ready, or in Locked, are rejected, not saved for later.
 
 ### Kicker (`kicker.py`)
 
@@ -152,8 +155,9 @@ Block `0x2A0`–`0x2AF` (to confirm with the team that nothing else uses it, T-1
 | `0x2A9` EVENT | board → Pi | `[code, a u16, b u16, c u16, seq]`: kick fired, damp done, fault (+ reason, HV), command rejected, comms lost | — |
 | `0x2AA` LEGACY | Pi → board | the old `[mode, value, duty]` frame, still accepted | mapped onto the above |
 
-Changes for the Pi (mode review T-4): send a heartbeat at 5 Hz (R-1); "kick now" and the arm timeout are gone; the
-board needs a heartbeat before it acts on any command; commands before it is ready are rejected; one kick per
+Changes for the Pi (mode review T-4): send a heartbeat at 5 Hz (R-1); the KICK frame is AUTOKICK only (kick when the ball breaks the beam,
+as at RoboCup; trigger byte must be 0, there is no immediate kick); an armed kick still
+expires after 2 s without a ball (fixed, `arm_ms` is ignored); the board needs a heartbeat before it acts on any command; commands before it is ready are rejected; one kick per
 AUTOKICK. Still to decide with the team: reject messages on the bus (T-2), command sequence numbers echoed in STATUS
 (T-3).
 
@@ -186,7 +190,7 @@ LT3750, the bank, the dump resistors and the battery. Commands go in as real CAN
 on every pin change (never charging while dumping, the 50 ms dead time both ways, never kicking while charging,
 pulse length, no kick while idle / Locked, ...).
 
-* **86 tests pass.** Every arrow of both charts is exercised (21/21 mode, 20/20 charge).
+* **90 tests pass.** Every arrow of both charts is exercised (23/23 mode, 20/20 charge).
 * Tests are grouped by level: protocol and sensors, kicker maths, PIO waveforms, power stage, charge (one test per
   charge review element), modes (one test per mode review element), **every event in every state** (12 mode states ×
   14 events and 11 charge states × 14 events: no exception, no safety violation, the board still answers), system
@@ -199,7 +203,7 @@ pulse length, no kick while idle / Locked, ...).
 
 ## Not done yet
 
-* `bench/bring_up.py` (the staged hardware bring-up) still uses the old charge ceiling and "kick now"; its tests are
+* `bench/bring_up.py` (the staged hardware bring-up) still uses the old charge ceiling and an immediate-kick option from an early protocol draft; its tests are
   skipped. It is rewritten once the bench charge ceiling / `safe_chg` question is decided (charge review element 9).
 * Bench measurements: break-beam polarity, DONE pulse on a full bank (charge N-2), dump curve (~7 s for a full dump),
   damping duty and drain, full-charge time (tighten the 4500 ms check if a charge always takes < 3 s), kick spacing.
