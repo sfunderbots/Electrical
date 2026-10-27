@@ -22,6 +22,23 @@ use mcp25xx::registers::CNF;
 pub const PULSE_MIN_US: u32 = 50;
 pub const PULSE_MAX_US: u32 = 5000;
 
+/// Voltage-compensated pulse width. Kick strength (ball speed) is set by the
+/// impulse delivered, which for a short pulse goes as V * T^2, so the same
+/// pulse at a lower bank voltage gives a weaker kick. To keep kicks consistent
+/// the firmware treats the commanded width as the width to use at FIRE_REF_MV
+/// and rescales it to the *actual* settled bank voltage V at fire time as
+///     T = T_cmd * sqrt(FIRE_REF_MV / V)
+/// so a lower bank gets a proportionally longer pulse. The result is always
+/// clamped to PULSE_MAX_US, so it is best-effort and fail-safe: a low bank just
+/// maxes out the pulse, it can never over-drive the solenoid/IGBT. Set false to
+/// fire the commanded width verbatim (pre-compensation behavior).
+pub const FIRE_VOLTAGE_COMPENSATION: bool = true;
+/// [BENCH] Reference bank voltage the commanded pulse width is calibrated at —
+/// the board's normal full charge (DONE stop ~215 V; design target ~210 V). At
+/// or above this the commanded width is used as-is; below it the pulse grows.
+/// Tune against measured kick consistency.
+pub const FIRE_REF_MV: u32 = 210_000;
+
 /// Default pulse used by break-beam auto-fire until CONFIG changes it.
 pub const DEFAULT_AUTOFIRE_US: u32 = 2000;
 

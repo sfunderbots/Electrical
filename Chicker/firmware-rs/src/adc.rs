@@ -7,9 +7,17 @@
 
 use embassy_rp::adc::{Adc, Async, Channel};
 use embassy_time::{Duration, Instant, Ticker};
+use portable_atomic::{AtomicU32, Ordering};
 
 use crate::config;
 use crate::state::{Event, EVENTS};
+
+/// Latest median-of-5 bank voltage in mV, refreshed every 2 ms with NO IIR
+/// smoothing — a fresh, spike-free, lag-free value for the fire path to read at
+/// the instant of a kick (see `state::Sm::guarded_fire`). Staleness is still
+/// gated by the 20 ms `HvSample` events + `ADC_STALE`, so a dead ADC refuses
+/// the fire before this value is ever trusted.
+pub static LATEST_HV_MV: AtomicU32 = AtomicU32::new(0);
 
 fn median5(mut v: [u16; 5]) -> u16 {
     v.sort_unstable();
@@ -59,6 +67,8 @@ pub async fn adc_task(
         }
 
         let med = median5(raw) as i32;
+        // Publish the un-smoothed median for the fire path (see LATEST_HV_MV).
+        LATEST_HV_MV.store((med as u32) * config::HV_MV_NUM / 1000, Ordering::Relaxed);
         if hv_filt < 0 {
             hv_filt = med;
         } else {

@@ -26,10 +26,27 @@ use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use embassy_sync::channel::Channel;
 use embassy_sync::watch::Watch;
 use embassy_time::{Duration, Instant, Ticker, Timer};
+use portable_atomic::Ordering;
 
 use crate::charger::Charger;
 use crate::config;
 use crate::pulse::PulseGen;
+
+/// Voltage-compensated pulse width: `T = T_cmd * sqrt(FIRE_REF_MV / V)`, holding
+/// the delivered impulse (hence ball speed) roughly constant as the settled
+/// bank voltage `hv_mv` varies. Integer math (`isqrt`), clamped to the pulse
+/// limits so it is fail-safe — the result can never exceed `PULSE_MAX_US`.
+/// Returns the commanded width unchanged when compensation is disabled.
+fn compensate_width(width_cmd: u32, hv_mv: u32) -> u32 {
+    if !config::FIRE_VOLTAGE_COMPENSATION {
+        return width_cmd;
+    }
+    // Guard the divide against a glitched/zero reading; a genuinely flat bank
+    // was already rejected by the FIRE_MIN_MV gate before we reach here.
+    let v = hv_mv.max(config::FIRE_MIN_MV) as u64;
+    let w2 = width_cmd as u64 * width_cmd as u64 * config::FIRE_REF_MV as u64 / v;
+    (w2.isqrt() as u32).clamp(config::PULSE_MIN_US, config::PULSE_MAX_US)
+}
 
 // ---------------------------------------------------------------------------
 // Shared plumbing
@@ -390,7 +407,7 @@ impl Machine {
         if self.hv_mv < config::FIRE_MIN_MV {
             return Err(FireRefused::CapTooLow);
         }
-        let width_us = width_us.clamp(config::PULSE_MIN_US, config::PULSE_MAX_US);
+        let width_cmd = width_us.clamp(config::PULSE_MIN_US, config::PULSE_MAX_US);
 
         // Stop the flyback and let it settle before dumping the bank into
         // the coil.
@@ -398,7 +415,12 @@ impl Machine {
         self.apply_outputs();
         Timer::after(config::PRE_FIRE_SETTLE).await;
 
-        let hv_before = self.hv_mv;
+        // Read the settled bank voltage fresh (median-of-5, <=2 ms old, no IIR
+        // lag) and rescale the pulse width to it, so a lower bank gets a longer
+        // pulse and kick strength stays consistent. compensate_width clamps to
+        // PULSE_MAX_US, so this can never over-drive the coil.
+        let hv_before = crate::adc::LATEST_HV_MV.load(Ordering::Relaxed);
+        let width_us = compensate_width(width_cmd, hv_before);
         self.state = State::Firing;
         if self.pulses.fire(kind, width_us).is_err() {
             // Should be unreachable: the state machine already serializes
@@ -417,9 +439,10 @@ impl Machine {
             until: Instant::now() + self.cooldown,
         };
         log::info!(
-            "fired {:?} {} us (hv {} mV before)",
+            "fired {:?} {} us (cmd {} us, hv {} mV before)",
             kind,
             width_us,
+            width_cmd,
             hv_before
         );
         Ok(())
